@@ -1,0 +1,18 @@
+{
+  "compiler_started": false,
+  "exit_code": 75,
+  "next": "normal queue admission/reconciliation of retained same-slot fixed-pool experiment; no local/override/blind retry",
+  "offload_status": "placement_blocked",
+  "prior_outcome_review": [
+    "60ce18b4",
+    "8ce523c0"
+  ],
+  "recorded_utc": "2026-10-25T23:55:52.591435+00:00",
+  "refusal_log_sha256": "22161e9e85b5020a1461901544be9df2586cd01252cfa62636f2c0c783b0075b",
+  "retry_requires_reconciliation": true,
+  "source_change": "36940dd8",
+  "source_commit": "8ce523c01d7299d516dfd3bf05882b9a75567370",
+  "source_review": "74da218e",
+  "tests_on_this_export_run": false,
+  "transfer_started": false
+}

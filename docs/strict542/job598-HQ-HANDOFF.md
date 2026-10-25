@@ -401,3 +401,30 @@ cleanup.11 source-policy tests pass. It changes scheduling, not the graph, heap,
 4352MiB normal-build guard, deadline, scanner or settlement owner. Complete
 profile/declarations/postbuild/package/tree/action/next-seal and automatic598
 review still remain before595. Do not repeat6d7ecc59 unchanged.
+
+
+## Native-pool experiment admission refusal; exact resumable preparation
+
+After exact current-outcome approvals60ce18b4/8ce523c0, one normal fixed-pool
+experiment was attempted from the SAME tmp/export598-config-isolation export.
+Actual result was exit75, placement_blocked, retry_requires_reconciliation
+(job598-native1-placement-outcome.json and exact refusal log). The local owner
+checks placement before push_tree/remote run: no new transfer, tests or compiler
+executed in this attempt. Later cached status reported up; the refusal's exact
+cause was not recorded, so no outage cause or successful admission is inferred.
+No immediate retry, override, new slot, local fallback or installed change.
+
+Retain tmp/export598-config-isolation with manifest source8ce523c0, basec790ba44
+archivee79a0e45a4ea..., successor697e339cf97a..., native archived73e4e35720f...;
+full exact digests/paths are in job598-native1-export.json. The original archive
+contains no new fixed-pool code: the committed successor overlay is REQUIRED.
+The runner is the exact committed run-isolated598.sh (fixed cache cleanup).
+After normal placement reconciliation/admission, the next command is exactly
+`offload run --artifacts result598 -- sh run598.sh` from that retained export.
+Keep this slot identity. Preserve actual186-check and per-config/thread outcome
+receipts, independently review them, then implement/verify the complete supported
+bounded build/profile and actual runtime/package/tree/action/next-seal receipts.
+Current184 remote tests apply to6d7ecc59;11 new policy tests pass locally and
+are independently source-reviewed, not a186-test admitted execution claim.
+Automatic598 review and every595 application/HQ ownership gate remain open.
+Do not apply an incomplete package or repeat6d7ecc59 unchanged.
