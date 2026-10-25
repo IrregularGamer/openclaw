@@ -48,6 +48,11 @@ import type {
   RuntimeAuthProfileStore,
 } from "../auth-profiles/types.js";
 import { getAgentDir } from "../config.js";
+import {
+  containsSecretSentinel,
+  looksLikeSecretSentinel,
+  readExistingSecretSentinel,
+} from "../../secrets/sentinel.js";
 import { AuthStoragePersistenceError } from "./auth-storage-error.js";
 import {
   isAuthStorageOAuthRefreshFence,
@@ -69,8 +74,13 @@ import type {
   AuthStorageBackend,
   AuthStorageData,
   LockResult,
+  RuntimeApiKeyReadSelection,
 } from "./auth-storage-types.js";
 import { resolveConfigValue } from "./resolve-config-value.js";
+import {
+  captureSelectedRuntimeAuthRead,
+  type SelectedRuntimeAuthReadLease,
+} from "./selected-runtime-auth-read.js";
 
 export type {
   ApiKeyCredential,
@@ -402,6 +412,8 @@ export class AuthStorage {
   private data: AuthStorageData = {};
   private credentialSources = new Map<string, AuthProfileCredentialSource>();
   private runtimeOverrides: Map<string, string> = new Map();
+  private runtimeReadGeneration: object = {};
+  private runtimeReadSelections = new Map<string, RuntimeApiKeyReadSelection>();
   private fallbackResolver?: (provider: string) => string | undefined;
   private loadError: Error | null = null;
   private errors: Error[] = [];
@@ -447,14 +459,55 @@ export class AuthStorage {
    * Set a runtime API key override (not persisted to disk).
    * Used for CLI --api-key flag.
    */
-  setRuntimeApiKey(provider: string, apiKey: string): void {
+  setRuntimeApiKey(
+    provider: string,
+    apiKey: string,
+    selection?: RuntimeApiKeyReadSelection,
+  ): void {
+    this.invalidateRuntimeAuthReads();
     this.runtimeOverrides.set(provider, apiKey);
+    if (selection) {
+      this.runtimeReadSelections.set(provider, { ...selection });
+    }
+  }
+
+  /** Only the already-selected runtime override, never a credential resolver. */
+  captureRuntimeApiKeyRead(
+    provider: string,
+    model: { id: string; api?: string; baseUrl?: string },
+  ): SelectedRuntimeAuthReadLease | undefined {
+    const selected = captureSelectedRuntimeAuthRead(() => ({
+      generation: this.runtimeReadGeneration,
+      provider,
+      model,
+      apiKey: this.runtimeOverrides.get(provider),
+      selection: this.runtimeReadSelections.get(provider),
+    }));
+    if (!selected) {
+      return undefined;
+    }
+    // This only opens a credential already retained in this process. It cannot
+    // load a store, refresh a credential, or resolve a fallback.
+    const apiKey = looksLikeSecretSentinel(selected.apiKey)
+      ? readExistingSecretSentinel(selected.apiKey)
+      : selected.apiKey;
+    selected.assertCurrent();
+    if (!apiKey?.trim() || containsSecretSentinel(apiKey)) {
+      return undefined;
+    }
+    return { ...selected, apiKey };
+  }
+
+  private invalidateRuntimeAuthReads(): void {
+    this.runtimeReadGeneration = {};
+    this.runtimeReadSelections.clear();
   }
 
   /**
    * Remove a runtime API key override.
    */
   removeRuntimeApiKey(provider: string): void {
+    this.invalidateRuntimeAuthReads();
     this.runtimeOverrides.delete(provider);
   }
 
@@ -463,6 +516,7 @@ export class AuthStorage {
    * Used for custom provider keys from models.json.
    */
   setFallbackResolver(resolver: (provider: string) => string | undefined): void {
+    this.invalidateRuntimeAuthReads();
     this.fallbackResolver = resolver;
   }
 
@@ -490,6 +544,7 @@ export class AuthStorage {
   }
 
   private setData(data: AuthStorageData): void {
+    this.invalidateRuntimeAuthReads();
     this.data = data;
     this.credentialSources = new Map(
       Object.keys(data).flatMap((provider) => {
@@ -503,6 +558,7 @@ export class AuthStorage {
    * Reload credentials from storage.
    */
   reload(): void {
+    this.invalidateRuntimeAuthReads();
     let content: string | undefined;
     try {
       if (this.storage.read) {
@@ -522,6 +578,7 @@ export class AuthStorage {
   }
 
   private persistProviderChange(provider: string, credential: AuthCredential | undefined): void {
+    this.invalidateRuntimeAuthReads();
     if (this.loadError) {
       this.reload();
     }

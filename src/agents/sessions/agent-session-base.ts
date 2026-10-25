@@ -52,6 +52,7 @@ import type { ResourceLoader } from "./resource-loader.js";
 import { withSessionManagerWrite } from "./session-manager-write-admission.js";
 import type { SessionManager } from "./session-manager.js";
 import { prepareSessionToolResult } from "./session-tool-result-redaction.js";
+import { captureSelectedSessionRuntimeAuthRead } from "./selected-runtime-auth-read.js";
 import type { SettingsManager } from "./settings-manager.js";
 import type { SourceInfo } from "./source-info.js";
 import { reportSteeringMessagePersistenceFailure } from "./steering-message-identity.js";
@@ -77,6 +78,8 @@ export abstract class AgentSessionBase {
 
   protected unsubscribeAgent?: () => void;
   private eventListeners: AgentSessionEventListener[] = [];
+  private runtimeAuthReadGeneration: object = {};
+  private runtimeAuthReadDisposed = false;
 
   /** Tracks pending steering messages for UI display. Removed when delivered. */
   protected steeringMessages: Array<{ text: string }> = [];
@@ -591,6 +594,8 @@ export abstract class AgentSessionBase {
    * Call this when completely done with the session.
    */
   dispose(): void {
+    this.runtimeAuthReadDisposed = true;
+    this.invalidateRuntimeAuthReads();
     const abortOperations = [
       () => this.abortRetry(),
       () => this.abortCompaction(),
@@ -623,6 +628,23 @@ export abstract class AgentSessionBase {
   /** Current model (may be undefined if not yet selected) */
   get model(): Model | undefined {
     return this.agent.state.model;
+  }
+
+  /** A lease on this concrete session's selected model and existing memory auth. */
+  captureRuntimeAuthRead() {
+    return captureSelectedSessionRuntimeAuthRead(
+      () => ({
+        generation: this.runtimeAuthReadGeneration,
+        sessionId: this.sessionId,
+        disposed: this.runtimeAuthReadDisposed,
+        model: this.model,
+      }),
+      (model) => this.sessionModelRegistry.authStorage.captureRuntimeApiKeyRead(model.provider, model),
+    );
+  }
+
+  protected invalidateRuntimeAuthReads(): void {
+    this.runtimeAuthReadGeneration = {};
   }
 
   /** Current thinking level */

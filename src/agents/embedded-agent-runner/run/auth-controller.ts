@@ -36,6 +36,7 @@ import {
 import { protectPreparedProviderRuntimeAuth } from "../../provider-runtime-auth-protection.js";
 import { unwrapSecretSentinelsForProviderEgress } from "../../provider-secret-egress.js";
 import { clampRuntimeAuthRefreshDelayMs } from "../../runtime-auth-refresh.js";
+import type { RuntimeApiKeyReadSelection } from "../../sessions/auth-storage-types.js";
 import { resolveAuthProfileFailureReason } from "./auth-profile-failure-policy.js";
 import type { AuthProfileFailurePolicy } from "./auth-profile-failure-policy.types.js";
 import {
@@ -61,7 +62,11 @@ export type EmbeddedRunAuthState = {
 };
 
 type RuntimeApiKeySink = {
-  setRuntimeApiKey(provider: string, apiKey: string): void;
+  setRuntimeApiKey(
+    provider: string,
+    apiKey: string,
+    selection?: RuntimeApiKeyReadSelection,
+  ): void;
 };
 
 type LogLike = {
@@ -283,7 +288,13 @@ export function createEmbeddedRunAuthController(params: {
         );
         return;
       }
-      params.authStorage.setRuntimeApiKey(runtimeModel.provider, preparedAuth.apiKey);
+      params.authStorage.setRuntimeApiKey(runtimeModel.provider, preparedAuth.apiKey, {
+        modelId: runtimeModel.id,
+        api: runtimeModel.api,
+        baseUrl: runtimeModel.baseUrl,
+        mode: currentRuntimeAuthState?.authMode ?? "unknown",
+        expiresAt: preparedAuth.expiresAt,
+      });
       applyPreparedRuntimeRequestOverrides({ runtimeModel, preparedAuth });
       state.runtimeAuthState = {
         ...activeRuntimeAuthState,
@@ -558,7 +569,13 @@ export function createEmbeddedRunAuthController(params: {
       applyPreparedRuntimeRequestOverrides({ runtimeModel, preparedAuth: preparedAuth ?? {} });
       if (preparedAuth?.apiKey) {
         clearRuntimeAuthRefreshTimer();
-        params.authStorage.setRuntimeApiKey(runtimeModel.provider, preparedAuth.apiKey);
+        params.authStorage.setRuntimeApiKey(runtimeModel.provider, preparedAuth.apiKey, {
+          modelId: runtimeModel.id,
+          api: runtimeModel.api,
+          baseUrl: runtimeModel.baseUrl,
+          mode: apiKeyInfo.mode,
+          expiresAt: preparedAuth.expiresAt,
+        });
         state.runtimeAuthState = {
           generation: (state.runtimeAuthState?.generation ?? 0) + 1,
           sourceApiKey,
@@ -581,7 +598,12 @@ export function createEmbeddedRunAuthController(params: {
     }
     if (!runtimeAuthHandled) {
       clearRuntimeAuthRefreshTimer();
-      params.authStorage.setRuntimeApiKey(runtimeModel.provider, sourceApiKey);
+      params.authStorage.setRuntimeApiKey(runtimeModel.provider, sourceApiKey, {
+        modelId: runtimeModel.id,
+        api: runtimeModel.api,
+        baseUrl: runtimeModel.baseUrl,
+        mode: apiKeyInfo.mode,
+      });
       state.runtimeAuthState = null;
     }
     state.lastProfileId = profileId;

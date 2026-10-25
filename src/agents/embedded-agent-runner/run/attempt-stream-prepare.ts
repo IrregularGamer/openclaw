@@ -536,6 +536,23 @@ function prepareStream(
   const applyPermissionMode = input.applyPermissionMode;
   const queueHandle: AttemptStreamQueueHandle = {
     kind: "embedded",
+    captureRuntimeAuthRead: () => {
+      if (!isSteeringAdmissionOpen() || !hasCurrentRegistration()) {
+        return undefined;
+      }
+      const selected = activeSession.captureRuntimeAuthRead();
+      if (!selected) {
+        return undefined;
+      }
+      const assertCurrent = () => {
+        selected.assertCurrent();
+        if (!isSteeringAdmissionOpen() || !hasCurrentRegistration()) {
+          throw new Error("Active session runtime authentication is no longer current.");
+        }
+      };
+      assertCurrent();
+      return { ...selected, assertCurrent };
+    },
     runId: attempt.runId,
     permissionChangeOwner: attempt.permissionChange?.owner,
     diagnosticOwner: input.diagnosticOwner,

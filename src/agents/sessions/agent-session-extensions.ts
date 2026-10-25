@@ -110,6 +110,7 @@ export abstract class AgentSessionExtensions extends AgentSessionCompaction {
       return;
     }
 
+    this.invalidateRuntimeAuthReads();
     this.agent.state.model = refreshedModel;
   }
 

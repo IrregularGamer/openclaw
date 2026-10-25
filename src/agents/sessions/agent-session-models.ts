@@ -47,6 +47,7 @@ export abstract class AgentSessionModels extends AgentSessionPrompting {
 
   /** Set the model after validating its current auth at write admission. */
   async setModel(model: Model): Promise<void> {
+    this.invalidateRuntimeAuthReads();
     const owner = this.captureMetadataOwner();
     const {
       previousModel,
@@ -70,6 +71,7 @@ export abstract class AgentSessionModels extends AgentSessionPrompting {
           { type: "model_change", provider: model.provider, modelId: model.id },
           (commit) => {
             publication.commit = commit;
+            this.invalidateRuntimeAuthReads();
             this.agent.state.model = model;
             this.settingsManager.setDefaultModelAndProvider(model.provider, model.id);
           },

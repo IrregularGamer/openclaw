@@ -28,6 +28,17 @@ import type { ReplyExpectation } from "../reply-completion.js";
 
 export type EmbeddedAgentQueueHandle = {
   kind?: "embedded";
+  /** Concrete active session reader; absent for backends without selected memory auth. */
+  captureRuntimeAuthRead?: () =>
+    | {
+        readonly provider: string;
+        readonly model: string;
+        readonly apiKey: string;
+        readonly mode: "api-key" | "oauth";
+        readonly expiresAt?: number;
+        assertCurrent(): void;
+      }
+    | undefined;
   runId?: string;
   /** Exact process-local diagnostic lifecycle shared with this handle's model wrapper. */
   readonly diagnosticOwner?: DiagnosticEmbeddedRunOwner;

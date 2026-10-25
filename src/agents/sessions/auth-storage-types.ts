@@ -35,3 +35,12 @@ export interface AuthStorageBackend {
   withLock<T>(fn: (current: string | undefined) => LockResult<T>): T;
   withLockAsync<T>(fn: (current: string | undefined) => Promise<LockResult<T>>): Promise<T>;
 }
+
+/** Facts recorded by the actual model/auth selector when installing its runtime override. */
+export type RuntimeApiKeyReadSelection = {
+  modelId: string;
+  api?: string;
+  baseUrl?: string;
+  mode: string;
+  expiresAt?: number;
+};
