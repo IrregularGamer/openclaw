@@ -233,3 +233,17 @@ retry, no scan bypass and no new export path. Next step: once the queue/broker
 has cleaned up the remote workspace, run one fresh admitted run of the same
 reviewed export, followed by independent evidence review. All gates for598
 and595 above remain open.
+
+## Second rerun after requeue (2026-10-25T20:10Z): still unreconciled
+
+With offload health `up`, one admitted run of the same unchanged export
+(manifest source 86c1a4db, base e79a0e45, successor 8ac591b3, native d73e4e35)
+was refused again before any command ran: `refusing: secret-like file in tree:
+source/.npmrc`, remote_environment_blocked, retry_requires_reconciliation, exit75
+(job598-serial-probe-second-rerun-refusal.txt). The leftover is still remote
+source/ from the killed 19:24Z run (run598.sh extracts source598.tar into
+source/ remotely and its EXIT trap never ran). No bypass, scanner change, new
+export path or further retry. Next step: broker/remote-watchdog
+reconciliation of the friend-VPS workspace (operator action outside this
+worker), then one fresh admitted run, then independent evidence review. All
+598/595 gates remain open.

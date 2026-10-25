@@ -1,0 +1,4 @@
+2026-10-25T20:10:29Z
+[offload-agent] refusing: secret-like file in tree: source/.npmrc
+{"offload_status": "remote_environment_blocked", "local_execution": false, "retry_requires_reconciliation": true}
+exit=75
