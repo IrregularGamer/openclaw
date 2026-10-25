@@ -34,6 +34,7 @@
   },
   "native_pool_successor": "36940dd8",
   "outcome": "FINITE_UNIFIED_RUNTIME_CONFIG15_TIMEOUT; no build artifact",
+  "outer_exit_code": 1,
   "recorded_utc": "2026-10-25T23:51:16.646889+00:00",
   "sha256": {
     "job598-isolated-corrected-export.json": "87074f518d9af3068c04849e4742ef3f57a4f8c6b3478be10b2fe68f09782391",
