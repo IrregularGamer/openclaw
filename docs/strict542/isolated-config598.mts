@@ -18,6 +18,6 @@ function sample(phase: string) {
 export default {...selected,plugins:[selected.plugins,{
   name:'openclaw:isolated-config-telemetry598',
   buildStart() { sample('begin'); timer=setInterval(()=>sample('running'),30_000).unref(); },
-  buildEnd(error: unknown) { sample(error ? 'build-error' : 'build-end'); clearInterval(timer); },
+  buildEnd(error: unknown) { sample(error ? 'build-error' : 'build-end'); if (error) clearInterval(timer); },
   closeBundle() { sample('closed'); clearInterval(timer); },
 }]};

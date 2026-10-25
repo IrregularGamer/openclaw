@@ -27,7 +27,7 @@ for (const plan of plans) {
   const remaining=Math.floor(deadline-performance.now());
   if (remaining<=0) throw new Error('absolute isolated probe deadline expired');
   const invocation=resolveTsdownBuildInvocation({args:plan.args,env:plan.env});
-  console.log(JSON.stringify({kind:receipt.kind,label:plan.label,args:invocation.args,remaining}));
+  console.log(JSON.stringify({kind:receipt.kind,label:plan.label,args:invocation.args,nodeOptions:invocation.options.env.NODE_OPTIONS,remaining}));
   const started=performance.now();
   const result=await runTsdownBuildInvocation(invocation,{env:{...env,OPENCLAW_TSDOWN_TIMEOUT_MS:String(remaining)}});
   receipt.results.push({label:plan.label,elapsedMs:performance.now()-started,result});
