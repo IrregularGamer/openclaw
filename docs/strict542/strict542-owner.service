@@ -1,0 +1,31 @@
+# SOURCE ONLY. Install only after independent action and privilege-policy review.
+[Unit]
+Description=Finite strict542 pinned native owner-read endpoint
+After=user@1000.service
+
+[Service]
+Type=simple
+User=root
+Group=root
+ExecStart=/usr/bin/python3 -I /usr/local/libexec/agentq-safety/root_owner_supervisor542.py
+Restart=no
+RuntimeMaxSec=900
+TimeoutStopSec=5
+KillMode=mixed
+MemoryMax=64M
+MemorySwapMax=0
+CPUQuota=5%
+TasksMax=16
+NoNewPrivileges=yes
+UMask=0077
+LimitCORE=0
+LimitNOFILE=64
+# Parent must write ONLY its child PID into the preexisting fixed HQ cgroup.
+# Child therefore leaves this unit's accounting; inherited RLIMIT_AS=96MiB,
+# RLIMIT_CPU=30s, parent aggregate tree CPU watchdog and existing gateway cgroup
+# limits remain effective. Never modify gateway limits or migrate a worker.
+ProtectControlGroups=no
+ProtectSystem=strict
+ReadWritePaths=/run/agentq-safety /sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openclaw-gateway.service/cgroup.procs
+PrivateTmp=yes
+RestrictAddressFamilies=AF_UNIX

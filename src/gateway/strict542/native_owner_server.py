@@ -18,12 +18,27 @@ import subprocess
 import time
 from types import ModuleType, SimpleNamespace
 
-NATIVE_PATH = Path('/usr/local/libexec/agentq-safety/maintenance.py')
+NATIVE_PATH = Path('/opt/openclaw-strict542/598/native/maintenance.py')
 # Exact ABH handoff candidate, derived from the unchanged external owner inputs.
 NATIVE_SHA256 = 'bca40971a35d160ad87b5d18fd1cc7f7730a7f90d2bb5b8480f3d7d79d11c182'
 SYSTEMCTL = ['systemctl', '--user', '--machine=deploy@.host', 'show',
              'openclaw-gateway.service', '-p', 'MainPID', '--value']
 RESERVE_NS = 200_000_000
+# Set only by the fixed supervised entry point; standalone unit tests exercise
+# ReadScope without claiming a live privileged installation.
+PARENT_FD = None
+ENDPOINT_DEADLINE = None
+STOPPED = False
+
+
+def endpoint_alive():
+    return (not STOPPED and (ENDPOINT_DEADLINE is None or time.monotonic() < ENDPOINT_DEADLINE)
+            and (PARENT_FD is None or not select.select([PARENT_FD], [], [], 0)[0]))
+
+
+def stop_endpoint(signum, frame):
+    global STOPPED
+    STOPPED = True
 
 
 class Refused(Exception): pass
@@ -125,6 +140,7 @@ class ReadScope:
         self.settled = True
 
     def check(self):
+        if not endpoint_alive(): self.cancelled = True
         if select.select([self.connection], [], [], 0)[0]:
             raw = self.connection.recv(1024)
             if not raw: self.cancelled = True
@@ -174,9 +190,12 @@ class ReadScope:
 
 def read_request(connection):
     # Before a request exists there is no native work and no authority to retain.
-    connection.settimeout(0.15)
+    framing_end = time.monotonic() + 0.15
     raw = b''
     while not raw.endswith(b'\n'):
+        remaining = framing_end - time.monotonic()
+        if remaining <= 0 or not endpoint_alive(): raise Refused()
+        connection.settimeout(remaining)
         part = connection.recv(513)
         if not part: raise Refused()
         raw += part
@@ -232,16 +251,29 @@ def serve_connected(connection):
 def serve(listener):
     """Existing supervisor supplies the endpoint and lifecycle, not this read."""
     if os.geteuid() != 0 or listener.family != socket.AF_UNIX: raise Refused()
-    while True:
-        connection, _ = listener.accept()
+    listener.settimeout(0.1)
+    while endpoint_alive():
+        try: connection, _ = listener.accept()
+        except socket.timeout: continue
         with connection: serve_connected(connection)
 
 
 if __name__ == '__main__':
     # Fixed inherited endpoint, supplied by a separately authorized supervisor.
     # No bind, installation, command arguments or privilege transition occurs.
+    # Parent death is observed rather than delivering an immediate fatal signal:
+    # active native work still follows the original cancellation settlement.
+    PARENT_FD = 4
+    ENDPOINT_DEADLINE = time.monotonic() + 900
+    os.fstat(PARENT_FD)  # Missing supervisor liveness descriptor refuses startup.
+    signal.signal(signal.SIGTERM, stop_endpoint)
+    signal.signal(signal.SIGINT, stop_endpoint)
+    child_subreaper()
     with socket.socket(fileno=3) as listener:
         if (listener.getsockname() != '/run/agentq-safety/owner542.sock'
                 or not listener.getsockopt(socket.SOL_SOCKET, socket.SO_ACCEPTCONN)):
             raise Refused()
-        serve(listener)
+        try: serve(listener)
+        finally:
+            if not reap_adopted(time.monotonic_ns()+2_000_000_000):
+                raise Unsettled()
