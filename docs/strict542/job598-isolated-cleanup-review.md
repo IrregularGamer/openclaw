@@ -69,3 +69,30 @@ This approval covers temporary source-test workspace recovery only. It supplies
 no native supervisor/application authority, normal build admission, artifact or
 release approval. Actual cleanup, corrected diagnostic outcome and all original
 job598/595 review, seal and genuine HQ ownership gates remain unproven.
+
+## Exact executable implementation approval
+
+Independently reviewed `docs/strict542/reconcile-isolated-slot598.py` from
+`1f4ed0cf`, an ancestor of this receipt. **APPROVE** executing this exact source
+once, subject to the mandatory operational preconditions above. This is source
+review, not evidence that it was executed or cleanup succeeded.
+
+The script acquires the actual existing LeaseStore.runner_slot context and holds
+it across its ready handshake, the local literal supported clean request, and
+remote slot-absence verification. It checks exact only-current lease digest and
+zero managed containers before and after clean. Its slot and six expected root
+items are fixed; slot/store symlinks refuse. Previously verified retained-input,
+full store inventory, current-worker binding and exclusion of concurrent clients
+remain required preconditions; the script does not replace those observations.
+Only the current lease SHA crosses the administrative channel; its token does
+not. The root command is fixed Python source executed as offload through existing
+administrative access, not a newly installed privileged endpoint.
+
+The remote holder has a120s alarm; local readiness/verification and clean have60s
+bounds and child shutdown has finite waits. Loss of the controller, failed
+assertion, occupied lock or uncertain verification stops rather than admitting a
+compiler. Independent static parsing confirmed both local write and remote
+comparison contain the same VERIFY string followed by byte10 (a real newline).
+Local and embedded remote Python syntax pass without executing the script. No
+mutation, remote service or compiler was launched by this review. Preserve actual
+ready/absence receipts; a successful source review alone does not satisfy cleanup.
