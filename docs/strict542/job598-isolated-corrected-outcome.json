@@ -1,0 +1,50 @@
+{
+  "application_approved": false,
+  "checks": 184,
+  "completed": [
+    "ai",
+    "main-config-0",
+    "main-config-1",
+    "main-config-2",
+    "main-config-3",
+    "main-config-4",
+    "main-config-5",
+    "main-config-6",
+    "main-config-7",
+    "main-config-8",
+    "main-config-9",
+    "main-config-10",
+    "main-config-11",
+    "main-config-12",
+    "main-config-13",
+    "main-config-14"
+  ],
+  "last_result": {
+    "elapsedMs": 868593.4404109999,
+    "label": "main-config-15",
+    "result": {
+      "captured": "{\"kind\":\"ISOLATED_CONFIG_DIAGNOSTIC\",\"index\":\"15\",\"phase\":\"begin\",\"pid\":688,\"memory\":{\"rss\":190570496,\"heapTotal\":54882304,\"heapUsed\":25229176,\"external\":2920017,\"arrayBuffers\":357020},\"kernel\":{\"memory.current\":\"1115918336\",\"memory.peak\":\"1598738432\",\"memory.events\":\"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\",\"cpu.stat\":\"usage_usec 167109162\\nuser_usec 93201883\\nsystem_usec 73907279\\ncore_sched.force_idle_usec 0\\nnr_periods 2158\\nnr_throttled 1232\\nthrottled_usec 67236165\\nnr_bursts 0\\nburst_usec 0\"}}\n{\"kind\":\"ISOLATED_CONFIG_DIAGNOSTIC\",\"index\":\"15\",\"phase\":\"running\",\"pid\":688,\"memory\":{\"rss\":1419210752,\"heapTotal\":112635904,\"heapUsed\":38149104,\"external\":2703923,\"arrayBuffers\":145635},\"kernel\":{\"memory.current\":\"1609666560\",\"memory.peak\":\"1612599296\",\"memory.events\":\"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\",\"cpu.stat\":\"usage_usec 197248473\\nuser_usec 114030654\\nsystem_usec 83217819\\ncore_sched.force_idle_usec 0\\nnr_periods 2460\\nnr_throttled 1532\\nthrottled_usec 88304563\\nnr_bursts 0\\nburst_usec 0\"}}\n{\"kind\":\"ISOLATED_CONFIG_DIAGNOSTIC\",\"index\":\"15\",\"phase\":\"running\",\"pid\":688,\"memory\":{\"rss\":1428811776,\"heapTotal\":44478464,\"heapUsed\":29368416,\"external\":2703923,\"arrayBuffers\":145635},\"kernel\":{\"memory.current\":\"1595650048\",\"memory.peak\":\"1612599296\",\"memory.events\":\"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\",\"cpu.stat\":\"usage_usec 232793284\\nuser_usec 116561349\\nsystem_usec 116231935\\ncore_sched.force_idle_usec 0\\nnr_periods 2816\\nnr_throttled 1888\\nthrottled_usec 140932684\\nnr_bursts 0\\nburst_usec 0\"}}\n{\"kind\":\"ISOLATED_CONFIG_DIAGNOSTIC\",\"index\":\"15\",\"phase\":\"running\",\"pid\":688,\"memory\":{\"rss\":1517068288,\"heapTotal\":79867904,\"heapUsed\":36931672,\"external\":2703923,\"arrayBuffers\":145635},\"kernel\":{\"memory.current\":\"1617907712\",\"memory.peak\":\"1619619840\",\"memory.events\":\"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\",\"cpu.stat\":\"usage_usec 765603716\\nuser_usec 126112284\\nsystem_usec 639491431\\ncore_sched.force_idle_usec 0\\nnr_periods 8144\\nnr_throttled 7216\\nthrottled_usec 823681028\\nnr_bursts 0\\nburst_usec 0\"}}\n{\"kind\":\"ISOLATED_CONFIG_DIAGNOSTIC\",\"index\":\"15\",\"phase\":\"running\",\"pid\":688,\"memory\":{\"rss\":1519939584,\"heapTotal\":48672768,\"heapUsed\":28143528,\"external\":2703923,\"arrayBuffers\":145635},\"kernel\":{\"memory.current\":\"1618317312\",\"memory.peak\":\"1619738624\",\"memory.events\":\"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\",\"cpu.stat\":\"usage_usec 944309080\\nuser_usec 129646475\\nsystem_usec 814662605\\ncore_sched.force_idle_usec 0\\nnr_periods 9931\\nnr_throttled 9003\\nthrottled_usec 1085158330\\nnr_bursts 0\\nburst_usec 0\"}}\n{\"kind\":\"ISOLATED_CONFIG_DIAGNOSTIC\",\"index\":\"15\",\"phase\":\"running\",\"pid\":688,\"memory\":{\"rss\":1513545728,\"heapTotal\":29011968,\"heapUsed\":24984112,\"external\":2703923,\"arrayBuffers\":145635},\"kernel\":{\"memory.current\":\"1609641984\",\"memory.peak\":\"1625784320\",\"memory.events\":\"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\",\"cpu.stat\":\"usage_usec 990219424\\nuser_usec 130927187\\nsystem_usec 859292237\\ncore_sched.force_idle_usec 0\\nnr_periods 10391\\nnr_throttled 9463\\nthrottled_usec 1128974073\\nnr_bursts 0\\nburst_usec 0\"}}\n",
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "signal": "SIGKILL",
+      "status": null,
+      "timedOut": true
+    }
+  },
+  "native_pool_successor": "36940dd8",
+  "outcome": "FINITE_UNIFIED_RUNTIME_CONFIG15_TIMEOUT; no build artifact",
+  "recorded_utc": "2026-10-25T23:51:16.646889+00:00",
+  "sha256": {
+    "job598-isolated-corrected-export.json": "87074f518d9af3068c04849e4742ef3f57a4f8c6b3478be10b2fe68f09782391",
+    "job598-isolated-corrected-offload.txt": "0d4d0ea99186cd5193f9b68c63e68cc58d73d2b70bc0b050d7f12538af899ded",
+    "job598-isolated-corrected-probe.txt": "320bfdde9b92203a7152ebfd787c63ceadaa3ddf40daf9ab9be126fb88e4ee15",
+    "job598-isolated-corrected-receipt.json": "df669fcedc0d6fac8454e55bba5205669d787edb9a4f35c9b7626349de4d2e10",
+    "job598-isolated-corrected-tests.json": "f62946a87991ecfe619d758108382ed8eab789aecc17af160d98d739b709a985",
+    "job598-isolated-corrected-tests.txt": "3ef4df7eb748cb4a81b84a4878731cee85d19371153eff3273e86d6796707db6",
+    "job598-isolated-thread-detail.json": "183d5bc08329bd9f53103897be123b0f22a3357d201e496a98a9719ba3c907f5",
+    "job598-isolated-thread-sample.json": "e8f55694403568e547b243e97cf64bea65ae4ae5f1508c723e6cbc5471de072e"
+  },
+  "source_commit": "6d7ecc59f7c60f64cfdd35066a57b19c5d3e7e2c",
+  "successor_source_review": "74da218e"
+}

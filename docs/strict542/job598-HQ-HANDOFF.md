@@ -379,3 +379,25 @@ identity. Local recovered outcomes and all five remote input hashes were retaine
 Receipts job598-isolated-{pre-clean,current-worker,registered-worker,immediate-idle,post-clean}.json
 record only metadata/digests; no package database content or credential transfer.
 One corrected normal admitted run is next; scanner/resource/lease rules remain.
+
+
+## Corrected isolated result and reviewed native scheduling successor
+
+Actual6d7ecc59 run passed184 relevant checks, pinned install, AI and all15
+package configs0-14. Unified config15 preserved its full singleton graph but
+timed out at remaining868110ms of the shared900s deadline. Owning cleanup sent
+SIGTERM/SIGKILL and observed the compiler process group dead. No artifact exists.
+Exact source/export/log/census/result and metadata are bound in
+job598-isolated-corrected-outcome.json. Sampled kernel memory.events had0 OOMs;
+final RSS~1.51GiB with25MiB V8heap. No peak/OOM or feasibility inference follows.
+
+Actual6 runnable rolldown-worker threads were observed under1CPU quota. Exact
+Rolldown1.2.9 source defaults its custom Tokio pool to physicalCPUs*3/2, matching
+the4CPU affinity sample; this ignores the runner's quota. Successor3a4aaf3d/
+36940dd8 generates fixed workers/blocking/Rayon/Tokio1 after refusing inherited
+controls. Independent exact source review74da218e permits one fresh admitted
+diagnostic ONLY after independent current-outcome review and verified normal
+cleanup.11 source-policy tests pass. It changes scheduling, not the graph, heap,
+4352MiB normal-build guard, deadline, scanner or settlement owner. Complete
+profile/declarations/postbuild/package/tree/action/next-seal and automatic598
+review still remain before595. Do not repeat6d7ecc59 unchanged.

@@ -1,0 +1,57 @@
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.019s
+
+OK
+✔ census preserves every ordered config and alias/source pair including duplicate group names (6.835494ms)
+✔ selection returns the entire original graph by identity (1.647136ms)
+✔ refuses invalid indices, declaration graphs and drifted inventory (2.805697ms)
+✔ admits fixed serial diagnostic only with observed bounded capacity (2.393803ms)
+✔ refuses unknown or oversized capacity and existing output (0.763449ms)
+✔ refuses caller-controlled compiler budget, selection, preload or plugin exclusions (0.764712ms)
+✔ compiler warnings, unresolved imports and unsettled/failed runs refuse success (0.491351ms)
+✔ accepts only the owning tsx launcher cache-disabled value (0.5801ms)
+✔ refuses inherited output and native thread scheduling controls even when empty (0.638493ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 538.36521
+{"kind":"DIAGNOSTIC_ONLY_NOT_BUILD_EVIDENCE","label":"main-config-14","args":["node_modules/tsdown/dist/run.mjs","--config-loader","unrun","--logLevel","warn","--no-clean","--config","tsdown.isolated598.config.ts","--concurrency","1"],"nodeOptions":"--max-old-space-size=652","remaining":870266}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"14","phase":"begin","pid":665,"memory":{"rss":191455232,"heapTotal":55144448,"heapUsed":19320648,"external":2920017,"arrayBuffers":357020},"kernel":{"memory.current":"1116016640","memory.peak":"1598738432","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 165191232\nuser_usec 91694416\nsystem_usec 73496816\ncore_sched.force_idle_usec 0\nnr_periods 2139\nnr_throttled 1215\nthrottled_usec 66866979\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"14","phase":"build-end","pid":665,"memory":{"rss":206168064,"heapTotal":55144448,"heapUsed":20737064,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1131073536","memory.peak":"1598738432","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 165304865\nuser_usec 91778684\nsystem_usec 73526180\ncore_sched.force_idle_usec 0\nnr_periods 2140\nnr_throttled 1216\nthrottled_usec 66916583\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"14","phase":"closed","pid":665,"memory":{"rss":208412672,"heapTotal":55144448,"heapUsed":21079256,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1132793856","memory.peak":"1598738432","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 165350156\nuser_usec 91810593\nsystem_usec 73539562\ncore_sched.force_idle_usec 0\nnr_periods 2141\nnr_throttled 1217\nthrottled_usec 66929800\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"DIAGNOSTIC_ONLY_NOT_BUILD_EVIDENCE","label":"main-config-15","args":["node_modules/tsdown/dist/run.mjs","--config-loader","unrun","--logLevel","warn","--no-clean","--config","tsdown.isolated598.config.ts","--concurrency","1"],"nodeOptions":"--max-old-space-size=652","remaining":868110}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"begin","pid":688,"memory":{"rss":190570496,"heapTotal":54882304,"heapUsed":25229176,"external":2920017,"arrayBuffers":357020},"kernel":{"memory.current":"1115918336","memory.peak":"1598738432","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 167109162\nuser_usec 93201883\nsystem_usec 73907279\ncore_sched.force_idle_usec 0\nnr_periods 2158\nnr_throttled 1232\nthrottled_usec 67236165\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":688,"memory":{"rss":1419210752,"heapTotal":112635904,"heapUsed":38149104,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1609666560","memory.peak":"1612599296","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 197248473\nuser_usec 114030654\nsystem_usec 83217819\ncore_sched.force_idle_usec 0\nnr_periods 2460\nnr_throttled 1532\nthrottled_usec 88304563\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":688,"memory":{"rss":1428811776,"heapTotal":44478464,"heapUsed":29368416,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1595650048","memory.peak":"1612599296","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 232793284\nuser_usec 116561349\nsystem_usec 116231935\ncore_sched.force_idle_usec 0\nnr_periods 2816\nnr_throttled 1888\nthrottled_usec 140932684\nnr_bursts 0\nburst_usec 0"}}
+[tsdown-build] still running pid=688; no output for 53s
+[tsdown-build] still running pid=688; no output for 30s
+[tsdown-build] still running pid=688; no output for 30s
+[tsdown-build] still running pid=688; no output for 60s
+[tsdown-build] still running pid=688; no output for 30s
+[tsdown-build] still running pid=688; no output for 30s
+[tsdown-build] still running pid=688; no output for 30s
+[tsdown-build] still running pid=688; no output for 30s
+[tsdown-build] still running pid=688; no output for 30s
+[tsdown-build] still running pid=688; no output for 30s
+[tsdown-build] still running pid=688; no output for 30s
+[tsdown-build] still running pid=688; no output for 30s
+[tsdown-build] still running pid=688; no output for 30s
+[tsdown-build] still running pid=688; no output for 30s
+[tsdown-build] still running pid=688; no output for 30s
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":688,"memory":{"rss":1517068288,"heapTotal":79867904,"heapUsed":36931672,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1617907712","memory.peak":"1619619840","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 765603716\nuser_usec 126112284\nsystem_usec 639491431\ncore_sched.force_idle_usec 0\nnr_periods 8144\nnr_throttled 7216\nthrottled_usec 823681028\nnr_bursts 0\nburst_usec 0"}}
+[tsdown-build] still running pid=688; no output for 31s
+[tsdown-build] still running pid=688; no output for 30s
+[tsdown-build] still running pid=688; no output for 30s
+[tsdown-build] still running pid=688; no output for 30s
+[tsdown-build] still running pid=688; no output for 30s
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":688,"memory":{"rss":1519939584,"heapTotal":48672768,"heapUsed":28143528,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1618317312","memory.peak":"1619738624","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 944309080\nuser_usec 129646475\nsystem_usec 814662605\ncore_sched.force_idle_usec 0\nnr_periods 9931\nnr_throttled 9003\nthrottled_usec 1085158330\nnr_bursts 0\nburst_usec 0"}}
+[tsdown-build] still running pid=688; no output for 32s
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":688,"memory":{"rss":1513545728,"heapTotal":29011968,"heapUsed":24984112,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1609641984","memory.peak":"1625784320","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 990219424\nuser_usec 130927187\nsystem_usec 859292237\ncore_sched.force_idle_usec 0\nnr_periods 10391\nnr_throttled 9463\nthrottled_usec 1128974073\nnr_bursts 0\nburst_usec 0"}}
+[tsdown-build] timeout after 868110ms pid=688; sending SIGTERM
+[tsdown-build] forcing SIGKILL pid=688
+[tsdown-build] child result pid=688: {"status":null,"signal":"SIGKILL","parentSignal":null,"timedOut":true,"cleanup":"timeout","observedProcessState":"dead","observationScope":"process-group","finalStatus":null}
