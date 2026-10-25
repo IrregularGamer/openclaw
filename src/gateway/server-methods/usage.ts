@@ -9,6 +9,7 @@ import {
   errorShape,
   validateSessionsUsageParams,
 } from "../../../packages/gateway-protocol/src/index.js";
+import { captureActiveEmbeddedSessionRuntimeAuth } from "../../agents/embedded-agent-runner/active-run-projections.js";
 import { sessionCreatorProfileId } from "../../config/sessions/session-entry-provenance.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { loadSessionLogs, loadSessionUsageTimeSeries } from "../../infra/session-cost-usage.js";
@@ -28,6 +29,12 @@ import {
   sessionDeliveryOrigin,
 } from "../../utils/delivery-context.read.js";
 import { operatorSessionCap } from "../operator-role-policy.js";
+import { monotonicNs, readNativeOwner542 } from "../strict542/native-owner-transport.js";
+import {
+  fetchAnthropicOAuthUsage,
+  runUsagePreflight,
+  validateUsagePreflightParams,
+} from "../strict542/usage-preflight.js";
 import { projectSessionActor } from "../session-identity-projection.js";
 import { resolveRequestedSessionAgentId } from "../session-request-agent.js";
 import { createSessionListEntryFilter, isGatewayAdmin } from "../session-sharing.js";
@@ -176,6 +183,39 @@ export const usageHandlers: GatewayRequestHandlers = {
       coldRead,
     });
     respond(true, summary, undefined);
+  },
+  // Exact542 strict preflight. Separate from usage.status: no cache, loader,
+  // refresh or fallback. Unproven state is UNKNOWN, never AVAILABLE.
+  "usage.preflight": async ({ respond, params, context, client }) => {
+    const enteredNs = monotonicNs();
+    if (
+      !client?.connect ||
+      (!isGatewayAdmin(client) && operatorSessionCap(client, context.getRuntimeConfig()) === "none")
+    ) {
+      respond(
+        false,
+        undefined,
+        errorShape(ErrorCodes.FORBIDDEN, "usage.preflight requires an authenticated operator reader."),
+      );
+      return;
+    }
+    const validated = validateUsagePreflightParams(params);
+    if (!validated.ok) {
+      respond(false, undefined, errorShape(ErrorCodes.INVALID_REQUEST, validated.message));
+      return;
+    }
+    const result = await runUsagePreflight(
+      validated.request,
+      {
+        nowNs: monotonicNs,
+        nowMs: Date.now,
+        captureSession: captureActiveEmbeddedSessionRuntimeAuth,
+        readNativeOwner: readNativeOwner542,
+        fetchUsage: fetchAnthropicOAuthUsage,
+      },
+      enteredNs,
+    );
+    respond(true, result, undefined);
   },
   "usage.cost": async ({ respond, params, context, client }) => {
     const dateRange = resolveUsageDateRangeOrRespond(params ?? {}, respond);
