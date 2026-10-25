@@ -1,0 +1,25 @@
+{
+  "captured_utc": "2026-10-25T22:12:59.415783+00:00",
+  "checks": [
+    "gateway-scoped",
+    "native-owner",
+    "supervisor-ipc",
+    "cancellation-settlement",
+    "application-preparation"
+  ],
+  "counts": [
+    101,
+    15,
+    18,
+    13,
+    19,
+    9,
+    5
+  ],
+  "diagnostic_only": true,
+  "diagnostic_status": "IN_PROGRESS; first AI invocation status0, full runtime result not yet available",
+  "exit_code": 0,
+  "source_commit": "86c1a4db4175b35e46e5ee70b6abb5d8af05e157",
+  "test_log_sha256": "ab4aa158ca1217e2bbc1e27afb8619d57105911fe17c69d46cd08c3e772276cb",
+  "total_checks": 180
+}
