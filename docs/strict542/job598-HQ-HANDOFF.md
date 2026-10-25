@@ -369,3 +369,13 @@ inventory evidence, retained input/archive hashes and recovered actual outcomes.
 No database content is transferred. Only after independent exact cleanup and
 runner review, verified removal, and unchanged reviewed archive identities may
 one normal corrected diagnostic run proceed. Do not blindly retry or change slot.
+
+
+Reviewed fixed-slot reconciliation completed: a7d01900 approved exact executable
+1f4ed0cf. The actual existing runner lock remained held across fresh sole-current
+lease/zero-managed-runner checks, supported clean and verified slot absence.
+Current lease matched root worker registration job598/unit, not an invented owner
+identity. Local recovered outcomes and all five remote input hashes were retained.
+Receipts job598-isolated-{pre-clean,current-worker,registered-worker,immediate-idle,post-clean}.json
+record only metadata/digests; no package database content or credential transfer.
+One corrected normal admitted run is next; scanner/resource/lease rules remain.
