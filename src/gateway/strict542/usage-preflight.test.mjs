@@ -47,7 +47,7 @@ function fixture(options = {}) {
     ns += BigInt(delta) * 1_000_000n;
     ms += delta;
   };
-  const model = { provider: "anthropic", id: MODEL, api: "anthropic-messages", baseUrl: "https://example.invalid" };
+  const model = { provider: "anthropic", id: MODEL, api: "anthropic-messages", baseUrl: "https://api.anthropic.com" };
   const session = { generation: {}, sessionId: "synthetic-session", disposed: false, model };
   const auth = {
     generation: {},
@@ -217,6 +217,18 @@ describe("usage.preflight identity and route refusals", () => {
     assert.equal(f.calls.refresh + f.calls.writes, 0);
   });
 
+  it("never sends the token to a non-default or non-Anthropic route", async () => {
+    for (const patch of [{ baseUrl: "https://proxy.example.invalid" }, { api: "openai-completions" }]) {
+      const f = fixture();
+      f.session.model = { ...f.session.model, ...patch };
+      f.auth.model = f.session.model;
+      f.auth.selection = { ...f.auth.selection, ...patch };
+      const result = await run(f);
+      assert.equal(result.reason, "provider_unsupported");
+      assert.equal(f.calls.fetch.length + f.calls.native.length, 0);
+    }
+  });
+
   it("refuses API-key auth and models without known window applicability", async () => {
     const f = fixture();
     f.auth.selection = { ...f.auth.selection, mode: "api-key", expiresAt: undefined };
@@ -277,7 +289,9 @@ describe("usage.preflight provider window refusals", () => {
       [{ ...fullBody(), seven_day: { utilization: "40" } }, "window_malformed"],
       [{ ...fullBody(), seven_day: { utilization: Number.NaN } }, "window_malformed"],
       [{ ...fullBody(), seven_day: { utilization: Number.POSITIVE_INFINITY } }, "window_malformed"],
-      [{ ...fullBody(), five_hour: { utilization: 101 } }, "window_out_of_range"],
+      [{ ...fullBody(), extra_usage: { is_enabled: true } }, "provider_unrecognized_field"],
+      [{ ...fullBody(), restriction: "blocked" }, "provider_unrecognized_field"],
+      [{ ...fullBody(), seven_day_oauth_apps: { utilization: Number.NaN } }, "window_malformed"],
       [{ ...fullBody(), five_hour: { utilization: -1 } }, "window_out_of_range"],
       [{ ...fullBody(), five_hour: { utilization: 5, resets_at: "soon" } }, "window_malformed"],
     ];
@@ -289,10 +303,27 @@ describe("usage.preflight provider window refusals", () => {
     }
   });
 
-  it("reports UNAVAILABLE for any exhausted applicable window", async () => {
-    const result = await run(withBody({ ...fullBody(), seven_day_opus: { utilization: 100 } }));
-    assert.equal(result.status, "UNAVAILABLE");
-    assert.equal(result.reason, "window_exhausted");
+  it("reports UNAVAILABLE for any exhausted applicable window, including above 100%", async () => {
+    for (const utilization of [100, 101, 250]) {
+      const result = await run(withBody({ ...fullBody(), seven_day_opus: { utilization } }));
+      assert.equal(result.status, "UNAVAILABLE");
+      assert.equal(result.reason, "window_exhausted");
+      assert.deepEqual(result.windows, [{ label: "7d-opus", usedPercent: utilization }]);
+      assert.equal(result.source, "provider-live");
+    }
+  });
+
+  it("reports UNAVAILABLE for exhausted non-applicable or unlisted-but-known windows", async () => {
+    for (const key of ["seven_day_sonnet", "seven_day_oauth_apps"]) {
+      const result = await run(withBody({ ...fullBody(), [key]: { utilization: 100 } }));
+      assert.equal(result.status, "UNAVAILABLE", key);
+    }
+  });
+
+  it("reports UNAVAILABLE when an exhausted window accompanies a missing one", async () => {
+    const body = { ...fullBody(), five_hour: { utilization: 100 } };
+    delete body.seven_day_opus;
+    assert.equal((await run(withBody(body))).status, "UNAVAILABLE");
   });
 
   it("does not let non-applicable windows mask exhaustion or a missing window", async () => {
@@ -459,6 +490,8 @@ describe("gateway registration", () => {
     assert.ok(block.includes("const enteredNs = monotonicNs();"));
     assert.ok(block.indexOf("monotonicNs()") < block.indexOf("validateUsagePreflightParams"));
     assert.ok(block.includes("!client?.connect"));
+    assert.ok(block.includes("      signal,\n    );"), "handler forwards caller cancellation");
+    assert.equal(block.match(/hasCurrentClientAuthority\?\.\(\) === false/g).length, 2);
     assert.ok(block.includes("ErrorCodes.FORBIDDEN"));
     assert.ok(block.includes("captureSession: captureActiveEmbeddedSessionRuntimeAuth"));
     assert.ok(block.includes("readNativeOwner: readNativeOwner542"));

@@ -186,17 +186,27 @@ export const usageHandlers: GatewayRequestHandlers = {
   },
   // Exact542 strict preflight. Separate from usage.status: no cache, loader,
   // refresh or fallback. Unproven state is UNKNOWN, never AVAILABLE.
-  "usage.preflight": async ({ respond, params, context, client }) => {
+  "usage.preflight": async ({
+    respond,
+    params,
+    context,
+    client,
+    signal,
+    hasCurrentClientAuthority,
+  }) => {
     const enteredNs = monotonicNs();
-    if (
-      !client?.connect ||
-      (!isGatewayAdmin(client) && operatorSessionCap(client, context.getRuntimeConfig()) === "none")
-    ) {
+    const forbidden = () =>
       respond(
         false,
         undefined,
         errorShape(ErrorCodes.FORBIDDEN, "usage.preflight requires an authenticated operator reader."),
       );
+    if (
+      hasCurrentClientAuthority?.() === false ||
+      !client?.connect ||
+      (!isGatewayAdmin(client) && operatorSessionCap(client, context.getRuntimeConfig()) === "none")
+    ) {
+      forbidden();
       return;
     }
     const validated = validateUsagePreflightParams(params);
@@ -214,7 +224,13 @@ export const usageHandlers: GatewayRequestHandlers = {
         fetchUsage: fetchAnthropicOAuthUsage,
       },
       enteredNs,
+      signal,
     );
+    // A caller whose transport authority ended never receives the result.
+    if (hasCurrentClientAuthority?.() === false) {
+      forbidden();
+      return;
+    }
     respond(true, result, undefined);
   },
   "usage.cost": async ({ respond, params, context, client }) => {

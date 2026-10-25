@@ -106,5 +106,12 @@ export function captureSelectedSessionRuntimeAuthRead(
     }
   };
   assertCurrent();
-  return { provider: route.provider, model: route.id, ...auth, assertCurrent };
+  return {
+    provider: route.provider,
+    model: route.id,
+    api: route.api,
+    baseUrl: route.baseUrl,
+    ...auth,
+    assertCurrent,
+  };
 }

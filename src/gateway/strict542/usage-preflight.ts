@@ -12,6 +12,11 @@ export const PREFLIGHT542_FRESHNESS_MS = 15_000;
 const CLOCK_SKEW_TOLERANCE_MS = 1_000;
 const PROVIDER_BODY_LIMIT = 65_536;
 export const ANTHROPIC_OAUTH_USAGE_URL = "https://api.anthropic.com/api/oauth/usage";
+const ANTHROPIC_ROUTE_BASE_URLS = new Set<string | undefined>([
+  undefined,
+  "https://api.anthropic.com",
+  "https://api.anthropic.com/",
+]);
 
 const REQUEST_KEYS = ["agentId", "model", "owner", "provider", "requestId", "sessionKey", "timeoutMs"];
 const OWNER_KEYS = ["name", "pid", "session", "start"];
@@ -54,6 +59,8 @@ export type UsagePreflightResult = {
 export type PreflightSessionLease = {
   readonly provider: string;
   readonly model: string;
+  readonly api?: string;
+  readonly baseUrl?: string;
   readonly apiKey: string;
   readonly mode: "api-key" | "oauth";
   readonly expiresAt?: number;
@@ -201,7 +208,14 @@ export async function runUsagePreflight(
     if (lease.provider !== request.provider || lease.model !== request.model) {
       return unknown("route_mismatch");
     }
-    if (lease.provider !== "anthropic" || lease.mode !== "oauth") {
+    if (
+      lease.provider !== "anthropic" ||
+      lease.mode !== "oauth" ||
+      lease.api !== "anthropic-messages" ||
+      !ANTHROPIC_ROUTE_BASE_URLS.has(lease.baseUrl)
+    ) {
+      // The selected token is only ever sent to the session's own default
+      // Anthropic route.
       // No strict, non-mutating provider quota adapter is proven for this route.
       return unknown("provider_unsupported");
     }
@@ -285,7 +299,7 @@ export async function runUsagePreflight(
     verified.provider = lease.provider;
     verified.model = lease.model;
     verified.owner = after.owner;
-    const exhausted = parsed.windows.some((window) => window.usedPercent >= 100);
+    const exhausted = parsed.kind === "exhausted";
     return {
       schemaVersion: 1,
       requestId: request.requestId,
@@ -312,6 +326,7 @@ const WINDOW_LABELS: Record<string, string> = {
   seven_day: "7d",
   seven_day_opus: "7d-opus",
   seven_day_sonnet: "7d-sonnet",
+  seven_day_oauth_apps: "7d-oauth-apps",
 };
 
 /** Short/weekly plus the selected model family's weekly window; others UNKNOWN. */
@@ -325,19 +340,29 @@ export function applicableWindowKeys(model: string): string[] | undefined {
   return ["five_hour", "seven_day", opus ? "seven_day_opus" : "seven_day_sonnet"];
 }
 
+/**
+ * Fail-closed parse. Every non-null field must be a recognised window; an
+ * unrecognised field may be a restriction, so it is UNKNOWN. Any reported
+ * window at or above 100% (applicable or not) is exhaustion and cannot be
+ * masked; otherwise every applicable window must be present.
+ */
 export function parseAnthropicUsageWindows(
   body: unknown,
   applicable: readonly string[],
-): { kind: "ok"; windows: UsagePreflightWindow[] } | { kind: "invalid"; reason: string } {
+):
+  | { kind: "ok"; windows: UsagePreflightWindow[] }
+  | { kind: "exhausted"; windows: UsagePreflightWindow[] }
+  | { kind: "invalid"; reason: string } {
   if (!body || typeof body !== "object" || Array.isArray(body)) {
     return { kind: "invalid", reason: "provider_malformed" };
   }
-  const record = body as Record<string, unknown>;
-  const windows: UsagePreflightWindow[] = [];
-  for (const key of applicable) {
-    const raw = record[key];
-    if (raw === undefined || raw === null) {
-      return { kind: "invalid", reason: "window_missing" };
+  const reported = new Map<string, UsagePreflightWindow>();
+  for (const [key, raw] of Object.entries(body as Record<string, unknown>)) {
+    if (raw === null) {
+      continue;
+    }
+    if (!Object.hasOwn(WINDOW_LABELS, key)) {
+      return { kind: "invalid", reason: "provider_unrecognized_field" };
     }
     if (typeof raw !== "object" || Array.isArray(raw)) {
       return { kind: "invalid", reason: "window_malformed" };
@@ -346,7 +371,7 @@ export function parseAnthropicUsageWindows(
     if (typeof utilization !== "number" || !Number.isFinite(utilization)) {
       return { kind: "invalid", reason: "window_malformed" };
     }
-    if (utilization < 0 || utilization > 100) {
+    if (utilization < 0) {
       return { kind: "invalid", reason: "window_out_of_range" };
     }
     const window: UsagePreflightWindow = { label: WINDOW_LABELS[key], usedPercent: utilization };
@@ -356,6 +381,18 @@ export function parseAnthropicUsageWindows(
         return { kind: "invalid", reason: "window_malformed" };
       }
       window.resetAt = new Date(parsed).toISOString();
+    }
+    reported.set(key, window);
+  }
+  const exhausted = [...reported.values()].filter((window) => window.usedPercent >= 100);
+  if (exhausted.length > 0) {
+    return { kind: "exhausted", windows: exhausted };
+  }
+  const windows: UsagePreflightWindow[] = [];
+  for (const key of applicable) {
+    const window = reported.get(key);
+    if (!window) {
+      return { kind: "invalid", reason: "window_missing" };
     }
     windows.push(window);
   }
@@ -390,14 +427,26 @@ export async function fetchAnthropicOAuthUsage(params: {
     await response.body?.cancel().catch(() => undefined);
     return { ok: true, status: response.status, body: undefined };
   }
-  let text: string;
+  let text = "";
   try {
-    text = await response.text();
+    const reader = response.body?.getReader();
+    const decoder = new TextDecoder();
+    let size = 0;
+    while (reader) {
+      const { done, value } = await reader.read();
+      if (done) {
+        break;
+      }
+      size += value.byteLength;
+      if (size > PROVIDER_BODY_LIMIT) {
+        await reader.cancel().catch(() => undefined);
+        return { ok: false, reason: "body_limit" };
+      }
+      text += decoder.decode(value, { stream: true });
+    }
+    text += decoder.decode();
   } catch {
     return { ok: false, reason: params.signal.aborted ? "aborted" : "network" };
-  }
-  if (text.length > PROVIDER_BODY_LIMIT) {
-    return { ok: false, reason: "body_limit" };
   }
   try {
     return { ok: true, status: 200, body: JSON.parse(text) };
