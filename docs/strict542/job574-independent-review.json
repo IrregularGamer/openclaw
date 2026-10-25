@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "job": 574,
+  "reviewer": "independent source review agent /root/review574",
+  "reviewedCommit": "4630fd19ec49a742476afd5a91cb369af1db95ad",
+  "reviewedBase": "bbd5545b206c56c8e5466e72a4a28b37c9e36e6b",
+  "productionCommit": "69ee60b29d4be6df981013c23340667d470827b1",
+  "prerequisiteVerdict": "APPROVE_SELECTED_MEMORY_SOURCE_ONLY",
+  "fullJobVerdict": "CHANGES_INCOMPLETE",
+  "quota": "UNKNOWN",
+  "gatewayNativeBinding": "UNSUPPORTED",
+  "usagePreflight": "UNIMPLEMENTED",
+  "sourceSha256": {
+    "docs/strict542/job574-boundary.md": "957040fd2c06031cb60c6afb42ac3f6a14e562cec652646a531c466dd704e402",
+    "src/agents/embedded-agent-runner/active-run-projections.ts": "2bd4d85ba6699e984fcb73e17290fe73e7f949f7c65a177042dd0fde02fa3799",
+    "src/agents/embedded-agent-runner/run-state.ts": "323068e8078e8f8035dd6dd69a0c6832f29b62407cd087b189e9855fc3e004b4",
+    "src/agents/embedded-agent-runner/run/attempt-stream-prepare.ts": "d6917ff2ad57f306a5d5b969e8bce4071512449a111735bc0a4cfce64f3af4a6",
+    "src/agents/embedded-agent-runner/run/auth-controller.ts": "07686f24ecc93eafc13db203b6225ffeb30b80287e8ab3b09489509db3fda33e",
+    "src/agents/sessions/agent-session-base.ts": "1314efa4519155ff5f45aade626dc5d2049769aa5dde6dd7de26871aa407f43c",
+    "src/agents/sessions/agent-session-extensions.ts": "ddf260e2088f4a0264b18c43a98dce6bf554e2df1a0d34d47ce6bd6442beeaf0",
+    "src/agents/sessions/agent-session-models.ts": "cbb6926f99181c966de68f5bd66942adcd09e7e0b139e7f2ef42f95e6cdfdc76",
+    "src/agents/sessions/auth-storage-types.ts": "d8f00c7cd2bfcfc9bc5cc8612dfcf9d85566f8999ec7ef4fd851f6de7e799964",
+    "src/agents/sessions/auth-storage.ts": "b71ea1ce0c89fdcc28887339f789635122adbaed8390a3bbbc9d01ff9aaa3e1d",
+    "src/agents/sessions/selected-runtime-auth-integration.test.mjs": "6f169028bef3837c026b46eca378daa855d3f56d269fe6a64277a7b4c89d2b63",
+    "src/agents/sessions/selected-runtime-auth-read.test.mjs": "b364fdbfdf62bcf63cc8fdefce9e8d144b1ab4f48e23c42cf608f85923335a1e",
+    "src/agents/sessions/selected-runtime-auth-read.ts": "e2d1f40fc6e496d5b0a1f78e6f078d84b6294e51698d762be07f07a8d0048012",
+    "src/secrets/sentinel.ts": "2d2fcf4c75921ae327493058a55a19ed146c7e68a77ddad3793b131197fa904a"
+  },
+  "trackedDiffSha256": "956d3c0aaff01976e34482089407dbda0979ba3e25de1e0b5296a75ea5cea8bc",
+  "remoteEvidence": {
+    "log": "/home/deploy/agentq/runs/574/remote-verified-tests.log",
+    "logSha256": "4de0c6d6df4dad4982aae870823667af1f5ee1b344e1cc4b419705f48bf3bece",
+    "nodeTests": 59,
+    "nodePassed": 59,
+    "nativePreparationTests": 18,
+    "nativePreparationResult": "OK",
+    "reviewerExecutedTests": false,
+    "evidence": "Reviewer inspected actual remote output; implementer owns placement/export execution receipt.",
+    "exitCode": 0,
+    "settled": true,
+    "exitEvidence": "Implementer reported tool session71378 completed exit0 with no running session; reviewer inspected complete passing log.",
+    "sourceCommit": "4630fd19ec49a742476afd5a91cb369af1db95ad",
+    "freshExport": "/home/deploy/agentq/tmp/export574verified.eADG",
+    "nativeSource": "ABH6d9f9f1 git archive HEAD tools",
+    "command": "sh -c 'sha256sum -c source-fixture.sha256 && STRICT542_SENTINEL_SOURCE=../source-owner-fixtures/sentinel.ts node --disable-warning=ExperimentalWarning --test --test-reporter=spec src/agents/sessions/selected-runtime-auth-read.test.mjs src/agents/sessions/selected-runtime-auth-integration.test.mjs && NATIVE_SOURCE=\"$PWD/native-source\" python3 docs/strict542/test_native_preparation.py -q'"
+  },
+  "resolvedFindings": [
+    "Controller records the post-overlay runtime model, including refresh; old session route refuses.",
+    "Prepared request overrides omit selection; model headers and attached transport metadata refuse at capture and completion.",
+    "Selected auth/session generations and exact run registration fence replacement; absent finite OAuth expiry refuses.",
+    "Read-only sentinel decoding does not refresh redaction registry; normal egress retains redaction refresh.",
+    "Synthetic integration executes real controller, AuthStorage, AgentSessionBase, projection, transport metadata and sentinel code with unrelated dependencies denied."
+  ],
+  "remainingRequiredWork": [
+    "Source-owned native operation and authenticated root/HQ-caller gateway transport preserving both existing predicates with cancellation and settled acknowledgement inside shared monotonic ten-second deadline.",
+    "Authenticated actual HQ session selection and complete exact542 usage.preflight schema/operator-read/provider transport behavior and independent exact review."
+  ],
+  "limitations": [
+    "Two earlier remote harness runs failed due source transfer exclusion and top-level canonical module resolution, before integration assertions; these are not passing runs or implementation assertion failures.",
+    "No full OpenClaw build, typecheck or full project suite was run or claimed.",
+    "Focused synthetic source tests establish a selected-memory prerequisite only, not current HQ identity/auth, native availability, provider quota, gateway policy or deadline settlement.",
+    "Sentinels are self-contained process-key ciphertext; owner mutation invalidation, not redaction registration, revokes a selected read lease."
+  ],
+  "runtimeChanges": false,
+  "sealedChanges": false,
+  "installationApproved": false,
+  "releaseApproved": false,
+  "preservedGates": [
+    "507",
+    "509",
+    "512",
+    "521",
+    "524",
+    "516",
+    "539",
+    "HOLD497",
+    "HOLD503",
+    "HOLD504",
+    "SAME535",
+    "fresh497",
+    "approval1529_INTERNAL_REPORT_URL_API_BASE_URL_only"
+  ]
+}
