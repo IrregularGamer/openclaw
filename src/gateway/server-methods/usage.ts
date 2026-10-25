@@ -195,6 +195,9 @@ export const usageHandlers: GatewayRequestHandlers = {
     hasCurrentClientAuthority,
   }) => {
     const enteredNs = monotonicNs();
+    const callerSignal = signal && client?.connectionSignal
+      ? AbortSignal.any([signal, client.connectionSignal])
+      : signal ?? client?.connectionSignal;
     const forbidden = () =>
       respond(
         false,
@@ -204,7 +207,7 @@ export const usageHandlers: GatewayRequestHandlers = {
     if (
       typeof hasCurrentClientAuthority !== "function" ||
       !hasCurrentClientAuthority() ||
-      !(signal ?? client?.connectionSignal) ||
+      !callerSignal ||
       !client?.connect ||
       (!isGatewayAdmin(client) && operatorSessionCap(client, context.getRuntimeConfig()) === "none")
     ) {
@@ -226,7 +229,7 @@ export const usageHandlers: GatewayRequestHandlers = {
         fetchUsage: fetchAnthropicOAuthUsage,
       },
       enteredNs,
-      signal ?? client?.connectionSignal,
+      callerSignal,
     );
     // A caller whose transport authority ended never receives the result.
     if (!hasCurrentClientAuthority()) {

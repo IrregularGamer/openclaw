@@ -6,10 +6,12 @@ does not create sockets, change privilege/cgroups, install policy, or construct
 Controller. A missing or different external native generation refuses.
 """
 import hashlib
+import ctypes
 import json
 import os
 from pathlib import Path
 import select
+import signal
 import socket
 import struct
 import subprocess
@@ -28,6 +30,66 @@ class Refused(Exception): pass
 class Cancelled(Refused): pass
 class Deadline(Refused): pass
 class Unsettled(Refused): pass
+
+
+def child_subreaper():
+    # This dedicated endpoint owns no other subprocess work. Adopt grandchildren
+    # so a leader exit cannot turn outstanding native work into a settled ACK.
+    if ctypes.CDLL(None, use_errno=True).prctl(36, 1, 0, 0, 0) != 0:
+        raise Refused()
+    # Refuse unsupported kernels before any native child exists.
+    if not hasattr(os, 'P_PIDFD') or not hasattr(signal, 'pidfd_send_signal'):
+        raise Refused()
+    fd = os.pidfd_open(os.getpid())
+    os.close(fd)
+
+
+def leader_status(child):
+    # Observe exit without reaping. The zombie retains PID/PGID ownership until
+    # every group signal is complete, preventing a recycled-group signal.
+    return os.waitid(os.P_PID, child.pid, os.WEXITED | os.WNOHANG | os.WNOWAIT)
+
+
+def reap_adopted(deadline):
+    # The endpoint is a dedicated, serial supervisor, with no unrelated children.
+    # A descendant that escaped the original session is still adopted here.
+    while time.monotonic_ns() < deadline - 10_000_000:
+        try:
+            while True:
+                pid, _ = os.waitpid(-1, os.WNOHANG)
+                if pid == 0: break
+        except ChildProcessError: return True
+        for task in Path('/proc/self/task').iterdir():
+            try:
+                with open(task/'children', encoding='ascii') as stream:
+                    children = stream.read(65536).split()
+            except FileNotFoundError: continue
+            for value in children:
+                try: fd = os.pidfd_open(int(value))
+                except ProcessLookupError: continue
+                try:
+                    # Kernel child ownership plus pidfd, never a PID-only kill.
+                    os.waitid(os.P_PIDFD, fd, os.WEXITED | os.WNOHANG | os.WNOWAIT)
+                    signal.pidfd_send_signal(fd, signal.SIGKILL)
+                except (ChildProcessError, ProcessLookupError): pass
+                finally: os.close(fd)
+        time.sleep(0.002)
+    return False
+
+
+def settle_group(child, deadline):
+    # Keep the direct child unreaped while signaling its owned group.
+    try: os.killpg(child.pid, signal.SIGTERM)
+    except ProcessLookupError: pass
+    grace = min(deadline - 100_000_000, time.monotonic_ns()+50_000_000)
+    while time.monotonic_ns() < grace: time.sleep(0.002)
+    try: os.killpg(child.pid, signal.SIGKILL)
+    except ProcessLookupError: pass
+    # All group signals are now complete. Reaping cannot enable a later signal
+    # to a reused group. Adopted descendants use kernel child checks and pidfds.
+    try: child.wait(timeout=max(0.001, (deadline-time.monotonic_ns())/1e9-0.02))
+    except subprocess.TimeoutExpired: return False
+    return reap_adopted(deadline)
 
 
 def compile_native(raw):
@@ -90,23 +152,17 @@ class ReadScope:
                 chunk = child.stdout.read(129) or b''
                 output += chunk
                 if len(output) > 128: raise Refused()
-                if child.poll() is not None:
-                    # poll() reaps the child; drain its bounded remaining output.
+                status = leader_status(child)
+                if status is not None:
+                    # Retain the exited leader while draining bounded output.
                     output += child.stdout.read(129) or b''
                     if len(output) > 128: raise Refused()
                     self.settled = True
-                    return SimpleNamespace(returncode=child.returncode, stdout=output.decode('ascii'))
+                    return SimpleNamespace(returncode=status.si_status if status.si_code == os.CLD_EXITED else -status.si_status, stdout=output.decode('ascii'))
                 if time.monotonic_ns() >= end: raise Deadline()
                 select.select([self.connection, child.stdout], [], [], 0.005)
         finally:
-            if child.poll() is None:
-                child.terminate()
-                grace = min(self.deadline - 50_000_000, time.monotonic_ns()+50_000_000)
-                while child.poll() is None and time.monotonic_ns() < grace: time.sleep(0.002)
-                if child.poll() is None: child.kill()
-                while child.poll() is None and time.monotonic_ns() < self.deadline - 10_000_000:
-                    time.sleep(0.002)
-            self.settled = child.poll() is not None
+            self.settled = settle_group(child, self.deadline)
             child.stdout.close()
             if not self.settled: raise Unsettled()
 
@@ -136,6 +192,7 @@ def serve_connected(connection):
     scope = None
     try:
         if os.geteuid() != 0: raise Refused()
+        child_subreaper()
         pid, uid, gid = struct.unpack('3i', connection.getsockopt(socket.SOL_SOCKET, socket.SO_PEERCRED, 12))
         if pid <= 1: raise Refused()
         request = read_request(connection)
@@ -172,3 +229,13 @@ def serve(listener):
     while True:
         connection, _ = listener.accept()
         with connection: serve_connected(connection)
+
+
+if __name__ == '__main__':
+    # Fixed inherited endpoint, supplied by a separately authorized supervisor.
+    # No bind, installation, command arguments or privilege transition occurs.
+    with socket.socket(fileno=3) as listener:
+        if (listener.getsockname() != '/run/agentq-safety/owner542.sock'
+                or not listener.getsockopt(socket.SOL_SOCKET, socket.SO_ACCEPTCONN)):
+            raise Refused()
+        serve(listener)

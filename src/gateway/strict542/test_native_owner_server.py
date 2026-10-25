@@ -137,6 +137,36 @@ class NativeTransport(unittest.TestCase):
         self.assertTrue(receipt['cancelled'])
         self.assertEqual(self.children[0].returncode, -9)
 
+    def test_grandchild_holding_stdout_is_killed_and_reaped_before_ack(self):
+        self.child_code = ('import os,signal,time; pid=os.fork(); '
+                           'signal.signal(signal.SIGTERM,signal.SIG_IGN); time.sleep(60)')
+        receipt = self.exchange(cancel=True)
+        self.assertTrue(receipt['cancelled'])
+        self.assertTrue(receipt['settled'])
+        with self.assertRaises(ProcessLookupError): os.killpg(self.children[0].pid, 0)
+
+    def test_escaped_descendant_is_adopted_and_settled_with_pidfd(self):
+        self.child_code = ('import os,signal,time; pid=os.fork(); '
+                           'os.setsid() if pid==0 else None; '
+                           'signal.signal(signal.SIGTERM,signal.SIG_IGN); time.sleep(60)')
+        receipt = self.exchange(cancel=True)
+        self.assertTrue(receipt['cancelled'])
+        self.assertTrue(receipt['settled'])
+
+    def test_exited_leader_does_not_publish_before_descendant_settlement(self):
+        self.child_code = ('import os,signal,time; pid=os.fork(); '
+                           'print(%s,flush=True) if pid else None; '
+                           'os._exit(0) if pid else None; '
+                           'signal.signal(signal.SIGTERM,signal.SIG_IGN); time.sleep(60)') % self.pid
+        receipt = self.exchange()
+        self.assertIsNone(receipt['reason'])
+        with self.assertRaises(ChildProcessError): os.waitpid(-1, os.WNOHANG)
+
+    def test_subreaper_setup_failure_refuses_without_work(self):
+        with patch.object(server, 'child_subreaper', side_effect=server.Refused()):
+            self.assertIsNone(self.exchange())
+        self.assertEqual(self.children, [])
+
     def test_shared_deadline_terminates_and_reaps(self):
         self.child_code = 'import time; time.sleep(60)'
         receipt = self.exchange(ms=400)
@@ -152,4 +182,38 @@ class NativeTransport(unittest.TestCase):
         with self.assertRaises(PermissionError): server.compile_native(b'raise Exception("must not execute")')
 
 
-if __name__ == '__main__': unittest.main()
+def socket_fixture(endpoint, mode):
+    """Real cross-language socket transport, actual predicates, synthetic proc."""
+    native = server.compile_native(SOURCE.read_bytes())
+    listener = socket.socket(socket.AF_UNIX)
+    listener.bind(endpoint)
+    os.chmod(endpoint, 0o600)
+    listener.listen(1)
+    print('ready', flush=True)
+    with listener, listener.accept()[0] as connection:
+        pid, _, _ = server.struct.unpack('3i', connection.getsockopt(socket.SOL_SOCKET, socket.SO_PEERCRED, 12))
+        def read(path, *args, **kwargs):
+            if str(path) == '/proc/%s/stat' % pid:
+                return '%s (gateway) ' % pid + ' '.join(['S']+['0']*18+['123456'])
+            if str(path) in ('/proc/%s/cgroup' % pid, '/proc/self/cgroup'):
+                return native.HQ_CGROUP if mode != 'wrong-cgroup' else '0::/queue'
+            raise AssertionError('unexpected fixture read')
+        actual_popen = subprocess.Popen
+        children = []
+        def popen(argv, **kwargs):
+            if argv != server.SYSTEMCTL: raise AssertionError('unexpected command')
+            code = 'print(%s)' % pid if mode != 'cancel' else 'import time; time.sleep(60)'
+            child = actual_popen([sys.executable, '-c', code], **kwargs)
+            children.append(child)
+            return child
+        with patch.object(server, 'load_native', return_value=native), \
+             patch('pathlib.Path.read_text', autospec=True, side_effect=read), \
+             patch('os.geteuid', return_value=0), patch('subprocess.Popen', side_effect=popen):
+            server.serve_connected(connection)
+        if not all(child.poll() is not None for child in children):
+            raise AssertionError('fixture work not settled')
+
+
+if __name__ == '__main__':
+    if len(sys.argv) == 4 and sys.argv[1] == '--socket-fixture': socket_fixture(*sys.argv[2:])
+    else: unittest.main()

@@ -490,7 +490,8 @@ describe("gateway registration", () => {
     assert.ok(block.includes("const enteredNs = monotonicNs();"));
     assert.ok(block.indexOf("monotonicNs()") < block.indexOf("validateUsagePreflightParams"));
     assert.ok(block.includes("!client?.connect"));
-    assert.ok(block.includes("      signal ?? client?.connectionSignal,\n    );"), "handler forwards caller cancellation");
+    assert.ok(block.includes("      callerSignal,\n    );"), "handler forwards caller cancellation");
+    assert.ok(block.includes("AbortSignal.any([signal, client.connectionSignal])"), "disconnect and request cancellation both bind");
     assert.ok(block.includes('typeof hasCurrentClientAuthority !== "function"'), "authority guard is mandatory");
     assert.equal(block.match(/!hasCurrentClientAuthority\(\)/g).length, 2);
     assert.ok(block.includes("ErrorCodes.FORBIDDEN"));

@@ -1,4 +1,6 @@
 import assert from "node:assert/strict";
+import { spawn } from "node:child_process";
+import { once } from "node:events";
 import { chmodSync, mkdtempSync, readFileSync, rmSync } from "node:fs";
 import { registerHooks, stripTypeScriptTypes } from "node:module";
 import { createServer } from "node:net";
@@ -100,4 +102,39 @@ test("deadline above 10 seconds and already cancelled refuse before connection",
 test("native owner decoder refuses caller echoes and extra fields", () => {
   assert.deepEqual(parseNativeOwner542(JSON.stringify({ schemaVersion: 1, owner })), owner);
   assert.equal(parseNativeOwner542(JSON.stringify({ schemaVersion: 1, owner, available: true })), undefined);
+});
+
+test("actual Node to Python adapter accepts pinned predicates and acknowledges settled cancellation", async () => {
+  assert.ok(process.env.NATIVE_SOURCE, "source-only native fixture archive is required");
+  for (const mode of ["accept", "wrong-cgroup", "cancel"]) {
+    rmSync(endpoint, { force: true });
+    const helper = new URL("./test_native_owner_server.py", import.meta.url).pathname;
+    const child = spawn("python3", [helper, "--socket-fixture", endpoint, mode], {
+      env: { PATH: process.env.PATH, NATIVE_SOURCE: process.env.NATIVE_SOURCE },
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+    let stderr = "";
+    child.stderr.on("data", bytes => { stderr += bytes; });
+    const closed = once(child, "close");
+    const controller = new AbortController();
+    let cancelTimer;
+    try {
+      await once(child.stdout, "data", { signal: AbortSignal.timeout(2000) });
+      if (mode === "cancel") cancelTimer = setTimeout(() => controller.abort(), 100);
+      const result = await readNativeOwner542({ deadlineNs: monotonicNs() + 2_000_000_000n, signal: controller.signal });
+      const [code] = await closed;
+      assert.equal(code, 0, stderr);
+      if (mode === "accept") {
+        assert.equal(result.ok, true);
+        assert.equal(result.owner.pid, process.pid, "kernel peer, not a caller owner claim");
+      } else {
+        assert.equal(result.ok, false);
+        assert.equal(result.reason, mode === "cancel" ? "cancelled" : "native_refused");
+        assert.notEqual(result.settledNs, null);
+      }
+    } finally {
+      clearTimeout(cancelTimer);
+      if (child.exitCode === null) { child.kill("SIGKILL"); await closed; }
+    }
+  }
 });
