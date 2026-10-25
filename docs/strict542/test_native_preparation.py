@@ -105,6 +105,50 @@ class NativePreparation(unittest.TestCase):
         self.owner_cgroup='0::/system.slice/agentq-work.slice/worker'
         with self.assertRaisesRegex(PermissionError,'owner_loss'): self.call()
 
+    def test_root_with_valid_gateway_but_queue_caller_refuses(self):
+        original=self.read
+        def read(path):
+            if str(path)=='/proc/self/cgroup':
+                return '0::/system.slice/agentq-work.slice/worker'
+            return original(path)
+        self.read=read
+        with self.assertRaisesRegex(PermissionError,'owner_loss'): self.call()
+        # Gateway discovery succeeds, but caller=True rejects before MainPID recheck.
+        self.assertEqual(len(self.calls),1)
+
+    def test_second_owner_check_caller_cgroup_change_refuses(self):
+        original=self.read
+        count=0
+        def read(path):
+            nonlocal count
+            if str(path)=='/proc/self/cgroup':
+                count+=1
+                if count==2:
+                    return '0::/system.slice/agentq-work.slice/worker'
+            return original(path)
+        self.read=read
+        with self.assertRaisesRegex(PermissionError,'owner_loss'): self.call()
+        self.assertEqual(count,2)
+        self.assertEqual(len(self.calls),2)
+
+    def test_second_owner_check_root_loss_refuses(self):
+        original=self.run
+        def run(*args,**options):
+            result=original(*args,**options)
+            if len(self.calls)==2:
+                self.uid_patch.return_value=1000
+            return result
+        self.run=run
+        # The outer call's mock owns the uid. Capture it through a narrow patched
+        # call rather than asserting an invented transport or a caller identity.
+        with patch('os.geteuid',return_value=0) as self.uid_patch, \
+             patch('time.monotonic_ns',side_effect=lambda:self.clock), \
+             patch('pathlib.Path.read_text',autospec=True,side_effect=self.read), \
+             patch('subprocess.run',side_effect=lambda *a,**kw:self.run(*a,**kw)):
+            with self.assertRaisesRegex(PermissionError,'owner_loss'):
+                self.namespace['owner542_read'](11_000_000_000)
+        self.assertEqual(len(self.calls),2)
+
     def test_start_change_refuses(self):
         count=0
         original=self.read
