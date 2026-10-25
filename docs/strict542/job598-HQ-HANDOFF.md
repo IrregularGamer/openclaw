@@ -187,7 +187,8 @@ infrastructure permission, but provides no production mutation authority.
 ## Current execution gate:175 tests pass, full build resource-refused
 
 Actual admitted execution evidence is job598-execution-evidence.json, with full
-synthetic job598-execution-tests.txt and actual job598-build-refusal.txt. Exact
+synthetic job598-execution-tests.txt, job598-pinned-execution-tests.txt and actual
+job598-build-refusal.txt. Exact
 executable source remains de7369e4883abb96ac4cacac9a0ea89e2ae2ee29, independently
 reviewed in6766a334. Both fresh runs passed all175 relevant tests. The second
 run used exact pnpm12.5.1 through npm's temporary package runner, installed1469

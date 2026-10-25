@@ -1,126 +1,126 @@
-(node:40) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(node:39) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
 (Use `node --trace-warnings ...` to show where the warning was created)
 ▶ actual selected memory source owners
-  ✔ preserves ordinary egress redaction refresh while the new decoder stays read-only (18.106113ms)
-  ✔ records the controller's committed route after preparation and refresh overlays (19.853104ms)
-  ✔ refuses model headers and owner-attached transport overrides on capture and completion (2.916035ms)
-  ✔ reads the concrete session and decodes only its already selected memory credential (3.21392ms)
-  ✔ invalidates an existing lease through the actual owner mutation (7.38153ms)
-  ✔ invalidates an existing lease through the actual owner mutation (2.072765ms)
-  ✔ invalidates an existing lease through the actual owner mutation (1.858231ms)
-  ✔ invalidates an existing lease through the actual owner mutation (2.211562ms)
-  ✔ invalidates an existing lease through the actual owner mutation (2.874712ms)
-  ✔ refuses a key without producer selection and never resolves a stored or fallback key (1.957958ms)
-  ✔ invalidates on an auth reload and refuses instead of selecting storage credentials (1.802954ms)
-  ✔ rejects an undecodable process-local sentinel without credential fallback (1.462113ms)
-  ✔ fences the exact active-run registration and rejects its replacement (2.307399ms)
-✔ actual selected memory source owners (96.200223ms)
+  ✔ preserves ordinary egress redaction refresh while the new decoder stays read-only (8.229937ms)
+  ✔ records the controller's committed route after preparation and refresh overlays (7.548567ms)
+  ✔ refuses model headers and owner-attached transport overrides on capture and completion (1.207393ms)
+  ✔ reads the concrete session and decodes only its already selected memory credential (1.254214ms)
+  ✔ invalidates an existing lease through the actual owner mutation (0.972242ms)
+  ✔ invalidates an existing lease through the actual owner mutation (1.004882ms)
+  ✔ invalidates an existing lease through the actual owner mutation (1.11531ms)
+  ✔ invalidates an existing lease through the actual owner mutation (1.090902ms)
+  ✔ invalidates an existing lease through the actual owner mutation (1.448554ms)
+  ✔ refuses a key without producer selection and never resolves a stored or fallback key (1.037944ms)
+  ✔ invalidates on an auth reload and refuses instead of selecting storage credentials (0.919475ms)
+  ✔ rejects an undecodable process-local sentinel without credential fallback (0.814661ms)
+  ✔ fences the exact active-run registration and rejects its replacement (1.366755ms)
+✔ actual selected memory source owners (32.234146ms)
 ▶ selected existing memory auth read
-  ✔ accepts the exact active OAuth model and finite unexpired selected credential (7.07517ms)
-  ✔ accepts explicit API-key selection without an expiry (0.35568ms)
-  ✔ refuses unsupported or absent selected mode undefined (0.29011ms)
-  ✔ refuses unsupported or absent selected mode  (0.248094ms)
-  ✔ refuses unsupported or absent selected mode token (0.300228ms)
-  ✔ refuses unsupported or absent selected mode aws-sdk (0.237229ms)
-  ✔ refuses unsupported or absent selected mode native (0.265309ms)
-  ✔ refuses unsupported or absent selected mode configured (0.297412ms)
-  ✔ refuses OAuth with unusable expiry undefined (0.440124ms)
-  ✔ refuses OAuth with unusable expiry null (0.456435ms)
-  ✔ refuses OAuth with unusable expiry NaN (0.215698ms)
-  ✔ refuses OAuth with unusable expiry Infinity (0.199803ms)
-  ✔ refuses OAuth with unusable expiry -Infinity (0.164346ms)
-  ✔ refuses OAuth with unusable expiry 999 (0.16522ms)
-  ✔ refuses OAuth with unusable expiry 1000 (0.16038ms)
-  ✔ refuses missing or placeholder memory selection undefined (0.187501ms)
-  ✔ refuses missing or placeholder memory selection  (0.125282ms)
-  ✔ refuses missing or placeholder memory selection    (0.123588ms)
-  ✔ refuses missing or placeholder memory selection __aws_sdk_auth__ (0.130716ms)
-  ✔ refuses an override that was not installed by the model/auth selector (0.221592ms)
-  ✔ refuses a selected modelId from a different route (0.226927ms)
-  ✔ refuses a selected api from a different route (0.143644ms)
-  ✔ refuses a selected baseUrl from a different route (0.169589ms)
-  ✔ expires before the before/after acceptance check without a refresh (0.841749ms)
-  ✔ invalidates after the existing auth owner or selection changes (0.343832ms)
-  ✔ invalidates after the existing auth owner or selection changes (0.273233ms)
-  ✔ invalidates after the existing auth owner or selection changes (0.249622ms)
-  ✔ invalidates after the existing auth owner or selection changes (0.248397ms)
-  ✔ invalidates after the existing auth owner or selection changes (0.259319ms)
-  ✔ invalidates after the existing auth owner or selection changes (0.25127ms)
-  ✔ invalidates after the existing auth owner or selection changes (0.23863ms)
-  ✔ invalidates after the existing auth owner or selection changes (0.293299ms)
-  ✔ invalidates after session disposal, replacement or actual route changes (0.342441ms)
-  ✔ invalidates after session disposal, replacement or actual route changes (0.257903ms)
-  ✔ invalidates after session disposal, replacement or actual route changes (0.270102ms)
-  ✔ invalidates after session disposal, replacement or actual route changes (1.14882ms)
-  ✔ invalidates after session disposal, replacement or actual route changes (0.259402ms)
-  ✔ invalidates after session disposal, replacement or actual route changes (0.274692ms)
-  ✔ invalidates after session disposal, replacement or actual route changes (0.252358ms)
-  ✔ invalidates after session disposal, replacement or actual route changes (0.307125ms)
-  ✔ refuses absent, disposed or unidentified concrete sessions (0.276887ms)
-  ✔ refuses absent, disposed or unidentified concrete sessions (0.184637ms)
-  ✔ refuses absent, disposed or unidentified concrete sessions (0.202191ms)
-  ✔ invalidates an ABA auth replacement even with identical final key bytes (0.3389ms)
-  ✔ invalidates a route round trip recorded by the actual model mutation epoch (0.320254ms)
-  ✔ rechecks after auth capture before returning a session lease (0.375606ms)
-✔ selected existing memory auth read (26.447273ms)
-(node:54) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+  ✔ accepts the exact active OAuth model and finite unexpired selected credential (4.010531ms)
+  ✔ accepts explicit API-key selection without an expiry (0.344762ms)
+  ✔ refuses unsupported or absent selected mode undefined (0.296715ms)
+  ✔ refuses unsupported or absent selected mode  (0.263343ms)
+  ✔ refuses unsupported or absent selected mode token (0.312215ms)
+  ✔ refuses unsupported or absent selected mode aws-sdk (0.248839ms)
+  ✔ refuses unsupported or absent selected mode native (0.240297ms)
+  ✔ refuses unsupported or absent selected mode configured (0.315801ms)
+  ✔ refuses OAuth with unusable expiry undefined (0.366578ms)
+  ✔ refuses OAuth with unusable expiry null (0.526814ms)
+  ✔ refuses OAuth with unusable expiry NaN (0.239304ms)
+  ✔ refuses OAuth with unusable expiry Infinity (0.171775ms)
+  ✔ refuses OAuth with unusable expiry -Infinity (0.171095ms)
+  ✔ refuses OAuth with unusable expiry 999 (0.158926ms)
+  ✔ refuses OAuth with unusable expiry 1000 (0.137895ms)
+  ✔ refuses missing or placeholder memory selection undefined (0.198542ms)
+  ✔ refuses missing or placeholder memory selection  (0.127949ms)
+  ✔ refuses missing or placeholder memory selection    (0.238975ms)
+  ✔ refuses missing or placeholder memory selection __aws_sdk_auth__ (0.131831ms)
+  ✔ refuses an override that was not installed by the model/auth selector (0.324154ms)
+  ✔ refuses a selected modelId from a different route (0.278475ms)
+  ✔ refuses a selected api from a different route (0.149156ms)
+  ✔ refuses a selected baseUrl from a different route (0.171856ms)
+  ✔ expires before the before/after acceptance check without a refresh (0.955427ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.380582ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.261633ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.296283ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.264662ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.249162ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.315528ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.256707ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.293095ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.411677ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.257885ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.272966ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.245844ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.288157ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.304296ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.25754ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.303485ms)
+  ✔ refuses absent, disposed or unidentified concrete sessions (0.255229ms)
+  ✔ refuses absent, disposed or unidentified concrete sessions (0.200227ms)
+  ✔ refuses absent, disposed or unidentified concrete sessions (0.233734ms)
+  ✔ invalidates an ABA auth replacement even with identical final key bytes (0.399973ms)
+  ✔ invalidates a route round trip recorded by the actual model mutation epoch (0.310563ms)
+  ✔ rechecks after auth capture before returning a session lease (0.372976ms)
+✔ selected existing memory auth read (23.422219ms)
+(node:53) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
 (Use `node --trace-warnings ...` to show where the warning was created)
-✔ accepts exact native result only with settled acknowledgement (32.007895ms)
-✔ cancellation waits for explicit native settled acknowledgement (87.807142ms)
-✔ EOF without settlement refuses (6.407302ms)
-✔ cancellation without native acknowledgement refuses by shared deadline (257.640082ms)
-✔ wrong correlation, nonsettled, malformed owner and oversize refuse (34.529363ms)
-✔ deadline above 10 seconds and already cancelled refuse before connection (2.229348ms)
-✔ native owner decoder refuses caller echoes and extra fields (1.812093ms)
-✔ actual Node to Python adapter accepts pinned predicates and acknowledges settled cancellation (2117.024957ms)
+✔ accepts exact native result only with settled acknowledgement (23.924388ms)
+✔ cancellation waits for explicit native settled acknowledgement (84.272674ms)
+✔ EOF without settlement refuses (4.906475ms)
+✔ cancellation without native acknowledgement refuses by shared deadline (254.150449ms)
+✔ wrong correlation, nonsettled, malformed owner and oversize refuse (24.665511ms)
+✔ deadline above 10 seconds and already cancelled refuse before connection (1.889257ms)
+✔ native owner decoder refuses caller echoes and extra fields (1.100907ms)
+✔ actual Node to Python adapter accepts pinned predicates and acknowledges settled cancellation (1880.202822ms)
 ▶ usage.preflight exact542 request schema
-  ✔ accepts exactly the exact542 keys (2.344575ms)
-  ✔ refuses extra, missing and malformed keys (0.815556ms)
-✔ usage.preflight exact542 request schema (5.722934ms)
+  ✔ accepts exactly the exact542 keys (2.715804ms)
+  ✔ refuses extra, missing and malformed keys (1.092059ms)
+✔ usage.preflight exact542 request schema (7.131351ms)
 ▶ usage.preflight acceptance
-  ✔ returns verified fresh AVAILABLE windows for the actual active route (5.623077ms)
-  ✔ never serves cache or historical success (1.424311ms)
-✔ usage.preflight acceptance (7.776806ms)
+  ✔ returns verified fresh AVAILABLE windows for the actual active route (6.975444ms)
+  ✔ never serves cache or historical success (1.695465ms)
+✔ usage.preflight acceptance (9.518628ms)
 ▶ usage.preflight identity and route refusals
-  ✔ refuses unknown agent (1.31275ms)
-  ✔ refuses wrong HQ session (0.540362ms)
-  ✔ refuses wrong owner name (0.757256ms)
-  ✔ refuses PID1 placeholder (0.555912ms)
-  ✔ refuses PID reuse (start differs) (0.76214ms)
-  ✔ refuses model drift (0.739761ms)
-  ✔ refuses provider drift (0.615756ms)
-  ✔ refuses an idle/unbound session (0.476993ms)
-  ✔ refuses ambiguous or missing in-memory auth (0.685738ms)
-  ✔ refuses expired auth with zero provider, refresh or write calls (0.368993ms)
-  ✔ never sends the token to a non-default or non-Anthropic route (0.609969ms)
-  ✔ refuses API-key auth and models without known window applicability (0.596784ms)
-  ✔ refuses native owner refusal, unavailability and owner change after the read (1.214186ms)
-  ✔ refuses auth/account or model replacement observed after the provider GET (1.630159ms)
-✔ usage.preflight identity and route refusals (13.226871ms)
+  ✔ refuses unknown agent (1.69021ms)
+  ✔ refuses wrong HQ session (0.658898ms)
+  ✔ refuses wrong owner name (0.949674ms)
+  ✔ refuses PID1 placeholder (0.701617ms)
+  ✔ refuses PID reuse (start differs) (0.787074ms)
+  ✔ refuses model drift (0.808399ms)
+  ✔ refuses provider drift (0.750271ms)
+  ✔ refuses an idle/unbound session (0.557259ms)
+  ✔ refuses ambiguous or missing in-memory auth (0.754315ms)
+  ✔ refuses expired auth with zero provider, refresh or write calls (0.476175ms)
+  ✔ never sends the token to a non-default or non-Anthropic route (0.728262ms)
+  ✔ refuses API-key auth and models without known window applicability (0.617299ms)
+  ✔ refuses native owner refusal, unavailability and owner change after the read (29.832809ms)
+  ✔ refuses auth/account or model replacement observed after the provider GET (1.940497ms)
+✔ usage.preflight identity and route refusals (44.265382ms)
 ▶ usage.preflight provider window refusals
-  ✔ refuses empty, partial, malformed, nonfinite and out-of-range windows (19.294699ms)
-  ✔ reports UNAVAILABLE for any exhausted applicable window, including above 100% (0.939804ms)
-  ✔ reports UNAVAILABLE for exhausted non-applicable or unlisted-but-known windows (0.559077ms)
-  ✔ reports UNAVAILABLE when an exhausted window accompanies a missing one (0.405474ms)
-  ✔ does not let non-applicable windows mask exhaustion or a missing window (0.631622ms)
-  ✔ refuses 401/403/429/5xx, unexpected status, network failure and body errors (1.939614ms)
-✔ usage.preflight provider window refusals (26.402696ms)
+  ✔ refuses empty, partial, malformed, nonfinite and out-of-range windows (5.375477ms)
+  ✔ reports UNAVAILABLE for any exhausted applicable window, including above 100% (1.560679ms)
+  ✔ reports UNAVAILABLE for exhausted non-applicable or unlisted-but-known windows (1.103696ms)
+  ✔ reports UNAVAILABLE when an exhausted window accompanies a missing one (0.726415ms)
+  ✔ does not let non-applicable windows mask exhaustion or a missing window (0.907399ms)
+  ✔ refuses 401/403/429/5xx, unexpected status, network failure and body errors (2.955955ms)
+✔ usage.preflight provider window refusals (16.12029ms)
 ▶ usage.preflight deadline, cancellation and clocks
-  ✔ refuses a late provider response after the shared deadline (0.586803ms)
-  ✔ aborts a hanging provider GET at the real deadline with no later publication (1000.697418ms)
-  ✔ propagates caller cancellation to the provider transport (11.227953ms)
-  ✔ refuses an already-cancelled request without native or provider work (0.732529ms)
-  ✔ refuses wall-clock anomalies (0.765789ms)
-✔ usage.preflight deadline, cancellation and clocks (1015.212022ms)
+  ✔ refuses a late provider response after the shared deadline (0.917524ms)
+  ✔ aborts a hanging provider GET at the real deadline with no later publication (1001.991668ms)
+  ✔ propagates caller cancellation to the provider transport (13.286223ms)
+  ✔ refuses an already-cancelled request without native or provider work (1.741734ms)
+  ✔ refuses wall-clock anomalies (2.297344ms)
+✔ usage.preflight deadline, cancellation and clocks (1022.711558ms)
 ▶ strict Anthropic usage GET
-  ✔ sends one GET with no redirect, cache or retry and hides error bodies (50.613536ms)
-  ✔ parses JSON, bounds the body and maps aborts (2.722633ms)
-✔ strict Anthropic usage GET (53.790339ms)
+  ✔ sends one GET with no redirect, cache or retry and hides error bodies (108.239663ms)
+  ✔ parses JSON, bounds the body and maps aborts (2.431185ms)
+✔ strict Anthropic usage GET (111.340187ms)
 ▶ gateway registration
-  ✔ registers usage.preflight as an operator.read method and keeps usage.status (0.385942ms)
-  ✔ leaves the usage.status handler byte-identical (1.22316ms)
-  ✔ binds preflight only to the strict dependencies and refuses unauthenticated clients (0.424728ms)
-✔ gateway registration (2.440544ms)
+  ✔ registers usage.preflight as an operator.read method and keeps usage.status (0.283651ms)
+  ✔ leaves the usage.status handler byte-identical (1.12589ms)
+  ✔ binds preflight only to the strict dependencies and refuses unauthenticated clients (0.410763ms)
+✔ gateway registration (2.136964ms)
 ℹ tests 101
 ℹ suites 9
 ℹ pass 101
@@ -128,7 +128,7 @@
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 5737.388634
+ℹ duration_ms 5244.851235
 test_actual_existing_predicates_accept_root_gateway_peer (test_native_owner_server.NativeTransport.test_actual_existing_predicates_accept_root_gateway_peer) ... ok
 test_cancel_ack_means_actual_child_reaped (test_native_owner_server.NativeTransport.test_cancel_ack_means_actual_child_reaped) ... ok
 test_escaped_descendant_is_adopted_and_settled_with_pidfd (test_native_owner_server.NativeTransport.test_escaped_descendant_is_adopted_and_settled_with_pidfd) ... ok
@@ -146,7 +146,7 @@ test_shared_deadline_terminates_and_reaps (test_native_owner_server.NativeTransp
 test_subreaper_setup_failure_refuses_without_work (test_native_owner_server.NativeTransport.test_subreaper_setup_failure_refuses_without_work) ... ok
 
 ----------------------------------------------------------------------
-Ran 15 tests in 1.633s
+Ran 15 tests in 1.597s
 
 OK
 test_actual_synthetic_child_is_killed_and_reaped_on_cancel (test_native_preparation.NativePreparation.test_actual_synthetic_child_is_killed_and_reaped_on_cancel) ... ok
@@ -169,7 +169,7 @@ test_second_owner_check_start_change_refuses (test_native_preparation.NativePrep
 test_start_change_refuses (test_native_preparation.NativePreparation.test_start_change_refuses) ... ok
 
 ----------------------------------------------------------------------
-Ran 18 tests in 0.619s
+Ran 18 tests in 0.770s
 
 OK
 test_endpoint_idle_lifetime_and_parent_death_refuse (test_root_owner_supervisor.RootSupervisor.test_endpoint_idle_lifetime_and_parent_death_refuse) ... ok
@@ -187,7 +187,7 @@ test_source_path_writable_or_symlink_refuses (test_root_owner_supervisor.RootSup
 test_worker_and_nonroot_and_argument_contexts_refuse_before_source (test_root_owner_supervisor.RootSupervisor.test_worker_and_nonroot_and_argument_contexts_refuse_before_source) ... ok
 
 ----------------------------------------------------------------------
-Ran 13 tests in 0.376s
+Ran 13 tests in 0.411s
 
 OK
 test_action_binding_and_independent_reviews (test_application598.PreparationTests.test_action_binding_and_independent_reviews) ... ok
@@ -211,7 +211,7 @@ test_tree_rejects_setuid (test_application598.PreparationTests.test_tree_rejects
 test_unknown_target_or_missing_seal_refuses (test_application598.PreparationTests.test_unknown_target_or_missing_seal_refuses) ... ok
 
 ----------------------------------------------------------------------
-Ran 19 tests in 0.156s
+Ran 19 tests in 0.158s
 
 OK
 test_file_ancestor_refuses (test_apply598.Application.test_file_ancestor_refuses) ... ok
@@ -225,6 +225,6 @@ test_previous_application_journal_refuses_replay (test_apply598.GuardedApplicati
 test_unchanged_guard_drift_refuses_final_verification (test_apply598.GuardedApplication.test_unchanged_guard_drift_refuses_final_verification) ... ok
 
 ----------------------------------------------------------------------
-Ran 9 tests in 0.013s
+Ran 9 tests in 0.014s
 
 OK
