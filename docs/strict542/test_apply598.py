@@ -62,6 +62,10 @@ class GuardedApplication(unittest.TestCase):
         with patch.object(a,'protected',side_effect=lambda path:path),patch.object(a.importlib.util,'spec_from_file_location',return_value=SimpleNamespace(loader=loader)),patch.object(a.importlib.util,'module_from_spec',return_value=SimpleNamespace()),patch.object(a,'native_module',return_value=native):
             with self.assertRaisesRegex(PermissionError,'fixture/remote work unsettled'):a.native_quiet(None)
 
+    def test_absolute_lifetime_interrupts_with_refusal(self):
+        with self.assertRaisesRegex(PermissionError,'finite application lifetime'):
+            a.expired(14,None)
+
     def test_previous_application_journal_refuses_replay(self):
         with tempfile.TemporaryDirectory() as root,patch.object(a,'JOURNAL',Path(root)/'journal'):
             a.JOURNAL.write_text('poison')

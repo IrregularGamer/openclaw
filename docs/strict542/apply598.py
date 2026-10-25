@@ -8,6 +8,7 @@ import json
 import os
 from pathlib import Path
 import shutil
+import signal
 import sqlite3
 import stat
 import subprocess
@@ -29,6 +30,9 @@ def preparation():
     spec=importlib.util.spec_from_file_location('strict542_preparation598',path)
     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
     return module
+
+def expired(signum,frame):
+    raise PermissionError('finite application lifetime expired; preserve poison/backups')
 
 def require(value,reason):
     if not value:raise PermissionError(reason)
@@ -135,6 +139,7 @@ def load(prep):
     prep.validate_action(action,tree,STAGE,reviews)
     require(all(review.get('automatic_queue_review') == 'APPROVE598' for review in reviews),'automatic queue598 review required')
     ack=read(STAGE/'hq-ack.json');owner_check(ack,action,prep)
+    signal.setitimer(signal.ITIMER_REAL,min(ack['expires_wall']-time.time(),ack['expires_mono']-time.monotonic(),900))
     return action,tree,reviews,ack
 
 def initial_checks(prep,action,reviews):
@@ -259,7 +264,9 @@ def apply(action,tree,reviews,ack,prep):
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('command',choices=('preflight','apply','verify'));args=parser.parse_args()
     try:
-        require(os.geteuid() == 0,'root required');protected(STAGE)
+        require(os.geteuid() == 0,'root required')
+        signal.signal(signal.SIGALRM,expired);signal.setitimer(signal.ITIMER_REAL,900)
+        protected(STAGE)
         prep=preparation();protected(LOCK)
         with LOCK.open('r+') as stream:
             fcntl.flock(stream,fcntl.LOCK_EX|fcntl.LOCK_NB)

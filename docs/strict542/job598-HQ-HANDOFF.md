@@ -138,7 +138,8 @@ then apply, then verify. Existing authorized root invocation is required; no new
 sudoers grant is prepared. Each invocation takes admission.lock nonblocking,
 rechecks true caller cgroup/MainPID twice, full seal, valid reconciled worker,
 native broker fixture inventory, stopped+revoked remote settlement, DB and units.
-Checks repeat before writes. If a worker wins admission or any guard refuses,
+Checks repeat before writes. A process alarm bounds the entire invocation to900seconds
+and then the lesser remaining genuine HQ wall/monotonic window, including copies. If a worker wins admission or any guard refuses,
 exit and record actual refusal; do not hold the lock while waiting for a gap.
 The helper changes DISK ONLY, never controls services, sends messages or releases
 another job. Its last state DISK_APPLIED_SERVICES_UNCHANGED is not runtime success.
