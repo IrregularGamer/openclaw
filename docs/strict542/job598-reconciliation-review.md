@@ -80,13 +80,15 @@ remote implementation: nonblocking acquisition of the existing runner lock,
 zero live leases according to `LeaseStore.valid`, and zero running containers
 with `agentq.managed=1`. These are the appropriate additional predicates for
 condition 1, subject to the sole-global-worker guarantee and no concurrent run.
-The parent also reported that earlier standard pushes already removed the old
-unexcluded artifacts, leaving only `source/.npmrc` under the source subtree;
-its SHA256 matched the public source archive entry. A full-depth inventory must
-confirm that report. Missing historical artifacts must be recorded as lost;
-cleanup cannot reconstruct compiler results. Preserve the remaining known public
-file and its hash locally outside the export before deletion. These remote
-observations were supplied by the implementer, not performed by this reviewer.
+The parent's initial shallow inventory was insufficient: deeper excluded trees,
+including node_modules and other directories, remain under `source/`. Full-depth
+inventory and the exact artifact checks in condition 3 remain necessary; absence
+of files at shallow depth does not establish historical artifacts were removed.
+The parent reported the remaining `source/.npmrc` SHA256 matched the public source
+archive entry. Preserve that known public file and its hash outside the export
+as reconciliation evidence. If historical artifacts prove missing, record them
+as lost; cleanup cannot reconstruct compiler results. These remote observations
+were supplied by the implementer, not performed by this reviewer.
 
 No remote mutation was performed by this reviewer. This approval covers only
 disposable test-workspace reconciliation and one previously source-approved
