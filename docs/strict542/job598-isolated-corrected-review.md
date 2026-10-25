@@ -9,7 +9,9 @@ not accepted build, empirical feasibility, artifact or application approval.
 Independently verified all eight hashes in the committed outcome manifest.
 Stored probe log, receipt, tests and test evidence are byte-identical to actual
 recovered `runs/598/isolated-corrected-final` files. Stored offload log matches
-`runs/598/isolated-probe-corrected-run.log`. Stored thread sample/detail and
+`runs/598/isolated-probe-reconciled-run.log`. The separate corrected-run.log is
+the earlier191-byte scanner refusal and is not this successful admission log.
+Stored thread sample/detail and
 post-run metadata match their actual small `runs/598` counterparts. Test-log
 hash and source binding match the actual test evidence. Source/native archive
 proof relies on prior exact independent review; no large archive was rehashed.
