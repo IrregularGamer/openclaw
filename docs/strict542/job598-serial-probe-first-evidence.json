@@ -1,0 +1,13 @@
+{
+  "broker_log": "2026-10-25T19:14:24Z run remote rc=1 333s /home/deploy/agentq/tmp/export598-serial-probe",
+  "checks": 179,
+  "compiler_started": false,
+  "files": {
+    "job598-serial-probe-first-refusal.txt": "edadbbe4519d2e2338bc318fcd13c34bd533aed1e0da683e1361eecde0c2c61f",
+    "job598-serial-probe-first-tests.txt": "dfee2666a7111a564b2d4e8765cac13608aa4bc369f8ca968c51e4bc24b43f1b"
+  },
+  "result": "launcher-injected TSX_DISABLE_CACHE=1 refused by initial diagnostic policy; no compiler result or artifact",
+  "source_commit": "c790ba44938bd90f75fb41f2f2eeaaff287df546",
+  "source_export_sha256": "e79a0e45a4eaea4afe325ca94ba201d5ae43d09d8c15dc07d0695c87ba743de3",
+  "test_exit": 0
+}

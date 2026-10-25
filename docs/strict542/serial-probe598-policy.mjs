@@ -7,6 +7,8 @@ export function admitProbe(capacity, env, existingOutput) {
     throw new Error('probe requires observed capacity no larger than admitted2GiB');
   if (existingOutput) throw new Error('probe requires a fresh disposable source export');
   for (const key of Object.keys(env)) {
+    // scripts/lib/tsx-cli-shim.mjs owns this fixed cache-disabled setting.
+    if (key === 'TSX_DISABLE_CACHE' && env[key] === '1') continue;
     if (key === 'NODE_OPTIONS' || key === 'NODE_PATH' || /^(OPENCLAW_|TSDOWN_|TSX_)/u.test(key))
       throw new Error(`probe refuses compiler environment control: ${key}`);
   }

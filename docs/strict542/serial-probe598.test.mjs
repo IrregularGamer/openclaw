@@ -21,3 +21,7 @@ test('compiler warnings, unresolved imports and unsettled/failed runs refuse suc
  for(const changed of [{status:1},{status:null},{timedOut:true},{error:new Error('spawn')},{fatalUnresolvedImport:'missing'},{hasIneffectiveDynamicImport:true}])
    assert.equal(probeSucceeded({...good,...changed}),false);
 });
+test('accepts only the owning tsx launcher cache-disabled value',()=>{
+ assert.doesNotThrow(()=>admitProbe(capacity,{TSX_DISABLE_CACHE:'1'},false));
+ for(const value of ['', '0', 'true']) assert.throws(()=>admitProbe(capacity,{TSX_DISABLE_CACHE:value},false));
+});
