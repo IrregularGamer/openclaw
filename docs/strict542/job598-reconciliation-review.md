@@ -3,7 +3,8 @@
 Reviewer: Rook independent reviewer `/root/reconcile_review`, 2026-10-25 UTC.
 Reviewed maintained HEAD before this documentation: `7625e9ff`.
 
-Verdict: **APPROVE PLAN ONLY**, with the mandatory preconditions below. This
+Verdict: **APPROVE PLAN ONLY**, including the exact whole-slot successor below,
+with the mandatory preconditions below. This
 does not establish that cleanup is currently safe or that any diagnostic passed.
 Stop without mutation or another diagnostic if idle/settlement is uncertain.
 
@@ -27,8 +28,9 @@ it correctly requires reconciliation before another run.
 
 The existing `clean SLUG` handler is broader: `tree()` accepts a single validated
 slug, not `slug/source`, and `clean()` removes the whole slug without checking a
-lease or holding the runner slot. Whole-slot cleanup is outside this narrower
-approval. Neither cleanup method independently proves an idle workspace.
+lease or holding the runner slot. Neither cleanup method independently proves an
+idle workspace. The successor approval below replaces source-only deletion with
+this established exact whole-slot cleanup after additional inventory evidence.
 
 Mandatory execution conditions, in order:
 
@@ -94,3 +96,42 @@ No remote mutation was performed by this reviewer. This approval covers only
 disposable test-workspace reconciliation and one previously source-approved
 admitted diagnostic. All job598 build/artifact/action/next-seal reviews, automatic
 queue review and job595 application/release gates remain open.
+
+## Reviewed successor: exact disposable whole-slot cleanup
+
+**APPROVE** the existing supported command
+`ssh offload clean tmp-export598-serial-probe-fixed-38fd4ee7` under the same
+mandatory idle/settlement, exclusion of concurrent runs, preservation, unchanged
+export and admitted-run conditions above. This successor supersedes the earlier
+restriction to deleting only `source/` and its empty-directory rsync procedure.
+It authorizes no other slug or cleanup path. No installed handler changes are
+needed: `clean()` calls validated `tree()` then `shutil.rmtree` on that exact
+disposable export. The secret scanner applies only to `run()`, so this supported
+cleanup can remove the leftover without bypassing the next run's scanner.
+
+The implementer supplied additional actual read-only results: all four exact
+artifact locations (`result598`, `source/strict542-checks`,
+`source/result598-probe`, `source/serial-probe598.json`) are absent. Full os.walk
+inventory counted 106308 leftover files, 2594533756 bytes, including excluded
+dependency/ignored remnants. The source-only rsync preview generated excessive
+inventory output. Preserve a bounded inventory/count/digest record and the
+matching public `.npmrc` evidence locally before cleanup. Record old diagnostic
+artifacts as unavailable; absence establishes no compiler outcome.
+
+Before cleanup, verify the local unchanged manifest and every reviewed archive
+digest again, and verify all non-source inputs in this exact remote slot are
+retained in that local reviewed export. If an unrecognized input or result exists,
+preserve it or stop. Existing local reviewed archives replace the disposable
+remote copies through the next ordinary push. Immediately before cleanup repeat
+the actual zero-live-leases, zero-managed-runners and available-runner-lock
+observations under the sole-global-worker guarantee; clean does not enforce these
+itself. Any failed check or concurrency uncertainty blocks action.
+
+After clean, verify the exact slot no longer exists through read-only jailed
+transfer inventory (a missing-source result is expected). The implementation
+uses `ignore_errors=True`, so successful SSH exit alone is insufficient. Only
+after verified removal perform one normal admitted run of the same unchanged
+export, which recreates this same slot. Stop on failure or uncertain completion;
+do not loop, alter limits or create a replacement export path. This is disposal
+and retransfer of temporary source-test material, within the authorized source
+testing scope, not a production deployment or installation action.
