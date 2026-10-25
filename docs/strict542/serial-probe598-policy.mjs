@@ -11,3 +11,7 @@ export function admitProbe(capacity, env, existingOutput) {
       throw new Error(`probe refuses compiler environment control: ${key}`);
   }
 }
+export function probeSucceeded(result) {
+  return result.status === 0 && !result.timedOut && !result.error &&
+    !result.fatalUnresolvedImport && !result.hasIneffectiveDynamicImport;
+}

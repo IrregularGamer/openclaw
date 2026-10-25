@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import { performance } from 'node:perf_hooks';
 import { readProcessMemoryCapacity } from '../../scripts/lib/process-memory.mts';
 import { resolveTsdownBuildInvocations, runTsdownBuildInvocation } from '../../scripts/tsdown-build.mts';
-import { admitProbe } from './serial-probe598-policy.mjs';
+import { admitProbe, probeSucceeded } from './serial-probe598-policy.mjs';
 
 const capacity = readProcessMemoryCapacity({});
 admitProbe(capacity, process.env, ['.git', 'dist', 'dist-runtime', 'serial-probe598.json'].some(p=>fs.existsSync(p)));
@@ -22,7 +22,7 @@ for (const invocation of invocations) {
   const result = await runTsdownBuildInvocation(invocation,{env:{...env,OPENCLAW_TSDOWN_TIMEOUT_MS:String(remaining)}});
   receipt.results.push(result);
   fs.writeFileSync('serial-probe598.json', JSON.stringify(receipt)+'\n');
-  if (result.status !== 0 || result.timedOut || result.error || result.fatalUnresolvedImport) {
+  if (!probeSucceeded(result)) {
     process.exitCode=1;
     break;
   }
