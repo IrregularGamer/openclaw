@@ -296,3 +296,42 @@ proved the exact slot absent. See job598-reconciliation-evidence.json. No
 scanner, budget, installed file, seal, service or unit changed. Next: one normal
 admitted diagnostic from the SAME unchanged export, then independent actual
 evidence review; no build/artifact/application approval follows from this cleanup.
+
+## Actual reconciled diagnostic: finite timeout, not a build (2026-10-25T22:23Z)
+
+One normal admitted unchanged86c1a4db diagnostic ran after verified cleanup.
+All180 relevant checks passed (the fifth cache-policy test adds one to earlier
+179 totals); exact logs are committed in4052b599. Pinned pnpm12.5.1 completed
+its frozen1469-dependency install. The AI compiler invocation exited0. The
+full main runtime invocation did not finish within the shared900s deadline: its
+remaining895715ms expired, the owning wrapper sent SIGTERM then SIGKILL and
+observed the process group dead. The actual diagnostic receipt says timedOut
+true, signal SIGKILL; outer command exited1. Broker log: rc1 after1286s.
+The container was capped at2147483648 bytes memory and equal memory+swap,
+1CPU,512pids and oom_score_adj1000. One read-only intermediate sample showed
+1.499GiB/2GiB and102.19% CPU; this is neither peak evidence nor proof of OOM.
+This is a finite compiler timeout, not an implementation test assertion.
+
+The normal wrapper EXIT trap completed, and actual final test/probe logs and
+receipt were recovered through the existing forced jailed rsync artifact path.
+No managed runner container remained. See job598-reconciled-outcome.json and
+its exact hashed logs/receipt. No complete gateway/runtime/package/declaration/
+postbuild artifact or accepted action/next-seal exists;595 MUST NOT apply.
+Do not repeat this unchanged expensive diagnostic or raise its deadline/heap
+without an evidenced source plan and exact independent review. Cleanup is now
+resolved; an operator deleting the old slot is no longer the next step.
+
+Independent local source assessment found every gateway-capable build-all
+profile still includes main tsdown (scripts/build-all.mts:223-237,273-298);
+run-node rebuilds through qaRuntime (scripts/run-node.mts:1714-1722), not a
+supported direct-source distribution; tsconfig has noEmit. Existing AI/package
+declaration cache hits still compile runtime, and the unified runtime has no
+cache (build-all.mts:92-134). tsdown.config.ts:883-905 explicitly preserves
+the shared singleton graph. No concrete small supported2GiB correction was
+established. Next598 work is an owning-source bounded compiler/build-path
+correction preserving that entire graph, followed by independent exact source
+review, one admitted complete build/checks, actual deterministic artifact/tree/
+action/next-seal review and automatic queue598 review. This is pending598 work,
+not an S-only approval question, a request to waive any gate, or another
+permission to retry unchanged source. Existing infrastructure/source installation
+preparation and fresh genuine post-restart HQ owner/run requirements above stand.

@@ -1,0 +1,57 @@
+test_native_quiet_refuses_fixture_or_remote_uncertainty (test_apply598.GuardedApplication.test_native_quiet_refuses_fixture_or_remote_uncertainty) ... ok
+test_native_quiet_requires_valid_registered_worker (test_apply598.GuardedApplication.test_native_quiet_requires_valid_registered_worker) ... ok
+test_previous_application_journal_refuses_replay (test_apply598.GuardedApplication.test_previous_application_journal_refuses_replay) ... ok
+test_unchanged_guard_drift_refuses_final_verification (test_apply598.GuardedApplication.test_unchanged_guard_drift_refuses_final_verification) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.013s
+
+OK
+✔ admits fixed serial diagnostic only with observed bounded capacity (2.213895ms)
+✔ refuses unknown or oversized capacity and existing output (0.822844ms)
+✔ refuses caller-controlled compiler budget, selection, preload or plugin exclusions (0.7744ms)
+✔ compiler warnings, unresolved imports and unsettled/failed runs refuse success (0.500859ms)
+✔ accepts only the owning tsx launcher cache-disabled value (2.299967ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 181.403221
+
+Done in 2m 25.4s using pnpm v12.5.1
+{"kind":"DIAGNOSTIC_ONLY_NOT_BUILD_EVIDENCE","capacity":{"limitBytes":1549328384,"capacityBytes":2147483648,"usageKnown":true,"unresolved":false,"availableBytes":13818068992},"args":["node_modules/tsdown/dist/run.mjs","--config-loader","unrun","--logLevel","warn","--no-clean","--config","tsdown.ai.config.ts","--concurrency","1"]}
+{"kind":"DIAGNOSTIC_ONLY_NOT_BUILD_EVIDENCE","capacity":{"limitBytes":1549328384,"capacityBytes":2147483648,"usageKnown":true,"unresolved":false,"availableBytes":13818068992},"args":["node_modules/tsdown/dist/run.mjs","--config-loader","unrun","--logLevel","warn","--no-clean","--concurrency","1"]}
+[tsdown-build] still running pid=332; no output for 30s
+[tsdown-build] still running pid=332; no output for 60s
+[tsdown-build] still running pid=332; no output for 30s
+[tsdown-build] still running pid=332; no output for 30s
+[tsdown-build] still running pid=332; no output for 30s
+[tsdown-build] still running pid=332; no output for 30s
+[tsdown-build] still running pid=332; no output for 30s
+[tsdown-build] still running pid=332; no output for 30s
+[tsdown-build] still running pid=332; no output for 30s
+[tsdown-build] still running pid=332; no output for 30s
+[tsdown-build] still running pid=332; no output for 30s
+[tsdown-build] still running pid=332; no output for 30s
+[tsdown-build] still running pid=332; no output for 30s
+[tsdown-build] still running pid=332; no output for 30s
+[tsdown-build] still running pid=332; no output for 30s
+[tsdown-build] still running pid=332; no output for 30s
+[tsdown-build] still running pid=332; no output for 30s
+[tsdown-build] still running pid=332; no output for 30s
+[tsdown-build] still running pid=332; no output for 30s
+[tsdown-build] still running pid=332; no output for 30s
+[tsdown-build] still running pid=332; no output for 30s
+[tsdown-build] still running pid=332; no output for 30s
+[tsdown-build] still running pid=332; no output for 30s
+[tsdown-build] still running pid=332; no output for 30s
+[tsdown-build] still running pid=332; no output for 30s
+[tsdown-build] still running pid=332; no output for 30s
+[tsdown-build] still running pid=332; no output for 30s
+[tsdown-build] still running pid=332; no output for 30s
+[tsdown-build] timeout after 895715ms pid=332; sending SIGTERM
+[tsdown-build] forcing SIGKILL pid=332
+[tsdown-build] child result pid=332: {"status":null,"signal":"SIGKILL","parentSignal":null,"timedOut":true,"cleanup":"timeout","observedProcessState":"dead","observationScope":"process-group","finalStatus":null}
