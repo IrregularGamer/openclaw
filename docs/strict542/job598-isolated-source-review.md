@@ -2,7 +2,7 @@
 
 Reviewer: Rook `/root/build_analysis`, independently delegated read-only analysis
 and review, 2026-10-25 UTC. Exact reviewed range:
-`d874f143` through `2e0b202766f6c508d3cf7d4aaec427ffa0fe2d0c`, including
+`d874f143` through `f62d419c63ccefe41443c0fbaa84d7ab1aaedc17`, including
 implementation `a069c3442786d159ea3a871035db03c58fe66a3f`.
 
 Verdict: **APPROVE SOURCE for one admitted diagnostic execution only**.
@@ -42,6 +42,13 @@ comparison. Successor `2e0b2027` now refuses `OUTPUT_SOURCE_MAPS`,
 their admission-verified absence. Existing caller-controlled compiler, preload,
 selection and exclusion refusals remain intact. Exact owning launcher
 `TSX_DISABLE_CACHE=1` remains the sole documented exception.
+
+Also reviewed telemetry successor `f62d419c`: its interval remains active through
+successful graph generation until closeBundle, and clears on build error. The
+unreferenced interval cannot keep a compiler alive. Logging the owner's resolved
+NODE_OPTIONS exposes the actual generated heap setting without changing it or
+transferring runtime authentication/configuration. These two telemetry changes
+preserve the approved diagnostic boundaries.
 
 Independently ran:
 `node --test docs/strict542/isolated-config598.test.mjs docs/strict542/serial-probe598.test.mjs`.
