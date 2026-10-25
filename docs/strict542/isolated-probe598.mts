@@ -27,6 +27,9 @@ for (const plan of plans) {
   const remaining=Math.floor(deadline-performance.now());
   if (remaining<=0) throw new Error('absolute isolated probe deadline expired');
   const invocation=resolveTsdownBuildInvocation({args:plan.args,env:plan.env});
+  for (const [key,value] of Object.entries(ONE_CPU_NATIVE_POOLS)) {
+    if (invocation.options.env[key]!==value) throw new Error('native pool limit did not propagate: '+key);
+  }
   console.log(JSON.stringify({kind:receipt.kind,label:plan.label,args:invocation.args,nativePools:ONE_CPU_NATIVE_POOLS,nodeOptions:invocation.options.env.NODE_OPTIONS,remaining}));
   const started=performance.now();
   const result=await runTsdownBuildInvocation(invocation,{env:{...env,OPENCLAW_TSDOWN_TIMEOUT_MS:String(remaining)}});
