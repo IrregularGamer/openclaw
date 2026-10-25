@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "abhCommit": "a1d99e8e0460747293ec22a5a8dd8d14231c89d2",
+  "targets": {
+    "tools/scheduler_handoff/reservation.py": "5f54474f8df103ae97f96e01dc76c895d7e5e321e0b0658d4d71de84f79ec1e0",
+    "tools/scheduler_handoff/build_candidate.py": "6adfba9ed1630897c68d0862f067626a2b2dd470fb145861263eba017a853e7c"
+  },
+  "status": "PREPARATION_ONLY",
+  "gatewayBinding": "UNSUPPORTED",
+  "quota": "UNKNOWN"
+}

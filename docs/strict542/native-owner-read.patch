@@ -1,0 +1,93 @@
+--- a/tools/scheduler_handoff/reservation.py
++++ b/tools/scheduler_handoff/reservation.py
+@@ -414,3 +414,63 @@
+                 self.terminate(r,reason)
+             except Exception:
+                 self.terminate(r,'unknown_delivery')
++
++
++def owner542_read(deadline_ns):
++    """Read the existing native predicate, without Controller construction or state I/O.
++
++    Prepared source only. This is not a supported gateway transport or a quota
++    attestation. An authenticated, cancellable native transport is still required.
++    """
++    import signal
++    from types import SimpleNamespace
++
++    entered = time.monotonic_ns()
++    if (type(deadline_ns) is not int or deadline_ns <= entered
++            or deadline_ns - entered > 10_000_000_000):
++        raise PermissionError('owner542_deadline')
++
++    def check():
++        if time.monotonic_ns() >= deadline_ns:
++            raise PermissionError('owner542_deadline')
++
++    def cancelled(signum, frame):
++        raise PermissionError('owner542_cancelled')
++
++    command = ['systemctl', '--user', '--machine=deploy@.host', 'show',
++               'openclaw-gateway.service', '-p', 'MainPID', '--value']
++
++    def runner(argv, *, capture_output, text, timeout):
++        check()
++        if argv != command or capture_output is not True or text is not True:
++            raise PermissionError('owner542_command')
++        # subprocess.run kills AND waits for its child on timeout or any exception,
++        # including the cancellation signal raised above. No shell or background task.
++        result = subprocess.run(argv, capture_output=True, text=True,
++                                timeout=min(timeout, (deadline_ns-time.monotonic_ns())/1e9))
++        check()
++        return result
++
++    previous = {}
++    try:
++        for sig in (signal.SIGTERM, signal.SIGINT):
++            previous[sig] = signal.signal(sig, cancelled)
++        if os.geteuid() != 0:
++            raise PermissionError('owner542_root')
++        result = runner(command, capture_output=True, text=True, timeout=5)
++        value = result.stdout.strip()
++        if result.returncode or not value.isascii() or not value.isdecimal() or int(value) < 1:
++            raise PermissionError('owner542_gateway')
++        pid = int(value)
++        start = (Path('/proc')/str(pid)/'stat').read_text().rsplit(')', 1)[1].split()[19]
++        owner = {'name':'Pinch', 'session':HQ510, 'pid':pid, 'start':start}
++        native = Native510(SimpleNamespace(root=ROOT, runner=runner))
++        check()
++        native.owner_check(owner, caller=True)
++        check()
++        native.owner_check(owner, caller=True)
++        check()
++        return {'schemaVersion':1, 'owner':owner}
++    finally:
++        for sig, handler in previous.items():
++            signal.signal(sig, handler)
+--- a/tools/scheduler_handoff/build_candidate.py
++++ b/tools/scheduler_handoff/build_candidate.py
+@@ -21,7 +21,7 @@
+     if {k:hashlib.sha256(v).hexdigest() for k,v in pair.items()}!=PINS:
+         raise ValueError('reservation510_pinned_pair_changed')
+     c=pair['control.py'].decode(); m=pair['maintenance.py'].decode()
+-    c=patch(c,'from maintenance import Maintenance\n','from maintenance import Maintenance, Reservation510\n')
++    c=patch(c,'from maintenance import Maintenance\n','from maintenance import Maintenance, Reservation510, owner542_read\n')
+     # This single native root launch method handles normal dispatch, stale
+     # dispatch, direct launch and BOTH diagnostic paths under the same lock.
+     c=patch(c,"        with self.fence.lock():\n            state = self.fence.read()\n",
+@@ -59,6 +59,15 @@
+             except Exception:
+                 Reservation510(controller).outcome('refused')
+                 raise""")
++    c=patch(c,"    sub.add_parser('preservation-submit')",
++            "    sub.add_parser('preservation-submit')\n    read=sub.add_parser('owner542-read');read.add_argument('--deadline-ns',type=int,required=True)")
++    c=patch(c,'    controller=Controller()\n', """    if args.action=='owner542-read':
++        try:
++            print(json.dumps(owner542_read(args.deadline_ns)));return 0
++        except (PermissionError,ValueError,RuntimeError,OSError,IndexError,subprocess.TimeoutExpired):
++            print(json.dumps({'status':'UNKNOWN','reason':'native_owner_read_failed'}));return 75
++    controller=Controller()
++""")
+     m=patch(m,'    def apply(self):\n        Preservation(self.c).tick()',
+             '    def apply(self):\n        Reservation510(self.c).tick()\n        if Reservation510(self.c).blocks_monitor(): return\n        Preservation(self.c).tick()')
+     m=patch(m,"        with self.c.fence.lock():\n            private=self.guard(a); prior=self.record(); op=a['operation']",
