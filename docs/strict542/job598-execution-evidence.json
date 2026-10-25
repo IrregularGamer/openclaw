@@ -30,6 +30,7 @@
     "invocation": "npm exec --yes --package=pnpm@12.5.1 -- sh docs/strict542/build598.sh",
     "no_guard_override": true,
     "node": "v24.21.0",
+    "peak_provenance": "historical upstream source comment, not measured by this preflight-refused run",
     "pnpm": "12.5.1",
     "resolved_heap_MB": 839,
     "runtime_artifact": null,
@@ -39,8 +40,8 @@
     "tests_log_file": "job598-pinned-execution-tests.txt",
     "tests_log_sha256": "f97165515f512aeba6a0f3a2d1d0bc869d45e2d397541d31c2793a8b1eabbd54",
     "tests_total": 175,
-    "upstream_measured_peak_GiB": 4.7,
-    "upstream_minimum_heap_MB": 4352
+    "upstream_minimum_heap_MB": 4352,
+    "upstream_recorded_peak_MiB": 4730
   },
   "source_commit": "de7369e4883abb96ac4cacac9a0ea89e2ae2ee29",
   "source_export_sha256": "9bc22897d894aa0b02c4a6961e074278c394afc90b72f2257a9855268239a811",
