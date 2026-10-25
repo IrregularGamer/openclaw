@@ -23,7 +23,10 @@ class NativeTransport(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         # Actual external pinned source, not an injectable availability callback.
-        cls.native = server.compile_native(SOURCE.read_bytes())
+        # The generated external module hashes __file__ at import. Keep that
+        # reference inside this source archive, never the host native directory.
+        with patch.object(server, 'NATIVE_PATH', SOURCE):
+            cls.native = server.compile_native(SOURCE.read_bytes())
 
     def setUp(self):
         self.children = []
@@ -185,7 +188,8 @@ class NativeTransport(unittest.TestCase):
 
 def socket_fixture(endpoint, mode):
     """Real cross-language socket transport, actual predicates, synthetic proc."""
-    native = server.compile_native(SOURCE.read_bytes())
+    with patch.object(server, 'NATIVE_PATH', SOURCE):
+        native = server.compile_native(SOURCE.read_bytes())
     listener = socket.socket(socket.AF_UNIX)
     listener.bind(endpoint)
     os.chmod(endpoint, 0o600)
