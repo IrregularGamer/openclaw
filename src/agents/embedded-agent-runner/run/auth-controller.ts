@@ -158,6 +158,28 @@ export function createEmbeddedRunAuthController(params: {
   const baseRuntimeModel = state.models.runtime;
   const baseEffectiveModel = state.models.effective;
 
+  const setSelectedRuntimeApiKey = (
+    apiKey: string,
+    mode: string,
+    expiresAt?: number,
+    selectionSupported = true,
+  ): void => {
+    // Auth preparation can replace the route object. Record the committed
+    // transport route, never the model captured before its overlays.
+    const model = state.models.runtime;
+    if (!selectionSupported) {
+      params.authStorage.setRuntimeApiKey(model.provider, apiKey);
+      return;
+    }
+    params.authStorage.setRuntimeApiKey(model.provider, apiKey, {
+      modelId: model.id,
+      api: model.api,
+      baseUrl: model.baseUrl,
+      mode,
+      expiresAt,
+    });
+  };
+
   const commitPreparedModel = (
     preparedModel:
       | Awaited<ReturnType<NonNullable<typeof params.prepareModelForAuthProfile>>>
@@ -288,14 +310,13 @@ export function createEmbeddedRunAuthController(params: {
         );
         return;
       }
-      params.authStorage.setRuntimeApiKey(runtimeModel.provider, preparedAuth.apiKey, {
-        modelId: runtimeModel.id,
-        api: runtimeModel.api,
-        baseUrl: runtimeModel.baseUrl,
-        mode: currentRuntimeAuthState?.authMode ?? "unknown",
-        expiresAt: preparedAuth.expiresAt,
-      });
       applyPreparedRuntimeRequestOverrides({ runtimeModel, preparedAuth });
+      setSelectedRuntimeApiKey(
+        preparedAuth.apiKey,
+        currentRuntimeAuthState?.authMode ?? "unknown",
+        preparedAuth.expiresAt,
+        !preparedAuth.request,
+      );
       state.runtimeAuthState = {
         ...activeRuntimeAuthState,
         expiresAt: preparedAuth.expiresAt,
@@ -559,6 +580,7 @@ export function createEmbeddedRunAuthController(params: {
     const sourceApiKey = apiKeyInfo.apiKey || "__aws_sdk_auth__";
     const profileId = usesAwsSdkChain ? (apiKeyInfo.profileId ?? candidate) : apiKeyInfo.profileId;
     let runtimeAuthHandled = false;
+    let runtimeReadSelectionSupported = true;
     try {
       const preparedAuth = await prepareRuntimeAuthForModel({
         runtimeModel,
@@ -566,16 +588,16 @@ export function createEmbeddedRunAuthController(params: {
         authMode: apiKeyInfo.mode,
         profileId: apiKeyInfo.profileId,
       });
+      runtimeReadSelectionSupported = !preparedAuth?.request;
       applyPreparedRuntimeRequestOverrides({ runtimeModel, preparedAuth: preparedAuth ?? {} });
       if (preparedAuth?.apiKey) {
         clearRuntimeAuthRefreshTimer();
-        params.authStorage.setRuntimeApiKey(runtimeModel.provider, preparedAuth.apiKey, {
-          modelId: runtimeModel.id,
-          api: runtimeModel.api,
-          baseUrl: runtimeModel.baseUrl,
-          mode: apiKeyInfo.mode,
-          expiresAt: preparedAuth.expiresAt,
-        });
+        setSelectedRuntimeApiKey(
+          preparedAuth.apiKey,
+          apiKeyInfo.mode,
+          preparedAuth.expiresAt,
+          runtimeReadSelectionSupported,
+        );
         state.runtimeAuthState = {
           generation: (state.runtimeAuthState?.generation ?? 0) + 1,
           sourceApiKey,
@@ -598,12 +620,7 @@ export function createEmbeddedRunAuthController(params: {
     }
     if (!runtimeAuthHandled) {
       clearRuntimeAuthRefreshTimer();
-      params.authStorage.setRuntimeApiKey(runtimeModel.provider, sourceApiKey, {
-        modelId: runtimeModel.id,
-        api: runtimeModel.api,
-        baseUrl: runtimeModel.baseUrl,
-        mode: apiKeyInfo.mode,
-      });
+      setSelectedRuntimeApiKey(sourceApiKey, apiKeyInfo.mode, undefined, runtimeReadSelectionSupported);
       state.runtimeAuthState = null;
     }
     state.lastProfileId = profileId;

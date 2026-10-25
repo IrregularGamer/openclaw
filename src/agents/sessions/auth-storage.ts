@@ -48,6 +48,7 @@ import type {
   RuntimeAuthProfileStore,
 } from "../auth-profiles/types.js";
 import { getAgentDir } from "../config.js";
+import { getModelProviderRequestTransport } from "../provider-request-config.js";
 import {
   containsSecretSentinel,
   looksLikeSecretSentinel,
@@ -474,14 +475,19 @@ export class AuthStorage {
   /** Only the already-selected runtime override, never a credential resolver. */
   captureRuntimeApiKeyRead(
     provider: string,
-    model: { id: string; api?: string; baseUrl?: string },
+    model: { id: string; api?: string; baseUrl?: string; headers?: Record<string, string> },
   ): SelectedRuntimeAuthReadLease | undefined {
     const selected = captureSelectedRuntimeAuthRead(() => ({
       generation: this.runtimeReadGeneration,
       provider,
       model,
       apiKey: this.runtimeOverrides.get(provider),
-      selection: this.runtimeReadSelections.get(provider),
+      // This narrow reader cannot attest an independent header/transport auth
+      // source. Refuse those routes on both capture and completion checks.
+      selection:
+        Object.keys(model.headers ?? {}).length || getModelProviderRequestTransport(model)
+          ? undefined
+          : this.runtimeReadSelections.get(provider),
     }));
     if (!selected) {
       return undefined;

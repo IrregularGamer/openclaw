@@ -19,6 +19,19 @@ an operator claim. Read leases invalidate when auth, model, session or concrete
 active-run registration changes. This is an actual source prerequisite, not
 a claim that the native binding or the complete strict542 contract exists.
 
+Selection records the committed transport route after runtime-auth overlays,
+including refresh overlays. Custom model headers, attached transport overrides
+and provider-prepared request overrides refuse this narrow reader because they
+can choose independent authentication. They cannot be inferred from an API key.
+
+Synthetic integration tests execute the actual AuthStorage, AgentSessionBase,
+auth-controller, route-config, sentinel and active-run projection source. The
+loader denies unrelated dependencies and explicit write-side fixtures supply
+synthetic selector/provider preparation data only. Tests assert that reads do
+not invoke those producers or storage, and that redaction registry membership,
+order and revision remain unchanged. Import-time logger/lifecycle registration
+fixtures never supply owner identity or availability. This is no live HQ probe.
+
 ## Native boundary examined independently
 
 The existing `Preservation.owner` requires effective root and, with caller=True,

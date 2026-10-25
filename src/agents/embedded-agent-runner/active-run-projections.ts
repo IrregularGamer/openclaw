@@ -63,10 +63,12 @@ export function captureActiveEmbeddedSessionRuntimeAuth(sessionKey: string) {
   const key = sessionKey.trim();
   const sessionId = ACTIVE_EMBEDDED_RUN_SESSION_IDS_BY_KEY.get(key);
   const handle = sessionId ? ACTIVE_EMBEDDED_RUNS.get(sessionId) : undefined;
+  const runId = handle?.runId;
   const registration = handle ? ACTIVE_EMBEDDED_RUN_REGISTRATIONS.get(handle) : undefined;
   if (
     !key ||
-    !handle?.runId ||
+    !handle ||
+    !runId ||
     !registration ||
     registration.sessionKey?.trim() !== key ||
     registration.sessionId !== sessionId
@@ -77,8 +79,11 @@ export function captureActiveEmbeddedSessionRuntimeAuth(sessionKey: string) {
     if (
       ACTIVE_EMBEDDED_RUN_SESSION_IDS_BY_KEY.get(key) !== sessionId ||
       ACTIVE_EMBEDDED_RUNS.get(sessionId!) !== handle ||
-      ACTIVE_EMBEDDED_RUNS_BY_RUN_ID.get(handle.runId!) !== handle ||
-      ACTIVE_EMBEDDED_RUN_REGISTRATIONS.get(handle) !== registration
+      handle.runId !== runId ||
+      ACTIVE_EMBEDDED_RUNS_BY_RUN_ID.get(runId) !== handle ||
+      ACTIVE_EMBEDDED_RUN_REGISTRATIONS.get(handle) !== registration ||
+      registration.sessionKey?.trim() !== key ||
+      registration.sessionId !== sessionId
     ) {
       throw new Error("Active session runtime binding is no longer current.");
     }

@@ -13,6 +13,9 @@ const allowed = new Set([
   "agents/sessions/selected-runtime-auth-read.ts",
   "agents/embedded-agent-runner/active-run-projections.ts",
   "agents/embedded-agent-runner/run-state.ts",
+  "agents/embedded-agent-runner/run/auth-controller.ts",
+  "agents/provider-secret-egress.ts",
+  "agents/provider-request-config.ts",
   "secrets/sentinel.ts",
   "logging/secret-redaction-registry.ts",
   "shared/global-singleton.ts",
@@ -21,6 +24,8 @@ const allowed = new Set([
 ].map(path => new URL(path, root).href));
 const sources = new Map();
 const denied = new Map();
+const syntheticDependencies = new Map();
+globalThis[Symbol.for("strict542.syntheticDependencies")] = syntheticDependencies;
 registerHooks({
   resolve(specifier, context, next) {
     if (!allowed.has(context.parentURL)) return next(specifier, context);
@@ -46,7 +51,10 @@ registerHooks({
     const definitions = [...names].map(name => {
       if (name === "createSubsystemLogger") return `export const ${name} = () => new Proxy({}, { get: () => denied });`;
       if (name === "registerAgentEventLifecycleRotationHandler") return `export const ${name} = () => undefined;`;
-      return `export const ${name} = denied;`;
+      return `export const ${name} = (...args) => {
+        const fn = globalThis[Symbol.for("strict542.syntheticDependencies")].get(${JSON.stringify(specifier + ":" + name)});
+        return fn ? fn(...args) : denied();
+      };`;
     });
     denied.set(url, `${fail}\nexport default new Proxy(denied, { get: () => denied });\n${definitions.join("\n")}`);
     return { url, shortCircuit: true };
@@ -54,7 +62,13 @@ registerHooks({
   load(url, context, next) {
     if (denied.has(url)) return { format: "module", source: denied.get(url), shortCircuit: true };
     if (!allowed.has(url)) return next(url, context);
-    const source = stripTypeScriptTypes(readFileSync(new URL(url), "utf8"), { mode: "transform" });
+    // The remote source-only transfer excludes directories named secrets. The
+    // export may relocate this single tracked source file, with its git SHA256
+    // verified by the runner. Resolution still uses its canonical source URL.
+    const input = url === new URL("secrets/sentinel.ts", root).href && process.env.STRICT542_SENTINEL_SOURCE
+      ? new URL(process.env.STRICT542_SENTINEL_SOURCE, root)
+      : new URL(url);
+    const source = stripTypeScriptTypes(readFileSync(input, "utf8"), { mode: "transform" });
     sources.set(url, source);
     return { format: "module", source, shortCircuit: true };
   },
@@ -62,10 +76,12 @@ registerHooks({
 
 const { AuthStorage } = await import("./auth-storage.ts");
 const { AgentSessionBase } = await import("./agent-session-base.ts");
-const { sealSecretSentinel } = await import("../../secrets/sentinel.ts");
+const { sealSecretSentinel, resolveSecretSentinel } = await import("../../secrets/sentinel.ts");
 const { readGlobalSingleton } = await import("../../shared/global-singleton.ts");
 const { captureActiveEmbeddedSessionRuntimeAuth } = await import("../embedded-agent-runner/active-run-projections.ts");
 const state = await import("../embedded-agent-runner/run-state.ts");
+const { createEmbeddedRunAuthController } = await import("../embedded-agent-runner/run/auth-controller.ts");
+const { attachModelProviderRequestTransport } = await import("../provider-request-config.ts");
 
 function fixture() {
   let reads = 0;
@@ -92,6 +108,94 @@ function fixture() {
 }
 
 describe("actual selected memory source owners", () => {
+  it("preserves ordinary egress redaction refresh while the new decoder stays read-only", () => {
+    const f = fixture();
+    sealSecretSentinel("synthetic-other-key", { label: "synthetic-other-owner" });
+    const redaction = readGlobalSingleton(Symbol.for("openclaw.secretRedactionRegistry"));
+    const before = [...redaction.registeredValues.keys()];
+    assert.equal(resolveSecretSentinel(f.key), "synthetic-memory-key");
+    const after = [...redaction.registeredValues.keys()];
+    assert.notDeepEqual(after, before);
+    assert.equal(after.at(-1), "synthetic-memory-key");
+  });
+
+  it("records the controller's committed route after preparation and refresh overlays", async () => {
+    const f = fixture();
+    let endpoint = "https://prepared.invalid";
+    let preparationCalls = 0;
+    let preparedRequest;
+    // These are explicit synthetic WRITE-side dependencies. Read leases must
+    // never invoke them; none supplies native identity or quota availability.
+    syntheticDependencies.set("../../model-auth.js:getApiKeyForModelCore", async () => ({ apiKey: "synthetic-source-key", mode: "oauth" }));
+    syntheticDependencies.set("../../../plugins/provider-runtime.js:prepareProviderRuntimeAuth", async () => {
+      preparationCalls++;
+      return { apiKey: "synthetic-prepared-key", baseUrl: endpoint, expiresAt: Date.now() + 60000, request: preparedRequest };
+    });
+    syntheticDependencies.set("../../provider-runtime-auth-protection.js:protectPreparedProviderRuntimeAuth", ({ preparedAuth }) => preparedAuth);
+    syntheticDependencies.set("./provider-attribution.js:resolveProviderRequestCapabilities", () => ({ endpointClass: "custom", attributionHeaders: {} }));
+    syntheticDependencies.set("@openclaw/normalization-core/string-coerce:normalizeLowercaseStringOrEmpty", value => typeof value === "string" ? value.toLowerCase() : "");
+    syntheticDependencies.set("../../embedded-agent-helpers.js:isFailoverErrorMessage", () => true);
+    syntheticDependencies.set("../../embedded-agent-helpers.js:classifyFailoverReason", () => "auth");
+    const authState = {
+      models: { runtime: f.model, effective: f.model },
+      runtimeAuthRefreshCancelled: true, profileIndex: 0,
+    };
+    const controller = createEmbeddedRunAuthController({
+      config: {}, agentDir: "/synthetic", workspaceDir: "/synthetic",
+      authStore: {}, authStorage: f.storage, profileCandidates: [undefined],
+      provider: f.model.provider, modelId: f.model.id, state: authState,
+      log: { debug() {}, warn() {}, error() {} },
+    });
+    try {
+      await controller.applyAuthProfileCandidate();
+      assert.equal(preparationCalls, 1);
+      // The old session model must refuse while transport points elsewhere.
+      assert.equal(f.session.captureRuntimeAuthRead(), undefined);
+      f.session.agent.state.model = authState.models.runtime;
+      const lease = f.session.captureRuntimeAuthRead();
+      assert.equal(lease.apiKey, "synthetic-prepared-key");
+      lease.assertCurrent();
+      assert.equal(preparationCalls, 1);
+      endpoint = "https://refreshed.invalid";
+      assert.equal(await controller.maybeRefreshRuntimeAuthForAuthError("synthetic-auth-error", false), true);
+      assert.equal(preparationCalls, 2);
+      assert.throws(() => lease.assertCurrent(), /no longer current/);
+      assert.equal(f.session.captureRuntimeAuthRead(), undefined);
+      f.session.agent.state.model = authState.models.runtime;
+      const refreshed = f.session.captureRuntimeAuthRead();
+      assert.equal(refreshed.apiKey, "synthetic-prepared-key");
+      refreshed.assertCurrent();
+      assert.equal(preparationCalls, 2);
+      for (const request of [
+        { auth: { mode: "authorization-bearer", token: "synthetic-other-token" } },
+        { headers: { "x-api-key": "synthetic-other-header" } },
+      ]) {
+        preparedRequest = request;
+        await controller.applyAuthProfileCandidate();
+        f.session.agent.state.model = authState.models.runtime;
+        assert.equal(f.session.captureRuntimeAuthRead(), undefined);
+      }
+      f.assertNoReads();
+    } finally {
+      controller.stopRuntimeAuthRefreshTimer();
+      syntheticDependencies.clear();
+    }
+  });
+
+  it("refuses model headers and owner-attached transport overrides on capture and completion", () => {
+    const f = fixture();
+    const lease = f.session.captureRuntimeAuthRead();
+    f.model.headers = { "x-api-key": "synthetic-header" };
+    assert.equal(f.session.captureRuntimeAuthRead(), undefined);
+    assert.throws(() => lease.assertCurrent(), /no longer current/);
+    delete f.model.headers;
+    f.session.agent.state.model = attachModelProviderRequestTransport(f.model, {
+      auth: { mode: "authorization-bearer", token: "synthetic-other-token" },
+    });
+    assert.equal(f.session.captureRuntimeAuthRead(), undefined);
+    f.assertNoReads();
+  });
+
   it("reads the concrete session and decodes only its already selected memory credential", () => {
     const f = fixture();
     sealSecretSentinel("synthetic-other-key", { label: "synthetic-other-owner" });
