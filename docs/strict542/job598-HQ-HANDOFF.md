@@ -216,3 +216,20 @@ no command ran in that refused follow-up. Logs were recovered read-only through
 the forced rsync artifact path. No offload scan, ownership predicate or build
 resource guard was weakened. Automatic queue598 review, actual artifact/action/
 next-seal review and all original application gates remain unfulfilled.
+
+## Corrected diagnostic (86c1a4db, reviewed ce824d35): no outcome yet
+
+The first execution of the corrected diagnostic, from the unchanged
+tmp/export598-serial-probe-fixed export, passed all179 admitted checks, finished
+the pinned install and started serial tsdown (pid339). The worker was then killed
+at 2026-10-25T19:24Z by an agent usage limit, so the remote run was cancelled
+without settling: no compiler, memory or artifact result exists
+(runs/598/serial-probe-fixed-live.log). One rerun of the same export was refused
+before any command ran: `refusing: secret-like file in tree: source/.npmrc`,
+offload_status remote_environment_blocked, retry_requires_reconciliation, exit75
+(job598-serial-probe-rerun-refusal.txt). The local export has no source/ tree,
+so the leftover is remote state from the killed run. Per policy, there was no
+retry, no scan bypass and no new export path. Next step: once the queue/broker
+has cleaned up the remote workspace, run one fresh admitted run of the same
+reviewed export, followed by independent evidence review. All gates for598
+and595 above remain open.
