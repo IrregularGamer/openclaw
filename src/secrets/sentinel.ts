@@ -81,6 +81,19 @@ export function resolveSecretSentinel(
   sentinel: string,
   cipherKey: Uint8Array = secretSentinelCipherKey,
 ): string | undefined {
+  const value = readExistingSecretSentinel(sentinel, cipherKey);
+  if (value !== undefined) {
+    // Normal egress refreshes the bounded registry; inspection must not.
+    registerSecretValueForRedaction(value);
+  }
+  return value;
+}
+
+/** Decode existing process memory without minting, loading or updating registries. */
+export function readExistingSecretSentinel(
+  sentinel: string,
+  cipherKey: Uint8Array = secretSentinelCipherKey,
+): string | undefined {
   if (!looksLikeSecretSentinel(sentinel)) {
     return undefined;
   }
@@ -102,8 +115,6 @@ export function resolveSecretSentinel(
     decipher.setAAD(scope);
     decipher.setAuthTag(tag);
     const value = Buffer.concat([decipher.update(ciphertext), decipher.final()]).toString("utf8");
-    // Refresh the bounded redaction registry whenever a live sentinel is used.
-    registerSecretValueForRedaction(value);
     return value;
   } catch {
     return undefined;
