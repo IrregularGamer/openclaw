@@ -335,3 +335,23 @@ action/next-seal review and automatic queue598 review. This is pending598 work,
 not an S-only approval question, a request to waive any gate, or another
 permission to retry unchanged source. Existing infrastructure/source installation
 preparation and fresh genuine post-restart HQ owner/run requirements above stand.
+
+
+## Whole-config isolation successor (598, still diagnostic only)
+
+Source a069c344/f62d419c and separate independent review fe56d16f prepared
+fresh compiler processes for each unchanged whole config, with original order,
+complete census and unchanged900s/2GiB limits. Actual admitted fe56d16f run
+passed184 relevant checks and pinned installation; AI compilation passed. First
+main config refused13 UNRESOLVED_ENTRY errors before useful graph compilation.
+The nested diagnostic config changed tsdown's default root to its own directory;
+this was an implementation defect, not resource exhaustion or a test assertion.
+The child exited1 and the owner observed its process group dead; normal export
+cleanup completed. Actual logs/receipt are job598-isolated-first-*.
+
+Correction moves only the diagnostic config beside the original root config and
+adjusts its imports/selector path. It preserves original default-root semantics
+without a caller root override, changed entries or omitted graphs. Independent
+exact correction/evidence review must precede one corrected admitted run. No
+unchanged repeat, normal build admission, artifact/action/next-seal approval or
+595 installation is established. The original4352MiB full-build guard remains.

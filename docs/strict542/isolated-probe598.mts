@@ -21,7 +21,7 @@ const receipt={kind:'DIAGNOSTIC_ONLY_NOT_BUILD_EVIDENCE',capacity,deadlineMs:900
 function save() {fs.writeFileSync('isolated-probe598.json',JSON.stringify(receipt)+'\n');}
 fs.writeFileSync('isolated-probe598.json',JSON.stringify(receipt)+'\n',{flag:'wx'});
 const plans=[{label:'ai',args:['--config','tsdown.ai.config.ts','--concurrency','1'],env},
-  ...census.map(c=>({label:`main-config-${c.index}`,args:['--config','docs/strict542/isolated-config598.mts','--concurrency','1'],
+  ...census.map(c=>({label:`main-config-${c.index}`,args:['--config','tsdown.isolated598.config.ts','--concurrency','1'],
     env:{...env,OPENCLAW_598_CONFIG_INDEX:String(c.index),OPENCLAW_598_CONFIG_CENSUS:JSON.stringify(census)}}))];
 for (const plan of plans) {
   const remaining=Math.floor(deadline-performance.now());

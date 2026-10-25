@@ -1,0 +1,57 @@
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.020s
+
+OK
+✔ census preserves every ordered config and alias/source pair including duplicate group names (7.362837ms)
+✔ selection returns the entire original graph by identity (2.110976ms)
+✔ refuses invalid indices, declaration graphs and drifted inventory (5.570886ms)
+✔ admits fixed serial diagnostic only with observed bounded capacity (4.601819ms)
+✔ refuses unknown or oversized capacity and existing output (1.57912ms)
+✔ refuses caller-controlled compiler budget, selection, preload or plugin exclusions (1.526995ms)
+✔ compiler warnings, unresolved imports and unsettled/failed runs refuse success (1.027457ms)
+✔ accepts only the owning tsx launcher cache-disabled value (1.236619ms)
+✔ refuses inherited output and native thread scheduling controls even when empty (1.331256ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 535.20675
++ vitest 5.0.1
+
+Done in 2m 17.5s using pnpm v12.5.1
+{"kind":"DIAGNOSTIC_ONLY_NOT_BUILD_EVIDENCE","label":"ai","args":["node_modules/tsdown/dist/run.mjs","--config-loader","unrun","--logLevel","warn","--no-clean","--config","tsdown.ai.config.ts","--concurrency","1"],"nodeOptions":"--max-old-space-size=692","remaining":898389}
+{"kind":"DIAGNOSTIC_ONLY_NOT_BUILD_EVIDENCE","label":"main-config-0","args":["node_modules/tsdown/dist/run.mjs","--config-loader","unrun","--logLevel","warn","--no-clean","--config","docs/strict542/isolated-config598.mts","--concurrency","1"],"nodeOptions":"--max-old-space-size=676","remaining":895062}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"0","phase":"begin","pid":348,"memory":{"rss":191217664,"heapTotal":54620160,"heapUsed":19494536,"external":2920017,"arrayBuffers":357020},"kernel":{"memory.current":"1139122176","memory.peak":"1602265088","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 139180612\nuser_usec 74320007\nsystem_usec 64860605\ncore_sched.force_idle_usec 0\nnr_periods 1771\nnr_throttled 964\nthrottled_usec 51994460\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"0","phase":"build-error","pid":348,"memory":{"rss":197599232,"heapTotal":54620160,"heapUsed":19737472,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1145675776","memory.peak":"1602265088","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 139204582\nuser_usec 74337453\nsystem_usec 64867129\ncore_sched.force_idle_usec 0\nnr_periods 1771\nnr_throttled 964\nthrottled_usec 51994460\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"0","phase":"closed","pid":348,"memory":{"rss":197599232,"heapTotal":54620160,"heapUsed":19771896,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1145675776","memory.peak":"1602265088","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 139207530\nuser_usec 74339945\nsystem_usec 64867584\ncore_sched.force_idle_usec 0\nnr_periods 1771\nnr_throttled 964\nthrottled_usec 51994460\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"0","phase":"closed","pid":348,"memory":{"rss":197599232,"heapTotal":54620160,"heapUsed":19815864,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1145937920","memory.peak":"1602265088","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 139211231\nuser_usec 74343298\nsystem_usec 64867933\ncore_sched.force_idle_usec 0\nnr_periods 1771\nnr_throttled 964\nthrottled_usec 51994460\nnr_bursts 0\nburst_usec 0"}}
+
+ ERROR  Error: Build failed with 13 errors:
+
+[31m[UNRESOLVED_ENTRY] [0mCannot resolve entry module packages/agent-core/src/index.ts.
+
+[31m[UNRESOLVED_ENTRY] [0mCannot resolve entry module packages/agent-core/src/agent.ts.
+
+[31m[UNRESOLVED_ENTRY] [0mCannot resolve entry module packages/agent-core/src/agent-loop.ts.
+
+[31m[UNRESOLVED_ENTRY] [0mCannot resolve entry module packages/agent-core/src/llm.ts.
+
+[31m[UNRESOLVED_ENTRY] [0mCannot resolve entry module packages/agent-core/src/runtime-deps.ts.
+
+...
+    at aggregateBindingErrorsIntoJsError (file:///work/source/node_modules/.pnpm/rolldown@1.2.9/node_modules/rolldown/dist/shared/error-CGhV1ebk.mjs:48:18)
+    at unwrapBindingResult (file:///work/source/node_modules/.pnpm/rolldown@1.2.9/node_modules/rolldown/dist/shared/error-CGhV1ebk.mjs:18:128)
+    at #build (file:///work/source/node_modules/.pnpm/rolldown@1.2.9/node_modules/rolldown/dist/shared/rolldown-Ld3ZGGCt.mjs:133:34)
+    at async build (file:///work/source/node_modules/.pnpm/rolldown@1.2.9/node_modules/rolldown/dist/index.mjs:48:22)
+    at async Promise.all (index 0)
+    at async Object.runBuild (file:///work/source/node_modules/.pnpm/tsdown@0.23.0_tsx@4.23.15_typescript@7.1.0-dev.20260920.1_unrun@0.3.1/node_modules/tsdown/dist/style-DiMP8pYv.mjs:57:11)
+    at async buildSingle (file:///work/source/node_modules/.pnpm/tsdown@0.23.0_tsx@4.23.15_typescript@7.1.0-dev.20260920.1_unrun@0.3.1/node_modules/tsdown/dist/build-JVmLFaZt.mjs:820:19)
+    at async Promise.all (index 0)
+    at async buildWithConfigs (file:///work/source/node_modules/.pnpm/tsdown@0.23.0_tsx@4.23.15_typescript@7.1.0-dev.20260920.1_unrun@0.3.1/node_modules/tsdown/dist/build-JVmLFaZt.mjs:767:18)
+    at async build$1 (file:///work/source/node_modules/.pnpm/tsdown@0.23.0_tsx@4.23.15_typescript@7.1.0-dev.20260920.1_unrun@0.3.1/node_modules/tsdown/dist/build-JVmLFaZt.mjs:722:9)
+
+[tsdown-build] child result pid=348: {"status":1,"signal":null,"parentSignal":null,"timedOut":false,"cleanup":"none","observedProcessState":"dead","observationScope":"process-group","finalStatus":1}

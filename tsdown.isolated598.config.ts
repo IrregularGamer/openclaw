@@ -1,7 +1,7 @@
 // SOURCE ONLY diagnostic: one unchanged original graph, with telemetry only.
 import fs from 'node:fs';
-import configs from '../../tsdown.config.ts';
-import { selectWholeConfig } from '../../scripts/lib/isolated-config.mjs';
+import configs from './tsdown.config.ts';
+import { selectWholeConfig } from './scripts/lib/isolated-config.mjs';
 const selected = selectWholeConfig(configs, process.env.OPENCLAW_598_CONFIG_INDEX,
   process.env.OPENCLAW_598_CONFIG_CENSUS);
 let timer: ReturnType<typeof setInterval> | undefined;
