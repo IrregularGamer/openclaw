@@ -190,6 +190,7 @@ def make_action(tree, stage, baseline):
             'fresh-post-restart-accepted-run-ack','original-predicates-unchanged','independent-loaded-generation-check'],
         'rollback':'Before gateway restart only: restore exact exclusive old-byte/full-metadata backups and remove only recorded-new absent targets under original lock/guards. After restart or partial seal/native action: refuse automatic rollback; independently review reconciliation and fresh HQ binding. Never replay historical installers.',
         'seal_policy':'Validate original complete seal and metadata first; never amend unrelated entries. Any exact new sealed target requires separate privilege/seal-policy review and exact old/new amendment. Preserve original whole seal, metadata/xattrs and hash; full seal must validate after application.'}
+    payload['execution_helpers']={name:file_hash(stage/name) for name in ('apply598.py','application598.py')}
     payload['unchanged_guard_backup_inventory']=[{'target':path,'original':baseline['observed_guards'][path], 'backup_name':'guard-'+str(index)} for index,path in enumerate(sorted(GUARDS))]
     identity=digest(payload)
     payload['exclusive_backup_root']='/var/backups/strict542-598/'+identity

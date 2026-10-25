@@ -60,6 +60,7 @@ class PreparationTests(unittest.TestCase):
     def staged(self):
         stage=self.root/'stage';stage.mkdir();self.runtime.rename(stage/'runtime')
         self.runtime=stage/'runtime'
+        for name in ('apply598.py','application598.py'):(stage/name).write_text('synthetic '+name)
         for name in a.TARGETS:
             if name != 'runtime':(stage/name).write_text('synthetic '+name)
         return stage
