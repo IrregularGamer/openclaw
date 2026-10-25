@@ -355,3 +355,17 @@ without a caller root override, changed entries or omitted graphs. Independent
 exact correction/evidence review must precede one corrected admitted run. No
 unchanged repeat, normal build admission, artifact/action/next-seal approval or
 595 installation is established. The original4352MiB full-build guard remains.
+
+
+The first corrected-root attempt was refused before command execution with
+exit75: leftover root .pnpm-store/v11/index.db from the preceding completed
+diagnostic (job598-isolated-corrected-refusal.txt). Source/native cleanup worked;
+pnpm's root store was outside those paths. Runner successor now removes that
+fixed disposable cache during its EXIT trap too; it changes no installed broker,
+scanner, source, dependency or resource policy. Existing exact-slot reconciliation
+procedure is reused with a separately reviewed new literal slot
+tmp-export598-config-isolation-98c59c32, current idle/lease/runner and full bounded
+inventory evidence, retained input/archive hashes and recovered actual outcomes.
+No database content is transferred. Only after independent exact cleanup and
+runner review, verified removal, and unchanged reviewed archive identities may
+one normal corrected diagnostic run proceed. Do not blindly retry or change slot.

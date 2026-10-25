@@ -1,0 +1,2 @@
+[offload-agent] refusing: secret-like file in tree: .pnpm-store/v11/index.db
+{"offload_status": "remote_environment_blocked", "local_execution": false, "retry_requires_reconciliation": true}

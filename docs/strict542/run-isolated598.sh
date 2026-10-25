@@ -11,7 +11,9 @@ out=Path('result598'); src=Path('source')
 for name in ['strict542-checks','result598-isolated']:
  p=src/name
  if p.exists():shutil.move(str(p),str(out/name))
-for name in ['source','native-source']:
+# pnpm12 also creates its disposable store at the export root.
+# Its index.db must not survive into the next normal transfer scan.
+for name in ['source','native-source','.pnpm-store']:
  p=Path(name)
  if p.exists():shutil.rmtree(p)
 CLEAN
