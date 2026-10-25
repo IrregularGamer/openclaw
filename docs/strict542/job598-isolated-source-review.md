@@ -2,7 +2,8 @@
 
 Reviewer: Rook `/root/build_analysis`, independently delegated read-only analysis
 and review, 2026-10-25 UTC. Exact reviewed range:
-`d874f143` through `f62d419c63ccefe41443c0fbaa84d7ab1aaedc17`, including
+`d874f143` through `44db0748` (including exact telemetry source
+`f62d419c63ccefe41443c0fbaa84d7ab1aaedc17`), including
 implementation `a069c3442786d159ea3a871035db03c58fe66a3f`.
 
 Verdict: **APPROVE SOURCE for one admitted diagnostic execution only**.
@@ -49,6 +50,17 @@ unreferenced interval cannot keep a compiler alive. Logging the owner's resolved
 NODE_OPTIONS exposes the actual generated heap setting without changing it or
 transferring runtime authentication/configuration. These two telemetry changes
 preserve the approved diagnostic boundaries.
+
+Reviewed committed export runner `44db0748` against the actual previously
+reviewed `run598.sh` with SHA256
+`7b46486d3a777744ff4f56240378a8233d66da5e8f09d5a5eb22ca0ded2d8488`.
+The diff only changes artifact/probe names and includes the new selector tests.
+Archive digest validation, original relevant checks, pinned pnpm12.5.1 frozen
+installation, foreground execution, status recording and disposable extraction
+cleanup remain intact. `sh -n docs/strict542/run-isolated598.sh` passed. This
+runner is approved only within the original admitted fresh secretless offload
+export contract, with its manifest and exact native/base/successor pins verified;
+it supplies no host/root or installation authority.
 
 Independently ran:
 `node --test docs/strict542/isolated-config598.test.mjs docs/strict542/serial-probe598.test.mjs`.
