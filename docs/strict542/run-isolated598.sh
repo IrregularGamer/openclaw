@@ -1,0 +1,74 @@
+#!/bin/sh
+set -eu
+mkdir result598
+EXPORT_ROOT="$PWD"
+cleanup() {
+  cd "$EXPORT_ROOT"
+  python3 - <<'CLEAN'
+from pathlib import Path
+import shutil
+out=Path('result598'); src=Path('source')
+for name in ['strict542-checks','result598-isolated']:
+ p=src/name
+ if p.exists():shutil.move(str(p),str(out/name))
+for name in ['source','native-source']:
+ p=Path(name)
+ if p.exists():shutil.rmtree(p)
+CLEAN
+}
+trap cleanup EXIT
+python3 - <<'VERIFY_ARCHIVES'
+import hashlib,json
+from pathlib import Path
+m=json.loads(Path('export-manifest.json').read_text())
+for name,key in [('source598.tar','base_source_archive_sha256'),('successor598.tar','successor_archive_sha256'),('native598.tar','native_export_sha256')]:
+ h=hashlib.sha256()
+ with open(name,'rb') as f:
+  for block in iter(lambda:f.read(1024*1024),b''):h.update(block)
+ assert h.hexdigest()==m[key],name
+VERIFY_ARCHIVES
+mkdir source native-source
+tar -xf source598.tar -C source
+tar -xf successor598.tar -C source
+tar -xf native598.tar -C native-source
+cd source
+export NATIVE_SOURCE="$PWD/../native-source"
+mkdir strict542-checks
+set +e
+(
+set -e
+node --test src/agents/sessions/selected-runtime-auth-read.test.mjs src/agents/sessions/selected-runtime-auth-integration.test.mjs src/gateway/strict542/native-owner-transport.test.mjs src/gateway/strict542/usage-preflight.test.mjs
+python3 -m unittest discover -s src/gateway/strict542 -p test_native_owner_server.py -v
+python3 -m unittest discover -s docs/strict542 -p test_native_preparation.py -v
+python3 -m unittest discover -s src/gateway/strict542 -p test_root_owner_supervisor.py -v
+python3 -m unittest discover -s docs/strict542 -p test_application598.py -v
+python3 -m unittest discover -s docs/strict542 -p test_apply598.py -v
+node --test docs/strict542/serial-probe598.test.mjs docs/strict542/isolated-config598.test.mjs
+) >strict542-checks/tests.log 2>&1
+status=$?
+set -e
+tail -22 strict542-checks/tests.log
+[ "$status" = 0 ] || exit "$status"
+python3 - <<'EVIDENCE'
+import json,hashlib,os
+from pathlib import Path
+manifest=json.loads(Path('../export-manifest.json').read_text())
+checks=['gateway-scoped','native-owner','supervisor-ipc','cancellation-settlement','application-preparation']
+value={'source_commit':manifest['source_commit'],'exit_code':0,'checks':checks,'test_log_sha256':hashlib.sha256(Path('strict542-checks/tests.log').read_bytes()).hexdigest()}
+Path('strict542-checks/evidence.json').write_text(json.dumps(value,sort_keys=True)+'\n')
+EVIDENCE
+mkdir result598-isolated
+set +e
+npm exec --yes --package=pnpm@12.5.1 -- sh -c '
+set -eu
+[ "$(pnpm --version)" = 12.5.1 ]
+pnpm install --frozen-lockfile
+node --import ./scripts/tsx.mjs docs/strict542/isolated-probe598.mts
+' >result598-isolated/probe.log 2>&1
+status=$?
+set -e
+if [ -e isolated-probe598.json ]; then cp isolated-probe598.json result598-isolated/; fi
+printf '%s\n' "$status" >result598-isolated/exit-code.txt
+tail -35 result598-isolated/probe.log
+cd ..
+exit "$status"
