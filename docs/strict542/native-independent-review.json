@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "reviewer": "Rook independent native_review subagent",
   "reviewType": "actual exact source review, read-only inspection",
-  "verdict": "APPROVE_SOURCE_PREPARATION_CONDITIONAL_REMOTE_TESTS",
+  "verdict": "APPROVE_SOURCE_PREPARATION_ONLY",
   "scope": "unapplied source preparation only",
   "sourceRelease": "bcfc88812a35243893585dbeca87ca41b48272ca",
   "files": {
@@ -37,8 +37,21 @@
     }
   ],
   "approvalConditions": [
-    "All synthetic preparation tests pass in the approved remote secretless source-only export.",
-    "This approves only the exact pinned unapplied source preparation and tests, not job558 completion, a supported gateway binding or usage.preflight.",
-    "Do not infer installation, loaded-runtime equivalence, live session/auth ownership or quota availability."
-  ]
+    "Approval applies only to the exact pinned unapplied source preparation and tests.",
+    "Job558 remains incomplete: no supported authenticated cancellable root gateway bridge, actual live route/auth owner binding or usage.preflight exists.",
+    "No installation, loaded-runtime equivalence, live quota availability or other gate approval is granted."
+  ],
+  "reviewedCommit": "e29b79c81f6b10ccff525dba511b0a6e37df633c",
+  "job558Overall": "INCOMPLETE: native authenticated cancellable gateway transport, live route/auth owner read and usage.preflight remain unimplemented",
+  "remoteVerification": {
+    "executor": "parent implementer via approved remote source-only placement",
+    "reviewerEvidence": "inspected bounded output and matched exported source hashes to exact reviewed pins",
+    "export": "/home/deploy/agentq/tmp/export558.V3gH",
+    "log": "/home/deploy/agentq/runs/558/remote-tests.log",
+    "logSha256": "cde40f581abab24350a83a3e38674a22976d030eaf2a489a0be5a49f6529e18e",
+    "result": "15 tests in 0.743s, OK",
+    "reportedExitCode": 0,
+    "nativeTargetCommit": "a1d99e8e0460747293ec22a5a8dd8d14231c89d2",
+    "reviewerRanTests": false
+  }
 }
