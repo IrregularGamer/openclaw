@@ -1,0 +1,31 @@
+{
+  "job": 587,
+  "verdict": "APPROVE_SOURCE_ONLY",
+  "reviewer": "independent agent /root/transport_review",
+  "reviewedBase": "5a5536e4",
+  "reviewedCommit": "556d4f46bb9d63bc0f25659df83c7075827f0a54",
+  "sourceSha256": {
+    "src/gateway/strict542/native-owner-transport.ts": "bc880ed99f105872548d15669c233b7e7f568c7175f42a3f4e23332368301242",
+    "src/gateway/strict542/native_owner_server.py": "5b383eb5b952505008f0ad31cd1a2423ad8d609814c6d276e1735ed80ad7b0ab",
+    "src/gateway/strict542/native-owner-transport.test.mjs": "f19a6f64144d04082e1eee9319e96598c2161e2037f5e6f5bffdb8bded469036",
+    "src/gateway/strict542/test_native_owner_server.py": "a496b1d06b3de8ed43ec01f89a4bab51ab5d74ffe4dfca4cf5b434c70f3735d5",
+    "src/gateway/server-methods/usage.ts": "713f25db3198fa10d00feac8c3f92509c68ad195fe441bc68e77422a8c438a13",
+    "src/gateway/strict542/usage-preflight.ts": "b017b54b506a4e7a1b914b9a0fce47fc4a3441122333b96c19292b6342949450",
+    "src/gateway/strict542/usage-preflight.test.mjs": "7fe27f24bf2fb05fea3317eb5359be03ae5dcdf4bce70569e336052c4bd8b246"
+  },
+  "remoteTests": {
+    "placement": "approved offload source-only fresh git archive",
+    "nodePassed": 101,
+    "nativeTransportPassed": 15,
+    "nativePreparationPassed": 18,
+    "exitCode": 0,
+    "settled": true,
+    "log": "/home/deploy/agentq/runs/587/remote-tests-3.log",
+    "logSha256": "b40ff75522fe109e6044755e0b78d950d89e811b0f99478f8df283dc30b5121a"
+  },
+  "quota": "UNKNOWN",
+  "runtimeInstallation": false,
+  "releaseApproval": false,
+  "initialTestException": "Initial red regression overlong-deadline case attempted the old fixed sudo path before transport replacement. No successful native owner read was observed. Source test module loader now denies production subprocess imports. Initial local synthetic imports also read installed native source for its self-hash; fixtures now bind __file__ to exact source archive only.",
+  "fixtureSentinelSha256": "2d2fcf4c75921ae327493058a55a19ed146c7e68a77ddad3793b131197fa904a"
+}
