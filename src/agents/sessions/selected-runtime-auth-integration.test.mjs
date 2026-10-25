@@ -28,12 +28,14 @@ const syntheticDependencies = new Map();
 globalThis[Symbol.for("strict542.syntheticDependencies")] = syntheticDependencies;
 registerHooks({
   resolve(specifier, context, next) {
+    if (specifier.startsWith(".") && context.parentURL) {
+      const target = new URL(specifier.replace(/\.js$/, ".ts"), context.parentURL).href;
+      if (allowed.has(target)) return { url: target, shortCircuit: true };
+    }
     if (!allowed.has(context.parentURL)) return next(specifier, context);
     if (specifier.startsWith("node:") && specifier !== "node:fs") {
       return next(specifier, context);
     }
-    const target = new URL(specifier.replace(/\.js$/, ".ts"), context.parentURL).href;
-    if (allowed.has(target)) return { url: target, shortCircuit: true };
     const url = `denied:${encodeURIComponent(context.parentURL + ":" + specifier)}`;
     const source = sources.get(context.parentURL);
     const names = new Set();
