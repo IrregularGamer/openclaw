@@ -1,0 +1,34 @@
+{
+  "authority": "SOURCE_TEST_EVIDENCE_ONLY; no artifact/action/seal/application approval",
+  "broker_log": "2026-10-25T18:07:25Z run remote rc=1 150s /home/deploy/agentq/tmp/export598-acceptance",
+  "build": {
+    "actual_pnpm": "9.15.4",
+    "exit_code": 1,
+    "log_sha256": "81df37146b5f598a80f94f1ddf37d867d0cfe4cb610ceab9c6931efe526f98cc",
+    "node": "v24.21.0",
+    "required_pnpm": "12.5.1",
+    "status": "REFUSED_BEFORE_INSTALL"
+  },
+  "execution": "admitted-offload",
+  "export": "/home/deploy/agentq/tmp/export598-acceptance",
+  "followup": {
+    "clean_admitted_exact_toolchain_probe": "npm exec --yes --package=pnpm@12.5.1 -- pnpm --version returned12.5.1",
+    "corepack": "absent",
+    "pinned_build": "running in fresh immutable committed source export; not passing evidence yet",
+    "scan_refusal": "source/.npmrc from public committed source, no execution"
+  },
+  "native_export_sha256": "d73e4e35720ffcb71856ce8168e75fa3b4fd49251fd78c811e1abded8b2701de",
+  "source_commit": "de7369e4883abb96ac4cacac9a0ea89e2ae2ee29",
+  "source_export_sha256": "9bc22897d894aa0b02c4a6961e074278c394afc90b72f2257a9855268239a811",
+  "tests": {
+    "application_preparation": 19,
+    "disk_application": 9,
+    "exit_code": 0,
+    "log_sha256": "ea103af172f8c72313f728eff1dd1d9f1c652bfab1f43d7fe33947d7186daf2a",
+    "native": 15,
+    "node": 101,
+    "preparation": 18,
+    "supervisor": 13,
+    "total": 175
+  }
+}
