@@ -202,7 +202,9 @@ export const usageHandlers: GatewayRequestHandlers = {
         errorShape(ErrorCodes.FORBIDDEN, "usage.preflight requires an authenticated operator reader."),
       );
     if (
-      hasCurrentClientAuthority?.() === false ||
+      typeof hasCurrentClientAuthority !== "function" ||
+      !hasCurrentClientAuthority() ||
+      !(signal ?? client?.connectionSignal) ||
       !client?.connect ||
       (!isGatewayAdmin(client) && operatorSessionCap(client, context.getRuntimeConfig()) === "none")
     ) {
@@ -224,10 +226,10 @@ export const usageHandlers: GatewayRequestHandlers = {
         fetchUsage: fetchAnthropicOAuthUsage,
       },
       enteredNs,
-      signal,
+      signal ?? client?.connectionSignal,
     );
     // A caller whose transport authority ended never receives the result.
-    if (hasCurrentClientAuthority?.() === false) {
+    if (!hasCurrentClientAuthority()) {
       forbidden();
       return;
     }

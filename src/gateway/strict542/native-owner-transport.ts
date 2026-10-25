@@ -1,52 +1,36 @@
-import { spawn as nodeSpawn } from "node:child_process";
+import { randomUUID } from "node:crypto";
+import { lstatSync } from "node:fs";
+import { createConnection } from "node:net";
+import { dirname } from "node:path";
 
-// Fixed root-native read prepared in docs/strict542/native-owner-read.patch. It
-// calls the EXISTING Native510.owner_check (Preservation.owner + gateway
-// MainPID) with caller=True; this module never evaluates ownership itself.
-// The command is only usable after a separately authorized installation of
-// that native operation and its fixed sudoers rule. Until then the read
-// refuses as native_unavailable and usage.preflight stays UNKNOWN.
-export const NATIVE_OWNER542_ARGV = Object.freeze([
-  "/usr/bin/sudo",
-  "-n",
-  "/usr/bin/python3",
-  "/usr/local/libexec/agentq-safety/control.py",
-  "owner542-read",
-] as const);
-
+// Only a separately provisioned root endpoint may serve this path. No request
+// launches sudo, a native CLI, or any process. Missing endpoint means UNKNOWN.
+export const NATIVE_OWNER542_SOCKET = "/run/agentq-safety/owner542.sock";
 export const HQ542_SESSION_KEY = "agent:claw:telegram:group:-5217857869";
-
-const STDOUT_LIMIT = 4096;
-// The native side receives an earlier deadline so it finishes (or refuses) with
-// time left for this process to observe settlement before the shared deadline.
-export const NATIVE_RESERVE_NS = 1_500_000_000n;
-// SIGTERM is delivered at the native deadline; SIGKILL follows at this margin.
-const KILL_RESERVE_NS = 500_000_000n;
-
-export type NativeOwner542 = {
-  name: "Pinch";
-  session: string;
-  pid: number;
-  start: string;
-};
-
-export type NativeOwnerReadFailure =
-  | "native_unavailable"
-  | "native_refused"
-  | "native_malformed"
-  | "cancelled"
-  | "deadline"
-  | "unsettled";
-
+export const NATIVE_RESERVE_NS = 150_000_000n;
+export type NativeOwner542 = { name: "Pinch"; session: string; pid: number; start: string };
+export type NativeOwnerReadFailure = "native_unavailable" | "native_refused" | "native_malformed" | "cancelled" | "deadline" | "unsettled";
 export type NativeOwnerReadResult =
   | { ok: true; owner: NativeOwner542; settledNs: bigint }
   | { ok: false; reason: NativeOwnerReadFailure; settledNs: bigint | null };
+export function monotonicNs(): bigint { return process.hrtime.bigint(); }
 
-type SpawnFn = typeof nodeSpawn;
-
-export function monotonicNs(): bigint {
-  // CLOCK_MONOTONIC, the same clock as Python's time.monotonic_ns on Linux.
-  return process.hrtime.bigint();
+// A root-created endpoint beneath root-owned nonwritable parents is the root
+// authority, just as with other privileged Unix services. No caller path exists.
+function trustedEndpoint(): boolean {
+  try {
+    let path = NATIVE_OWNER542_SOCKET;
+    let socket = true;
+    for (;;) {
+      const info = lstatSync(path);
+      if (info.uid !== 0 || info.isSymbolicLink() ||
+          (socket ? !info.isSocket() || (info.mode & 0o007) !== 0
+                  : !info.isDirectory() || (info.mode & 0o022) !== 0)) return false;
+      if (path === "/") return true;
+      path = dirname(path);
+      socket = false;
+    }
+  } catch { return false; }
 }
 
 /** Strict decode of the native read's single JSON line. */
@@ -80,111 +64,87 @@ export function parseNativeOwner542(raw: string): NativeOwner542 | undefined {
   });
 }
 
-/**
- * Runs the fixed native read once. Resolves only after the child has exited and
- * its stdout closed (settled), or, if settlement is not observed by the shared
- * deadline, resolves "unsettled" which callers must treat as UNKNOWN.
- */
+/** One IPC request, one explicit native settlement receipt, one shared deadline. */
 export function readNativeOwner542(params: {
-  deadlineNs: bigint;
-  signal: AbortSignal;
-  argv?: readonly string[];
-  spawn?: SpawnFn;
-  nowNs?: () => bigint;
+  deadlineNs: bigint; signal: AbortSignal;
 }): Promise<NativeOwnerReadResult> {
-  const nowNs = params.nowNs ?? monotonicNs;
-  const argv = params.argv ?? NATIVE_OWNER542_ARGV;
-  const spawn = params.spawn ?? nodeSpawn;
   const { deadlineNs, signal } = params;
-  const nativeDeadlineNs = deadlineNs - NATIVE_RESERVE_NS;
-  const entered = nowNs();
-  if (signal.aborted) {
-    return Promise.resolve({ ok: false, reason: "cancelled", settledNs: entered });
-  }
-  if (nativeDeadlineNs <= entered) {
+  const entered = monotonicNs();
+  if (signal.aborted) return Promise.resolve({ ok: false, reason: "cancelled", settledNs: entered });
+  if (deadlineNs <= entered || deadlineNs - entered > 10_000_000_000n)
     return Promise.resolve({ ok: false, reason: "deadline", settledNs: entered });
-  }
-  return new Promise((resolve) => {
-    let stdout = "";
-    let failure: NativeOwnerReadFailure | undefined;
+  if (!trustedEndpoint()) return Promise.resolve({ ok: false, reason: "native_unavailable", settledNs: entered });
+  return new Promise(resolve => {
+    const requestId = randomUUID();
+    const socket = createConnection(NATIVE_OWNER542_SOCKET);
+    let pending = "";
+    let malformed = false;
     let done = false;
-    const timers: NodeJS.Timeout[] = [];
-    const finish = (result: NativeOwnerReadResult) => {
-      if (done) {
-        return;
-      }
+    let requested = false;
+    let cancelled = false;
+    let cancelReason: "cancelled" | "deadline" = "cancelled";
+    let receipt: NativeOwnerReadResult | undefined;
+    const msUntil = (ns: bigint) => Math.max(0, Number((ns - monotonicNs()) / 1_000_000n));
+    const finish = (value: NativeOwnerReadResult) => {
+      if (done) return;
       done = true;
-      for (const timer of timers) {
-        clearTimeout(timer);
-      }
+      clearTimeout(deadlineTimer); clearTimeout(cancelTimer);
       signal.removeEventListener("abort", onAbort);
-      resolve(result);
+      socket.destroy();
+      resolve(value);
     };
-    const msUntil = (ns: bigint) => Math.max(0, Number((ns - nowNs()) / 1_000_000n));
-    let child: ReturnType<SpawnFn>;
-    try {
-      child = spawn(argv[0], [...argv.slice(1), "--deadline-ns", nativeDeadlineNs.toString()], {
-        stdio: ["ignore", "pipe", "ignore"],
-        shell: false,
-        detached: false,
-        env: { PATH: "/usr/bin:/bin", LANG: "C" },
-      });
-    } catch {
-      finish({ ok: false, reason: "native_unavailable", settledNs: nowNs() });
-      return;
-    }
-    const terminate = (reason: NativeOwnerReadFailure) => {
-      failure ??= reason;
-      child.kill("SIGTERM");
-      timers.push(setTimeout(() => child.kill("SIGKILL"), msUntil(deadlineNs - KILL_RESERVE_NS)));
+    const cancel = (reason: "cancelled" | "deadline") => {
+      cancelReason = reason;
+      if (cancelled) return;
+      cancelled = true;
+      if (requested) socket.write(JSON.stringify({ operation: "cancel", requestId }) + "\n");
     };
-    function onAbort() {
-      terminate("cancelled");
-    }
+    const onAbort = () => cancel("cancelled");
+    const deadlineTimer = setTimeout(() => finish({ ok: false, reason: "unsettled", settledNs: null }), msUntil(deadlineNs));
+    const cancelTimer = setTimeout(() => cancel("deadline"), msUntil(deadlineNs - NATIVE_RESERVE_NS));
     signal.addEventListener("abort", onAbort, { once: true });
-    timers.push(setTimeout(() => terminate("deadline"), msUntil(nativeDeadlineNs)));
-    // Never publish after the shared deadline. If the child has not settled the
-    // caller still refuses; no result from it can be consumed afterwards.
-    timers.push(
-      setTimeout(() => finish({ ok: false, reason: "unsettled", settledNs: null }), msUntil(deadlineNs)),
-    );
-    child.stdout?.setEncoding("utf8");
-    child.stdout?.on("data", (chunk: string) => {
-      stdout += chunk;
-      if (stdout.length > STDOUT_LIMIT) {
-        stdout = "";
-        terminate("native_malformed");
-      }
-    });
-    child.on("error", (error: NodeJS.ErrnoException) => {
-      failure ??= "native_unavailable";
-      if (child.pid === undefined) {
-        // Spawn itself failed: no process exists to settle.
-        finish({ ok: false, reason: failure, settledNs: nowNs() });
-      }
-      void error;
-    });
-    child.on("close", (code: number | null) => {
-      const settledNs = nowNs();
-      if (settledNs >= deadlineNs) {
-        finish({ ok: false, reason: "unsettled", settledNs });
+    socket.on("connect", () => {
+      if (cancelled || signal.aborted || monotonicNs() >= deadlineNs - NATIVE_RESERVE_NS) {
+        finish({ ok: false, reason: signal.aborted ? "cancelled" : "deadline", settledNs: monotonicNs() });
         return;
       }
-      if (failure) {
-        finish({ ok: false, reason: failure, settledNs });
-        return;
-      }
-      if (code !== 0) {
-        finish({ ok: false, reason: "native_refused", settledNs });
-        return;
-      }
-      const owner = parseNativeOwner542(stdout.trim());
-      finish(
-        owner
-          ? { ok: true, owner, settledNs }
-          : { ok: false, reason: "native_malformed", settledNs },
-      );
+      requested = true;
+      socket.write(JSON.stringify({ schemaVersion: 1, operation: "operator-read", requestId, deadlineNs: deadlineNs.toString() }) + "\n");
     });
+    socket.setEncoding("utf8");
+    socket.on("data", (chunk: string) => {
+      if (malformed) return;
+      pending += chunk;
+      if (pending.length > 4096) { pending = ""; malformed = true; cancel("cancelled"); return; }
+      if (!pending.endsWith("\n")) return;
+      try {
+        const value: unknown = JSON.parse(pending);
+        if (!isExactRecord(value, ["cancelled", "owner", "reason", "requestId", "schemaVersion", "settled"]) ||
+            value.schemaVersion !== 1 || value.requestId !== requestId || value.settled !== true ||
+            typeof value.cancelled !== "boolean") { cancel("cancelled"); return; }
+        const settledNs = monotonicNs();
+        if (settledNs >= deadlineNs) return;
+        if (cancelled || signal.aborted) {
+          // Success racing cancellation is never accepted as cancellation ACK.
+          if (value.cancelled !== true || value.owner !== null || value.reason !== "cancelled") return;
+          receipt = { ok: false, reason: cancelReason, settledNs };
+        } else if (value.cancelled === true || value.reason !== null) {
+          if (value.owner !== null || !["cancelled", "deadline", "native_refused"].includes(value.reason as string)) return;
+          receipt = { ok: false, reason: value.reason as NativeOwnerReadFailure, settledNs };
+        } else {
+          const owner = parseNativeOwner542(JSON.stringify({ schemaVersion: 1, owner: value.owner }));
+          if (!owner) { cancel("cancelled"); return; }
+          receipt = { ok: true, owner, settledNs };
+        }
+      } catch { cancel("cancelled"); }
+    });
+    socket.on("end", () => {
+      if (receipt && !(receipt.ok && (cancelled || signal.aborted)) && monotonicNs() < deadlineNs) finish(receipt);
+      else finish({ ok: false, reason: "unsettled", settledNs: null });
+    });
+    socket.on("error", () => finish({ ok: false, reason: requested ? "unsettled" : "native_unavailable", settledNs: requested ? null : monotonicNs() }));
+    socket.on("close", () => { if (!done) finish({ ok: false, reason: "unsettled", settledNs: null }); });
+    if (signal.aborted) onAbort();
   });
 }
 
