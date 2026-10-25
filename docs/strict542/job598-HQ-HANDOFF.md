@@ -183,3 +183,35 @@ installed/loaded-resume, preservation, cancellation/settlement and original hold
 gate.503/504 observe. Approval1529 is ONLY INTERNAL_REPORT_URL/API_BASE_URL.
 No soft hold release is install/release authority. Source work needs no S-only
 infrastructure permission, but provides no production mutation authority.
+
+## Current execution gate:175 tests pass, full build resource-refused
+
+Actual admitted execution evidence is job598-execution-evidence.json, with full
+synthetic job598-execution-tests.txt and actual job598-build-refusal.txt. Exact
+executable source remains de7369e4883abb96ac4cacac9a0ea89e2ae2ee29, independently
+reviewed in6766a334. Both fresh runs passed all175 relevant tests. The second
+run used exact pnpm12.5.1 through npm's temporary package runner, installed1469
+frozen-lock dependencies and hit upstream's memory preflight before generating
+build output. It exited1; this is NOT a passing build or implementation assertion.
+
+The unchanged full builder requires4352MB heap and reports measured4.7GB peak;
+the admitted broker permits2GiB/1CPU. scripts/tsdown-build.mts documents that
+smaller2816MiB/4GiB slices were killed in unified runtime generation. The full,
+package,ciArtifacts and strictSmoke profiles share this resource preflight.
+Do not set OPENCLAW_TSDOWN_MAX_OLD_SPACE_MB to force an attempt, relax any budget,
+use local/Docker builds, rerun the costly dependency installation blindly or
+produce a synthetic runtime/tree/action. No complete supported gateway artifact
+within the admitted budget was established. A source-reviewed bounded build
+correction or supported admitted build path is still needed before retrying.
+This remains598 preparation work; it is not an S-only permission question and
+not an installation boundary waiver.595 must not apply this incomplete package.
+
+Preserved immutable secretless exports are tmp/export598-acceptance and
+tmp/export598-build-pinned under agentq. Their manifests bind identical exact
+source/native archive digests. The second run's wrapper uses the pinned temporary
+pnpm runner and cleans only disposable extracted source on exit, preserving
+result598 logs/evidence. The initial follow-up scan refused public source/.npmrc;
+no command ran in that refused follow-up. Logs were recovered read-only through
+the forced rsync artifact path. No offload scan, ownership predicate or build
+resource guard was weakened. Automatic queue598 review, actual artifact/action/
+next-seal review and all original application gates remain unfulfilled.
