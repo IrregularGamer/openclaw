@@ -261,3 +261,20 @@ won't clear it. An operator with broker/friend-VPS access must reconcile that
 workspace (remove the leftover source/ for this run slot) before any
 further attempt. No bypass, scanner change, new export path or extra retry.
 All 598/595 gates remain open.
+
+## Root cause of the persistent remote leftover (2026-10-25T21:2xZ, no rerun)
+
+No fourth run: nothing changed and the leftover cannot self-heal. The source
+tracks `.npmrc` (git ls-files), so run598.sh's `tar -xf source598.tar -C source`
+creates `source/.npmrc` in the remote workspace. The 19:24Z run was killed before
+its EXIT trap removed `source/`. `offload` pushes with `rsync -az --delete
+--exclude-from=offload.exclude`, and offload.exclude lists `.npmrc`; rsync never
+deletes excluded receiver paths without `--delete-excluded`, so `source/.npmrc`
+(and its parent `source/`) survive every push and the agent's tree scan refuses.
+Operator action required (friend VPS / broker, not this worker): delete the
+remote workspace `tmp-export598-serial-probe-fixed-38fd4ee7/source/` (slug from
+offload slug_for of /home/deploy/agentq/tmp/export598-serial-probe-fixed),
+then requeue for one fresh admitted run of the unchanged export. Infra follow-up
+for the offload owner (sealed, not changed here): reconcile killed-run leftovers
+of excluded paths (e.g. `--delete-excluded` or post-kill workspace wipe).
+No new export path, scanner change, bypass or retry. All 598/595 gates open.
