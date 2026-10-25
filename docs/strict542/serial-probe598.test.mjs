@@ -25,3 +25,8 @@ test('accepts only the owning tsx launcher cache-disabled value',()=>{
  assert.doesNotThrow(()=>admitProbe(capacity,{TSX_DISABLE_CACHE:'1'},false));
  for(const value of ['', '0', 'true']) assert.throws(()=>admitProbe(capacity,{TSX_DISABLE_CACHE:value},false));
 });
+
+test('refuses inherited output and native thread scheduling controls even when empty',()=>{
+ for(const key of ['OUTPUT_SOURCE_MAPS','RAYON_NUM_THREADS','UV_THREADPOOL_SIZE'])
+  for(const value of ['', '0', '1', '8']) assert.throws(()=>admitProbe(capacity,{[key]:value},false));
+});

@@ -16,6 +16,7 @@ const deadline=performance.now()+900_000;
 const {default:configs}=await import('../../tsdown.config.ts');
 const census=configCensus(configs);
 const receipt={kind:'DIAGNOSTIC_ONLY_NOT_BUILD_EVIDENCE',capacity,deadlineMs:900_000,census,
+  inheritedOutputAndThreadControls:'ABSENT_VERIFIED_BY_ADMISSION',
   results:[] as unknown[]};
 function save() {fs.writeFileSync('isolated-probe598.json',JSON.stringify(receipt)+'\n');}
 fs.writeFileSync('isolated-probe598.json',JSON.stringify(receipt)+'\n',{flag:'wx'});
