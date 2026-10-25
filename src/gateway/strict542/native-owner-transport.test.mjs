@@ -119,7 +119,12 @@ test("actual Node to Python adapter accepts pinned predicates and acknowledges s
     const controller = new AbortController();
     let cancelTimer;
     try {
-      await once(child.stdout, "data", { signal: AbortSignal.timeout(2000) });
+      // Fixture startup is outside the actual read deadline. Report a refused
+      // fixture clearly, rather than mislabeling startup as a transport failure.
+      await Promise.race([
+        once(child.stdout, "data", { signal: AbortSignal.timeout(5000) }),
+        closed.then(([code]) => { throw new Error(`Synthetic fixture exited ${code}: ${stderr}`); }),
+      ]);
       if (mode === "cancel") cancelTimer = setTimeout(() => controller.abort(), 100);
       const result = await readNativeOwner542({ deadlineNs: monotonicNs() + 2_000_000_000n, signal: controller.signal });
       const [code] = await closed;
