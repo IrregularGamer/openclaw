@@ -278,3 +278,21 @@ then requeue for one fresh admitted run of the unchanged export. Infra follow-up
 for the offload owner (sealed, not changed here): reconcile killed-run leftovers
 of excluded paths (e.g. `--delete-excluded` or post-kill workspace wipe).
 No new export path, scanner change, bypass or retry. All 598/595 gates open.
+
+## Supported disposable reconciliation completed (2026-10-25)
+
+Independent review50593fc9 supersedes the earlier operator-only assumption.
+The existing forced `clean` command supports exact disposable-slot cleanup; no
+installed broker change is needed. Actual current runner lock was available,
+zero leases were live and zero managed runner containers existed. The public
+leftover npmrc matched the reviewed archive; full source inventory also found
+106308 ignored dependency/generated files (2594533756 bytes), not only npmrc.
+All four actual result locations were absent before cleanup; historical compiler
+results cannot be recovered or claimed. Local archives were independently
+rehashed and matched the unchanged manifest, and all remote input files matched
+retained local inputs. Exact `ssh offload clean
+tmp-export598-serial-probe-fixed-38fd4ee7` exited0; a separate read-only check
+proved the exact slot absent. See job598-reconciliation-evidence.json. No
+scanner, budget, installed file, seal, service or unit changed. Next: one normal
+admitted diagnostic from the SAME unchanged export, then independent actual
+evidence review; no build/artifact/application approval follows from this cleanup.

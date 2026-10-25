@@ -1,0 +1,49 @@
+{
+  "cleanup_exit": 0,
+  "command": [
+    "ssh",
+    "offload",
+    "clean",
+    "tmp-export598-serial-probe-fixed-38fd4ee7"
+  ],
+  "immediate-idle": {
+    "live_leases": 0,
+    "managed_running_containers": 0,
+    "runner_lock_available": true
+  },
+  "leftover_source_bytes": 2594533756,
+  "leftover_source_file_count": 106308,
+  "observed_utc": "2026-10-25T22:02:05.601377+00:00",
+  "old_diagnostic_outcome": "UNKNOWN; all four result locations absent before cleanup",
+  "post-clean": {
+    "absent": true,
+    "slot": "tmp-export598-serial-probe-fixed-38fd4ee7"
+  },
+  "pre-clean": {
+    "artifacts_exist": {
+      "result598": false,
+      "source/result598-probe": false,
+      "source/serial-probe598.json": false,
+      "source/strict542-checks": false
+    },
+    "directories": [
+      "source",
+      ".pnpm-store"
+    ],
+    "files": {
+      "export-manifest.json": "2b39fc130f3a0a87feb0892d2928ea569bbcfa35f37c0febd9aff66939fa941b",
+      "native598.tar": "d73e4e35720ffcb71856ce8168e75fa3b4fd49251fd78c811e1abded8b2701de",
+      "run598.sh": "7b46486d3a777744ff4f56240378a8233d66da5e8f09d5a5eb22ca0ded2d8488",
+      "source598.tar": "e79a0e45a4eaea4afe325ca94ba201d5ae43d09d8c15dc07d0695c87ba743de3",
+      "successor598.tar": "8ac591b3f1e6865019912616d751562feb0b7cf6bcc9e6ddbf423d1f524aae1e"
+    },
+    "live_leases": 0,
+    "managed_running_containers": 0,
+    "runner_lock_available": true,
+    "slot": "tmp-export598-serial-probe-fixed-38fd4ee7"
+  },
+  "preview_sha256": "0fbeb4c021ef7c02c0519af4752c63b2c55e69c2d2de80782984e4dc080b172a",
+  "public_npmrc_sha256": "f1d021e2abdf8817d83e35feb1f5d604e8c985aa0553bec3d417cf6f93e9c09c",
+  "review_commit": "50593fc9",
+  "unchanged_archives_verified": true
+}
