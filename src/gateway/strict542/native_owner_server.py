@@ -38,10 +38,15 @@ def child_subreaper():
     if ctypes.CDLL(None, use_errno=True).prctl(36, 1, 0, 0, 0) != 0:
         raise Refused()
     # Refuse unsupported kernels before any native child exists.
-    if not hasattr(os, 'P_PIDFD') or not hasattr(signal, 'pidfd_send_signal'):
+    if (not hasattr(os, 'P_PIDFD') or not hasattr(os, 'pidfd_open')
+            or not hasattr(signal, 'pidfd_send_signal')):
         raise Refused()
     fd = os.pidfd_open(os.getpid())
-    os.close(fd)
+    try:
+        signal.pidfd_send_signal(fd, 0)
+        try: os.waitid(os.P_PIDFD, fd, os.WEXITED | os.WNOHANG | os.WNOWAIT)
+        except ChildProcessError: pass  # Self is not our child, kernel recognized PIDFD.
+    finally: os.close(fd)
 
 
 def leader_status(child):
@@ -178,7 +183,8 @@ def read_request(connection):
         if len(raw) > 512: raise Refused()
     value = json.loads(raw)
     if (type(value) is not dict or set(value) != {'schemaVersion','operation','requestId','deadlineNs'}
-            or value['schemaVersion'] != 1 or value['operation'] != 'operator-read'
+            or type(value['schemaVersion']) is not int or value['schemaVersion'] != 1
+            or value['operation'] != 'operator-read'
             or type(value['requestId']) is not str or not 8 <= len(value['requestId']) <= 128
             or type(value['deadlineNs']) is not str or not value['deadlineNs'].isascii()
             or not value['deadlineNs'].isdecimal()): raise Refused()

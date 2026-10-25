@@ -175,6 +175,7 @@ class NativeTransport(unittest.TestCase):
 
     def test_extra_keys_and_overlong_deadline_refuse_without_work(self):
         self.assertIsNone(self.exchange(extra=True))
+        self.assertIsNone(self.exchange(schemaVersion=True))
         self.assertIsNone(self.exchange(ms=11000))
         self.assertEqual(self.children, [])
 
