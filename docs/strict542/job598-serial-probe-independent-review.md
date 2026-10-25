@@ -1,0 +1,13 @@
+# Independent source review: finite serial diagnostic for 598
+
+Reviewed exact source `c790ba44938bd90f75fb41f2f2eeaaff287df546`, including initial implementation `13dabf79cd67e0918ecbb30041b67e21007e1deb`, and diagnostic plan `98e606b05ca5298df2e60eeb16ad73ec407eec71`, against reviewed baseline `be4e6509be06743c79e3140e738897b4ba16618f`. Reviewer: Rook/bounded_build_review, independent of implementation.
+
+APPROVE SOURCE for one diagnostic execution through admitted offload from a committed secretless disposable export only. No application, release, privileged action, sealed change or build-artifact approval is given.
+
+The three new diagnostic files leave the normal build, its measured 4352MB heap refusal, gateway runtime and supervisor policy unchanged. The probe reuses the existing complete no-declarations invocation inventory, fixed `--concurrency 1`, upstream memory accounting, output scanner and process-group lifetime owner. It does not split the shared core graph or change singleton identities. Existing CLI forwarding tests support the scheduling argument; actual pinned compiler acceptance and resource feasibility remain to be observed.
+
+Admission refuses unknown or oversized observed capacity, existing checkout/output markers, caller arguments, and compiler environment controls. The compiler heap remains derived from observed available capacity with existing native headroom. The 900-second shared compiler deadline permits the existing bounded termination/drain grace (250ms plus 250ms). Parent cancellation, timeout and remaining descendants use the owning compiler process-group cleanup. Diagnostic results explicitly identify themselves as non-build evidence. No package, postbuild, declarations, complete artifact receipt or installed-state change is produced.
+
+Review found an initial missing ineffective-dynamic-import refusal; successor c790ba44 restores owning scanner parity. Independently ran `node --test docs/strict542/serial-probe598.test.mjs`: all four tests pass, including failed status, timeout, spawn error, unresolved import and ineffective dynamic import refusal. These lightweight policy checks do not establish actual compiler memory usage or cancellation behavior on the remote runner.
+
+Any diagnostic success requires independent evidence reconciliation and a separately implemented/reviewed complete bounded build path before an artifact may satisfy application598. A failure must preserve its actual receipt/log and cannot justify a heap override, entry omission, budget escape, blind retry or installation. Job 598 and the eventual 595 application gates remain open.
