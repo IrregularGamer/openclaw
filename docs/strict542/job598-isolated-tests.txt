@@ -1,0 +1,247 @@
+(node:42) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ actual selected memory source owners
+  ✔ preserves ordinary egress redaction refresh while the new decoder stays read-only (40.648465ms)
+  ✔ records the controller's committed route after preparation and refresh overlays (9.41337ms)
+  ✔ refuses model headers and owner-attached transport overrides on capture and completion (1.44633ms)
+  ✔ reads the concrete session and decodes only its already selected memory credential (1.51983ms)
+  ✔ invalidates an existing lease through the actual owner mutation (1.143572ms)
+  ✔ invalidates an existing lease through the actual owner mutation (1.099232ms)
+  ✔ invalidates an existing lease through the actual owner mutation (1.14685ms)
+  ✔ invalidates an existing lease through the actual owner mutation (1.413191ms)
+  ✔ invalidates an existing lease through the actual owner mutation (1.799018ms)
+  ✔ refuses a key without producer selection and never resolves a stored or fallback key (1.306166ms)
+  ✔ invalidates on an auth reload and refuses instead of selecting storage credentials (1.280955ms)
+  ✔ rejects an undecodable process-local sentinel without credential fallback (1.530385ms)
+  ✔ fences the exact active-run registration and rejects its replacement (2.143656ms)
+✔ actual selected memory source owners (71.156164ms)
+▶ selected existing memory auth read
+  ✔ accepts the exact active OAuth model and finite unexpired selected credential (6.483125ms)
+  ✔ accepts explicit API-key selection without an expiry (0.451047ms)
+  ✔ refuses unsupported or absent selected mode undefined (0.43161ms)
+  ✔ refuses unsupported or absent selected mode  (0.347764ms)
+  ✔ refuses unsupported or absent selected mode token (0.351259ms)
+  ✔ refuses unsupported or absent selected mode aws-sdk (0.342202ms)
+  ✔ refuses unsupported or absent selected mode native (0.295921ms)
+  ✔ refuses unsupported or absent selected mode configured (0.389982ms)
+  ✔ refuses OAuth with unusable expiry undefined (0.495439ms)
+  ✔ refuses OAuth with unusable expiry null (0.680915ms)
+  ✔ refuses OAuth with unusable expiry NaN (0.311892ms)
+  ✔ refuses OAuth with unusable expiry Infinity (0.190262ms)
+  ✔ refuses OAuth with unusable expiry -Infinity (0.181318ms)
+  ✔ refuses OAuth with unusable expiry 999 (0.24197ms)
+  ✔ refuses OAuth with unusable expiry 1000 (0.196226ms)
+  ✔ refuses missing or placeholder memory selection undefined (0.226238ms)
+  ✔ refuses missing or placeholder memory selection  (0.185888ms)
+  ✔ refuses missing or placeholder memory selection    (0.163329ms)
+  ✔ refuses missing or placeholder memory selection __aws_sdk_auth__ (0.149607ms)
+  ✔ refuses an override that was not installed by the model/auth selector (0.229148ms)
+  ✔ refuses a selected modelId from a different route (0.263596ms)
+  ✔ refuses a selected api from a different route (0.207746ms)
+  ✔ refuses a selected baseUrl from a different route (0.211741ms)
+  ✔ expires before the before/after acceptance check without a refresh (1.212111ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.524381ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.450538ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.369095ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.417551ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.408643ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.393754ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.421067ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.416786ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.551141ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.367379ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.413736ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.359571ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.389847ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.362772ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.366426ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.439012ms)
+  ✔ refuses absent, disposed or unidentified concrete sessions (0.375831ms)
+  ✔ refuses absent, disposed or unidentified concrete sessions (0.325369ms)
+  ✔ refuses absent, disposed or unidentified concrete sessions (0.329556ms)
+  ✔ invalidates an ABA auth replacement even with identical final key bytes (0.500191ms)
+  ✔ invalidates a route round trip recorded by the actual model mutation epoch (0.488479ms)
+  ✔ rechecks after auth capture before returning a session lease (0.543482ms)
+✔ selected existing memory auth read (32.145599ms)
+(node:56) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ accepts exact native result only with settled acknowledgement (70.974502ms)
+✔ cancellation waits for explicit native settled acknowledgement (88.640282ms)
+✔ EOF without settlement refuses (11.093255ms)
+✔ cancellation without native acknowledgement refuses by shared deadline (254.327731ms)
+✔ wrong correlation, nonsettled, malformed owner and oversize refuse (26.218153ms)
+✔ deadline above 10 seconds and already cancelled refuse before connection (2.730361ms)
+✔ native owner decoder refuses caller echoes and extra fields (1.666669ms)
+✔ actual Node to Python adapter accepts pinned predicates and acknowledges settled cancellation (1978.694446ms)
+▶ usage.preflight exact542 request schema
+  ✔ accepts exactly the exact542 keys (2.425518ms)
+  ✔ refuses extra, missing and malformed keys (0.96353ms)
+✔ usage.preflight exact542 request schema (6.296768ms)
+▶ usage.preflight acceptance
+  ✔ returns verified fresh AVAILABLE windows for the actual active route (115.737676ms)
+  ✔ never serves cache or historical success (3.282404ms)
+✔ usage.preflight acceptance (120.537671ms)
+▶ usage.preflight identity and route refusals
+  ✔ refuses unknown agent (3.422396ms)
+  ✔ refuses wrong HQ session (1.332003ms)
+  ✔ refuses wrong owner name (1.507842ms)
+  ✔ refuses PID1 placeholder (1.418625ms)
+  ✔ refuses PID reuse (start differs) (1.576138ms)
+  ✔ refuses model drift (1.747045ms)
+  ✔ refuses provider drift (1.44122ms)
+  ✔ refuses an idle/unbound session (1.099685ms)
+  ✔ refuses ambiguous or missing in-memory auth (1.419537ms)
+  ✔ refuses expired auth with zero provider, refresh or write calls (0.90175ms)
+  ✔ never sends the token to a non-default or non-Anthropic route (1.501403ms)
+  ✔ refuses API-key auth and models without known window applicability (1.335552ms)
+  ✔ refuses native owner refusal, unavailability and owner change after the read (2.91029ms)
+  ✔ refuses auth/account or model replacement observed after the provider GET (2.412609ms)
+✔ usage.preflight identity and route refusals (29.190391ms)
+▶ usage.preflight provider window refusals
+  ✔ refuses empty, partial, malformed, nonfinite and out-of-range windows (7.939148ms)
+  ✔ reports UNAVAILABLE for any exhausted applicable window, including above 100% (2.247203ms)
+  ✔ reports UNAVAILABLE for exhausted non-applicable or unlisted-but-known windows (1.357929ms)
+  ✔ reports UNAVAILABLE when an exhausted window accompanies a missing one (1.008222ms)
+  ✔ does not let non-applicable windows mask exhaustion or a missing window (1.304447ms)
+  ✔ refuses 401/403/429/5xx, unexpected status, network failure and body errors (5.077965ms)
+✔ usage.preflight provider window refusals (23.655293ms)
+▶ usage.preflight deadline, cancellation and clocks
+  ✔ refuses a late provider response after the shared deadline (1.669536ms)
+  ✔ aborts a hanging provider GET at the real deadline with no later publication (1001.822384ms)
+  ✔ propagates caller cancellation to the provider transport (12.360329ms)
+  ✔ refuses an already-cancelled request without native or provider work (1.333407ms)
+  ✔ refuses wall-clock anomalies (1.705065ms)
+✔ usage.preflight deadline, cancellation and clocks (1021.244591ms)
+▶ strict Anthropic usage GET
+  ✔ sends one GET with no redirect, cache or retry and hides error bodies (127.832939ms)
+  ✔ parses JSON, bounds the body and maps aborts (20.19154ms)
+✔ strict Anthropic usage GET (148.996827ms)
+▶ gateway registration
+  ✔ registers usage.preflight as an operator.read method and keeps usage.status (0.715257ms)
+  ✔ leaves the usage.status handler byte-identical (2.513702ms)
+  ✔ binds preflight only to the strict dependencies and refuses unauthenticated clients (1.047277ms)
+✔ gateway registration (5.148515ms)
+ℹ tests 101
+ℹ suites 9
+ℹ pass 101
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6884.302155
+test_actual_existing_predicates_accept_root_gateway_peer (test_native_owner_server.NativeTransport.test_actual_existing_predicates_accept_root_gateway_peer) ... ok
+test_cancel_ack_means_actual_child_reaped (test_native_owner_server.NativeTransport.test_cancel_ack_means_actual_child_reaped) ... ok
+test_escaped_descendant_is_adopted_and_settled_with_pidfd (test_native_owner_server.NativeTransport.test_escaped_descendant_is_adopted_and_settled_with_pidfd) ... ok
+test_exited_leader_does_not_publish_before_descendant_settlement (test_native_owner_server.NativeTransport.test_exited_leader_does_not_publish_before_descendant_settlement) ... ok
+test_external_pin_drift_refuses_before_execution (test_native_owner_server.NativeTransport.test_external_pin_drift_refuses_before_execution) ... ok
+test_extra_keys_and_overlong_deadline_refuse_without_work (test_native_owner_server.NativeTransport.test_extra_keys_and_overlong_deadline_refuse_without_work) ... ok
+test_grandchild_holding_stdout_is_killed_and_reaped_before_ack (test_native_owner_server.NativeTransport.test_grandchild_holding_stdout_is_killed_and_reaped_before_ack) ... ok
+test_ignored_sigterm_is_killed_and_reaped_before_ack (test_native_owner_server.NativeTransport.test_ignored_sigterm_is_killed_and_reaped_before_ack) ... ok
+test_native_caller_cgroup_refuses_queue (test_native_owner_server.NativeTransport.test_native_caller_cgroup_refuses_queue) ... ok
+test_native_mainpid_refuses_other_gateway (test_native_owner_server.NativeTransport.test_native_mainpid_refuses_other_gateway) ... ok
+test_nonroot_endpoint_refuses_without_work (test_native_owner_server.NativeTransport.test_nonroot_endpoint_refuses_without_work) ... ok
+test_peer_start_change_between_actual_owner_checks_refuses (test_native_owner_server.NativeTransport.test_peer_start_change_between_actual_owner_checks_refuses) ... ok
+test_root_endpoint_outside_gateway_cgroup_refuses (test_native_owner_server.NativeTransport.test_root_endpoint_outside_gateway_cgroup_refuses) ... ok
+test_shared_deadline_terminates_and_reaps (test_native_owner_server.NativeTransport.test_shared_deadline_terminates_and_reaps) ... ok
+test_subreaper_setup_failure_refuses_without_work (test_native_owner_server.NativeTransport.test_subreaper_setup_failure_refuses_without_work) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 1.632s
+
+OK
+test_actual_synthetic_child_is_killed_and_reaped_on_cancel (test_native_preparation.NativePreparation.test_actual_synthetic_child_is_killed_and_reaped_on_cancel) ... ok
+test_actual_synthetic_child_is_killed_and_reaped_on_timeout (test_native_preparation.NativePreparation.test_actual_synthetic_child_is_killed_and_reaped_on_timeout) ... ok
+test_bad_mainpid_refuses (test_native_preparation.NativePreparation.test_bad_mainpid_refuses) ... ok
+test_cancel_refuses_and_restores_handlers (test_native_preparation.NativePreparation.test_cancel_refuses_and_restores_handlers) ... ok
+test_cli_read_precedes_controller_and_mutating_error_handler (test_native_preparation.NativePreparation.test_cli_read_precedes_controller_and_mutating_error_handler) ... ok
+test_deadline_covers_all_native_checks (test_native_preparation.NativePreparation.test_deadline_covers_all_native_checks) ... ok
+test_deadline_invalid_expired_and_overlong (test_native_preparation.NativePreparation.test_deadline_invalid_expired_and_overlong) ... ok
+test_derived_identity_and_existing_predicate_before_after (test_native_preparation.NativePreparation.test_derived_identity_and_existing_predicate_before_after) ... ok
+test_exact_existing_cgroup_predicate_refuses_queue (test_native_preparation.NativePreparation.test_exact_existing_cgroup_predicate_refuses_queue) ... ok
+test_gateway_mainpid_change_refuses (test_native_preparation.NativePreparation.test_gateway_mainpid_change_refuses) ... ok
+test_missing_or_malformed_proc_refuses (test_native_preparation.NativePreparation.test_missing_or_malformed_proc_refuses) ... ok
+test_nonroot_refuses (test_native_preparation.NativePreparation.test_nonroot_refuses) ... ok
+test_nonzero_systemctl_refuses (test_native_preparation.NativePreparation.test_nonzero_systemctl_refuses) ... ok
+test_root_with_valid_gateway_but_queue_caller_refuses (test_native_preparation.NativePreparation.test_root_with_valid_gateway_but_queue_caller_refuses) ... ok
+test_second_owner_check_caller_cgroup_change_refuses (test_native_preparation.NativePreparation.test_second_owner_check_caller_cgroup_change_refuses) ... ok
+test_second_owner_check_root_loss_refuses (test_native_preparation.NativePreparation.test_second_owner_check_root_loss_refuses) ... ok
+test_second_owner_check_start_change_refuses (test_native_preparation.NativePreparation.test_second_owner_check_start_change_refuses) ... ok
+test_start_change_refuses (test_native_preparation.NativePreparation.test_start_change_refuses) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.699s
+
+OK
+test_endpoint_idle_lifetime_and_parent_death_refuse (test_root_owner_supervisor.RootSupervisor.test_endpoint_idle_lifetime_and_parent_death_refuse) ... ok
+test_gateway_mainpid_change_ends_before_cpu_or_next_request (test_root_owner_supervisor.RootSupervisor.test_gateway_mainpid_change_ends_before_cpu_or_next_request) ... ok
+test_gateway_pidfd_exit_and_cpu_budget_end_monitor (test_root_owner_supervisor.RootSupervisor.test_gateway_pidfd_exit_and_cpu_budget_end_monitor) ... ok
+test_parent_sigkill_cancels_real_native_tree_before_receipt (test_root_owner_supervisor.RootSupervisor.test_parent_sigkill_cancels_real_native_tree_before_receipt) ... ok
+test_partial_framing_has_absolute_deadline_and_checks_lifecycle (test_root_owner_supervisor.RootSupervisor.test_partial_framing_has_absolute_deadline_and_checks_lifecycle) ... ok
+test_placement_mismatch_refuses_without_limits_or_serving (test_root_owner_supervisor.RootSupervisor.test_placement_mismatch_refuses_without_limits_or_serving) ... ok
+test_real_fd3_endpoint_and_escaped_descendant_settle_on_shutdown (test_root_owner_supervisor.RootSupervisor.test_real_fd3_endpoint_and_escaped_descendant_settle_on_shutdown) ... ok
+test_reviewed_server_bytes_and_isolated_external_pin (test_root_owner_supervisor.RootSupervisor.test_reviewed_server_bytes_and_isolated_external_pin) ... ok
+test_self_only_exact_cgroup_placement_and_limits (test_root_owner_supervisor.RootSupervisor.test_self_only_exact_cgroup_placement_and_limits) ... ok
+test_server_pin_drift_refuses_before_execution (test_root_owner_supervisor.RootSupervisor.test_server_pin_drift_refuses_before_execution) ... ok
+test_socket_parent_writable_refuses_before_bind (test_root_owner_supervisor.RootSupervisor.test_socket_parent_writable_refuses_before_bind) ... ok
+test_source_path_writable_or_symlink_refuses (test_root_owner_supervisor.RootSupervisor.test_source_path_writable_or_symlink_refuses) ... ok
+test_worker_and_nonroot_and_argument_contexts_refuse_before_source (test_root_owner_supervisor.RootSupervisor.test_worker_and_nonroot_and_argument_contexts_refuse_before_source) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.395s
+
+OK
+test_action_binding_and_independent_reviews (test_application598.PreparationTests.test_action_binding_and_independent_reviews) ... ok
+test_action_native_hash_refuses_without_patch (test_application598.PreparationTests.test_action_native_hash_refuses_without_patch) ... ok
+test_action_stage_tamper_refuses (test_application598.PreparationTests.test_action_stage_tamper_refuses) ... ok
+test_check_tree_revalidates_all_evidence_shape (test_application598.PreparationTests.test_check_tree_revalidates_all_evidence_shape) ... ok
+test_deterministic_tree (test_application598.PreparationTests.test_deterministic_tree) ... ok
+test_escaping_and_absolute_symlinks_refuse (test_application598.PreparationTests.test_escaping_and_absolute_symlinks_refuse) ... ok
+test_fixture_cannot_claim_built (test_application598.PreparationTests.test_fixture_cannot_claim_built) ... ok
+test_fixture_receipt_cannot_be_promoted (test_application598.PreparationTests.test_fixture_receipt_cannot_be_promoted) ... ok
+test_internal_symlink_is_recorded (test_application598.PreparationTests.test_internal_symlink_is_recorded) ... ok
+test_missing_dependency_or_dist_refuses (test_application598.PreparationTests.test_missing_dependency_or_dist_refuses) ... ok
+test_nonzero_build_and_tampered_log_refuse (test_application598.PreparationTests.test_nonzero_build_and_tampered_log_refuse) ... ok
+test_receipt_output_cannot_overwrite (test_application598.PreparationTests.test_receipt_output_cannot_overwrite) ... ok
+test_runtime_mutation_refuses_validation (test_application598.PreparationTests.test_runtime_mutation_refuses_validation) ... ok
+test_runtime_root_mode_refuses (test_application598.PreparationTests.test_runtime_root_mode_refuses) ... ok
+test_secret_names_refuse (test_application598.PreparationTests.test_secret_names_refuse) ... ok
+test_source_reference_and_lock_drift_refuse (test_application598.PreparationTests.test_source_reference_and_lock_drift_refuse) ... ok
+test_special_file_fifo_refuses (test_application598.PreparationTests.test_special_file_fifo_refuses) ... ok
+test_tree_rejects_setuid (test_application598.PreparationTests.test_tree_rejects_setuid) ... ok
+test_unknown_target_or_missing_seal_refuses (test_application598.PreparationTests.test_unknown_target_or_missing_seal_refuses) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.146s
+
+OK
+test_file_ancestor_refuses (test_apply598.Application.test_file_ancestor_refuses) ... ok
+test_new_release_parent_directories (test_apply598.Application.test_new_release_parent_directories) ... ok
+test_symlink_ancestor_refuses (test_apply598.Application.test_symlink_ancestor_refuses) ... ok
+test_absolute_lifetime_interrupts_with_refusal (test_apply598.GuardedApplication.test_absolute_lifetime_interrupts_with_refusal) ... ok
+test_intermediate_directory_replacement_cannot_redirect_privileged_write (test_apply598.GuardedApplication.test_intermediate_directory_replacement_cannot_redirect_privileged_write) ... ok
+test_native_quiet_refuses_fixture_or_remote_uncertainty (test_apply598.GuardedApplication.test_native_quiet_refuses_fixture_or_remote_uncertainty) ... ok
+test_native_quiet_requires_valid_registered_worker (test_apply598.GuardedApplication.test_native_quiet_requires_valid_registered_worker) ... ok
+test_previous_application_journal_refuses_replay (test_apply598.GuardedApplication.test_previous_application_journal_refuses_replay) ... ok
+test_unchanged_guard_drift_refuses_final_verification (test_apply598.GuardedApplication.test_unchanged_guard_drift_refuses_final_verification) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.020s
+
+OK
+✔ census preserves every ordered config and alias/source pair including duplicate group names (7.362837ms)
+✔ selection returns the entire original graph by identity (2.110976ms)
+✔ refuses invalid indices, declaration graphs and drifted inventory (5.570886ms)
+✔ admits fixed serial diagnostic only with observed bounded capacity (4.601819ms)
+✔ refuses unknown or oversized capacity and existing output (1.57912ms)
+✔ refuses caller-controlled compiler budget, selection, preload or plugin exclusions (1.526995ms)
+✔ compiler warnings, unresolved imports and unsettled/failed runs refuse success (1.027457ms)
+✔ accepts only the owning tsx launcher cache-disabled value (1.236619ms)
+✔ refuses inherited output and native thread scheduling controls even when empty (1.331256ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 535.20675
