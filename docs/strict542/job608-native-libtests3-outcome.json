@@ -1,0 +1,37 @@
+{
+ "application_authority": false,
+ "broker": "2026-10-26T22:21:38Z run remote rc=0 1838s /home/deploy/agentq/tmp/export608-native-libtests3",
+ "combined_fit_proven": false,
+ "evidence_sha256": {
+  "job608-native-libtests3-broker.txt": "1b6eeb94d751e2f330faa9cec158f5c2116021e9bfd6358b82541a29cf01b4f6",
+  "job608-native-libtests3-build.txt": "7c6cff64de4254caaf4946a95ea1e23d3fdf3aabbb6a65199af8095be040b244",
+  "job608-native-libtests3-export.json": "3047f378a219497f392994bbe6ef36d7ffe6e23b5aaaf1e51681b8136076fb94",
+  "job608-native-libtests3-offload.txt": "5400a589c752492c469089cd3a3d59d21b6b296ee8ab96257edf8959d1b643ac",
+  "job608-native-libtests3-receipt.json": "84a8d51f34da3e788482de3e817b5583917a9351a22cb8ad2f7cf1b1ec218a93",
+  "job608-native-libtests3-retention-negative.txt": "bb57ceaa264092e04c35cdb07d0fcf3fa41d973a389693087958dd6ffedfef46"
+ },
+ "exit_code": 0,
+ "kind": "ACCEPTED_LIBTEST_STAGE_ONLY_NOT_PACKAGE",
+ "lifetime_tests_passed": 7,
+ "matching_addon_sha256": "17df206117097742019de475e8cd194fb1022f48d9c2b507195100abd13eb627",
+ "matching_compile_receipt_sha256": "bc741801b805fb6792e0e67fc4f8e3b88425096d41e6e6216927cff140f9d9b6",
+ "native_library_tests_passed": 112,
+ "new_libtests3_receipt_sha256": "84a8d51f34da3e788482de3e817b5583917a9351a22cb8ad2f7cf1b1ec218a93",
+ "old_libtests2_receipt_sha256": "d2a8c010e96cf561179b6021fd89dd6bbb7032889e62fff189beb088c6ca240d",
+ "retention_negative_failed_tests": 3,
+ "shared_receipt_fields": [
+  "owner_inputs",
+  "patched_sources",
+  "cargo_policy",
+  "rustc",
+  "cmake",
+  "cmake_wheel_sha256",
+  "upstream_commit",
+  "source_archive_sha256",
+  "rust_archive_sha256",
+  "lifetime_tests_exit",
+  "retention_negative_detected"
+ ],
+ "source_commit": "b1416481c38ba1480d8c881ca36e96785512fc47",
+ "spent_export": true
+}
