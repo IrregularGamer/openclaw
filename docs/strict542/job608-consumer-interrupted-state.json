@@ -1,0 +1,18 @@
+{
+  "files": {
+    "job608-consumer-interrupted-result598-isolated-native-compile.log": "334f3e2f4847dc9a20c3991d10570cb9ecea062aa82b7f2bb79376929123dd8b",
+    "job608-consumer-interrupted-result598-native-receipt.json": "c8323083465d2d74ddf1bb54e5434e26feecca644742927d3e8930b04733f43a",
+    "job608-consumer-interrupted-strict542-checks-evidence.json": "382f582cb2182452107eecc2fdeef547ca6ce06400d74d0a460bcf08b1369933",
+    "job608-consumer-interrupted-strict542-checks-tests.log": "f82380f0b2a6f5904223c66f5a1e63d19f1a122dedfb7636cb29108585243a0f"
+  },
+  "live_leases": 0,
+  "managed_containers": 0,
+  "observed_utc": "2026-10-26T10:36:36.362032+00:00",
+  "recheck": {
+    "live_leases": 0,
+    "managed_containers": 0
+  },
+  "rechecked_utc": "2026-10-26T10:53:17.644738+00:00",
+  "result": "interrupted incomplete compilation; no completed compile, parity, config15 or package result",
+  "slot": "/srv/offload/work/tmp-export608-native-consumer-source-95d348d8"
+}
