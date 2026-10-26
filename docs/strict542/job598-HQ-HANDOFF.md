@@ -93,7 +93,7 @@ Build validation.next.json locally from the actual original complete seal: retai
 all existing fields and installed hashes, add only five fixed new file hashes
 (native, server, supervisor, system unit, gateway dropin), and runtime package.json
 and dist/index.js hashes from tree.json; append exactly one amendment
-{kind:strict542-598, action_sha256:<actual>}. The independent privilege-policy
+{kind:strict542-598, action_sha256:<actual>}. The independent seal
 review must bind its exact file SHA256 as next_seal_sha256. apply598.py rejects
 any other ledger delta. Original seal SHA256 is recorded in the baseline, along
 with full metadata; validate EVERY original installed_hashes entry first.
