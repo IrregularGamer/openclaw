@@ -68,7 +68,26 @@ subprocess.run(['sh',str(rust_source / 'install.sh'),'--prefix='+str(root / 'too
                 '--components=rustc,rust-std-x86_64-unknown-linux-gnu,cargo','--disable-ldconfig'],check=True)
 shutil.rmtree(root / 'rust-unpacked')
 rust_archive.unlink()
-env={**os.environ,'PATH':str(root / 'toolchain/bin')+os.pathsep+os.environ['PATH'],
+# libmimalloc-sys2 (upstream default allocator) needs cmake at build time and the
+# offload image has none. Use one digest-pinned official wheel, unpacked as data;
+# no pip, no allocator or feature change.
+cmake_pin=('https://files.pythonhosted.org/packages/59/e8/096984b89133681533650b9078c5ed1c5c9b534e869b5487f22d4de1935c/'
+           'cmake-3.31.6-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl',
+           '1c8b05df0602365da91ee6a3336fe57525b137706c4ab5675498f662ae1dbcec')
+cmake_wheel=root / 'cmake.whl'
+with urllib.request.urlopen(cmake_pin[0], timeout=60) as response, cmake_wheel.open('wb') as target:
+    shutil.copyfileobj(response,target,1024*1024)
+if sha(cmake_wheel) != cmake_pin[1]:
+    raise SystemExit('cmake wheel digest mismatch')
+import zipfile
+with zipfile.ZipFile(cmake_wheel) as wheel:
+    wheel.extractall(root / 'cmake-tool')
+cmake_wheel.unlink()
+cmake_bin=root / 'cmake-tool/cmake/data/bin'
+for tool in cmake_bin.iterdir():
+    tool.chmod(0o755)
+receipt['cmake_wheel_sha256']=cmake_pin[1]
+env={**os.environ,'PATH':str(root / 'toolchain/bin')+os.pathsep+str(cmake_bin)+os.pathsep+os.environ['PATH'],
      'CARGO_HOME':str(root / 'cargo-home'),'CARGO_BUILD_JOBS':'1',
      'CARGO_PROFILE_RELEASE_LTO':'false','CARGO_PROFILE_RELEASE_CODEGEN_UNITS':'64',
      'CARGO_PROFILE_RELEASE_DEBUG':'false','CARGO_PROFILE_RELEASE_OPT_LEVEL':'3',
@@ -76,6 +95,8 @@ env={**os.environ,'PATH':str(root / 'toolchain/bin')+os.pathsep+os.environ['PATH
      'RUSTFLAGS':'--remap-path-prefix='+str(root)+'=/strict542-native608'}
 receipt['rustc']=subprocess.check_output(['rustc','--version'],env=env,text=True).strip()
 assert receipt['rustc'].startswith('rustc 1.98.1 ')
+receipt['cmake']=subprocess.check_output(['cmake','--version'],env=env,text=True).splitlines()[0]
+assert receipt['cmake']=='cmake version 3.31.6'
 wrapper=root / 'lifetime-tests.rs'
 helper=(owner / 'scripts/lib/last-use-ast608.rs').read_text()
 wrapper.write_text('mod table {\n'+helper+'\n}\n')
