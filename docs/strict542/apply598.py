@@ -131,13 +131,28 @@ def next_seal(old,new,action,reviews,prep):
     expected=json.loads(json.dumps(old));expected['installed_hashes'].update(allowed)
     expected.setdefault('amendments',[]).append({'kind':'strict542-598','action_sha256':action['action_sha256']})
     require(new == expected,'next seal must be exact additive fixed-target amendment')
-    policy=[review for review in reviews if review.get('scope') == 'privilege-policy']
+    policy=[review for review in reviews if review.get('scope') == 'seal']
     require(len(policy) == 1 and policy[0].get('next_seal_sha256') == prep.file_hash(STAGE/'validation.next.json'),'independent exact next-seal policy review missing')
+
+def queue_approved(reviews,prep):
+    # Read the actual queue's settled facts; an APPROVE598 label is not a review.
+    review=[r for r in reviews if r.get('scope') == 'automatic-queue']
+    require(len(review) == 1,'exact automatic queue review required')
+    review=review[0]
+    require(review.get('build_job_id') == prep.PREPARATION_JOB_ID,'queue preparation identity mismatch')
+    with sqlite3.connect('file:'+str(DB)+'?mode=ro',uri=True,timeout=2) as db:
+        build=db.execute('SELECT kind,status FROM jobs WHERE id=?',(prep.PREPARATION_JOB_ID,)).fetchone()
+        actual=db.execute('SELECT kind,status,parent_id,result FROM jobs WHERE id=?',(review.get('review_job_id'),)).fetchone()
+    require(build == ('build','done') and actual is not None
+            and actual[:3] == ('review','done',prep.PREPARATION_JOB_ID)
+            and isinstance(actual[3],str)
+            and prep.sha(actual[3].encode()) == review.get('queue_result_sha256'),
+            'actual automatic queue approval is missing or differs')
 
 def load(prep):
     action=read(STAGE/'action.json');tree=read(STAGE/'tree.json');reviews=read(STAGE/'reviews.json')
     prep.validate_action(action,tree,STAGE,reviews)
-    require(all(review.get('automatic_queue_review') == 'APPROVE598' for review in reviews),'automatic queue598 review required')
+    queue_approved(reviews,prep)
     ack=read(STAGE/'hq-ack.json');owner_check(ack,action,prep)
     signal.setitimer(signal.ITIMER_REAL,min(ack['expires_wall']-time.time(),ack['expires_mono']-time.monotonic(),900))
     return action,tree,reviews,ack

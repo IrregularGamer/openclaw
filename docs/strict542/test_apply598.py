@@ -3,6 +3,8 @@ import importlib.util
 from pathlib import Path
 import tempfile
 import os
+import sqlite3
+import hashlib
 from unittest.mock import patch
 from types import SimpleNamespace
 import unittest
@@ -31,6 +33,23 @@ class Application(unittest.TestCase):
             with self.assertRaises(PermissionError):a.parents(base/'file'/'runtime')
 
 class GuardedApplication(unittest.TestCase):
+    def test_queue_gate_requires_actual_done_build_matching_review_and_exact_result(self):
+        with tempfile.TemporaryDirectory() as root,patch.object(a,'DB',Path(root)/'queue.db'):
+            result='fixture independently recorded result\nVERDICT: APPROVE'
+            digest=lambda raw:hashlib.sha256(raw).hexdigest()
+            prep=SimpleNamespace(PREPARATION_JOB_ID=608,sha=digest)
+            review={'scope':'automatic-queue','build_job_id':608,'review_job_id':609,'queue_result_sha256':digest(result.encode())}
+            with sqlite3.connect(a.DB) as db:
+                db.execute('CREATE TABLE jobs(id INTEGER,kind TEXT,status TEXT,parent_id INTEGER,result TEXT)')
+                db.executemany('INSERT INTO jobs VALUES(?,?,?,?,?)',[(608,'build','review',605,None),(609,'review','done',608,result)])
+            with self.assertRaisesRegex(PermissionError,'actual automatic queue approval'):a.queue_approved([review],prep)
+            with sqlite3.connect(a.DB) as db:db.execute("UPDATE jobs SET status='done' WHERE id=608")
+            a.queue_approved([review],prep)
+            for key,value in [('build_job_id',598),('review_job_id',999),('queue_result_sha256','f'*64)]:
+                with self.assertRaises(PermissionError):a.queue_approved([{**review,key:value}],prep)
+            with sqlite3.connect(a.DB) as db:db.execute('UPDATE jobs SET parent_id=598 WHERE id=609')
+            with self.assertRaises(PermissionError):a.queue_approved([review],prep)
+
     def test_intermediate_directory_replacement_cannot_redirect_privileged_write(self):
         with tempfile.TemporaryDirectory() as root:
             base=Path(root);parent=base/'owned';parent.mkdir();outside=base/'outside';outside.mkdir()

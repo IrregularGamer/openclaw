@@ -27,6 +27,8 @@ GUARDS = {
     '/home/deploy/.local/lib/node_modules/openclaw/package.json',
     '/home/deploy/.local/lib/node_modules/openclaw/dist/index.js',
 }
+PREPARATION_JOB_ID = 608
+REVIEW_SCOPES = ('source', 'action', 'privilege-policy', 'seal', 'automatic-queue')
 CHECKS = {'gateway-scoped', 'native-owner', 'supervisor-ipc', 'cancellation-settlement', 'application-preparation'}
 
 def sha(raw):
@@ -184,7 +186,7 @@ def make_action(tree, stage, baseline):
         changes.append({'source':name,'target':target,'old':baseline['targets'][target],'new':new})
     payload={'schema':'strict542-action598-v1','source_commit':tree['execution_evidence']['source_commit'],
         'tree_receipt_sha256':digest(tree),'baseline':baseline,'changes':changes,
-        'required_reviews':['source','action','privilege-policy'],
+        'required_reviews':list(REVIEW_SCOPES),'preparation_job_id':PREPARATION_JOB_ID,
         'requirements':['original-full-seal-valid','native-admission-lock','natural-settled-no-worker-gap',
             'genuine-foreground-nonqueue-HQ','finite-dual-clock-window','fresh-post-restart-owner-binding',
             'fresh-post-restart-accepted-run-ack','original-predicates-unchanged','independent-loaded-generation-check'],
@@ -205,7 +207,7 @@ def validate_action(action, tree, stage, reviews):
     rebuilt=make_action(tree,stage,action['action']['baseline'])
     require(action == rebuilt, 'action or staged inventory drift')
     require(isinstance(reviews,list), 'review list required')
-    for scope in ('source','action','privilege-policy'):
+    for scope in REVIEW_SCOPES:
         matching=[r for r in reviews if r.get('scope') == scope]
         require(len(matching) == 1,'exact single independent '+scope+' review required')
         r=matching[0]
@@ -215,6 +217,11 @@ def validate_action(action, tree, stage, reviews):
         require(isinstance(r.get('author'),str) and isinstance(r.get('reviewer'),str)
                 and r['author'] and r['reviewer'] and r['author'] != r['reviewer'], 'independent reviewer required')
         require(hexid(r.get('review_receipt_sha256')), 'missing exact external review receipt digest')
+        if scope == 'automatic-queue':
+            require(r.get('build_job_id') == PREPARATION_JOB_ID
+                    and type(r.get('review_job_id')) is int and r['review_job_id'] > 0
+                    and r['review_job_id'] != PREPARATION_JOB_ID
+                    and hexid(r.get('queue_result_sha256')), 'missing actual queue review identity')
     return {'status':'PREPARED_REVIEWED_NOT_APPLIED','action_sha256':action['action_sha256']}
 
 def emit(path,value):

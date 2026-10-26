@@ -81,8 +81,16 @@ class PreparationTests(unittest.TestCase):
         actual=a.check_tree
         with patch.object(a,'NATIVE_SHA',a.file_hash(stage/'maintenance.py')), patch.object(a,'check_tree',side_effect=lambda receipt,runtime,**kw:actual(receipt,runtime,allow_fixture=True)):
             tree,action=self.action(stage)
-            reviews=[{'scope':scope,'verdict':'APPROVE','action_sha256':action['action_sha256'],'tree_receipt_sha256':a.digest(tree),'source_commit':'a'*40,'author':'author','reviewer':'independent','review_receipt_sha256':'d'*64} for scope in ('source','action','privilege-policy')]
+            reviews=[{'scope':scope,'verdict':'APPROVE','action_sha256':action['action_sha256'],'tree_receipt_sha256':a.digest(tree),'source_commit':'a'*40,'author':'author','reviewer':'independent','review_receipt_sha256':'d'*64} for scope in a.REVIEW_SCOPES]
+            reviews[-1].update(build_job_id=608,review_job_id=609,queue_result_sha256='e'*64)
             self.assertEqual(a.validate_action(action,tree,stage,reviews)['status'],'PREPARED_REVIEWED_NOT_APPLIED')
+            for missing in ('seal','automatic-queue'):
+                with self.assertRaisesRegex(ValueError,'exact single independent '+missing):
+                    a.validate_action(action,tree,stage,[r for r in reviews if r['scope'] != missing])
+            reviews[-1]['build_job_id']=598
+            with self.assertRaisesRegex(ValueError,'actual queue review identity'):
+                a.validate_action(action,tree,stage,reviews)
+            reviews[-1]['build_job_id']=608
             reviews[0]['reviewer']='author'
             with self.assertRaises(ValueError):a.validate_action(action,tree,stage,reviews)
     def test_action_stage_tamper_refuses(self):
