@@ -428,3 +428,14 @@ Current184 remote tests apply to6d7ecc59;11 new policy tests pass locally and
 are independently source-reviewed, not a186-test admitted execution claim.
 Automatic598 review and every595 application/HQ ownership gate remain open.
 Do not apply an incomplete package or repeat6d7ecc59 unchanged.
+
+## Resumed fixed-pool diagnostic, 2026-10-26
+
+The retained exact source8ce523c0 export was normally admitted after the prior
+placement refusal. Actual186 relevant checks pass; exact log and source-bound
+hash receipt are job598-native1-resumed-tests.txt/json. Fresh local streaming
+hashes of all three archives and runner match the retained manifest, and the
+remote runner asserted the same archive hashes before tests. Compiler diagnostic
+is still active; no compiler outcome, complete build or application approval is
+claimed by this checkpoint. Do not concurrently retry or treat this checkpoint
+as permission to apply. The original complete-build/action/review gates stand.
