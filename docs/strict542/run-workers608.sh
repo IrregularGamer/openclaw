@@ -41,6 +41,7 @@ node --test docs/strict542/worker-phases608.test.mjs docs/strict542/serial-probe
 npm exec --yes --package=pnpm@12.5.1 -- sh -c 'set -eu; [ "$(pnpm --version)" = 12.5.1 ]; pnpm install --frozen-lockfile'
 node node_modules/vitest/vitest.mjs run --config test/vitest/vitest.unit-fast.config.ts --maxWorkers=1 --no-file-parallelism --passWithNoTests=false --reporter=json --outputFile=../result608-workers/vitest.json test/scripts/build-all-bounded608.test.ts
 node --input-type=module -e 'import {releaseDisposableStore} from "./scripts/lib/disposable-build-inputs.mjs"; releaseDisposableStore("..")'
+node --import ./scripts/tsx.mjs --test docs/strict542/lazy-barrel608.test.mjs
 node --test docs/strict542/worker-minify608.test.mjs
 set +e
 node --import ./scripts/tsx.mjs docs/strict542/worker-probe608.mts

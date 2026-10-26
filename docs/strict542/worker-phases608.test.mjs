@@ -5,7 +5,7 @@ const config={entry:{'worker/worker':'src/worker/worker-deploy-entry.ts'},dts:fa
 const ok={status:0,timedOut:false,error:null,hasIneffectiveDynamicImport:false,fatalUnresolvedImport:null};
 test('only exact self-contained workers defer required minification',()=>{
  const selected=owner.workerBundleConfig(config);assert.equal(selected.minify,false);
- assert.deepEqual({...selected,minify:config.minify},config);
+ assert.deepEqual({...selected,minify:config.minify,inputOptions:config.inputOptions},{...config,inputOptions:config.inputOptions});
  const ordinary={entry:{x:'src/x.ts'},dts:false,define:{WORKER_DEPLOY_BUILD:'true'}};assert.equal(owner.workerBundleConfig(ordinary),ordinary);
 });
 test('changed worker packaging/minify policy refuses instead of omitting a phase',()=>{
@@ -22,4 +22,11 @@ test('settled bundle precedes fixed minifier and expired deadline refuses',async
  await owner.runWorkerPhases({config,invocation:{command:process.execPath,options:{env:{},stdio:['ignore','pipe','pipe']}},remainingMs:()=>500,run:async invocation=>{if(!settled){order.push('bundle');await Promise.resolve();settled=true;}else{order.push('minify');assert.deepEqual(invocation.args,['scripts/minify-worker608.mjs','worker/worker','false']);}return ok;}});
  assert.deepEqual(order,['bundle','minify']);let calls=0;
  await assert.rejects(owner.runWorkerPhases({config,invocation:{},remainingMs:()=>0,run:async()=>{calls++;return ok;}}),/deadline/);assert.equal(calls,0);
+});
+
+test('worker lazy barrels preserve owner input options and existing experimental policy',()=>{
+ const inputOptions=(options,format,context)=>({...options,external:context.external,format,experimental:{attachDebugInfo:'none'}});
+ const selected=owner.workerBundleConfig({...config,inputOptions});
+ const external=()=>true;const actual=selected.inputOptions({platform:'node'},'esm',{external});
+ assert.equal(actual.external,external);assert.equal(actual.platform,'node');assert.equal(actual.format,'esm');assert.deepEqual(actual.experimental,{attachDebugInfo:'none',lazyBarrel:true});
 });

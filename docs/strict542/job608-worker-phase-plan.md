@@ -13,3 +13,7 @@ Existing solution: use the SAME pinned Rolldown1.2.9 public rolldown/utils minif
 - [ ] Reconcile actual outcome, then complete separately admitted full typed build/frozen package with exact native binding and real deterministic receipt, original/new hashes, source/action/privilege/seal and automatic queue reviews. Those gates cannot be satisfied by the focused diagnostic.
 
 Limits unchanged: 1625784320-byte admission floor, 2GiB1CPU lease, absolute900s compiler window and existing process-group cancellation/settlement owner. No live mutation, services, credentials or provider calls. Ordered595 handoff remains job608-to595.md; fresh post-restart genuine owner binding AND accepted-run acknowledgements mandatory.575/588 by reference,553 sole SAME510 owner.
+
+## Measured correction after a
+
+The stock bundle still failed before minification (exact recovered outcome job608-worker-phases-a-outcome.md), so output/minifier overlap is not the sole owner. Preserve the valid lifetime split, extend the already-reviewed lazyBarrel optimization only in the four bounded worker copies, and require the existing real lazy-barrel semantics suite before the next complete worker diagnostic. This follows the same annotations as canonical shared graph15 and changes no purity/dependency/entry or singleton contract. The new input-options regression failed on missing lazyBarrel before the correction. A fresh exact independent source/export review is required; this is changed source, never an unchanged retry. Fit is unproved until the actual run.

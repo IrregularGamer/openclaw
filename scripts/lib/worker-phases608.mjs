@@ -21,7 +21,13 @@ export function workerEntry608(config) {
  return key;
 }
 export function workerBundleConfig(config) {
- return workerEntry608(config) ? {...config,minify:false} : config;
+ if(!workerEntry608(config))return config;
+ // Same original graph/sideEffects policy; prune unused pure barrel reexports
+ // before native finalization, without marking any additional module pure.
+ return {...config,minify:false,inputOptions(...args) {
+  const options=typeof config.inputOptions==='function' ? config.inputOptions(...args) : {...args[0],...config.inputOptions};
+  return {...options,experimental:{...options.experimental,lazyBarrel:true}};
+ }};
 }
 function succeeded(result) {
  return result.status===0 && !result.timedOut && !result.error &&
