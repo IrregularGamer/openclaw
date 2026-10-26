@@ -439,3 +439,14 @@ remote runner asserted the same archive hashes before tests. Compiler diagnostic
 is still active; no compiler outcome, complete build or application approval is
 claimed by this checkpoint. Do not concurrently retry or treat this checkpoint
 as permission to apply. The original complete-build/action/review gates stand.
+
+The resumed8ce fixed-pool diagnostic now settled:186 relevant checks pass;
+AI and configurations0..14 pass, unified config15 timed out after869459ms.
+The owning wrapper observed process-group death after SIGTERM. Actual remote
+post-run inventory shows zero managed runners and normal source/native/store
+cleanup. job598-native1-resumed-outcome.json binds exact logs and receipt.
+This is no artifact or feasible-build claim; pool1 alone did not complete.
+Source-only allocator successor1c27e206 (review6305e30c) addresses observed
+THP/reclaim pressure without changing the existing1.5GiB high/2GiB max budgets.
+Only one fresh normally admitted committed diagnostic follows independent
+actual-outcome review. Do not repeat the unchanged failed source.

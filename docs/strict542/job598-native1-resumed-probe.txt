@@ -1,0 +1,396 @@
+Scope: all 186 workspace projects
+. pnpm:devPreinstall$ node scripts/check-install-dependency-ownership.mjs
+. pnpm:devPreinstall: Done
+? Verifying lockfile against supply-chain policies (1706 entries)...
+Packages are copied from the content-addressable store to the virtual store.
+  Content-addressable store is at: /work/.pnpm-store/v11
+  Virtual store is at:             node_modules/.pnpm
+Progress: resolved 1469, reused 0, downloaded 56, added 32
+[WARN] Tarball download average speed 35 KiB/s (size 36 KiB) is below 50 KiB/s: https://registry.npmjs.org/type-fest/-/type-fest-0.20.2.tgz (GET)
+[WARN] Tarball download average speed 17 KiB/s (size 17 KiB) is below 50 KiB/s: https://registry.npmjs.org/@sigstore/verify/-/verify-4.1.2.tgz (GET)
+[WARN] Tarball download average speed 11 KiB/s (size 12 KiB) is below 50 KiB/s: https://registry.npmjs.org/unrun/-/unrun-0.3.1.tgz (GET)
+[WARN] Tarball download average speed 10 KiB/s (size 15 KiB) is below 50 KiB/s: https://registry.npmjs.org/yuku-codegen/-/yuku-codegen-0.10.2.tgz (GET)
+[WARN] Tarball download average speed 19 KiB/s (size 39 KiB) is below 50 KiB/s: https://registry.npmjs.org/@slack/oauth/-/oauth-4.0.0.tgz (GET)
+[WARN] Tarball download average speed 10 KiB/s (size 26 KiB) is below 50 KiB/s: https://registry.npmjs.org/@aws-sdk/credential-providers/-/credential-providers-3.1135.0.tgz (GET)
+[WARN] Tarball download average speed 6 KiB/s (size 6 KiB) is below 50 KiB/s: https://registry.npmjs.org/retry/-/retry-0.13.1.tgz (GET)
+[WARN] Tarball download average speed 33 KiB/s (size 102 KiB) is below 50 KiB/s: https://registry.npmjs.org/@aws-sdk/core/-/core-3.978.0.tgz (GET)
+[WARN] Tarball download average speed 6 KiB/s (size 10 KiB) is below 50 KiB/s: https://registry.npmjs.org/body-parser/-/body-parser-2.3.0.tgz (GET)
+[WARN] Tarball download average speed 23 KiB/s (size 60 KiB) is below 50 KiB/s: https://registry.npmjs.org/sqlite-vec-linux-x64/-/sqlite-vec-linux-x64-0.1.9.tgz (GET)
+[WARN] Tarball download average speed 31 KiB/s (size 98 KiB) is below 50 KiB/s: https://registry.npmjs.org/entities/-/entities-8.1.0.tgz (GET)
+[WARN] Tarball download average speed 11 KiB/s (size 31 KiB) is below 50 KiB/s: https://registry.npmjs.org/d3-array/-/d3-array-2.12.1.tgz (GET)
+[WARN] Tarball download average speed 26 KiB/s (size 85 KiB) is below 50 KiB/s: https://registry.npmjs.org/@opentelemetry/sdk-trace/-/sdk-trace-2.11.0.tgz (GET)
+[WARN] Tarball download average speed 22 KiB/s (size 43 KiB) is below 50 KiB/s: https://registry.npmjs.org/@ubjs/core/-/core-0.31.0-3.tgz (GET)
+[WARN] Tarball download average speed 12 KiB/s (size 26 KiB) is below 50 KiB/s: https://registry.npmjs.org/@smithy/node-http-handler/-/node-http-handler-4.12.1.tgz (GET)
+[WARN] Tarball download average speed 31 KiB/s (size 109 KiB) is below 50 KiB/s: https://registry.npmjs.org/yaml/-/yaml-2.9.1.tgz (GET)
+[WARN] Tarball download average speed 15 KiB/s (size 51 KiB) is below 50 KiB/s: https://registry.npmjs.org/commander/-/commander-15.0.0.tgz (GET)
+[WARN] Tarball download average speed 33 KiB/s (size 121 KiB) is below 50 KiB/s: https://registry.npmjs.org/marked/-/marked-18.0.13.tgz (GET)
+[WARN] Tarball download average speed 23 KiB/s (size 77 KiB) is below 50 KiB/s: https://registry.npmjs.org/bignumber.js/-/bignumber.js-9.3.1.tgz (GET)
+[WARN] Tarball download average speed 31 KiB/s (size 117 KiB) is below 50 KiB/s: https://registry.npmjs.org/layout-base/-/layout-base-1.0.2.tgz (GET)
+[WARN] Tarball download average speed 20 KiB/s (size 66 KiB) is below 50 KiB/s: https://registry.npmjs.org/@audio/decode-mp3/-/decode-mp3-1.3.1.tgz (GET)
+[WARN] Tarball download average speed 35 KiB/s (size 146 KiB) is below 50 KiB/s: https://registry.npmjs.org/lodash-es/-/lodash-es-4.18.1.tgz (GET)
+Downloading @anthropic-ai/claude-agent-sdk-linux-x64@0.3.274: 0.00 B/102.59 MB
+Progress: resolved 1469, reused 0, downloaded 209, added 192
+[WARN] Tarball download average speed 41 KiB/s (size 49 KiB) is below 50 KiB/s: https://registry.npmjs.org/@codemirror/commands/-/commands-6.11.1.tgz (GET)
+[WARN] Tarball download average speed 13 KiB/s (size 19 KiB) is below 50 KiB/s: https://registry.npmjs.org/whatwg-url/-/whatwg-url-16.0.1.tgz (GET)
+[WARN] Tarball download average speed 16 KiB/s (size 40 KiB) is below 50 KiB/s: https://registry.npmjs.org/deepmerge-ts/-/deepmerge-ts-8.0.2.tgz (GET)
+Downloading mermaid@11.17.2: 0.00 B/17.79 MB
+Downloading @github/copilot-sdk-linux-x64@1.0.14: 0.00 B/46.89 MB
+Downloading @typescript/typescript-linux-x64@7.1.0-dev.20260920.1: 0.00 B/10.11 MB
+Progress: resolved 1469, reused 0, downloaded 294, added 288
+Downloading node-pty@1.2.0-beta.15: 0.00 B/7.15 MB
+Downloading @openai/codex@0.160.0-linux-x64: 0.00 B/163.27 MB
+Progress: resolved 1469, reused 0, downloaded 361, added 352
+Progress: resolved 1469, reused 0, downloaded 382, added 383
+Downloading @oxlint-tsgolint/linux-x64@7.0.2002: 0.00 B/7.76 MB
+Downloading @rolldown/binding-linux-x64-gnu@1.2.9: 0.00 B/7.92 MB
+Downloading cytoscape-fcose@2.2.0: 0.00 B/7.60 MB
+Progress: resolved 1469, reused 0, downloaded 482, added 480
+Downloading @oxlint/binding-linux-x64-gnu@1.83.0: 0.00 B/6.51 MB
+Downloading onnxruntime-node@1.30.0: 0.00 B/113.50 MB
+Progress: resolved 1469, reused 0, downloaded 540, added 544
+Downloading @lancedb/lancedb-linux-x64-gnu@0.39.0: 0.00 B/72.71 MB
+Downloading @openai/codex@0.160.0-linux-x64: 3.93 MB/163.27 MB
+Downloading @trycua/cua-driver-linux-x64-gnu@0.28.2: 0.00 B/13.49 MB
+Downloading @tloncorp/tlon-skill-linux-x64@0.5.0: 0.00 B/40.66 MB
+Progress: resolved 1469, reused 0, downloaded 588, added 576
+Downloading onnxruntime-node@1.30.0: 2.10 MB/113.50 MB
+Downloading @microsoft/mxc-sdk@0.8.0: 0.00 B/25.88 MB
+Progress: resolved 1469, reused 0, downloaded 666, added 670
+Progress: resolved 1469, reused 0, downloaded 742, added 736
+[WARN] Request took 10049ms: https://registry.npmjs.org/playwright
+Progress: resolved 1469, reused 0, downloaded 824, added 800
+✓ Lockfile passes supply-chain policies (1706 entries in 26.6s)
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1469, reused 0, downloaded 875, added 864
+Progress: resolved 1469, reused 0, downloaded 890, added 893
+Progress: resolved 1469, reused 0, downloaded 917, added 896
+Downloading @tloncorp/tlon-skill-linux-x64@0.5.0: 7.06 MB/40.66 MB
+Progress: resolved 1469, reused 0, downloaded 963, added 960
+Progress: resolved 1469, reused 0, downloaded 986, added 992
+Downloading onnxruntime-node@1.30.0: 15.58 MB/113.50 MB
+Downloading @github/copilot-sdk-linux-x64@1.0.14: 16.79 MB/46.89 MB
+Progress: resolved 1469, reused 0, downloaded 1055, added 1056
+Downloading @tloncorp/tlon-skill-linux-x64@0.5.0: 16.79 MB/40.66 MB
+Progress: resolved 1469, reused 0, downloaded 1082, added 1079
+Downloading @github/copilot-sdk-linux-x64@1.0.14: 33.58 MB/46.89 MB
+Progress: resolved 1469, reused 0, downloaded 1114, added 1105
+Progress: resolved 1469, reused 0, downloaded 1146, added 1151
+Progress: resolved 1469, reused 0, downloaded 1167, added 1152
+Downloading @anthropic-ai/claude-agent-sdk-linux-x64@0.3.274: 59.53 MB/102.59 MB
+Progress: resolved 1469, reused 0, downloaded 1178, added 1179
+Progress: resolved 1469, reused 0, downloaded 1209, added 1184
+Progress: resolved 1469, reused 0, downloaded 1210, added 1216
+Downloading @anthropic-ai/claude-agent-sdk-linux-x64@0.3.274: 78.88 MB/102.59 MB
+Downloading @openai/codex@0.160.0-linux-x64: 26.39 MB/163.27 MB
+Downloading @anthropic-ai/claude-agent-sdk-linux-x64@0.3.274: 88.77 MB/102.59 MB
+Progress: resolved 1469, reused 0, downloaded 1274, added 1262
+Progress: resolved 1469, reused 0, downloaded 1274, added 1279
+Progress: resolved 1469, reused 0, downloaded 1306, added 1298
+Progress: resolved 1469, reused 0, downloaded 1333, added 1312
+Progress: resolved 1469, reused 0, downloaded 1338, added 1321
+Progress: resolved 1469, reused 0, downloaded 1338, added 1344
+Progress: resolved 1469, reused 0, downloaded 1370, added 1375
+Progress: resolved 1469, reused 0, downloaded 1402, added 1380
+Progress: resolved 1469, reused 0, downloaded 1402, added 1407
+Downloading @openai/codex@0.160.0-linux-x64: 69.68 MB/163.27 MB
+Progress: resolved 1469, reused 0, downloaded 1414, added 1408
+Downloading @openai/codex@0.160.0-linux-x64: 86.29 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 93.99 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 100.82 MB/163.27 MB
+Progress: resolved 1469, reused 0, downloaded 1434, added 1433
+Progress: resolved 1469, reused 0, downloaded 1434, added 1438
+Progress: resolved 1469, reused 0, downloaded 1434, added 1439
+Downloading @openai/codex@0.160.0-linux-x64: 105.80 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 111.18 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 114.33 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 118.83 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 123.75 MB/163.27 MB
+Downloading onnxruntime-node@1.30.0: 71.74 MB/113.50 MB
+Downloading onnxruntime-node@1.30.0: 74.87 MB/113.50 MB
+Downloading @openai/codex@0.160.0-linux-x64: 132.73 MB/163.27 MB
+Downloading onnxruntime-node@1.30.0: 84.93 MB/113.50 MB
+Downloading @openai/codex@0.160.0-linux-x64: 148.21 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 151.99 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 155.79 MB/163.27 MB
+Downloading onnxruntime-node@1.30.0: 107.03 MB/113.50 MB
+Downloading @lancedb/lancedb-linux-x64-gnu@0.39.0: 19.92 MB/72.71 MB
+Downloading @lancedb/lancedb-linux-x64-gnu@0.39.0: 40.54 MB/72.71 MB
+Downloading @lancedb/lancedb-linux-x64-gnu@0.39.0: 49.90 MB/72.71 MB
+Downloading @lancedb/lancedb-linux-x64-gnu@0.39.0: 63.31 MB/72.71 MB
+Downloading @tloncorp/tlon-skill-linux-x64@0.5.0: 22.80 MB/40.66 MB
+Downloading @tloncorp/tlon-skill-linux-x64@0.5.0: 35.53 MB/40.66 MB
+Progress: resolved 1469, reused 0, downloaded 1463, added 1443
+Progress: resolved 1469, reused 0, downloaded 1463, added 1445
+Progress: resolved 1469, reused 0, downloaded 1463, added 1447
+Progress: resolved 1469, reused 0, downloaded 1463, added 1449
+Progress: resolved 1469, reused 0, downloaded 1463, added 1451
+Progress: resolved 1469, reused 0, downloaded 1463, added 1453
+Progress: resolved 1469, reused 0, downloaded 1463, added 1454
+Progress: resolved 1469, reused 0, downloaded 1463, added 1458
+Progress: resolved 1469, reused 0, downloaded 1463, added 1460
+Progress: resolved 1469, reused 0, downloaded 1463, added 1463
+Progress: resolved 1469, reused 0, downloaded 1463, added 1465
+Progress: resolved 1469, reused 0, downloaded 1463, added 1466
+Progress: resolved 1469, reused 0, downloaded 1463, added 1468
+Packages: +1469
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 1469, reused 0, downloaded 1463, added 1469, done
+.../esbuild@0.28.2/node_modules/esbuild postinstall$ node install.js
+.../esbuild@0.28.2/node_modules/esbuild postinstall: Done
+.../node_modules/@google/genai preinstall$ echo 'preinstall: no-op'
+.../node_modules/@google/genai preinstall: preinstall: no-op
+.../node_modules/@google/genai preinstall: Done
+.../@matrix-org/matrix-sdk-crypto-nodejs postinstall$ node download-lib.js
+.../@matrix-org/matrix-sdk-crypto-nodejs postinstall: Downloading lib matrix-sdk-crypto.linux-x64-gnu.node from https://github.com/matrix-org/matrix-rust-sdk-crypto-nodejs/releases/download/v0.6.6/matrix-sdk-crypto.linux-x64-gnu.node
+.../@matrix-org/matrix-sdk-crypto-nodejs postinstall: 0 b/s - 57.8% [13.7 MB/23.6 MB]
+.../@matrix-org/matrix-sdk-crypto-nodejs postinstall: Download Completed
+.../@matrix-org/matrix-sdk-crypto-nodejs postinstall: Done
+.../node_modules/node-pty install$ node scripts/prebuild.js || node-gyp rebuild
+.../node_modules/node-pty install: [32m> Checking prebuilds...[0m
+.../node_modules/node-pty install: Done
+.../node_modules/node-pty postinstall$ node scripts/post-install.js
+.../node_modules/node-pty postinstall: [32m> Cleaning release folder...[0m
+.../node_modules/node-pty postinstall: [32m> Moving conpty.dll...[0m
+.../node_modules/node-pty postinstall:   SKIPPED (not Windows)
+.../node_modules/node-pty postinstall: Done
+.../node_modules/@tloncorp/tlon-skill postinstall$ node scripts/postinstall.js
+.../node_modules/@tloncorp/tlon-skill postinstall: [tlon-skill] Binary ready: /work/source/node_modules/.pnpm/@tloncorp+tlon-skill-linux-x64@0.5.0/node_modules/@tloncorp/tlon-skill-linux-x64/tlon
+.../node_modules/@tloncorp/tlon-skill postinstall: Done
+.../node_modules/baileys preinstall$ node ./engine-requirements.js
+.../node_modules/baileys preinstall: Done
+. preinstall$ node scripts/preinstall-package-manager-warning.mjs
+. preinstall: Done
+. postinstall$ node scripts/postinstall-bundled-plugins.mjs
+. postinstall: Done
+. prepare$ node scripts/prepare-git-hooks.mjs
+. prepare: Done
+
+dependencies:
++ @agentclientprotocol/sdk 1.4.0
++ @anthropic-ai/sdk 0.127.0
++ @babel/generator 8.0.6
++ @babel/parser 8.0.6
++ @babel/traverse 8.0.6
++ @clack/core 1.5.1
++ @clack/prompts 1.8.1
++ @earendil-works/pi-tui 0.86.1
++ @google/genai 2.23.0
++ @grammyjs/transformer-throttler 1.2.1
++ @homebridge/ciao 1.3.12
++ @lydell/node-pty 1.2.0-beta.15
++ @mistralai/mistralai 2.7.0
++ @modelcontextprotocol/sdk 1.31.0
++ @mozilla/readability 0.6.0
++ @openclaw/ai link:packages/ai
++ @openclaw/fs-safe 0.21.1
++ @openclaw/proxyline 0.3.12
++ @silvia-odwyer/photon-node 0.3.4
++ @trycua/cua-driver 0.28.2
++ acorn 8.18.0
++ chalk 6.0.0
++ chokidar 5.0.0
++ chrome-devtools-mcp 1.9.0
++ clawpdf 0.3.2
++ commander 15.0.0
++ croner 10.0.1
++ diff 9.0.0
++ dotenv 18.0.1
++ entities 8.1.0
++ esbuild 0.28.2
++ execa 10.0.1
++ express 5.2.1
++ file-type 22.1.1
++ grammy 1.46.0
++ highlight.js 11.12.0
++ hosted-git-info 10.1.1
++ iconv-lite 0.7.3
++ ignore 7.0.9
++ import-meta-resolve 4.2.0
++ jiti 2.7.0
++ json5 2.2.3
++ jszip 3.10.2
++ koffi 3.3.1
++ kysely 0.29.6
++ linkedom 0.18.13
++ minimatch 10.2.6
++ node-edge-tts 1.2.10
++ npm 11.20.0
++ openai 7.20.0
++ p-limit 7.3.3
++ p-map 7.0.8
++ partial-json 0.1.7
++ playwright-core 1.63.0
++ qrcode 1.5.4
++ rastermill 0.3.3
++ semver 7.8.5
++ tar 7.5.22
++ tslog 5.2.0
++ typebox 1.3.34
++ undici 8.10.2
++ web-push 3.6.7
++ web-tree-sitter 0.27.0
++ ws 8.21.3
++ yaml 2.9.1
++ zod 4.6.5
+
+optionalDependencies:
++ sqlite-vec 0.1.9
+
+devDependencies:
++ @a2ui/lit 0.11.0
++ @a2ui/web_core 0.11.0
++ @babel/types 8.0.6
++ @copilotkit/aimock 1.42.1
++ @lit-labs/signals 0.3.0
++ @lit/context 1.1.6
++ @lit/task 1.0.3
++ @mdx-js/mdx 3.1.1
++ @openclaw/crabline 0.1.27
++ @openclaw/session-url-contract link:packages/session-url-contract
++ @opentelemetry/sdk-node 0.222.0
++ @pnpm/parse-overrides 1001.0.4
++ @shikijs/core 4.4.3
++ @shikijs/engine-javascript 4.4.3
++ @shikijs/engine-oniguruma 4.4.3
++ @sindresorhus/slugify 3.0.1
++ @types/express 5.0.6
++ @types/hosted-git-info 3.0.5
++ @types/jsdom 30.0.0
++ @types/markdown-it 14.2.0
++ @types/mdast 4.0.4
++ @types/node 26.6.2
++ @types/semver 7.8.0
++ @types/web-push 3.6.4
++ @types/ws 8.18.1
++ @vitest/coverage-v8 5.0.1
++ acpx 0.19.1
++ apache-arrow 21.2.0
++ baileys 7.0.0-rc14
++ htmlparser2 12.0.0
++ ipaddr.js 2.5.0
++ jscpd 5.3.0
++ jsdom 30.1.0
++ lit 3.3.3
++ lit-analyzer 2.0.3
++ markdown-it 15.0.2
++ markdown-it-anchor 10.0.0
++ marked 18.0.13
++ minipass 7.1.3
++ nostr-tools 2.25.2
++ oxfmt 0.68.0
++ oxlint 1.83.0
++ oxlint-tsgolint 7.0.2002
++ pako 3.0.2
++ playwright 1.63.0
++ postcss 8.5.28
++ postcss-lit 1.4.1
++ postcss-selector-parser 7.1.6
++ shiki 4.4.3
++ signal-utils 0.21.1
++ sigstore 5.0.0
++ string-width 8.2.2
++ stylelint 17.15.0
++ stylelint-config-recommended 18.0.0
++ tinyglobby 0.2.17
++ tree-sitter-bash 0.25.1
++ tsdown 0.23.0
++ tsx 4.23.15
++ typescript 7.1.0-dev.20260920.1
++ unrun 0.3.1
++ vite 8.3.0
++ vitest 5.0.1
+
+Done in 2m 22.4s using pnpm v12.5.1
+{"kind":"DIAGNOSTIC_ONLY_NOT_BUILD_EVIDENCE","label":"ai","args":["node_modules/tsdown/dist/run.mjs","--config-loader","unrun","--logLevel","warn","--no-clean","--config","tsdown.ai.config.ts","--concurrency","1"],"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"nodeOptions":"--max-old-space-size=741","remaining":898159}
+{"kind":"DIAGNOSTIC_ONLY_NOT_BUILD_EVIDENCE","label":"main-config-0","args":["node_modules/tsdown/dist/run.mjs","--config-loader","unrun","--logLevel","warn","--no-clean","--config","tsdown.isolated598.config.ts","--concurrency","1"],"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"nodeOptions":"--max-old-space-size=724","remaining":894602}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"0","phase":"begin","pid":333,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":165457920,"heapTotal":55406592,"heapUsed":19256712,"external":2920017,"arrayBuffers":357020},"kernel":{"memory.current":"1052651520","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 139976291\nuser_usec 70675547\nsystem_usec 69300743\ncore_sched.force_idle_usec 0\nnr_periods 1777\nnr_throttled 1001\nthrottled_usec 49704857\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"0","phase":"build-end","pid":333,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":176160768,"heapTotal":55406592,"heapUsed":21727944,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1063804928","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 140149435\nuser_usec 70817234\nsystem_usec 69332201\ncore_sched.force_idle_usec 0\nnr_periods 1779\nnr_throttled 1002\nthrottled_usec 49739106\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"0","phase":"closed","pid":333,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":176553984,"heapTotal":55406592,"heapUsed":22201360,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1064591360","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 140211938\nuser_usec 70867856\nsystem_usec 69344081\ncore_sched.force_idle_usec 0\nnr_periods 1780\nnr_throttled 1003\nthrottled_usec 49753931\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"DIAGNOSTIC_ONLY_NOT_BUILD_EVIDENCE","label":"main-config-1","args":["node_modules/tsdown/dist/run.mjs","--config-loader","unrun","--logLevel","warn","--no-clean","--config","tsdown.isolated598.config.ts","--concurrency","1"],"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"nodeOptions":"--max-old-space-size=723","remaining":892766}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"1","phase":"begin","pid":348,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":167833600,"heapTotal":55144448,"heapUsed":19436904,"external":2920017,"arrayBuffers":357020},"kernel":{"memory.current":"1056681984","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 141677351\nuser_usec 72020220\nsystem_usec 69657130\ncore_sched.force_idle_usec 0\nnr_periods 1794\nnr_throttled 1017\nthrottled_usec 50065924\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"1","phase":"build-end","pid":348,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":204681216,"heapTotal":55144448,"heapUsed":26439352,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1095135232","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 141836577\nuser_usec 72142560\nsystem_usec 69694017\ncore_sched.force_idle_usec 0\nnr_periods 1796\nnr_throttled 1019\nthrottled_usec 50112473\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"1","phase":"closed","pid":348,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":233578496,"heapTotal":55480320,"heapUsed":27885272,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1125150720","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 141939872\nuser_usec 72228962\nsystem_usec 69710910\ncore_sched.force_idle_usec 0\nnr_periods 1797\nnr_throttled 1020\nthrottled_usec 50117884\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"DIAGNOSTIC_ONLY_NOT_BUILD_EVIDENCE","label":"main-config-2","args":["node_modules/tsdown/dist/run.mjs","--config-loader","unrun","--logLevel","warn","--no-clean","--config","tsdown.isolated598.config.ts","--concurrency","1"],"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"nodeOptions":"--max-old-space-size=723","remaining":891059}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"2","phase":"begin","pid":363,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":166019072,"heapTotal":55406592,"heapUsed":19141576,"external":2920017,"arrayBuffers":357020},"kernel":{"memory.current":"1057869824","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 143087786\nuser_usec 73146644\nsystem_usec 69941141\ncore_sched.force_idle_usec 0\nnr_periods 1808\nnr_throttled 1030\nthrottled_usec 50259237\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"2","phase":"build-end","pid":363,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":174440448,"heapTotal":55406592,"heapUsed":21714344,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1066897408","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 143254119\nuser_usec 73293842\nsystem_usec 69960277\ncore_sched.force_idle_usec 0\nnr_periods 1810\nnr_throttled 1032\nthrottled_usec 50275168\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"2","phase":"closed","pid":363,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":178671616,"heapTotal":55406592,"heapUsed":22101600,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1071353856","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 143311570\nuser_usec 73340464\nsystem_usec 69971105\ncore_sched.force_idle_usec 0\nnr_periods 1811\nnr_throttled 1033\nthrottled_usec 50276155\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"DIAGNOSTIC_ONLY_NOT_BUILD_EVIDENCE","label":"main-config-3","args":["node_modules/tsdown/dist/run.mjs","--config-loader","unrun","--logLevel","warn","--no-clean","--config","tsdown.isolated598.config.ts","--concurrency","1"],"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"nodeOptions":"--max-old-space-size=724","remaining":889660}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"3","phase":"begin","pid":378,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":167821312,"heapTotal":54882304,"heapUsed":19410976,"external":2920017,"arrayBuffers":357020},"kernel":{"memory.current":"1061502976","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 145131742\nuser_usec 74796728\nsystem_usec 70335013\ncore_sched.force_idle_usec 0\nnr_periods 1829\nnr_throttled 1048\nthrottled_usec 50492847\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"3","phase":"build-end","pid":378,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":172138496,"heapTotal":54882304,"heapUsed":19773936,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1065959424","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 145151727\nuser_usec 74811749\nsystem_usec 70339977\ncore_sched.force_idle_usec 0\nnr_periods 1829\nnr_throttled 1048\nthrottled_usec 50492847\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"3","phase":"closed","pid":378,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":172269568,"heapTotal":54882304,"heapUsed":19988752,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1066221568","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 145164688\nuser_usec 74823693\nsystem_usec 70340995\ncore_sched.force_idle_usec 0\nnr_periods 1829\nnr_throttled 1048\nthrottled_usec 50492847\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"DIAGNOSTIC_ONLY_NOT_BUILD_EVIDENCE","label":"main-config-4","args":["node_modules/tsdown/dist/run.mjs","--config-loader","unrun","--logLevel","warn","--no-clean","--config","tsdown.isolated598.config.ts","--concurrency","1"],"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"nodeOptions":"--max-old-space-size=724","remaining":887818}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"4","phase":"begin","pid":393,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":163209216,"heapTotal":55111680,"heapUsed":17033456,"external":2920017,"arrayBuffers":291484},"kernel":{"memory.current":"1057099776","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 146999132\nuser_usec 76351555\nsystem_usec 70647577\ncore_sched.force_idle_usec 0\nnr_periods 1847\nnr_throttled 1064\nthrottled_usec 50714634\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"4","phase":"build-end","pid":393,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":167448576,"heapTotal":55111680,"heapUsed":17628616,"external":2854521,"arrayBuffers":291484},"kernel":{"memory.current":"1061429248","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 147062849\nuser_usec 76398791\nsystem_usec 70664058\ncore_sched.force_idle_usec 0\nnr_periods 1848\nnr_throttled 1065\nthrottled_usec 50743483\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"4","phase":"closed","pid":393,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":167448576,"heapTotal":55111680,"heapUsed":17834360,"external":2854521,"arrayBuffers":291484},"kernel":{"memory.current":"1061691392","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 147084734\nuser_usec 76414184\nsystem_usec 70670550\ncore_sched.force_idle_usec 0\nnr_periods 1848\nnr_throttled 1065\nthrottled_usec 50743483\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"DIAGNOSTIC_ONLY_NOT_BUILD_EVIDENCE","label":"main-config-5","args":["node_modules/tsdown/dist/run.mjs","--config-loader","unrun","--logLevel","warn","--no-clean","--config","tsdown.isolated598.config.ts","--concurrency","1"],"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"nodeOptions":"--max-old-space-size=724","remaining":885876}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"5","phase":"begin","pid":408,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":166526976,"heapTotal":55144448,"heapUsed":19274792,"external":2920017,"arrayBuffers":357020},"kernel":{"memory.current":"1061584896","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 149060912\nuser_usec 77969749\nsystem_usec 71091162\ncore_sched.force_idle_usec 0\nnr_periods 1868\nnr_throttled 1082\nthrottled_usec 50968030\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"5","phase":"build-end","pid":408,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":170811392,"heapTotal":55144448,"heapUsed":19487760,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1066041344","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 149075145\nuser_usec 77981412\nsystem_usec 71093732\ncore_sched.force_idle_usec 0\nnr_periods 1868\nnr_throttled 1082\nthrottled_usec 50968030\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"5","phase":"closed","pid":408,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":170942464,"heapTotal":55144448,"heapUsed":19743312,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1066041344","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 149085325\nuser_usec 77989959\nsystem_usec 71095366\ncore_sched.force_idle_usec 0\nnr_periods 1868\nnr_throttled 1082\nthrottled_usec 50968030\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"DIAGNOSTIC_ONLY_NOT_BUILD_EVIDENCE","label":"main-config-6","args":["node_modules/tsdown/dist/run.mjs","--config-loader","unrun","--logLevel","warn","--no-clean","--config","tsdown.isolated598.config.ts","--concurrency","1"],"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"nodeOptions":"--max-old-space-size=723","remaining":883902}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"6","phase":"begin","pid":423,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":165355520,"heapTotal":55144448,"heapUsed":19269056,"external":2920017,"arrayBuffers":357020},"kernel":{"memory.current":"1061236736","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 150097310\nuser_usec 78794162\nsystem_usec 71303147\ncore_sched.force_idle_usec 0\nnr_periods 1879\nnr_throttled 1092\nthrottled_usec 51087294\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"6","phase":"build-end","pid":423,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":173912064,"heapTotal":55144448,"heapUsed":20911848,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1069871104","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 150182084\nuser_usec 78862361\nsystem_usec 71319722\ncore_sched.force_idle_usec 0\nnr_periods 1880\nnr_throttled 1092\nthrottled_usec 51087294\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"6","phase":"closed","pid":423,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":178139136,"heapTotal":55144448,"heapUsed":21431088,"external":2931126,"arrayBuffers":368089},"kernel":{"memory.current":"1074327552","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 150238267\nuser_usec 78908868\nsystem_usec 71329399\ncore_sched.force_idle_usec 0\nnr_periods 1880\nnr_throttled 1092\nthrottled_usec 51087294\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"DIAGNOSTIC_ONLY_NOT_BUILD_EVIDENCE","label":"main-config-7","args":["node_modules/tsdown/dist/run.mjs","--config-loader","unrun","--logLevel","warn","--no-clean","--config","tsdown.isolated598.config.ts","--concurrency","1"],"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"nodeOptions":"--max-old-space-size=723","remaining":882670}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"7","phase":"begin","pid":438,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":168288256,"heapTotal":55144448,"heapUsed":19479312,"external":2920017,"arrayBuffers":357020},"kernel":{"memory.current":"1065545728","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 152004275\nuser_usec 80340906\nsystem_usec 71663369\ncore_sched.force_idle_usec 0\nnr_periods 1898\nnr_throttled 1109\nthrottled_usec 51340045\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"7","phase":"build-end","pid":438,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":195796992,"heapTotal":55144448,"heapUsed":23497144,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1093263360","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 152262440\nuser_usec 80541480\nsystem_usec 71720959\ncore_sched.force_idle_usec 0\nnr_periods 1901\nnr_throttled 1110\nthrottled_usec 51357959\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"7","phase":"closed","pid":438,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":199204864,"heapTotal":55574528,"heapUsed":26532352,"external":3456525,"arrayBuffers":893488},"kernel":{"memory.current":"1096441856","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 152361951\nuser_usec 80618534\nsystem_usec 71743417\ncore_sched.force_idle_usec 0\nnr_periods 1902\nnr_throttled 1110\nthrottled_usec 51357959\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"DIAGNOSTIC_ONLY_NOT_BUILD_EVIDENCE","label":"main-config-8","args":["node_modules/tsdown/dist/run.mjs","--config-loader","unrun","--logLevel","warn","--no-clean","--config","tsdown.isolated598.config.ts","--concurrency","1"],"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"nodeOptions":"--max-old-space-size=724","remaining":880536}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"8","phase":"begin","pid":453,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":168947712,"heapTotal":55406592,"heapUsed":19452712,"external":2920017,"arrayBuffers":357020},"kernel":{"memory.current":"1067425792","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 153791833\nuser_usec 81775783\nsystem_usec 72016050\ncore_sched.force_idle_usec 0\nnr_periods 1916\nnr_throttled 1123\nthrottled_usec 51544895\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"8","phase":"build-end","pid":453,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":173142016,"heapTotal":55406592,"heapUsed":19590792,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1072144384","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 153804857\nuser_usec 81784845\nsystem_usec 72020011\ncore_sched.force_idle_usec 0\nnr_periods 1917\nnr_throttled 1124\nthrottled_usec 51556066\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"8","phase":"closed","pid":453,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":173273088,"heapTotal":55406592,"heapUsed":19707600,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1071890432","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 153815425\nuser_usec 81793595\nsystem_usec 72021829\ncore_sched.force_idle_usec 0\nnr_periods 1917\nnr_throttled 1124\nthrottled_usec 51556066\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"DIAGNOSTIC_ONLY_NOT_BUILD_EVIDENCE","label":"main-config-9","args":["node_modules/tsdown/dist/run.mjs","--config-loader","unrun","--logLevel","warn","--no-clean","--config","tsdown.isolated598.config.ts","--concurrency","1"],"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"nodeOptions":"--max-old-space-size=723","remaining":879066}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"9","phase":"begin","pid":468,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":167497728,"heapTotal":54882304,"heapUsed":19423784,"external":2920017,"arrayBuffers":357020},"kernel":{"memory.current":"1066254336","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 155312897\nuser_usec 82975152\nsystem_usec 72337745\ncore_sched.force_idle_usec 0\nnr_periods 1932\nnr_throttled 1139\nthrottled_usec 51733283\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"9","phase":"build-end","pid":468,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":171704320,"heapTotal":54882304,"heapUsed":20074248,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1071300608","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 155346706\nuser_usec 83004907\nsystem_usec 72341799\ncore_sched.force_idle_usec 0\nnr_periods 1932\nnr_throttled 1139\nthrottled_usec 51733283\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"9","phase":"closed","pid":468,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":173924352,"heapTotal":54882304,"heapUsed":20250928,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1073397760","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 155360760\nuser_usec 83016444\nsystem_usec 72344315\ncore_sched.force_idle_usec 0\nnr_periods 1932\nnr_throttled 1139\nthrottled_usec 51733283\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"DIAGNOSTIC_ONLY_NOT_BUILD_EVIDENCE","label":"main-config-10","args":["node_modules/tsdown/dist/run.mjs","--config-loader","unrun","--logLevel","warn","--no-clean","--config","tsdown.isolated598.config.ts","--concurrency","1"],"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"nodeOptions":"--max-old-space-size=724","remaining":877525}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"10","phase":"begin","pid":483,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":168071168,"heapTotal":54882304,"heapUsed":19388704,"external":2920017,"arrayBuffers":357020},"kernel":{"memory.current":"1067585536","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 156748841\nuser_usec 84132517\nsystem_usec 72616324\ncore_sched.force_idle_usec 0\nnr_periods 1946\nnr_throttled 1153\nthrottled_usec 51935750\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"10","phase":"build-end","pid":483,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":172265472,"heapTotal":55144448,"heapUsed":19912944,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1072041984","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 156772218\nuser_usec 84152137\nsystem_usec 72620080\ncore_sched.force_idle_usec 0\nnr_periods 1946\nnr_throttled 1153\nthrottled_usec 51935750\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"10","phase":"closed","pid":483,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":172265472,"heapTotal":55144448,"heapUsed":20203872,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1072041984","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 156785987\nuser_usec 84162070\nsystem_usec 72623916\ncore_sched.force_idle_usec 0\nnr_periods 1946\nnr_throttled 1153\nthrottled_usec 51935750\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"DIAGNOSTIC_ONLY_NOT_BUILD_EVIDENCE","label":"main-config-11","args":["node_modules/tsdown/dist/run.mjs","--config-loader","unrun","--logLevel","warn","--no-clean","--config","tsdown.isolated598.config.ts","--concurrency","1"],"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"nodeOptions":"--max-old-space-size=723","remaining":876101}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"11","phase":"begin","pid":498,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":168050688,"heapTotal":54358016,"heapUsed":19128000,"external":2920017,"arrayBuffers":357020},"kernel":{"memory.current":"1068527616","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 158159339\nuser_usec 85274268\nsystem_usec 72885071\ncore_sched.force_idle_usec 0\nnr_periods 1960\nnr_throttled 1162\nthrottled_usec 52207331\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"11","phase":"build-end","pid":498,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":172441600,"heapTotal":54620160,"heapUsed":20152072,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1072738304","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 158222861\nuser_usec 85327727\nsystem_usec 72895133\ncore_sched.force_idle_usec 0\nnr_periods 1962\nnr_throttled 1162\nthrottled_usec 52207331\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"11","phase":"closed","pid":498,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":174624768,"heapTotal":54620160,"heapUsed":20486144,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1075097600","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 158259904\nuser_usec 85357685\nsystem_usec 72902219\ncore_sched.force_idle_usec 0\nnr_periods 1962\nnr_throttled 1162\nthrottled_usec 52207331\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"DIAGNOSTIC_ONLY_NOT_BUILD_EVIDENCE","label":"main-config-12","args":["node_modules/tsdown/dist/run.mjs","--config-loader","unrun","--logLevel","warn","--no-clean","--config","tsdown.isolated598.config.ts","--concurrency","1"],"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"nodeOptions":"--max-old-space-size=724","remaining":874502}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"12","phase":"begin","pid":513,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":168132608,"heapTotal":54882304,"heapUsed":19349600,"external":2920017,"arrayBuffers":357020},"kernel":{"memory.current":"1069215744","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 159779900\nuser_usec 86557863\nsystem_usec 73222036\ncore_sched.force_idle_usec 0\nnr_periods 1977\nnr_throttled 1177\nthrottled_usec 52427314\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"12","phase":"build-end","pid":513,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":174579712,"heapTotal":54882304,"heapUsed":20976704,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1075785728","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 159845960\nuser_usec 86612028\nsystem_usec 73233931\ncore_sched.force_idle_usec 0\nnr_periods 1978\nnr_throttled 1178\nthrottled_usec 52440332\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"12","phase":"closed","pid":513,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":174972928,"heapTotal":54882304,"heapUsed":21561616,"external":2929323,"arrayBuffers":366286},"kernel":{"memory.current":"1076047872","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 159889210\nuser_usec 86651435\nsystem_usec 73237775\ncore_sched.force_idle_usec 0\nnr_periods 1978\nnr_throttled 1178\nthrottled_usec 52440332\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"DIAGNOSTIC_ONLY_NOT_BUILD_EVIDENCE","label":"main-config-13","args":["node_modules/tsdown/dist/run.mjs","--config-loader","unrun","--logLevel","warn","--no-clean","--config","tsdown.isolated598.config.ts","--concurrency","1"],"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"nodeOptions":"--max-old-space-size=732","remaining":872889}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"13","phase":"begin","pid":528,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":168673280,"heapTotal":54882304,"heapUsed":19244864,"external":2920017,"arrayBuffers":357020},"kernel":{"memory.current":"1070161920","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 161374431\nuser_usec 87845951\nsystem_usec 73528480\ncore_sched.force_idle_usec 0\nnr_periods 1993\nnr_throttled 1193\nthrottled_usec 52623487\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"13","phase":"build-end","pid":528,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":172883968,"heapTotal":54882304,"heapUsed":19516064,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1074618368","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 161398680\nuser_usec 87865590\nsystem_usec 73533090\ncore_sched.force_idle_usec 0\nnr_periods 1993\nnr_throttled 1193\nthrottled_usec 52623487\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"13","phase":"closed","pid":528,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":173015040,"heapTotal":54882304,"heapUsed":19739776,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1073979392","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 161416687\nuser_usec 87880019\nsystem_usec 73536667\ncore_sched.force_idle_usec 0\nnr_periods 1994\nnr_throttled 1194\nthrottled_usec 52634064\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"DIAGNOSTIC_ONLY_NOT_BUILD_EVIDENCE","label":"main-config-14","args":["node_modules/tsdown/dist/run.mjs","--config-loader","unrun","--logLevel","warn","--no-clean","--config","tsdown.isolated598.config.ts","--concurrency","1"],"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"nodeOptions":"--max-old-space-size=731","remaining":871379}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"14","phase":"begin","pid":543,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":168615936,"heapTotal":55144448,"heapUsed":19418000,"external":2920017,"arrayBuffers":357020},"kernel":{"memory.current":"1070772224","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 163232793\nuser_usec 89345202\nsystem_usec 73887590\ncore_sched.force_idle_usec 0\nnr_periods 2012\nnr_throttled 1211\nthrottled_usec 52889653\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"14","phase":"build-end","pid":543,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":175001600,"heapTotal":55144448,"heapUsed":20838640,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1077080064","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 163306465\nuser_usec 89410152\nsystem_usec 73896312\ncore_sched.force_idle_usec 0\nnr_periods 2013\nnr_throttled 1212\nthrottled_usec 52902950\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"14","phase":"closed","pid":543,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":175001600,"heapTotal":55144448,"heapUsed":21183728,"external":2920057,"arrayBuffers":357020},"kernel":{"memory.current":"1077145600","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 163328538\nuser_usec 89428060\nsystem_usec 73900477\ncore_sched.force_idle_usec 0\nnr_periods 2013\nnr_throttled 1212\nthrottled_usec 52902950\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"DIAGNOSTIC_ONLY_NOT_BUILD_EVIDENCE","label":"main-config-15","args":["node_modules/tsdown/dist/run.mjs","--config-loader","unrun","--logLevel","warn","--no-clean","--config","tsdown.isolated598.config.ts","--concurrency","1"],"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"nodeOptions":"--max-old-space-size=732","remaining":869459}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"begin","pid":558,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":168341504,"heapTotal":54620160,"heapUsed":25232912,"external":2920017,"arrayBuffers":357020},"kernel":{"memory.current":"1071091712","memory.peak":"1610780672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 165439688\nuser_usec 91157548\nsystem_usec 74282140\ncore_sched.force_idle_usec 0\nnr_periods 2034\nnr_throttled 1233\nthrottled_usec 53193425\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":558,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":1358077952,"heapTotal":108785664,"heapUsed":37305896,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1603383296","memory.peak":"1612509184","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 195364956\nuser_usec 115049667\nsystem_usec 80315289\ncore_sched.force_idle_usec 0\nnr_periods 2334\nnr_throttled 1529\nthrottled_usec 66914296\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":558,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":1432084480,"heapTotal":103337984,"heapUsed":45941096,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1610477568","memory.peak":"1612509184","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 225030444\nuser_usec 118360355\nsystem_usec 106670088\ncore_sched.force_idle_usec 0\nnr_periods 2634\nnr_throttled 1801\nthrottled_usec 78725374\nnr_bursts 0\nburst_usec 0"}}
+[tsdown-build] still running pid=558; no output for 58s
+[tsdown-build] still running pid=558; no output for 30s
+[tsdown-build] still running pid=558; no output for 30s
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":558,"threads":13,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":1464078336,"heapTotal":103669760,"heapUsed":46616432,"external":4062147,"arrayBuffers":1503859},"kernel":{"memory.current":"1609871360","memory.peak":"1616285696","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 357008392\nuser_usec 122092354\nsystem_usec 234916037\ncore_sched.force_idle_usec 0\nnr_periods 3955\nnr_throttled 3115\nthrottled_usec 157890533\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":558,"threads":13,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":1495801856,"heapTotal":45789184,"heapUsed":21086104,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1611325440","memory.peak":"1616285696","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 381270973\nuser_usec 124553572\nsystem_usec 256717401\ncore_sched.force_idle_usec 0\nnr_periods 4255\nnr_throttled 3269\nthrottled_usec 163359690\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":558,"threads":13,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":1495801856,"heapTotal":45789184,"heapUsed":21122880,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1611358208","memory.peak":"1616285696","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 410675672\nuser_usec 125678329\nsystem_usec 284997342\ncore_sched.force_idle_usec 0\nnr_periods 4555\nnr_throttled 3555\nthrottled_usec 178678905\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":558,"threads":13,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":1495801856,"heapTotal":45789184,"heapUsed":21142072,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1611497472","memory.peak":"1616285696","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 440713462\nuser_usec 126302586\nsystem_usec 314410876\ncore_sched.force_idle_usec 0\nnr_periods 4855\nnr_throttled 3855\nthrottled_usec 195079583\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":558,"threads":13,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":1495801856,"heapTotal":45789184,"heapUsed":21151760,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1611472896","memory.peak":"1616285696","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 470695169\nuser_usec 126946083\nsystem_usec 343749085\ncore_sched.force_idle_usec 0\nnr_periods 5155\nnr_throttled 4155\nthrottled_usec 211244326\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":558,"threads":13,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":1496199168,"heapTotal":22196224,"heapUsed":19934632,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1609523200","memory.peak":"1616285696","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 491899002\nuser_usec 128597939\nsystem_usec 363301062\ncore_sched.force_idle_usec 0\nnr_periods 5455\nnr_throttled 4199\nthrottled_usec 213018665\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":558,"threads":13,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":1496330240,"heapTotal":23244800,"heapUsed":20558136,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1609756672","memory.peak":"1616285696","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 516364712\nuser_usec 129531051\nsystem_usec 386833660\ncore_sched.force_idle_usec 0\nnr_periods 5755\nnr_throttled 4330\nthrottled_usec 217687658\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":558,"threads":13,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":1496461312,"heapTotal":22196224,"heapUsed":20256488,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1609625600","memory.peak":"1616285696","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 543311363\nuser_usec 130129396\nsystem_usec 413181967\ncore_sched.force_idle_usec 0\nnr_periods 6055\nnr_throttled 4543\nthrottled_usec 224785255\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":558,"threads":13,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":1499512832,"heapTotal":23769088,"heapUsed":21345872,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1609474048","memory.peak":"1616285696","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 565133220\nuser_usec 131324780\nsystem_usec 433808440\ncore_sched.force_idle_usec 0\nnr_periods 6355\nnr_throttled 4599\nthrottled_usec 226630947\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":558,"threads":13,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":1499643904,"heapTotal":23244800,"heapUsed":20932400,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1609555968","memory.peak":"1616285696","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 588049096\nuser_usec 132267576\nsystem_usec 455781519\ncore_sched.force_idle_usec 0\nnr_periods 6655\nnr_throttled 4703\nthrottled_usec 229872911\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":558,"threads":13,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":1499774976,"heapTotal":23244800,"heapUsed":21303040,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1609609216","memory.peak":"1616285696","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 613112712\nuser_usec 133113132\nsystem_usec 479999580\ncore_sched.force_idle_usec 0\nnr_periods 6955\nnr_throttled 4849\nthrottled_usec 234871419\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":558,"threads":13,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":1502265344,"heapTotal":23506944,"heapUsed":21103032,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1612902400","memory.peak":"1616285696","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 641021379\nuser_usec 133742512\nsystem_usec 507278866\ncore_sched.force_idle_usec 0\nnr_periods 7255\nnr_throttled 5077\nthrottled_usec 243573166\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":558,"threads":13,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":1507377152,"heapTotal":23506944,"heapUsed":21241192,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1617281024","memory.peak":"1619161088","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 670649337\nuser_usec 134370975\nsystem_usec 536278362\ncore_sched.force_idle_usec 0\nnr_periods 7555\nnr_throttled 5367\nthrottled_usec 254825577\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":558,"threads":13,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":1507115008,"heapTotal":23506944,"heapUsed":21331600,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1617612800","memory.peak":"1619161088","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 700300880\nuser_usec 135488599\nsystem_usec 564812280\ncore_sched.force_idle_usec 0\nnr_periods 7855\nnr_throttled 5657\nthrottled_usec 266638695\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":558,"threads":13,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":1507246080,"heapTotal":23506944,"heapUsed":21340104,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1617547264","memory.peak":"1619161088","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 730311196\nuser_usec 135917867\nsystem_usec 594393328\ncore_sched.force_idle_usec 0\nnr_periods 8155\nnr_throttled 5957\nthrottled_usec 281477534\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":558,"threads":13,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":1507246080,"heapTotal":23506944,"heapUsed":21348608,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1617641472","memory.peak":"1619161088","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 760340485\nuser_usec 136271056\nsystem_usec 624069429\ncore_sched.force_idle_usec 0\nnr_periods 8456\nnr_throttled 6258\nthrottled_usec 295286708\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":558,"threads":13,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":1507246080,"heapTotal":23506944,"heapUsed":21357112,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1617670144","memory.peak":"1619161088","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 790400807\nuser_usec 136719809\nsystem_usec 653680997\ncore_sched.force_idle_usec 0\nnr_periods 8756\nnr_throttled 6558\nthrottled_usec 308180351\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":558,"threads":13,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":1507770368,"heapTotal":23506944,"heapUsed":21365616,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1618358272","memory.peak":"1619759104","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 820422869\nuser_usec 137093151\nsystem_usec 683329718\ncore_sched.force_idle_usec 0\nnr_periods 9057\nnr_throttled 6859\nthrottled_usec 321573674\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":558,"threads":13,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":1510785024,"heapTotal":23506944,"heapUsed":21425456,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1620938752","memory.peak":"1622556672","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 850174932\nuser_usec 137571467\nsystem_usec 712603465\ncore_sched.force_idle_usec 0\nnr_periods 9357\nnr_throttled 7151\nthrottled_usec 332730593\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":558,"threads":13,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":1516158976,"heapTotal":23506944,"heapUsed":21446656,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1626198016","memory.peak":"1628291072","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 879289975\nuser_usec 137995125\nsystem_usec 741294850\ncore_sched.force_idle_usec 0\nnr_periods 9657\nnr_throttled 7428\nthrottled_usec 343377174\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":558,"threads":13,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":1516027904,"heapTotal":23506944,"heapUsed":21461288,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1626755072","memory.peak":"1628291072","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 908319296\nuser_usec 138357789\nsystem_usec 769961506\ncore_sched.force_idle_usec 0\nnr_periods 9957\nnr_throttled 7696\nthrottled_usec 350536963\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":558,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":1515896832,"heapTotal":23506944,"heapUsed":21503512,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1626157056","memory.peak":"1628291072","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 937779714\nuser_usec 138723981\nsystem_usec 799055732\ncore_sched.force_idle_usec 0\nnr_periods 10257\nnr_throttled 7978\nthrottled_usec 358871970\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"15","phase":"running","pid":558,"threads":13,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"memory":{"rss":1516158976,"heapTotal":23506944,"heapUsed":21668264,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"1626800128","memory.peak":"1628291072","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","cpu.stat":"usage_usec 967715865\nuser_usec 139971581\nsystem_usec 827744284\ncore_sched.force_idle_usec 0\nnr_periods 10557\nnr_throttled 8273\nthrottled_usec 373217192\nnr_bursts 0\nburst_usec 0"}}
+[tsdown-build] timeout after 869459ms pid=558; sending SIGTERM
+[tsdown-build] child result pid=558: {"status":null,"signal":"SIGTERM","parentSignal":null,"timedOut":true,"cleanup":"timeout","observedProcessState":"dead","observationScope":"process-group","finalStatus":null}

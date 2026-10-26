@@ -1,0 +1,50 @@
+{
+  "application_approved": false,
+  "checks": 186,
+  "completed": [
+    "ai",
+    "main-config-0",
+    "main-config-1",
+    "main-config-2",
+    "main-config-3",
+    "main-config-4",
+    "main-config-5",
+    "main-config-6",
+    "main-config-7",
+    "main-config-8",
+    "main-config-9",
+    "main-config-10",
+    "main-config-11",
+    "main-config-12",
+    "main-config-13",
+    "main-config-14"
+  ],
+  "last_result": {
+    "elapsedMs": 869757.0632559999,
+    "label": "main-config-15",
+    "result": {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "signal": "SIGTERM",
+      "status": null,
+      "timedOut": true
+    }
+  },
+  "normal_cleanup": true,
+  "observed_process_group": "dead",
+  "outcome": "FINITE_UNIFIED_RUNTIME_CONFIG15_TIMEOUT; no build artifact",
+  "outer_exit_code": 1,
+  "recorded_utc": "2026-10-26T00:48:00.734347+00:00",
+  "sha256": {
+    "job598-native1-resumed-export.json": "e954fb70264732d1bba8330ba4c68995fa90d347f2b7a46ccaf3b4cb9c37057d",
+    "job598-native1-resumed-offload.txt": "2539cb8fe7f8c8dacb48926a3e04372927be79e6488b97eee3b9d95f4099788a",
+    "job598-native1-resumed-post-run.json": "69763c0456e35c4ff9bc76667ddd0afd654c4dd2fa1e8d6704108839bd745f27",
+    "job598-native1-resumed-probe.txt": "31b1aaef76333cd016746a00fea4da9157c81fffd0224898180b690a65d04038",
+    "job598-native1-resumed-receipt.json": "02f3de74e47b6949e85925c8c4df77b189fe25ba650153fc7a6bd817d0692d61",
+    "job598-native1-resumed-tests.json": "b15db66313719737220fce5f9c1515a2f8e85e874e93d38b8238aeb71e061117",
+    "job598-native1-resumed-tests.txt": "4bc1703bcbb55f242705bd1951ad68163dd8d5d2692c77005644cd5faf51fea5"
+  },
+  "source_commit": "8ce523c01d7299d516dfd3bf05882b9a75567370",
+  "source_successor_review": "6305e30c"
+}
