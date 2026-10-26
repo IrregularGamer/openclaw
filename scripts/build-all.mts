@@ -422,9 +422,9 @@ export function resolveBuildAllTsdownPlan(
   heapShortfall: ReturnType<typeof resolveTsdownBuildPlan>["heapShortfall"];
 } {
   if (profile === "boundedPackage") {
-    // This profile replaces only compiler scheduling; default full admission stays intact.
-    // The custom whole-config selector is not the measured concurrent full graph.
-    const plan = resolveTsdownBuildPlan({ ...params, env, args: ["--config", "tsdown.bounded608.config.ts"] });
+    // Scheduling alone does not prove a lower memory requirement. Retain canonical
+    // full-graph admission until a reviewed post-link memory correction is proven.
+    const plan = resolveTsdownBuildPlan({ ...params, env, args: ["--config", "tsdown.config.ts"] });
     return { env: { ...plan.env, ...BOUNDED_COMPILER_ENV, OPENCLAW_BUILD_CACHE: "0" }, heapShortfall: plan.heapShortfall };
   }
   if (

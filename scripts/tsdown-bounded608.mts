@@ -18,7 +18,7 @@ function capacityAdmission() {
 }
 capacityAdmission();
 // Native allocator and pool controls must precede transitive native imports.
-const { resolveTsdownBuildInvocation, runTsdownBuildInvocation, sanitizeTsdownBuildOutputRoots,
+const { resolveTsdownBuildPlan, resolveTsdownBuildInvocation, runTsdownBuildInvocation, sanitizeTsdownBuildOutputRoots,
   cleanTsdownOutputRoots, resolveTsdownCleanOutputRoots, pruneUntrackedGeneratedSourceDeclarations,
   pruneStaleRuntimeSymlinks } = await import('./tsdown-build.mts');
 const deadline=performance.now()+900_000;
@@ -28,6 +28,11 @@ const indices=stage === 'ai' ? [] : boundedConfigIndices(census,stage);
 // Preserve canonical cleanup ownership once per original group, never between configs.
 const originalArgs=stage === 'ai' ? ['--config','tsdown.ai.config.ts'] :
   ['--config','tsdown.config.ts','--filter',stage === 'packages' ? 'openclaw-packages' : 'openclaw-unified'];
+if (Object.hasOwn(process.env,'OPENCLAW_TSDOWN_MAX_OLD_SPACE_MB') ||
+    Object.hasOwn(process.env,'OPENCLAW_DOCKER_BUILD_TSDOWN_MAX_OLD_SPACE_MB'))
+  throw new Error('bounded compiler refuses heap override');
+const admission=resolveTsdownBuildPlan({args:originalArgs,env:process.env});
+if (admission.heapShortfall?.fatal) throw new Error(admission.heapShortfall.message);
 sanitizeTsdownBuildOutputRoots(originalArgs);
 pruneUntrackedGeneratedSourceDeclarations();
 pruneStaleRuntimeSymlinks();

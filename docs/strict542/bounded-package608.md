@@ -1,6 +1,6 @@
 # Complete bounded package build (source preparation)
 
-The explicit `boundedPackage` profile belongs to `scripts/build-all.mts`. It has
+The unpromoted source candidate `boundedPackage` profile belongs to `scripts/build-all.mts`. It has
 exactly the canonical `package` profile's ordered phases, including clean, all
 package declarations, both canonical unified declaration writers, SDK export and
 CLI import checks, bundled and external plugin assets, UI, postbuild, metadata
@@ -15,7 +15,7 @@ selection; mismatch, missing typed package configs or runtime configs requesting
 declarations refuses. Canonical declaration writers still own partitioning,
 staging, compiler-input receipts, input-change verification and publication.
 
-This profile is only for fresh secretless disposable exports admitted to the
+This candidate is limited to fresh secretless disposable exports admitted to the
 existing offload broker's hard 2 GiB RAM, zero swap and one CPU lease. Before any
 build output mutation, it rejects inherited compiler controls, `.git`, previous
 `dist`/`dist-runtime`, unresolved memory capacity, capacity above 2 GiB or effective
@@ -23,6 +23,14 @@ limit at/below the unchanged 1625784320-byte config15 reclaim-thrash floor. It
 rechecks capacity before each whole compiler config. Native pools are fixed to
 one and mimalloc THP is disabled before compiler imports. These are process
 controls; no cgroup, unit, sudo policy or installed file changes.
+
+Both the build owner and direct unified compiler driver retain canonical full-graph
+4352 MiB admission before any cleanup. Consequently this candidate refuses a
+2 GiB full build before output mutation. The changed-source lazy-barrel diagnostic
+reached linking but was OOM-killed during render; whole-config scheduling does
+not establish that this memory requirement can safely be lowered. A reviewed
+source correction that bounds post-link memory and successful complete measured
+validation remain prerequisites to any change in that admission.
 
 The build owner has one absolute 45-minute build deadline; each compiler group
 has an absolute 15-minute deadline. Existing managed-child and tsdown owners
@@ -36,17 +44,14 @@ the exact bounded profile source. The profile is an alternative explicitly scope
 schedule, not evidence that the normal full-build memory guard is unnecessary.
 The diagnostic must not be relabeled a full typed build.
 
-After those reviews, use only a fresh committed `git archive` export through
-`offload run`, with its ordinary 2 GiB/one CPU limits. Install frozen dependencies
-through the existing reviewed export/bootstrap procedure. Run the policy tests
-and the real `test/scripts/build-all-bounded608.test.ts` inventory tests remotely,
-then invoke:
+There is currently no supported successful full build under the admitted 2 GiB
+budget. Do not execute another unchanged diagnostic or attempt this profile's
+full build; it intentionally refuses before cleanup. Preserve this source
+schedule for exact review after a post-link memory correction. No build/package
+receipt exists for this candidate.
 
-```
-node --import ./scripts/tsx.mjs scripts/build-all.mts boundedPackage
-```
-
-The package/receipt owner must then execute every existing package validation,
+Once the memory correction and complete build are independently reviewed, the
+package/receipt owner must execute every existing package validation,
 native pin validation, supervisor IPC/refusal/cancellation check and deterministic
 artifact packaging step. Successful compiler scheduling alone is not a package,
 installation, action/privilege/seal review or application authority. No live
