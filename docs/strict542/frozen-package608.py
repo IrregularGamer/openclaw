@@ -15,6 +15,7 @@ PINS={
 POLICY={'force_legacy_deploy','shared_workspace_lockfile','lockfile','lockfile_dir',
         'userconfig','globalconfig','ignore_scripts','ignore_pnpmfile','node_linker',
         'package_import_method','prod','production','dev','optional','force'}
+POLICY_NAMES={name.replace('_','') for name in POLICY}
 FALLBACK=('falling back to installing without','forces legacy deploy implementation')
 
 def regular(path):
@@ -31,7 +32,7 @@ def preflight(root,env):
     for key in env:
         normalized=key.casefold().replace('-','_')
         if normalized=='pnpm_workspace_dir' or any(
-            normalized.startswith(prefix) and normalized[len(prefix):] in POLICY
+            normalized.startswith(prefix) and normalized[len(prefix):].replace('_','') in POLICY_NAMES
             for prefix in ('npm_config_','pnpm_config_')):
             raise ValueError('inherited package policy: '+key)
     for name,expected in PINS.items():

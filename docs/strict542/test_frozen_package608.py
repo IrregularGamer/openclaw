@@ -36,7 +36,7 @@ class FrozenPackage(unittest.TestCase):
         self.guard.preflight(self.root,{})
 
     def test_caller_package_policy_refuses_even_empty(self):
-        for key in ['npm_config_force_legacy_deploy','NPM_CONFIG_LOCKFILE_DIR','npm_config_shared_workspace_lockfile','PNPM_CONFIG_FORCE_LEGACY_DEPLOY','NPM_CONFIG_USERCONFIG']:
+        for key in ['npm_config_force_legacy_deploy','NPM_CONFIG_LOCKFILE_DIR','npm_config_shared_workspace_lockfile','PNPM_CONFIG_FORCE_LEGACY_DEPLOY','NPM_CONFIG_USERCONFIG','npm_config_forceLegacyDeploy','npm_config_sharedWorkspaceLockfile']:
             with self.subTest(key=key),self.assertRaisesRegex(ValueError,'inherited package policy'):
                 self.guard.preflight(self.root,{key:''})
 
