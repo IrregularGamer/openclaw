@@ -15,7 +15,7 @@ export function admitBoundedPackage(capacity, env) {
   for (const key of Object.keys(env)) {
     if (key === 'TSX_DISABLE_CACHE' && env[key] === '1') continue;
     if (['NODE_OPTIONS','NODE_PATH','OUTPUT_SOURCE_MAPS','RAYON_NUM_THREADS','RAYON_RS_NUM_CPUS','UV_THREADPOOL_SIZE'].includes(key) ||
-        /^(TSDOWN_|TSX_|ROLLDOWN_|TOKIO_|MIMALLOC_|OPENCLAW_(RUN_NODE_SKIP_DTS_BUILD|TSDOWN_|BUILD_PRIVATE_QA|INTERNAL_DOCKER_))/u.test(key))
+        /^(TSDOWN_|TSX_|ROLLDOWN_|TOKIO_|MIMALLOC_|NAPI_RS_|OPENCLAW_(RUN_NODE_SKIP_DTS_BUILD|TSDOWN_|BUILD_PRIVATE_QA|INTERNAL_DOCKER_))/u.test(key))
       throw new Error(`boundedPackage refuses inherited compiler control: ${key}`);
   }
 }
