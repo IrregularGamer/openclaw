@@ -33,6 +33,26 @@ class Application(unittest.TestCase):
             with self.assertRaises(PermissionError):a.parents(base/'file'/'runtime')
 
 class GuardedApplication(unittest.TestCase):
+    def test_original_seal_accepts_only_exact_existing_link_and_target_bytes(self):
+        with tempfile.TemporaryDirectory() as root:
+            base=Path(root);target=base/'devstack-source';target.write_bytes(b'sealed source')
+            link=base/'devstack';link.symlink_to(target)
+            digest=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+            prep=SimpleNamespace(hexid=lambda h:len(h)==64,file_hash=digest)
+            seal={'installed_hashes':{str(link):digest(target)}}
+            with patch.object(a,'ORIGINAL_SEAL_LINKS',{str(link):str(target)},create=True):
+                a.seal_valid(seal,prep)
+                other=base/'other';other.write_bytes(target.read_bytes())
+                link.unlink();link.symlink_to(other)
+                with self.assertRaisesRegex(PermissionError,'original sealed link drift'):a.seal_valid(seal,prep)
+                link.unlink();link.symlink_to(target);target.write_bytes(b'changed')
+                with self.assertRaisesRegex(PermissionError,'installed seal drift'):a.seal_valid(seal,prep)
+                link.unlink();link.write_bytes(b'sealed source')
+                with self.assertRaisesRegex(PermissionError,'original sealed link drift'):a.seal_valid(seal,prep)
+            unlisted=base/'new-link';unlisted.symlink_to(target)
+            with self.assertRaisesRegex(PermissionError,'installed seal drift'):
+                a.seal_valid({'installed_hashes':{str(unlisted):digest(target)}},prep)
+
     def test_queue_gate_requires_actual_done_build_matching_review_and_exact_result(self):
         with tempfile.TemporaryDirectory() as root,patch.object(a,'DB',Path(root)/'queue.db'):
             result='fixture independently recorded result\nVERDICT: APPROVE'

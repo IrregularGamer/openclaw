@@ -24,6 +24,11 @@ JOURNAL = ROOT/'strict542-598-application.json'
 LOCK = ROOT/'admission.lock'
 DB = Path('/home/deploy/agentq/state/agentq.db')
 BOOT = Path('/proc/sys/kernel/random/boot_id')
+# The original installed validator hashes through this preexisting sealed link.
+# Admit that exact original topology only; this grants no new link or write target.
+ORIGINAL_SEAL_LINKS = {
+    '/home/deploy/.local/bin/devstack': '/home/deploy/claw-workspace/offload/hetzner/devstack',
+}
 
 def preparation():
     path=STAGE/'application598.py'
@@ -120,7 +125,14 @@ def seal_valid(seal,prep):
     require(isinstance(hashes,dict) and hashes,'missing original full seal')
     for path,expected in hashes.items():
         target=Path(path)
-        require(target.is_absolute() and target.is_file() and not target.is_symlink()
+        if path in ORIGINAL_SEAL_LINKS:
+            original=Path(ORIGINAL_SEAL_LINKS[path])
+            require(target.is_symlink() and os.readlink(target) == str(original)
+                    and original.is_file() and not original.is_symlink()
+                    and target.resolve(strict=True) == original,'original sealed link drift: '+path)
+        else:
+            require(not target.is_symlink(),'existing installed seal drift: '+path)
+        require(target.is_absolute() and target.is_file()
             and prep.hexid(expected) and prep.file_hash(target) == expected,'existing installed seal drift: '+path)
 
 def next_seal(old,new,action,reviews,prep):
