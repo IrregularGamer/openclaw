@@ -1,0 +1,12 @@
+{
+ "application_authority": false,
+ "baseline_sha256": "22253f3512e481177c7b335b768e3155cc1096ae96c475144d0ffda7c6b93f35",
+ "errors": [],
+ "guard_count": 7,
+ "observed_seal_sha256": "7c404d1d04cce2bef262df508af5460a37f6228152466bc60d46e77841dbdfbb",
+ "observed_utc": "2026-10-26T20:01:18Z",
+ "read_only": true,
+ "recorded_original_seal_sha256": "7c404d1d04cce2bef262df508af5460a37f6228152466bc60d46e77841dbdfbb",
+ "seal_entries_checked": 56,
+ "target_count": 6
+}
