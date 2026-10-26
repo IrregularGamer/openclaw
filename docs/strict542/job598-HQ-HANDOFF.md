@@ -456,3 +456,14 @@ The exact6305 allocator diagnostic was normally admitted after independent
 job598-allocator-tests.txt/json and allocator-export.json bind the committed
 source, input archives and log hash. Pinned install/compiler is still active;
 no compiler, complete-build, action or application success is claimed here.
+
+The 00:49 exact6305 allocator diagnostic was cut off by agent usage exhaustion
+after its188 checks; no result598 artifacts returned and the remote was idle.
+One identical rerun (manifest/runner4ddaa154/successorb599e23a/natived73e4e35
+re-verified) was refused before execution with exit75
+`remote_environment_blocked`: secret-like `source/.npmrc` left in the remote
+slot by the interrupted run (local export holds only the five inputs).
+job598-allocator-rerun-refusal.txt preserves it. No compiler/build outcome exists.
+Next: normal placement reconciliation of the stale remote slot under its runner
+lock (no manual override, no new slot, no local fallback), then the same
+`offload run --artifacts result598 -- sh run598.sh` once, then independent outcome review.
