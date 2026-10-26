@@ -115,7 +115,7 @@ function matchesExternalOption(
 
 function buildInputOptions(
   options: InputOptionsArg,
-  build?: { bundleAllDependencies?: boolean },
+  build?: { bundleAllDependencies?: boolean; lazyBarrel?: boolean },
 ): InputOptionsReturn {
   if (process.env.OPENCLAW_BUILD_VERBOSE === "1") {
     return undefined;
@@ -154,6 +154,7 @@ function buildInputOptions(
 
   return {
     ...options,
+    ...(build?.lazyBarrel ? { experimental: { ...options.experimental, lazyBarrel: true } } : {}),
     external(id: string, parentId: string | undefined, isResolved: boolean) {
       return (
         (!build?.bundleAllDependencies && shouldNeverBundleDependency(id)) ||
@@ -216,6 +217,7 @@ function createBashParserAssetsPlugin(): TsdownPlugin {
 function nodeBuildConfig(
   config: UserConfig,
   declarations: UserConfig["dts"] = TSDOWN_DECLARATIONS,
+  build?: { lazyBarrel?: boolean },
 ): UserConfig {
   return {
     ...config,
@@ -234,7 +236,7 @@ function nodeBuildConfig(
     outExtensions: () => ({ js: ".js", dts: ".d.ts" }),
     fixedExtension: false,
     sourcemap: OUTPUT_SOURCE_MAPS,
-    inputOptions: (options) => buildInputOptions(options),
+    inputOptions: (options) => buildInputOptions(options, build),
   };
 }
 
@@ -903,6 +905,9 @@ const configs: UserConfig[] = [
       ],
     },
     false,
+    // Prune only unused reexports in already-declared side-effect-free barrels.
+    // Retain the entire runtime graph and its one shared singleton identity.
+    { lazyBarrel: true },
   ),
   nodeBuildConfig(
     {

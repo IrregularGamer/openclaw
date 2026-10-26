@@ -6,6 +6,7 @@ import { readProcessMemoryCapacity } from '../../scripts/lib/process-memory.mts'
 import { configCensus } from '../../scripts/lib/isolated-config.mjs';
 import { admitProbe, admitUnifiedGraphCapacity, probeSucceeded, fixedOneCpuCompilerEnv, ONE_CPU_NATIVE_POOLS, BOUNDED_NATIVE_ALLOCATOR } from './serial-probe598-policy.mjs';
 const capacity=readProcessMemoryCapacity({});
+console.log(JSON.stringify({kind:"UNIFIED_GRAPH_ADMISSION",capacity}));
 admitUnifiedGraphCapacity(capacity);
 admitProbe(capacity,process.env,['.git','dist','dist-runtime','isolated-probe598.json'].some(p=>fs.existsSync(p)));
 if (process.argv.length !== 2) throw new Error('probe accepts no caller arguments');
