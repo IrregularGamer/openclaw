@@ -77,3 +77,34 @@ wrongly. Fix the doc before anyone relies on it.
 ## Required to move to APPROVE
 
 Correct discrepancies 1-5 in `job605-config15-root-cause.md`. No code change is required.
+
+## Re-review cbb47a43
+
+Reviewed commit: `cbb47a4361f6ce709b4d746d3049ed54ff4c1613` (diff against d0952609/3afaee4e only).
+Scope: EVIDENCE/SOURCE ONLY. This does not approve any build, artifact, application, or install.
+
+### Verdict: APPROVE (evidence/source-only)
+
+- Discrepancy 1 is resolved. The doc now attributes `limitBytes=1507000320` to the config15
+  timeout run and `1549328384` to the reconciled-final serial probe.
+- Discrepancy 2 is resolved. The 869346 ms timeout is cited to `allocator-reconciled-run.log`,
+  and the doc notes that this run's `probe.log` ends during package install and has no config15
+  samples.
+- Discrepancy 3 is resolved. The doc now says the sampling is irregular (about 7-8 min between
+  samples 2 and 3).
+- Discrepancy 4 is resolved. The config15-window deltas (user +37.7 s, system +785 s, about 95%
+  system) are now the primary figures, and the 131/859 s totals are labelled cumulative.
+- Discrepancy 5 is resolved. The ancestor-pressure JSON is labelled a separate snapshot.
+- Threshold note is addressed. `UNIFIED_GRAPH_THRASH_LIMIT_BYTES` is now 1625784320, the
+  config15 leaf memory.peak I verified in the probe log. The doc calls it a known-bad bound,
+  not proof of sufficient capacity. Both observed limits (1507000320 and 1549328384) are refused.
+- Scope note is addressed. The error and doc now say the whole probe is refused.
+- Nothing else changed. No other check is weakened, there is no build-output, tsdown-config or
+  config15-split change, and no caller-controlled input. The constant is still a module
+  constant, and NaN or undefined limits are still refused.
+- Tests: `node --test docs/strict542/serial-probe598.test.mjs docs/strict542/isolated-config598.test.mjs`
+  passes 14/14. The existing `/reclaim-thrash/` assertion still matches the new message, and its
+  boundary cases use the constant.
+- Minor, non-blocking: the policy comment says a limit not above the peak "cannot complete the
+  probe". The evidence shows thrash at that bound, not strict impossibility, but the doc's
+  "known-bad bound" wording is correct. The test name still says "unified graph".
