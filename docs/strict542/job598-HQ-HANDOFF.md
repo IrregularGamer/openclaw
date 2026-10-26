@@ -1,5 +1,11 @@
 # Job598 to595: exact source-only application preparation
 
+Current605 continuation: see job605-decision606.md and its exact outcome/review.
+The single Decision606 run passed189 checks, then refused at unchanged memory
+admission before any compiler. There is still no complete runtime/tree/action/
+next-seal receipt and this handoff is not application-ready. Earlier execution
+sections below are historical evidence, not a current installation gate pass.
+
 This is a foreground HQ handoff, never an installation receipt. No installed,
 sealed, root-owned, unit, sudoers, gateway runtime or provider state was changed.
 Automatic queue598 review must APPROVE before ANY application. Soft dependency
