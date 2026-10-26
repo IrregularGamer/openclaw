@@ -1,0 +1,70 @@
+{
+ "addon_sha256": "46d32ba682581adc9d25b10c4f160b462065b216f2deba5494acd05509208c18",
+ "application_authority": false,
+ "broker": "2026-10-26T20:25:46Z run remote rc=1 2070s /home/deploy/agentq/tmp/export608-native-early-finalizer",
+ "capacity": {
+  "availableBytes": 14184624128,
+  "capacityBytes": 2147483648,
+  "limitBytes": 1746108416,
+  "unresolved": false,
+  "usageKnown": true
+ },
+ "checks_passed": {
+  "node_scoped": 133,
+  "python_scoped": 85,
+  "real_fixtures": 9,
+  "total": 230,
+  "typed_inventory": 3
+ },
+ "evidence_sha256": {
+  "job608-native-early-finalizer-broker.txt": "398532f47bb0dd5036160908df6a9d9b935f9cc11b74f8908251f8b99fa76bf1",
+  "job608-native-early-finalizer-checks.json": "ba2a856087348bbedeebd33feebedf89b95f824f0c0694d53607b052e288ee57",
+  "job608-native-early-finalizer-checks.txt": "4b2a5c68b36841db16d861b52a60490640e98c5937dcbe2dc2afff0c7d1935d8",
+  "job608-native-early-finalizer-native-compile.txt": "04b50403235a48ed623b65ed2dbd5b1b282eb6dff0cdd63049625d6f4a85f889",
+  "job608-native-early-finalizer-native-receipt.json": "1de081361b650bf3156732604d5993513856daecdb53aaa60d2b239bb3172492",
+  "job608-native-early-finalizer-offload.txt": "a5a860d811a6210b457c64e5f23e8832616595dd6a4d308420b292668b3dcb23",
+  "job608-native-early-finalizer-parity.json": "6edf03c3db8b080d129835fffd4d8ac7247aa6b707bce8dec1c86bd8bc0f0edd",
+  "job608-native-early-finalizer-probe.txt": "37b704ac34e0217b7ecdf92558c74567a2f2ee291f6bb757423e4e0d9141e51d",
+  "job608-native-early-finalizer-receipt.json": "c36daac7fc9fd4ab1d71c50ee8a4b5b7ed8163f050cc1b24d56a313b5f3d8ce4",
+  "job608-native-early-finalizer-retention-negative.txt": "0934d1e68ae7ab028fcf5a5a9a71d70352a5b3d0c82fb9963f4b2111bf4413c9"
+ },
+ "exit_code": 1,
+ "export_manifest_sha256": "42dab6ad8acba848839988378969da444bb126efc4601a3a8620362a08ad483d",
+ "failed_config": {
+  "elapsed_ms": 179599.471308,
+  "label": "main-config-15",
+  "signal": "SIGKILL",
+  "status": null,
+  "timedOut": false
+ },
+ "kind": "INCOMPLETE_DIAGNOSTIC_NOT_PACKAGE_OR_APPLICATION",
+ "last_config15_sample": {
+  "cgroup_current": 2145452032,
+  "last_interval_system_cpu_seconds": 28.041168,
+  "last_interval_user_cpu_seconds": 0.384134,
+  "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+  "rss": 2024955904,
+  "v8_heap_used": 21543320
+ },
+ "not_run": "main16..56 including all four workers",
+ "source_commit": "68982a3d50426a390d0249f6ff9ce52ce79c7db8",
+ "spent_export": true,
+ "successful_configs": [
+  "ai",
+  "main-config-0",
+  "main-config-1",
+  "main-config-2",
+  "main-config-3",
+  "main-config-4",
+  "main-config-5",
+  "main-config-6",
+  "main-config-7",
+  "main-config-8",
+  "main-config-9",
+  "main-config-10",
+  "main-config-11",
+  "main-config-12",
+  "main-config-13",
+  "main-config-14"
+ ]
+}
