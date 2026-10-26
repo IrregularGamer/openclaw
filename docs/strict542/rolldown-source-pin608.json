@@ -1,13 +1,14 @@
 {
-  "upstream_commit": "5b4746e442989d770c606ce08d2737e6aafbd25d",
-  "source_archive_sha256": "203aa4834d7a52522c758c81f6e493bea9fea828d4454fe2a25b9519d2d258ac",
-  "rust_version": "1.98.1",
-  "rust_archive_sha256": "5326b36c53de11d148c8f8dab6553a3d1006c2cfd32123683073fad3c302605b",
   "files": {
-    "crates/rolldown/src/stages/generate_stage/mod.rs": "e172fb9803a8a8e8f861977e62347cef04964f75b458d48f4b6a4d0e7454c98d",
-    "crates/rolldown/src/stages/generate_stage/render_chunk_to_assets.rs": "53bb87087540e90bb6197c8b859633e0edf9e94433565b3842e2339f3f204d4a",
     "Cargo.lock": "8e386b954776ee40cb77b70f8917eb9787bb8cfb6606bca57a24ccdaadec3575",
     "Cargo.toml": "68082498ec030bedf2715404f042197f2c20a3f4893aaa8ca6aa88792109b4c6",
+    "crates/rolldown/src/stages/generate_stage/finalize_modules.rs": "79e453acbc577aa76ff3b6e3d9938fa6623f6637bcdea826b546e425c8daecb8",
+    "crates/rolldown/src/stages/generate_stage/mod.rs": "e172fb9803a8a8e8f861977e62347cef04964f75b458d48f4b6a4d0e7454c98d",
+    "crates/rolldown/src/stages/generate_stage/render_chunk_to_assets.rs": "53bb87087540e90bb6197c8b859633e0edf9e94433565b3842e2339f3f204d4a",
     "rust-toolchain.toml": "95831e86ed45e5f59d037dd2965d2f679ecb4525e915d6b9aebb205f9bf46a5c"
-  }
+  },
+  "rust_archive_sha256": "5326b36c53de11d148c8f8dab6553a3d1006c2cfd32123683073fad3c302605b",
+  "rust_version": "1.98.1",
+  "source_archive_sha256": "203aa4834d7a52522c758c81f6e493bea9fea828d4454fe2a25b9519d2d258ac",
+  "upstream_commit": "5b4746e442989d770c606ce08d2737e6aafbd25d"
 }

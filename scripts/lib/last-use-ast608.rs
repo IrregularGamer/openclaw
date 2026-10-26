@@ -1,5 +1,16 @@
 // Compiled into the pinned disposable Rolldown compiler, never into the gateway.
 // R cannot borrow the input: render returns an owned result before its AST drops.
+// Release only slots outside the union of every remaining AST reader.
+pub(super) fn release_unneeded<'a, T: 'a>(
+    values: impl ExactSizeIterator<Item = &'a mut Option<T>>,
+    required: &[bool],
+) {
+    assert_eq!(values.len(), required.len(), "AST reader census length mismatch");
+    for (value, required) in values.zip(required) {
+        if !*required { drop(value.take()); }
+    }
+}
+
 pub(super) struct LastUseAstTable<T> {
     values: Vec<Option<T>>,
     remaining: Vec<usize>,
@@ -29,7 +40,7 @@ impl<T> LastUseAstTable<T> {
 
 #[cfg(test)]
 mod tests {
-    use super::LastUseAstTable;
+    use super::{LastUseAstTable, release_unneeded};
     use std::{cell::RefCell, rc::Rc};
 
     struct Ast(usize, Rc<RefCell<Vec<usize>>>);
@@ -38,6 +49,23 @@ mod tests {
     }
     fn ast(id: usize, drops: &Rc<RefCell<Vec<usize>>>) -> Option<Ast> {
         Some(Ast(id, drops.clone()))
+    }
+
+    #[test]
+    fn early_reader_union_retains_finalizer_only_renderer_only_and_both() {
+        let drops = Rc::new(RefCell::new(vec![]));
+        let mut values = vec![ast(0,&drops), ast(1,&drops), ast(2,&drops), ast(3,&drops), None];
+        // Finalizer-only1, renderer-only2, both3; unused0 may drop now.
+        release_unneeded(values.iter_mut(), &[false,true,true,true,false]);
+        assert_eq!(*drops.borrow(), vec![0]);
+        assert!(values[0].is_none());
+        for idx in 1..4 { assert_eq!(values[idx].as_ref().unwrap().0, idx); }
+    }
+
+    #[test]
+    #[should_panic(expected="AST reader census length mismatch")]
+    fn early_release_refuses_incomplete_reader_census() {
+        release_unneeded([Some(1)].iter_mut(), &[]);
     }
 
     #[test]

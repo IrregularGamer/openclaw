@@ -13,9 +13,9 @@ import urllib.request
 
 # Reviewed split: one admitted run compiles only the addon, another runs only the
 # native lib tests. Each stage returns its own receipt; neither is install authority.
-STAGES = {'compile': 'NATIVE_COMPILER608_COMPILE_STAGE', 'libtests': 'NATIVE_COMPILER608_LIBTEST_STAGE'}
+STAGES = {'compile': 'NATIVE_COMPILER608_COMPILE_STAGE', 'libtests': 'NATIVE_COMPILER608_LIBTEST_STAGE', 'lifetime': 'NATIVE_COMPILER608_LIFETIME_STAGE'}
 if len(sys.argv) != 2 or sys.argv[1] not in STAGES:
-    raise SystemExit('native608 requires exactly one stage: compile or libtests')
+    raise SystemExit('native608 requires exactly one stage: compile, libtests or lifetime')
 stage = sys.argv[1]
 owner = Path.cwd()
 root = owner.parent / '.native608'
@@ -123,6 +123,13 @@ assert result.returncode != 0 and 'unused_is_released_before_first_render ... FA
 assert 'repeated_module_survives_until_last_render_then_drops_before_next_module ... FAILED' in result.stdout
 receipt['retention_negative_detected']=True
 save()
+if stage == 'lifetime':
+    # Standalone ownership tests only; never an addon or accepted lib-test stage.
+    receipt['complete']=True
+    save()
+    shutil.rmtree(root)
+    print(json.dumps(receipt,sort_keys=True))
+    raise SystemExit(0)
 if stage == 'compile':
     subprocess.run(['cargo','build','--locked','--release','--jobs','1','-p','rolldown_binding'],
                    cwd=root / 'source',env=env,check=True)
