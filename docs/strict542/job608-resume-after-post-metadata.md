@@ -25,18 +25,32 @@ cross-link/deconflict allocations. Exact source review:
 job608-post-metadata-source-review.md. Finalizer predicate, later pruning,
 renderer/helper and every future reader remain unchanged. Five focused tests
 are GREEN, after absent-function and wrong-module-scope REDs;9Node policies PASS.
-No Rust compile or memory-fit success is attributed to this source.
+At that source review, Rust compilation and memory fit were unproved; the
+accepted compile4 result below now proves compilation only.
 prepare-native608.py changes, invalidating ALL old native receipts/addons.
 Sourceb1416481 also adds all5 patch-contract tests to the combined runner.
 Full old877458d7/newb1416481 source hashes/modes:
 job608-post-metadata-source-inventory.json. This inventory is not installed bytes.
 
-## ONE next executable stage: FRESH foreground worker
+## Accepted compile4; ONE next executable stage is libtests3
 
-Read job608-compile4-export-review.md and verify its exact identities.
-Fresh never-used export: /home/deploy/agentq/tmp/export608-native-compile4
+Compile4 is SPENT and accepted as native compilation only. ONE admitted run
+settled2026-10-26T21:38:46Z rc0 in1538s, release compile23m34s. New addon:
+17df206117097742019de475e8cd194fb1022f48d9c2b507195100abd13eb627.
+Seven lifetime tests PASS; old-retention negative control detects three failures.
+The complete receipt matches all four current owner hashes. Changed generate
+module SHA256db07fa1eaaf7e079a7645813ce25032105c522a557fbff7a854d2c1a4842c5b7;
+finalizer, renderer and helper hashes are unchanged. Exact old/new identities,
+retained receipt/log/test evidence and broker outcome are in
+job608-native-compile4-outcome.json; independent outcome review is adjacent.
+This proves native compilation, not matching native library tests, config15 fit,
+combined diagnostic or package success. Old46d32ba6 receipts remain invalid.
+Do not rerun compile4, upload its addon/cache/toolchain, or reuse spent exports.
+
+Read job608-libtests3-export-review.md and verify its exact identities.
+Fresh never-used export: /home/deploy/agentq/tmp/export608-native-libtests3
 Source: b1416481c38ba1480d8c881ca36e96785512fc47
-Manifest: f1bf87c254b67b64f31c4074003538cf975b7991c4c6078ef0c28a008a84e8c6
+Manifest: 3047f378a219497f392994bbe6ef36d7ffe6e23b5aaaf1e51681b8136076fb94
 Successor: 29c3853b9715326cd7323547058d3b7fd448a9ca8a653682fad92da98eff65e6
 Runner: 2c6e313a9aa7dddfbbdfe36986325bed7f46346d6e05822d4c032ca344290e57
 Upstream:203aa4834d7a52522c758c81f6e493bea9fea828d4454fe2a25b9519d2d258ac
@@ -44,20 +58,16 @@ Only committed secretless source and manifest enter; no addon/cache/toolchain
 upload. Normal offload health/admission,2GiB1CPU,zero new swap apply.
 Require>=51minutes genuine foreground lifetime at launch:45minutes plus15s
 kill grace plus5minutes transfer/collection/settlement reserve. The current
-worker expires20:43:45Z and MUST NOT launch this stage.
+worker expires2026-10-26T22:12:00Z and MUST NOT launch this stage.
 
-    cd /home/deploy/agentq/tmp/export608-native-compile4
-    offload run --artifacts result-native608-compile -- timeout -k 15s 2700s sh run608.sh compile
+    cd /home/deploy/agentq/tmp/export608-native-libtests3
+    offload run --artifacts result-native608-libtests -- timeout -k 15s 2700s sh run608.sh libtests
 
-Accept only rc0/complete compile receipt, helper7PASS, detected old-retention
-negative control, current4 owner pins and new addon hash. Any failure: retain
-actual result and independently review; do not rerun this spent path.
-
-Then prepare a separate fresh reviewed libtests export from IDENTICAL compiler
-owner bytes and execute ONE admitted libtests stage (same2700s bound and>=51min
-window); both stage owners already run lifetime7+negative control, so an unchanged
-standalone lifetime run adds no coverage and is unnecessary. Require complete
-rc0 native library receipt and every shared source/toolchain field equal compile4.
+Accept only rc0/complete libtests receipt, all real native library tests passing,
+helper7PASS and detected old-retention negative control. Compare every shared
+source/patched-source/toolchain/policy field to job608-native-compile4-receipt.json.
+Any failure: retain actual result and independently review; do not rerun this
+spent path. No unchanged standalone lifetime-only retry adds needed coverage.
 
 Then prepare a NEW reviewed full combined source-only export: exactly those two
 receipt JSON inputs, no binary upload; rebuild and require compile receipt bytes
