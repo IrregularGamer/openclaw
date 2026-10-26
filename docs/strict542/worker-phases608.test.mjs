@@ -6,7 +6,7 @@ const ok={status:0,timedOut:false,error:null,hasIneffectiveDynamicImport:false,f
 test('only exact self-contained workers defer required minification',()=>{
  const selected=owner.workerBundleConfig(config);assert.equal(selected.minify,false);
  assert.deepEqual({...selected,minify:config.minify},config);
- const ordinary={entry:{x:'src/x.ts'},dts:false};assert.equal(owner.workerBundleConfig(ordinary),ordinary);
+ const ordinary={entry:{x:'src/x.ts'},dts:false,define:{WORKER_DEPLOY_BUILD:'true'}};assert.equal(owner.workerBundleConfig(ordinary),ordinary);
 });
 test('changed worker packaging/minify policy refuses instead of omitting a phase',()=>{
  for(const change of [{minify:false},{dts:true},{outputOptions:{codeSplitting:true}},{entry:{'worker/worker':'other.ts'}}])assert.throws(()=>owner.workerBundleConfig({...config,...change}));

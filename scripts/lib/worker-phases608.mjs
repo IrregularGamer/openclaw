@@ -9,7 +9,7 @@ export function workerEntry608(config) {
  const entries=Object.entries(config.entry ?? {});
  const candidate=entries.some(([key])=>Object.hasOwn(WORKER_ENTRIES608,key));
  if (!candidate) {
-  if(config.define?.WORKER_DEPLOY_BUILD==='true')throw new Error('unsupported portable worker inventory');
+  if(config.define?.WORKER_DEPLOY_BUILD==='true' && config.minify?.compress===true)throw new Error('unsupported portable worker inventory');
   return null;
  }
  const [key,source]=entries[0];
