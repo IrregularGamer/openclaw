@@ -43,9 +43,12 @@ def prepare(owner):
     subprocess.run([sys.executable,str(owner/'docs/strict542/build-native608.py'),'compile'],
                    cwd=owner,check=True)
     output=owner/'result598-native'
-    rebuilt=json.loads((output/'receipt.json').read_bytes())
+    rebuilt_bytes=(output/'receipt.json').read_bytes()
+    rebuilt=json.loads(rebuilt_bytes)
     addon=output/'rolldown-binding.linux-x64-gnu.node'
-    if rebuilt!=compile_receipt or hashlib.sha256(addon.read_bytes()).hexdigest()!=compile_receipt['addon_sha256']:
+    if (rebuilt!=compile_receipt or
+        hashlib.sha256(rebuilt_bytes).hexdigest()!=expected['compile/receipt.json'] or
+        hashlib.sha256(addon.read_bytes()).hexdigest()!=compile_receipt['addon_sha256']):
         raise ValueError('native source rebuild differs from independently pinned compile artifact')
     target=owner.parent/'.native608';target.mkdir()
     shutil.copyfile(output/'receipt.json',target/'receipt.json')

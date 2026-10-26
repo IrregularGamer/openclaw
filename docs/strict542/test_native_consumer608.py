@@ -44,18 +44,30 @@ class SourceOnlyConsumer(unittest.TestCase):
                     compiler.assert_not_called()
 
     def test_rebuilt_addon_or_receipt_drift_never_publishes_native_directory(self):
-        for mutation in ['addon','receipt']:
+        for mutation in ['addon','receipt','formatting']:
             with self.subTest(mutation=mutation),tempfile.TemporaryDirectory() as root:
                 owner,inputs,manifest,receipt=self.fixture(root)
                 def compile_fixture(*args,**kwargs):
                     out=owner/'result598-native';out.mkdir()
                     value={**receipt}
                     if mutation=='receipt':value['rustc']='changed'
-                    (out/'receipt.json').write_text(json.dumps(value))
+                    (out/'receipt.json').write_text(json.dumps(value,indent=2) if mutation=='formatting' else json.dumps(value))
                     (out/'rolldown-binding.linux-x64-gnu.node').write_bytes(b'wrong' if mutation=='addon' else b'compiled fixture')
                 with patch.object(c.subprocess,'run',side_effect=compile_fixture):
                     with self.assertRaisesRegex(ValueError,'source rebuild differs'):c.prepare(owner)
                 self.assertFalse((owner.parent/'.native608').exists())
+
+    def test_exact_rebuilt_receipt_and_addon_publish_only_verified_bytes(self):
+        with tempfile.TemporaryDirectory() as root:
+            owner,inputs,manifest,receipt=self.fixture(root)
+            def compile_fixture(*args,**kwargs):
+                out=owner/'result598-native';out.mkdir()
+                (out/'receipt.json').write_bytes((inputs/'compile/receipt.json').read_bytes())
+                (out/'rolldown-binding.linux-x64-gnu.node').write_bytes(b'compiled fixture')
+            with patch.object(c.subprocess,'run',side_effect=compile_fixture):c.prepare(owner)
+            target=owner.parent/'.native608'
+            self.assertEqual((target/'receipt.json').read_bytes(),(inputs/'compile/receipt.json').read_bytes())
+            self.assertEqual((target/'rolldown-binding.linux-x64-gnu.node').read_bytes(),b'compiled fixture')
 
 
 if __name__=='__main__':unittest.main()
