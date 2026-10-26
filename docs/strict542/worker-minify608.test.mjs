@@ -24,7 +24,7 @@ test('real split worker retains side effects, names, dynamic imports, maps and l
   const code=await fs.readFile(path.join(out,'dist/worker/worker.mjs'),'utf8');assert.ok(code.includes('@license synthetic608'));
   const mod=await import(pathToFileURL(path.join(out,'dist/worker/worker.mjs')).href);
   assert.equal(mod.PreservedWorkerName.name,'PreservedWorkerName');assert.equal(mod.PreservedFunctionName.name,'PreservedFunctionName');assert.equal(mod.PreservedFunctionName(),42);assert.equal((await mod.load()).answer,91);
-  if(maps){const map=JSON.parse(await fs.readFile(path.join(out,'dist/worker/worker.mjs.map'),'utf8'));assert.ok(map.sources.some(s=>s.endsWith('entry.js')));assert.ok(map.mappings.length);const sm=new SourceMap(map);assert.ok(sm.findEntry(0,Math.max(0,code.indexOf('42'))).originalSource?.endsWith('entry.js'));}
+  if(maps){const map=JSON.parse(await fs.readFile(path.join(out,'dist/worker/worker.mjs.map'),'utf8'));assert.ok(map.sources.some(s=>s.endsWith('entry.js')));assert.ok(map.mappings.length);const sm=new SourceMap(map);const prefix=code.slice(0,code.indexOf('42'));const lines=prefix.split('\n');assert.ok(sm.findEntry(lines.length-1,lines.at(-1).length).originalSource?.endsWith('entry.js'));}
  }
  assert.equal(globalThis.__worker608,2);delete globalThis.__worker608;
 });
