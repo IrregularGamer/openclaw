@@ -1,0 +1,51 @@
+2026-10-26T06:30:51Z start
+{"kind":"BEFORE_ARCHIVE_RELEASE608","current":"915705856\n","stat":"anon 9519104\nfile 788160512\nkernel 117633024\nkernel_stack 163840\npagetables 667648\nsec_pagetables 0\npercpu 2424\nsock 0\nvmalloc 16384\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 0\nfile_dirty 201977856\nfile_writeback 405504\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 9465856\ninactive_fi
+{"kind":"AFTER_ARCHIVE_RELEASE608","current":"915914752\n","stat":"anon 9854976\nfile 788160512\nkernel 117645312\nkernel_stack 163840\npagetables 679936\nsec_pagetables 0\npercpu 2424\nsock 0\nvmalloc 16384\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 0\nfile_dirty 184901632\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 9854976\ninactive_file 785
+✔ selection returns the entire original graph by identity (1.218399ms)
+✔ refuses invalid indices, declaration graphs and drifted inventory (4.765156ms)
+✔ one-CPU diagnostic owns fixed native pools without changing caller environment (0.746024ms)
+✔ refuses inherited native worker controls before owner generates limits (2.070585ms)
+✔ admits fixed serial diagnostic only with observed bounded capacity (8.295346ms)
+✔ refuses unknown or oversized capacity and existing output (2.321672ms)
+✔ refuses caller-controlled compiler budget, selection, preload or plugin exclusions (5.870788ms)
+✔ compiler warnings, unresolved imports and unsettled/failed runs refuse success (1.384162ms)
+✔ accepts only the owning tsx launcher cache-disabled value (10.209101ms)
+✔ refuses inherited output and native thread scheduling controls even when empty (1.766727ms)
+✔ refuses inherited allocator controls even when empty or matching generated policy (1.801595ms)
+✔ fixed allocator policy preserves caller and pool bounds without raising any budget (4.633862ms)
+✔ refuses the unified graph at or below the observed reclaim-thrash limit (3.559377ms)
+✔ refuses caller-selected native addon even when empty (7.190626ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 884.425635
+   Compiling unicode-general-category v1.1.0
+   Compiling bit-vec v0.8.0
+   Compiling borrow-or-share v0.2.4
+   Compiling fluent-uri v0.4.1
+   Compiling bit-set v0.8.0
+   Compiling petgraph v0.8.3
+   Compiling rolldown_testing_config v0.1.0 (/work/.native608/source/crates/rolldown_testing_config)
+   Compiling fraction v0.17.0
+   Compiling rolldown_plugin_asset_module v1.2.9 (/work/.native608/source/crates/rolldown_plugin_asset_module)
+   Compiling rolldown_plugin_copy_module v1.2.9 (/work/.native608/source/crates/rolldown_plugin_copy_module)
+   Compiling rolldown_plugin_oxc_runtime v1.2.9 (/work/.native608/source/crates/rolldown_plugin_oxc_runtime)
+   Compiling rolldown_plugin_chunk_import_map v1.2.9 (/work/.native608/source/crates/rolldown_plugin_chunk_import_map)
+   Compiling rolldown_plugin_data_url v1.2.9 (/work/.native608/source/crates/rolldown_plugin_data_url)
+   Compiling rolldown_plugin_hmr v1.2.9 (/work/.native608/source/crates/rolldown_plugin_hmr)
+   Compiling rolldown_plugin_lazy_compilation v1.2.9 (/work/.native608/source/crates/rolldown_plugin_lazy_compilation)
+   Compiling strum_macros v0.28.0
+   Compiling rolldown_tracing v1.2.9 (/work/.native608/source/crates/rolldown_tracing)
+   Compiling rolldown_ecmascript_utils v1.2.9 (/work/.native608/source/crates/rolldown_ecmascript_utils)
+   Compiling num-cmp v0.1.0
+   Compiling fastrand v2.5.0
+   Compiling micromap v0.3.0
+   Compiling referencing v0.56.0
+   Compiling tempfile v3.27.0
+   Compiling jsonschema-value v0.56.0
+   Compiling rolldown v1.2.9 (/work/.native608/source/crates/rolldown)
+rc=124 2026-10-26T07:14:14Z
