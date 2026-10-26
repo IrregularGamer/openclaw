@@ -1,0 +1,72 @@
+{
+ "addon_sha256": "17df206117097742019de475e8cd194fb1022f48d9c2b507195100abd13eb627",
+ "application_authority": false,
+ "broker": "2026-10-26T23:06:04Z run remote rc=1 2062s /home/deploy/agentq/tmp/export608-native-post-metadata",
+ "capacity": {
+  "availableBytes": 14150021120,
+  "capacityBytes": 2147483648,
+  "limitBytes": 1733967872,
+  "unresolved": false,
+  "usageKnown": true
+ },
+ "checks_passed": {
+  "node_scoped": 133,
+  "python_scoped": 90,
+  "real_fixtures": 9,
+  "total": 235,
+  "typed_inventory": 3
+ },
+ "compile_receipt_sha256": "bc741801b805fb6792e0e67fc4f8e3b88425096d41e6e6216927cff140f9d9b6",
+ "evidence_sha256": {
+  "job608-native-post-metadata-broker.txt": "68548a422b43be310218df67512ec0331c613a038bc9e4918e52f1f835d30776",
+  "job608-native-post-metadata-checks.json": "c11091989b7764eac97371746811dc83e1171c1aeaa62cb103bcb27a627c1818",
+  "job608-native-post-metadata-checks.txt": "05f9030dbb8de1833dad5c458eb267580265e3fa0cb37720297006ee4db85980",
+  "job608-native-post-metadata-native-compile.txt": "206055dd5bdffadc73211f60fe5b18b891efa950d51d9d9056e3235e93211d74",
+  "job608-native-post-metadata-native-receipt.json": "bc741801b805fb6792e0e67fc4f8e3b88425096d41e6e6216927cff140f9d9b6",
+  "job608-native-post-metadata-offload.txt": "9a87d4efe1b2c02a9afa72b2b0489059781d91b1f9d0f796c5c8a5961fefaf69",
+  "job608-native-post-metadata-parity.json": "9e9a1d2b5bc41439c158307fff64ad3a3205f3e6e117e8e23b230194926cc9c4",
+  "job608-native-post-metadata-probe.txt": "844dbec5f5afd6ee3f9df5000e20a80bb9ac37dfc0ff5bf56eac862ea21018dd",
+  "job608-native-post-metadata-receipt.json": "26c3b67d066fcbcc628ddf7159e2293617712ae40f947fad071da3af9ef0c113",
+  "job608-native-post-metadata-retention-negative.txt": "5dbb37c43317250215aeae4152cf19a3d8db1e60a76172e4174b6d9458ddd393"
+ },
+ "exit_code": 1,
+ "export_manifest_sha256": "eba2def84390b7e50e9221976503ed0c2bf143f950e5b8404a133d730fb1bcb0",
+ "failed_config": {
+  "elapsed_ms": 112472.703534,
+  "label": "main-config-15",
+  "signal": "SIGKILL",
+  "status": null,
+  "timedOut": false
+ },
+ "kind": "INCOMPLETE_DIAGNOSTIC_NOT_PACKAGE_OR_APPLICATION",
+ "last_config15_sample": {
+  "cgroup_current": 2141941760,
+  "last_interval_system_cpu_seconds": 4.409903,
+  "last_interval_user_cpu_seconds": 1.201548,
+  "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+  "phase": "build-end",
+  "rss": 1821642752,
+  "v8_heap_used": 18604160
+ },
+ "not_run": "main16..56 including all four workers",
+ "source_commit": "b1416481c38ba1480d8c881ca36e96785512fc47",
+ "spent_export": true,
+ "successful_configs": [
+  "ai",
+  "main-config-0",
+  "main-config-1",
+  "main-config-2",
+  "main-config-3",
+  "main-config-4",
+  "main-config-5",
+  "main-config-6",
+  "main-config-7",
+  "main-config-8",
+  "main-config-9",
+  "main-config-10",
+  "main-config-11",
+  "main-config-12",
+  "main-config-13",
+  "main-config-14"
+ ]
+}
