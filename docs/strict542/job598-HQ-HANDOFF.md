@@ -501,7 +501,7 @@ Its actual outcome still needs exact independent review; no build/artifact/appli
 
 The single admitted run of the unchanged export exited1 (log
 runs/598/allocator-reconciled-run.log, sha256 2532f203…3021). The13 allocator-policy
-checks passed. Configs through14 closed (peak rss128MiB in config14). Unified main-config-15 ran with
+checks passed. Config14 closed (peak rss128MiB); configs0-13 have no records in this log. Unified main-config-15 ran with
 MIMALLOC_ALLOW_THP=0 and four native pools at1, peaked at ~1439MiB rss, and was ended by
 the existing869346ms deadline: SIGTERM then SIGKILL, process group observed dead,
 cleanup=timeout. Because of the nonzero exit, no result598 artifacts were pulled. The remote EXIT
