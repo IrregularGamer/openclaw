@@ -9,6 +9,33 @@ p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
 
 
 class FinalizerPatch(unittest.TestCase):
+    def test_early_release_follows_metadata_and_precedes_crosslinks_without_other_changes(self):
+        self.assertTrue(callable(getattr(p,'patched_generate_stage',None)), 'post-metadata release is absent')
+        archive=Path(os.environ.get('ROLLDOWN608_SOURCE_ARCHIVE',str(Path.cwd().parent/'rolldown608-source.tar.gz')))
+        pin=json.loads(Path('docs/strict542/rolldown-source-pin608.json').read_text())
+        self.assertEqual(hashlib.sha256(archive.read_bytes()).hexdigest(),pin['source_archive_sha256'])
+        with tarfile.open(archive,'r:gz') as tf:
+            member=next(m for m in tf.getmembers() if m.name.endswith('/'+p.MOD))
+            original=tf.extractfile(member).read().decode()
+        patched=p.patched_generate_stage(original)
+        start=patched.index('    // Last metadata AST reader has completed.')
+        end=patched.index('    self.compute_cross_chunk_links(',start)
+        insertion=patched[start:end]
+        self.assertLess(patched.index('self.compute_wrapped_esm_init_metadata('),start)
+        self.assertEqual(patched[:start]+patched[end:],original)
+        self.assertIn('self.link_output.metas[m.idx].is_included',insertion)
+        self.assertIn('m.idx == self.link_output.runtime.id()',insertion)
+        self.assertIn('!order_state.required_runtime_helpers().is_empty()',insertion)
+        self.assertIn('for chunk in chunk_graph.chunk_table.iter()',insertion)
+        self.assertIn('required_asts[module.idx.raw() as usize] = true;',insertion)
+        self.assertNotIn('strict',insertion)
+        self.assertIn('    last_use_ast_table::release_unneeded(ast_table.iter_mut(), &required_asts)',insertion)
+        self.assertNotIn('super::last_use_ast_table',insertion)
+
+    def test_early_release_refuses_changed_metadata_boundary(self):
+        self.assertTrue(callable(getattr(p,'patched_generate_stage',None)), 'post-metadata release is absent')
+        with self.assertRaises(ValueError):p.patched_generate_stage('unreviewed source')
+
     def test_patch_preserves_original_finalizer_predicate_and_all_other_bytes(self):
         self.assertTrue(callable(getattr(p,'patched_finalizer',None)), 'early finalizer patch is absent')
         archive=Path(os.environ.get('ROLLDOWN608_SOURCE_ARCHIVE',str(Path.cwd().parent/'rolldown608-source.tar.gz')))

@@ -1,0 +1,19 @@
+test_changed_filter_refuses (test_native_finalizer608.FinalizerPatch.test_changed_filter_refuses) ... ok
+test_early_release_follows_metadata_and_precedes_crosslinks_without_other_changes (test_native_finalizer608.FinalizerPatch.test_early_release_follows_metadata_and_precedes_crosslinks_without_other_changes) ... FAIL
+test_early_release_refuses_changed_metadata_boundary (test_native_finalizer608.FinalizerPatch.test_early_release_refuses_changed_metadata_boundary) ... ok
+test_patch_preserves_original_finalizer_predicate_and_all_other_bytes (test_native_finalizer608.FinalizerPatch.test_patch_preserves_original_finalizer_predicate_and_all_other_bytes) ... ok
+test_old_retention_mutation_keeps_rust_delimiters (test_native_finalizer608.RetentionNegativeControl.test_old_retention_mutation_keeps_rust_delimiters) ... ok
+
+======================================================================
+FAIL: test_early_release_follows_metadata_and_precedes_crosslinks_without_other_changes (test_native_finalizer608.FinalizerPatch.test_early_release_follows_metadata_and_precedes_crosslinks_without_other_changes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/deploy/agentq/tmp/source552/docs/strict542/test_native_finalizer608.py", line 32, in test_early_release_follows_metadata_and_precedes_crosslinks_without_other_changes
+    self.assertIn('    last_use_ast_table::release_unneeded(ast_table.iter_mut(), &required_asts)',insertion)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '    last_use_ast_table::release_unneeded(ast_table.iter_mut(), &required_asts)' not found in '    // Last metadata AST reader has completed. Conservatively retain every\n    // possible later finalizer and every renderer, before cross-link allocations.\n    let has_required_order_runtime = !order_state.required_runtime_helpers().is_empty();\n    let mut required_asts = ast_table\n      .iter_enumerated()\n      .map(|(idx, _)| {\n        self.link_output.module_table[idx].as_normal().is_some_and(|m| {\n          self.link_output.metas[m.idx].is_included\n            || (m.idx == self.link_output.runtime.id() && has_required_order_runtime)\n        })\n      })\n      .collect::<Vec<_>>();\n    for chunk in chunk_graph.chunk_table.iter() {\n      for &module_idx in &chunk.modules {\n        if let Some(module) = self.link_output.module_table[module_idx].as_normal() {\n          assert_eq!(module.idx, module_idx, "canonical AST index mismatch");\n          required_asts[module.idx.raw() as usize] = true;\n        }\n      }\n    }\n    super::last_use_ast_table::release_unneeded(ast_table.iter_mut(), &required_asts);\n\n'
+
+----------------------------------------------------------------------
+Ran 5 tests in 1.544s
+
+FAILED (failures=1)

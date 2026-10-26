@@ -1,0 +1,10 @@
+test_changed_filter_refuses (test_native_finalizer608.FinalizerPatch.test_changed_filter_refuses) ... ok
+test_early_release_follows_metadata_and_precedes_crosslinks_without_other_changes (test_native_finalizer608.FinalizerPatch.test_early_release_follows_metadata_and_precedes_crosslinks_without_other_changes) ... ok
+test_early_release_refuses_changed_metadata_boundary (test_native_finalizer608.FinalizerPatch.test_early_release_refuses_changed_metadata_boundary) ... ok
+test_patch_preserves_original_finalizer_predicate_and_all_other_bytes (test_native_finalizer608.FinalizerPatch.test_patch_preserves_original_finalizer_predicate_and_all_other_bytes) ... ok
+test_old_retention_mutation_keeps_rust_delimiters (test_native_finalizer608.RetentionNegativeControl.test_old_retention_mutation_keeps_rust_delimiters) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 1.486s
+
+OK

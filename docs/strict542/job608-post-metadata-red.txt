@@ -1,0 +1,28 @@
+test_changed_filter_refuses (test_native_finalizer608.FinalizerPatch.test_changed_filter_refuses) ... ok
+test_early_release_follows_metadata_and_precedes_crosslinks_without_other_changes (test_native_finalizer608.FinalizerPatch.test_early_release_follows_metadata_and_precedes_crosslinks_without_other_changes) ... FAIL
+test_early_release_refuses_changed_metadata_boundary (test_native_finalizer608.FinalizerPatch.test_early_release_refuses_changed_metadata_boundary) ... FAIL
+test_patch_preserves_original_finalizer_predicate_and_all_other_bytes (test_native_finalizer608.FinalizerPatch.test_patch_preserves_original_finalizer_predicate_and_all_other_bytes) ... ok
+test_old_retention_mutation_keeps_rust_delimiters (test_native_finalizer608.RetentionNegativeControl.test_old_retention_mutation_keeps_rust_delimiters) ... ok
+
+======================================================================
+FAIL: test_early_release_follows_metadata_and_precedes_crosslinks_without_other_changes (test_native_finalizer608.FinalizerPatch.test_early_release_follows_metadata_and_precedes_crosslinks_without_other_changes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/deploy/agentq/tmp/source552/docs/strict542/test_native_finalizer608.py", line 13, in test_early_release_follows_metadata_and_precedes_crosslinks_without_other_changes
+    self.assertTrue(callable(getattr(p,'patched_generate_stage',None)), 'post-metadata release is absent')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : post-metadata release is absent
+
+======================================================================
+FAIL: test_early_release_refuses_changed_metadata_boundary (test_native_finalizer608.FinalizerPatch.test_early_release_refuses_changed_metadata_boundary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/deploy/agentq/tmp/source552/docs/strict542/test_native_finalizer608.py", line 35, in test_early_release_refuses_changed_metadata_boundary
+    self.assertTrue(callable(getattr(p,'patched_generate_stage',None)), 'post-metadata release is absent')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : post-metadata release is absent
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.884s
+
+FAILED (failures=2)
