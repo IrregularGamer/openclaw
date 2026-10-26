@@ -50,7 +50,7 @@ python3 -m unittest discover -s docs/strict542 -p test_application598.py -v
 python3 -m unittest discover -s docs/strict542 -p test_apply598.py -v
 python3 -m unittest discover -s docs/strict542 -p test_native_consumer608.py -v
 python3 -m unittest discover -s docs/strict542 -p test_frozen_package608.py -v
-node --test docs/strict542/serial-probe598.test.mjs docs/strict542/isolated-config598.test.mjs docs/strict542/disposable-inputs608.test.mjs docs/strict542/native-compiler608.test.mjs docs/strict542/bounded-package608.test.mjs
+node --test docs/strict542/worker-phases608.test.mjs docs/strict542/serial-probe598.test.mjs docs/strict542/isolated-config598.test.mjs docs/strict542/disposable-inputs608.test.mjs docs/strict542/native-compiler608.test.mjs docs/strict542/bounded-package608.test.mjs
 ) >strict542-checks/tests.log 2>&1
 status=$?
 set -e
@@ -83,10 +83,12 @@ node --import ./scripts/tsx.mjs --input-type=module -e 'import fs from "node:fs"
 node --input-type=module -e 'import {releaseDisposableStore} from "./scripts/lib/disposable-build-inputs.mjs"; releaseDisposableStore("..")'
 node --import ./scripts/tsx.mjs --input-type=module -e 'import fs from "node:fs"; import {readProcessMemoryCapacity} from "./scripts/lib/process-memory.mts"; console.log(JSON.stringify({kind:"AFTER_STORE_RELEASE608",capacity:readProcessMemoryCapacity({}),stat:fs.readFileSync("/sys/fs/cgroup/memory.stat","utf8")}))'
 node node_modules/vitest/vitest.mjs run --config test/vitest/vitest.unit-fast.config.ts --maxWorkers=1 --no-file-parallelism --passWithNoTests=false test/scripts/build-all-bounded608.test.ts
+node --test docs/strict542/worker-minify608.test.mjs
 node --import ./scripts/tsx.mjs --test docs/strict542/native-codegen608.test.mjs
 node --import ./scripts/tsx.mjs --test docs/strict542/lazy-barrel608.test.mjs
 NATIVE_ADDON=$(node --input-type=module -e 'import {nativeCompiler608} from "./scripts/lib/native-compiler608.mjs"; console.log(nativeCompiler608().env.NAPI_RS_NATIVE_LIBRARY_PATH)')
 NAPI_RS_NATIVE_LIBRARY_PATH="$NATIVE_ADDON" node --import ./scripts/tsx.mjs --test docs/strict542/lazy-barrel608.test.mjs
+NAPI_RS_NATIVE_LIBRARY_PATH="$NATIVE_ADDON" node --test docs/strict542/worker-minify608.test.mjs
 node --import ./scripts/tsx.mjs docs/strict542/isolated-probe598.mts
 ) >result598-isolated/probe.log 2>&1
 status=$?
