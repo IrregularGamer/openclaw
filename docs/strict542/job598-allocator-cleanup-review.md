@@ -39,3 +39,34 @@ slot rotation or bypass.
 
 This approval covers temporary workspace cleanup only. It grants no build, artifact,
 release, native supervisor or application approval, and no allocator outcome is implied.
+
+## Receipt: zero-lease predicate amendment (2026-10-26)
+
+- Reviewer: independent Claude reviewer (read-only; did not execute the script, ssh, or run offload)
+- Reviewed commit: f334807d726c3ca244609c7367a002d06303ec57 (branch strict542-source552)
+- File: docs/strict542/reconcile-allocator-slot598.py
+  sha256 69b1e08e25a4c67785c33d350e4adc9f2cd6eea559615b7feb9dfc0db95e46b3
+  (base 8863e79f version verified = approved 51ee185c...8049)
+
+Findings (`git diff 8863e79f f334807d`, script changes are exactly two lines plus a comment):
+1. Pre-READY: `leases==[expected]` -> `leases in ([],[expected])`, evaluated inside the held
+   `store.runner_slot()`. Any other/old lease, or more than one lease, still refuses.
+   Zero leases is the original stricter rule of job598-reconciliation-review.md;
+   [expected] is the job598-isolated-cleanup-review.md refinement. Nothing else is admitted.
+2. Post-clean: `live()==[expected]` -> `live()==leases` (lease set unchanged from the in-lock
+   snapshot) plus zero managed containers. A lease appearing, disappearing or changing in
+   the window fails VERIFY (exit nonzero; no retry).
+3. Unchanged: runner_slot lock, slot slug/path, `ssh offload clean <SLOT>`, container check,
+   slot inventory, source/RECOVERED admission, local recovery hashes, substitution, timeouts,
+   failure paths. Any in-lock assert exits before READY, so clean is never invoked.
+4. Substituted remote code (dummy digest/RECOVERED; EXPECTED and RECOVERED each occur once)
+   and the script pass `python3 -I` py_compile.
+5. Exclusion: accepting zero leases does not weaken concurrent-run exclusion. The runner_slot
+   lock is held from snapshot through VERIFY and offload run needs both a lease and that
+   slot, so no run can start; no container may exist; any lease minted meanwhile is caught
+   by the unchanged-set check. The local AGENTQ_LEASE_ID still binds which lease is admissible.
+
+Verdict: APPROVE - execute exactly once, under the same mandatory ordered conditions as the
+prior receipt. Any refusal or uncertain status means stop; no retry, slot rotation or bypass.
+This approval covers temporary workspace cleanup only; it grants no build, artifact, release,
+native supervisor or application approval.
