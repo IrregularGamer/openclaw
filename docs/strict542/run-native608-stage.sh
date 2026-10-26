@@ -1,10 +1,11 @@
 #!/bin/sh
-# One admitted native608 stage: compile (addon only) or libtests (native lib tests only).
+# One admitted native608 stage: compile (addon only), libtests (native lib tests only)
+# or lifetime (standalone AST ownership tests only; never addon or lib-test authority).
 # Inputs: export-manifest.json, successor598.tar, rolldown608-source.tar.gz. Output:
 # result-native608-<stage>/ (receipt, addon for compile, build log). Diagnostic only.
 set -eu
 stage="${1:-}"
-case "$stage" in compile|libtests) ;; *) echo "native608 stage must be compile or libtests" >&2; exit 2;; esac
+case "$stage" in compile|libtests|lifetime) ;; *) echo "native608 stage must be compile, libtests or lifetime" >&2; exit 2;; esac
 out="result-native608-$stage"
 [ ! -e "$out" ] && [ ! -e source ] && [ ! -e .native608 ] || { echo "native608 stage requires a fresh export" >&2; exit 2; }
 mkdir "$out"
