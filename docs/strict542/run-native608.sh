@@ -49,6 +49,7 @@ python3 -m unittest discover -s src/gateway/strict542 -p test_root_owner_supervi
 python3 -m unittest discover -s docs/strict542 -p test_application598.py -v
 python3 -m unittest discover -s docs/strict542 -p test_apply598.py -v
 python3 -m unittest discover -s docs/strict542 -p test_native_consumer608.py -v
+python3 -m unittest discover -s docs/strict542 -p test_frozen_package608.py -v
 node --test docs/strict542/serial-probe598.test.mjs docs/strict542/isolated-config598.test.mjs docs/strict542/disposable-inputs608.test.mjs docs/strict542/native-compiler608.test.mjs docs/strict542/bounded-package608.test.mjs
 ) >strict542-checks/tests.log 2>&1
 status=$?
@@ -59,7 +60,7 @@ python3 - <<'EVIDENCE'
 import json,hashlib,os
 from pathlib import Path
 manifest=json.loads(Path('../export-manifest.json').read_text())
-checks=['gateway-scoped','native-owner','supervisor-ipc','cancellation-settlement','application-preparation']
+checks=['gateway-scoped','native-owner','supervisor-ipc','cancellation-settlement','application-preparation','frozen-package-policy']
 value={'source_commit':manifest['source_commit'],'exit_code':0,'checks':checks,'test_log_sha256':hashlib.sha256(Path('strict542-checks/tests.log').read_bytes()).hexdigest()}
 Path('strict542-checks/evidence.json').write_text(json.dumps(value,sort_keys=True)+'\n')
 EVIDENCE
