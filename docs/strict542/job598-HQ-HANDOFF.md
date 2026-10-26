@@ -489,3 +489,10 @@ containers. The guard demanded exactly this worker's lease, which only exists af
 an offload run in the same session. Source-only correction accepts zero live leases
 (the original stricter rule) or only this worker's, and the post-clean check
 requires the same lease set unchanged. Needs exact review before its one execution.
+
+Approved corrected cleanup (69b1e08e, review707ed7da) executed once, exit0:
+immediate-idle {"live_lease_sha256": [], "managed_running_containers": 0, "phase": "LOCK_HELD_READY", "runner_lock_available": true, "slot": "tmp-export598-config-isolation-98c59c32"}; post-clean
+LOCK_HELD_VERIFIED_ABSENT absent=true. Then the same unchanged export (runner4ddaa154,
+successorb599e23a, natived73e4e35, sourcee79a0e45) was started once with
+`offload run --artifacts result598 -- sh run598.sh` (log runs/598/allocator-reconciled-run.log).
+Its actual outcome still needs exact independent review; no build/artifact/application approval.
