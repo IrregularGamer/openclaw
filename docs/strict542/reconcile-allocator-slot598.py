@@ -35,7 +35,8 @@ expected=EXPECTED
 with store.runner_slot():
  live=lambda:sorted(hashlib.sha256(p.stem.encode()).hexdigest() for p in store.root.glob('*.json') if store.valid(p.stem))
  leases=live()
- assert leases==[expected], 'unknown lease owner or lost current lease'
+ # Fresh session: no offload run yet, so zero live leases (original stricter rule) or only ours.
+ assert leases in ([],[expected]), 'unknown lease owner'
  assert not DockerEngine().containers(), 'active managed runner'
  assert base.is_dir() and not base.is_symlink(), 'untrusted slot'
  assert {p.name for p in base.iterdir()}=={'.pnpm-store','export-manifest.json','source598.tar','successor598.tar','native598.tar','run598.sh','source'}, 'unexpected input/result'
@@ -49,7 +50,7 @@ with store.runner_slot():
  print(json.dumps({'phase':'LOCK_HELD_READY','runner_lock_available':True,'managed_running_containers':0,'live_lease_sha256':leases,'slot':base.name}),flush=True)
  assert sys.stdin.readline()=='VERIFY\n', 'cleanup controller lost'
  assert not base.exists() and not base.is_symlink(), 'cleanup incomplete'
- assert live()==[expected] and not DockerEngine().containers(), 'concurrent runner/lease'
+ assert live()==leases and not DockerEngine().containers(), 'concurrent runner/lease'
  print(json.dumps({'phase':'LOCK_HELD_VERIFIED_ABSENT','absent':True,'slot':base.name}),flush=True)
 '''.replace('EXPECTED',repr(expected)).replace('RECOVERED',repr(RECOVERED))
 

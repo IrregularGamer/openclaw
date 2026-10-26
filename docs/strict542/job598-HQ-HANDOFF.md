@@ -481,3 +481,11 @@ source-only successor `reconcile-allocator-slot598.py` (same lock/lease/containe
 predicates and literal `ssh offload clean` of that one slug; additionally admits
 `source/` only if its sole result files equal the recovered hashes) awaits exact
 independent review before its single execution. Evidence: job598-allocator-recovery.json.
+
+Single execution of approved reconcile-allocator-slot598.py (51ee185c, review8863e79f)
+refused before READY: `remote guard refused or disconnected`, exit1; no clean ran.
+Read-only cause: remote LeaseStore has 0 valid leases (398 expired files), 0 managed
+containers. The guard demanded exactly this worker's lease, which only exists after
+an offload run in the same session. Source-only correction accepts zero live leases
+(the original stricter rule) or only this worker's, and the post-clean check
+requires the same lease set unchanged. Needs exact review before its one execution.
