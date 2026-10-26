@@ -89,6 +89,41 @@ def patched_finalizer(text):
     return text.replace('    let finalized = ',insertion+'    let finalized = ',1)
 
 
+def patched_generate_stage(text):
+    boundary = '''    let final_esm_init_metadata =
+      self.compute_wrapped_esm_init_metadata(&ast_table, &chunk_graph, &order_state);
+
+    self.compute_cross_chunk_links('''
+    if text.count(boundary) != 1:
+        raise ValueError('unreviewed post-metadata AST reader boundary')
+    insertion = '''    // Last metadata AST reader has completed. Conservatively retain every
+    // possible later finalizer and every renderer, before cross-link allocations.
+    let has_required_order_runtime = !order_state.required_runtime_helpers().is_empty();
+    let mut required_asts = ast_table
+      .iter_enumerated()
+      .map(|(idx, _)| {
+        self.link_output.module_table[idx].as_normal().is_some_and(|m| {
+          self.link_output.metas[m.idx].is_included
+            || (m.idx == self.link_output.runtime.id() && has_required_order_runtime)
+        })
+      })
+      .collect::<Vec<_>>();
+    for chunk in chunk_graph.chunk_table.iter() {
+      for &module_idx in &chunk.modules {
+        if let Some(module) = self.link_output.module_table[module_idx].as_normal() {
+          assert_eq!(module.idx, module_idx, "canonical AST index mismatch");
+          required_asts[module.idx.raw() as usize] = true;
+        }
+      }
+    }
+    last_use_ast_table::release_unneeded(ast_table.iter_mut(), &required_asts);
+    drop(required_asts);
+
+'''
+    return text.replace(boundary, boundary.replace('    self.compute_cross_chunk_links(',
+        insertion+'    self.compute_cross_chunk_links('), 1)
+
+
 def prepare(source, owner):
     pin = json.loads((owner / 'docs/strict542/rolldown-source-pin608.json').read_text())
     for name, expected in pin['files'].items():
@@ -102,7 +137,7 @@ def prepare(source, owner):
     mod = source / MOD
     text = mod.read_text()
     assert text.count('mod render_chunk_to_assets;') == 1
-    mod.write_text(text.replace('mod render_chunk_to_assets;', 'mod last_use_ast_table;\nmod render_chunk_to_assets;'))
+    mod.write_text(patched_generate_stage(text).replace('mod render_chunk_to_assets;', 'mod last_use_ast_table;\nmod render_chunk_to_assets;'))
     helper = source / 'crates/rolldown/src/stages/generate_stage/last_use_ast_table.rs'
     helper.write_bytes((owner / 'scripts/lib/last-use-ast608.rs').read_bytes())
     return {name: hashlib.sha256((source / name).read_bytes()).hexdigest() for name in [RENDER, MOD, FINALIZE, str(helper.relative_to(source))]}
