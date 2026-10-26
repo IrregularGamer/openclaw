@@ -3,7 +3,6 @@
 import fs from 'node:fs';
 import { performance } from 'node:perf_hooks';
 import { readProcessMemoryCapacity } from '../../scripts/lib/process-memory.mts';
-import { resolveTsdownBuildInvocation, runTsdownBuildInvocation } from '../../scripts/tsdown-build.mts';
 import { configCensus } from '../../scripts/lib/isolated-config.mjs';
 import { admitProbe, probeSucceeded, fixedOneCpuCompilerEnv, ONE_CPU_NATIVE_POOLS, BOUNDED_NATIVE_ALLOCATOR } from './serial-probe598-policy.mjs';
 const capacity=readProcessMemoryCapacity({});
@@ -12,6 +11,8 @@ if (process.argv.length !== 2) throw new Error('probe accepts no caller argument
 const env=fixedOneCpuCompilerEnv(process.env);
 // Config evaluation must see the same runtime-only policy as the compiler child.
 Object.assign(process.env,ONE_CPU_NATIVE_POOLS,BOUNDED_NATIVE_ALLOCATOR,{OPENCLAW_RUN_NODE_SKIP_DTS_BUILD:'1'});
+// Initialize allocator policy before loading the build owner's transitive native imports.
+const {resolveTsdownBuildInvocation,runTsdownBuildInvocation}=await import('../../scripts/tsdown-build.mts');
 const deadline=performance.now()+900_000;
 const {default:configs}=await import('../../tsdown.config.ts');
 const census=configCensus(configs);

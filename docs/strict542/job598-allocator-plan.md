@@ -27,7 +27,9 @@ Existing supported option preflight:
 
 Source successor refuses every inherited MIMALLOC_ control (case insensitive,
 even empty/matching values), then generates only fixed MIMALLOC_ALLOW_THP=0.
-Parent config evaluation and every compiler child receive it before importing
+Review correction: dynamically import the tsdown build owner only after admission
+and parent policy assignment, so its transitive native imports cannot initialize
+earlier. Parent config evaluation and every compiler child receive it before importing
 Rolldown; each invocation asserts exact propagation. Receipt/markers record it,
 and child telemetry adds memory.stat/pressure. Fixed native pools1, full ordered
 whole-config census, graph identity, computed heap, total900s deadline, original
