@@ -1,0 +1,314 @@
+Scope: all 186 workspace projects
+. pnpm:devPreinstall$ node scripts/check-install-dependency-ownership.mjs
+. pnpm:devPreinstall: Done
+? Verifying lockfile against supply-chain policies (1706 entries)...
+Packages are copied from the content-addressable store to the virtual store.
+  Content-addressable store is at: /work/.pnpm-store/v11
+  Virtual store is at:             node_modules/.pnpm
+Downloading node-pty@1.2.0-beta.15: 0.00 B/7.15 MB
+Downloading node-pty@1.2.0-beta.15: 123.92 kB/7.15 MB
+[WARN] Tarball download average speed 43 KiB/s (size 48 KiB) is below 50 KiB/s: https://registry.npmjs.org/tweetnacl/-/tweetnacl-1.0.3.tgz (GET)
+[WARN] Tarball download average speed 35 KiB/s (size 39 KiB) is below 50 KiB/s: https://registry.npmjs.org/rastermill/-/rastermill-0.3.3.tgz (GET)
+[WARN] Tarball download average speed 46 KiB/s (size 52 KiB) is below 50 KiB/s: https://registry.npmjs.org/@cacheable/utils/-/utils-2.5.0.tgz (GET)
+[WARN] Tarball download average speed 26 KiB/s (size 30 KiB) is below 50 KiB/s: https://registry.npmjs.org/tinybench/-/tinybench-6.1.4.tgz (GET)
+[WARN] Tarball download average speed 39 KiB/s (size 50 KiB) is below 50 KiB/s: https://registry.npmjs.org/postcss/-/postcss-8.5.28.tgz (GET)
+Progress: resolved 1469, reused 0, downloaded 102, added 96
+[WARN] Tarball download average speed 11 KiB/s (size 16 KiB) is below 50 KiB/s: https://registry.npmjs.org/@lezer/highlight/-/highlight-1.2.3.tgz (GET)
+[WARN] Tarball download average speed 9 KiB/s (size 9 KiB) is below 50 KiB/s: https://registry.npmjs.org/function-bind/-/function-bind-1.1.2.tgz (GET)
+[WARN] Tarball download average speed 21 KiB/s (size 34 KiB) is below 50 KiB/s: https://registry.npmjs.org/adm-zip/-/adm-zip-0.6.1.tgz (GET)
+[WARN] Tarball download average speed 13 KiB/s (size 15 KiB) is below 50 KiB/s: https://registry.npmjs.org/open/-/open-10.2.0.tgz (GET)
+[WARN] Tarball download average speed 44 KiB/s (size 114 KiB) is below 50 KiB/s: https://registry.npmjs.org/minimatch/-/minimatch-10.2.6.tgz (GET)
+[WARN] Tarball download average speed 20 KiB/s (size 36 KiB) is below 50 KiB/s: https://registry.npmjs.org/mdast-util-to-markdown/-/mdast-util-to-markdown-2.1.2.tgz (GET)
+Downloading @oxlint-tsgolint/linux-x64@7.0.2002: 0.00 B/7.76 MB
+[WARN] Tarball download average speed 32 KiB/s (size 88 KiB) is below 50 KiB/s: https://registry.npmjs.org/signal-utils/-/signal-utils-0.21.1.tgz (GET)
+[WARN] Tarball download average speed 44 KiB/s (size 148 KiB) is below 50 KiB/s: https://registry.npmjs.org/@audio/decode-webm/-/decode-webm-1.6.1.tgz (GET)
+[WARN] Tarball download average speed 35 KiB/s (size 72 KiB) is below 50 KiB/s: https://registry.npmjs.org/@opentelemetry/sdk-logs/-/sdk-logs-0.222.0.tgz (GET)
+[WARN] Tarball download average speed 25 KiB/s (size 64 KiB) is below 50 KiB/s: https://registry.npmjs.org/@codemirror/autocomplete/-/autocomplete-6.20.3.tgz (GET)
+Progress: resolved 1469, reused 0, downloaded 171, added 160
+[WARN] Tarball download average speed 49 KiB/s (size 49 KiB) is below 50 KiB/s: https://registry.npmjs.org/@opentelemetry/resources/-/resources-2.11.0.tgz (GET)
+[WARN] Tarball download average speed 40 KiB/s (size 40 KiB) is below 50 KiB/s: https://registry.npmjs.org/stylis/-/stylis-4.4.0.tgz (GET)
+[WARN] Tarball download average speed 12 KiB/s (size 13 KiB) is below 50 KiB/s: https://registry.npmjs.org/signal-exit/-/signal-exit-4.1.0.tgz (GET)
+[WARN] Tarball download average speed 44 KiB/s (size 50 KiB) is below 50 KiB/s: https://registry.npmjs.org/d3-shape/-/d3-shape-3.2.0.tgz (GET)
+[WARN] Tarball download average speed 47 KiB/s (size 57 KiB) is below 50 KiB/s: https://registry.npmjs.org/@vitest/mocker/-/mocker-5.0.1.tgz (GET)
+Downloading @anthropic-ai/claude-agent-sdk-linux-x64@0.3.274: 0.00 B/102.59 MB
+Downloading @rolldown/binding-linux-x64-gnu@1.2.9: 0.00 B/7.92 MB
+Progress: resolved 1469, reused 0, downloaded 236, added 224
+[WARN] Tarball download average speed 49 KiB/s (size 92 KiB) is below 50 KiB/s: https://registry.npmjs.org/@pierre/theme/-/theme-2.0.0.tgz (GET)
+Downloading @openai/codex@0.160.0-linux-x64: 0.00 B/163.27 MB
+[WARN] Tarball download average speed 27 KiB/s (size 81 KiB) is below 50 KiB/s: https://registry.npmjs.org/@js-sdsl/ordered-map/-/ordered-map-4.4.2.tgz (GET)
+Downloading @trycua/cua-driver-linux-x64-gnu@0.28.2: 0.00 B/13.49 MB
+Progress: resolved 1469, reused 0, downloaded 316, added 318
+Progress: resolved 1469, reused 0, downloaded 347, added 325
+Progress: resolved 1469, reused 0, downloaded 362, added 352
+Progress: resolved 1469, reused 0, downloaded 379, added 383
+Downloading onnxruntime-node@1.30.0: 0.00 B/113.50 MB
+Progress: resolved 1469, reused 0, downloaded 420, added 416
+Downloading @tloncorp/tlon-skill-linux-x64@0.5.0: 0.00 B/40.66 MB
+Progress: resolved 1469, reused 0, downloaded 475, added 453
+[WARN] Tarball download average speed 22 KiB/s (size 22 KiB) is below 50 KiB/s: https://registry.npmjs.org/picomatch/-/picomatch-2.3.2.tgz (GET)
+[WARN] Tarball download average speed 39 KiB/s (size 40 KiB) is below 50 KiB/s: https://registry.npmjs.org/@vitest/utils/-/utils-5.0.1.tgz (GET)
+Downloading @trycua/cua-driver-linux-x64-gnu@0.28.2: 2.74 MB/13.49 MB
+Downloading @oxlint/binding-linux-x64-gnu@1.83.0: 0.00 B/6.51 MB
+Downloading @typescript/typescript-linux-x64@7.1.0-dev.20260920.1: 0.00 B/10.11 MB
+Progress: resolved 1469, reused 0, downloaded 507, added 510
+Downloading @lancedb/lancedb-linux-x64-gnu@0.39.0: 0.00 B/72.71 MB
+Progress: resolved 1469, reused 0, downloaded 539, added 520
+Downloading mermaid@11.17.2: 0.00 B/17.79 MB
+Downloading @github/copilot-sdk-linux-x64@1.0.14: 0.00 B/46.89 MB
+Downloading cytoscape-fcose@2.2.0: 0.00 B/7.60 MB
+Progress: resolved 1469, reused 0, downloaded 613, added 608
+Progress: resolved 1469, reused 0, downloaded 635, added 637
+Progress: resolved 1469, reused 0, downloaded 696, added 672
+Downloading @microsoft/mxc-sdk@0.8.0: 0.00 B/25.88 MB
+Downloading @typescript/typescript-linux-x64@7.1.0-dev.20260920.1: 5.59 MB/10.11 MB
+Progress: resolved 1469, reused 0, downloaded 795, added 800
+Progress: resolved 1469, reused 0, downloaded 827, added 801
+✓ Lockfile passes supply-chain policies (1706 entries in 31.5s)
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1469, reused 0, downloaded 859, added 862
+Downloading onnxruntime-node@1.30.0: 14.67 MB/113.50 MB
+Progress: resolved 1469, reused 0, downloaded 901, added 896
+Progress: resolved 1469, reused 0, downloaded 923, added 925
+Progress: resolved 1469, reused 0, downloaded 929, added 928
+Progress: resolved 1469, reused 0, downloaded 955, added 957
+Downloading @tloncorp/tlon-skill-linux-x64@0.5.0: 17.33 MB/40.66 MB
+Downloading @tloncorp/tlon-skill-linux-x64@0.5.0: 20.24 MB/40.66 MB
+Downloading @tloncorp/tlon-skill-linux-x64@0.5.0: 32.87 MB/40.66 MB
+Downloading @anthropic-ai/claude-agent-sdk-linux-x64@0.3.274: 16.80 MB/102.59 MB
+Progress: resolved 1469, reused 0, downloaded 1051, added 1032
+Progress: resolved 1469, reused 0, downloaded 1051, added 1045
+Progress: resolved 1469, reused 0, downloaded 1051, added 1055
+Progress: resolved 1469, reused 0, downloaded 1083, added 1086
+Progress: resolved 1469, reused 0, downloaded 1115, added 1118
+Progress: resolved 1469, reused 0, downloaded 1134, added 1120
+Progress: resolved 1469, reused 0, downloaded 1161, added 1152
+Progress: resolved 1469, reused 0, downloaded 1179, added 1182
+Downloading onnxruntime-node@1.30.0: 47.52 MB/113.50 MB
+Progress: resolved 1469, reused 0, downloaded 1210, added 1210
+Progress: resolved 1469, reused 0, downloaded 1239, added 1216
+Downloading @anthropic-ai/claude-agent-sdk-linux-x64@0.3.274: 54.03 MB/102.59 MB
+Progress: resolved 1469, reused 0, downloaded 1255, added 1248
+Downloading onnxruntime-node@1.30.0: 67.78 MB/113.50 MB
+Progress: resolved 1469, reused 0, downloaded 1274, added 1279
+Progress: resolved 1469, reused 0, downloaded 1306, added 1298
+Progress: resolved 1469, reused 0, downloaded 1338, added 1330
+Progress: resolved 1469, reused 0, downloaded 1368, added 1344
+Downloading @anthropic-ai/claude-agent-sdk-linux-x64@0.3.274: 97.61 MB/102.59 MB
+Downloading @openai/codex@0.160.0-linux-x64: 16.80 MB/163.27 MB
+Downloading onnxruntime-node@1.30.0: 108.34 MB/113.50 MB
+Downloading onnxruntime-node@1.30.0: 113.16 MB/113.50 MB
+Downloading @github/copilot-sdk-linux-x64@1.0.14: 16.79 MB/46.89 MB
+Progress: resolved 1469, reused 0, downloaded 1402, added 1393
+Progress: resolved 1469, reused 0, downloaded 1402, added 1406
+Progress: resolved 1469, reused 0, downloaded 1402, added 1408
+Downloading @openai/codex@0.160.0-linux-x64: 24.28 MB/163.27 MB
+Downloading @github/copilot-sdk-linux-x64@1.0.14: 24.39 MB/46.89 MB
+Downloading @github/copilot-sdk-linux-x64@1.0.14: 34.96 MB/46.89 MB
+Downloading @github/copilot-sdk-linux-x64@1.0.14: 41.58 MB/46.89 MB
+Downloading @github/copilot-sdk-linux-x64@1.0.14: 46.80 MB/46.89 MB
+Downloading @openai/codex@0.160.0-linux-x64: 59.40 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 65.78 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 72.43 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 80.65 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 87.40 MB/163.27 MB
+Progress: resolved 1469, reused 0, downloaded 1449, added 1440
+Progress: resolved 1469, reused 0, downloaded 1451, added 1440
+Downloading @openai/codex@0.160.0-linux-x64: 102.38 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 109.91 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 112.79 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 117.53 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 122.97 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 137.99 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 148.94 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 152.58 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 163.27 MB/163.27 MB, done
+Downloading @lancedb/lancedb-linux-x64-gnu@0.39.0: 56.55 MB/72.71 MB
+Progress: resolved 1469, reused 0, downloaded 1463, added 1442
+Progress: resolved 1469, reused 0, downloaded 1463, added 1446
+Progress: resolved 1469, reused 0, downloaded 1463, added 1447
+Progress: resolved 1469, reused 0, downloaded 1463, added 1451
+Progress: resolved 1469, reused 0, downloaded 1463, added 1454
+Progress: resolved 1469, reused 0, downloaded 1463, added 1458
+Progress: resolved 1469, reused 0, downloaded 1463, added 1463
+Progress: resolved 1469, reused 0, downloaded 1463, added 1467
+Packages: +1469
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 1469, reused 0, downloaded 1463, added 1469, done
+.../esbuild@0.28.2/node_modules/esbuild postinstall$ node install.js
+.../esbuild@0.28.2/node_modules/esbuild postinstall: Done
+.../node_modules/@google/genai preinstall$ echo 'preinstall: no-op'
+.../node_modules/@google/genai preinstall: preinstall: no-op
+.../node_modules/@google/genai preinstall: Done
+.../@matrix-org/matrix-sdk-crypto-nodejs postinstall$ node download-lib.js
+.../@matrix-org/matrix-sdk-crypto-nodejs postinstall: Downloading lib matrix-sdk-crypto.linux-x64-gnu.node from https://github.com/matrix-org/matrix-rust-sdk-crypto-nodejs/releases/download/v0.6.6/matrix-sdk-crypto.linux-x64-gnu.node
+.../@matrix-org/matrix-sdk-crypto-nodejs postinstall: 0 b/s - 91.6% [21.7 MB/23.6 MB]
+.../@matrix-org/matrix-sdk-crypto-nodejs postinstall: Download Completed
+.../@matrix-org/matrix-sdk-crypto-nodejs postinstall: Done
+.../node_modules/node-pty install$ node scripts/prebuild.js || node-gyp rebuild
+.../node_modules/node-pty install: [32m> Checking prebuilds...[0m
+.../node_modules/node-pty install: Done
+.../node_modules/node-pty postinstall$ node scripts/post-install.js
+.../node_modules/node-pty postinstall: [32m> Cleaning release folder...[0m
+.../node_modules/node-pty postinstall: [32m> Moving conpty.dll...[0m
+.../node_modules/node-pty postinstall:   SKIPPED (not Windows)
+.../node_modules/node-pty postinstall: Done
+.../node_modules/@tloncorp/tlon-skill postinstall$ node scripts/postinstall.js
+.../node_modules/@tloncorp/tlon-skill postinstall: [tlon-skill] Binary ready: /work/source/node_modules/.pnpm/@tloncorp+tlon-skill-linux-x64@0.5.0/node_modules/@tloncorp/tlon-skill-linux-x64/tlon
+.../node_modules/@tloncorp/tlon-skill postinstall: Done
+.../node_modules/baileys preinstall$ node ./engine-requirements.js
+.../node_modules/baileys preinstall: Done
+. preinstall$ node scripts/preinstall-package-manager-warning.mjs
+. preinstall: Done
+. postinstall$ node scripts/postinstall-bundled-plugins.mjs
+. postinstall: Done
+. prepare$ node scripts/prepare-git-hooks.mjs
+. prepare: Done
+
+dependencies:
++ @agentclientprotocol/sdk 1.4.0
++ @anthropic-ai/sdk 0.127.0
++ @babel/generator 8.0.6
++ @babel/parser 8.0.6
++ @babel/traverse 8.0.6
++ @clack/core 1.5.1
++ @clack/prompts 1.8.1
++ @earendil-works/pi-tui 0.86.1
++ @google/genai 2.23.0
++ @grammyjs/transformer-throttler 1.2.1
++ @homebridge/ciao 1.3.12
++ @lydell/node-pty 1.2.0-beta.15
++ @mistralai/mistralai 2.7.0
++ @modelcontextprotocol/sdk 1.31.0
++ @mozilla/readability 0.6.0
++ @openclaw/ai link:packages/ai
++ @openclaw/fs-safe 0.21.1
++ @openclaw/proxyline 0.3.12
++ @silvia-odwyer/photon-node 0.3.4
++ @trycua/cua-driver 0.28.2
++ acorn 8.18.0
++ chalk 6.0.0
++ chokidar 5.0.0
++ chrome-devtools-mcp 1.9.0
++ clawpdf 0.3.2
++ commander 15.0.0
++ croner 10.0.1
++ diff 9.0.0
++ dotenv 18.0.1
++ entities 8.1.0
++ esbuild 0.28.2
++ execa 10.0.1
++ express 5.2.1
++ file-type 22.1.1
++ grammy 1.46.0
++ highlight.js 11.12.0
++ hosted-git-info 10.1.1
++ iconv-lite 0.7.3
++ ignore 7.0.9
++ import-meta-resolve 4.2.0
++ jiti 2.7.0
++ json5 2.2.3
++ jszip 3.10.2
++ koffi 3.3.1
++ kysely 0.29.6
++ linkedom 0.18.13
++ minimatch 10.2.6
++ node-edge-tts 1.2.10
++ npm 11.20.0
++ openai 7.20.0
++ p-limit 7.3.3
++ p-map 7.0.8
++ partial-json 0.1.7
++ playwright-core 1.63.0
++ qrcode 1.5.4
++ rastermill 0.3.3
++ semver 7.8.5
++ tar 7.5.22
++ tslog 5.2.0
++ typebox 1.3.34
++ undici 8.10.2
++ web-push 3.6.7
++ web-tree-sitter 0.27.0
++ ws 8.21.3
++ yaml 2.9.1
++ zod 4.6.5
+
+optionalDependencies:
++ sqlite-vec 0.1.9
+
+devDependencies:
++ @a2ui/lit 0.11.0
++ @a2ui/web_core 0.11.0
++ @babel/types 8.0.6
++ @copilotkit/aimock 1.42.1
++ @lit-labs/signals 0.3.0
++ @lit/context 1.1.6
++ @lit/task 1.0.3
++ @mdx-js/mdx 3.1.1
++ @openclaw/crabline 0.1.27
++ @openclaw/session-url-contract link:packages/session-url-contract
++ @opentelemetry/sdk-node 0.222.0
++ @pnpm/parse-overrides 1001.0.4
++ @shikijs/core 4.4.3
++ @shikijs/engine-javascript 4.4.3
++ @shikijs/engine-oniguruma 4.4.3
++ @sindresorhus/slugify 3.0.1
++ @types/express 5.0.6
++ @types/hosted-git-info 3.0.5
++ @types/jsdom 30.0.0
++ @types/markdown-it 14.2.0
++ @types/mdast 4.0.4
++ @types/node 26.6.2
++ @types/semver 7.8.0
++ @types/web-push 3.6.4
++ @types/ws 8.18.1
++ @vitest/coverage-v8 5.0.1
++ acpx 0.19.1
++ apache-arrow 21.2.0
++ baileys 7.0.0-rc14
++ htmlparser2 12.0.0
++ ipaddr.js 2.5.0
++ jscpd 5.3.0
++ jsdom 30.1.0
++ lit 3.3.3
++ lit-analyzer 2.0.3
++ markdown-it 15.0.2
++ markdown-it-anchor 10.0.0
++ marked 18.0.13
++ minipass 7.1.3
++ nostr-tools 2.25.2
++ oxfmt 0.68.0
++ oxlint 1.83.0
++ oxlint-tsgolint 7.0.2002
++ pako 3.0.2
++ playwright 1.63.0
++ postcss 8.5.28
++ postcss-lit 1.4.1
++ postcss-selector-parser 7.1.6
++ shiki 4.4.3
++ signal-utils 0.21.1
++ sigstore 5.0.0
++ string-width 8.2.2
++ stylelint 17.15.0
++ stylelint-config-recommended 18.0.0
++ tinyglobby 0.2.17
++ tree-sitter-bash 0.25.1
++ tsdown 0.23.0
++ tsx 4.23.15
++ typescript 7.1.0-dev.20260920.1
++ unrun 0.3.1
++ vite 8.3.0
++ vitest 5.0.1
+
+Done in 2m 17.2s using pnpm v12.5.1
+file:///work/source/docs/strict542/serial-probe598-policy.mjs:23
+    throw new Error('probe refused: observed memory limit is not above the job605 config15 reclaim-thrash peak');
+          ^
+
+Error: probe refused: observed memory limit is not above the job605 config15 reclaim-thrash peak
+    at admitUnifiedGraphCapacity (file:///work/source/docs/strict542/serial-probe598-policy.mjs:23:11)
+    at <anonymous> (/work/source/docs/strict542/isolated-probe598.mts:9:1)
+    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+    at async node:internal/modules/esm/loader:647:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.21.0

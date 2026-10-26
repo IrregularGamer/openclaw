@@ -51,5 +51,7 @@ test('fixed allocator policy preserves caller and pool bounds without raising an
 test('refuses the unified graph at or below the observed reclaim-thrash limit',()=>{
   for (const limitBytes of [UNIFIED_GRAPH_THRASH_LIMIT_BYTES, 1024**3, NaN, undefined])
     assert.throws(()=>admitUnifiedGraphCapacity({...capacity,limitBytes}),/reclaim-thrash/);
+  assert.throws(()=>admitUnifiedGraphCapacity({...capacity,limitBytes:UNIFIED_GRAPH_THRASH_LIMIT_BYTES}),
+    /capacityBytes=2147483648, limitBytes=1625784320,.*floorBytes=1625784320/);
   assert.doesNotThrow(()=>admitUnifiedGraphCapacity({...capacity,limitBytes:UNIFIED_GRAPH_THRASH_LIMIT_BYTES+1}));
 });

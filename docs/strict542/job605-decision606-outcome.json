@@ -1,0 +1,66 @@
+{
+  "action": null,
+  "compiled_source_commit": "918bcd113d3f53506a64d6b6e0ff08069f5f2633",
+  "compiler_started": false,
+  "config15_oom": false,
+  "config15_peak_bytes": null,
+  "config15_started": false,
+  "config15_timeout": false,
+  "decision": 606,
+  "dependency_install": "frozen lock PASS (2m17.2s)",
+  "effective_limit_unobserved_reason": "preexisting refusal did not log capacity; only known not finite or <=floor",
+  "floor_bytes": 1625784320,
+  "hashes": {
+    "job605-decision606-ancestors-after-refusal.json": "061066e8f84eab2fec5718b931c0ee8d9cc310c6c9d49842e916c6ccd8b13d07",
+    "job605-decision606-export.json": "4bdf05de7e2f01d06d8d3eb7c020f0c0538c73a62bdd2b0c384abb427236457a",
+    "job605-decision606-offload.txt": "319e96fef204c804e68806cb8e303654dd1e50967ed23a85c9e2ac86d9bf80f2",
+    "job605-decision606-probe.txt": "ecdb4fdead84b96acfab45c1df4b3fa40096f895d9eb3c3b7bce1bd0337b49f9",
+    "job605-decision606-tests.json": "c17f5866ed8df46c14ac65d9d4da31471b0e94813230346610a17d8ae2963b5a",
+    "job605-decision606-tests.txt": "ab253239ca70e6e665b9bb9fddad3c216bae380b50dcf176749e00d524ab2ac6"
+  },
+  "next_seal": null,
+  "node": "v24.21.0",
+  "observed_effective_limit_bytes": null,
+  "offload_default_budget": {
+    "cpu": 1,
+    "memory_bytes": 2147483648
+  },
+  "offload_exit": 1,
+  "pnpm": "12.5.1",
+  "remaining_gates": [
+    "measured admission resolution at unchanged floor/default budget",
+    "complete supported full build and package",
+    "deterministic runtime receipt",
+    "exact source/action/privilege/next-seal reviews",
+    "automatic queue approval",
+    "595 finite natural-gap genuine HQ handoff"
+  ],
+  "run_count": 1,
+  "runtime_tree": null,
+  "scope": "EVIDENCE_ONLY_NOT_BUILD_OR_INSTALL",
+  "stage": "admitUnifiedGraphCapacity before compiler/config census",
+  "tests": {
+    "node": 101,
+    "passed": 189,
+    "policy": 14,
+    "python_groups": [
+      15,
+      18,
+      13,
+      19,
+      9
+    ],
+    "source_bound_evidence": {
+      "checks": [
+        "gateway-scoped",
+        "native-owner",
+        "supervisor-ipc",
+        "cancellation-settlement",
+        "application-preparation"
+      ],
+      "exit_code": 0,
+      "source_commit": "918bcd113d3f53506a64d6b6e0ff08069f5f2633",
+      "test_log_sha256": "ab253239ca70e6e665b9bb9fddad3c216bae380b50dcf176749e00d524ab2ac6"
+    }
+  }
+}

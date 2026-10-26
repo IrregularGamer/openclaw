@@ -1,0 +1,57 @@
+✔ census preserves every ordered config and alias/source pair including duplicate group names (3.47099ms)
+✔ selection returns the entire original graph by identity (0.77778ms)
+✔ refuses invalid indices, declaration graphs and drifted inventory (3.064864ms)
+✔ one-CPU diagnostic owns fixed native pools without changing caller environment (0.481735ms)
+✔ refuses inherited native worker controls before owner generates limits (1.308499ms)
+✔ admits fixed serial diagnostic only with observed bounded capacity (2.529066ms)
+✔ refuses unknown or oversized capacity and existing output (0.806509ms)
+✔ refuses caller-controlled compiler budget, selection, preload or plugin exclusions (2.899836ms)
+✔ compiler warnings, unresolved imports and unsettled/failed runs refuse success (0.505338ms)
+✔ accepts only the owning tsx launcher cache-disabled value (0.553769ms)
+✔ refuses inherited output and native thread scheduling controls even when empty (0.657466ms)
+✔ refuses inherited allocator controls even when empty or matching generated policy (0.69608ms)
+✔ fixed allocator policy preserves caller and pool bounds without raising any budget (1.562631ms)
+✔ refuses the unified graph at or below the observed reclaim-thrash limit (1.298013ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 337.679484
++ oxlint 1.83.0
++ oxlint-tsgolint 7.0.2002
++ pako 3.0.2
++ playwright 1.63.0
++ postcss 8.5.28
++ postcss-lit 1.4.1
++ postcss-selector-parser 7.1.6
++ shiki 4.4.3
++ signal-utils 0.21.1
++ sigstore 5.0.0
++ string-width 8.2.2
++ stylelint 17.15.0
++ stylelint-config-recommended 18.0.0
++ tinyglobby 0.2.17
++ tree-sitter-bash 0.25.1
++ tsdown 0.23.0
++ tsx 4.23.15
++ typescript 7.1.0-dev.20260920.1
++ unrun 0.3.1
++ vite 8.3.0
++ vitest 5.0.1
+
+Done in 2m 17.2s using pnpm v12.5.1
+file:///work/source/docs/strict542/serial-probe598-policy.mjs:23
+    throw new Error('probe refused: observed memory limit is not above the job605 config15 reclaim-thrash peak');
+          ^
+
+Error: probe refused: observed memory limit is not above the job605 config15 reclaim-thrash peak
+    at admitUnifiedGraphCapacity (file:///work/source/docs/strict542/serial-probe598-policy.mjs:23:11)
+    at <anonymous> (/work/source/docs/strict542/isolated-probe598.mts:9:1)
+    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+    at async node:internal/modules/esm/loader:647:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.21.0

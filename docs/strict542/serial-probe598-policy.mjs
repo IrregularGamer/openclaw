@@ -20,7 +20,10 @@ export function admitProbe(capacity, env, existingOutput) {
 export const UNIFIED_GRAPH_THRASH_LIMIT_BYTES = 1625784320;
 export function admitUnifiedGraphCapacity(capacity) {
   if (!Number.isFinite(capacity.limitBytes) || capacity.limitBytes <= UNIFIED_GRAPH_THRASH_LIMIT_BYTES)
-    throw new Error('probe refused: observed memory limit is not above the job605 config15 reclaim-thrash peak');
+    throw new Error('probe refused: observed memory limit is not above the job605 config15 reclaim-thrash peak; ' +
+      `capacityBytes=${capacity.capacityBytes}, limitBytes=${capacity.limitBytes}, ` +
+      `unresolved=${capacity.unresolved}, usageKnown=${capacity.usageKnown}, ` +
+      `floorBytes=${UNIFIED_GRAPH_THRASH_LIMIT_BYTES}`);
 }
 export function probeSucceeded(result) {
   return result.status === 0 && !result.timedOut && !result.error &&
