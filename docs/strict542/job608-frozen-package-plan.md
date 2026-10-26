@@ -22,9 +22,13 @@ The actual next export/launcher still requires exact independent review.
   preflight/receipt helper; it launches no command and changes no runtime state.
 - [x] Wire checks before install, before deploy and before build evidence; retain
   exact command and record source/target lock and deploy-log hashes.
-- [ ] Correct the injection advice, run focused checks, commit/push and obtain
+- [x] Correct the injection advice, run focused checks, commit/push and obtain
   independent exact source review. The final complete scoped suite and real
   packaging run remain admitted-offload requirements from committed source.
+
+Independent source review6e687401 covers the corrected62b41567 guard. The admitted
+c1bf240d scoped run subsequently passed209 checks including all6 package guard
+checks, plus3 real typed-inventory checks. Actual packaging remains unexecuted.
 
 Constraints: no installed/sealed/root/unit/service/config changes; default2GiB/1CPU;
 no provider/auth/config transfer; no binary upload; full typed build and every

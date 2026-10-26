@@ -14,8 +14,12 @@ never an input to another source-only export.
 c1bf240d selects the existing owning unit-fast shard, retaining one worker,
 no file parallelism and passWithNoTests=false.0041793a additionally includes
 the six frozen-package guard tests in the consumer. The separate c1bf240d
-inventory run is only scoped verification; its actual outcome must be recorded
-before considering the conditional next-run review satisfied.
+inventory run completed exit0:209 scoped checks and all3 typed inventory checks
+passed. Exact returned log/JSON hashes and counts are committed in
+job608-inventory-outcome.json and its adjacent evidence. This satisfies the
+scoped-result prerequisite of independent conditional review11b14be3; the fresh
+worker/admission/exact-export conditions remain mandatory. No native/parity/
+config15/build/package/application result is supplied by those212 checks.
 
 ## Next finite stage, in a fresh worker
 
