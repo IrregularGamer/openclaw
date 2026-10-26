@@ -60,12 +60,12 @@ both changed runners passed.
 
 Use only the existing admitted 2GiB/1CPU broker path:
 
-    offload run --artifacts result608-inventory -- timeout -k 15s 480s sh run608.sh
+    offload run --artifacts result608-inventory -- timeout -k 10s 300s sh run608.sh
 
 The primary must commit the exact export manifest first and confirm ordinary
 settlement/admission. At review verification time11:39:58UTC, the primary's
 worker expiry is11:50UTC. Admit only while enough worker lifetime remains for
-the full480s deadline,15s kill grace, transfer and result/settlement handling;
+the full300s deadline,10s kill grace, transfer and result/settlement handling;
 otherwise defer. Keep the foreground session alive through settlement. A
 refusal, timeout, transport loss, missing result or failed test requires
 preserved evidence/reconciliation and grants no automatic further retry.
