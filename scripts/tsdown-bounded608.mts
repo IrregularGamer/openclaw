@@ -3,7 +3,7 @@ import { performance } from 'node:perf_hooks';
 import { readProcessMemoryCapacity } from './lib/process-memory.mts';
 import { BOUNDED_COMPILER_ENV, UNIFIED_GRAPH_THRASH_LIMIT_BYTES,
   typedConfigCensus, boundedConfigIndices, boundedResultSucceeded } from './lib/bounded-package608.mjs';
-const stage=process.argv[2];
+const stage=process.argv[2] ?? '';
 if (process.argv.length !== 3 || !['ai','packages','unified'].includes(stage)) throw new Error('invalid bounded compiler stage');
 for (const [key,value] of Object.entries(BOUNDED_COMPILER_ENV)) {
   if (process.env[key] !== value) throw new Error('bounded compiler policy not inherited: '+key);
