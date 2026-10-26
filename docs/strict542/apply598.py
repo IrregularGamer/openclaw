@@ -6,6 +6,7 @@ import fcntl
 import importlib.util
 import json
 import os
+import re
 from pathlib import Path
 import shutil
 import signal
@@ -148,6 +149,11 @@ def queue_approved(reviews,prep):
             and isinstance(actual[3],str)
             and prep.sha(actual[3].encode()) == review.get('queue_result_sha256'),
             'actual automatic queue approval is missing or differs')
+    # Match the first verdict exactly as agentq's review transition does. Ancestor
+    # builds may become done after a successor, so done alone is not approval.
+    verdict=re.search(r'VERDICT:\s*(APPROVE|CHANGES)',actual[3])
+    require(verdict is not None and verdict.group(1) == 'APPROVE',
+            'actual automatic queue review did not approve this build')
 
 def load(prep):
     action=read(STAGE/'action.json');tree=read(STAGE/'tree.json');reviews=read(STAGE/'reviews.json')

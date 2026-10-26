@@ -45,6 +45,11 @@ class GuardedApplication(unittest.TestCase):
             with self.assertRaisesRegex(PermissionError,'actual automatic queue approval'):a.queue_approved([review],prep)
             with sqlite3.connect(a.DB) as db:db.execute("UPDATE jobs SET status='done' WHERE id=608")
             a.queue_approved([review],prep)
+            for refused in ('VERDICT: CHANGES', 'VERDICT: CHANGES\nVERDICT: APPROVE', 'no verdict'):
+                with sqlite3.connect(a.DB) as db:db.execute('UPDATE jobs SET result=? WHERE id=609',(refused,))
+                with self.assertRaisesRegex(PermissionError,'did not approve'):
+                    a.queue_approved([{**review,'queue_result_sha256':digest(refused.encode())}],prep)
+            with sqlite3.connect(a.DB) as db:db.execute('UPDATE jobs SET result=? WHERE id=609',(result,))
             for key,value in [('build_job_id',598),('review_job_id',999),('queue_result_sha256','f'*64)]:
                 with self.assertRaises(PermissionError):a.queue_approved([{**review,key:value}],prep)
             with sqlite3.connect(a.DB) as db:db.execute('UPDATE jobs SET parent_id=598 WHERE id=609')

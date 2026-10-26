@@ -11,7 +11,9 @@ real automatic queue review must identify build608 and its actual positive revie
 job ID and queue result SHA256. Immediately before application the helper reads
 the queue read-only:608 must be a done build, and the specified job must be a done
 review parented to608 with exactly the externally reviewed result bytes. No queue
-state is changed. The queue's own status transition remains the approval owner.
+state is changed. The exact result must also have an APPROVE first verdict,
+using the existing queue transition syntax. Done ancestors and done CHANGES
+reviews cannot substitute for this build's actual approval. The queue's own status transition remains the approval owner.
 Future queue review identities cannot be invented during preparation.
 
 The new fixture checks reject absent seal/automatic review, obsolete598 identity,
