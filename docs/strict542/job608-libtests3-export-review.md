@@ -25,7 +25,7 @@ These are compile4's post-metadata release owners, including the changed prepare
 
 The fixed libtests branch runs `cargo test --locked --release --jobs 1 -p rolldown --lib`, after the shared seven lifetime tests and retention negative control. It does not build the addon. It rejects inherited compiler controls; digest-pinned Rust 1.98.1 and cmake 3.31.6 are installed only under disposable `.native608`, with Cargo jobs 1, release codegen units 64, LTO false and opt level 3. It changes no installed files, services, privileges, seal, provider settings or production state. No RAM/CPU override is supplied: normal admitted offload remains 2 GiB/1 CPU.
 
-ONE future command, after the sole active compile4 run launched at 21:14Z has settled and its outcome has been reconciled:
+ONE future command, after the sole active compile4 run launched at 21:12:57Z in the worker that started at 21:12:00Z has settled and its outcome has been reconciled (launch recorded in `/home/deploy/agentq/runs/608/NOTES.md`):
 
 ```sh
 offload run --artifacts result-native608-libtests -- timeout -k 15s 2700s sh run608.sh libtests
