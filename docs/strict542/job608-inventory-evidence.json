@@ -1,0 +1,1 @@
+{"exit_code": 0, "kind": "SCOPED_TESTS_ONLY_NOT_BUILD_OR_APPLICATION", "source_commit": "c1bf240d6c9f429c72adeb5ab750e3a158ce06e9", "test_log_sha256": "b1be0804d6afd49b3319353a7afb3a79665eb2dbd00fa42550cc3ba4e5e5ab28", "typed_inventory_tests": 3, "vitest_sha256": "14b05ae3aca615c9b6358adf51eff311169eda173f3ed14d5290144b6870257f"}

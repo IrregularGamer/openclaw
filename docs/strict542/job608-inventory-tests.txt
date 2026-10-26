@@ -1,0 +1,560 @@
+(node:48) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ actual selected memory source owners
+  ✔ preserves ordinary egress redaction refresh while the new decoder stays read-only (7.505093ms)
+  ✔ records the controller's committed route after preparation and refresh overlays (10.310739ms)
+  ✔ refuses model headers and owner-attached transport overrides on capture and completion (1.943716ms)
+  ✔ reads the concrete session and decodes only its already selected memory credential (2.430817ms)
+  ✔ invalidates an existing lease through the actual owner mutation (1.387002ms)
+  ✔ invalidates an existing lease through the actual owner mutation (1.889758ms)
+  ✔ invalidates an existing lease through the actual owner mutation (1.151095ms)
+  ✔ invalidates an existing lease through the actual owner mutation (1.863555ms)
+  ✔ invalidates an existing lease through the actual owner mutation (1.491398ms)
+  ✔ refuses a key without producer selection and never resolves a stored or fallback key (1.569029ms)
+  ✔ invalidates on an auth reload and refuses instead of selecting storage credentials (0.932785ms)
+  ✔ rejects an undecodable process-local sentinel without credential fallback (0.796608ms)
+  ✔ fences the exact active-run registration and rejects its replacement (2.504978ms)
+✔ actual selected memory source owners (41.762169ms)
+▶ selected existing memory auth read
+  ✔ accepts the exact active OAuth model and finite unexpired selected credential (3.758052ms)
+  ✔ accepts explicit API-key selection without an expiry (0.322708ms)
+  ✔ refuses unsupported or absent selected mode undefined (0.333247ms)
+  ✔ refuses unsupported or absent selected mode  (0.249281ms)
+  ✔ refuses unsupported or absent selected mode token (0.322835ms)
+  ✔ refuses unsupported or absent selected mode aws-sdk (0.220791ms)
+  ✔ refuses unsupported or absent selected mode native (0.237645ms)
+  ✔ refuses unsupported or absent selected mode configured (0.31585ms)
+  ✔ refuses OAuth with unusable expiry undefined (0.454924ms)
+  ✔ refuses OAuth with unusable expiry null (0.521857ms)
+  ✔ refuses OAuth with unusable expiry NaN (0.225243ms)
+  ✔ refuses OAuth with unusable expiry Infinity (0.159594ms)
+  ✔ refuses OAuth with unusable expiry -Infinity (0.144517ms)
+  ✔ refuses OAuth with unusable expiry 999 (0.134269ms)
+  ✔ refuses OAuth with unusable expiry 1000 (0.156251ms)
+  ✔ refuses missing or placeholder memory selection undefined (0.220272ms)
+  ✔ refuses missing or placeholder memory selection  (0.125199ms)
+  ✔ refuses missing or placeholder memory selection    (0.122008ms)
+  ✔ refuses missing or placeholder memory selection __aws_sdk_auth__ (0.128357ms)
+  ✔ refuses an override that was not installed by the model/auth selector (0.243311ms)
+  ✔ refuses a selected modelId from a different route (0.224869ms)
+  ✔ refuses a selected api from a different route (0.146316ms)
+  ✔ refuses a selected baseUrl from a different route (0.178982ms)
+  ✔ expires before the before/after acceptance check without a refresh (0.825811ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.349975ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.265843ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.250718ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.292135ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.290068ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.257926ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.256104ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.281962ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.392215ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.255845ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.254949ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.28356ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.25542ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.263235ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.271155ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.300575ms)
+  ✔ refuses absent, disposed or unidentified concrete sessions (0.295294ms)
+  ✔ refuses absent, disposed or unidentified concrete sessions (0.193861ms)
+  ✔ refuses absent, disposed or unidentified concrete sessions (0.22088ms)
+  ✔ invalidates an ABA auth replacement even with identical final key bytes (0.360683ms)
+  ✔ invalidates a route round trip recorded by the actual model mutation epoch (0.321488ms)
+  ✔ rechecks after auth capture before returning a session lease (0.364116ms)
+✔ selected existing memory auth read (22.628468ms)
+(node:62) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ accepts exact native result only with settled acknowledgement (22.966716ms)
+✔ cancellation waits for explicit native settled acknowledgement (83.510133ms)
+✔ EOF without settlement refuses (4.081126ms)
+✔ cancellation without native acknowledgement refuses by shared deadline (253.745246ms)
+✔ wrong correlation, nonsettled, malformed owner and oversize refuse (24.112947ms)
+✔ deadline above 10 seconds and already cancelled refuse before connection (1.837186ms)
+✔ native owner decoder refuses caller echoes and extra fields (1.574095ms)
+✔ actual Node to Python adapter accepts pinned predicates and acknowledges settled cancellation (2133.052104ms)
+▶ usage.preflight exact542 request schema
+  ✔ accepts exactly the exact542 keys (4.318602ms)
+  ✔ refuses extra, missing and malformed keys (1.817958ms)
+✔ usage.preflight exact542 request schema (11.48339ms)
+▶ usage.preflight acceptance
+  ✔ returns verified fresh AVAILABLE windows for the actual active route (11.731177ms)
+  ✔ never serves cache or historical success (2.966453ms)
+✔ usage.preflight acceptance (16.256239ms)
+▶ usage.preflight identity and route refusals
+  ✔ refuses unknown agent (3.64548ms)
+  ✔ refuses wrong HQ session (1.310131ms)
+  ✔ refuses wrong owner name (1.555134ms)
+  ✔ refuses PID1 placeholder (1.603822ms)
+  ✔ refuses PID reuse (start differs) (1.576455ms)
+  ✔ refuses model drift (1.625483ms)
+  ✔ refuses provider drift (1.563324ms)
+  ✔ refuses an idle/unbound session (1.069367ms)
+  ✔ refuses ambiguous or missing in-memory auth (1.359597ms)
+  ✔ refuses expired auth with zero provider, refresh or write calls (0.883918ms)
+  ✔ never sends the token to a non-default or non-Anthropic route (1.461792ms)
+  ✔ refuses API-key auth and models without known window applicability (1.277051ms)
+  ✔ refuses native owner refusal, unavailability and owner change after the read (2.726354ms)
+  ✔ refuses auth/account or model replacement observed after the provider GET (2.852667ms)
+✔ usage.preflight identity and route refusals (29.775411ms)
+▶ usage.preflight provider window refusals
+  ✔ refuses empty, partial, malformed, nonfinite and out-of-range windows (20.656009ms)
+  ✔ reports UNAVAILABLE for any exhausted applicable window, including above 100% (2.245152ms)
+  ✔ reports UNAVAILABLE for exhausted non-applicable or unlisted-but-known windows (1.42448ms)
+  ✔ reports UNAVAILABLE when an exhausted window accompanies a missing one (0.936585ms)
+  ✔ does not let non-applicable windows mask exhaustion or a missing window (2.749012ms)
+  ✔ refuses 401/403/429/5xx, unexpected status, network failure and body errors (4.641137ms)
+✔ usage.preflight provider window refusals (37.463854ms)
+▶ usage.preflight deadline, cancellation and clocks
+  ✔ refuses a late provider response after the shared deadline (2.414634ms)
+  ✔ aborts a hanging provider GET at the real deadline with no later publication (1002.35912ms)
+  ✔ propagates caller cancellation to the provider transport (12.016614ms)
+  ✔ refuses an already-cancelled request without native or provider work (0.848915ms)
+  ✔ refuses wall-clock anomalies (1.070799ms)
+✔ usage.preflight deadline, cancellation and clocks (1020.261231ms)
+▶ strict Anthropic usage GET
+  ✔ sends one GET with no redirect, cache or retry and hides error bodies (129.952107ms)
+  ✔ parses JSON, bounds the body and maps aborts (6.132274ms)
+✔ strict Anthropic usage GET (136.89005ms)
+▶ gateway registration
+  ✔ registers usage.preflight as an operator.read method and keeps usage.status (0.743955ms)
+  ✔ leaves the usage.status handler byte-identical (2.667895ms)
+  ✔ binds preflight only to the strict dependencies and refuses unauthenticated clients (1.006643ms)
+✔ gateway registration (5.244889ms)
+ℹ tests 101
+ℹ suites 9
+ℹ pass 101
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6219.685133
+test_actual_existing_predicates_accept_root_gateway_peer (test_native_owner_server.NativeTransport.test_actual_existing_predicates_accept_root_gateway_peer) ... ok
+test_cancel_ack_means_actual_child_reaped (test_native_owner_server.NativeTransport.test_cancel_ack_means_actual_child_reaped) ... ok
+test_escaped_descendant_is_adopted_and_settled_with_pidfd (test_native_owner_server.NativeTransport.test_escaped_descendant_is_adopted_and_settled_with_pidfd) ... ok
+test_exited_leader_does_not_publish_before_descendant_settlement (test_native_owner_server.NativeTransport.test_exited_leader_does_not_publish_before_descendant_settlement) ... ok
+test_external_pin_drift_refuses_before_execution (test_native_owner_server.NativeTransport.test_external_pin_drift_refuses_before_execution) ... ok
+test_extra_keys_and_overlong_deadline_refuse_without_work (test_native_owner_server.NativeTransport.test_extra_keys_and_overlong_deadline_refuse_without_work) ... ok
+test_grandchild_holding_stdout_is_killed_and_reaped_before_ack (test_native_owner_server.NativeTransport.test_grandchild_holding_stdout_is_killed_and_reaped_before_ack) ... ok
+test_ignored_sigterm_is_killed_and_reaped_before_ack (test_native_owner_server.NativeTransport.test_ignored_sigterm_is_killed_and_reaped_before_ack) ... ok
+test_native_caller_cgroup_refuses_queue (test_native_owner_server.NativeTransport.test_native_caller_cgroup_refuses_queue) ... ok
+test_native_mainpid_refuses_other_gateway (test_native_owner_server.NativeTransport.test_native_mainpid_refuses_other_gateway) ... ok
+test_nonroot_endpoint_refuses_without_work (test_native_owner_server.NativeTransport.test_nonroot_endpoint_refuses_without_work) ... ok
+test_peer_start_change_between_actual_owner_checks_refuses (test_native_owner_server.NativeTransport.test_peer_start_change_between_actual_owner_checks_refuses) ... ok
+test_root_endpoint_outside_gateway_cgroup_refuses (test_native_owner_server.NativeTransport.test_root_endpoint_outside_gateway_cgroup_refuses) ... ok
+test_shared_deadline_terminates_and_reaps (test_native_owner_server.NativeTransport.test_shared_deadline_terminates_and_reaps) ... ok
+test_subreaper_setup_failure_refuses_without_work (test_native_owner_server.NativeTransport.test_subreaper_setup_failure_refuses_without_work) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 1.587s
+
+OK
+test_actual_synthetic_child_is_killed_and_reaped_on_cancel (test_native_preparation.NativePreparation.test_actual_synthetic_child_is_killed_and_reaped_on_cancel) ... ok
+test_actual_synthetic_child_is_killed_and_reaped_on_timeout (test_native_preparation.NativePreparation.test_actual_synthetic_child_is_killed_and_reaped_on_timeout) ... ok
+test_bad_mainpid_refuses (test_native_preparation.NativePreparation.test_bad_mainpid_refuses) ... ok
+test_cancel_refuses_and_restores_handlers (test_native_preparation.NativePreparation.test_cancel_refuses_and_restores_handlers) ... ok
+test_cli_read_precedes_controller_and_mutating_error_handler (test_native_preparation.NativePreparation.test_cli_read_precedes_controller_and_mutating_error_handler) ... ok
+test_deadline_covers_all_native_checks (test_native_preparation.NativePreparation.test_deadline_covers_all_native_checks) ... ok
+test_deadline_invalid_expired_and_overlong (test_native_preparation.NativePreparation.test_deadline_invalid_expired_and_overlong) ... ok
+test_derived_identity_and_existing_predicate_before_after (test_native_preparation.NativePreparation.test_derived_identity_and_existing_predicate_before_after) ... ok
+test_exact_existing_cgroup_predicate_refuses_queue (test_native_preparation.NativePreparation.test_exact_existing_cgroup_predicate_refuses_queue) ... ok
+test_gateway_mainpid_change_refuses (test_native_preparation.NativePreparation.test_gateway_mainpid_change_refuses) ... ok
+test_missing_or_malformed_proc_refuses (test_native_preparation.NativePreparation.test_missing_or_malformed_proc_refuses) ... ok
+test_nonroot_refuses (test_native_preparation.NativePreparation.test_nonroot_refuses) ... ok
+test_nonzero_systemctl_refuses (test_native_preparation.NativePreparation.test_nonzero_systemctl_refuses) ... ok
+test_root_with_valid_gateway_but_queue_caller_refuses (test_native_preparation.NativePreparation.test_root_with_valid_gateway_but_queue_caller_refuses) ... ok
+test_second_owner_check_caller_cgroup_change_refuses (test_native_preparation.NativePreparation.test_second_owner_check_caller_cgroup_change_refuses) ... ok
+test_second_owner_check_root_loss_refuses (test_native_preparation.NativePreparation.test_second_owner_check_root_loss_refuses) ... ok
+test_second_owner_check_start_change_refuses (test_native_preparation.NativePreparation.test_second_owner_check_start_change_refuses) ... ok
+test_start_change_refuses (test_native_preparation.NativePreparation.test_start_change_refuses) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.736s
+
+OK
+test_endpoint_idle_lifetime_and_parent_death_refuse (test_root_owner_supervisor.RootSupervisor.test_endpoint_idle_lifetime_and_parent_death_refuse) ... ok
+test_gateway_mainpid_change_ends_before_cpu_or_next_request (test_root_owner_supervisor.RootSupervisor.test_gateway_mainpid_change_ends_before_cpu_or_next_request) ... ok
+test_gateway_pidfd_exit_and_cpu_budget_end_monitor (test_root_owner_supervisor.RootSupervisor.test_gateway_pidfd_exit_and_cpu_budget_end_monitor) ... ok
+test_parent_sigkill_cancels_real_native_tree_before_receipt (test_root_owner_supervisor.RootSupervisor.test_parent_sigkill_cancels_real_native_tree_before_receipt) ... ok
+test_partial_framing_has_absolute_deadline_and_checks_lifecycle (test_root_owner_supervisor.RootSupervisor.test_partial_framing_has_absolute_deadline_and_checks_lifecycle) ... ok
+test_placement_mismatch_refuses_without_limits_or_serving (test_root_owner_supervisor.RootSupervisor.test_placement_mismatch_refuses_without_limits_or_serving) ... ok
+test_real_fd3_endpoint_and_escaped_descendant_settle_on_shutdown (test_root_owner_supervisor.RootSupervisor.test_real_fd3_endpoint_and_escaped_descendant_settle_on_shutdown) ... ok
+test_reviewed_server_bytes_and_isolated_external_pin (test_root_owner_supervisor.RootSupervisor.test_reviewed_server_bytes_and_isolated_external_pin) ... ok
+test_self_only_exact_cgroup_placement_and_limits (test_root_owner_supervisor.RootSupervisor.test_self_only_exact_cgroup_placement_and_limits) ... ok
+test_server_pin_drift_refuses_before_execution (test_root_owner_supervisor.RootSupervisor.test_server_pin_drift_refuses_before_execution) ... ok
+test_socket_parent_writable_refuses_before_bind (test_root_owner_supervisor.RootSupervisor.test_socket_parent_writable_refuses_before_bind) ... ok
+test_source_path_writable_or_symlink_refuses (test_root_owner_supervisor.RootSupervisor.test_source_path_writable_or_symlink_refuses) ... ok
+test_worker_and_nonroot_and_argument_contexts_refuse_before_source (test_root_owner_supervisor.RootSupervisor.test_worker_and_nonroot_and_argument_contexts_refuse_before_source) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.351s
+
+OK
+test_action_binding_and_independent_reviews (test_application598.PreparationTests.test_action_binding_and_independent_reviews) ... ok
+test_action_native_hash_refuses_without_patch (test_application598.PreparationTests.test_action_native_hash_refuses_without_patch) ... ok
+test_action_stage_tamper_refuses (test_application598.PreparationTests.test_action_stage_tamper_refuses) ... ok
+test_check_tree_revalidates_all_evidence_shape (test_application598.PreparationTests.test_check_tree_revalidates_all_evidence_shape) ... ok
+test_deterministic_tree (test_application598.PreparationTests.test_deterministic_tree) ... ok
+test_escaping_and_absolute_symlinks_refuse (test_application598.PreparationTests.test_escaping_and_absolute_symlinks_refuse) ... ok
+test_fixture_cannot_claim_built (test_application598.PreparationTests.test_fixture_cannot_claim_built) ... ok
+test_fixture_receipt_cannot_be_promoted (test_application598.PreparationTests.test_fixture_receipt_cannot_be_promoted) ... ok
+test_internal_symlink_is_recorded (test_application598.PreparationTests.test_internal_symlink_is_recorded) ... ok
+test_missing_dependency_or_dist_refuses (test_application598.PreparationTests.test_missing_dependency_or_dist_refuses) ... ok
+test_nonzero_build_and_tampered_log_refuse (test_application598.PreparationTests.test_nonzero_build_and_tampered_log_refuse) ... ok
+test_receipt_output_cannot_overwrite (test_application598.PreparationTests.test_receipt_output_cannot_overwrite) ... ok
+test_runtime_mutation_refuses_validation (test_application598.PreparationTests.test_runtime_mutation_refuses_validation) ... ok
+test_runtime_root_mode_refuses (test_application598.PreparationTests.test_runtime_root_mode_refuses) ... ok
+test_secret_names_refuse (test_application598.PreparationTests.test_secret_names_refuse) ... ok
+test_source_reference_and_lock_drift_refuse (test_application598.PreparationTests.test_source_reference_and_lock_drift_refuse) ... ok
+test_special_file_fifo_refuses (test_application598.PreparationTests.test_special_file_fifo_refuses) ... ok
+test_tree_rejects_setuid (test_application598.PreparationTests.test_tree_rejects_setuid) ... ok
+test_unknown_target_or_missing_seal_refuses (test_application598.PreparationTests.test_unknown_target_or_missing_seal_refuses) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.165s
+
+OK
+test_file_ancestor_refuses (test_apply598.Application.test_file_ancestor_refuses) ... ok
+test_new_release_parent_directories (test_apply598.Application.test_new_release_parent_directories) ... ok
+test_symlink_ancestor_refuses (test_apply598.Application.test_symlink_ancestor_refuses) ... ok
+test_absolute_lifetime_interrupts_with_refusal (test_apply598.GuardedApplication.test_absolute_lifetime_interrupts_with_refusal) ... ok
+test_intermediate_directory_replacement_cannot_redirect_privileged_write (test_apply598.GuardedApplication.test_intermediate_directory_replacement_cannot_redirect_privileged_write) ... ok
+test_native_quiet_refuses_fixture_or_remote_uncertainty (test_apply598.GuardedApplication.test_native_quiet_refuses_fixture_or_remote_uncertainty) ... ok
+test_native_quiet_requires_valid_registered_worker (test_apply598.GuardedApplication.test_native_quiet_requires_valid_registered_worker) ... ok
+test_original_seal_accepts_only_exact_existing_link_and_target_bytes (test_apply598.GuardedApplication.test_original_seal_accepts_only_exact_existing_link_and_target_bytes) ... ok
+test_previous_application_journal_refuses_replay (test_apply598.GuardedApplication.test_previous_application_journal_refuses_replay) ... ok
+test_queue_gate_requires_actual_done_build_matching_review_and_exact_result (test_apply598.GuardedApplication.test_queue_gate_requires_actual_done_build_matching_review_and_exact_result) ... ok
+test_unchanged_guard_drift_refuses_final_verification (test_apply598.GuardedApplication.test_unchanged_guard_drift_refuses_final_verification) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.078s
+
+OK
+test_rebuilt_addon_or_receipt_drift_never_publishes_native_directory (test_native_consumer608.SourceOnlyConsumer.test_rebuilt_addon_or_receipt_drift_never_publishes_native_directory) ... ok
+test_uploaded_binary_or_redirected_receipt_refuses_before_compilation (test_native_consumer608.SourceOnlyConsumer.test_uploaded_binary_or_redirected_receipt_refuses_before_compilation) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.023s
+
+OK
+test_caller_package_policy_refuses_even_empty (test_frozen_package608.FrozenPackage.test_caller_package_policy_refuses_even_empty) ... ok
+test_legacy_fallback_or_postphase_drift_never_emits_receipt (test_frozen_package608.FrozenPackage.test_legacy_fallback_or_postphase_drift_never_emits_receipt) ... ok
+test_lifecycle_cooldown_and_lock_trust_overlays_refuse (test_frozen_package608.FrozenPackage.test_lifecycle_cooldown_and_lock_trust_overlays_refuse) ... ok
+test_missing_or_redirected_target_lock_refuses (test_frozen_package608.FrozenPackage.test_missing_or_redirected_target_lock_refuses) ... ok
+test_original_source_or_config_drift_refuses (test_frozen_package608.FrozenPackage.test_original_source_or_config_drift_refuses) ... ok
+test_success_records_both_lock_identities_and_exclusive_receipt (test_frozen_package608.FrozenPackage.test_success_records_both_lock_identities_and_exclusive_receipt) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.024s
+
+OK
+✔ bounded package preserves observed capacity floor and refuses compiler overrides (4.946947ms)
+✔ whole config selection retains object identity and exact typed inventory (3.660454ms)
+✔ bounded compiler stages cannot skip canonical typed gates (1.209561ms)
+✔ compiler scanner failures and timeout cannot become package evidence (3.009113ms)
+✔ consumed archives and private store release preserves installed bytes and links (16.82161ms)
+✔ escaping installed link refuses before deleting store (8.240637ms)
+✔ unsupported install policy and archive symlinks refuse (6.900481ms)
+✔ census preserves every ordered config and alias/source pair including duplicate group names (9.492619ms)
+✔ selection returns the entire original graph by identity (2.177592ms)
+✔ refuses invalid indices, declaration graphs and drifted inventory (5.870752ms)
+✔ one-CPU diagnostic owns fixed native pools without changing caller environment (1.072467ms)
+✔ refuses inherited native worker controls before owner generates limits (3.016552ms)
+✔ accepts matching compile and lib-test stage receipts with the pinned addon (13.175743ms)
+✔ refuses missing, swapped, failed or disagreeing stage receipts and a changed addon (62.296371ms)
+✔ admits fixed serial diagnostic only with observed bounded capacity (3.065675ms)
+✔ refuses unknown or oversized capacity and existing output (0.964438ms)
+✔ refuses caller-controlled compiler budget, selection, preload or plugin exclusions (6.191543ms)
+✔ compiler warnings, unresolved imports and unsettled/failed runs refuse success (0.766185ms)
+✔ accepts only the owning tsx launcher cache-disabled value (0.820351ms)
+✔ refuses inherited output and native thread scheduling controls even when empty (0.936308ms)
+✔ refuses inherited allocator controls even when empty or matching generated policy (0.899601ms)
+✔ fixed allocator policy preserves caller and pool bounds without raising any budget (2.394828ms)
+✔ refuses the unified graph at or below the observed reclaim-thrash limit (1.731947ms)
+✔ refuses caller-selected native addon even when empty (1.385197ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1326.725525
+Scope: all 186 workspace projects
+. pnpm:devPreinstall$ node scripts/check-install-dependency-ownership.mjs
+. pnpm:devPreinstall: Done
+? Verifying lockfile against supply-chain policies (1706 entries)...
+Packages are copied from the content-addressable store to the virtual store.
+  Content-addressable store is at: /work/.pnpm-store/v11
+  Virtual store is at:             node_modules/.pnpm
+[WARN] Tarball download average speed 24 KiB/s (size 35 KiB) is below 50 KiB/s: https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.2.tgz (GET)
+Downloading @anthropic-ai/claude-agent-sdk-linux-x64@0.3.274: 0.00 B/102.59 MB
+[WARN] Tarball download average speed 20 KiB/s (size 20 KiB) is below 50 KiB/s: https://registry.npmjs.org/vfile/-/vfile-6.0.3.tgz (GET)
+[WARN] Tarball download average speed 22 KiB/s (size 31 KiB) is below 50 KiB/s: https://registry.npmjs.org/unhomoglyph/-/unhomoglyph-1.0.6.tgz (GET)
+[WARN] Tarball download average speed 49 KiB/s (size 87 KiB) is below 50 KiB/s: https://registry.npmjs.org/@audio/decode-opus/-/decode-opus-1.3.1.tgz (GET)
+[WARN] Tarball download average speed 43 KiB/s (size 77 KiB) is below 50 KiB/s: https://registry.npmjs.org/bignumber.js/-/bignumber.js-9.3.1.tgz (GET)
+Downloading mermaid@11.17.2: 0.00 B/17.79 MB
+Downloading mermaid@11.17.2: 429.76 kB/17.79 MB
+Downloading @typescript/typescript-linux-x64@7.1.0-dev.20260920.1: 0.00 B/10.11 MB
+[WARN] Tarball download average speed 32 KiB/s (size 44 KiB) is below 50 KiB/s: https://registry.npmjs.org/html-to-text/-/html-to-text-10.0.1.tgz (GET)
+[WARN] Tarball download average speed 21 KiB/s (size 43 KiB) is below 50 KiB/s: https://registry.npmjs.org/digest-fetch/-/digest-fetch-1.3.0.tgz (GET)
+Progress: resolved 1469, reused 0, downloaded 229, added 224
+[WARN] Tarball download average speed 43 KiB/s (size 141 KiB) is below 50 KiB/s: https://registry.npmjs.org/@exodus/bytes/-/bytes-1.15.1.tgz (GET)
+Downloading cytoscape-fcose@2.2.0: 0.00 B/7.60 MB
+Progress: resolved 1469, reused 0, downloaded 320, added 307
+Downloading @tloncorp/tlon-skill-linux-x64@0.5.0: 0.00 B/40.66 MB
+Downloading @oxlint-tsgolint/linux-x64@7.0.2002: 0.00 B/7.76 MB
+Progress: resolved 1469, reused 0, downloaded 359, added 352
+Downloading @microsoft/mxc-sdk@0.8.0: 0.00 B/25.88 MB
+Progress: resolved 1469, reused 0, downloaded 370, added 352
+Progress: resolved 1469, reused 0, downloaded 381, added 372
+[WARN] Tarball download average speed 46 KiB/s (size 88 KiB) is below 50 KiB/s: https://registry.npmjs.org/signal-utils/-/signal-utils-0.21.1.tgz (GET)
+Downloading @oxlint/binding-linux-x64-gnu@1.83.0: 0.00 B/6.51 MB
+Progress: resolved 1469, reused 0, downloaded 411, added 393
+Progress: resolved 1469, reused 0, downloaded 442, added 416
+Downloading @openai/codex@0.160.0-linux-x64: 0.00 B/163.27 MB
+Downloading onnxruntime-node@1.30.0: 0.00 B/113.50 MB
+Downloading @rolldown/binding-linux-x64-gnu@1.2.9: 0.00 B/7.92 MB
+Progress: resolved 1469, reused 0, downloaded 525, added 512
+Downloading node-pty@1.2.0-beta.15: 0.00 B/7.15 MB
+Progress: resolved 1469, reused 0, downloaded 571, added 567
+[WARN] Tarball download average speed 6 KiB/s (size 9 KiB) is below 50 KiB/s: https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz (GET)
+Downloading @trycua/cua-driver-linux-x64-gnu@0.28.2: 0.00 B/13.49 MB
+Downloading @github/copilot-sdk-linux-x64@1.0.14: 0.00 B/46.89 MB
+Downloading @lancedb/lancedb-linux-x64-gnu@0.39.0: 0.00 B/72.71 MB
+Progress: resolved 1469, reused 0, downloaded 666, added 663
+Progress: resolved 1469, reused 0, downloaded 698, added 704
+✓ Lockfile passes supply-chain policies (1706 entries in 24.2s)
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1469, reused 0, downloaded 762, added 764
+Progress: resolved 1469, reused 0, downloaded 794, added 775
+Progress: resolved 1469, reused 0, downloaded 826, added 829
+Downloading @anthropic-ai/claude-agent-sdk-linux-x64@0.3.274: 41.60 MB/102.59 MB
+Progress: resolved 1469, reused 0, downloaded 909, added 896
+Downloading @anthropic-ai/claude-agent-sdk-linux-x64@0.3.274: 51.06 MB/102.59 MB
+Progress: resolved 1469, reused 0, downloaded 922, added 903
+Progress: resolved 1469, reused 0, downloaded 945, added 928
+Progress: resolved 1469, reused 0, downloaded 986, added 991
+Progress: resolved 1469, reused 0, downloaded 1018, added 1008
+Progress: resolved 1469, reused 0, downloaded 1037, added 1024
+Progress: resolved 1469, reused 0, downloaded 1050, added 1053
+Progress: resolved 1469, reused 0, downloaded 1067, added 1056
+Downloading @openai/codex@0.160.0-linux-x64: 52.81 MB/163.27 MB
+Downloading @lancedb/lancedb-linux-x64-gnu@0.39.0: 16.80 MB/72.71 MB
+Progress: resolved 1469, reused 0, downloaded 1114, added 1089
+Progress: resolved 1469, reused 0, downloaded 1114, added 1120
+Progress: resolved 1469, reused 0, downloaded 1160, added 1152
+Progress: resolved 1469, reused 0, downloaded 1178, added 1180
+Downloading @openai/codex@0.160.0-linux-x64: 88.02 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 94.77 MB/163.27 MB
+Progress: resolved 1469, reused 0, downloaded 1187, added 1184
+Downloading @openai/codex@0.160.0-linux-x64: 111.67 MB/163.27 MB
+Progress: resolved 1469, reused 0, downloaded 1210, added 1206
+Progress: resolved 1469, reused 0, downloaded 1210, added 1215
+Progress: resolved 1469, reused 0, downloaded 1232, added 1216
+Progress: resolved 1469, reused 0, downloaded 1242, added 1247
+Progress: resolved 1469, reused 0, downloaded 1258, added 1248
+Progress: resolved 1469, reused 0, downloaded 1274, added 1279
+Progress: resolved 1469, reused 0, downloaded 1306, added 1288
+Downloading @openai/codex@0.160.0-linux-x64: 138.70 MB/163.27 MB
+Downloading @lancedb/lancedb-linux-x64-gnu@0.39.0: 72.19 MB/72.71 MB
+Progress: resolved 1469, reused 0, downloaded 1363, added 1344
+Progress: resolved 1469, reused 0, downloaded 1370, added 1374
+Progress: resolved 1469, reused 0, downloaded 1370, added 1376
+Progress: resolved 1469, reused 0, downloaded 1402, added 1406
+Progress: resolved 1469, reused 0, downloaded 1423, added 1408
+Downloading onnxruntime-node@1.30.0: 17.86 MB/113.50 MB
+Downloading onnxruntime-node@1.30.0: 24.99 MB/113.50 MB
+Downloading onnxruntime-node@1.30.0: 28.07 MB/113.50 MB
+Progress: resolved 1469, reused 0, downloaded 1434, added 1424
+Progress: resolved 1469, reused 0, downloaded 1434, added 1434
+Progress: resolved 1469, reused 0, downloaded 1434, added 1437
+Progress: resolved 1469, reused 0, downloaded 1434, added 1438
+Progress: resolved 1469, reused 0, downloaded 1434, added 1439
+Downloading onnxruntime-node@1.30.0: 32.03 MB/113.50 MB
+Downloading @github/copilot-sdk-linux-x64@1.0.14: 39.55 MB/46.89 MB
+Downloading onnxruntime-node@1.30.0: 37.05 MB/113.50 MB
+Downloading onnxruntime-node@1.30.0: 39.82 MB/113.50 MB
+Progress: resolved 1469, reused 0, downloaded 1455, added 1440
+Downloading onnxruntime-node@1.30.0: 47.67 MB/113.50 MB
+Downloading onnxruntime-node@1.30.0: 56.02 MB/113.50 MB
+Downloading onnxruntime-node@1.30.0: 62.96 MB/113.50 MB
+Downloading onnxruntime-node@1.30.0: 68.29 MB/113.50 MB
+Downloading onnxruntime-node@1.30.0: 73.56 MB/113.50 MB
+Downloading onnxruntime-node@1.30.0: 78.42 MB/113.50 MB
+Downloading onnxruntime-node@1.30.0: 94.86 MB/113.50 MB
+Downloading onnxruntime-node@1.30.0: 108.94 MB/113.50 MB
+Progress: resolved 1469, reused 0, downloaded 1463, added 1445
+Progress: resolved 1469, reused 0, downloaded 1463, added 1457
+Progress: resolved 1469, reused 0, downloaded 1463, added 1466
+Progress: resolved 1469, reused 0, downloaded 1463, added 1468
+Packages: +1469
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 1469, reused 0, downloaded 1463, added 1469, done
+.../esbuild@0.28.2/node_modules/esbuild postinstall$ node install.js
+.../esbuild@0.28.2/node_modules/esbuild postinstall: Done
+.../node_modules/@google/genai preinstall$ echo 'preinstall: no-op'
+.../node_modules/@google/genai preinstall: preinstall: no-op
+.../node_modules/@google/genai preinstall: Done
+.../@matrix-org/matrix-sdk-crypto-nodejs postinstall$ node download-lib.js
+.../@matrix-org/matrix-sdk-crypto-nodejs postinstall: Downloading lib matrix-sdk-crypto.linux-x64-gnu.node from https://github.com/matrix-org/matrix-rust-sdk-crypto-nodejs/releases/download/v0.6.6/matrix-sdk-crypto.linux-x64-gnu.node
+.../@matrix-org/matrix-sdk-crypto-nodejs postinstall: 0 b/s - 81.0% [19.1 MB/23.6 MB]
+.../@matrix-org/matrix-sdk-crypto-nodejs postinstall: Download Completed
+.../@matrix-org/matrix-sdk-crypto-nodejs postinstall: Done
+.../node_modules/node-pty install$ node scripts/prebuild.js || node-gyp rebuild
+.../node_modules/node-pty install: [32m> Checking prebuilds...[0m
+.../node_modules/node-pty install: Done
+.../node_modules/node-pty postinstall$ node scripts/post-install.js
+.../node_modules/node-pty postinstall: [32m> Cleaning release folder...[0m
+.../node_modules/node-pty postinstall: [32m> Moving conpty.dll...[0m
+.../node_modules/node-pty postinstall:   SKIPPED (not Windows)
+.../node_modules/node-pty postinstall: Done
+.../node_modules/@tloncorp/tlon-skill postinstall$ node scripts/postinstall.js
+.../node_modules/@tloncorp/tlon-skill postinstall: [tlon-skill] Binary ready: /work/source/node_modules/.pnpm/@tloncorp+tlon-skill-linux-x64@0.5.0/node_modules/@tloncorp/tlon-skill-linux-x64/tlon
+.../node_modules/@tloncorp/tlon-skill postinstall: Done
+.../node_modules/baileys preinstall$ node ./engine-requirements.js
+.../node_modules/baileys preinstall: Done
+. preinstall$ node scripts/preinstall-package-manager-warning.mjs
+. preinstall: Done
+. postinstall$ node scripts/postinstall-bundled-plugins.mjs
+. postinstall: Done
+. prepare$ node scripts/prepare-git-hooks.mjs
+. prepare: Done
+
+dependencies:
++ @agentclientprotocol/sdk 1.4.0
++ @anthropic-ai/sdk 0.127.0
++ @babel/generator 8.0.6
++ @babel/parser 8.0.6
++ @babel/traverse 8.0.6
++ @clack/core 1.5.1
++ @clack/prompts 1.8.1
++ @earendil-works/pi-tui 0.86.1
++ @google/genai 2.23.0
++ @grammyjs/transformer-throttler 1.2.1
++ @homebridge/ciao 1.3.12
++ @lydell/node-pty 1.2.0-beta.15
++ @mistralai/mistralai 2.7.0
++ @modelcontextprotocol/sdk 1.31.0
++ @mozilla/readability 0.6.0
++ @openclaw/ai link:packages/ai
++ @openclaw/fs-safe 0.21.1
++ @openclaw/proxyline 0.3.12
++ @silvia-odwyer/photon-node 0.3.4
++ @trycua/cua-driver 0.28.2
++ acorn 8.18.0
++ chalk 6.0.0
++ chokidar 5.0.0
++ chrome-devtools-mcp 1.9.0
++ clawpdf 0.3.2
++ commander 15.0.0
++ croner 10.0.1
++ diff 9.0.0
++ dotenv 18.0.1
++ entities 8.1.0
++ esbuild 0.28.2
++ execa 10.0.1
++ express 5.2.1
++ file-type 22.1.1
++ grammy 1.46.0
++ highlight.js 11.12.0
++ hosted-git-info 10.1.1
++ iconv-lite 0.7.3
++ ignore 7.0.9
++ import-meta-resolve 4.2.0
++ jiti 2.7.0
++ json5 2.2.3
++ jszip 3.10.2
++ koffi 3.3.1
++ kysely 0.29.6
++ linkedom 0.18.13
++ minimatch 10.2.6
++ node-edge-tts 1.2.10
++ npm 11.20.0
++ openai 7.20.0
++ p-limit 7.3.3
++ p-map 7.0.8
++ partial-json 0.1.7
++ playwright-core 1.63.0
++ qrcode 1.5.4
++ rastermill 0.3.3
++ semver 7.8.5
++ tar 7.5.22
++ tslog 5.2.0
++ typebox 1.3.34
++ undici 8.10.2
++ web-push 3.6.7
++ web-tree-sitter 0.27.0
++ ws 8.21.3
++ yaml 2.9.1
++ zod 4.6.5
+
+optionalDependencies:
++ sqlite-vec 0.1.9
+
+devDependencies:
++ @a2ui/lit 0.11.0
++ @a2ui/web_core 0.11.0
++ @babel/types 8.0.6
++ @copilotkit/aimock 1.42.1
++ @lit-labs/signals 0.3.0
++ @lit/context 1.1.6
++ @lit/task 1.0.3
++ @mdx-js/mdx 3.1.1
++ @openclaw/crabline 0.1.27
++ @openclaw/session-url-contract link:packages/session-url-contract
++ @opentelemetry/sdk-node 0.222.0
++ @pnpm/parse-overrides 1001.0.4
++ @shikijs/core 4.4.3
++ @shikijs/engine-javascript 4.4.3
++ @shikijs/engine-oniguruma 4.4.3
++ @sindresorhus/slugify 3.0.1
++ @types/express 5.0.6
++ @types/hosted-git-info 3.0.5
++ @types/jsdom 30.0.0
++ @types/markdown-it 14.2.0
++ @types/mdast 4.0.4
++ @types/node 26.6.2
++ @types/semver 7.8.0
++ @types/web-push 3.6.4
++ @types/ws 8.18.1
++ @vitest/coverage-v8 5.0.1
++ acpx 0.19.1
++ apache-arrow 21.2.0
++ baileys 7.0.0-rc14
++ htmlparser2 12.0.0
++ ipaddr.js 2.5.0
++ jscpd 5.3.0
++ jsdom 30.1.0
++ lit 3.3.3
++ lit-analyzer 2.0.3
++ markdown-it 15.0.2
++ markdown-it-anchor 10.0.0
++ marked 18.0.13
++ minipass 7.1.3
++ nostr-tools 2.25.2
++ oxfmt 0.68.0
++ oxlint 1.83.0
++ oxlint-tsgolint 7.0.2002
++ pako 3.0.2
++ playwright 1.63.0
++ postcss 8.5.28
++ postcss-lit 1.4.1
++ postcss-selector-parser 7.1.6
++ shiki 4.4.3
++ signal-utils 0.21.1
++ sigstore 5.0.0
++ string-width 8.2.2
++ stylelint 17.15.0
++ stylelint-config-recommended 18.0.0
++ tinyglobby 0.2.17
++ tree-sitter-bash 0.25.1
++ tsdown 0.23.0
++ tsx 4.23.15
++ typescript 7.1.0-dev.20260920.1
++ unrun 0.3.1
++ vite 8.3.0
++ vitest 5.0.1
+
+Done in 2m 5.2s using pnpm v12.5.1
+JSON report written to /work/result608-inventory/vitest.json

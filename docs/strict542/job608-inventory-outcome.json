@@ -1,0 +1,29 @@
+{
+  "checks": "source-only scoped and exact real Vitest unit-fast selection",
+  "condition": "SATISFIED_BY_THIS_RECORDED_SCOPED_RESULT",
+  "exit_code": 0,
+  "files": {
+    "job608-inventory-evidence.json": "e998816ee07a3f2217a9bf68ada2918c60f6386729749de1ffe487e48842f05d",
+    "job608-inventory-export.json": "29746963a9726f6ead478baeb3ab77dfa846dc1a183814af091bb9cc55521a62",
+    "job608-inventory-offload.txt": "eea62fef9a3bd89c63385c591bf2d0e7a52e3efeaef8b1163090b41dd2ccedd8",
+    "job608-inventory-tests.txt": "b1be0804d6afd49b3319353a7afb3a79665eb2dbd00fa42550cc3ba4e5e5ab28",
+    "job608-inventory-vitest.json": "14b05ae3aca615c9b6358adf51eff311169eda173f3ed14d5290144b6870257f"
+  },
+  "next_consumer_conditional_review": "11b14be3511b221fecb8b705aceb6d8992fed81a",
+  "parity_config15_package_application": "NOT_RUN",
+  "scoped_test_counts": [
+    101,
+    24,
+    15,
+    18,
+    13,
+    19,
+    11,
+    2,
+    6
+  ],
+  "scoped_tests_passed": 209,
+  "source_commit": "c1bf240d6c9f429c72adeb5ab750e3a158ce06e9",
+  "total_passed": 212,
+  "typed_inventory_tests_passed": 3
+}
