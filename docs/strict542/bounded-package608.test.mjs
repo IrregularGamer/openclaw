@@ -11,6 +11,10 @@ test('bounded package preserves observed capacity floor and refuses compiler ove
  for (const key of ['NODE_OPTIONS','OPENCLAW_TSDOWN_MAX_OLD_SPACE_MB','OPENCLAW_RUN_NODE_SKIP_DTS_BUILD','OPENCLAW_BUILD_PRIVATE_QA','ROLLDOWN_WORKER_THREADS','MIMALLOC_ALLOW_THP','NAPI_RS_NATIVE_LIBRARY_PATH'])
    assert.throws(()=>admitBoundedPackage(admitted,{[key]:'1'}));
 });
+test('bounded package refuses verbose control that disables reviewed lazy barrels',()=>{
+ for(const value of ['', '0', '1'])
+   assert.throws(()=>admitBoundedPackage(admitted,{OPENCLAW_BUILD_VERBOSE:value}),/compiler control/u);
+});
 test('whole config selection retains object identity and exact typed inventory',()=>{
  const configs=[{name:'openclaw-packages',entry:{x:'x.ts'},dts:true},
    {name:'openclaw-unified',entry:{a:'a.ts',b:'b.ts'},dts:false},

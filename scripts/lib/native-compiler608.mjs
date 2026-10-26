@@ -1,4 +1,4 @@
-// Diagnostic compiler identity only. No gateway-native or installation authority.
+// Source-build compiler identity only. No gateway-native or installation authority.
 import fs from 'node:fs';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
@@ -7,9 +7,12 @@ function regular(file) {
   const stat=fs.lstatSync(file);
   if (!stat.isFile() || stat.isSymbolicLink()) throw new Error('native608 requires private regular files');
 }
-export function nativeCompiler608(root=process.cwd()) {
+export function nativeCompiler608(root=process.cwd(), {required=false}={}) {
   const directory=path.resolve(root,'../.native608');
-  if (!fs.existsSync(directory)) return {env:{},receipt:null};
+  if (!fs.existsSync(directory)) {
+    if (required) throw new Error('required native compiler is absent');
+    return {env:{},receipt:null};
+  }
   if (!fs.lstatSync(directory).isDirectory() || fs.lstatSync(directory).isSymbolicLink())
     throw new Error('invalid native compiler directory');
   const pin=JSON.parse(fs.readFileSync(path.join(root,'docs/strict542/rolldown-source-pin608.json'),'utf8'));

@@ -29,6 +29,14 @@ test('accepts matching compile and lib-test stage receipts with the pinned addon
   const root=fixture(t);const native=nativeCompiler608(root);
   assert.equal(native.env.NAPI_RS_NATIVE_LIBRARY_PATH,path.join(root,'../.native608/rolldown-binding.linux-x64-gnu.node'));
 });
+test('required native compiler refuses absence while diagnostic stock mode stays explicit',t=>{
+  const base=fs.mkdtempSync(path.join(os.tmpdir(),'compiler608-absent-'));
+  t.after(()=>fs.rmSync(base,{recursive:true,force:true}));
+  const root=path.join(base,'source');fs.mkdirSync(root);
+  assert.deepEqual(nativeCompiler608(root),{env:{},receipt:null});
+  assert.throws(()=>nativeCompiler608(root,{required:true}),/required native compiler/u);
+  assert.ok(nativeCompiler608(fixture(t),{required:true}).receipt);
+});
 test('refuses missing, swapped, failed or disagreeing stage receipts and a changed addon',t=>{
   const cases=[
     [r=>{delete r.libtests;},/ENOENT/u],
