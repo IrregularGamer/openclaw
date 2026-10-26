@@ -1,4 +1,5 @@
 // Full/package build compiler scheduling only. The build-all owner retains all other gates.
+import {runWorkerPhases} from './lib/worker-phases608.mjs';
 import { performance } from 'node:perf_hooks';
 import { readProcessMemoryCapacity } from './lib/process-memory.mts';
 import { BOUNDED_COMPILER_ENV, UNIFIED_GRAPH_THRASH_LIMIT_BYTES,
@@ -38,15 +39,15 @@ pruneUntrackedGeneratedSourceDeclarations();
 pruneStaleRuntimeSymlinks();
 cleanTsdownOutputRoots({roots:resolveTsdownCleanOutputRoots(originalArgs),
   env:{...process.env,OPENCLAW_RUN_NODE_SKIP_DTS_BUILD:stage === 'unified' ? '1' : '0'}});
-const plans=stage === 'ai' ? [{label:'ai',args:['--config','tsdown.ai.config.ts','--concurrency','1'],env:process.env}] :
-  indices.map(index=>({label:`main-config-${index}`,args:['--config','tsdown.bounded608.config.ts','--concurrency','1'],
+const plans=stage === 'ai' ? [{config:null,label:'ai',args:['--config','tsdown.ai.config.ts','--concurrency','1'],env:process.env}] :
+  indices.map(index=>({config:configs[index],label:`main-config-${index}`,args:['--config','tsdown.bounded608.config.ts','--concurrency','1'],
     env:{...process.env,OPENCLAW_608_CONFIG_INDEX:String(index),OPENCLAW_608_CONFIG_CENSUS:JSON.stringify(census)}}));
 for (const plan of plans) {
   const capacity=capacityAdmission();
   const remaining=Math.floor(deadline-performance.now());
   if (remaining <= 0) throw new Error('bounded compiler absolute deadline expired');
   const invocation=resolveTsdownBuildInvocation({args:plan.args,env:plan.env});
-  const result=await runTsdownBuildInvocation(invocation,{env:{...plan.env,OPENCLAW_TSDOWN_TIMEOUT_MS:String(remaining)}});
+  const result=await runWorkerPhases({config:plan.config,invocation,remainingMs:()=>deadline-performance.now(),run:runTsdownBuildInvocation});
   console.log(JSON.stringify({kind:'BOUNDED_PACKAGE_COMPILER',stage,label:plan.label,capacity,result}));
   if (!boundedResultSucceeded(result)) {process.exitCode=result.timedOut ? 124 : result.status || 1;break;}
 }

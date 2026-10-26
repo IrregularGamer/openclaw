@@ -1,5 +1,6 @@
 // SOURCE ONLY diagnostic: one unchanged original graph, with telemetry only.
 import fs from 'node:fs';
+import {workerBundleConfig} from './scripts/lib/worker-phases608.mjs';
 import configs from './tsdown.config.ts';
 import { selectWholeConfig } from './scripts/lib/isolated-config.mjs';
 const selected = selectWholeConfig(configs, process.env.OPENCLAW_598_CONFIG_INDEX,
@@ -19,7 +20,7 @@ function sample(phase: string) {
     phase,pid:process.pid,threads,nativePools,allocator,memory:process.memoryUsage(),kernel}));
 }
 // Add no transform/resolve/output hooks: these observations cannot change modules.
-export default {...selected,plugins:[selected.plugins,{
+export default {...workerBundleConfig(selected),plugins:[selected.plugins,{
   name:'openclaw:isolated-config-telemetry598',
   buildStart() { sample('begin'); timer=setInterval(()=>sample('running'),30_000).unref(); },
   buildEnd(error: unknown) { sample(error ? 'build-error' : 'build-end'); if (error) clearInterval(timer); },
