@@ -68,7 +68,7 @@ def patched_finalizer(text):
         raise ValueError('unreviewed finalizer predicate boundary')
     # Derive the exact old predicate once; the old finalizer consumes it too.
     predicate=original.removesuffix('        })\n').replace(
-        '        .filter(|(idx, _ast)| {','    let should_finalize = |idx| {',1).replace('*idx','idx')+'    };\n'
+        '        .filter(|(idx, _ast)| {','    let should_finalize = |idx: rolldown_common::ModuleIdx| {',1).replace('*idx','idx')+'    };\n'
     insertion=predicate+"""    let mut required_asts = ast_table
       .iter_enumerated()
       .map(|(idx, _)| should_finalize(idx))
