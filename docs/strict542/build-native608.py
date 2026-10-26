@@ -8,8 +8,15 @@ import os
 import shutil
 import subprocess
 import tarfile
+import sys
 import urllib.request
 
+# Reviewed split: one admitted run compiles only the addon, another runs only the
+# native lib tests. Each stage returns its own receipt; neither is install authority.
+STAGES = {'compile': 'NATIVE_COMPILER608_COMPILE_STAGE', 'libtests': 'NATIVE_COMPILER608_LIBTEST_STAGE'}
+if len(sys.argv) != 2 or sys.argv[1] not in STAGES:
+    raise SystemExit('native608 requires exactly one stage: compile or libtests')
+stage = sys.argv[1]
 owner = Path.cwd()
 root = owner.parent / '.native608'
 out = owner / 'result598-native'
@@ -22,7 +29,7 @@ pin = json.loads((owner / 'docs/strict542/rolldown-source-pin608.json').read_tex
 root.mkdir()
 out.mkdir()
 sha = lambda path: hashlib.file_digest(Path(path).open('rb'), 'sha256').hexdigest()
-receipt = {'kind':'NATIVE_COMPILER608_NOT_GATEWAY_OR_APPLICATION', 'upstream_commit':pin['upstream_commit'],
+receipt = {'kind':STAGES[stage], 'stage':stage, 'upstream_commit':pin['upstream_commit'],
            'source_archive_sha256':pin['source_archive_sha256'], 'rust_archive_sha256':pin['rust_archive_sha256'],
            'owner_inputs':{p:sha(owner / p) for p in ['scripts/lib/prepare-native608.py','scripts/lib/last-use-ast608.rs',
                                                      'docs/strict542/rolldown-source-pin608.json','docs/strict542/build-native608.py']},
@@ -116,19 +123,19 @@ assert result.returncode != 0 and 'unused_is_released_before_first_render ... FA
 assert 'repeated_module_survives_until_last_render_then_drops_before_next_module ... FAILED' in result.stdout
 receipt['retention_negative_detected']=True
 save()
-subprocess.run(['cargo','build','--locked','--release','--jobs','1','-p','rolldown_binding'],
-               cwd=root / 'source',env=env,check=True)
-subprocess.run(['cargo','test','--locked','--release','--jobs','1','-p','rolldown','--lib'],
-               cwd=root / 'source',env=env,check=True)
-receipt['native_lib_tests_exit']=0
-addon=root / 'rolldown-binding.linux-x64-gnu.node'
-shutil.copyfile(root / 'source/target/release/librolldown_binding.so',addon)
-receipt['addon_sha256']=sha(addon)
+if stage == 'compile':
+    subprocess.run(['cargo','build','--locked','--release','--jobs','1','-p','rolldown_binding'],
+                   cwd=root / 'source',env=env,check=True)
+    addon=root / 'rolldown-binding.linux-x64-gnu.node'
+    shutil.copyfile(root / 'source/target/release/librolldown_binding.so',addon)
+    receipt['addon_sha256']=sha(addon)
+    shutil.copyfile(addon,out / addon.name)
+else:
+    subprocess.run(['cargo','test','--locked','--release','--jobs','1','-p','rolldown','--lib'],
+                   cwd=root / 'source',env=env,check=True)
+    receipt['native_lib_tests_exit']=0
 receipt['complete']=True
 save()
-(root / 'receipt.json').write_bytes((out / 'receipt.json').read_bytes())
-shutil.copyfile(addon,out / addon.name)
 # Ordinary lifetime of this job's consumed build inputs, never cache/cgroup control.
-for name in ['source','unpacked','toolchain','cargo-home']:
-    shutil.rmtree(root / name)
+shutil.rmtree(root)
 print(json.dumps(receipt,sort_keys=True))

@@ -48,7 +48,7 @@ python3 -m unittest discover -s docs/strict542 -p test_native_preparation.py -v
 python3 -m unittest discover -s src/gateway/strict542 -p test_root_owner_supervisor.py -v
 python3 -m unittest discover -s docs/strict542 -p test_application598.py -v
 python3 -m unittest discover -s docs/strict542 -p test_apply598.py -v
-node --test docs/strict542/serial-probe598.test.mjs docs/strict542/isolated-config598.test.mjs docs/strict542/disposable-inputs608.test.mjs
+node --test docs/strict542/serial-probe598.test.mjs docs/strict542/isolated-config598.test.mjs docs/strict542/disposable-inputs608.test.mjs docs/strict542/native-compiler608.test.mjs
 ) >strict542-checks/tests.log 2>&1
 status=$?
 set -e
@@ -63,10 +63,22 @@ value={'source_commit':manifest['source_commit'],'exit_code':0,'checks':checks,'
 Path('strict542-checks/evidence.json').write_text(json.dumps(value,sort_keys=True)+'\n')
 EVIDENCE
 mkdir result598-isolated
-# Native source lifetime correction, contained by the same default offload lease.
-# timeout owns the finite process group; the broker also owns final containment.
-timeout -k 15s 2400s python3 docs/strict542/build-native608.py >result598-native-build.log 2>&1 || { status=$?; tail -25 result598-native-build.log; cp result598-native-build.log result598-isolated/; exit "$status"; }
-cp result598-native-build.log result598-native/build.log
+# Native addon and lib tests come from two separately admitted stage runs
+# (run-native608-stage.sh). Install only their manifest-pinned outputs.
+python3 - <<'NATIVE_STAGES'
+import hashlib,json,shutil
+from pathlib import Path
+m=json.loads(Path('../export-manifest.json').read_text())['native_stage_outputs']
+target=Path('../.native608'); target.mkdir()
+for source,name in [('compile/receipt.json','receipt.json'),('libtests/receipt.json','libtests-receipt.json'),
+                    ('compile/rolldown-binding.linux-x64-gnu.node','rolldown-binding.linux-x64-gnu.node')]:
+ path=Path('../native608-stages')/source
+ assert path.is_file() and not path.is_symlink() and hashlib.sha256(path.read_bytes()).hexdigest()==m[source],source
+ shutil.copyfile(path,target/name)
+Path('result598-native').mkdir()
+shutil.copyfile(target/'receipt.json','result598-native/receipt.json')
+NATIVE_STAGES
+rm -rf ../native608-stages
 set +e
 (
 set -e
