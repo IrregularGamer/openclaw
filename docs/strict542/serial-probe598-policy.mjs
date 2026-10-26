@@ -14,8 +14,8 @@ export function admitProbe(capacity, env, existingOutput) {
   }
 }
 // Job605 evidence: unified config15 thrashes in memory.high reclaim (user CPU ~5%,
-// system CPU ~95%) and peaked at this cgroup charge. A limit not above it cannot
-// complete the probe, so refuse the whole probe instead of burning the deadline;
+// system CPU ~95%) and peaked at this cgroup charge. A limit not above it was
+// only observed to thrash, so refuse the whole probe instead of burning the deadline;
 // this never lowers a check or splits the singleton-owning unified graph.
 export const UNIFIED_GRAPH_THRASH_LIMIT_BYTES = 1625784320;
 export function admitUnifiedGraphCapacity(capacity) {
