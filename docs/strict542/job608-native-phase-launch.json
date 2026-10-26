@@ -1,0 +1,16 @@
+{
+ "application_authority": false,
+ "command": "offload run --artifacts result598 -- timeout -k 15s 2700s sh run608.sh",
+ "export": "/home/deploy/agentq/tmp/export608-native-phase-trace",
+ "export_review": "docs/strict542/job608-native-phase-export-review.md (91cae5b5)",
+ "kind": "RUNNING_ONE_PHASE_TRACE_DIAGNOSTIC_NOT_PACKAGE",
+ "launch_log": "/home/deploy/agentq/tmp/phase-trace-run608.log",
+ "manifest_sha256": "5291b14769c92e56e4a2f306e087846debb7387c372264552a8d458a37f9556c",
+ "prelaunch_remaining_seconds": 3444,
+ "source_commit": "00d5fe9f5a99ff7fda6fc3a365ab7edb3d78ea29",
+ "source_runtime_mutation": false,
+ "state": "RUNNING: this export is no longer unused; do not launch again",
+ "worker_expires_utc": "2026-10-27T00:16:29Z",
+ "worker_started_utc": "2026-10-26T23:16:29Z",
+ "worker_unit": "agentq-exec-608-2-97ba3b7f52d9.service"
+}
