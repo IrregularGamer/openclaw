@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {test} from 'node:test';
-import {admitProbe, probeSucceeded} from './serial-probe598-policy.mjs';
+import {admitProbe, admitUnifiedGraphCapacity, UNIFIED_GRAPH_THRASH_LIMIT_BYTES, probeSucceeded} from './serial-probe598-policy.mjs';
 const capacity = {unresolved:false, capacityBytes:2*1024**3, limitBytes:1600*1024**2};
 test('admits fixed serial diagnostic only with observed bounded capacity',()=>{
   assert.doesNotThrow(()=>admitProbe(capacity,{},false));
@@ -47,4 +47,9 @@ test('fixed allocator policy preserves caller and pool bounds without raising an
  assert.equal(env.ROLLDOWN_MAX_BLOCKING_THREADS,'1');
  assert.equal(env.NODE_OPTIONS,undefined);
  assert.equal(env.OPENCLAW_TSDOWN_MAX_OLD_SPACE_MB,undefined);
+});
+test('refuses the unified graph at or below the observed reclaim-thrash limit',()=>{
+  for (const limitBytes of [UNIFIED_GRAPH_THRASH_LIMIT_BYTES, 1024**3, NaN, undefined])
+    assert.throws(()=>admitUnifiedGraphCapacity({...capacity,limitBytes}),/reclaim-thrash/);
+  assert.doesNotThrow(()=>admitUnifiedGraphCapacity({...capacity,limitBytes:UNIFIED_GRAPH_THRASH_LIMIT_BYTES+1}));
 });
