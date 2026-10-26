@@ -1,0 +1,10 @@
+# ONE compile-stage offload, export608-native-compile2 (source bd8a3a9f, review d0b13704)
+result: OFFLOAD_EXIT=1 at 2026-10-26T17:57:57Z; cargo build exit 101; no addon/receipt
+error[E0282]: type annotations needed
+  --> crates/rolldown/src/stages/generate_stage/finalize_modules.rs:33:11
+   |
+33 |           self.link_output.module_table[idx].as_normal().is_some_and(|m| {
+   |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ cannot infer type
+
+For more information about this error, try `rustc --explain E0282`.
+error: could not compile `rolldown` (lib) due to 1 previous error

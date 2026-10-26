@@ -19,7 +19,7 @@ class FinalizerPatch(unittest.TestCase):
             original=tf.extractfile(member).read().decode()
         patched=p.patched_finalizer(original)
         predicate=original[original.index('        .filter(|(idx, _ast)| {'):original.index('        .filter_map(|(idx, ast)| {')]
-        self.assertIn(predicate.replace('        .filter(|(idx, _ast)| {','    let should_finalize = |idx| {').replace('*idx','idx').removesuffix('        })\n')+'    };',patched)
+        self.assertIn(predicate.replace('        .filter(|(idx, _ast)| {','    let should_finalize = |idx: rolldown_common::ModuleIdx| {').replace('*idx','idx').removesuffix('        })\n')+'    };',patched)
         self.assertLess(patched.index('release_unneeded'),patched.index('let finalized ='))
         self.assertIn('for chunk in chunk_graph.chunk_table.iter()',patched)
         self.assertIn('required_asts[module.idx.raw() as usize] = true;',patched)
