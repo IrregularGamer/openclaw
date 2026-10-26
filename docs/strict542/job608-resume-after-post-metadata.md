@@ -32,7 +32,7 @@ Sourceb1416481 also adds all5 patch-contract tests to the combined runner.
 Full old877458d7/newb1416481 source hashes/modes:
 job608-post-metadata-source-inventory.json. This inventory is not installed bytes.
 
-## Accepted compile4; ONE next executable stage is libtests3
+## Accepted matching compile4 and libtests3; ONE next stage is combined diagnostic
 
 Compile4 is SPENT and accepted as native compilation only. ONE admitted run
 settled2026-10-26T21:38:46Z rc0 in1538s, release compile23m34s. New addon:
@@ -43,39 +43,52 @@ module SHA256db07fa1eaaf7e079a7645813ce25032105c522a557fbff7a854d2c1a4842c5b7;
 finalizer, renderer and helper hashes are unchanged. Exact old/new identities,
 retained receipt/log/test evidence and broker outcome are in
 job608-native-compile4-outcome.json; independent outcome review is adjacent.
-This proves native compilation, not matching native library tests, config15 fit,
-combined diagnostic or package success. Old46d32ba6 receipts remain invalid.
-Do not rerun compile4, upload its addon/cache/toolchain, or reuse spent exports.
 
-Read job608-libtests3-export-review.md and verify its exact identities.
-Fresh never-used export: /home/deploy/agentq/tmp/export608-native-libtests3
+Libtests3 is now SPENT and accepted as the matching native library-test stage.
+ONE admitted run settled2026-10-26T22:21:38Z rc0 in1838s, release compile28m47s.
+All112 real Rust library tests and7 lifetime tests PASS with no skipped tests;
+the old-retention negative control detects exactly3 expected failures. All11
+shared source/patched-source/toolchain/policy fields equal compile4, and all4
+owner hashes equal sourceb1416481 and the maintained checkout. Exact receipts,
+full logs and broker outcome are in job608-native-libtests3-outcome.json;
+independent acceptance is job608-native-libtests3-outcome-review.md.
+Neither accepted stage proves config15/resource fit or complete build/package.
+Do not rerun either spent export, upload its addon/cache/toolchain, reuse old
+46d/f8b receipts or run another standalone lifetime-only stage.
+
+Read job608-native-post-metadata-export-review.md and verify its exact identities.
+Fresh never-used export: /home/deploy/agentq/tmp/export608-native-post-metadata
 Source: b1416481c38ba1480d8c881ca36e96785512fc47
-Manifest: 3047f378a219497f392994bbe6ef36d7ffe6e23b5aaaf1e51681b8136076fb94
-Successor: 29c3853b9715326cd7323547058d3b7fd448a9ca8a653682fad92da98eff65e6
-Runner: 2c6e313a9aa7dddfbbdfe36986325bed7f46346d6e05822d4c032ca344290e57
+Manifest: eba2def84390b7e50e9221976503ed0c2bf143f950e5b8404a133d730fb1bcb0
+Successor: 89d5a22ba828821c983dab1c70a6811a3128158a7707bd99f5f015f0d8bb7a04
+Runner: 1125cc3c0ffde8222fe6ce87aaa723fd0027725daed37a22e9966b7a61a41157
+Compile receipt: bc741801b805fb6792e0e67fc4f8e3b88425096d41e6e6216927cff140f9d9b6
+Libtests receipt: 84a8d51f34da3e788482de3e817b5583917a9351a22cb8ad2f7cf1b1ec218a93
 Upstream:203aa4834d7a52522c758c81f6e493bea9fea828d4454fe2a25b9519d2d258ac
-Only committed secretless source and manifest enter; no addon/cache/toolchain
-upload. Normal offload health/admission,2GiB1CPU,zero new swap apply.
+Base/native archive pins and the exact250 successor paths are in the committed
+job608-native-post-metadata-export.json. Only committed secretless source and
+these two receipt JSON inputs enter; no addon/cache/toolchain/dependency upload.
+Normal offload health/admission,2GiB1CPU,zero new swap apply.
 Require>=51minutes genuine foreground lifetime at launch:45minutes plus15s
 kill grace plus5minutes transfer/collection/settlement reserve. The current
-worker expires2026-10-26T22:12:00Z and MUST NOT launch this stage.
+worker expires2026-10-26T22:49:56Z and MUST NOT launch this stage.
 
-    cd /home/deploy/agentq/tmp/export608-native-libtests3
-    offload run --artifacts result-native608-libtests -- timeout -k 15s 2700s sh run608.sh libtests
+    cd /home/deploy/agentq/tmp/export608-native-post-metadata
+    offload run --artifacts result598 -- timeout -k 15s 2700s sh run608.sh
 
-Accept only rc0/complete libtests receipt, all real native library tests passing,
-helper7PASS and detected old-retention negative control. Compare every shared
-source/patched-source/toolchain/policy field to job608-native-compile4-receipt.json.
-Any failure: retain actual result and independently review; do not rerun this
-spent path. No unchanged standalone lifetime-only retry adds needed coverage.
-
-Then prepare a NEW reviewed full combined source-only export: exactly those two
-receipt JSON inputs, no binary upload; rebuild and require compile receipt bytes
-AND addon equality. Require all affected checks (expected235 with current5 new
-contract tests:223scoped+3typed+9realfixtures),8parityvariants, both lazy/minifier
-modes and AI+ALL57main configs including all four workers and settled minifiers.
-Retain the900s shared compiler deadline,1625784320-byte floor and2GiB1CPU.
-Incomplete, mismatched, refused or failed work is not accepted build evidence.
+The runner rebuilds the addon from source under that lease and requires BOTH
+parsed and byte equality with the complete compile4 receipt and addon equality
+with17df2061 before the paired-receipt validator admits the native compiler.
+Require all235 affected checks:223scoped (133Node90Python, including the5new
+post-metadata contracts),3typed inventory checks and9real fixtures,8parity
+variants, both stock/native lazy and minifier modes, then AI+ALL57main configs
+including all4workers and settled minifier children. Preserve the900s shared
+compiler deadline,1625784320-byte floor and2GiB1CPU. No checks are waived.
+Accept only complete rc0 with every required config/receipt/settlement verified
+and independently reviewed. Refusal, failure, partial/uncertain result, mismatched
+bytes or cleanup failure is not package evidence. Retain and reconcile its
+actual result, independently review, and mark this export SPENT; no unchanged
+retry. Only complete accepted success permits the next package-source step.
 
 ## Remaining gates before595 application
 
