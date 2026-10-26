@@ -1,0 +1,38 @@
+{
+  "addon_sha256": "f8b7634b1ccf713ec593f2a802373e16bffc92f1a63edd82704232c4960adcc6",
+  "binary_retained_output_only": "/home/deploy/agentq/runs/608/native-consumer-recovery-results/result598/result598-native/rolldown-binding.linux-x64-gnu.node",
+  "config15": "NOT_RUN",
+  "execution": "admitted-offload",
+  "exit_code": 1,
+  "files": {
+    "job608-consumer-recovery-checks.json": "3602599f34ff807543bfcf3d75549b5ac57f052246e5916f5fd567dcf4302827",
+    "job608-consumer-recovery-checks.txt": "fe74bb6132a3e163823589ab44ee2e1b5b40fd7f16cd9ddc3949a1b719f27346",
+    "job608-consumer-recovery-native-compile.txt": "dd259bdf02e53048aa55062fce2a8329d4555b0bf244c8de752458581d3fd0b8",
+    "job608-consumer-recovery-native-receipt.json": "e210de64481feece6ae64ee192c0e14626cc112f2ef4c47c7fac526f7fc7faad",
+    "job608-consumer-recovery-offload.txt": "6bfd100aecd0df6db93f098cceb53354db829a7416431fcd1ba91a53fa0d7bb6",
+    "job608-consumer-recovery-probe.txt": "5bbad745a4cceceea5884d206ae09d2afe6ce1dc05327c6b1c0810148d2e36ab"
+  },
+  "frozen_dependency_install_completed": true,
+  "full_build_package": "NOT_RUN",
+  "initial_node_tests": [
+    101,
+    24
+  ],
+  "initial_python_tests": [
+    15,
+    18,
+    13,
+    19,
+    11,
+    2
+  ],
+  "initial_scoped_tests_total": 203,
+  "native_compile_elapsed": "23m49s",
+  "native_rebuild_complete": true,
+  "native_receipt_equal": true,
+  "parity": "NOT_RUN",
+  "review_commit": "f81194b0648766f0f8ab04153b4122e7c620b4bc",
+  "slot": "tmp-export608-native-consumer-recovery-b239597d",
+  "source_commit": "157b93a8f0db0d1fe61c71cb7fdfd635c81a6c76",
+  "vitest_inventory_result": "No test files found: tooling shard excludes unit-fast test; passWithNoTests=false refused"
+}
