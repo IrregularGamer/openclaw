@@ -23,7 +23,7 @@ python3 - <<'VERIFY_ARCHIVES'
 import hashlib,json
 from pathlib import Path
 m=json.loads(Path('export-manifest.json').read_text())
-for name,key in [('source598.tar','base_source_archive_sha256'),('successor598.tar','successor_archive_sha256'),('native598.tar','native_export_sha256')]:
+for name,key in [('source598.tar','base_source_archive_sha256'),('successor598.tar','successor_archive_sha256'),('native598.tar','native_export_sha256'),('rolldown608-source.tar.gz','compiler_upstream_archive_sha256')]:
  h=hashlib.sha256()
  with open(name,'rb') as f:
   for block in iter(lambda:f.read(1024*1024),b''):h.update(block)
@@ -48,6 +48,7 @@ python3 -m unittest discover -s docs/strict542 -p test_native_preparation.py -v
 python3 -m unittest discover -s src/gateway/strict542 -p test_root_owner_supervisor.py -v
 python3 -m unittest discover -s docs/strict542 -p test_application598.py -v
 python3 -m unittest discover -s docs/strict542 -p test_apply598.py -v
+python3 -m unittest discover -s docs/strict542 -p test_native_consumer608.py -v
 node --test docs/strict542/serial-probe598.test.mjs docs/strict542/isolated-config598.test.mjs docs/strict542/disposable-inputs608.test.mjs docs/strict542/native-compiler608.test.mjs docs/strict542/bounded-package608.test.mjs
 ) >strict542-checks/tests.log 2>&1
 status=$?
@@ -63,21 +64,10 @@ value={'source_commit':manifest['source_commit'],'exit_code':0,'checks':checks,'
 Path('strict542-checks/evidence.json').write_text(json.dumps(value,sort_keys=True)+'\n')
 EVIDENCE
 mkdir result598-isolated
-# Native addon and lib tests come from two separately admitted stage runs
-# (run-native608-stage.sh). Install only their manifest-pinned outputs.
-python3 - <<'NATIVE_STAGES'
-import hashlib,json,shutil
-from pathlib import Path
-m=json.loads(Path('../export-manifest.json').read_text())['native_stage_outputs']
-target=Path('../.native608'); target.mkdir()
-for source,name in [('compile/receipt.json','receipt.json'),('libtests/receipt.json','libtests-receipt.json'),
-                    ('compile/rolldown-binding.linux-x64-gnu.node','rolldown-binding.linux-x64-gnu.node')]:
- path=Path('../native608-stages')/source
- assert path.is_file() and not path.is_symlink() and hashlib.sha256(path.read_bytes()).hexdigest()==m[source],source
- shutil.copyfile(path,target/name)
-Path('result598-native').mkdir()
-shutil.copyfile(target/'receipt.json','result598-native/receipt.json')
-NATIVE_STAGES
+# Only source and two manifest-pinned receipt JSON files enter this export.
+# Rebuild the addon under this lease, requiring byte equality to the first
+# compile artifact before the existing paired-receipt validator consumes it.
+timeout -k 15s 5400s python3 docs/strict542/prepare-native-consumer608.py >result598-isolated/native-compile.log 2>&1 || { status=$?; tail -20 result598-isolated/native-compile.log; exit "$status"; }
 rm -rf ../native608-stages
 set +e
 (
