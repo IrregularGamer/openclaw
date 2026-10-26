@@ -1,0 +1,52 @@
+{
+  "application_authority": false,
+  "broker_exit": 1,
+  "broker_seconds": 2313,
+  "config15_elapsed_ms": 184200.772444,
+  "config_results": 48,
+  "diagnostic_complete": false,
+  "evidence_sha256": {
+    "job608-native-worker-lazy-broker.txt": "a858d245a23163d298ea753c662bd1b7613294247bff66a99e4bebe2bd109c99",
+    "job608-native-worker-lazy-checks.json": "c5d2e13be0a6321a7280ad63d59f754ae7e81990eaf72fe22e609a64b38028cb",
+    "job608-native-worker-lazy-native-compile.txt": "bd0fb19319953fc655f9a5decf9a21960cbc933f78f1083abed425e2d4e78612",
+    "job608-native-worker-lazy-native-receipt.json": "e210de64481feece6ae64ee192c0e14626cc112f2ef4c47c7fac526f7fc7faad",
+    "job608-native-worker-lazy-parity.json": "3b01c8102d22f14548a1662efb4bb330b236f811cb36fca141f1e6fe4a486df0",
+    "job608-native-worker-lazy-probe.txt": "ed7f84a715a4e647b4b50d7d015c3bb2ebe60cf2e768ef9f07eef849dfa398e8",
+    "job608-native-worker-lazy-receipt.json": "936241691a52dbf73b53113e4159205597ec988cee08a3cfaf2f5808c12f1a01",
+    "job608-native-worker-lazy-retention-negative.txt": "7635d542be80ec9763b56e1b02614c970dc4d1370c07c3b9218dc1b6f8731aa8",
+    "job608-native-worker-lazy-tests.txt": "4d605b38125ed48ad96af1f0bf1da67cc5f53e5a72d04dffceef8417c3950c2b"
+  },
+  "manifest_sha256": "22ac7df240fe89917b94686628bacbd02988d7ccfba337b7ae13cacec6a8a0c8",
+  "native_addon_sha256": "f8b7634b1ccf713ec593f2a802373e16bffc92f1a63edd82704232c4960adcc6",
+  "native_receipt_byte_equal_original": true,
+  "path_spent": true,
+  "slot": "tmp-export608-native-worker-lazy-e126914a",
+  "source_commit": "4ec0fa03d94d58e66630abe421670a9b64eeb0ca",
+  "successful_results": 47,
+  "tests_real_fixtures": 9,
+  "tests_scoped": 215,
+  "tests_total": 227,
+  "tests_typed_inventory": 3,
+  "unexecuted_main_configs": [
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56
+  ],
+  "worker46_elapsed_ms": 99435.15295199997,
+  "worker46_minifier_executed": false,
+  "worker46_result": {
+    "error": null,
+    "fatalUnresolvedImport": null,
+    "hasIneffectiveDynamicImport": false,
+    "signal": "SIGKILL",
+    "status": null,
+    "timedOut": false
+  }
+}
