@@ -8,7 +8,7 @@ source-rebuilt native compiler, then produce the real frozen production package.
 Use the existing native receipt validator and canonical build/memory/child owners.
 No new compiler, graph partition, purity annotation or privilege mechanism.
 
-- [ ] Add failing required-native absence and inherited verbose-control tests;
+- [x] Add failing required-native absence and inherited verbose-control tests;
   extend the existing native owner with an explicit required mode and refuse the
   config control that bypasses lazyBarrel. Verify the focused tests and review.
 - [ ] ONLY after the complete first native+split+lazy diagnostic succeeds and its
@@ -38,3 +38,14 @@ reviewed bounded route. A diagnostic is never package evidence.
 No installed/sealed/root/unit/sudoers/service/config/provider action.595's exact
 natural-gap handoff and fresh post-restart owner+accepted-run gates remain
 job608-to595.md and job598-HQ-HANDOFF.md; downstream575/588 and553 stay by reference.
+
+Canonical source inspection found that bundled-plugin-build-entries.mjs includes
+OPENCLAW_BUNDLED_PLUGIN_BUILD_IDS, OPENCLAW_INTERNAL_DOCKER_BUILD_PLUGIN_IDS and
+OPENCLAW_INCLUDE_OPTIONAL_BUNDLED in its graph-selection environment inventory.
+The optional-cluster owner interprets the last selector's zero value as excluding
+optional clusters. The bounded boundary already refused the Docker selector;
+the second prerequisite adds presence-based refusal of the other two so inherited
+selectors cannot silently reduce the complete package inventory. Its regression
+exercises all three selectors with empty, zero and one values. This narrow
+prerequisite preserves the existing4352MiB guard and does not promote native
+wiring or provide package evidence; independent review remains required.

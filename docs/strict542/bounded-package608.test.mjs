@@ -15,6 +15,16 @@ test('bounded package refuses verbose control that disables reviewed lazy barrel
  for(const value of ['', '0', '1'])
    assert.throws(()=>admitBoundedPackage(admitted,{OPENCLAW_BUILD_VERBOSE:value}),/compiler control/u);
 });
+test('bounded package refuses every bundled plugin selector by presence',()=>{
+ const accepted=[];
+ for(const key of ['OPENCLAW_BUNDLED_PLUGIN_BUILD_IDS','OPENCLAW_INTERNAL_DOCKER_BUILD_PLUGIN_IDS','OPENCLAW_INCLUDE_OPTIONAL_BUNDLED']) {
+   for(const value of ['', '0', '1']) {
+     try {admitBoundedPackage(admitted,{[key]:value});accepted.push({key,value});}
+     catch(error) {assert.match(error.message,/compiler control/u);}
+   }
+ }
+ assert.deepEqual(accepted,[]);
+});
 test('whole config selection retains object identity and exact typed inventory',()=>{
  const configs=[{name:'openclaw-packages',entry:{x:'x.ts'},dts:true},
    {name:'openclaw-unified',entry:{a:'a.ts',b:'b.ts'},dts:false},
