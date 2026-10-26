@@ -1,0 +1,20 @@
+✔ admits fixed serial diagnostic only with observed bounded capacity (2.739011ms)
+✔ refuses unknown or oversized capacity and existing output (2.930843ms)
+✔ refuses caller-controlled compiler budget, selection, preload or plugin exclusions (1.141174ms)
+✔ compiler warnings, unresolved imports and unsettled/failed runs refuse success (0.4743ms)
+✔ accepts only the owning tsx launcher cache-disabled value (0.434547ms)
+✔ refuses inherited output and native thread scheduling controls even when empty (0.547396ms)
+✔ refuses inherited allocator controls even when empty or matching generated policy (0.529612ms)
+✔ fixed allocator policy preserves caller and pool bounds without raising any budget (1.622347ms)
+✔ refuses the unified graph at or below the observed reclaim-thrash limit (1.499901ms)
+✔ refuses caller-selected native addon even when empty (0.978659ms)
+✔ refuses inherited native tracing filters and output destinations before imports (0.647717ms)
+✔ only config15 receives the fixed release phase tracing policy without caller mutation (0.742789ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 239.946569

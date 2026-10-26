@@ -1,0 +1,4 @@
+drwxrwxr-x          4,096 2026/10/26 23:06:03 .
+-rw-rw-r--         14,498 2026/10/26 22:22:50 export-manifest.json
+-rwxr-xr-x          6,347 2026/10/26 22:22:49 run608.sh
+drwxr-xr-x          4,096 2026/10/26 23:05:45 result598

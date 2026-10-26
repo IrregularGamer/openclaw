@@ -56,39 +56,26 @@ Neither accepted stage proves config15/resource fit or complete build/package.
 Do not rerun either spent export, upload its addon/cache/toolchain, reuse old
 46d/f8b receipts or run another standalone lifetime-only stage.
 
-Read job608-native-post-metadata-export-review.md and verify its exact identities.
-Fresh never-used export: /home/deploy/agentq/tmp/export608-native-post-metadata
-Source: b1416481c38ba1480d8c881ca36e96785512fc47
-Manifest: eba2def84390b7e50e9221976503ed0c2bf143f950e5b8404a133d730fb1bcb0
-Successor: 89d5a22ba828821c983dab1c70a6811a3128158a7707bd99f5f015f0d8bb7a04
-Runner: 1125cc3c0ffde8222fe6ce87aaa723fd0027725daed37a22e9966b7a61a41157
-Compile receipt: bc741801b805fb6792e0e67fc4f8e3b88425096d41e6e6216927cff140f9d9b6
-Libtests receipt: 84a8d51f34da3e788482de3e817b5583917a9351a22cb8ad2f7cf1b1ec218a93
-Upstream:203aa4834d7a52522c758c81f6e493bea9fea828d4454fe2a25b9519d2d258ac
-Base/native archive pins and the exact250 successor paths are in the committed
-job608-native-post-metadata-export.json. Only committed secretless source and
-these two receipt JSON inputs enter; no addon/cache/toolchain/dependency upload.
-Normal offload health/admission,2GiB1CPU,zero new swap apply.
-Require>=51minutes genuine foreground lifetime at launch:45minutes plus15s
-kill grace plus5minutes transfer/collection/settlement reserve. The current
-worker expires2026-10-26T22:49:56Z and MUST NOT launch this stage.
+The post-metadata combined exporteba2def8 is now SPENT, not unused. ONE run
+settled2026-10-26T23:06:04Z rc1/2062s:235checksPASS, native rebuild17df2061 and
+complete compile receipt byte-equal to compile4, AI+main0..14PASS; main15SIGKILL
+112472.703534ms. Main16..56/all4workers did not run. Exact evidence86cb85df and
+independent outcome review397b5f43 accept this failure as evidence only.
+Do not rerun the spent export or promote the package source.
 
-    cd /home/deploy/agentq/tmp/export608-native-post-metadata
-    offload run --artifacts result598 -- timeout -k 15s 2700s sh run608.sh
-
-The runner rebuilds the addon from source under that lease and requires BOTH
-parsed and byte equality with the complete compile4 receipt and addon equality
-with17df2061 before the paired-receipt validator admits the native compiler.
-Require all235 affected checks:223scoped (133Node90Python, including the5new
-post-metadata contracts),3typed inventory checks and9real fixtures,8parity
-variants, both stock/native lazy and minifier modes, then AI+ALL57main configs
-including all4workers and settled minifier children. Preserve the900s shared
-compiler deadline,1625784320-byte floor and2GiB1CPU. No checks are waived.
-Accept only complete rc0 with every required config/receipt/settlement verified
-and independently reviewed. Refusal, failure, partial/uncertain result, mismatched
-bytes or cleanup failure is not package evidence. Retain and reconcile its
-actual result, independently review, and mark this export SPENT; no unchanged
-retry. Only complete accepted success permits the next package-source step.
+Next is the source-owned fixed existing release tracing in
+job608-native-phase-trace-plan.md. It adds caller trace-control refusal and
+config15-only native link/generate stdout ENTER/CLOSE spans, plus a real trace
+fixture. All4 native owner hashes are unchanged; retain exactly accepted
+compile4+libtests3 receipt JSON inputs and rebuild native bytes under the new
+lease. No standalone native stage or receipt substitution is authorized.
+The fresh export identities and separate exact review must be committed before
+any next launch. This source step alone authorizes no run. Require the complete
+238 affected checks, all original parity/fixtures/configs and settlement. The
+real trace fixture is currently unrun;12 focused policy tests are GREEN after
+RED and new fixture/policy syntax checks pass. One extra local test could not
+load an unchanged base module absent from this partial source checkout; its
+record is not an implementation assertion failure or passed suite.
 
 ## Remaining gates before595 application
 

@@ -34,3 +34,27 @@ test('native last-use codegen is byte-equal to stock for shared graphs, ESM/CJS,
   assert.equal(results[0].length,8);assert.deepEqual(results[1],results[0]);
   await fs.writeFile('result598-native/stock-patched-equality.json',JSON.stringify({addon_sha256:native.receipt.addon_sha256,variants:results[0]})+'\n');
 });
+
+// This real fixture must run under the admitted offload after a source rebuild.
+// It proves the pinned release addon supports the selected native span output;
+// phase attribution for config15 still requires its actual retained raw log.
+import {NATIVE_PHASE_TRACE608,fixedOneCpuCompilerEnv} from './serial-probe598-policy.mjs';
+test('release native addon emits existing link and generation phase spans to stdout',async t=>{
+ const native=nativeCompiler608(process.cwd(),{required:true});
+ const root=await fs.mkdtemp(path.join(os.tmpdir(),'native608-phase-'));
+ t.after(()=>fs.rm(root,{recursive:true,force:true}));
+ await fs.writeFile(path.join(root,'entry.ts'),'export const answer:number=42;');
+ const result=spawnSync(process.execPath,[fileURLToPath(new URL('./native-phase608.fixture.mjs',import.meta.url)),root],{
+  env:{...fixedOneCpuCompilerEnv(process.env),...native.env,...NATIVE_PHASE_TRACE608},
+  encoding:'utf8',timeout:60_000,maxBuffer:2*1024**2,
+ });
+ assert.equal(result.error,undefined);assert.equal(result.signal,null);
+ assert.equal(result.status,0,result.stderr);
+ const raw=result.stdout.replace(/\x1b\[[0-9;]*m/g,'');
+ assert.match(raw,/rolldown::stages::link_stage/);
+ assert.match(raw,/rolldown::stages::generate_stage/);
+ assert.ok((raw.match(/\benter\b/g)??[]).length>=2,raw);
+ assert.ok((raw.match(/\bclose\b/g)??[]).length>=2,raw);
+ assert.doesNotMatch(result.stderr,/Rolldown tracing disabled|requires building with/);
+ await fs.writeFile('result598-native/release-phase-trace.log',raw);
+});

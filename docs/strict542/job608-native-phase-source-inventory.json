@@ -1,0 +1,38 @@
+{
+ "application_authority": false,
+ "files": [
+  {
+   "new_mode": "0o664",
+   "new_sha256": "eb4c89eec5d2aa738011202776dae913763de8e9646efb4126839bb4c41173c7",
+   "old_sha256": "132ed176cfa04cd8d47d4f232a3d8e6dd33331261fe760c198725eed7c620032",
+   "path": "docs/strict542/isolated-probe598.mts"
+  },
+  {
+   "new_mode": "0o664",
+   "new_sha256": "89f1b494c1ecff48555b33565b67092037bc6439944ac4c35f0f53c70ac4d58f",
+   "old_sha256": "585c11bc1948f623ee37918a6315601a5333ff2bb27b5a86e925f077ff6048a6",
+   "path": "docs/strict542/serial-probe598-policy.mjs"
+  },
+  {
+   "new_mode": "0o664",
+   "new_sha256": "12ee7376bb3da849744c0a3a2f533a174125caa091c88904fc7b6e0dd6d34fe2",
+   "old_sha256": "bf689d3fb2fc0f1032da52932982e9c6e9fd3fe5121fc7e4e5a60a06d4e03c93",
+   "path": "docs/strict542/serial-probe598.test.mjs"
+  },
+  {
+   "new_mode": "0o664",
+   "new_sha256": "2718660a970de4cb55dcabc898904f2d2eb5bedaf4174750e87efd9454392377",
+   "old_sha256": "525f6a47b8d4b3270f7be0939f2c26eee4eb545003887925a4f86623047e8409",
+   "path": "docs/strict542/native-codegen608.test.mjs"
+  },
+  {
+   "new_mode": "0o664",
+   "new_sha256": "3e9754aaa4ebeb7567a416930ab2a13adc68786d410ece3d4c4b5404451d9a93",
+   "old_sha256": null,
+   "path": "docs/strict542/native-phase608.fixture.mjs"
+  }
+ ],
+ "native_owner_inputs_unchanged": true,
+ "old_source": "b1416481c38ba1480d8c881ca36e96785512fc47",
+ "purpose": "fixed existing release phase localization only; source identities, not built artifacts"
+}

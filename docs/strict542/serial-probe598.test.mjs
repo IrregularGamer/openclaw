@@ -59,3 +59,23 @@ test('refuses caller-selected native addon even when empty',()=>{
  for(const key of ['NAPI_RS_NATIVE_LIBRARY_PATH','NAPI_RS_ENFORCE_VERSION_CHECK','napi_rs_native_library_path'])
   for(const value of ['', '/tmp/caller.node','1']) assert.throws(()=>admitProbe(capacity,{[key]:value},false));
 });
+
+import * as phaseTrace from './serial-probe598-policy.mjs';
+test('refuses inherited native tracing filters and output destinations before imports',()=>{
+ for(const key of ['RD_LOG','RD_LOG_OUTPUT','rd_log','rd_log_output'])
+  for(const value of ['', 'trace', 'readable', 'chrome-json'])
+   assert.throws(()=>admitProbe(capacity,{[key]:value},false));
+});
+test('only config15 receives the fixed release phase tracing policy without caller mutation',()=>{
+ assert.equal(typeof phaseTrace.nativePhaseTraceEnv608,'function');
+ const input={PATH:'/fixture',ROLLDOWN_WORKER_THREADS:'1'};const before={...input};
+ const env=phaseTrace.nativePhaseTraceEnv608(input,15);
+ assert.deepEqual(phaseTrace.NATIVE_PHASE_TRACE608,{
+  RD_LOG:'rolldown::stages::link_stage=debug,rolldown::stages::generate_stage=debug',
+  RD_LOG_OUTPUT:'stdout',
+ });
+ assert.equal(Object.isFrozen(phaseTrace.NATIVE_PHASE_TRACE608),true);
+ assert.deepEqual(env,{...input,...phaseTrace.NATIVE_PHASE_TRACE608});
+ assert.deepEqual(input,before);
+ for(const index of [null,0,14,16,56]) assert.deepEqual(phaseTrace.nativePhaseTraceEnv608(input,index),input);
+});
