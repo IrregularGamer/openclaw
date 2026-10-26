@@ -1,0 +1,31 @@
+
+running 5 tests
+test table::tests::extra_read_cannot_reuse_released_ast - should panic ... ok
+test table::tests::incomplete_census_refuses - should panic ... ok
+test table::tests::referenced_missing_ast_still_refuses - should panic ... ok
+test table::tests::repeated_module_survives_until_last_render_then_drops_before_next_module ... FAILED
+test table::tests::unused_is_released_before_first_render ... FAILED
+
+failures:
+
+---- table::tests::repeated_module_survives_until_last_render_then_drops_before_next_module stdout ----
+
+thread 'table::tests::repeated_module_survives_until_last_render_then_drops_before_next_module' (1813) panicked at /work/.native608/lifetime-tests.rs:64:9:
+assertion `left == right` failed
+  left: []
+ right: [0]
+
+---- table::tests::unused_is_released_before_first_render stdout ----
+
+thread 'table::tests::unused_is_released_before_first_render' (1814) panicked at /work/.native608/lifetime-tests.rs:48:9:
+assertion `left == right` failed
+  left: []
+ right: [0]
+
+
+failures:
+    table::tests::repeated_module_survives_until_last_render_then_drops_before_next_module
+    table::tests::unused_is_released_before_first_render
+
+test result: FAILED. 3 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
