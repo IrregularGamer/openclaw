@@ -467,3 +467,17 @@ job598-allocator-rerun-refusal.txt preserves it. No compiler/build outcome exist
 Next: normal placement reconciliation of the stale remote slot under its runner
 lock (no manual override, no new slot, no local fallback), then the same
 `offload run --artifacts result598 -- sh run598.sh` once, then independent outcome review.
+
+## Interrupted allocator slot: results recovered, successor cleanup pending review (2026-10-26)
+
+Read-only inventory of `tmp-export598-config-isolation-98c59c32` found the killed
+00:49Z run's `source/` (public `.npmrc` 432 bytes) with only
+`strict542-checks/tests.log` (= recorded188-check log1b30cade) and
+`result598-isolated/probe.log` (b91e20b8). Both recovered byte-exact by jailed rsync
+to runs/598/allocator-reconciliation/. The probe log ends inside `pnpm install`: no
+compiler start, so no allocator outcome exists and one rerun is still required.
+The once-approved reconcile-isolated-slot598.py refuses a slot holding `source/`, so
+source-only successor `reconcile-allocator-slot598.py` (same lock/lease/container
+predicates and literal `ssh offload clean` of that one slug; additionally admits
+`source/` only if its sole result files equal the recovered hashes) awaits exact
+independent review before its single execution. Evidence: job598-allocator-recovery.json.
