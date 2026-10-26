@@ -1,0 +1,26 @@
+{
+ "addon_size": 24303056,
+ "application_authority": false,
+ "broker": "2026-10-26T21:38:46Z run remote rc=0 1538s /home/deploy/agentq/tmp/export608-native-compile4",
+ "combined_fit_proven": false,
+ "evidence_sha256": {
+  "job608-native-compile4-broker.txt": "d6344922082344d48d0fb54c72cd9caf04e40f3621f9443f1d79ee4652bae593",
+  "job608-native-compile4-build.txt": "3868dff85c1a9c14ea110d86d04bd6aa7b3598f3052c2d104757835a21337cca",
+  "job608-native-compile4-export.json": "f1bf87c254b67b64f31c4074003538cf975b7991c4c6078ef0c28a008a84e8c6",
+  "job608-native-compile4-offload.txt": "216f40a6f4cd5bb6de806700ac6b9d6fe2eda99b6fc6400ecff4a014dcc40b9a",
+  "job608-native-compile4-receipt.json": "bc741801b805fb6792e0e67fc4f8e3b88425096d41e6e6216927cff140f9d9b6",
+  "job608-native-compile4-retention-negative.txt": "2dbef5131d3f7d10ea857de01661b67d97672a03ab65a76d9812858fcef752d8"
+ },
+ "exit_code": 0,
+ "kind": "ACCEPTED_COMPILE_STAGE_ONLY_NOT_PACKAGE",
+ "lifetime_tests_passed": 7,
+ "new_addon_sha256": "17df206117097742019de475e8cd194fb1022f48d9c2b507195100abd13eb627",
+ "new_generate_mod_sha256": "db07fa1eaaf7e079a7645813ce25032105c522a557fbff7a854d2c1a4842c5b7",
+ "new_prepare_owner_sha256": "cd172e32b7376e89300ee794c3e85ee6740a557951c81f72e8f8fb9a82e649be",
+ "old_addon_sha256": "46d32ba682581adc9d25b10c4f160b462065b216f2deba5494acd05509208c18",
+ "old_generate_mod_sha256": "7a20ac29a8222be770c442f85b8c33d8cd1d4a30c8c2a6738b826af4fdeb7fdd",
+ "old_prepare_owner_sha256": "a139f636aae170bf1e17d2bc0f868e20e068cf4c416d766594d0e7e347d62d5e",
+ "retention_negative_failed_tests": 3,
+ "source_commit": "b1416481c38ba1480d8c881ca36e96785512fc47",
+ "spent_export": true
+}
