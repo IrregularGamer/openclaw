@@ -13,13 +13,14 @@ export function admitProbe(capacity, env, existingOutput) {
       throw new Error(`probe refuses compiler environment control: ${key}`);
   }
 }
-// Job605 evidence: unified config15 thrashes in memory.high reclaim (user CPU ~1%,
-// system CPU ~95%) at this observed limit. Refuse instead of burning the deadline;
+// Job605 evidence: unified config15 thrashes in memory.high reclaim (user CPU ~5%,
+// system CPU ~95%) and peaked at this cgroup charge. A limit not above it cannot
+// complete the probe, so refuse the whole probe instead of burning the deadline;
 // this never lowers a check or splits the singleton-owning unified graph.
-export const UNIFIED_GRAPH_THRASH_LIMIT_BYTES = 1549328384;
+export const UNIFIED_GRAPH_THRASH_LIMIT_BYTES = 1625784320;
 export function admitUnifiedGraphCapacity(capacity) {
   if (!Number.isFinite(capacity.limitBytes) || capacity.limitBytes <= UNIFIED_GRAPH_THRASH_LIMIT_BYTES)
-    throw new Error('unified graph refused: observed memory limit is at or below the job605 reclaim-thrash limit');
+    throw new Error('probe refused: observed memory limit is not above the job605 config15 reclaim-thrash peak');
 }
 export function probeSucceeded(result) {
   return result.status === 0 && !result.timedOut && !result.error &&
