@@ -3,6 +3,10 @@
 
 import type { SpawnSyncOptions } from "node:child_process";
 import { performance } from "node:perf_hooks";
+import { existsSync } from "node:fs";
+import { resolve } from "node:path";
+import { admitBoundedPackage, boundedCompilerStep, BOUNDED_PACKAGE_DEADLINE_MS, BOUNDED_COMPILER_ENV } from "./lib/bounded-package608.mjs";
+import { readProcessMemoryCapacity } from "./lib/process-memory.mts";
 import { resolveNodeRuntimeExecutable } from "../src/infra/node-runtime-executable.ts";
 import {
   finalizeBuildStepCache,
@@ -223,6 +227,7 @@ const FULL_BUILD_STEP_LABELS = [...FULL_RUNTIME_STEP_LABELS, ...FINAL_BUILD_ARTI
 export const BUILD_ALL_PROFILES: Record<string, string[]> = {
   full: [...FULL_BUILD_STEP_LABELS],
   package: ["clean:dist", ...FULL_BUILD_STEP_LABELS],
+  boundedPackage: ["clean:dist", ...FULL_BUILD_STEP_LABELS],
   ciArtifacts: [...CI_ARTIFACT_STEP_LABELS],
   // Smoke builds retain typed compilation and publication checks without the UI/metadata tail.
   strictSmoke: [...FULL_RUNTIME_STEP_LABELS, ...SDK_DECLARATION_STEP_LABELS],
@@ -348,6 +353,9 @@ export function resolveBuildAllSteps(
   // A cold runtime-only build has no declarations for the canonical SDK gates.
   // Its uncached graph cannot seed the declaration-only caches used by full builds.
   const runtimeOnly = buildEnv[RUN_NODE_SKIP_DTS_BUILD_ENV] === "1";
+  if (profile === "boundedPackage" && runtimeOnly) {
+    throw new Error("boundedPackage requires the complete typed package build");
+  }
   const labels =
     profile === "full" && runtimeOnly
       ? FULL_RUNTIME_ONLY_STEPS
@@ -363,6 +371,9 @@ export function resolveBuildAllSteps(
   return selected
     .filter((step): step is NonNullable<typeof step> => step !== undefined)
     .map((step) => {
+      if (profile === "boundedPackage") {
+        return boundedCompilerStep(step);
+      }
       const env = envOverrides[step.label];
       if (!env) {
         return step;
@@ -410,6 +421,12 @@ export function resolveBuildAllTsdownPlan(
   env: NodeJS.ProcessEnv;
   heapShortfall: ReturnType<typeof resolveTsdownBuildPlan>["heapShortfall"];
 } {
+  if (profile === "boundedPackage") {
+    // This profile replaces only compiler scheduling; default full admission stays intact.
+    // The custom whole-config selector is not the measured concurrent full graph.
+    const plan = resolveTsdownBuildPlan({ ...params, env, args: ["--config", "tsdown.bounded608.config.ts"] });
+    return { env: { ...plan.env, ...BOUNDED_COMPILER_ENV, OPENCLAW_BUILD_CACHE: "0" }, heapShortfall: plan.heapShortfall };
+  }
   if (
     !["full", "package", "ciArtifacts", "strictSmoke", "pluginSdkStrictSmoke"].includes(profile)
   ) {
@@ -541,6 +558,13 @@ export async function runBuildAllSteps(
   } = {},
 ): Promise<BuildAllResult> {
   params.signal?.throwIfAborted();
+  if (profile === "boundedPackage") {
+    admitBoundedPackage(readProcessMemoryCapacity(params.memoryLimit ?? {}), params.env ?? process.env);
+    if ([".git", "dist", "dist-runtime"].some((entry) => existsSync(resolve(params.cwd ?? process.cwd(), entry)))) {
+      throw new Error("boundedPackage requires a fresh disposable source export");
+    }
+  }
+  const boundedDeadline = profile === "boundedPackage" ? performance.now() + BOUNDED_PACKAGE_DEADLINE_MS : null;
   await preflightInstalledSourceArtifacts(params.env ?? process.env);
   params.signal?.throwIfAborted();
   const { env: buildEnv, heapShortfall } = resolveBuildAllTsdownPlan(
@@ -549,7 +573,7 @@ export async function runBuildAllSteps(
     params.memoryLimit,
   );
   const steps = params.steps ?? resolveBuildAllSteps(profile, buildEnv);
-  const cacheEnabled = params.cacheEnabled ?? buildEnv.OPENCLAW_BUILD_CACHE !== "0";
+  const cacheEnabled = profile !== "boundedPackage" && (params.cacheEnabled ?? buildEnv.OPENCLAW_BUILD_CACHE !== "0");
   const logger = params.logger ?? console;
   // One owner for both `pnpm build` and run-node dirty-tree auto-build: both
   // enter here before clean:dist can delete hashed modules a live Gateway still imports.
@@ -580,6 +604,7 @@ export async function runBuildAllSteps(
           bin: invocation.command,
           args:
             script === "scripts/tsdown-build.mts" ||
+            script === "scripts/tsdown-bounded608.mts" ||
             script === "scripts/write-unified-entry-dts.ts" ||
             script === "scripts/write-plugin-sdk-entry-dts.ts" ||
             script === "scripts/runtime-postbuild.mts"
@@ -587,6 +612,7 @@ export async function runBuildAllSteps(
               : invocation.args,
           ...invocation.options,
           signal: params.signal,
+          ...(boundedDeadline === null ? {} : { timeoutMs: Math.max(1, Math.floor(boundedDeadline - performance.now())) }),
           requireProcessTreeExit: process.platform !== "win32",
         }),
       };
@@ -601,6 +627,9 @@ export async function runBuildAllSteps(
     logger.warn(heapShortfall.message);
   }
   for (const step of steps) {
+    if (boundedDeadline !== null && performance.now() >= boundedDeadline) {
+      throw new Error("boundedPackage absolute deadline expired");
+    }
     params.signal?.throwIfAborted();
     const cacheStartedAt = now();
     const cacheState = resolveCacheState(step, { env: buildEnv });
