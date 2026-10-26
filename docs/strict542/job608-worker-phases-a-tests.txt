@@ -1,0 +1,590 @@
+(node:48) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ actual selected memory source owners
+  ✔ preserves ordinary egress redaction refresh while the new decoder stays read-only (22.63245ms)
+  ✔ records the controller's committed route after preparation and refresh overlays (7.600445ms)
+  ✔ refuses model headers and owner-attached transport overrides on capture and completion (1.14722ms)
+  ✔ reads the concrete session and decodes only its already selected memory credential (1.148613ms)
+  ✔ invalidates an existing lease through the actual owner mutation (0.958516ms)
+  ✔ invalidates an existing lease through the actual owner mutation (0.857462ms)
+  ✔ invalidates an existing lease through the actual owner mutation (0.94943ms)
+  ✔ invalidates an existing lease through the actual owner mutation (0.963342ms)
+  ✔ invalidates an existing lease through the actual owner mutation (1.30458ms)
+  ✔ refuses a key without producer selection and never resolves a stored or fallback key (0.911364ms)
+  ✔ invalidates on an auth reload and refuses instead of selecting storage credentials (0.953338ms)
+  ✔ rejects an undecodable process-local sentinel without credential fallback (0.879014ms)
+  ✔ fences the exact active-run registration and rejects its replacement (1.911236ms)
+✔ actual selected memory source owners (46.372285ms)
+▶ selected existing memory auth read
+  ✔ accepts the exact active OAuth model and finite unexpired selected credential (5.97717ms)
+  ✔ accepts explicit API-key selection without an expiry (0.54065ms)
+  ✔ refuses unsupported or absent selected mode undefined (0.503521ms)
+  ✔ refuses unsupported or absent selected mode  (0.423061ms)
+  ✔ refuses unsupported or absent selected mode token (0.469321ms)
+  ✔ refuses unsupported or absent selected mode aws-sdk (0.633261ms)
+  ✔ refuses unsupported or absent selected mode native (0.511708ms)
+  ✔ refuses unsupported or absent selected mode configured (0.500929ms)
+  ✔ refuses OAuth with unusable expiry undefined (0.712421ms)
+  ✔ refuses OAuth with unusable expiry null (0.649055ms)
+  ✔ refuses OAuth with unusable expiry NaN (0.263115ms)
+  ✔ refuses OAuth with unusable expiry Infinity (0.210296ms)
+  ✔ refuses OAuth with unusable expiry -Infinity (0.199748ms)
+  ✔ refuses OAuth with unusable expiry 999 (0.141302ms)
+  ✔ refuses OAuth with unusable expiry 1000 (0.148914ms)
+  ✔ refuses missing or placeholder memory selection undefined (0.264917ms)
+  ✔ refuses missing or placeholder memory selection  (0.149956ms)
+  ✔ refuses missing or placeholder memory selection    (0.130044ms)
+  ✔ refuses missing or placeholder memory selection __aws_sdk_auth__ (0.138437ms)
+  ✔ refuses an override that was not installed by the model/auth selector (0.519277ms)
+  ✔ refuses a selected modelId from a different route (0.201703ms)
+  ✔ refuses a selected api from a different route (0.223066ms)
+  ✔ refuses a selected baseUrl from a different route (0.444221ms)
+  ✔ expires before the before/after acceptance check without a refresh (0.959903ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.90234ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.348001ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.306495ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.356457ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.398021ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.378179ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.309022ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.543189ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.426982ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.320694ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.311528ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.334604ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.33564ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.344815ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.314537ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.457612ms)
+  ✔ refuses absent, disposed or unidentified concrete sessions (0.386609ms)
+  ✔ refuses absent, disposed or unidentified concrete sessions (0.394473ms)
+  ✔ refuses absent, disposed or unidentified concrete sessions (0.430267ms)
+  ✔ invalidates an ABA auth replacement even with identical final key bytes (0.595343ms)
+  ✔ invalidates a route round trip recorded by the actual model mutation epoch (0.542252ms)
+  ✔ rechecks after auth capture before returning a session lease (0.593118ms)
+✔ selected existing memory auth read (34.01241ms)
+(node:62) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ accepts exact native result only with settled acknowledgement (59.841061ms)
+✔ cancellation waits for explicit native settled acknowledgement (86.742993ms)
+✔ EOF without settlement refuses (8.28019ms)
+✔ cancellation without native acknowledgement refuses by shared deadline (253.590956ms)
+✔ wrong correlation, nonsettled, malformed owner and oversize refuse (9.164634ms)
+✔ deadline above 10 seconds and already cancelled refuse before connection (0.670827ms)
+✔ native owner decoder refuses caller echoes and extra fields (0.612039ms)
+✔ actual Node to Python adapter accepts pinned predicates and acknowledges settled cancellation (1329.042819ms)
+▶ usage.preflight exact542 request schema
+  ✔ accepts exactly the exact542 keys (3.06468ms)
+  ✔ refuses extra, missing and malformed keys (1.262621ms)
+✔ usage.preflight exact542 request schema (8.134453ms)
+▶ usage.preflight acceptance
+  ✔ returns verified fresh AVAILABLE windows for the actual active route (40.586978ms)
+  ✔ never serves cache or historical success (2.90389ms)
+✔ usage.preflight acceptance (45.036359ms)
+▶ usage.preflight identity and route refusals
+  ✔ refuses unknown agent (8.408912ms)
+  ✔ refuses wrong HQ session (1.222657ms)
+  ✔ refuses wrong owner name (7.379433ms)
+  ✔ refuses PID1 placeholder (1.977636ms)
+  ✔ refuses PID reuse (start differs) (1.934842ms)
+  ✔ refuses model drift (2.177497ms)
+  ✔ refuses provider drift (2.266292ms)
+  ✔ refuses an idle/unbound session (1.471062ms)
+  ✔ refuses ambiguous or missing in-memory auth (1.993377ms)
+  ✔ refuses expired auth with zero provider, refresh or write calls (1.270218ms)
+  ✔ never sends the token to a non-default or non-Anthropic route (2.051983ms)
+  ✔ refuses API-key auth and models without known window applicability (1.66636ms)
+  ✔ refuses native owner refusal, unavailability and owner change after the read (3.822157ms)
+  ✔ refuses auth/account or model replacement observed after the provider GET (3.159511ms)
+✔ usage.preflight identity and route refusals (47.490502ms)
+▶ usage.preflight provider window refusals
+  ✔ refuses empty, partial, malformed, nonfinite and out-of-range windows (10.55481ms)
+  ✔ reports UNAVAILABLE for any exhausted applicable window, including above 100% (2.127507ms)
+  ✔ reports UNAVAILABLE for exhausted non-applicable or unlisted-but-known windows (1.382013ms)
+  ✔ reports UNAVAILABLE when an exhausted window accompanies a missing one (0.814243ms)
+  ✔ does not let non-applicable windows mask exhaustion or a missing window (1.26948ms)
+  ✔ refuses 401/403/429/5xx, unexpected status, network failure and body errors (3.891358ms)
+✔ usage.preflight provider window refusals (24.873276ms)
+▶ usage.preflight deadline, cancellation and clocks
+  ✔ refuses a late provider response after the shared deadline (1.23367ms)
+  ✔ aborts a hanging provider GET at the real deadline with no later publication (1001.979846ms)
+  ✔ propagates caller cancellation to the provider transport (13.785726ms)
+  ✔ refuses an already-cancelled request without native or provider work (2.203723ms)
+  ✔ refuses wall-clock anomalies (2.962919ms)
+✔ usage.preflight deadline, cancellation and clocks (1024.979482ms)
+▶ strict Anthropic usage GET
+  ✔ sends one GET with no redirect, cache or retry and hides error bodies (66.824115ms)
+  ✔ parses JSON, bounds the body and maps aborts (2.860452ms)
+✔ strict Anthropic usage GET (70.246104ms)
+▶ gateway registration
+  ✔ registers usage.preflight as an operator.read method and keeps usage.status (0.29896ms)
+  ✔ leaves the usage.status handler byte-identical (1.193968ms)
+  ✔ binds preflight only to the strict dependencies and refuses unauthenticated clients (0.7864ms)
+✔ gateway registration (2.778915ms)
+ℹ tests 101
+ℹ suites 9
+ℹ pass 101
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5444.093312
+test_actual_existing_predicates_accept_root_gateway_peer (test_native_owner_server.NativeTransport.test_actual_existing_predicates_accept_root_gateway_peer) ... ok
+test_cancel_ack_means_actual_child_reaped (test_native_owner_server.NativeTransport.test_cancel_ack_means_actual_child_reaped) ... ok
+test_escaped_descendant_is_adopted_and_settled_with_pidfd (test_native_owner_server.NativeTransport.test_escaped_descendant_is_adopted_and_settled_with_pidfd) ... ok
+test_exited_leader_does_not_publish_before_descendant_settlement (test_native_owner_server.NativeTransport.test_exited_leader_does_not_publish_before_descendant_settlement) ... ok
+test_external_pin_drift_refuses_before_execution (test_native_owner_server.NativeTransport.test_external_pin_drift_refuses_before_execution) ... ok
+test_extra_keys_and_overlong_deadline_refuse_without_work (test_native_owner_server.NativeTransport.test_extra_keys_and_overlong_deadline_refuse_without_work) ... ok
+test_grandchild_holding_stdout_is_killed_and_reaped_before_ack (test_native_owner_server.NativeTransport.test_grandchild_holding_stdout_is_killed_and_reaped_before_ack) ... ok
+test_ignored_sigterm_is_killed_and_reaped_before_ack (test_native_owner_server.NativeTransport.test_ignored_sigterm_is_killed_and_reaped_before_ack) ... ok
+test_native_caller_cgroup_refuses_queue (test_native_owner_server.NativeTransport.test_native_caller_cgroup_refuses_queue) ... ok
+test_native_mainpid_refuses_other_gateway (test_native_owner_server.NativeTransport.test_native_mainpid_refuses_other_gateway) ... ok
+test_nonroot_endpoint_refuses_without_work (test_native_owner_server.NativeTransport.test_nonroot_endpoint_refuses_without_work) ... ok
+test_peer_start_change_between_actual_owner_checks_refuses (test_native_owner_server.NativeTransport.test_peer_start_change_between_actual_owner_checks_refuses) ... ok
+test_root_endpoint_outside_gateway_cgroup_refuses (test_native_owner_server.NativeTransport.test_root_endpoint_outside_gateway_cgroup_refuses) ... ok
+test_shared_deadline_terminates_and_reaps (test_native_owner_server.NativeTransport.test_shared_deadline_terminates_and_reaps) ... ok
+test_subreaper_setup_failure_refuses_without_work (test_native_owner_server.NativeTransport.test_subreaper_setup_failure_refuses_without_work) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 1.497s
+
+OK
+test_actual_synthetic_child_is_killed_and_reaped_on_cancel (test_native_preparation.NativePreparation.test_actual_synthetic_child_is_killed_and_reaped_on_cancel) ... ok
+test_actual_synthetic_child_is_killed_and_reaped_on_timeout (test_native_preparation.NativePreparation.test_actual_synthetic_child_is_killed_and_reaped_on_timeout) ... ok
+test_bad_mainpid_refuses (test_native_preparation.NativePreparation.test_bad_mainpid_refuses) ... ok
+test_cancel_refuses_and_restores_handlers (test_native_preparation.NativePreparation.test_cancel_refuses_and_restores_handlers) ... ok
+test_cli_read_precedes_controller_and_mutating_error_handler (test_native_preparation.NativePreparation.test_cli_read_precedes_controller_and_mutating_error_handler) ... ok
+test_deadline_covers_all_native_checks (test_native_preparation.NativePreparation.test_deadline_covers_all_native_checks) ... ok
+test_deadline_invalid_expired_and_overlong (test_native_preparation.NativePreparation.test_deadline_invalid_expired_and_overlong) ... ok
+test_derived_identity_and_existing_predicate_before_after (test_native_preparation.NativePreparation.test_derived_identity_and_existing_predicate_before_after) ... ok
+test_exact_existing_cgroup_predicate_refuses_queue (test_native_preparation.NativePreparation.test_exact_existing_cgroup_predicate_refuses_queue) ... ok
+test_gateway_mainpid_change_refuses (test_native_preparation.NativePreparation.test_gateway_mainpid_change_refuses) ... ok
+test_missing_or_malformed_proc_refuses (test_native_preparation.NativePreparation.test_missing_or_malformed_proc_refuses) ... ok
+test_nonroot_refuses (test_native_preparation.NativePreparation.test_nonroot_refuses) ... ok
+test_nonzero_systemctl_refuses (test_native_preparation.NativePreparation.test_nonzero_systemctl_refuses) ... ok
+test_root_with_valid_gateway_but_queue_caller_refuses (test_native_preparation.NativePreparation.test_root_with_valid_gateway_but_queue_caller_refuses) ... ok
+test_second_owner_check_caller_cgroup_change_refuses (test_native_preparation.NativePreparation.test_second_owner_check_caller_cgroup_change_refuses) ... ok
+test_second_owner_check_root_loss_refuses (test_native_preparation.NativePreparation.test_second_owner_check_root_loss_refuses) ... ok
+test_second_owner_check_start_change_refuses (test_native_preparation.NativePreparation.test_second_owner_check_start_change_refuses) ... ok
+test_start_change_refuses (test_native_preparation.NativePreparation.test_start_change_refuses) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.906s
+
+OK
+test_endpoint_idle_lifetime_and_parent_death_refuse (test_root_owner_supervisor.RootSupervisor.test_endpoint_idle_lifetime_and_parent_death_refuse) ... ok
+test_gateway_mainpid_change_ends_before_cpu_or_next_request (test_root_owner_supervisor.RootSupervisor.test_gateway_mainpid_change_ends_before_cpu_or_next_request) ... ok
+test_gateway_pidfd_exit_and_cpu_budget_end_monitor (test_root_owner_supervisor.RootSupervisor.test_gateway_pidfd_exit_and_cpu_budget_end_monitor) ... ok
+test_parent_sigkill_cancels_real_native_tree_before_receipt (test_root_owner_supervisor.RootSupervisor.test_parent_sigkill_cancels_real_native_tree_before_receipt) ... ok
+test_partial_framing_has_absolute_deadline_and_checks_lifecycle (test_root_owner_supervisor.RootSupervisor.test_partial_framing_has_absolute_deadline_and_checks_lifecycle) ... ok
+test_placement_mismatch_refuses_without_limits_or_serving (test_root_owner_supervisor.RootSupervisor.test_placement_mismatch_refuses_without_limits_or_serving) ... ok
+test_real_fd3_endpoint_and_escaped_descendant_settle_on_shutdown (test_root_owner_supervisor.RootSupervisor.test_real_fd3_endpoint_and_escaped_descendant_settle_on_shutdown) ... ok
+test_reviewed_server_bytes_and_isolated_external_pin (test_root_owner_supervisor.RootSupervisor.test_reviewed_server_bytes_and_isolated_external_pin) ... ok
+test_self_only_exact_cgroup_placement_and_limits (test_root_owner_supervisor.RootSupervisor.test_self_only_exact_cgroup_placement_and_limits) ... ok
+test_server_pin_drift_refuses_before_execution (test_root_owner_supervisor.RootSupervisor.test_server_pin_drift_refuses_before_execution) ... ok
+test_socket_parent_writable_refuses_before_bind (test_root_owner_supervisor.RootSupervisor.test_socket_parent_writable_refuses_before_bind) ... ok
+test_source_path_writable_or_symlink_refuses (test_root_owner_supervisor.RootSupervisor.test_source_path_writable_or_symlink_refuses) ... ok
+test_worker_and_nonroot_and_argument_contexts_refuse_before_source (test_root_owner_supervisor.RootSupervisor.test_worker_and_nonroot_and_argument_contexts_refuse_before_source) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.420s
+
+OK
+test_action_binding_and_independent_reviews (test_application598.PreparationTests.test_action_binding_and_independent_reviews) ... ok
+test_action_native_hash_refuses_without_patch (test_application598.PreparationTests.test_action_native_hash_refuses_without_patch) ... ok
+test_action_stage_tamper_refuses (test_application598.PreparationTests.test_action_stage_tamper_refuses) ... ok
+test_check_tree_revalidates_all_evidence_shape (test_application598.PreparationTests.test_check_tree_revalidates_all_evidence_shape) ... ok
+test_deterministic_tree (test_application598.PreparationTests.test_deterministic_tree) ... ok
+test_escaping_and_absolute_symlinks_refuse (test_application598.PreparationTests.test_escaping_and_absolute_symlinks_refuse) ... ok
+test_fixture_cannot_claim_built (test_application598.PreparationTests.test_fixture_cannot_claim_built) ... ok
+test_fixture_receipt_cannot_be_promoted (test_application598.PreparationTests.test_fixture_receipt_cannot_be_promoted) ... ok
+test_internal_symlink_is_recorded (test_application598.PreparationTests.test_internal_symlink_is_recorded) ... ok
+test_missing_dependency_or_dist_refuses (test_application598.PreparationTests.test_missing_dependency_or_dist_refuses) ... ok
+test_nonzero_build_and_tampered_log_refuse (test_application598.PreparationTests.test_nonzero_build_and_tampered_log_refuse) ... ok
+test_receipt_output_cannot_overwrite (test_application598.PreparationTests.test_receipt_output_cannot_overwrite) ... ok
+test_runtime_mutation_refuses_validation (test_application598.PreparationTests.test_runtime_mutation_refuses_validation) ... ok
+test_runtime_root_mode_refuses (test_application598.PreparationTests.test_runtime_root_mode_refuses) ... ok
+test_secret_names_refuse (test_application598.PreparationTests.test_secret_names_refuse) ... ok
+test_source_reference_and_lock_drift_refuse (test_application598.PreparationTests.test_source_reference_and_lock_drift_refuse) ... ok
+test_special_file_fifo_refuses (test_application598.PreparationTests.test_special_file_fifo_refuses) ... ok
+test_tree_rejects_setuid (test_application598.PreparationTests.test_tree_rejects_setuid) ... ok
+test_unknown_target_or_missing_seal_refuses (test_application598.PreparationTests.test_unknown_target_or_missing_seal_refuses) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.165s
+
+OK
+test_file_ancestor_refuses (test_apply598.Application.test_file_ancestor_refuses) ... ok
+test_new_release_parent_directories (test_apply598.Application.test_new_release_parent_directories) ... ok
+test_symlink_ancestor_refuses (test_apply598.Application.test_symlink_ancestor_refuses) ... ok
+test_absolute_lifetime_interrupts_with_refusal (test_apply598.GuardedApplication.test_absolute_lifetime_interrupts_with_refusal) ... ok
+test_intermediate_directory_replacement_cannot_redirect_privileged_write (test_apply598.GuardedApplication.test_intermediate_directory_replacement_cannot_redirect_privileged_write) ... ok
+test_native_quiet_refuses_fixture_or_remote_uncertainty (test_apply598.GuardedApplication.test_native_quiet_refuses_fixture_or_remote_uncertainty) ... ok
+test_native_quiet_requires_valid_registered_worker (test_apply598.GuardedApplication.test_native_quiet_requires_valid_registered_worker) ... ok
+test_original_seal_accepts_only_exact_existing_link_and_target_bytes (test_apply598.GuardedApplication.test_original_seal_accepts_only_exact_existing_link_and_target_bytes) ... ok
+test_previous_application_journal_refuses_replay (test_apply598.GuardedApplication.test_previous_application_journal_refuses_replay) ... ok
+test_queue_gate_requires_actual_done_build_matching_review_and_exact_result (test_apply598.GuardedApplication.test_queue_gate_requires_actual_done_build_matching_review_and_exact_result) ... ok
+test_unchanged_guard_drift_refuses_final_verification (test_apply598.GuardedApplication.test_unchanged_guard_drift_refuses_final_verification) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.107s
+
+OK
+test_rebuilt_addon_or_receipt_drift_never_publishes_native_directory (test_native_consumer608.SourceOnlyConsumer.test_rebuilt_addon_or_receipt_drift_never_publishes_native_directory) ... ok
+test_uploaded_binary_or_redirected_receipt_refuses_before_compilation (test_native_consumer608.SourceOnlyConsumer.test_uploaded_binary_or_redirected_receipt_refuses_before_compilation) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.022s
+
+OK
+test_caller_package_policy_refuses_even_empty (test_frozen_package608.FrozenPackage.test_caller_package_policy_refuses_even_empty) ... ok
+test_legacy_fallback_or_postphase_drift_never_emits_receipt (test_frozen_package608.FrozenPackage.test_legacy_fallback_or_postphase_drift_never_emits_receipt) ... ok
+test_lifecycle_cooldown_and_lock_trust_overlays_refuse (test_frozen_package608.FrozenPackage.test_lifecycle_cooldown_and_lock_trust_overlays_refuse) ... ok
+test_missing_or_redirected_target_lock_refuses (test_frozen_package608.FrozenPackage.test_missing_or_redirected_target_lock_refuses) ... ok
+test_original_source_or_config_drift_refuses (test_frozen_package608.FrozenPackage.test_original_source_or_config_drift_refuses) ... ok
+test_success_records_both_lock_identities_and_exclusive_receipt (test_frozen_package608.FrozenPackage.test_success_records_both_lock_identities_and_exclusive_receipt) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.029s
+
+OK
+✔ bounded package preserves observed capacity floor and refuses compiler overrides (5.181783ms)
+✔ whole config selection retains object identity and exact typed inventory (5.964855ms)
+✔ bounded compiler stages cannot skip canonical typed gates (1.367758ms)
+✔ compiler scanner failures and timeout cannot become package evidence (3.104021ms)
+✔ consumed archives and private store release preserves installed bytes and links (41.177247ms)
+✔ escaping installed link refuses before deleting store (12.193168ms)
+✔ unsupported install policy and archive symlinks refuse (10.417124ms)
+✔ census preserves every ordered config and alias/source pair including duplicate group names (3.889051ms)
+✔ selection returns the entire original graph by identity (0.890346ms)
+✔ refuses invalid indices, declaration graphs and drifted inventory (2.819988ms)
+✔ one-CPU diagnostic owns fixed native pools without changing caller environment (0.495936ms)
+✔ refuses inherited native worker controls before owner generates limits (1.27978ms)
+✔ accepts matching compile and lib-test stage receipts with the pinned addon (11.322167ms)
+✔ refuses missing, swapped, failed or disagreeing stage receipts and a changed addon (51.179831ms)
+✔ admits fixed serial diagnostic only with observed bounded capacity (4.701001ms)
+✔ refuses unknown or oversized capacity and existing output (1.352251ms)
+✔ refuses caller-controlled compiler budget, selection, preload or plugin exclusions (3.893522ms)
+✔ compiler warnings, unresolved imports and unsettled/failed runs refuse success (0.927511ms)
+✔ accepts only the owning tsx launcher cache-disabled value (1.077219ms)
+✔ refuses inherited output and native thread scheduling controls even when empty (1.069525ms)
+✔ refuses inherited allocator controls even when empty or matching generated policy (0.912231ms)
+✔ fixed allocator policy preserves caller and pool bounds without raising any budget (2.549366ms)
+✔ refuses the unified graph at or below the observed reclaim-thrash limit (1.935372ms)
+✔ refuses caller-selected native addon even when empty (1.482774ms)
+✔ only exact self-contained workers defer required minification (7.570323ms)
+✔ changed worker packaging/minify policy refuses instead of omitting a phase (1.940828ms)
+✔ each compiler refusal prevents minifier and second phase failure propagates (3.618781ms)
+✔ settled bundle precedes fixed minifier and expired deadline refuses (5.646459ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1466.082492
+Scope: all 186 workspace projects
+. pnpm:devPreinstall$ node scripts/check-install-dependency-ownership.mjs
+. pnpm:devPreinstall: Done
+? Verifying lockfile against supply-chain policies (1706 entries)...
+Progress: resolved 1469, reused 0, downloaded 22, added 0
+Progress: resolved 1469, reused 0, downloaded 29, added 0
+[WARN] Tarball download average speed 5 KiB/s (size 8 KiB) is below 50 KiB/s: https://registry.npmjs.org/@audio/decode-aiff/-/decode-aiff-1.3.0.tgz (GET)
+[WARN] Tarball download average speed 4 KiB/s (size 7 KiB) is below 50 KiB/s: https://registry.npmjs.org/tlds/-/tlds-1.261.0.tgz (GET)
+[WARN] Tarball download average speed 5 KiB/s (size 10 KiB) is below 50 KiB/s: https://registry.npmjs.org/@peculiar/asn1-x509-attr/-/asn1-x509-attr-2.9.4.tgz (GET)
+[WARN] Tarball download average speed 6 KiB/s (size 15 KiB) is below 50 KiB/s: https://registry.npmjs.org/parseley/-/parseley-0.13.1.tgz (GET)
+[WARN] Tarball download average speed 15 KiB/s (size 26 KiB) is below 50 KiB/s: https://registry.npmjs.org/tsyringe/-/tsyringe-4.10.0.tgz (GET)
+Packages are copied from the content-addressable store to the virtual store.
+  Content-addressable store is at: /work/.pnpm-store/v11
+  Virtual store is at:             node_modules/.pnpm
+[WARN] Tarball download average speed 7 KiB/s (size 17 KiB) is below 50 KiB/s: https://registry.npmjs.org/undici-types/-/undici-types-5.26.5.tgz (GET)
+[WARN] Tarball download average speed 8 KiB/s (size 18 KiB) is below 50 KiB/s: https://registry.npmjs.org/yargs-parser/-/yargs-parser-18.1.3.tgz (GET)
+[WARN] Tarball download average speed 26 KiB/s (size 72 KiB) is below 50 KiB/s: https://registry.npmjs.org/@opentelemetry/sdk-logs/-/sdk-logs-0.222.0.tgz (GET)
+[WARN] Tarball download average speed 11 KiB/s (size 29 KiB) is below 50 KiB/s: https://registry.npmjs.org/rolldown-plugin-dts/-/rolldown-plugin-dts-0.28.6.tgz (GET)
+[WARN] Tarball download average speed 31 KiB/s (size 88 KiB) is below 50 KiB/s: https://registry.npmjs.org/signal-utils/-/signal-utils-0.21.1.tgz (GET)
+[WARN] Tarball download average speed 11 KiB/s (size 34 KiB) is below 50 KiB/s: https://registry.npmjs.org/@noble/ed25519/-/ed25519-3.2.0.tgz (GET)
+Downloading onnxruntime-node@1.30.0: 0.00 B/113.50 MB
+[WARN] Tarball download average speed 12 KiB/s (size 43 KiB) is below 50 KiB/s: https://registry.npmjs.org/css-select/-/css-select-7.0.0.tgz (GET)
+[WARN] Tarball download average speed 47 KiB/s (size 172 KiB) is below 50 KiB/s: https://registry.npmjs.org/@shikijs/themes/-/themes-4.4.3.tgz (GET)
+[WARN] Tarball download average speed 24 KiB/s (size 98 KiB) is below 50 KiB/s: https://registry.npmjs.org/entities/-/entities-8.1.0.tgz (GET)
+[WARN] Tarball download average speed 39 KiB/s (size 158 KiB) is below 50 KiB/s: https://registry.npmjs.org/@bramus/specificity/-/specificity-2.4.2.tgz (GET)
+[WARN] Tarball download average speed 39 KiB/s (size 164 KiB) is below 50 KiB/s: https://registry.npmjs.org/@babel/traverse/-/traverse-7.29.8.tgz (GET)
+[WARN] Tarball download average speed 42 KiB/s (size 42 KiB) is below 50 KiB/s: https://registry.npmjs.org/path-expression-matcher/-/path-expression-matcher-1.6.2.tgz (GET)
+[WARN] Tarball download average speed 10 KiB/s (size 14 KiB) is below 50 KiB/s: https://registry.npmjs.org/@hapi/hoek/-/hoek-11.0.7.tgz (GET)
+Downloading @lancedb/lancedb-linux-x64-gnu@0.39.0: 0.00 B/72.71 MB
+Downloading @oxlint-tsgolint/linux-x64@7.0.2002: 0.00 B/7.76 MB
+Downloading @lancedb/lancedb-linux-x64-gnu@0.39.0: 597.44 kB/72.71 MB
+Downloading @oxlint-tsgolint/linux-x64@7.0.2002: 983.02 kB/7.76 MB
+Progress: resolved 1469, reused 0, downloaded 260, added 256
+Progress: resolved 1469, reused 0, downloaded 285, added 274
+[WARN] Tarball download average speed 7 KiB/s (size 11 KiB) is below 50 KiB/s: https://registry.npmjs.org/micromark-util-types/-/micromark-util-types-2.0.2.tgz (GET)
+[WARN] Tarball download average speed 19 KiB/s (size 28 KiB) is below 50 KiB/s: https://registry.npmjs.org/@zone-eu/mailsplit/-/mailsplit-5.4.17.tgz (GET)
+Progress: resolved 1469, reused 0, downloaded 317, added 307
+Downloading @rolldown/binding-linux-x64-gnu@1.2.9: 0.00 B/7.92 MB
+Downloading @rolldown/binding-linux-x64-gnu@1.2.9: 221.18 kB/7.92 MB
+Downloading mermaid@11.17.2: 0.00 B/17.79 MB
+Downloading node-pty@1.2.0-beta.15: 0.00 B/7.15 MB
+Downloading @tloncorp/tlon-skill-linux-x64@0.5.0: 0.00 B/40.66 MB
+Downloading @typescript/typescript-linux-x64@7.1.0-dev.20260920.1: 0.00 B/10.11 MB
+Progress: resolved 1469, reused 0, downloaded 381, added 382
+Downloading @trycua/cua-driver-linux-x64-gnu@0.28.2: 0.00 B/13.49 MB
+Downloading mermaid@11.17.2: 1.47 MB/17.79 MB
+Downloading @anthropic-ai/claude-agent-sdk-linux-x64@0.3.274: 0.00 B/102.59 MB
+Downloading @microsoft/mxc-sdk@0.8.0: 0.00 B/25.88 MB
+Downloading @github/copilot-sdk-linux-x64@1.0.14: 0.00 B/46.89 MB
+Downloading cytoscape-fcose@2.2.0: 0.00 B/7.60 MB
+Downloading @openai/codex@0.160.0-linux-x64: 0.00 B/163.27 MB
+Downloading @oxlint/binding-linux-x64-gnu@1.83.0: 0.00 B/6.51 MB
+Progress: resolved 1469, reused 0, downloaded 459, added 448
+Progress: resolved 1469, reused 0, downloaded 470, added 448
+✓ Lockfile passes supply-chain policies (1706 entries in 25.4s)
+Lockfile is up to date, resolution step is skipped
+Downloading mermaid@11.17.2: 9.14 MB/17.79 MB
+Progress: resolved 1469, reused 0, downloaded 572, added 575
+Progress: resolved 1469, reused 0, downloaded 599, added 576
+Progress: resolved 1469, reused 0, downloaded 636, added 613
+Progress: resolved 1469, reused 0, downloaded 684, added 672
+Progress: resolved 1469, reused 0, downloaded 732, added 726
+Progress: resolved 1469, reused 0, downloaded 796, added 781
+Progress: resolved 1469, reused 0, downloaded 822, added 800
+Progress: resolved 1469, reused 0, downloaded 860, added 832
+Progress: resolved 1469, reused 0, downloaded 891, added 887
+Downloading onnxruntime-node@1.30.0: 56.27 MB/113.50 MB
+Progress: resolved 1469, reused 0, downloaded 923, added 914
+Downloading onnxruntime-node@1.30.0: 63.15 MB/113.50 MB
+Downloading @lancedb/lancedb-linux-x64-gnu@0.39.0: 54.02 MB/72.71 MB
+Progress: resolved 1469, reused 0, downloaded 994, added 992
+Progress: resolved 1469, reused 0, downloaded 1028, added 1024
+Downloading @lancedb/lancedb-linux-x64-gnu@0.39.0: 69.81 MB/72.71 MB
+Progress: resolved 1469, reused 0, downloaded 1035, added 1024
+Progress: resolved 1469, reused 0, downloaded 1042, added 1024
+Progress: resolved 1469, reused 0, downloaded 1043, added 1024
+Progress: resolved 1469, reused 0, downloaded 1050, added 1045
+Progress: resolved 1469, reused 0, downloaded 1050, added 1055
+Downloading @anthropic-ai/claude-agent-sdk-linux-x64@0.3.274: 16.79 MB/102.59 MB
+Progress: resolved 1469, reused 0, downloaded 1082, added 1077
+Progress: resolved 1469, reused 0, downloaded 1082, added 1087
+Progress: resolved 1469, reused 0, downloaded 1082, added 1088
+Downloading @anthropic-ai/claude-agent-sdk-linux-x64@0.3.274: 24.33 MB/102.59 MB
+Progress: resolved 1469, reused 0, downloaded 1122, added 1120
+Progress: resolved 1469, reused 0, downloaded 1146, added 1120
+Progress: resolved 1469, reused 0, downloaded 1160, added 1152
+Progress: resolved 1469, reused 0, downloaded 1167, added 1152
+Progress: resolved 1469, reused 0, downloaded 1178, added 1182
+Progress: resolved 1469, reused 0, downloaded 1215, added 1216
+Progress: resolved 1469, reused 0, downloaded 1242, added 1233
+Progress: resolved 1469, reused 0, downloaded 1269, added 1248
+Progress: resolved 1469, reused 0, downloaded 1289, added 1280
+Progress: resolved 1469, reused 0, downloaded 1303, added 1280
+Downloading @openai/codex@0.160.0-linux-x64: 82.13 MB/163.27 MB
+Downloading @anthropic-ai/claude-agent-sdk-linux-x64@0.3.274: 82.77 MB/102.59 MB
+Downloading @anthropic-ai/claude-agent-sdk-linux-x64@0.3.274: 91.69 MB/102.59 MB
+Progress: resolved 1469, reused 0, downloaded 1338, added 1344
+Progress: resolved 1469, reused 0, downloaded 1370, added 1376
+Progress: resolved 1469, reused 0, downloaded 1402, added 1407
+Downloading @openai/codex@0.160.0-linux-x64: 113.67 MB/163.27 MB
+Downloading @tloncorp/tlon-skill-linux-x64@0.5.0: 16.80 MB/40.66 MB
+Progress: resolved 1469, reused 0, downloaded 1434, added 1437
+Progress: resolved 1469, reused 0, downloaded 1434, added 1439
+Progress: resolved 1469, reused 0, downloaded 1447, added 1440
+Downloading @openai/codex@0.160.0-linux-x64: 148.78 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 157.14 MB/163.27 MB
+Downloading @tloncorp/tlon-skill-linux-x64@0.5.0: 35.69 MB/40.66 MB
+Progress: resolved 1469, reused 0, downloaded 1453, added 1440
+Downloading @github/copilot-sdk-linux-x64@1.0.14: 16.80 MB/46.89 MB
+Downloading @microsoft/mxc-sdk@0.8.0: 20.90 MB/25.88 MB
+Progress: resolved 1469, reused 0, downloaded 1458, added 1440
+Progress: resolved 1469, reused 0, downloaded 1462, added 1440
+Downloading @github/copilot-sdk-linux-x64@1.0.14: 42.74 MB/46.89 MB
+Progress: resolved 1469, reused 0, downloaded 1463, added 1451
+Progress: resolved 1469, reused 0, downloaded 1463, added 1465
+Progress: resolved 1469, reused 0, downloaded 1463, added 1468
+Packages: +1469
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 1469, reused 0, downloaded 1463, added 1469, done
+.../esbuild@0.28.2/node_modules/esbuild postinstall$ node install.js
+.../esbuild@0.28.2/node_modules/esbuild postinstall: Done
+.../node_modules/@google/genai preinstall$ echo 'preinstall: no-op'
+.../node_modules/@google/genai preinstall: preinstall: no-op
+.../node_modules/@google/genai preinstall: Done
+.../@matrix-org/matrix-sdk-crypto-nodejs postinstall$ node download-lib.js
+.../@matrix-org/matrix-sdk-crypto-nodejs postinstall: Downloading lib matrix-sdk-crypto.linux-x64-gnu.node from https://github.com/matrix-org/matrix-rust-sdk-crypto-nodejs/releases/download/v0.6.6/matrix-sdk-crypto.linux-x64-gnu.node
+.../@matrix-org/matrix-sdk-crypto-nodejs postinstall: 0 b/s - 58.5% [13.8 MB/23.6 MB]
+.../@matrix-org/matrix-sdk-crypto-nodejs postinstall: Download Completed
+.../@matrix-org/matrix-sdk-crypto-nodejs postinstall: Done
+.../node_modules/node-pty install$ node scripts/prebuild.js || node-gyp rebuild
+.../node_modules/node-pty install: [32m> Checking prebuilds...[0m
+.../node_modules/node-pty install: Done
+.../node_modules/node-pty postinstall$ node scripts/post-install.js
+.../node_modules/node-pty postinstall: [32m> Cleaning release folder...[0m
+.../node_modules/node-pty postinstall: [32m> Moving conpty.dll...[0m
+.../node_modules/node-pty postinstall:   SKIPPED (not Windows)
+.../node_modules/node-pty postinstall: Done
+.../node_modules/@tloncorp/tlon-skill postinstall$ node scripts/postinstall.js
+.../node_modules/@tloncorp/tlon-skill postinstall: [tlon-skill] Binary ready: /work/source/node_modules/.pnpm/@tloncorp+tlon-skill-linux-x64@0.5.0/node_modules/@tloncorp/tlon-skill-linux-x64/tlon
+.../node_modules/@tloncorp/tlon-skill postinstall: Done
+.../node_modules/baileys preinstall$ node ./engine-requirements.js
+.../node_modules/baileys preinstall: Done
+. preinstall$ node scripts/preinstall-package-manager-warning.mjs
+. preinstall: Done
+. postinstall$ node scripts/postinstall-bundled-plugins.mjs
+. postinstall: Done
+. prepare$ node scripts/prepare-git-hooks.mjs
+. prepare: Done
+
+dependencies:
++ @agentclientprotocol/sdk 1.4.0
++ @anthropic-ai/sdk 0.127.0
++ @babel/generator 8.0.6
++ @babel/parser 8.0.6
++ @babel/traverse 8.0.6
++ @clack/core 1.5.1
++ @clack/prompts 1.8.1
++ @earendil-works/pi-tui 0.86.1
++ @google/genai 2.23.0
++ @grammyjs/transformer-throttler 1.2.1
++ @homebridge/ciao 1.3.12
++ @lydell/node-pty 1.2.0-beta.15
++ @mistralai/mistralai 2.7.0
++ @modelcontextprotocol/sdk 1.31.0
++ @mozilla/readability 0.6.0
++ @openclaw/ai link:packages/ai
++ @openclaw/fs-safe 0.21.1
++ @openclaw/proxyline 0.3.12
++ @silvia-odwyer/photon-node 0.3.4
++ @trycua/cua-driver 0.28.2
++ acorn 8.18.0
++ chalk 6.0.0
++ chokidar 5.0.0
++ chrome-devtools-mcp 1.9.0
++ clawpdf 0.3.2
++ commander 15.0.0
++ croner 10.0.1
++ diff 9.0.0
++ dotenv 18.0.1
++ entities 8.1.0
++ esbuild 0.28.2
++ execa 10.0.1
++ express 5.2.1
++ file-type 22.1.1
++ grammy 1.46.0
++ highlight.js 11.12.0
++ hosted-git-info 10.1.1
++ iconv-lite 0.7.3
++ ignore 7.0.9
++ import-meta-resolve 4.2.0
++ jiti 2.7.0
++ json5 2.2.3
++ jszip 3.10.2
++ koffi 3.3.1
++ kysely 0.29.6
++ linkedom 0.18.13
++ minimatch 10.2.6
++ node-edge-tts 1.2.10
++ npm 11.20.0
++ openai 7.20.0
++ p-limit 7.3.3
++ p-map 7.0.8
++ partial-json 0.1.7
++ playwright-core 1.63.0
++ qrcode 1.5.4
++ rastermill 0.3.3
++ semver 7.8.5
++ tar 7.5.22
++ tslog 5.2.0
++ typebox 1.3.34
++ undici 8.10.2
++ web-push 3.6.7
++ web-tree-sitter 0.27.0
++ ws 8.21.3
++ yaml 2.9.1
++ zod 4.6.5
+
+optionalDependencies:
++ sqlite-vec 0.1.9
+
+devDependencies:
++ @a2ui/lit 0.11.0
++ @a2ui/web_core 0.11.0
++ @babel/types 8.0.6
++ @copilotkit/aimock 1.42.1
++ @lit-labs/signals 0.3.0
++ @lit/context 1.1.6
++ @lit/task 1.0.3
++ @mdx-js/mdx 3.1.1
++ @openclaw/crabline 0.1.27
++ @openclaw/session-url-contract link:packages/session-url-contract
++ @opentelemetry/sdk-node 0.222.0
++ @pnpm/parse-overrides 1001.0.4
++ @shikijs/core 4.4.3
++ @shikijs/engine-javascript 4.4.3
++ @shikijs/engine-oniguruma 4.4.3
++ @sindresorhus/slugify 3.0.1
++ @types/express 5.0.6
++ @types/hosted-git-info 3.0.5
++ @types/jsdom 30.0.0
++ @types/markdown-it 14.2.0
++ @types/mdast 4.0.4
++ @types/node 26.6.2
++ @types/semver 7.8.0
++ @types/web-push 3.6.4
++ @types/ws 8.18.1
++ @vitest/coverage-v8 5.0.1
++ acpx 0.19.1
++ apache-arrow 21.2.0
++ baileys 7.0.0-rc14
++ htmlparser2 12.0.0
++ ipaddr.js 2.5.0
++ jscpd 5.3.0
++ jsdom 30.1.0
++ lit 3.3.3
++ lit-analyzer 2.0.3
++ markdown-it 15.0.2
++ markdown-it-anchor 10.0.0
++ marked 18.0.13
++ minipass 7.1.3
++ nostr-tools 2.25.2
++ oxfmt 0.68.0
++ oxlint 1.83.0
++ oxlint-tsgolint 7.0.2002
++ pako 3.0.2
++ playwright 1.63.0
++ postcss 8.5.28
++ postcss-lit 1.4.1
++ postcss-selector-parser 7.1.6
++ shiki 4.4.3
++ signal-utils 0.21.1
++ sigstore 5.0.0
++ string-width 8.2.2
++ stylelint 17.15.0
++ stylelint-config-recommended 18.0.0
++ tinyglobby 0.2.17
++ tree-sitter-bash 0.25.1
++ tsdown 0.23.0
++ tsx 4.23.15
++ typescript 7.1.0-dev.20260920.1
++ unrun 0.3.1
++ vite 8.3.0
++ vitest 5.0.1
+
+Done in 2m 5.1s using pnpm v12.5.1
+JSON report written to /work/result608-workers/vitest.json
+✔ real split worker retains side effects, names, dynamic imports, maps and legal text (699.97081ms)
+✔ real minifier rejects parse failure and redirected output without replacing bytes (349.394433ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1391.512334
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"46","phase":"begin","pid":457,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"allocator":{"MIMALLOC_ALLOW_THP":"0"},"memory":{"rss":132300800,"heapTotal":54996992,"heapUsed":18642944,"external":2920017,"arrayBuffers":211171},"kernel":{"memory.current":"891351040","memory.peak":"2121351168","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","memory.stat":"anon 168185856\nfile 426336256\nkernel 296153088\nkernel_stack 557056\npagetables 5906432\nsec_pagetables 0\npercpu 2712\nsock 0\nvmalloc 16384\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 34615296\nfile_dirty 14340096\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 168095744\ninactive_file 324104192\nactive_file 102232064\nunevictable 0\nslab_reclaimable 288691312\nslab_unreclaimable 872456\nslab 289563768\nworkingset_refault_anon 0\nworkingset_refault_file 407647\nworkingset_activate_anon 0\nworkingset_activate_file 397507\nworkingset_restore_anon 0\nworkingset_restore_file 9342\nworkingset_nodereclaim 19072\npgscan 1837760\npgsteal 1837341\npgscan_kswapd 0\npgscan_direct 1837760\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 1837341\npgsteal_khugepaged 0\npgfault 848481\npgmajfault 654\npgrefill 31984\npgactivate 703\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 92\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0","memory.pressure":"some avg10=0.11 avg60=1.53 avg300=0.82 total=3675450\nfull avg10=0.11 avg60=1.12 avg300=0.55 total=2619641","cpu.stat":"usage_usec 148551906\nuser_usec 81258409\nsystem_usec 67293496\ncore_sched.force_idle_usec 0\nnr_periods 1783\nnr_throttled 1057\nthrottled_usec 94640022\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"46","phase":"running","pid":457,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"allocator":{"MIMALLOC_ALLOW_THP":"0"},"memory":{"rss":1237172224,"heapTotal":96780288,"heapUsed":41682048,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"2091483136","memory.peak":"2121351168","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","memory.stat":"anon 1272938496\nfile 514732032\nkernel 303497216\nkernel_stack 557056\npagetables 10190848\nsec_pagetables 0\npercpu 2712\nsock 0\nvmalloc 16384\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 34754560\nfile_dirty 28672\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 1272909824\ninactive_file 412430336\nactive_file 102268928\nunevictable 0\nslab_reclaimable 291683480\nslab_unreclaimable 957528\nslab 292641008\nworkingset_refault_anon 0\nworkingset_refault_file 422702\nworkingset_activate_anon 0\nworkingset_activate_file 412553\nworkingset_restore_anon 0\nworkingset_restore_file 9342\nworkingset_nodereclaim 19072\npgscan 1837760\npgsteal 1837341\npgscan_kswapd 0\npgscan_direct 1837760\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 1837341\npgsteal_khugepaged 0\npgfault 1137342\npgmajfault 654\npgrefill 31984\npgactivate 703\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 92\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0","memory.pressure":"some avg10=0.00 avg60=0.92 avg300=0.74 total=3675450\nfull avg10=0.00 avg60=0.67 avg300=0.50 total=2619641","cpu.stat":"usage_usec 178413603\nuser_usec 104915016\nsystem_usec 73498586\ncore_sched.force_idle_usec 0\nnr_periods 2084\nnr_throttled 1348\nthrottled_usec 111359376\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"46","phase":"running","pid":457,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"allocator":{"MIMALLOC_ALLOW_THP":"0"},"memory":{"rss":1791557632,"heapTotal":97595392,"heapUsed":22223376,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"2142597120","memory.peak":"2143244288","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","memory.stat":"anon 1844068352\nfile 3801088\nkernel 294498304\nkernel_stack 557056\npagetables 11599872\nsec_pagetables 0\npercpu 2712\nsock 0\nvmalloc 16384\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 2711552\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 1740300288\nactive_anon 103768064\ninactive_file 1392640\nactive_file 2342912\nunevictable 0\nslab_reclaimable 281285376\nslab_unreclaimable 956128\nslab 282241504\nworkingset_refault_anon 0\nworkingset_refault_file 709387\nworkingset_activate_anon 0\nworkingset_activate_file 461278\nworkingset_restore_anon 0\nworkingset_restore_file 51333\nworkingset_nodereclaim 19072\npgscan 2294562\npgsteal 2253602\npgscan_kswapd 0\npgscan_direct 2294562\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 2253602\npgsteal_khugepaged 0\npgfault 1294234\npgmajfault 11674\npgrefill 126822\npgactivate 62327\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 92\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0","memory.pressure":"some avg10=4.10 avg60=1.46 avg300=0.86 total=4533944\nfull avg10=4.05 avg60=1.28 avg300=0.64 total=3453009","cpu.stat":"usage_usec 206210970\nuser_usec 124240746\nsystem_usec 81970224\ncore_sched.force_idle_usec 0\nnr_periods 2384\nnr_throttled 1572\nthrottled_usec 117302812\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"46","phase":"build-end","pid":457,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"allocator":{"MIMALLOC_ALLOW_THP":"0"},"memory":{"rss":1833238528,"heapTotal":97595392,"heapUsed":34059024,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"2142519296","memory.peak":"2143244288","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","memory.stat":"anon 1887436800\nfile 1585152\nkernel 253272064\nkernel_stack 557056\npagetables 11698176\nsec_pagetables 0\npercpu 2712\nsock 0\nvmalloc 16384\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 970752\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 1777061888\nactive_anon 110374912\ninactive_file 512000\nactive_file 946176\nunevictable 0\nslab_reclaimable 239962856\nslab_unreclaimable 956128\nslab 240918984\nworkingset_refault_anon 0\nworkingset_refault_file 2290472\nworkingset_activate_anon 0\nworkingset_activate_file 689008\nworkingset_restore_anon 0\nworkingset_restore_file 279063\nworkingset_nodereclaim 19072\npgscan 4103882\npgsteal 3835496\npgscan_kswapd 0\npgscan_direct 4103882\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 3835496\npgsteal_khugepaged 0\npgfault 1394714\npgmajfault 73472\npgrefill 601739\npgactivate 404408\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 92\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0","memory.pressure":"some avg10=9.86 avg60=4.73 avg300=1.73 total=7447398\nfull avg10=9.58 avg60=4.56 avg300=1.51 total=6348818","cpu.stat":"usage_usec 226307804\nuser_usec 126972724\nsystem_usec 99335079\ncore_sched.force_idle_usec 0\nnr_periods 2654\nnr_throttled 1577\nthrottled_usec 117341225\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"46","phase":"running","pid":457,"threads":14,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"allocator":{"MIMALLOC_ALLOW_THP":"0"},"memory":{"rss":1933639680,"heapTotal":97595392,"heapUsed":34074760,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"2142756864","memory.peak":"2143244288","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","memory.stat":"anon 1986453504\nfile 3559424\nkernel 152739840\nkernel_stack 557056\npagetables 11919360\nsec_pagetables 0\npercpu 2712\nsock 0\nvmalloc 16384\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 2383872\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 166703104\nactive_anon 1819742208\ninactive_file 1593344\nactive_file 1921024\nunevictable 0\nslab_reclaimable 139207064\nslab_unreclaimable 956128\nslab 140163192\nworkingset_refault_anon 0\nworkingset_refault_file 2299125\nworkingset_activate_anon 0\nworkingset_activate_file 689996\nworkingset_restore_anon 0\nworkingset_restore_file 280051\nworkingset_nodereclaim 19072\npgscan 4114818\npgsteal 3843668\npgscan_kswapd 0\npgscan_direct 4114818\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 3843668\npgsteal_khugepaged 0\npgfault 1419341\npgmajfault 73786\npgrefill 603188\npgactivate 407266\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 92\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0","memory.pressure":"some avg10=9.34 avg60=4.81 avg300=1.76 total=7583759\nfull avg10=9.11 avg60=4.64 avg300=1.55 total=6485169","cpu.stat":"usage_usec 229174442\nuser_usec 129378936\nsystem_usec 99795506\ncore_sched.force_idle_usec 0\nnr_periods 2684\nnr_throttled 1577\nthrottled_usec 117341225\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"46","phase":"running","pid":457,"threads":13,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"allocator":{"MIMALLOC_ALLOW_THP":"0"},"memory":{"rss":2033909760,"heapTotal":97595392,"heapUsed":35547136,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"2145742848","memory.peak":"2146713600","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","memory.stat":"anon 2062434304\nfile 520192\nkernel 82919424\nkernel_stack 540672\npagetables 10874880\nsec_pagetables 0\npercpu 2712\nsock 0\nvmalloc 16384\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 204800\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 252108800\nactive_anon 1810325504\ninactive_file 0\nactive_file 442368\nunevictable 0\nslab_reclaimable 70518920\nslab_unreclaimable 887168\nslab 71406088\nworkingset_refault_anon 0\nworkingset_refault_file 3871512\nworkingset_activate_anon 0\nworkingset_activate_file 845482\nworkingset_restore_anon 0\nworkingset_restore_file 435537\nworkingset_nodereclaim 19072\npgscan 6122516\npgsteal 5416798\npgscan_kswapd 0\npgscan_direct 6122516\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 5416798\npgsteal_khugepaged 0\npgfault 1509772\npgmajfault 126791\npgrefill 2017514\npgactivate 609404\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 92\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0","memory.pressure":"some avg10=18.79 avg60=9.43 avg300=3.16 total=12925843\nfull avg10=16.58 avg60=8.77 avg300=2.84 total=11356066","cpu.stat":"usage_usec 253317428\nuser_usec 131964303\nsystem_usec 121353125\ncore_sched.force_idle_usec 0\nnr_periods 2984\nnr_throttled 1721\nthrottled_usec 121743110\nnr_bursts 0\nburst_usec 0"}}
+{"kind":"ISOLATED_CONFIG_DIAGNOSTIC","index":"46","phase":"running","pid":457,"threads":13,"nativePools":{"ROLLDOWN_WORKER_THREADS":"1","ROLLDOWN_MAX_BLOCKING_THREADS":"1","RAYON_NUM_THREADS":"1","TOKIO_WORKER_THREADS":"1"},"allocator":{"MIMALLOC_ALLOW_THP":"0"},"memory":{"rss":2034434048,"heapTotal":97595392,"heapUsed":35561272,"external":2703923,"arrayBuffers":145635},"kernel":{"memory.current":"2145935360","memory.peak":"2146721792","memory.events":"low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0","memory.stat":"anon 2062442496\nfile 466944\nkernel 82919424\nkernel_stack 540672\npagetables 10874880\nsec_pagetables 0\npercpu 2712\nsock 0\nvmalloc 16384\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 98304\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 252182528\nactive_anon 1810259968\ninactive_file 69632\nactive_file 208896\nunevictable 0\nslab_reclaimable 70517224\nslab_unreclaimable 883064\nslab 71400288\nworkingset_refault_anon 0\nworkingset_refault_file 6207173\nworkingset_activate_anon 0\nworkingset_activate_file 992167\nworkingset_restore_anon 0\nworkingset_restore_file 582222\nworkingset_nodereclaim 19072\npgscan 8994583\npgsteal 7752474\npgscan_kswapd 0\npgscan_direct 8994583\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 7752474\npgsteal_khugepaged 0\npgfault 1602168\npgmajfault 202709\npgrefill 7583541\npgactivate 751282\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 92\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0","memory.pressure":"some avg10=24.73 avg60=16.59 avg300=5.60 total=21486634\nfull avg10=21.41 avg60=14.47 avg300=4.87 total=18608909","cpu.stat":"usage_usec 282266576\nuser_usec 132568116\nsystem_usec 149698459\ncore_sched.force_idle_usec 0\nnr_periods 3284\nnr_throttled 1993\nthrottled_usec 144147030\nnr_bursts 0\nburst_usec 0"}}
+[tsdown-build] child result pid=457: {"status":null,"signal":"SIGKILL","parentSignal":null,"timedOut":false,"cleanup":"none","observedProcessState":"dead","observationScope":"process-group","finalStatus":null}
