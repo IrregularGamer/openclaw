@@ -56,6 +56,17 @@
     },
     {
       "new": {
+        "sha256": "a34161e38338a56f0432ce1273b54b609047b3d5736e65267e50222b7e216821",
+        "state": "present"
+      },
+      "old": {
+        "sha256": "534319c9c491bda8290e06ae223c6f41640b7a9951f78ee7474a791259307e77",
+        "state": "present"
+      },
+      "path": "docs/strict542/build598.sh"
+    },
+    {
+      "new": {
         "sha256": "044b55ce8970dd6bddb63cee6ad36cf2c5af68198182dfba3fa69e8909f6b831",
         "state": "present"
       },
@@ -63,6 +74,16 @@
         "state": "absent"
       },
       "path": "docs/strict542/disposable-inputs608.test.mjs"
+    },
+    {
+      "new": {
+        "sha256": "d50f132546dd4b6489c207f7d1ec8d4a9629abab1f97ecf1a32d64fcf0089c84",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/frozen-package608.py"
     },
     {
       "new": {
@@ -198,6 +219,136 @@
     },
     {
       "new": {
+        "sha256": "334f3e2f4847dc9a20c3991d10570cb9ecea062aa82b7f2bb79376929123dd8b",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-interrupted-result598-isolated-native-compile.log"
+    },
+    {
+      "new": {
+        "sha256": "c8323083465d2d74ddf1bb54e5434e26feecca644742927d3e8930b04733f43a",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-interrupted-result598-native-receipt.json"
+    },
+    {
+      "new": {
+        "sha256": "14811a0db1f6ee3132c29e50c1769d068e2eef5bb8b489847ad814f251ca51d0",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-interrupted-state.json"
+    },
+    {
+      "new": {
+        "sha256": "382f582cb2182452107eecc2fdeef547ca6ce06400d74d0a460bcf08b1369933",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-interrupted-strict542-checks-evidence.json"
+    },
+    {
+      "new": {
+        "sha256": "f82380f0b2a6f5904223c66f5a1e63d19f1a122dedfb7636cb29108585243a0f",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-interrupted-strict542-checks-tests.log"
+    },
+    {
+      "new": {
+        "sha256": "3602599f34ff807543bfcf3d75549b5ac57f052246e5916f5fd567dcf4302827",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-recovery-checks.json"
+    },
+    {
+      "new": {
+        "sha256": "fe74bb6132a3e163823589ab44ee2e1b5b40fd7f16cd9ddc3949a1b719f27346",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-recovery-checks.txt"
+    },
+    {
+      "new": {
+        "sha256": "dd259bdf02e53048aa55062fce2a8329d4555b0bf244c8de752458581d3fd0b8",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-recovery-native-compile.txt"
+    },
+    {
+      "new": {
+        "sha256": "e210de64481feece6ae64ee192c0e14626cc112f2ef4c47c7fac526f7fc7faad",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-recovery-native-receipt.json"
+    },
+    {
+      "new": {
+        "sha256": "6bfd100aecd0df6db93f098cceb53354db829a7416431fcd1ba91a53fa0d7bb6",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-recovery-offload.txt"
+    },
+    {
+      "new": {
+        "sha256": "18ee9bb4b564e9914b8c3e41e1da7614f3edaefc668c028d296c517a222165e4",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-recovery-outcome.json"
+    },
+    {
+      "new": {
+        "sha256": "5bbad745a4cceceea5884d206ae09d2afe6ce1dc05327c6b1c0810148d2e36ab",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-recovery-probe.txt"
+    },
+    {
+      "new": {
+        "sha256": "f5fa7dfa134c8d70faed99afdc40e045d3abec1c8cb94129c07618f6ba7505e2",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-recovery-review.md"
+    },
+    {
+      "new": {
         "sha256": "9f084f6986030be1a506efa2231151baf19ce9e302db029a5e14500e1f1fc8ef",
         "state": "present"
       },
@@ -215,6 +366,56 @@
         "state": "absent"
       },
       "path": "docs/strict542/job608-final-independent-review.md"
+    },
+    {
+      "new": {
+        "sha256": "4c3c9084fa8b7b8d3bb96a66901845dfe79be4aea2218a60008a33ca576d636c",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-frozen-package-plan.md"
+    },
+    {
+      "new": {
+        "sha256": "809cca10ce0a4f77b847dbefda320c9c2fa7e0e5e39222661763a51157f29a50",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-frozen-package-source-review.md"
+    },
+    {
+      "new": {
+        "sha256": "d8ecdd35f7f52936bda65508e7dee7c69fa7d58f38c1df2c5264e5008fd5c5ed",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-installer-source-policy-review.md"
+    },
+    {
+      "new": {
+        "sha256": "29746963a9726f6ead478baeb3ab77dfa846dc1a183814af091bb9cc55521a62",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-inventory-export.json"
+    },
+    {
+      "new": {
+        "sha256": "90d7a524eb4173e684c6881764180868a7a377ca741d99aaa852c54178400759",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-inventory-source-review.md"
     },
     {
       "new": {
@@ -288,6 +489,16 @@
     },
     {
       "new": {
+        "sha256": "3b229ab77bd5fc86e77239f465de3d25b0f007eec7443f68a31d35ce540b1b5d",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-consumer-source-export.json"
+    },
+    {
+      "new": {
         "sha256": "f6d8951e5c2bf139377e163ea139c08acc50e92b93a7812eb749637a65e05956",
         "state": "present"
       },
@@ -348,6 +559,16 @@
     },
     {
       "new": {
+        "sha256": "c1f511010acb7d6d9abe3ad5103cba9e71c4044c40477ec2c0042ae3f7d9f60f",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-libtests-build.txt"
+    },
+    {
+      "new": {
         "sha256": "c1d7a002b8d377ae29d73c47a1e2f9fbdb08a8dc3d8e6afe50b25eb4948953cc",
         "state": "present"
       },
@@ -385,6 +606,26 @@
         "state": "absent"
       },
       "path": "docs/strict542/job608-native-libtests-interrupted-receipt.json"
+    },
+    {
+      "new": {
+        "sha256": "54e7461ac5c2f2b7fb3b91408b77b7811728c7432ef9e0ca574e496fb28a7bf1",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-libtests-receipt.json"
+    },
+    {
+      "new": {
+        "sha256": "88bff78a6c00efc0d44fe6dd5f4f31dc71fc503065447b309553c675fdc32aba",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-libtests-recovery-offload.txt"
     },
     {
       "new": {
@@ -438,7 +679,17 @@
     },
     {
       "new": {
-        "sha256": "d85310d31c599274592ae28615258e22b21c9fd20755b7a55de8510f84d39ba3",
+        "sha256": "64d170dbb6a64d45852ed16066ff79a0406b019b7e997d98ad23fe80998c1b15",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-source-consumer-plan.md"
+    },
+    {
+      "new": {
+        "sha256": "32746fe2339fff3c2db94215e10a9dad3b54dd7107d72f4f96b8e55304accc22",
         "state": "present"
       },
       "old": {
@@ -448,7 +699,7 @@
     },
     {
       "new": {
-        "sha256": "223d8f15385bc02a76b30fed095c2f1163151570f8aaaafc3fbfb228e0a6461d",
+        "sha256": "3677ddf8259be016abf720db03399c6baa00c6c996e310c5037ac8b11f9e5dd2",
         "state": "present"
       },
       "old": {
@@ -528,6 +779,16 @@
     },
     {
       "new": {
+        "sha256": "7003f547f2c66044bba2de8867bfac7888455cd99d79511c96097609308a9be1",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/run-inventory608.sh"
+    },
+    {
+      "new": {
         "sha256": "dd20d376d907e6fc5000bf068fcd5d128c142e1fbb2ee3334c8f006792b0148d",
         "state": "present"
       },
@@ -538,7 +799,7 @@
     },
     {
       "new": {
-        "sha256": "428fc9e239dba61299267ed362746e9eda8c29af57e29eaf894d13c9b7875fdb",
+        "sha256": "39d26e327d26479f60d52cd9d4ef36529805032e14e7432f30e3f52c625e8ae0",
         "state": "present"
       },
       "old": {
@@ -589,6 +850,16 @@
         "state": "present"
       },
       "path": "docs/strict542/test_apply598.py"
+    },
+    {
+      "new": {
+        "sha256": "6432a24cb0fd1fd179f243d8fed18d5a5005db476e503b2a97af146393f1038d",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/test_frozen_package608.py"
     },
     {
       "new": {
@@ -704,9 +975,9 @@
     }
   ],
   "installed_target_inventory_reference": "docs/strict542/application598.py TARGETS and GUARDS; original snapshot job598-observed-baseline.json is historical and must be revalidated, never silently refreshed.",
-  "new_source_commit": "157b93a8f0db0d1fe61c71cb7fdfd635c81a6c76",
+  "new_source_commit": "0041793a1dfb63fc6594b3c954754717f143b17d",
   "next_seal": null,
   "old_source_commit": "877458d730d2455528fb639710ff3f9ba8aae5b2",
-  "purpose": "Complete tracked source-change inventory from reviewed job605 source877458d7 through exact native consumer source157b93a8, including every native/compiler/preparation correction. Subsequent evidence/review-only commits are separately recorded in Git. This is not an installed baseline, runtime/tree/action or next-seal receipt.",
+  "purpose": "Complete tracked old877458d7/new0041793a source inventory including native correction, frozen package guards, real outcomes and corrected test owner. Subsequent review/evidence-only commits are separately recorded in Git. This is not an installed baseline, build/package, runtime/action or next-seal receipt.",
   "schema": "job608-source-changes-not-artifact-v1"
 }
