@@ -1,0 +1,29 @@
+# Independent worker-phase source/export review608 — 2026-10-26
+
+**Verdict: APPROVE the exact source/export below for ONE focused disposable worker diagnostic. This is source approval, not measured fit, full build/package/application acceptance or release approval.**
+
+Reviewed final source `38cd394a52403806c2e25fcc5a40ed4b5216e34a`, including implementation `e2005861a73f27ee8e1df527c3528675714f57eb` + `2272aab23c5e31ab2e31da9b5b89e3390c654de4`, diagnostic/fixture `0d2cabec46f080b780abb397b5637916bb3cd5ff` and final helper correction. Exact export: `/home/deploy/agentq/tmp/export608-worker-phases-a`.
+
+Approved execution scope, subject to normal controller/lease admission: ONE `offload run --artifacts result608-workers -- timeout -k 15s 1800s sh run608.sh` from this never-used export, under the default 2 GiB/1 CPU lease. The 1800-second outer bound covers checks/install/fixtures plus the unchanged shared 900-second worker compiler window. Every required runner phase remains fatal; no unchanged-code retry is approved by this review.
+
+| Identity | SHA-256 |
+| --- | --- |
+| Manifest | `0f736c0bbeb5e6c98e7e493cfe49275448bcfe734c88822b2f6a97eed23d35b6` |
+| `run608.sh` | `81b19bebbf908cd309e1972e979dc8dd5b133307d810c087fa19c57c987edce7` |
+| `successor598.tar` | `6430f6a7abec331cbec52485fb1a38833c1235efed2055b4e4409db794fce054` |
+| `native598.tar` (source fixtures) | `d73e4e35720ffcb71856ce8168e75fa3b4fd49251fd78c811e1abded8b2701de` |
+| Retained base archive pin | `e79a0e45a4eaea4afe325ca94ba201d5ae43d09d8c15dc07d0695c87ba743de3` |
+
+I recomputed the first four hashes, verified all 180 successor files byte-for-byte against the final source commit and checked safe regular-file/directory archive member types and paths. The runner equals committed `docs/strict542/run-workers608.sh`; the manifest equals its repository copy. Base/native archive device+inode match the retained consumer-b archives. The base digest was not recomputed locally in this review; the runner verifies all archive digests before extraction. The 61-member native fixture archive has no binary or receipt filenames. No compiled native artifact or compile-stage receipt is consumed by this diagnostic.
+
+Reviewed owners: `worker-phases608.mjs`, `minify-worker608.mjs`, bounded/isolated drivers and configs, focused `worker-probe608.mts`, runner, phase tests, real minifier fixture, original worker config/plugin and existing process-group runner (read through git objects where sparse checkout omits files). Supplied pinned Rolldown API source `608-api-0.txt` confirms public `minifySync(filename, sourceText, options)` composes `inputMap` through `collapseSourcemaps`. The minifier resolves Rolldown relative to tsdown, requires version 1.2.9 and loads its fixed `dist/utils-index.mjs`; it supplies compression, name-preserving mangling, whitespace codegen and inline legal comments. Input map and emitted map are required when maps are enabled, and the final map references the correct output basename. Actual installed API loading/composition remains a mandatory real-fixture gate in this run.
+
+Only four exact worker keys/source paths are selected. Original entries, always-bundle/input ownership, defines, no-code-splitting policy, plugins and no-sidecar generateBundle refusal survive the shallow config copy; only required minification moves into a settled second child. The final helper correction preserves the two pre-existing unminified sealed helper configs even though they also define WORKER_DEPLOY_BUILD. Their original owner remains unchanged. The focused probe checks the complete ordered four-worker inventory. Ordinary canonical configs retain their original path.
+
+Both phases use the existing runTsdownBuildInvocation owner, which converts parent cancellation to nonzero status, observes process-group settlement, kills/rejects remaining descendants and rejects unsettled groups. Phase two starts only after awaited successful phase one and retains the same environment and scanner refusal semantics. Both recompute remaining time from the same absolute 900000 ms deadline; no fresh per-worker or per-minifier window is granted. Failure, timeout, launch/cleanup error, unresolved import or ineffective dynamic import prevents continuation or final success. The fixed minifier accepts no arbitrary path/options, refuses redirected/nonregular/multiply-linked output, and uses exclusive temporary siblings. Failed output remains disposable and cannot become an accepted package.
+
+The focused probe retains the 1625784320-byte floor, observed capacity at most 2 GiB, one-CPU native pool/allocator controls and inherited-control refusal. It honestly labels stock Rolldown 1.2.9 and diagnostic-only evidence. The runner requires frozen dependency installation, all 209 existing scoped tests, four new phase tests, all three typed inventory tests, both real minifier fixtures and all four worker configs. Fixtures cover actual emitted runtime behavior, preserved names/legal text, dynamic imports, composed maps, parse failure and symlink refusal. No real runtime worker is executed by the four-config build diagnostic.
+
+Fresh local verification: `node --test docs/strict542/worker-phases608.test.mjs` passed 4/4 after the helper correction. Archive/source/hash assertions above also passed. No dependency installation, build, heavy test, offload, service or private configuration operation was performed by this reviewer.
+
+No blocking source issue remains for this focused run. Its measured outcome must still establish fit. Existing native parity/config15 evidence belongs to its exact older source and is not promoted to this successor. Complete separately admitted typed build, frozen package, deterministic exact native receipt and all source/action/privilege/seal/queue and ordered595 acknowledgement gates remain required; this review waives none of them.
