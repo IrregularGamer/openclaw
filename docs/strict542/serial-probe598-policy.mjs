@@ -9,7 +9,7 @@ export function admitProbe(capacity, env, existingOutput) {
   for (const key of Object.keys(env)) {
     // scripts/lib/tsx-cli-shim.mjs owns this fixed cache-disabled setting.
     if (key === 'TSX_DISABLE_CACHE' && env[key] === '1') continue;
-    if (['NODE_OPTIONS','NODE_PATH','OUTPUT_SOURCE_MAPS','RAYON_NUM_THREADS','RAYON_RS_NUM_CPUS','UV_THREADPOOL_SIZE'].includes(key) || /^(OPENCLAW_|TSDOWN_|TSX_|ROLLDOWN_|TOKIO_|MIMALLOC_)/iu.test(key))
+    if (['NODE_OPTIONS','NODE_PATH','OUTPUT_SOURCE_MAPS','RAYON_NUM_THREADS','RAYON_RS_NUM_CPUS','UV_THREADPOOL_SIZE'].includes(key) || /^(OPENCLAW_|TSDOWN_|TSX_|ROLLDOWN_|TOKIO_|MIMALLOC_|NAPI_RS_)/iu.test(key))
       throw new Error(`probe refuses compiler environment control: ${key}`);
   }
 }

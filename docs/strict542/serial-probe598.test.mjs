@@ -55,3 +55,7 @@ test('refuses the unified graph at or below the observed reclaim-thrash limit',(
     /capacityBytes=2147483648, limitBytes=1625784320,.*floorBytes=1625784320/);
   assert.doesNotThrow(()=>admitUnifiedGraphCapacity({...capacity,limitBytes:UNIFIED_GRAPH_THRASH_LIMIT_BYTES+1}));
 });
+test('refuses caller-selected native addon even when empty',()=>{
+ for(const key of ['NAPI_RS_NATIVE_LIBRARY_PATH','NAPI_RS_ENFORCE_VERSION_CHECK','napi_rs_native_library_path'])
+  for(const value of ['', '/tmp/caller.node','1']) assert.throws(()=>admitProbe(capacity,{[key]:value},false));
+});

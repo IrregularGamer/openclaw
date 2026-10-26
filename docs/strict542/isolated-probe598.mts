@@ -4,15 +4,17 @@ import fs from 'node:fs';
 import { performance } from 'node:perf_hooks';
 import { readProcessMemoryCapacity } from '../../scripts/lib/process-memory.mts';
 import { configCensus } from '../../scripts/lib/isolated-config.mjs';
+import { nativeCompiler608 } from '../../scripts/lib/native-compiler608.mjs';
 import { admitProbe, admitUnifiedGraphCapacity, probeSucceeded, fixedOneCpuCompilerEnv, ONE_CPU_NATIVE_POOLS, BOUNDED_NATIVE_ALLOCATOR } from './serial-probe598-policy.mjs';
 const capacity=readProcessMemoryCapacity({});
 console.log(JSON.stringify({kind:"UNIFIED_GRAPH_ADMISSION",capacity}));
 admitUnifiedGraphCapacity(capacity);
 admitProbe(capacity,process.env,['.git','dist','dist-runtime','isolated-probe598.json'].some(p=>fs.existsSync(p)));
 if (process.argv.length !== 2) throw new Error('probe accepts no caller arguments');
-const env=fixedOneCpuCompilerEnv(process.env);
+const native608=nativeCompiler608();
+const env=fixedOneCpuCompilerEnv({...process.env,...native608.env});
 // Config evaluation must see the same runtime-only policy as the compiler child.
-Object.assign(process.env,ONE_CPU_NATIVE_POOLS,BOUNDED_NATIVE_ALLOCATOR,{OPENCLAW_RUN_NODE_SKIP_DTS_BUILD:'1'});
+Object.assign(process.env,ONE_CPU_NATIVE_POOLS,BOUNDED_NATIVE_ALLOCATOR,native608.env,{OPENCLAW_RUN_NODE_SKIP_DTS_BUILD:'1'});
 // Initialize allocator policy before loading the build owner's transitive native imports.
 const {resolveTsdownBuildInvocation,runTsdownBuildInvocation}=await import('../../scripts/tsdown-build.mts');
 const deadline=performance.now()+900_000;
@@ -20,7 +22,7 @@ const {default:configs}=await import('../../tsdown.config.ts');
 const census=configCensus(configs);
 const receipt={kind:'DIAGNOSTIC_ONLY_NOT_BUILD_EVIDENCE',capacity,deadlineMs:900_000,census,
   inheritedOutputAndThreadControls:'ABSENT_VERIFIED_BY_ADMISSION',nativePools:ONE_CPU_NATIVE_POOLS,allocator:BOUNDED_NATIVE_ALLOCATOR,
-  results:[] as unknown[]};
+  nativeCompiler608:native608.receipt,results:[] as unknown[]};
 function save() {fs.writeFileSync('isolated-probe598.json',JSON.stringify(receipt)+'\n');}
 fs.writeFileSync('isolated-probe598.json',JSON.stringify(receipt)+'\n',{flag:'wx'});
 const plans=[{label:'ai',args:['--config','tsdown.ai.config.ts','--concurrency','1'],env},
