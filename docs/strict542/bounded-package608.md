@@ -27,7 +27,7 @@ controls; no cgroup, unit, sudo policy or installed file changes.
 Both the build owner and direct unified compiler driver retain canonical full-graph
 4352 MiB admission before any cleanup. Consequently this candidate refuses a
 2 GiB full build before output mutation. The changed-source lazy-barrel diagnostic
-reached linking but was OOM-killed during render; whole-config scheduling does
+reached linking but received SIGKILL after buildEnd at the2GiB ceiling (rendering is an unconfirmed source-analysis hypothesis); whole-config scheduling does
 not establish that this memory requirement can safely be lowered. A reviewed
 source correction that bounds post-link memory and successful complete measured
 validation remain prerequisites to any change in that admission.

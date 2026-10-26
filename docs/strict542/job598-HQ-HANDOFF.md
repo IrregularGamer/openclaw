@@ -1,14 +1,19 @@
 # Job598 to595: exact source-only application preparation
 
-Current605 continuation: see job605-decision606.md and its exact outcome/review.
-The single Decision606 run passed189 checks, then refused at unchanged memory
-admission before any compiler. There is still no complete runtime/tree/action/
-next-seal receipt and this handoff is not application-ready. Earlier execution
-sections below are historical evidence, not a current installation gate pass.
+Current608 continuation: see job608-to595.md, job608-bounded-outcome.json and
+its independent outcome/source review. The changed550dbbd0 run passed192 initial
+checks and2 real-bundler regressions. Cleanup admitted the unchanged memory floor;
+config15 then received SIGKILL after buildEnd at the2GiB ceiling. No complete
+runtime/tree/action/next-seal receipt exists. The typed whole-config scheduler
+candidate retains the canonical4352MiB guard and intentionally refuses a full2GiB
+build. This handoff is not application-ready. Existing execution sections below
+are future procedures and historical evidence, never current gate passes.
 
 This is a foreground HQ handoff, never an installation receipt. No installed,
 sealed, root-owned, unit, sudoers, gateway runtime or provider state was changed.
-Automatic queue598 review must APPROVE before ANY application. Soft dependency
+Actual automatic queue608 review must APPROVE before ANY application.
+Current source additionally enforces separate seal and actual automatic queue
+review identities; see job608-review-gates.md and its independent review. Soft dependency
 release and approval1529 do not authorize installation or scheduler release.
 Source review and exact action/privilege review are different gates.
 
@@ -75,10 +80,13 @@ No file outside this inventory may be replaced. The application journal is fixed
 any incomplete action; do not delete it or replay to recover.
 
 Independently review the actual source, actual action/tree/staged helpers and
-PRIVILEGE POLICY in separate scopes. reviews.json requires three APPROVE entries
+PRIVILEGE POLICY and SEAL in separate scopes. reviews.json requires five APPROVE entries
 bound to source_commit, tree_receipt_sha256, action_sha256 and an authentic exact
 review_receipt_sha256, with different author/reviewer. Record actual automatic
-queue598 APPROVE receipt as automatic_queue_review=APPROVE598 in each review only
+actual queue608 APPROVE receipt as a separate automatic-queue review, with real
+build/review job identities and exact queue result SHA256. The current helper
+checks those read-only against the queue and requires its first verdict APPROVE;
+the old automatic_queue_review=APPROVE598 label supplies no approval. Continue only
 after it exists. These are references to real reviews, never self-issued proof.
 
 Build validation.next.json locally from the actual original complete seal: retain
@@ -116,7 +124,7 @@ Do not alter existing heap2304MiB, gateway cgroup limits or worker1GiB slice.
 
 ## Ordered finite natural-gap execution owned by595 and actual HQ
 
-1.595 verifies source/action/privilege and automatic598 reviews and obtains an
+1.595 verifies source/action/privilege/seal and actual automatic608 reviews and obtains an
 ACTUAL foreground nonqueue Pinch HQ acknowledgement. Read current MainPID/start,
 boot and genuine native session binding from the owner; never construct an ack
 from a queue ops label or reuse510/515 PID evidence. Bind the actual action digest
