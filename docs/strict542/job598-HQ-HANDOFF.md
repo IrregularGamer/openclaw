@@ -450,3 +450,9 @@ Source-only allocator successor1c27e206 (review6305e30c) addresses observed
 THP/reclaim pressure without changing the existing1.5GiB high/2GiB max budgets.
 Only one fresh normally admitted committed diagnostic follows independent
 actual-outcome review. Do not repeat the unchanged failed source.
+
+The exact6305 allocator diagnostic was normally admitted after independent
+0590 outcome/cleanup reviewd79493db. Actual188 relevant checks pass;
+job598-allocator-tests.txt/json and allocator-export.json bind the committed
+source, input archives and log hash. Pinned install/compiler is still active;
+no compiler, complete-build, action or application success is claimed here.
