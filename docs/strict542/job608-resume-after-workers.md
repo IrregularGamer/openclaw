@@ -27,7 +27,7 @@ From that exact never-used export, keep ONE foreground session alive:
 
     offload run --artifacts result598 -- timeout -k 15s 3000s sh run608.sh
 
-Default2GiB/1CPU, zero new swap, fixed pools/allocator and unchanged1625784320-byte floor apply. The outer50minute deadline only narrows existing stages and preserves roughly5minutes settlement margin (at least4minutes45seconds after the15second kill grace) when launched with at least55minutes remaining. The compiler sequence retains one shared900second deadline including worker minification. No detached continuation or lifetime/resource extension.
+Default2GiB/1CPU, zero new swap, fixed pools/allocator and unchanged1625784320-byte floor apply. The outer50minute deadline only narrows existing stages. At the minimum55minute launch window, at most4minutes45seconds remain after the15second kill grace, before transfer/collection overhead. Keep transfer, collection and settlement within the actual foreground lifetime; never extend it. The compiler sequence retains one shared900second deadline including worker minification. No detached continuation or lifetime/resource extension.
 
 Required outcome: all215 scoped checks,3typed inventory tests and9real bundler/lazy/minifier fixtures (227 total, plus the native recipe's own lifetime checks), exact native rebuilt receipt bytes/addon equal original pins,8parity variants, both lazy AND minifier fixture modes, and the complete AI+57main-config diagnostic. Every worker must finish bundle and minifier. Missing/failed/partial, launch/cleanup error, unresolved/ineffective import, timeout or unsettled child is failure. No diagnostic may be relabeled a full typed package.
 
