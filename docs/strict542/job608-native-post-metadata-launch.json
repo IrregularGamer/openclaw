@@ -1,0 +1,16 @@
+{
+ "application_authority": false,
+ "command": "offload run --artifacts result598 -- timeout -k 15s 2700s sh run608.sh",
+ "export": "/home/deploy/agentq/tmp/export608-native-post-metadata",
+ "kind": "RUNNING_ONE_COMBINED_DIAGNOSTIC_NOT_PACKAGE",
+ "launch_log": "/home/deploy/agentq/tmp/post-metadata-run608.log",
+ "manifest_sha256": "eba2def84390b7e50e9221976503ed0c2bf143f950e5b8404a133d730fb1bcb0",
+ "prelaunch_remaining_seconds": 3532,
+ "remote_slug": "tmp-export608-native-post-metadata-33e97da9",
+ "source_commit": "b1416481c38ba1480d8c881ca36e96785512fc47",
+ "source_runtime_mutation": false,
+ "state": "RUNNING: this export is no longer unused; do not launch again",
+ "worker_expires_utc": "2026-10-26T23:30:22Z",
+ "worker_started_utc": "2026-10-26T22:30:22Z",
+ "worker_unit": "agentq-exec-608-2-e9a05f2d318d.service"
+}
