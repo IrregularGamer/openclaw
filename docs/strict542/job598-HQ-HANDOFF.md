@@ -496,3 +496,16 @@ LOCK_HELD_VERIFIED_ABSENT absent=true. Then the same unchanged export (runner4dd
 successorb599e23a, natived73e4e35, sourcee79a0e45) was started once with
 `offload run --artifacts result598 -- sh run598.sh` (log runs/598/allocator-reconciled-run.log).
 Its actual outcome still needs exact independent review; no build/artifact/application approval.
+
+## Actual reconciled allocator diagnostic: same finite timeout (2026-10-26)
+
+The single admitted run of the unchanged export exited1 (log
+runs/598/allocator-reconciled-run.log, sha256 2532f203…3021). The13 allocator-policy
+checks passed. Configs through14 closed (peak rss128MiB in config14). Unified main-config-15 ran with
+MIMALLOC_ALLOW_THP=0 and four native pools at1, peaked at ~1439MiB rss, and was ended by
+the existing869346ms deadline: SIGTERM then SIGKILL, process group observed dead,
+cleanup=timeout. Because of the nonzero exit, no result598 artifacts were pulled. The remote EXIT
+trap runs normally. Conclusion: the THP-off allocator successor does NOT fix the
+config15 stall, so the unchanged allocator source must not be retried. No compiler, build, artifact,
+action or application success. Next: an independent outcome review, then root-cause
+config15 (CPU-bound graph vs memory) with source-only changes before any new admitted diagnostic.
