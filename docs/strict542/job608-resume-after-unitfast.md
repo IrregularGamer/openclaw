@@ -1,3 +1,5 @@
+Current next-run instructions: job608-resume-after-workers.md. The exports and next-run source in this historical receipt are spent/superseded; never execute them again. Original gates remain.
+
 # Exact608 continuation after the native equality result
 
 The consumer of source157b93a8 finished its source rebuild: addon SHA256
