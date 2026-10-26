@@ -33,5 +33,20 @@ class FinalizerPatch(unittest.TestCase):
         self.assertTrue(callable(getattr(p,'patched_finalizer',None)), 'early finalizer patch is absent')
         with self.assertRaises(ValueError):p.patched_finalizer('unreviewed source')
 
+class RetentionNegativeControl(unittest.TestCase):
+    def test_old_retention_mutation_keeps_rust_delimiters(self):
+        # Mirrors build-native608.py; rustc itself runs only in admitted offload.
+        src=Path('docs/strict542/build-native608.py').read_text()
+        expr=src[src.index("old=helper.replace("):src.index("\nassert old != helper")]
+        helper=Path('scripts/lib/last-use-ast608.rs').read_text()
+        scope={'helper':helper};exec(expr,{},scope);old=scope['old']
+        self.assertNotEqual(old,helper)
+        self.assertNotIn('take());',old.replace('values.iter_mut()',''))
+        code=[]
+        for line in old.splitlines():
+            line=line.split('//',1)[0];code.append(line)
+        text='\n'.join(code)
+        for a,b in ['{}','()','[]']:self.assertEqual(text.count(a),text.count(b),a+b)
+
 
 if __name__=='__main__':unittest.main()

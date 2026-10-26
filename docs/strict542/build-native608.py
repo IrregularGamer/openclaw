@@ -112,8 +112,9 @@ subprocess.run([str(root / 'lifetime-tests')],env=env,check=True)
 receipt['lifetime_tests_exit']=0
 # The same real helper tests must detect the previous retain-through-codegen
 # lifetime. This mutation changes ownership release only, never expected values.
-old=helper.replace('drop(value.take());','// retain unused AST until table drop').replace(
-    'drop(self.values[index].take());','// retain used AST until table drop')
+# Block comments keep same-line closing braces (one-line early-release guard).
+old=helper.replace('drop(value.take());','/* retain unused AST until table drop */').replace(
+    'drop(self.values[index].take());','/* retain used AST until table drop */')
 assert old != helper
 wrapper.write_text('mod table {\n'+old+'\n}\n')
 subprocess.run(['rustc','--edition=2024','--test',str(wrapper),'-o',str(root / 'lifetime-tests-old')],env=env,check=True)

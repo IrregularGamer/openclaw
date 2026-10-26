@@ -1,0 +1,26 @@
+test table::tests::referenced_missing_ast_still_refuses - should panic ... ok
+test table::tests::repeated_module_survives_until_last_render_then_drops_before_next_module ... ok
+test table::tests::unused_is_released_before_first_render ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: this file contains an unclosed delimiter
+   --> /work/.native608/lifetime-tests.rs:116:3
+    |
+  1 | mod table {
+    |           - unclosed delimiter
+...
+116 | }
+    |  ^
+
+error: aborting due to 1 previous error
+
+Traceback (most recent call last):
+  File "/work/source/docs/strict542/build-native608.py", line 119, in <module>
+    subprocess.run(['rustc','--edition=2024','--test',str(wrapper),'-o',str(root / 'lifetime-tests-old')],env=env,check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.14/subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['rustc', '--edition=2024', '--test', '/work/.native608/lifetime-tests.rs', '-o', '/work/.native608/lifetime-tests-old']' returned non-zero exit status 1.
+rc=1
