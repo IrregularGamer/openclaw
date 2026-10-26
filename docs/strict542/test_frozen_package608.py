@@ -40,6 +40,16 @@ class FrozenPackage(unittest.TestCase):
             with self.subTest(key=key),self.assertRaisesRegex(ValueError,'inherited package policy'):
                 self.guard.preflight(self.root,{key:''})
 
+    def test_lifecycle_cooldown_and_lock_trust_overlays_refuse(self):
+        for key in ['PNPM_CONFIG_ALLOW_BUILDS','PNPM_CONFIG_DANGEROUSLY_ALLOW_ALL_BUILDS',
+                    'PNPM_CONFIG_PNPMFILE','PNPM_CONFIG_GLOBAL_PNPMFILE','PNPM_CONFIG_SCRIPT_SHELL',
+                    'PNPM_CONFIG_NODE_OPTIONS','PNPM_CONFIG_MINIMUM_RELEASE_AGE',
+                    'PNPM_CONFIG_MINIMUM_RELEASE_AGE_STRICT','PNPM_CONFIG_MINIMUM_RELEASE_AGE_EXCLUDE',
+                    'PNPM_CONFIG_TRUST_LOCKFILE','PNPM_CONFIG_TRUST_POLICY','NPM_CONFIG_WORKSPACE_DIR',
+                    'npm_config_minimumReleaseAge','PNPM_CONFIG_FUTURE_POLICY']:
+            with self.subTest(key=key),self.assertRaisesRegex(ValueError,'inherited package policy'):
+                self.guard.preflight(self.root,{key:''})
+
     def test_success_records_both_lock_identities_and_exclusive_receipt(self):
         value=self.guard.receipt(self.root,{})
         self.assertEqual(value['source_lock_sha256'],self.pins['pnpm-lock.yaml'])

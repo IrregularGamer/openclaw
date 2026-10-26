@@ -12,10 +12,6 @@ PINS={
     'pnpm-workspace.yaml':'5e672012b9678d1d40ec40e9fdff43283b7c4f947052cc24168b88d1f51ec872',
     '.npmrc':'f1d021e2abdf8817d83e35feb1f5d604e8c985aa0553bec3d417cf6f93e9c09c',
 }
-POLICY={'force_legacy_deploy','shared_workspace_lockfile','lockfile','lockfile_dir',
-        'userconfig','globalconfig','ignore_scripts','ignore_pnpmfile','node_linker',
-        'package_import_method','prod','production','dev','optional','force'}
-POLICY_NAMES={name.replace('_','') for name in POLICY}
 FALLBACK=('falling back to installing without','forces legacy deploy implementation')
 
 def regular(path):
@@ -31,9 +27,7 @@ def digest(path):
 def preflight(root,env):
     for key in env:
         normalized=key.casefold().replace('-','_')
-        if normalized=='pnpm_workspace_dir' or any(
-            normalized.startswith(prefix) and normalized[len(prefix):].replace('_','') in POLICY_NAMES
-            for prefix in ('npm_config_','pnpm_config_')):
+        if normalized=='pnpm_workspace_dir' or normalized.startswith(('npm_config_','pnpm_config_')):
             raise ValueError('inherited package policy: '+key)
     for name,expected in PINS.items():
         if digest(root/name)!=expected:raise ValueError('original package input drift: '+name)

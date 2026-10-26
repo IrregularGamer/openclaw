@@ -10,6 +10,11 @@ The pinned implementation is pnpm commit859a9cfe39f2afd0c4198f14ca7ef628ee1de70e
 Its Rust shared path installs with frozen=true; legacy installs with false.
 Workspace injection is unnecessary. Keep the existing default command and lifecycle
 policy. Never substitute a legacy path or relax the original lock.
+The standalone builder refuses every inherited NPM_CONFIG_/PNPM_CONFIG_ key,
+including npm exec's own configuration metadata. Its eventual admitted launcher
+must pass only fixed source-owner environment fields to the standalone builder,
+after tool resolution; passing npm exec's environment through is unsupported.
+The actual next export/launcher still requires exact independent review.
 
 - [x] Add filesystem refusal tests for original-input drift, inherited package
   policy, missing/redirected target lock, fallback warnings and exclusive receipts.
