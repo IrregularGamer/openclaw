@@ -9,13 +9,14 @@ function sample(phase: string) {
   let threads: number | null = null;
   try { threads=Number(/^Threads:\s+(\d+)$/m.exec(fs.readFileSync('/proc/self/status','utf8'))?.[1]) || null; } catch {}
   const nativePools=Object.fromEntries(['ROLLDOWN_WORKER_THREADS','ROLLDOWN_MAX_BLOCKING_THREADS','RAYON_NUM_THREADS','TOKIO_WORKER_THREADS'].map(key=>[key,process.env[key] ?? null]));
+  const allocator={MIMALLOC_ALLOW_THP:process.env.MIMALLOC_ALLOW_THP ?? null};
   const kernel: Record<string,string> = {};
-  for (const name of ['memory.current','memory.peak','memory.events','cpu.stat']) {
+  for (const name of ['memory.current','memory.peak','memory.events','memory.stat','memory.pressure','cpu.stat']) {
     try { kernel[name] = fs.readFileSync('/sys/fs/cgroup/'+name,'utf8').trim(); }
     catch { kernel[name] = 'unavailable'; }
   }
   console.log(JSON.stringify({kind:'ISOLATED_CONFIG_DIAGNOSTIC',index:process.env.OPENCLAW_598_CONFIG_INDEX,
-    phase,pid:process.pid,threads,nativePools,memory:process.memoryUsage(),kernel}));
+    phase,pid:process.pid,threads,nativePools,allocator,memory:process.memoryUsage(),kernel}));
 }
 // Add no transform/resolve/output hooks: these observations cannot change modules.
 export default {...selected,plugins:[selected.plugins,{
