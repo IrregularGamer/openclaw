@@ -81,7 +81,7 @@ pnpm install --frozen-lockfile
 node --import ./scripts/tsx.mjs --input-type=module -e 'import fs from "node:fs"; import {readProcessMemoryCapacity} from "./scripts/lib/process-memory.mts"; console.log(JSON.stringify({kind:"BEFORE_STORE_RELEASE608",capacity:readProcessMemoryCapacity({}),stat:fs.readFileSync("/sys/fs/cgroup/memory.stat","utf8")}))'
 node --input-type=module -e 'import {releaseDisposableStore} from "./scripts/lib/disposable-build-inputs.mjs"; releaseDisposableStore("..")'
 node --import ./scripts/tsx.mjs --input-type=module -e 'import fs from "node:fs"; import {readProcessMemoryCapacity} from "./scripts/lib/process-memory.mts"; console.log(JSON.stringify({kind:"AFTER_STORE_RELEASE608",capacity:readProcessMemoryCapacity({}),stat:fs.readFileSync("/sys/fs/cgroup/memory.stat","utf8")}))'
-node node_modules/vitest/vitest.mjs run --config test/vitest/vitest.tooling.config.ts --maxWorkers=1 --no-file-parallelism --passWithNoTests=false test/scripts/build-all-bounded608.test.ts
+node node_modules/vitest/vitest.mjs run --config test/vitest/vitest.unit-fast.config.ts --maxWorkers=1 --no-file-parallelism --passWithNoTests=false test/scripts/build-all-bounded608.test.ts
 node --import ./scripts/tsx.mjs --test docs/strict542/native-codegen608.test.mjs
 node --import ./scripts/tsx.mjs --test docs/strict542/lazy-barrel608.test.mjs
 NATIVE_ADDON=$(node --input-type=module -e 'import {nativeCompiler608} from "./scripts/lib/native-compiler608.mjs"; console.log(nativeCompiler608().env.NAPI_RS_NATIVE_LIBRARY_PATH)')
