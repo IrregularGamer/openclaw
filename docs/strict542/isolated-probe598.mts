@@ -1,6 +1,7 @@
 // SOURCE ONLY. Run once from a reviewed admitted disposable secretless export.
 // Does not create accepted build evidence or bypass the normal build preflight.
 import fs from 'node:fs';
+import {runWorkerPhases} from '../../scripts/lib/worker-phases608.mjs';
 import { performance } from 'node:perf_hooks';
 import { readProcessMemoryCapacity } from '../../scripts/lib/process-memory.mts';
 import { configCensus } from '../../scripts/lib/isolated-config.mjs';
@@ -25,8 +26,8 @@ const receipt={kind:'DIAGNOSTIC_ONLY_NOT_BUILD_EVIDENCE',capacity,deadlineMs:900
   nativeCompiler608:native608.receipt,results:[] as unknown[]};
 function save() {fs.writeFileSync('isolated-probe598.json',JSON.stringify(receipt)+'\n');}
 fs.writeFileSync('isolated-probe598.json',JSON.stringify(receipt)+'\n',{flag:'wx'});
-const plans=[{label:'ai',args:['--config','tsdown.ai.config.ts','--concurrency','1'],env},
-  ...census.map(c=>({label:`main-config-${c.index}`,args:['--config','tsdown.isolated598.config.ts','--concurrency','1'],
+const plans=[{config:null,label:'ai',args:['--config','tsdown.ai.config.ts','--concurrency','1'],env},
+  ...census.map(c=>({config:configs[c.index],label:`main-config-${c.index}`,args:['--config','tsdown.isolated598.config.ts','--concurrency','1'],
     env:{...env,OPENCLAW_598_CONFIG_INDEX:String(c.index),OPENCLAW_598_CONFIG_CENSUS:JSON.stringify(census)}}))];
 for (const plan of plans) {
   const remaining=Math.floor(deadline-performance.now());
@@ -37,7 +38,7 @@ for (const plan of plans) {
   }
   console.log(JSON.stringify({kind:receipt.kind,label:plan.label,args:invocation.args,nativePools:ONE_CPU_NATIVE_POOLS,allocator:BOUNDED_NATIVE_ALLOCATOR,nodeOptions:invocation.options.env.NODE_OPTIONS,remaining}));
   const started=performance.now();
-  const result=await runTsdownBuildInvocation(invocation,{env:{...env,OPENCLAW_TSDOWN_TIMEOUT_MS:String(remaining)}});
+  const result=await runWorkerPhases({config:plan.config,invocation,remainingMs:()=>deadline-performance.now(),run:runTsdownBuildInvocation});
   receipt.results.push({label:plan.label,elapsedMs:performance.now()-started,result});
   save();
   if (!probeSucceeded(result)) {process.exitCode=1;break;}
