@@ -1,11 +1,13 @@
 import { spawnSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
-import { describe, expect } from "vitest";
+import { afterAll, describe, expect } from "vitest";
 import {
   pluginSdkEntrypoints,
   publicPluginSdkEntrypoints,
 } from "../../scripts/lib/plugin-sdk-entries.mts";
+import type { CommandFixture } from "../helpers/command-fixture.js";
+import { createFixtureLifetime } from "../helpers/fixture-lifetime.js";
 import { materializeNativeCompiler } from "./native-boundary-fixture.js";
 import {
   createDeclarationFixture as createFixture,
@@ -139,11 +141,43 @@ describe("write-plugin-sdk-entry-dts", { timeout: WRITER_TEST_TIMEOUT_MS }, () =
       }),
   );
 
-  it.concurrent("publishes fresh canonical partitions with stable bytes and public nominal identity", ({
-    command,
-  }) =>
-    command.lifetime.run(async () => {
-      const { root, write, writeDeclarations, production, qa } = createFixture(command);
+  // Same-file cases run in declaration order; one history owns the same filesystem/cache through all four finite cases.
+  // Commands remain owned by each case's abort signal and settle before teardown.
+  describe("canonical partition history", () => {
+    const historyLifetime = createFixtureLifetime();
+    afterAll(async () => await historyLifetime.cleanup());
+    let stage = 0;
+    let history: {
+      root: string;
+      write: ReturnType<typeof createFixture>["write"];
+      writeDeclarations: ReturnType<typeof createFixture>["writeDeclarations"];
+      production: ReturnType<typeof createFixture>["production"];
+      qa: ReturnType<typeof createFixture>["qa"];
+      preserved: Record<string, string>;
+      before: Record<string, string>;
+      priorOutputs?: Record<string, string>;
+      first?: Record<string, string>;
+      cachedDistFiles?: Set<string>;
+    };
+    function historyCase(
+      name: string,
+      expectedStage: number,
+      run: (command: CommandFixture) => Promise<void>,
+    ) {
+      it(
+        name,
+        ({ command }) =>
+          command.lifetime.run(async () => {
+            // A failed earlier phase must fail successors, never skip or fabricate history.
+            expect(stage, "previous canonical partition phase completed").toBe(expectedStage);
+            await historyLifetime.run(async () => await run(command));
+            stage += 1;
+          }),
+        WRITER_TEST_TIMEOUT_MS,
+      );
+    }
+    historyCase("publishes initial production partitions without unrelated inputs", 0, async (command) => {
+      const { root, write, writeDeclarations, production, qa } = createFixture(historyLifetime);
       materializeNativeCompiler(root);
       expect(production.toSorted()).toEqual(
         publicPluginSdkEntrypoints.map((entry) => `plugin-sdk/${entry}`).toSorted(),
@@ -191,7 +225,10 @@ describe("write-plugin-sdk-entry-dts", { timeout: WRITER_TEST_TIMEOUT_MS }, () =
       for (const entry of qa.filter((candidate) => !production.includes(candidate))) {
         expect(fs.existsSync(path.join(root, `dist/${entry}.d.ts`)), entry).toBe(false);
       }
-
+      history = { root, write, writeDeclarations, production, qa, preserved, before };
+    });
+    historyCase("emits extra canonical QA entries for identical sources", 1, async (command) => {
+      const { root, qa } = history;
       // Identical sources with a different QA selection must emit the extra canonical entries.
       const privateQa = await runWriter(command, root, true);
       expect(privateQa.status, privateQa.stdout + privateQa.stderr).toBe(0);
@@ -201,7 +238,10 @@ describe("write-plugin-sdk-entry-dts", { timeout: WRITER_TEST_TIMEOUT_MS }, () =
       const priorOutputs = treeHashes(path.join(root, "dist"));
       expectOutputs(root, qa, Object.keys(priorOutputs));
       expectStagingClean(root);
-
+      history.priorOutputs = priorOutputs;
+    });
+    historyCase("rebuilds changed partitions and removes obsolete declarations", 2, async (command) => {
+      const { root, write, writeDeclarations, qa, preserved, before } = history;
       writeDeclarations("after");
       fs.rmSync(path.join(root, "contracts/before.ts"));
       write("dist/plugin-sdk/obsolete.d.ts", "obsolete flat declaration");
@@ -228,7 +268,12 @@ describe("write-plugin-sdk-entry-dts", { timeout: WRITER_TEST_TIMEOUT_MS }, () =
       expect(fs.readFileSync(path.join(root, "src/schema.sql"), "utf8")).toBe(
         "CREATE TABLE fixture (value TEXT NOT NULL);",
       );
-
+      history.first = first;
+      history.cachedDistFiles = cachedDistFiles;
+    });
+    historyCase("restores byte-stable relocated cache and public nominal identity", 3, async (command) => {
+      const { root, write, qa, preserved, priorOutputs, first, cachedDistFiles } = history;
+      if (!priorOutputs || !first || !cachedDistFiles) throw new Error("incomplete canonical partition history");
       // One restore proves portable, byte-stable reuse despite unrelated edits.
       // Copy only the cache: copying Windows junctions can change the source topology.
       const {
@@ -307,7 +352,8 @@ describe("write-plugin-sdk-entry-dts", { timeout: WRITER_TEST_TIMEOUT_MS }, () =
         { cwd: root, encoding: "utf8" },
       );
       expect(consumer.status, consumer.stdout + consumer.stderr).toBe(0);
-    }));
+    });
+  });
 
   it.concurrent.for([
     {
