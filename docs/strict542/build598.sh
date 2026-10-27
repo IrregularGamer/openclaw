@@ -8,6 +8,8 @@ mkdir result598-build
 : "${STRICT542_SOURCE_EXPORT_SHA256:?export exact git archive digest}"
 : "${STRICT542_BUILD_RUN_ID:?identifier of this admitted build, independently reconciled to broker log}"
 export SOURCE_DATE_EPOCH=1792944000 TZ=UTC LANG=C LC_ALL=C CI=1
+export GIT_COMMIT="$STRICT542_SOURCE_COMMIT"
+export OPENCLAW_BUILD_TIMESTAMP=2026-10-25T16:00:00.000Z
 exec >result598-build/build.log 2>&1
 node --version
 pnpm --version
@@ -16,7 +18,8 @@ python3 docs/strict542/frozen-package608.py preflight
 # No relaxed lock, dependency cooldown, lifecycle, kernel or workload-budget policy.
 pnpm install --frozen-lockfile
 python3 docs/strict542/frozen-package608.py preflight
-pnpm run build
+# Full canonical phase inventory with the separately reviewed required-native scheduler.
+node --import ./scripts/tsx.mjs scripts/build-all.mts --profile boundedPackage
 python3 docs/strict542/frozen-package608.py preflight
 pnpm --filter openclaw --prod deploy result598-build/runtime >result598-build/deploy.log 2>&1 || {
   status=$?; tail -30 result598-build/deploy.log; exit "$status";
