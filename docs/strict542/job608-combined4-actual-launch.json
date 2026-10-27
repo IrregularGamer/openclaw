@@ -1,0 +1,18 @@
+{
+  "launch_preparation_utc": "2026-10-27T14:08:38.062342+00:00",
+  "unit": "agentq-exec-608-1-ccf50bc1d40a.service",
+  "worker_active_since_utc": "2026-10-27T14:03:41Z",
+  "worker_runtime_max_seconds": 3600,
+  "foreground_remaining_at_launch_seconds_minimum": 3200,
+  "export": "/home/deploy/agentq/tmp/export608-native-compact-combined4",
+  "frozen_source": "d3925759b646cc44040dc5478d753085e25b4d86",
+  "manifest_sha256": "89fe92b2c216c08fa313cf066b11305343af97831e736cee85347d0315da7732",
+  "input_verification": "all eight regular inputs freshly SHA256-verified at 14:08:29Z; exact reviewed input set; result598 absent",
+  "predecessor_outcome_review": "18dfbd0a",
+  "exact_export_review": "e9dc7d11",
+  "source_correction_review": "2e8dfc11",
+  "lease_prerequisite_review": "eeae79f5",
+  "command": "offload run --mem 4g --cpus 1 --artifacts result598 -- timeout -k 15s 2700s sh run608.sh",
+  "log": "/home/deploy/agentq/runs/608/combined4-actual-offload.log",
+  "state": "AUTHORIZED_ONCE; actual result not yet known; no package/application authority"
+}
