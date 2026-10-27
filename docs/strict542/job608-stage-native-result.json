@@ -1,0 +1,15 @@
+{
+ "exit_code": 0,
+ "launched_utc": "2026-10-27T22:44Z",
+ "manifest_sha256": "cbe89ba40901b7ee8a5714293e1cfef24964823d7b8c7d4fea04dab87fd8ab4a",
+ "outputs": {
+  "native/libtests-receipt.json": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946",
+  "native/receipt.json": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+  "native/rolldown-binding.linux-x64-gnu.node": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042"
+ },
+ "returned_utc": "2026-10-27T23:21Z",
+ "run_id": "stage608-native-223927",
+ "stage": "native",
+ "stage_receipt_sha256": "20776b0b1b9d3bb65bb0f3412092c32d5a53ef41578be6c8fc1d461a93b2dcfc",
+ "verified_locally": "stage receipt outputs, pinned compile/libtests receipt digests, addon_sha256"
+}
