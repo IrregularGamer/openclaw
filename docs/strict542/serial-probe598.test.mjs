@@ -5,8 +5,12 @@ const capacity = {unresolved:false, capacityBytes:2*1024**3, limitBytes:1600*102
 test('admits fixed serial diagnostic only with observed bounded capacity',()=>{
   assert.doesNotThrow(()=>admitProbe(capacity,{},false));
 });
+test('admits the approved4GiB diagnostic ceiling with observed bounded remainder',()=>{
+  for (const limitBytes of [4*1024**3,1800*1024**2])
+    assert.doesNotThrow(()=>admitProbe({...capacity,capacityBytes:4*1024**3,limitBytes},{},false));
+});
 test('refuses unknown or oversized capacity and existing output',()=>{
-  for(const value of [null,NaN,Infinity,0,2*1024**3+1])
+  for(const value of [null,NaN,Infinity,0,4*1024**3+1])
     assert.throws(()=>admitProbe({...capacity,capacityBytes:value},{},false));
   assert.throws(()=>admitProbe({...capacity,unresolved:true},{},false));
   assert.throws(()=>admitProbe(capacity,{},true));
