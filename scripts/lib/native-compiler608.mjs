@@ -48,3 +48,15 @@ export function nativeCompiler608(root=process.cwd(), {required=false}={}) {
     throw new Error('native compiler addon mismatch');
   return {env:{NAPI_RS_NATIVE_LIBRARY_PATH:addon},receipt};
 }
+
+// Package parent/child preparation only. Callers supply no NAPI controls.
+// The child may inherit exactly the addon independently derived from required bytes.
+export function trustedNativeCompilerEnvironment608(root=process.cwd(), env=process.env, {inherited=false}={}) {
+  const native=nativeCompiler608(root,{required:true});
+  for (const key of Object.keys(env)) {
+    if (!key.startsWith('NAPI_RS_')) continue;
+    if (inherited===true && key==='NAPI_RS_NATIVE_LIBRARY_PATH' && env[key]===native.env[key]) continue;
+    throw new Error('untrusted native compiler control: '+key);
+  }
+  return {...native,env:{...env,...native.env}};
+}

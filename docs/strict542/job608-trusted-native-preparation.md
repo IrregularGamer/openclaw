@@ -25,3 +25,8 @@ and declaration propagation remain UNWIRED until complete diagnostic success and
 its independent acceptance permit the existing package plan. Exact independent
 review of this prerequisite is PENDING; it supplies no action/privilege/seal or
 automatic queue approval and no installation authority.
+
+The committed RED log trims trailing horizontal whitespace only; its raw run log
+remains runs/608/trusted-native-red.txt, SHA256 037f1ce48b5b3178a42af33200a7976929e237d763de2c98af490240760d0cc9.
+Sparse checkout excluded the helper from prerequisite commit6fefbf95; the immediate
+follow-up commits the actual implementation. Review both commits together.
