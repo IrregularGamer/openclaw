@@ -51,6 +51,7 @@ class EvidenceGate(unittest.TestCase):
         self.addCleanup(patch.stopall)
         patch.object(gate, 'inventory', return_value=(self.old, self.new)).start()
         patch.object(gate, 'baseline_regressions', return_value=[self.regression]).start()
+        patch.object(gate, 'shared_diagnostics', return_value=self.shared, create=True).start()
 
     def check(self):
         (self.logs / 'baseline.log').write_text(self.base)
@@ -62,6 +63,13 @@ class EvidenceGate(unittest.TestCase):
         self.assertEqual((receipt['baseline_tests'], receipt['candidate_tests']), (78, 90))
         self.assertEqual(receipt['candidate_only_regressions'], 0)
         self.assertEqual(receipt['candidate_log_sha256'], gate.digest(self.logs / 'candidate.log'))
+
+    def test_exact_reviewed_shared_diagnostics_can_include_stale_dispatcher_fixture(self):
+        self.shared[-1] = (*self.shared[-1][:3],
+            "AttributeError: module 'isolated_reasoning_q' has no attribute 'requeue_history'")
+        self.base = log(self.old, self.shared + [self.regression])
+        self.candidate = log(self.new, self.shared)
+        self.assertEqual(self.check()['candidate_only_regressions'], 0)
 
     def test_timeout_cannot_pass_even_if_shell_would_exit_zero(self):
         self.candidate = self.candidate.replace('rc=1', 'rc=124')
@@ -92,7 +100,7 @@ class EvidenceGate(unittest.TestCase):
         changed = self.shared.copy()
         changed[0] = (sorted(self.old)[24], *changed[0][1:])
         self.candidate = log(self.new, changed)
-        with self.assertRaisesRegex(ValueError, 'candidate-only'): self.check()
+        with self.assertRaisesRegex(ValueError, 'unexpected failures'): self.check()
 
     def test_missing_failure_trace_refuses(self):
         self.candidate = self.candidate.replace('ERROR: test_case00', 'BROKEN: test_case00', 1)

@@ -1,0 +1,140 @@
+[
+  [
+    "test_control.ControllerTests.test_completed_attempt_cannot_duplicate",
+    "ERROR",
+    "",
+    "PermissionError: preservation_fixed_root_required"
+  ],
+  [
+    "test_control.ControllerTests.test_launch_preserves_rights_but_sets_limits",
+    "ERROR",
+    "",
+    "PermissionError: preservation_fixed_root_required"
+  ],
+  [
+    "test_control.ControllerTests.test_local_check_outside_bound_worker_is_denied",
+    "ERROR",
+    "",
+    "PermissionError: preservation_fixed_root_required"
+  ],
+  [
+    "test_control.ControllerTests.test_normal_launch_carries_unique_remote_lease",
+    "ERROR",
+    "",
+    "PermissionError: preservation_fixed_root_required"
+  ],
+  [
+    "test_control.ControllerTests.test_other_job_cannot_overwrite_unreconciled_registration",
+    "ERROR",
+    "",
+    "PermissionError: preservation_fixed_root_required"
+  ],
+  [
+    "test_control.ControllerTests.test_probe_uses_fixed_command_while_normal_queue_stopped",
+    "ERROR",
+    "",
+    "PermissionError: preservation_fixed_root_required"
+  ],
+  [
+    "test_control.ControllerTests.test_remote_admission_critical_pressure_has_no_rpc",
+    "ERROR",
+    "",
+    "PermissionError: preservation_fixed_root_required"
+  ],
+  [
+    "test_control.ControllerTests.test_remote_admission_needs_matching_live_unit",
+    "ERROR",
+    "",
+    "PermissionError: preservation_fixed_root_required"
+  ],
+  [
+    "test_control.ControllerTests.test_remote_admission_uses_live_worker_headroom_not_new_job_threshold",
+    "ERROR",
+    "",
+    "PermissionError: preservation_fixed_root_required"
+  ],
+  [
+    "test_control.ControllerTests.test_settled_retry_gets_new_unit_and_new_sidecar",
+    "ERROR",
+    "",
+    "PermissionError: preservation_fixed_root_required"
+  ],
+  [
+    "test_launch.LauncherIntegration.test_actual_shell_argv_medium_high_and_new_job_reset",
+    "ERROR",
+    " (expected='medium', job_id=7)",
+    "PermissionError: preservation_fixed_root_required"
+  ],
+  [
+    "test_launch.LauncherIntegration.test_actual_shell_argv_medium_high_and_new_job_reset",
+    "ERROR",
+    " (expected='high', job_id=7)",
+    "PermissionError: preservation_fixed_root_required"
+  ],
+  [
+    "test_launch.LauncherIntegration.test_actual_shell_argv_medium_high_and_new_job_reset",
+    "ERROR",
+    " (expected='medium', job_id=8)",
+    "PermissionError: preservation_fixed_root_required"
+  ],
+  [
+    "test_launch.LauncherIntegration.test_claude_argv_is_unchanged_for_every_kind",
+    "ERROR",
+    " (kind='review')",
+    "PermissionError: preservation_fixed_root_required"
+  ],
+  [
+    "test_launch.LauncherIntegration.test_claude_argv_is_unchanged_for_every_kind",
+    "ERROR",
+    " (kind='plan')",
+    "PermissionError: preservation_fixed_root_required"
+  ],
+  [
+    "test_launch.LauncherIntegration.test_claude_argv_is_unchanged_for_every_kind",
+    "ERROR",
+    " (kind='research')",
+    "PermissionError: preservation_fixed_root_required"
+  ],
+  [
+    "test_launch.LauncherIntegration.test_claude_argv_is_unchanged_for_every_kind",
+    "ERROR",
+    " (kind='build')",
+    "PermissionError: preservation_fixed_root_required"
+  ],
+  [
+    "test_launch.LauncherIntegration.test_claude_argv_is_unchanged_for_every_kind",
+    "ERROR",
+    " (kind='ops')",
+    "PermissionError: preservation_fixed_root_required"
+  ],
+  [
+    "test_launch.LauncherIntegration.test_claude_argv_is_unchanged_for_every_kind",
+    "ERROR",
+    " (kind='design')",
+    "PermissionError: preservation_fixed_root_required"
+  ],
+  [
+    "test_integration.DispatcherIntegration.test_remote_lease_denial_keeps_existing_retry_bound",
+    "ERROR",
+    "",
+    "AttributeError: module 'isolated_reasoning_q' has no attribute 'requeue_history'"
+  ],
+  [
+    "test_integration.DispatcherIntegration.test_requeue_prose_cannot_override_placement_reconciliation",
+    "ERROR",
+    " (placement='completion_unknown')",
+    "AttributeError: module 'isolated_reasoning_q' has no attribute 'requeue_history'"
+  ],
+  [
+    "test_integration.DispatcherIntegration.test_requeue_prose_cannot_override_placement_reconciliation",
+    "ERROR",
+    " (placement='local_check_admission_denied')",
+    "AttributeError: module 'isolated_reasoning_q' has no attribute 'requeue_history'"
+  ],
+  [
+    "test_integration.DispatcherIntegration.test_requeue_prose_cannot_override_placement_reconciliation",
+    "ERROR",
+    " (placement='remote_environment_blocked')",
+    "AttributeError: module 'isolated_reasoning_q' has no attribute 'requeue_history'"
+  ]
+]

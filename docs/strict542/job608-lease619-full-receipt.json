@@ -1,0 +1,14 @@
+{
+  "baseline_additional_diagnostics": 9,
+  "baseline_log_sha256": "93432f9b508283ca3c2b7cb2cfc877b618ff2090104acc7e6765125e3e7245aa",
+  "baseline_tests": 78,
+  "candidate_log_sha256": "670b5392057ee1a8f291db642c8ddffdd60c7dbc22e7b20ed30b7161842e226c",
+  "candidate_only_regressions": 0,
+  "candidate_tests": 90,
+  "input_pins_sha256": "9cad154df09d72d3053238aed0d3b9b3b23e757df0ff5777f00b751f685685f6",
+  "kind": "lease619-suite-completeness",
+  "scope": "evidence completeness only; requires independent outcome review and actual HQ receipt",
+  "shared_diagnostics_sha256": "e346a2dc3ce0e728a9ccd21808f6f863994b21bbcdc37646df53164deb99352e",
+  "shared_known_dispatcher_fixture_errors": 4,
+  "shared_known_fixed_root_errors": 19
+}

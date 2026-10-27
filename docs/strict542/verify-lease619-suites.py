@@ -48,6 +48,11 @@ def baseline_regressions():
         (HERE / 'lease619-baseline-regressions.json').read_text())]
 
 
+def shared_diagnostics():
+    return [tuple(item) for item in json.loads(
+        (HERE / 'lease619-shared-diagnostics.json').read_text())]
+
+
 def test_id(method, owner):
     # Python versions print either module.Class or module.Class.test_method.
     return owner if owner.endswith('.' + method) else owner + '.' + method
@@ -100,12 +105,11 @@ def validate(root, logs):
     base_path, new_path = logs / 'baseline.log', logs / 'candidate.log'
     base = parse_log(base_path.read_text(), base_ids)
     candidate = parse_log(new_path.read_text(), new_ids)
-    # The619 review permits only the existing fixed-root fixture limitation,
-    # not matching arbitrary failures on both sides. Exactly23 shared errors
-    # were documented. Any difference needs reconciliation and actual review.
-    if len(candidate) != 23 or any(kind != 'ERROR' or reason !=
-            'PermissionError: preservation_fixed_root_required'
-            for _, kind, _, reason in candidate):
+    # Reconcile the exact returned619 fixture diagnostics, including test ID and
+    # subtest. The historical generic23 fixed-root assumption was inaccurate:
+    #19 fixed-root +4 stale dispatcher fixture errors. No arbitrary shared error
+    # or changed diagnostic location can satisfy this reviewed evidence gate.
+    if Counter(candidate) != Counter(shared_diagnostics()):
         raise ValueError('candidate has unexpected failures or changed known-error count')
     shared = Counter(candidate)
     if any(count > Counter(base)[record] for record, count in shared.items()):
@@ -116,7 +120,12 @@ def validate(root, logs):
     return {
         'kind': 'lease619-suite-completeness',
         'baseline_tests': len(base_ids), 'candidate_tests': len(new_ids),
-        'shared_known_fixed_root_errors': 23,
+        'shared_known_fixed_root_errors': sum(record[3] ==
+            'PermissionError: preservation_fixed_root_required' for record in candidate),
+        'shared_known_dispatcher_fixture_errors': sum(record[3] ==
+            "AttributeError: module 'isolated_reasoning_q' has no attribute 'requeue_history'"
+            for record in candidate),
+        'shared_diagnostics_sha256': digest(HERE / 'lease619-shared-diagnostics.json'),
         'baseline_additional_diagnostics': sum(extra.values()),
         'candidate_only_regressions': 0,
         'baseline_log_sha256': digest(base_path), 'candidate_log_sha256': digest(new_path),

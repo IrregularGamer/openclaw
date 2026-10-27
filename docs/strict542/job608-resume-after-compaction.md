@@ -1,5 +1,11 @@
 # Exact608 continuation after accepted compaction native stages
 
+CURRENT 2026-10-27: actual622 application and admitted full78/90 comparisons
+are recorded in [the exact outcome reconciliation](job608-lease619-outcome-reconciliation.md).
+It supersedes historical no-receipt/UNRUN and generic23 fixed-root statements below.
+Independent approval of that exact reconciliation is required before preserved combined3.
+All package/application595 gates remain.
+
 CURRENT 2026-10-27 08:09Z: follow [the owned lease-cap prerequisite and resume gates](job608-lease-cap-prerequisite.md). Review621 and Decision624 approve source619 artifact78d0afd. [Pinch acknowledged finite ownership](job608-622-owner-ack.md) after622 ended, but only for a later human-started foreground HQ turn in a natural settled gap; he has no supported self-continuation. No installation or HQ receipt exists; live/sealed controller remains17338c48. Do not retry offload until actual genuine HQ application/reseal and post-application suites satisfy those gates. Then Decision618 authorizes ONE4GiB/1CPU combined3 run. The older combined2/default2GiB next-run directions below are historical and must not be executed. No build/package/application acceptance is added.
 
 UPDATE 04:52Z: combined2 (manifest7995990b, launch fcd50009) is SPENT. Config15

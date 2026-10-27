@@ -1,5 +1,11 @@
 # Additional608 prerequisite evidence gate (source only)
 
+CURRENT 2026-10-27: actual622 application and admitted full78/90 comparisons
+are recorded in [the exact outcome reconciliation](job608-lease619-outcome-reconciliation.md).
+It supersedes historical no-receipt/UNRUN and generic23 fixed-root statements below.
+Independent approval of that exact reconciliation is required before preserved combined3.
+All package/application595 gates remain.
+
 The approved619 installer and all its pinned inputs remain unchanged. Its
 `run_suites.sh` finishes with `comm`: its exit0 can conceal unittest failure,
 timeout, missing imports or partial logs. Even empty failing-name lists can

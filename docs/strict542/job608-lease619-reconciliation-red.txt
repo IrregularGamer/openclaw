@@ -1,0 +1,19 @@
+...E..........
+======================================================================
+ERROR: test_exact_reviewed_shared_diagnostics_can_include_stale_dispatcher_fixture (test_lease619_suite_gate.EvidenceGate.test_exact_reviewed_shared_diagnostics_can_include_stale_dispatcher_fixture)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/deploy/agentq/tmp/source552/docs/strict542/test_lease619_suite_gate.py", line 72, in test_exact_reviewed_shared_diagnostics_can_include_stale_dispatcher_fixture
+    self.assertEqual(self.check()['candidate_only_regressions'], 0)
+                     ~~~~~~~~~~^^
+  File "/home/deploy/agentq/tmp/source552/docs/strict542/test_lease619_suite_gate.py", line 59, in check
+    return gate.validate(Path('/unused'), self.logs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deploy/agentq/tmp/source552/docs/strict542/verify-lease619-suites.py", line 109, in validate
+    raise ValueError('candidate has unexpected failures or changed known-error count')
+ValueError: candidate has unexpected failures or changed known-error count
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.060s
+
+FAILED (errors=1)
