@@ -10,6 +10,7 @@
   "interpretation": "Resource kill at the default 2GiB ceiling in the link stage, after the compaction native addon was built and loaded; not a lease revocation, not an implementation assertion. Compaction did not bring the unified config15 graph under 2GiB.",
   "artifacts_returned": "none (result598 absent)",
   "receipt_complete": false,
+  "log_path": "/home/deploy/agentq/runs/608/combined2-offload.log",
   "log_sha256": "249bbded1e8edd0d14cf116dcb5ce9a4371b98ea1cb455057c6f6b2a280ebd6b",
   "state": "SPENT; do not relaunch combined2 or an unchanged combined export",
   "next": "source-only: split or bound config15 link stage (per-entry/partitioned unified graph) in owning build source, reviewed, then new export; do not lower UNIFIED_GRAPH_THRASH_LIMIT_BYTES or raise budget without reviewed justification"

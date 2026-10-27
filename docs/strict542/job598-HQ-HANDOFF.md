@@ -1,5 +1,13 @@
 # Job598 to595: exact source-only application preparation
 
+UPDATE 04:52Z: combined2 (manifest7995990b, launch fcd50009) is SPENT. Config15
+received SIGKILL (timedOut:false) in rolldown link_stage bind_imports_and_exports at
+the default2GiB ceiling after the compaction addon loaded; 34/34 policy checks passed,
+no artifacts/receipt (job608-compaction-combined2-outcome.json, 9e6c1ddf). Compaction is
+insufficient. Next is SOURCE-ONLY: partition or bound the unified config15 link stage in
+its owning build source, review it, then a new export. No unchanged relaunch, floor
+lowering or budget increase. Application595 stays gated.
+
 Current608 status and ordered application gates are job608-to595.md and
 job608-resume-after-compaction.md. Separate new compaction native compile and
 matching121positive library tests are independently accepted; combined1 ended
