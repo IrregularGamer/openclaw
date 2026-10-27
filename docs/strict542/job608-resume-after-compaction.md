@@ -18,11 +18,11 @@ not acceptance and forbids an unchanged rerun. Preserve/reconcile exact output.
 
 After independent acceptance of a COMPLETE compaction compile only, next is
 ONE matching fresh libtests export export608-native-compact-libtests1:
-manifestb161ec02fc14a5e7914e720595e31dffcb7839812bb177cc52924a44336f8f47,
+manifest283c9f61f73726295f8de01a6cd127e08ea8d150a0a571deb02f101f8b806d0e,
 source2f678845, four exact owning files, NO addon/cache/toolchain/dependency input.
 Its exact conditional independent review is job608-compaction-libtests-export-review.md.
-Normal admission and at least46min real foreground worker lifetime at launch:
-    offload run --artifacts result-native608-libtests -- timeout -k 15s 2400s sh run608.sh libtests
+Normal admission and at least51min real foreground worker lifetime at launch:
+    offload run --artifacts result-native608-libtests -- timeout -k 15s 2700s sh run608.sh libtests
 No concurrent stage. Require complete receipt, all7 lifetime tests/retention
 negative control, full ecmascript suite with exact named compaction regression,
 and full rolldown library suite. Compare all shared owner/source/toolchain fields

@@ -1,6 +1,7 @@
 {
   "compiler_upstream_archive_sha256": "203aa4834d7a52522c758c81f6e493bea9fea828d4454fe2a25b9519d2d258ac",
-  "purpose": "ONE future source-only matching serial scan arena compaction libtests stage, only after compile acceptance;7lifetime+negative/full ecmascript named regression/full rolldown libsuite; outer2400s+15; >=46min foreground; default2GiB1CPU; no package/application authority",
+  "deadline_justification": "Observed ecmascript release9m40s plus prior rolldown libtests28m47s and setup; retain all checks under finite45min, unchanged2GiB1CPU. Supersedes unused b161ec02 manifest only.",
+  "purpose": "ONE future source-only matching serial scan arena compaction libtests stage, only after compile acceptance;7lifetime+negative/full ecmascript named regression/full rolldown libsuite; outer2700s+15; >=51min foreground; default2GiB1CPU; no package/application authority",
   "runner_sha256": "2c6e313a9aa7dddfbbdfe36986325bed7f46346d6e05822d4c032ca344290e57",
   "source_commit": "2f6788455aea5051cdc5b748cd06554f3ab039a1",
   "stage": "libtests",
