@@ -9,7 +9,7 @@ The original619 installer/action, privilege, root and seal changes are untouched
 Job632 ran original unchanged run_suites.sh via admitted offload from committed
 ops-work5bfe1aa fresh export `/home/deploy/agentq/tmp/export.bDNF`, from export root.
 Its earlier omitted-directory run is discarded. Complete original returned logs
-are preserved here as job608-lease619-{baseline,candidate}-full.log. All16 source
+are preserved here as job608-lease619-{baseline,candidate}-full.txt. All16 source
 pins match; all78/90 tests complete with rc1 and no skips/timeouts/missing tests.
 Baseline has4FAIL/28ERROR; candidate23ERROR. These are comparison evidence, not
 passing full suites. Exact9 baseline-only diagnostics equal the existing pinned

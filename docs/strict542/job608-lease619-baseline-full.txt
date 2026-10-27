@@ -1,0 +1,608 @@
+test_atomic_claim_rejects_paused_parked_and_future_job (test_control.ClaimMetadataTests.test_atomic_claim_rejects_paused_parked_and_future_job) ... ok
+test_active_worker_blocks_second (test_control.ControllerTests.test_active_worker_blocks_second) ... ok
+test_atomic_claim_script_records_one_run_and_refuses_reclaim (test_control.ControllerTests.test_atomic_claim_script_records_one_run_and_refuses_reclaim) ... ok
+test_collected_unit_is_not_a_monitor_failure (test_control.ControllerTests.test_collected_unit_is_not_a_monitor_failure) ... ok
+test_completed_attempt_cannot_duplicate (test_control.ControllerTests.test_completed_attempt_cannot_duplicate) ... ERROR
+test_failed_latch_write_still_attempts_worker_containment (test_control.ControllerTests.test_failed_latch_write_still_attempts_worker_containment) ... ok
+test_gateway_failure_fences_external_queue_after_existing_grace (test_control.ControllerTests.test_gateway_failure_fences_external_queue_after_existing_grace) ... ok
+test_gateway_without_memory_cap_is_not_eligible (test_control.ControllerTests.test_gateway_without_memory_cap_is_not_eligible) ... ok
+test_health_heartbeat_uses_runtime_not_persistent_disk (test_control.ControllerTests.test_health_heartbeat_uses_runtime_not_persistent_disk) ... ok
+test_invocation_mismatch_not_killed (test_control.ControllerTests.test_invocation_mismatch_not_killed) ... ok
+test_launch_preserves_rights_but_sets_limits (test_control.ControllerTests.test_launch_preserves_rights_but_sets_limits) ... ERROR
+test_local_check_outside_bound_worker_is_denied (test_control.ControllerTests.test_local_check_outside_bound_worker_is_denied) ... ERROR
+test_local_fixture_is_contained_even_after_cli_has_exited (test_control.ControllerTests.test_local_fixture_is_contained_even_after_cli_has_exited) ... ok
+test_missing_health_denies (test_control.ControllerTests.test_missing_health_denies) ... ok
+test_missing_validation_denies_resume (test_control.ControllerTests.test_missing_validation_denies_resume) ... ok
+test_normal_launch_carries_unique_remote_lease (test_control.ControllerTests.test_normal_launch_carries_unique_remote_lease) ... ERROR
+test_observe_pressure_stops_without_model (test_control.ControllerTests.test_observe_pressure_stops_without_model) ... ok
+test_orphaned_running_test_fixture_pauses_queue (test_control.ControllerTests.test_orphaned_running_test_fixture_pauses_queue) ... ok
+test_other_job_cannot_overwrite_unreconciled_registration (test_control.ControllerTests.test_other_job_cannot_overwrite_unreconciled_registration) ... ERROR
+test_pause_marks_only_registered_job_interrupted (test_control.ControllerTests.test_pause_marks_only_registered_job_interrupted) ... ok
+test_pressure_cooldown_survives_controller_restart (test_control.ControllerTests.test_pressure_cooldown_survives_controller_restart) ... ok
+test_probe_uses_fixed_command_while_normal_queue_stopped (test_control.ControllerTests.test_probe_uses_fixed_command_while_normal_queue_stopped) ... ERROR
+test_reconciled_old_failure_does_not_prevent_future_recovery (test_control.ControllerTests.test_reconciled_old_failure_does_not_prevent_future_recovery) ... ok
+test_remote_admission_critical_pressure_has_no_rpc (test_control.ControllerTests.test_remote_admission_critical_pressure_has_no_rpc) ... ERROR
+test_remote_admission_denies_stale_epoch_without_network (test_control.ControllerTests.test_remote_admission_denies_stale_epoch_without_network) ... ok
+test_remote_admission_needs_matching_live_unit (test_control.ControllerTests.test_remote_admission_needs_matching_live_unit) ... ERROR
+test_remote_admission_uses_live_worker_headroom_not_new_job_threshold (test_control.ControllerTests.test_remote_admission_uses_live_worker_headroom_not_new_job_threshold) ... ERROR
+test_remote_cancel_failure_is_not_successful_stop (test_control.ControllerTests.test_remote_cancel_failure_is_not_successful_stop) ... ok
+test_resume_requires_registered_fixture_closure (test_control.ControllerTests.test_resume_requires_registered_fixture_closure) ... ok
+test_settled_retry_gets_new_unit_and_new_sidecar (test_control.ControllerTests.test_settled_retry_gets_new_unit_and_new_sidecar) ... ERROR
+test_settlement_refuses_unverified_remote_stop (test_control.ControllerTests.test_settlement_refuses_unverified_remote_stop) ... ok
+test_stale_monitor_denies (test_control.ControllerTests.test_stale_monitor_denies) ... ok
+test_stop_latches_without_models (test_control.ControllerTests.test_stop_latches_without_models) ... ok
+test_stop_refuses_unregistered_production_target (test_control.ControllerTests.test_stop_refuses_unregistered_production_target) ... ok
+test_stopped_launch_has_no_process (test_control.ControllerTests.test_stopped_launch_has_no_process) ... ok
+test_system_bus_failure_is_not_treated_as_stopped (test_control.ControllerTests.test_system_bus_failure_is_not_treated_as_stopped) ... ok
+test_unbounded_separate_codex_daemon_denies_gateway_readiness (test_control.ControllerTests.test_unbounded_separate_codex_daemon_denies_gateway_readiness) ... ok
+test_worker_limit_failure_pauses_queue (test_control.ControllerTests.test_worker_limit_failure_pauses_queue) ... ok
+test_actual_shell_argv_medium_high_and_new_job_reset (test_launch.LauncherIntegration.test_actual_shell_argv_medium_high_and_new_job_reset) ... 
+  test_actual_shell_argv_medium_high_and_new_job_reset (test_launch.LauncherIntegration.test_actual_shell_argv_medium_high_and_new_job_reset) (expected='medium', job_id=7) ... ERROR
+  test_actual_shell_argv_medium_high_and_new_job_reset (test_launch.LauncherIntegration.test_actual_shell_argv_medium_high_and_new_job_reset) (expected='high', job_id=7) ... ERROR
+  test_actual_shell_argv_medium_high_and_new_job_reset (test_launch.LauncherIntegration.test_actual_shell_argv_medium_high_and_new_job_reset) (expected='medium', job_id=8) ... ERROR
+test_atomic_claim_persists_effective_policy_for_provider_handoffs (test_launch.LauncherIntegration.test_atomic_claim_persists_effective_policy_for_provider_handoffs) ... ok
+test_claude_argv_is_unchanged_for_every_kind (test_launch.LauncherIntegration.test_claude_argv_is_unchanged_for_every_kind) ... 
+  test_claude_argv_is_unchanged_for_every_kind (test_launch.LauncherIntegration.test_claude_argv_is_unchanged_for_every_kind) (kind='review') ... ERROR
+  test_claude_argv_is_unchanged_for_every_kind (test_launch.LauncherIntegration.test_claude_argv_is_unchanged_for_every_kind) (kind='plan') ... ERROR
+  test_claude_argv_is_unchanged_for_every_kind (test_launch.LauncherIntegration.test_claude_argv_is_unchanged_for_every_kind) (kind='research') ... ERROR
+  test_claude_argv_is_unchanged_for_every_kind (test_launch.LauncherIntegration.test_claude_argv_is_unchanged_for_every_kind) (kind='build') ... ERROR
+  test_claude_argv_is_unchanged_for_every_kind (test_launch.LauncherIntegration.test_claude_argv_is_unchanged_for_every_kind) (kind='ops') ... ERROR
+  test_claude_argv_is_unchanged_for_every_kind (test_launch.LauncherIntegration.test_claude_argv_is_unchanged_for_every_kind) (kind='design') ... ERROR
+test_ambiguous_review_does_not_promote (test_integration.DispatcherIntegration.test_ambiguous_review_does_not_promote) ... ok
+test_assertion_correction_then_success_returns_medium (test_integration.DispatcherIntegration.test_assertion_correction_then_success_returns_medium) ... ok
+test_dispatcher_imports_policy_under_actual_isolated_cli_mode (test_integration.DispatcherIntegration.test_dispatcher_imports_policy_under_actual_isolated_cli_mode) ... ok
+test_infrastructure_usage_and_ordinary_failure_never_promote (test_integration.DispatcherIntegration.test_infrastructure_usage_and_ordinary_failure_never_promote) ... ok
+test_only_explicit_changes_promotes_new_correction (test_integration.DispatcherIntegration.test_only_explicit_changes_promotes_new_correction) ... ok
+test_remote_lease_denial_keeps_existing_retry_bound (test_integration.DispatcherIntegration.test_remote_lease_denial_keeps_existing_retry_bound) ... ERROR
+test_requeue_prose_cannot_override_placement_reconciliation (test_integration.DispatcherIntegration.test_requeue_prose_cannot_override_placement_reconciliation) ... 
+  test_requeue_prose_cannot_override_placement_reconciliation (test_integration.DispatcherIntegration.test_requeue_prose_cannot_override_placement_reconciliation) (placement='completion_unknown') ... ERROR
+  test_requeue_prose_cannot_override_placement_reconciliation (test_integration.DispatcherIntegration.test_requeue_prose_cannot_override_placement_reconciliation) (placement='local_check_admission_denied') ... ERROR
+  test_requeue_prose_cannot_override_placement_reconciliation (test_integration.DispatcherIntegration.test_requeue_prose_cannot_override_placement_reconciliation) (placement='remote_environment_blocked') ... ERROR
+test_status_exposes_reason_and_effective_run_snapshot (test_integration.DispatcherIntegration.test_status_exposes_reason_and_effective_run_snapshot) ... ok
+test_successful_build_ignores_failure_marker_and_clears_high (test_integration.DispatcherIntegration.test_successful_build_ignores_failure_marker_and_clears_high) ... ok
+test_capped_side_unit_memcg_oom_does_not_stop (test_pressure.OomAttribution.test_capped_side_unit_memcg_oom_does_not_stop) ... ok
+test_first_sample_never_stops (test_pressure.OomAttribution.test_first_sample_never_stops) ... ok
+test_global_oom_stops (test_pressure.OomAttribution.test_global_oom_stops) ... ok
+test_global_oom_without_memcg_trace_stops (test_pressure.OomAttribution.test_global_oom_without_memcg_trace_stops) ... ok
+test_group_kill_in_side_unit_is_excused (test_pressure.OomAttribution.test_group_kill_in_side_unit_is_excused) ... ok
+test_memcg_plus_global_in_same_window_stops (test_pressure.OomAttribution.test_memcg_plus_global_in_same_window_stops) ... ok
+test_reader_parses_cgroup_tree (test_pressure.OomAttribution.test_reader_parses_cgroup_tree) ... ok
+test_unreadable_cgroups_fail_closed (test_pressure.OomAttribution.test_unreadable_cgroups_fail_closed) ... ok
+test_worker_scope_memcg_oom_stops (test_pressure.OomAttribution.test_worker_scope_memcg_oom_stops) ... ok
+test_admission_headroom_is_2560 (test_pressure.ThresholdsUnchanged.test_admission_headroom_is_2560) ... ok
+test_low_memory_still_stops_after_15s (test_pressure.ThresholdsUnchanged.test_low_memory_still_stops_after_15s) ... ok
+test_invalid_capabilities_refused_cleanly (test_lease_cap_619.Capability.test_invalid_capabilities_refused_cleanly) ... 
+  test_invalid_capabilities_refused_cleanly (test_lease_cap_619.Capability.test_invalid_capabilities_refused_cleanly) (max_memory_MiB=2048.0) ... FAIL
+test_legacy_2048_grant_admits (test_lease_cap_619.Capability.test_legacy_2048_grant_admits) ... ok
+test_new_4096_grant_admits (test_lease_cap_619.Capability.test_new_4096_grant_admits) ... ERROR
+test_rejected_accepted_flag_refused_cleanly (test_lease_cap_619.Capability.test_rejected_accepted_flag_refused_cleanly) ... ok
+test_renewal_4096_and_2048_keep_lease (test_lease_cap_619.Capability.test_renewal_4096_and_2048_keep_lease) ... ERROR
+test_renewal_overcap_after_4096_grant_cancels (test_lease_cap_619.Capability.test_renewal_overcap_after_4096_grant_cancels) ... ERROR
+test_rpc_loss_then_verified_cancel (test_lease_cap_619.Capability.test_rpc_loss_then_verified_cancel) ... ok
+test_unknown_cancellation_keeps_lease_fenced (test_lease_cap_619.Capability.test_unknown_cancellation_keeps_lease_fenced) ... ok
+test_wrong_cpu_or_ttl_refused_cleanly (test_lease_cap_619.Capability.test_wrong_cpu_or_ttl_refused_cleanly) ... 
+  test_wrong_cpu_or_ttl_refused_cleanly (test_lease_cap_619.Capability.test_wrong_cpu_or_ttl_refused_cleanly) (key='max_cpus', value=True, cap=2048) ... FAIL
+  test_wrong_cpu_or_ttl_refused_cleanly (test_lease_cap_619.Capability.test_wrong_cpu_or_ttl_refused_cleanly) (key='max_cpus', value=1.0, cap=2048) ... FAIL
+  test_wrong_cpu_or_ttl_refused_cleanly (test_lease_cap_619.Capability.test_wrong_cpu_or_ttl_refused_cleanly) (key='lease_seconds', value=30.0, cap=2048) ... FAIL
+test_epoch_and_state (test_lease_cap_619.OriginalPredicates.test_epoch_and_state) ... ok
+test_invocation_and_unit (test_lease_cap_619.OriginalPredicates.test_invocation_and_unit) ... ok
+test_maintain_skips_when_not_running (test_lease_cap_619.OriginalPredicates.test_maintain_skips_when_not_running) ... ERROR
+test_registration (test_lease_cap_619.OriginalPredicates.test_registration) ... ok
+test_resources (test_lease_cap_619.OriginalPredicates.test_resources) ... ok
+test_seal (test_lease_cap_619.OriginalPredicates.test_seal) ... ok
+test_wrong_token (test_lease_cap_619.OriginalPredicates.test_wrong_token) ... ok
+test_capability_is_exact_reviewed_set (test_lease_cap_619.SourceShape.test_capability_is_exact_reviewed_set) ... ERROR
+
+======================================================================
+ERROR: test_completed_attempt_cannot_duplicate (test_control.ControllerTests.test_completed_attempt_cannot_duplicate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_control.py", line 221, in test_completed_attempt_cannot_duplicate
+    self.c.launch(self.job,'codex')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 781, in launch
+    if self.preservation_pending(): raise PermissionError("preservation_pending")
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 668, in preservation_pending
+    return Preservation(self).pending()
+           ~~~~~~~~~~~~^^^^^^
+  File "/work/lease-cap-619/out/baseline/maintenance.py", line 525, in __init__
+    if controller.root != ROOT: raise PermissionError('preservation_fixed_root_required')
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: preservation_fixed_root_required
+
+======================================================================
+ERROR: test_launch_preserves_rights_but_sets_limits (test_control.ControllerTests.test_launch_preserves_rights_but_sets_limits)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_control.py", line 177, in test_launch_preserves_rights_but_sets_limits
+    self.c.launch(self.job,'codex')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 781, in launch
+    if self.preservation_pending(): raise PermissionError("preservation_pending")
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 668, in preservation_pending
+    return Preservation(self).pending()
+           ~~~~~~~~~~~~^^^^^^
+  File "/work/lease-cap-619/out/baseline/maintenance.py", line 525, in __init__
+    if controller.root != ROOT: raise PermissionError('preservation_fixed_root_required')
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: preservation_fixed_root_required
+
+======================================================================
+ERROR: test_local_check_outside_bound_worker_is_denied (test_control.ControllerTests.test_local_check_outside_bound_worker_is_denied)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_control.py", line 114, in test_local_check_outside_bound_worker_is_denied
+    self.ready();self.c.launch(self.job,'codex');self.c.bound_to_worker=Mock(return_value=False)
+                 ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 781, in launch
+    if self.preservation_pending(): raise PermissionError("preservation_pending")
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 668, in preservation_pending
+    return Preservation(self).pending()
+           ~~~~~~~~~~~~^^^^^^
+  File "/work/lease-cap-619/out/baseline/maintenance.py", line 525, in __init__
+    if controller.root != ROOT: raise PermissionError('preservation_fixed_root_required')
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: preservation_fixed_root_required
+
+======================================================================
+ERROR: test_normal_launch_carries_unique_remote_lease (test_control.ControllerTests.test_normal_launch_carries_unique_remote_lease)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_control.py", line 43, in test_normal_launch_carries_unique_remote_lease
+    self.c.launch(self.job,'codex')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 781, in launch
+    if self.preservation_pending(): raise PermissionError("preservation_pending")
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 668, in preservation_pending
+    return Preservation(self).pending()
+           ~~~~~~~~~~~~^^^^^^
+  File "/work/lease-cap-619/out/baseline/maintenance.py", line 525, in __init__
+    if controller.root != ROOT: raise PermissionError('preservation_fixed_root_required')
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: preservation_fixed_root_required
+
+======================================================================
+ERROR: test_other_job_cannot_overwrite_unreconciled_registration (test_control.ControllerTests.test_other_job_cannot_overwrite_unreconciled_registration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_control.py", line 147, in test_other_job_cannot_overwrite_unreconciled_registration
+    self.ready();self.c.launch(self.job,'codex');self.runner.reset_mock()
+                 ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 781, in launch
+    if self.preservation_pending(): raise PermissionError("preservation_pending")
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 668, in preservation_pending
+    return Preservation(self).pending()
+           ~~~~~~~~~~~~^^^^^^
+  File "/work/lease-cap-619/out/baseline/maintenance.py", line 525, in __init__
+    if controller.root != ROOT: raise PermissionError('preservation_fixed_root_required')
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: preservation_fixed_root_required
+
+======================================================================
+ERROR: test_probe_uses_fixed_command_while_normal_queue_stopped (test_control.ControllerTests.test_probe_uses_fixed_command_while_normal_queue_stopped)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_control.py", line 305, in test_probe_uses_fixed_command_while_normal_queue_stopped
+    result=self.c.launch({'id':0,'attempts':0,'project':'ops','kind':'ops','status':'queued'},'probe',probe=True)
+  File "/work/lease-cap-619/out/baseline/control.py", line 781, in launch
+    if self.preservation_pending(): raise PermissionError("preservation_pending")
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 668, in preservation_pending
+    return Preservation(self).pending()
+           ~~~~~~~~~~~~^^^^^^
+  File "/work/lease-cap-619/out/baseline/maintenance.py", line 525, in __init__
+    if controller.root != ROOT: raise PermissionError('preservation_fixed_root_required')
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: preservation_fixed_root_required
+
+======================================================================
+ERROR: test_remote_admission_critical_pressure_has_no_rpc (test_control.ControllerTests.test_remote_admission_critical_pressure_has_no_rpc)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_control.py", line 59, in test_remote_admission_critical_pressure_has_no_rpc
+    self.ready();self.c.launch(self.job,'codex')
+                 ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 781, in launch
+    if self.preservation_pending(): raise PermissionError("preservation_pending")
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 668, in preservation_pending
+    return Preservation(self).pending()
+           ~~~~~~~~~~~~^^^^^^
+  File "/work/lease-cap-619/out/baseline/maintenance.py", line 525, in __init__
+    if controller.root != ROOT: raise PermissionError('preservation_fixed_root_required')
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: preservation_fixed_root_required
+
+======================================================================
+ERROR: test_remote_admission_needs_matching_live_unit (test_control.ControllerTests.test_remote_admission_needs_matching_live_unit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_control.py", line 73, in test_remote_admission_needs_matching_live_unit
+    self.c.launch(self.job,'codex')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 781, in launch
+    if self.preservation_pending(): raise PermissionError("preservation_pending")
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 668, in preservation_pending
+    return Preservation(self).pending()
+           ~~~~~~~~~~~~^^^^^^
+  File "/work/lease-cap-619/out/baseline/maintenance.py", line 525, in __init__
+    if controller.root != ROOT: raise PermissionError('preservation_fixed_root_required')
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: preservation_fixed_root_required
+
+======================================================================
+ERROR: test_remote_admission_uses_live_worker_headroom_not_new_job_threshold (test_control.ControllerTests.test_remote_admission_uses_live_worker_headroom_not_new_job_threshold)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_control.py", line 50, in test_remote_admission_uses_live_worker_headroom_not_new_job_threshold
+    self.c.launch(self.job,'codex')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 781, in launch
+    if self.preservation_pending(): raise PermissionError("preservation_pending")
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 668, in preservation_pending
+    return Preservation(self).pending()
+           ~~~~~~~~~~~~^^^^^^
+  File "/work/lease-cap-619/out/baseline/maintenance.py", line 525, in __init__
+    if controller.root != ROOT: raise PermissionError('preservation_fixed_root_required')
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: preservation_fixed_root_required
+
+======================================================================
+ERROR: test_settled_retry_gets_new_unit_and_new_sidecar (test_control.ControllerTests.test_settled_retry_gets_new_unit_and_new_sidecar)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_control.py", line 272, in test_settled_retry_gets_new_unit_and_new_sidecar
+    first=self.c.launch(self.job,'codex')['unit']
+          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 781, in launch
+    if self.preservation_pending(): raise PermissionError("preservation_pending")
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 668, in preservation_pending
+    return Preservation(self).pending()
+           ~~~~~~~~~~~~^^^^^^
+  File "/work/lease-cap-619/out/baseline/maintenance.py", line 525, in __init__
+    if controller.root != ROOT: raise PermissionError('preservation_fixed_root_required')
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: preservation_fixed_root_required
+
+======================================================================
+ERROR: test_actual_shell_argv_medium_high_and_new_job_reset (test_launch.LauncherIntegration.test_actual_shell_argv_medium_high_and_new_job_reset) (expected='medium', job_id=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_launch.py", line 48, in test_actual_shell_argv_medium_high_and_new_job_reset
+    args = self.launch(job)
+  File "/work/lease-cap-619/out/baseline/test_launch.py", line 38, in launch
+    self.c.launch(job, agent)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 781, in launch
+    if self.preservation_pending(): raise PermissionError("preservation_pending")
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 668, in preservation_pending
+    return Preservation(self).pending()
+           ~~~~~~~~~~~~^^^^^^
+  File "/work/lease-cap-619/out/baseline/maintenance.py", line 525, in __init__
+    if controller.root != ROOT: raise PermissionError('preservation_fixed_root_required')
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: preservation_fixed_root_required
+
+======================================================================
+ERROR: test_actual_shell_argv_medium_high_and_new_job_reset (test_launch.LauncherIntegration.test_actual_shell_argv_medium_high_and_new_job_reset) (expected='high', job_id=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_launch.py", line 48, in test_actual_shell_argv_medium_high_and_new_job_reset
+    args = self.launch(job)
+  File "/work/lease-cap-619/out/baseline/test_launch.py", line 38, in launch
+    self.c.launch(job, agent)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 781, in launch
+    if self.preservation_pending(): raise PermissionError("preservation_pending")
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 668, in preservation_pending
+    return Preservation(self).pending()
+           ~~~~~~~~~~~~^^^^^^
+  File "/work/lease-cap-619/out/baseline/maintenance.py", line 525, in __init__
+    if controller.root != ROOT: raise PermissionError('preservation_fixed_root_required')
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: preservation_fixed_root_required
+
+======================================================================
+ERROR: test_actual_shell_argv_medium_high_and_new_job_reset (test_launch.LauncherIntegration.test_actual_shell_argv_medium_high_and_new_job_reset) (expected='medium', job_id=8)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_launch.py", line 48, in test_actual_shell_argv_medium_high_and_new_job_reset
+    args = self.launch(job)
+  File "/work/lease-cap-619/out/baseline/test_launch.py", line 38, in launch
+    self.c.launch(job, agent)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 781, in launch
+    if self.preservation_pending(): raise PermissionError("preservation_pending")
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 668, in preservation_pending
+    return Preservation(self).pending()
+           ~~~~~~~~~~~~^^^^^^
+  File "/work/lease-cap-619/out/baseline/maintenance.py", line 525, in __init__
+    if controller.root != ROOT: raise PermissionError('preservation_fixed_root_required')
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: preservation_fixed_root_required
+
+======================================================================
+ERROR: test_claude_argv_is_unchanged_for_every_kind (test_launch.LauncherIntegration.test_claude_argv_is_unchanged_for_every_kind) (kind='review')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_launch.py", line 73, in test_claude_argv_is_unchanged_for_every_kind
+    args = self.launch(dict(self.job, kind=kind), 'claude')
+  File "/work/lease-cap-619/out/baseline/test_launch.py", line 38, in launch
+    self.c.launch(job, agent)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 781, in launch
+    if self.preservation_pending(): raise PermissionError("preservation_pending")
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 668, in preservation_pending
+    return Preservation(self).pending()
+           ~~~~~~~~~~~~^^^^^^
+  File "/work/lease-cap-619/out/baseline/maintenance.py", line 525, in __init__
+    if controller.root != ROOT: raise PermissionError('preservation_fixed_root_required')
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: preservation_fixed_root_required
+
+======================================================================
+ERROR: test_claude_argv_is_unchanged_for_every_kind (test_launch.LauncherIntegration.test_claude_argv_is_unchanged_for_every_kind) (kind='plan')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_launch.py", line 73, in test_claude_argv_is_unchanged_for_every_kind
+    args = self.launch(dict(self.job, kind=kind), 'claude')
+  File "/work/lease-cap-619/out/baseline/test_launch.py", line 38, in launch
+    self.c.launch(job, agent)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 781, in launch
+    if self.preservation_pending(): raise PermissionError("preservation_pending")
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 668, in preservation_pending
+    return Preservation(self).pending()
+           ~~~~~~~~~~~~^^^^^^
+  File "/work/lease-cap-619/out/baseline/maintenance.py", line 525, in __init__
+    if controller.root != ROOT: raise PermissionError('preservation_fixed_root_required')
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: preservation_fixed_root_required
+
+======================================================================
+ERROR: test_claude_argv_is_unchanged_for_every_kind (test_launch.LauncherIntegration.test_claude_argv_is_unchanged_for_every_kind) (kind='research')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_launch.py", line 73, in test_claude_argv_is_unchanged_for_every_kind
+    args = self.launch(dict(self.job, kind=kind), 'claude')
+  File "/work/lease-cap-619/out/baseline/test_launch.py", line 38, in launch
+    self.c.launch(job, agent)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 781, in launch
+    if self.preservation_pending(): raise PermissionError("preservation_pending")
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 668, in preservation_pending
+    return Preservation(self).pending()
+           ~~~~~~~~~~~~^^^^^^
+  File "/work/lease-cap-619/out/baseline/maintenance.py", line 525, in __init__
+    if controller.root != ROOT: raise PermissionError('preservation_fixed_root_required')
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: preservation_fixed_root_required
+
+======================================================================
+ERROR: test_claude_argv_is_unchanged_for_every_kind (test_launch.LauncherIntegration.test_claude_argv_is_unchanged_for_every_kind) (kind='build')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_launch.py", line 73, in test_claude_argv_is_unchanged_for_every_kind
+    args = self.launch(dict(self.job, kind=kind), 'claude')
+  File "/work/lease-cap-619/out/baseline/test_launch.py", line 38, in launch
+    self.c.launch(job, agent)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 781, in launch
+    if self.preservation_pending(): raise PermissionError("preservation_pending")
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 668, in preservation_pending
+    return Preservation(self).pending()
+           ~~~~~~~~~~~~^^^^^^
+  File "/work/lease-cap-619/out/baseline/maintenance.py", line 525, in __init__
+    if controller.root != ROOT: raise PermissionError('preservation_fixed_root_required')
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: preservation_fixed_root_required
+
+======================================================================
+ERROR: test_claude_argv_is_unchanged_for_every_kind (test_launch.LauncherIntegration.test_claude_argv_is_unchanged_for_every_kind) (kind='ops')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_launch.py", line 73, in test_claude_argv_is_unchanged_for_every_kind
+    args = self.launch(dict(self.job, kind=kind), 'claude')
+  File "/work/lease-cap-619/out/baseline/test_launch.py", line 38, in launch
+    self.c.launch(job, agent)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 781, in launch
+    if self.preservation_pending(): raise PermissionError("preservation_pending")
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 668, in preservation_pending
+    return Preservation(self).pending()
+           ~~~~~~~~~~~~^^^^^^
+  File "/work/lease-cap-619/out/baseline/maintenance.py", line 525, in __init__
+    if controller.root != ROOT: raise PermissionError('preservation_fixed_root_required')
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: preservation_fixed_root_required
+
+======================================================================
+ERROR: test_claude_argv_is_unchanged_for_every_kind (test_launch.LauncherIntegration.test_claude_argv_is_unchanged_for_every_kind) (kind='design')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_launch.py", line 73, in test_claude_argv_is_unchanged_for_every_kind
+    args = self.launch(dict(self.job, kind=kind), 'claude')
+  File "/work/lease-cap-619/out/baseline/test_launch.py", line 38, in launch
+    self.c.launch(job, agent)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 781, in launch
+    if self.preservation_pending(): raise PermissionError("preservation_pending")
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 668, in preservation_pending
+    return Preservation(self).pending()
+           ~~~~~~~~~~~~^^^^^^
+  File "/work/lease-cap-619/out/baseline/maintenance.py", line 525, in __init__
+    if controller.root != ROOT: raise PermissionError('preservation_fixed_root_required')
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: preservation_fixed_root_required
+
+======================================================================
+ERROR: test_remote_lease_denial_keeps_existing_retry_bound (test_integration.DispatcherIntegration.test_remote_lease_denial_keeps_existing_retry_bound)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_integration.py", line 134, in test_remote_lease_denial_keeps_existing_retry_bound
+    self.assertEqual(self.q.requeue_history(self.c, 1)[1], 0)
+                     ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'isolated_reasoning_q' has no attribute 'requeue_history'
+
+======================================================================
+ERROR: test_requeue_prose_cannot_override_placement_reconciliation (test_integration.DispatcherIntegration.test_requeue_prose_cannot_override_placement_reconciliation) (placement='completion_unknown')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_integration.py", line 122, in test_requeue_prose_cannot_override_placement_reconciliation
+    self.assertEqual(self.q.requeue_history(self.c, 1)[1], 0)
+                     ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'isolated_reasoning_q' has no attribute 'requeue_history'
+
+======================================================================
+ERROR: test_requeue_prose_cannot_override_placement_reconciliation (test_integration.DispatcherIntegration.test_requeue_prose_cannot_override_placement_reconciliation) (placement='local_check_admission_denied')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_integration.py", line 122, in test_requeue_prose_cannot_override_placement_reconciliation
+    self.assertEqual(self.q.requeue_history(self.c, 1)[1], 0)
+                     ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'isolated_reasoning_q' has no attribute 'requeue_history'
+
+======================================================================
+ERROR: test_requeue_prose_cannot_override_placement_reconciliation (test_integration.DispatcherIntegration.test_requeue_prose_cannot_override_placement_reconciliation) (placement='remote_environment_blocked')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_integration.py", line 122, in test_requeue_prose_cannot_override_placement_reconciliation
+    self.assertEqual(self.q.requeue_history(self.c, 1)[1], 0)
+                     ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'isolated_reasoning_q' has no attribute 'requeue_history'
+
+======================================================================
+ERROR: test_new_4096_grant_admits (test_lease_cap_619.Capability.test_new_4096_grant_admits)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_lease_cap_619.py", line 63, in test_new_4096_grant_admits
+    self.assertEqual(self.c.remote_admit(WORKER), {'admitted': True, 'lease_seconds': 30})
+                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 1009, in remote_admit
+    raise PermissionError('remote_lease_refused_cleanly')
+PermissionError: remote_lease_refused_cleanly
+
+======================================================================
+ERROR: test_renewal_4096_and_2048_keep_lease (test_lease_cap_619.Capability.test_renewal_4096_and_2048_keep_lease)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_lease_cap_619.py", line 68, in test_renewal_4096_and_2048_keep_lease
+    self.c.remote_admit(WORKER); self.c.remote_maintain(); self.c.remote_maintain()
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 1009, in remote_admit
+    raise PermissionError('remote_lease_refused_cleanly')
+PermissionError: remote_lease_refused_cleanly
+
+======================================================================
+ERROR: test_renewal_overcap_after_4096_grant_cancels (test_lease_cap_619.Capability.test_renewal_overcap_after_4096_grant_cancels)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_lease_cap_619.py", line 122, in test_renewal_overcap_after_4096_grant_cancels
+    self.reply['max_memory_MiB'] = 4096; self.c.remote_admit(WORKER)
+                                         ~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 1009, in remote_admit
+    raise PermissionError('remote_lease_refused_cleanly')
+PermissionError: remote_lease_refused_cleanly
+
+======================================================================
+ERROR: test_maintain_skips_when_not_running (test_lease_cap_619.OriginalPredicates.test_maintain_skips_when_not_running)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_lease_cap_619.py", line 162, in test_maintain_skips_when_not_running
+    self.reply['max_memory_MiB'] = 4096; self.c.remote_admit(WORKER); self.rpc.clear()
+                                         ~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/work/lease-cap-619/out/baseline/control.py", line 1009, in remote_admit
+    raise PermissionError('remote_lease_refused_cleanly')
+PermissionError: remote_lease_refused_cleanly
+
+======================================================================
+ERROR: test_capability_is_exact_reviewed_set (test_lease_cap_619.SourceShape.test_capability_is_exact_reviewed_set)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_lease_cap_619.py", line 170, in test_capability_is_exact_reviewed_set
+    self.assertEqual(control.LEASE_CAPABILITY_MiB, frozenset({2048, 4096}))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'control' has no attribute 'LEASE_CAPABILITY_MiB'
+
+======================================================================
+FAIL: test_invalid_capabilities_refused_cleanly (test_lease_cap_619.Capability.test_invalid_capabilities_refused_cleanly) (max_memory_MiB=2048.0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_lease_cap_619.py", line 85, in test_invalid_capabilities_refused_cleanly
+    self.assert_clean_refusal()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/work/lease-cap-619/out/baseline/test_lease_cap_619.py", line 73, in assert_clean_refusal
+    self.refused('remote_lease_refused_cleanly')
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/lease-cap-619/out/baseline/test_lease_cap_619.py", line 52, in refused
+    with self.assertRaises(PermissionError) as caught: self.c.remote_admit(WORKER)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: PermissionError not raised
+
+======================================================================
+FAIL: test_wrong_cpu_or_ttl_refused_cleanly (test_lease_cap_619.Capability.test_wrong_cpu_or_ttl_refused_cleanly) (key='max_cpus', value=True, cap=2048)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_lease_cap_619.py", line 94, in test_wrong_cpu_or_ttl_refused_cleanly
+    self.assert_clean_refusal()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/work/lease-cap-619/out/baseline/test_lease_cap_619.py", line 73, in assert_clean_refusal
+    self.refused('remote_lease_refused_cleanly')
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/lease-cap-619/out/baseline/test_lease_cap_619.py", line 52, in refused
+    with self.assertRaises(PermissionError) as caught: self.c.remote_admit(WORKER)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: PermissionError not raised
+
+======================================================================
+FAIL: test_wrong_cpu_or_ttl_refused_cleanly (test_lease_cap_619.Capability.test_wrong_cpu_or_ttl_refused_cleanly) (key='max_cpus', value=1.0, cap=2048)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_lease_cap_619.py", line 94, in test_wrong_cpu_or_ttl_refused_cleanly
+    self.assert_clean_refusal()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/work/lease-cap-619/out/baseline/test_lease_cap_619.py", line 73, in assert_clean_refusal
+    self.refused('remote_lease_refused_cleanly')
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/lease-cap-619/out/baseline/test_lease_cap_619.py", line 52, in refused
+    with self.assertRaises(PermissionError) as caught: self.c.remote_admit(WORKER)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: PermissionError not raised
+
+======================================================================
+FAIL: test_wrong_cpu_or_ttl_refused_cleanly (test_lease_cap_619.Capability.test_wrong_cpu_or_ttl_refused_cleanly) (key='lease_seconds', value=30.0, cap=2048)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/lease-cap-619/out/baseline/test_lease_cap_619.py", line 94, in test_wrong_cpu_or_ttl_refused_cleanly
+    self.assert_clean_refusal()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/work/lease-cap-619/out/baseline/test_lease_cap_619.py", line 73, in assert_clean_refusal
+    self.refused('remote_lease_refused_cleanly')
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/lease-cap-619/out/baseline/test_lease_cap_619.py", line 52, in refused
+    with self.assertRaises(PermissionError) as caught: self.c.remote_admit(WORKER)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: PermissionError not raised
+
+----------------------------------------------------------------------
+Ran 78 tests in 3.318s
+
+FAILED (failures=4, errors=28)
+rc=1
