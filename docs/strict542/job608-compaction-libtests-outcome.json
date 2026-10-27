@@ -1,0 +1,49 @@
+{
+  "application_authority": false,
+  "broker_exit": 0,
+  "build_receipt_reproduced": false,
+  "config46_resource_fit_proved": false,
+  "ecmascript_release_time": "9m38s",
+  "ecmascript_tests_passed": 2,
+  "evidence_sha256": {
+    "job608-compaction-libtests-broker.txt": "189a8b4181d3c6b8ca7be0bca9b3f81f79072140fc0c66dca1af864e91c368fb",
+    "job608-compaction-libtests-build.txt": "2b1dc9b211c60c70b0cca424f7a2140d9346f9c7e7890b82746ae018cd9c5cb4",
+    "job608-compaction-libtests-receipt.json": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946",
+    "job608-compaction-libtests-retention-negative.txt": "bb57ceaa264092e04c35cdb07d0fcf3fa41d973a389693087958dd6ffedfef46",
+    "job608-compaction-libtests-tests.txt": "6a53fe85ca5f9d3316242aa8040cf395e4b3d4fdc814aa90cc9a7f8a05bba4f8"
+  },
+  "export_spent": true,
+  "full_typed_package_built": false,
+  "kind": "COMPLETE_COMPACTION_MATCHING_NATIVE_LIBTESTS_NOT_PACKAGE",
+  "manifest_sha256": "283c9f61f73726295f8de01a6cd127e08ea8d150a0a571deb02f101f8b806d0e",
+  "matching_addon_sha256": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042",
+  "matching_compile_receipt_sha256": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+  "new_libtests_receipt_sha256": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946",
+  "offload_cli_exit_evidence": {
+    "artifact_pull_complete": true,
+    "exec_session": 75442,
+    "exit_code": 0,
+    "observed_utc": "2026-10-27T03:20:01Z"
+  },
+  "old_libtests3_receipt_sha256": "84a8d51f34da3e788482de3e817b5583917a9351a22cb8ad2f7cf1b1ec218a93",
+  "retention_negative_failures_expected": 3,
+  "rolldown_libtests_passed": 112,
+  "rolldown_libtests_release_time": "26m20s",
+  "shared_receipt_fields": [
+    "owner_inputs",
+    "patched_sources",
+    "cargo_policy",
+    "rustc",
+    "cmake",
+    "cmake_wheel_sha256",
+    "upstream_commit",
+    "source_archive_sha256",
+    "rust_archive_sha256",
+    "lifetime_tests_exit",
+    "retention_negative_detected",
+    "compaction_tests_exit"
+  ],
+  "slot": "tmp-export608-native-compact-libtests1-79b28780",
+  "source_commit": "2f6788455aea5051cdc5b748cd06554f3ab039a1",
+  "standalone_lifetime_tests_passed": 7
+}
