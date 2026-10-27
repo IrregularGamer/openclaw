@@ -4,7 +4,8 @@ import os from 'node:os';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {test} from 'node:test';
-import {nativeCompiler608} from '../../scripts/lib/native-compiler608.mjs';
+import * as nativeOwner from '../../scripts/lib/native-compiler608.mjs';
+const {nativeCompiler608}=nativeOwner;
 const owners=['scripts/lib/prepare-native608.py','scripts/lib/last-use-ast608.rs',
   'docs/strict542/rolldown-source-pin608.json','docs/strict542/build-native608.py'];
 const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
@@ -52,4 +53,29 @@ test('refuses missing, swapped, failed or disagreeing stage receipts and a chang
     [(r,dir)=>{r.compile.addon_sha256=sha(Buffer.from('other'));},/addon mismatch/u],
   ];
   for(const [mutate,error] of cases) assert.throws(()=>nativeCompiler608(fixture(t,mutate)),error);
+});
+
+test('trusted native environment derives required bytes without mutating the caller',t=>{
+  const root=fixture(t), env={PATH:'/fixed/bin',OPENCLAW_BUILD_CACHE:'0'};
+  const before={...env};
+  const result=nativeOwner.trustedNativeCompilerEnvironment608(root,env);
+  assert.deepEqual(env,before);
+  assert.deepEqual(result.env,{...env,...nativeCompiler608(root,{required:true}).env});
+  assert.equal(result.receipt.complete,true);
+});
+test('parent refuses native controls and child accepts only the exact validated addon',t=>{
+  const root=fixture(t), trusted=nativeCompiler608(root,{required:true}).env;
+  for (const value of ['', '/other/addon.node',trusted.NAPI_RS_NATIVE_LIBRARY_PATH])
+    assert.throws(()=>nativeOwner.trustedNativeCompilerEnvironment608(root,{NAPI_RS_NATIVE_LIBRARY_PATH:value}),/native compiler control/u);
+  assert.deepEqual(nativeOwner.trustedNativeCompilerEnvironment608(root,trusted,{inherited:true}).env,trusted);
+  for (const env of [{NAPI_RS_NATIVE_LIBRARY_PATH:''},{NAPI_RS_NATIVE_LIBRARY_PATH:'/other/addon.node'},
+      {...trusted,NAPI_RS_FORCE_WASI:''},{...trusted,NAPI_RS_LOG:'debug'}])
+    assert.throws(()=>nativeOwner.trustedNativeCompilerEnvironment608(root,env,{inherited:true}),/native compiler control/u);
+});
+test('trusted child revalidates bytes and cannot fall back when the required compiler disappears',t=>{
+  const root=fixture(t), inherited=nativeCompiler608(root,{required:true}).env;
+  fs.appendFileSync(inherited.NAPI_RS_NATIVE_LIBRARY_PATH,'changed');
+  assert.throws(()=>nativeOwner.trustedNativeCompilerEnvironment608(root,inherited,{inherited:true}),/addon mismatch/u);
+  fs.rmSync(path.join(root,'../.native608'),{recursive:true});
+  assert.throws(()=>nativeOwner.trustedNativeCompilerEnvironment608(root,{}, {inherited:true}),/required native compiler/u);
 });

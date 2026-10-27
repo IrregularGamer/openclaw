@@ -1,0 +1,14 @@
+✔ accepts matching compile and lib-test stage receipts with the pinned addon (9.142874ms)
+✔ required native compiler refuses absence while diagnostic stock mode stays explicit (21.437142ms)
+✔ refuses missing, swapped, failed or disagreeing stage receipts and a changed addon (181.346175ms)
+✔ trusted native environment derives required bytes without mutating the caller (7.552767ms)
+✔ parent refuses native controls and child accepts only the exact validated addon (84.992561ms)
+✔ trusted child revalidates bytes and cannot fall back when the required compiler disappears (28.287629ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 512.206805
