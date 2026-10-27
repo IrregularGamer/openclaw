@@ -79,8 +79,11 @@ call, detached installer or repeated docs-only admission retry supplies an owner
    Additional source-only evidence gate: `job608-lease619-suite-gate.md` and
    `verify-lease619-suites.py` require all78/90 tests, full completion, exactly
    the original23 shared fixed-root errors and nine pinned baseline-only
-   diagnostics. This addition needs its own independent exact source review;
-   it changes neither the624-approved installer nor its application authority.
+   diagnostics. Independent626 APPROVES this addition at exact source
+   `c58e8d229cc15bfafa9ebe744618390ffe76388c`; the verbatim review is
+   `job608-lease619-suite-gate-review626.md` (ops-work1b6b081).
+   It changes neither the624-approved installer nor its application authority
+   and does not attest that the full suites ran.
    Revalidate original seal and exact installed/current hashes; do not infer
    application from queue labels or treat HQ-OWNER-GAP.md as success. Unknown,
    missing, partial, or drifted evidence stops the build step without relaunch.

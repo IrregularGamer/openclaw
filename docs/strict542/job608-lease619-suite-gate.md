@@ -52,7 +52,11 @@ Logs are `job608-lease619-{baseline,candidate}-focused.txt`. The old/new
 controller and all16 input hashes are `lease619-suite-inputs.json`; exact
 baseline differences are `lease619-baseline-regressions.json`.
 
-Independent exact source review of this additional gate is required. It does
+Independent review626 APPROVED exact source commit
+`c58e8d229cc15bfafa9ebe744618390ffe76388c` (executable change29b4f5e0).
+The verbatim review is [preserved here](job608-lease619-suite-gate-review626.md)
+from ops-work commit1b6b081. It accepts the gate and focused evidence only;
+the full78/90 suites remain UNRUN. It does
 not alter approved619 or approve applying it from a queue worker.608 remains
 incomplete until actual622/HQ-RECEIPT.md, NEW installed/sealeddb4d2903, the
 admitted full comparisons, the sole preserved4GiB combined build, typed full
