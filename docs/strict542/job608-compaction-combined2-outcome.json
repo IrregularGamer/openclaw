@@ -1,0 +1,16 @@
+{
+  "kind": "compaction-combined608-outcome",
+  "launch": "job608-compaction-combined2-launch.json (fcd50009)",
+  "manifest_sha256": "7995990bc28e736e62bd6c9b2a7ec0929a1646e6a36ad8c81f5e9e4f7d739ffa",
+  "window_utc": ["2026-10-27T04:13:05Z", "2026-10-27T04:51:38Z"],
+  "offload_exit": 1,
+  "outer_timeout_hit": false,
+  "positive_checks_in_retained_log": "34/34 pass (policy/refusal suite incl. unified-graph thrash floor, native addon/tracing refusals)",
+  "failure": "tsdown-build config15 child pid=18478 signal SIGKILL, timedOut:false, during rolldown link_stage::bind_imports_and_exports at 04:51:37Z",
+  "interpretation": "Resource kill at the default 2GiB ceiling in the link stage, after the compaction native addon was built and loaded; not a lease revocation, not an implementation assertion. Compaction did not bring the unified config15 graph under 2GiB.",
+  "artifacts_returned": "none (result598 absent)",
+  "receipt_complete": false,
+  "log_sha256": "249bbded1e8edd0d14cf116dcb5ce9a4371b98ea1cb455057c6f6b2a280ebd6b",
+  "state": "SPENT; do not relaunch combined2 or an unchanged combined export",
+  "next": "source-only: split or bound config15 link stage (per-entry/partitioned unified graph) in owning build source, reviewed, then new export; do not lower UNIFIED_GRAPH_THRASH_LIMIT_BYTES or raise budget without reviewed justification"
+}
