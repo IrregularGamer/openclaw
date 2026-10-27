@@ -85,7 +85,10 @@ m=json.loads(Path('../export-manifest.json').read_text())
 value={'source_commit':m['source_commit'],'exit_code':0,'checks':['gateway-scoped','native-owner','supervisor-ipc','cancellation-settlement','application-preparation','frozen-package-policy','typed-package-owners','native-codegen-parity','native-lazy-minifier'],'test_log_sha256':hashlib.sha256(Path('strict542-checks/tests.log').read_bytes()).hexdigest()}
 Path('strict542-checks/evidence.json').write_text(json.dumps(value,sort_keys=True)+'\n')
 CHECK_EVIDENCE
-PNPM_PHYSICAL=$(realpath "$(cat strict542-checks/pnpm-path.txt)")
+PNPM_COMMAND=$(cat strict542-checks/pnpm-path.txt)
+PNPM_PHYSICAL=$(realpath "$PNPM_COMMAND")
+[ -x "$PNPM_PHYSICAL" ]
+[ "$("$PNPM_PHYSICAL" --version)" = 12.5.1 ]
 NODE_PHYSICAL=$(realpath "$(command -v node)")
 # Source/export/run identities are fixed manifest facts, not npm-runner environment.
 eval "$(python3 - <<'BUILDER_IDENTITIES'
@@ -95,4 +98,4 @@ m=json.loads(Path('../export-manifest.json').read_text())
 for key,field in [('STRICT542_SOURCE_COMMIT','source_commit'),('STRICT542_SOURCE_EXPORT_SHA256','source_export_sha256'),('STRICT542_BUILD_RUN_ID','run_id')]:print(key+'='+shlex.quote(m[field]))
 BUILDER_IDENTITIES
 )"
-env -i HOME="$HOME" PATH="$(dirname "$PNPM_PHYSICAL"):$(dirname "$NODE_PHYSICAL"):/usr/bin:/bin" STRICT542_SOURCE_COMMIT="$STRICT542_SOURCE_COMMIT" STRICT542_SOURCE_EXPORT_SHA256="$STRICT542_SOURCE_EXPORT_SHA256" STRICT542_BUILD_RUN_ID="$STRICT542_BUILD_RUN_ID" sh docs/strict542/build598.sh
+env -i HOME="$HOME" PATH="$(dirname "$PNPM_COMMAND"):$(dirname "$NODE_PHYSICAL"):/usr/bin:/bin" STRICT542_SOURCE_COMMIT="$STRICT542_SOURCE_COMMIT" STRICT542_SOURCE_EXPORT_SHA256="$STRICT542_SOURCE_EXPORT_SHA256" STRICT542_BUILD_RUN_ID="$STRICT542_BUILD_RUN_ID" sh docs/strict542/build598.sh

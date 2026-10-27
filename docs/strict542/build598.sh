@@ -17,6 +17,8 @@ pnpm --version
 python3 docs/strict542/frozen-package608.py preflight
 # No relaxed lock, dependency cooldown, lifecycle, kernel or workload-budget policy.
 pnpm install --frozen-lockfile
+# The frozen installer has exited; discard only its disposable private store.
+node --input-type=module -e 'import fs from "node:fs"; import {releaseDisposableStore} from "./scripts/lib/disposable-build-inputs.mjs"; if (fs.lstatSync("../.pnpm-store",{throwIfNoEntry:false})) releaseDisposableStore("..")'
 python3 docs/strict542/frozen-package608.py preflight
 # Full canonical phase inventory with the separately reviewed required-native scheduler.
 node --import ./scripts/tsx.mjs scripts/build-all.mts boundedPackage
