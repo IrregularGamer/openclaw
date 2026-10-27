@@ -2,10 +2,12 @@
 import importlib.util
 import json
 import os
+import shutil
 from pathlib import Path
 import socket
 import subprocess
 import sys
+import tempfile
 import threading
 import time
 from types import SimpleNamespace
@@ -54,7 +56,7 @@ class NativeTransport(unittest.TestCase):
         self.children.append(child)
         return child
 
-    def exchange(self, cancel=False, ms=800, **changes):
+    def exchange(self, cancel=False, ms=800, ready=None, **changes):
         client, accepted = socket.socketpair()
         client.settimeout(2)
         errors = []
@@ -75,6 +77,10 @@ class NativeTransport(unittest.TestCase):
             except BrokenPipeError: pass  # Endpoint can refuse before request receipt.
             if cancel:
                 time.sleep(0.08)
+                # Cancel only after the child proves its signal disposition is installed.
+                while ready and not os.path.exists(ready):
+                    self.assertLess(time.monotonic_ns(), int(request['deadlineNs']), 'child never became ready')
+                    time.sleep(0.01)
                 client.sendall(json.dumps(dict(operation='cancel',requestId=request['requestId'])).encode()+b'\n')
             raw = b''
             while not raw.endswith(b'\n'):
@@ -135,8 +141,11 @@ class NativeTransport(unittest.TestCase):
         self.assertLess(time.monotonic()-start, 1)
 
     def test_ignored_sigterm_is_killed_and_reaped_before_ack(self):
-        self.child_code = 'import signal,time; signal.signal(signal.SIGTERM,signal.SIG_IGN); time.sleep(60)'
-        receipt = self.exchange(cancel=True)
+        ready = os.path.join(tempfile.mkdtemp(), 'ready')
+        self.addCleanup(shutil.rmtree, os.path.dirname(ready))
+        self.child_code = ('import signal,time; signal.signal(signal.SIGTERM,signal.SIG_IGN); '
+                           'open(%r,"w").close(); time.sleep(60)') % ready
+        receipt = self.exchange(cancel=True, ready=ready)
         self.assertTrue(receipt['cancelled'])
         self.assertEqual(self.children[0].returncode, -9)
 
