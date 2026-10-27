@@ -8,15 +8,21 @@ independently reviewed7efdee1c. See job608-compaction-plan.md for source rationa
 real identity/memory regression and limitations.238 prior checks PASS; config46
 still failed in the prior source. No compaction resource-fit success is claimed.
 
-ONE compile export export608-native-compact1 is already RUNNING (never relaunch):
-manifest0e3404864bf45469a9b859555200492475436461a7537e9af099080b22836584,
-launched01:56:35Z2026-10-27, session66549, source2f678845, ordinary2GiB1CPU,
-outer2400s+15, log tmp/compaction-compile608-run.log. Worker expires02:43:02Z.
-Read job608-compaction-compile-launch.json and actual settled outcome before
-any next operation. A timeout, failure, lost transport or missing test/receipt is
-not acceptance and forbids an unchanged rerun. Preserve/reconcile exact output.
+ONE compile export export608-native-compact1 is SPENT rc0 (never relaunch).
+Complete native receipt4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e,
+addon0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042
+replaces old17df206117097742019de475e8cd194fb1022f48d9c2b507195100abd13eb627.
+Actual foreground session66549 exit0 and successful artifact pull were observed
+2026-10-27T02:30:33Z.2ecmascript tests (including named compaction identity/code/
+capacity regression) and7lifetime tests PASS; old-retention negative detects3
+expected failures. Release times9m40s+20m21s. Four current owner hashes and all6
+prepared source hashes match reviewed source2f678845. See exact receipt, logs,
+old/new identities and limits in job608-compaction-compile-outcome.json and
+its independent outcome review. This proves native compilation only; no complete
+native-library, byte-rebuild-equality,config46/resource-fit/package/application
+acceptance. This worker expires02:43:02Z and cannot launch another51min stage.
 
-After independent acceptance of a COMPLETE compaction compile only, next is
+After independent acceptance of this COMPLETE compaction compile only, next is
 ONE matching fresh libtests export export608-native-compact-libtests1:
 manifest283c9f61f73726295f8de01a6cd127e08ea8d150a0a571deb02f101f8b806d0e,
 source2f678845, four exact owning files, NO addon/cache/toolchain/dependency input.

@@ -31,6 +31,12 @@
     "crates/rolldown/src/stages/link_stage/mod.rs": "18853d0aa7697d4c7dd38d03e1ec9c92520de179e7ea650302e7cf4efc29ac80",
     "crates/rolldown_ecmascript/src/ecma_ast/mod.rs": "dfb684bce6712f574fb73195ec33b1a6c66b427bed63be01313464a373e9605c"
   },
+  "offload_cli_exit_evidence": {
+    "artifact_pull_complete": true,
+    "exec_session": 66549,
+    "exit_code": 0,
+    "observed_utc": "2026-10-27T02:30:33Z"
+  },
   "old_addon_sha256": "17df206117097742019de475e8cd194fb1022f48d9c2b507195100abd13eb627",
   "old_owner_inputs": {
     "docs/strict542/build-native608.py": "f213797ea4b8eb45bb2b93564734714b41d3a3b8d2b2b2a20c3b3b8c531f269c",
