@@ -42,7 +42,7 @@ tar -xf source598.tar -C source
 tar -xf successor598.tar -C source
 cd source
 npm exec --yes --package=pnpm@12.5.1 -- sh -c 'set -eu; [ "$(pnpm --version)" = 12.5.1 ]; pnpm install --frozen-lockfile' >../result608-installed/install.log 2>&1 || { status=$?; tail -30 ../result608-installed/install.log; exit "$status"; }
-node node_modules/vitest/vitest.mjs run --config test/vitest/vitest.tooling.config.ts --maxWorkers=1 --no-file-parallelism --passWithNoTests=false --reporter=default --reporter=json --outputFile.json=../result608-installed/installed.json test/scripts/write-unified-entry-dts.test.ts >../result608-installed/installed.log 2>&1 || { status=$?; tail -70 ../result608-installed/installed.log; exit "$status"; }
+node node_modules/vitest/vitest.mjs run --config test/vitest/vitest.tooling.config.ts --maxWorkers=1 --no-file-parallelism --maxConcurrency=1 --passWithNoTests=false --reporter=default --reporter=json --outputFile.json=../result608-installed/installed.json test/scripts/write-unified-entry-dts.test.ts >../result608-installed/installed.log 2>&1 || { status=$?; tail -70 ../result608-installed/installed.log; exit "$status"; }
 tail -18 ../result608-installed/installed.log
 python3 - <<'RESULT'
 import hashlib,json

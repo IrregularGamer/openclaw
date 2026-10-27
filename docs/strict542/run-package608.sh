@@ -74,7 +74,7 @@ tail -22 strict542-checks/tests.log
 [ "$status" = 0 ] || exit "$status"
 # Resolve the physical pnpm before the clean standalone builder environment.
 npm exec --yes --package=pnpm@12.5.1 -- sh -c 'set -eu; [ "$(pnpm --version)" = 12.5.1 ]; pnpm install --frozen-lockfile; command -v pnpm >strict542-checks/pnpm-path.txt'
-node node_modules/vitest/vitest.mjs run --config test/vitest/vitest.tooling.config.ts --maxWorkers=1 --no-file-parallelism --passWithNoTests=false --reporter=default --reporter=json --outputFile.json=strict542-checks/installed.json test/scripts/build-all-bounded608.test.ts test/scripts/tsdown-build.test.ts test/scripts/write-unified-entry-dts.test.ts test/scripts/write-plugin-sdk-entry-dts.test.ts >strict542-checks/installed.log 2>&1 || { status=$?; tail -60 strict542-checks/installed.log; exit "$status"; }
+node node_modules/vitest/vitest.mjs run --config test/vitest/vitest.tooling.config.ts --maxWorkers=1 --no-file-parallelism --maxConcurrency=1 --passWithNoTests=false --reporter=default --reporter=json --outputFile.json=strict542-checks/installed.json test/scripts/build-all-bounded608.test.ts test/scripts/tsdown-build.test.ts test/scripts/write-unified-entry-dts.test.ts test/scripts/write-plugin-sdk-entry-dts.test.ts >strict542-checks/installed.log 2>&1 || { status=$?; tail -60 strict542-checks/installed.log; exit "$status"; }
 # Failure output is surfaced above because a failed run returns no artifacts.
 # test/scripts files belong to the tooling shard; unit-fast auto-curation excludes them.
 cat strict542-checks/installed.log >>strict542-checks/tests.log
