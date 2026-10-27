@@ -21,8 +21,9 @@ Read-only13:55:16Z runner-lock settlement found0managed containers, exactly this
 current worker's live lease, and only manifest/run/result entries. Source/native/
 store caches are absent. No lease was edited or revoked: normal worker exit and
 future fresh admission must reconcile that remaining worker lease. This snapshot
-is not proof of a future gap or installation. Independent exact outcome review
-is required before combined4. Never relaunch3 or upload its compiled addon.
+is not proof of a future gap or installation. Independent exact outcome review18dfbd0a
+APPROVES this evidence at4af778c6 and satisfies the predecessor condition for
+one future combined4, subject to normal worker-lease closure/fresh admission. Never relaunch3 or upload its compiled addon.
 
 ## Exact unused future combined4
 
@@ -40,7 +41,7 @@ no addon/cache/toolchain/dependencies/runtime/auth input. All native owner hashe
 source archives and two accepted JSON receipt pins are unchanged. The runner
 rebuilds native from source and requires exact compile-receipt/addon equality.
 
-ONLY AFTER actual combined3 outcome/settlement independent acceptance, in ONE
+Actual combined3 outcome/settlement independent acceptance is18dfbd0a. In ONE
 fresh normally admitted foreground worker with>=51minutes remaining at launch,
 revalidate all8 input identities and run ONCE from that exact export:
 

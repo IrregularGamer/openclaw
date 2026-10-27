@@ -4,8 +4,8 @@ CURRENT2026-10-27: [the diagnostic-ceiling continuation](job608-resume-after-pro
 supersedes all earlier next-run paragraphs. Actual622/619 evidence is accepted;
 combined3 was launched once but retains an incompatible2GiB source check.
 Corrected4GiB source20211319 and unused combined4 manifest89fe92b2 are independently
-reviewed. Wait for actual3 outcome/settlement review, then ONE future>=51minute
-foreground combined4 run. No complete build/package or595 application approval.
+reviewed. Actual3 outcome/runner-settlement review18dfbd0a accepts the evidence;
+ONE future>=51minute normally admitted foreground combined4 run remains required. No complete build/package or595 application approval.
 
 CURRENT 2026-10-27: actual622 application and admitted full78/90 comparisons
 are recorded in [the exact outcome reconciliation](job608-lease619-outcome-reconciliation.md).
