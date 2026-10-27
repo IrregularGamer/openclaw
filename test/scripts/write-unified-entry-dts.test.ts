@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { describe, expect, vi } from "vitest";
+import { afterAll, describe, expect, vi } from "vitest";
 import { TSDOWN_NON_SDK_DTS_CONFIG_GROUPS } from "../../scripts/lib/tsdown-config-groups.mts";
 import { resolveTsdownDeclarationGeneratorInputs } from "../../scripts/lib/tsdown-declaration-generator-inputs.mts";
 import type { CommandFixture } from "../helpers/command-fixture.js";
@@ -135,11 +135,11 @@ describe("write-unified-entry-dts", () => {
     }
   });
 
-  // One history owns the same filesystem/cache through all four finite cases.
+  // Same-file cases run in declaration order (no concurrent config); one history owns the same filesystem/cache through all four finite cases.
   // Commands remain owned by each case's abort signal and settle before teardown.
-  describe.sequential("canonical group cache history", () => {
+  describe("canonical group cache history", () => {
     const historyLifetime = createFixtureLifetime();
-    it.afterAll(async () => await historyLifetime.cleanup());
+    afterAll(async () => await historyLifetime.cleanup());
     let stage = 0;
     let history: {
       root: string;
