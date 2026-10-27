@@ -1,5 +1,8 @@
 # Exact608 continuation after conservative post-metadata release
 
+Current continuation: job608-resume-after-compaction.md. New native owner source
+invalidates old native receipts; original baseline drift is recorded, never waived.
+
 This supersedes job608-resume-after-compile2.md and all older next-run paths.
 Job608 is incomplete;595 must not apply. There is no package, action or seal
 approval, and no unchanged retry is authorized. No S-only decision is needed.
