@@ -63,7 +63,9 @@ tail -22 strict542-checks/tests.log
 [ "$status" = 0 ] || exit "$status"
 # Resolve the physical pnpm before the clean standalone builder environment.
 npm exec --yes --package=pnpm@12.5.1 -- sh -c 'set -eu; [ "$(pnpm --version)" = 12.5.1 ]; pnpm install --frozen-lockfile; command -v pnpm >strict542-checks/pnpm-path.txt'
-node node_modules/vitest/vitest.mjs run --config test/vitest/vitest.unit-fast.config.ts --maxWorkers=1 --no-file-parallelism --passWithNoTests=false test/scripts/build-all-bounded608.test.ts test/scripts/tsdown-build.test.ts test/scripts/write-unified-entry-dts.test.ts test/scripts/write-plugin-sdk-entry-dts.test.ts >>strict542-checks/tests.log 2>&1
+node node_modules/vitest/vitest.mjs run --config test/vitest/vitest.unit-fast.config.ts --maxWorkers=1 --no-file-parallelism --passWithNoTests=false test/scripts/build-all-bounded608.test.ts test/scripts/tsdown-build.test.ts test/scripts/write-unified-entry-dts.test.ts test/scripts/write-plugin-sdk-entry-dts.test.ts >strict542-checks/installed.log 2>&1 || { status=$?; tail -60 strict542-checks/installed.log; exit "$status"; }
+# Failure output is surfaced above because a failed run returns no artifacts.
+cat strict542-checks/installed.log >>strict542-checks/tests.log
 # These checks finish before the expensive source rebuild; no success receipt yet.
 node --input-type=module -e 'import {releaseDisposableStore} from "./scripts/lib/disposable-build-inputs.mjs"; releaseDisposableStore("..")'
 timeout -k 15s 2400s python3 docs/strict542/prepare-native-consumer608.py >strict542-checks/native-rebuild.log 2>&1 || { status=$?; tail -20 strict542-checks/native-rebuild.log; exit "$status"; }
