@@ -231,14 +231,22 @@ class RollbackApplication(unittest.TestCase):
         # service, missing status, unreadable manager and stale socket refusal.
         self.patches[8].stop()
         inactive='MainPID=0\nActiveState=inactive\nExecMainStartTimestampMonotonic=0\n'
-        with patch.object(a.os.path,'lexists',return_value=False),patch.object(a,'run',return_value=SimpleNamespace(returncode=0,stdout=inactive)) as command:
+        def queries(show,journal=SimpleNamespace(returncode=0,stdout='')):
+            return lambda argv,**kw:show if argv[0] == '/usr/bin/systemctl' else journal
+        with patch.object(a.os.path,'lexists',return_value=False),patch.object(a,'run',side_effect=queries(SimpleNamespace(returncode=0,stdout=inactive))) as command:
             a.rollback_service_unchanged()
-            self.assertEqual(command.call_args.kwargs['timeout'],5)
-            self.assertEqual(command.call_args.args[0][:3],['/usr/bin/systemctl','show','strict542-owner.service'])
+            self.assertEqual([call.kwargs['timeout'] for call in command.call_args_list],[5,5])
+            self.assertEqual(command.call_args_list[0].args[0][:3],['/usr/bin/systemctl','show','strict542-owner.service'])
+            self.assertEqual(command.call_args_list[1].args[0][:4],['/usr/bin/journalctl','--boot','--unit','strict542-owner.service'])
         for text,code,socket_present in ((inactive.replace('Monotonic=0','Monotonic=123'),0,False),
                 (inactive.replace('MainPID=0','MainPID=12'),0,False),
                 (inactive.replace('inactive','active'),0,False),('',0,False),(inactive,1,False),(inactive,0,True)):
-            with patch.object(a.os.path,'lexists',return_value=socket_present),patch.object(a,'run',return_value=SimpleNamespace(returncode=code,stdout=text)):
+            with patch.object(a.os.path,'lexists',return_value=socket_present),patch.object(a,'run',side_effect=queries(SimpleNamespace(returncode=code,stdout=text))):
                 with self.assertRaisesRegex(PermissionError,'supervisor'):a.rollback_service_unchanged()
+        # Started, stopped and garbage-collected: status looks pristine but the
+        # this-boot journal (or an unreadable journal) still refuses.
+        for journal in (SimpleNamespace(returncode=0,stdout='Started strict542-owner.service\n'),SimpleNamespace(returncode=1,stdout='')):
+            with patch.object(a.os.path,'lexists',return_value=False),patch.object(a,'run',side_effect=queries(SimpleNamespace(returncode=0,stdout=inactive),journal)):
+                with self.assertRaisesRegex(PermissionError,'journal history'):a.rollback_service_unchanged()
 
 if __name__ == '__main__':unittest.main()

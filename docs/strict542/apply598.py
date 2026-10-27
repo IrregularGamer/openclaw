@@ -269,6 +269,12 @@ def rollback_service_unchanged():
     require(result.returncode == 0 and values == {'MainPID':'0','ActiveState':'inactive',
         'ExecMainStartTimestampMonotonic':'0'} and not os.path.lexists(OWNER_SOCKET),
         'root supervisor/socket was started or remains active; reviewed reconciliation required')
+    # systemd forgets start timestamps once an inactive unit is garbage
+    # collected, so any this-boot journal record of the unit also refuses.
+    journal=run(['/usr/bin/journalctl','--boot','--unit','strict542-owner.service','--quiet',
+        '--no-pager','--output','cat','--lines','1'],capture_output=True,text=True,timeout=5)
+    require(journal.returncode == 0 and journal.stdout.strip() == '',
+        'root supervisor has this-boot journal history; reviewed reconciliation required')
 
 def restorable_metadata(value):
     # ctime proves original identity but the kernel does not permit restoring it.
