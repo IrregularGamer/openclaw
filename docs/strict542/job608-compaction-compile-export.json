@@ -1,0 +1,14 @@
+{
+  "compiler_upstream_archive_sha256": "203aa4834d7a52522c758c81f6e493bea9fea828d4454fe2a25b9519d2d258ac",
+  "purpose": "ONE source-only serial scan arena compaction compile with7lifetime+negative and full ecmascript libsuite/named real regression; outer2400s+15; >=46min foreground; default2GiB1CPU; no package/application authority",
+  "runner_sha256": "2c6e313a9aa7dddfbbdfe36986325bed7f46346d6e05822d4c032ca344290e57",
+  "source_commit": "2f6788455aea5051cdc5b748cd06554f3ab039a1",
+  "stage": "compile",
+  "successor_archive_sha256": "5de54d460fc20c2fa9a6b5535ff649315a0bb9432bf93a099d5ad4b605611ed8",
+  "successor_paths": [
+    "scripts/lib/prepare-native608.py",
+    "scripts/lib/last-use-ast608.rs",
+    "docs/strict542/rolldown-source-pin608.json",
+    "docs/strict542/build-native608.py"
+  ]
+}
