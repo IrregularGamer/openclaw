@@ -26,26 +26,47 @@ control detects3expected failures. Release compilation9m38s+26m20s. All12shared
 source/toolchain fields match accepted compile. Old17df/compile4/libtests3 cannot
 supply new acceptance. See exact outcome and independent review files.
 
-## ONE next run — UNUSED exact reviewed combined export
+## Combined1 SPENT — infrastructure interruption, not build success
 
-Directory /home/deploy/agentq/tmp/export608-native-compact-combined1.
-Frozen combined source6d9c429b4886d26c83888f1570f977ce63e215a7, successor288files
+Sole launch31288 (d2111e6f) ended broker exit75 after1427.565seconds:
+lease expired or revoked during addon compilation. Evidence68f7dd3b retains
+227 scoped passing checks (135Node+92Python),7lifetime+2realecmascript positive
+checks and3expected retention-negative failures. Native receipt complete:false;
+no addon, rebuild equality, parity/typed inventory/config census or package proof.
+Exact revocation trigger is not established; no implementation assertion failed.
+Read-only runner-lock settlement at04:05:42Z found0live leases and0managed
+containers. It does not modify lease state or authorize cleanup/retry.
+See job608-compaction-combined-outcome.json and its independent review.
+Do not relaunch export608-native-compact-combined1/manifestefa4b30f.
+The original export and recovered output are preserved; do not upload its cache,
+partial build or addon. Exit75 requires stopping this execution step in the
+current worker, with continuation through ordinary queue admission.
+
+## ONE future run — fresh UNUSED combined2 export, no launch here
+
+Directory /home/deploy/agentq/tmp/export608-native-compact-combined2.
+Frozen source6d9c429b4886d26c83888f1570f977ce63e215a7, successor288files
 SHA25620e64d26f2dd8b256ce1a760a3c78d68c17360086a66630b2d8ca3d9621b5c43.
-Manifest docs/strict542/job608-compaction-combined-export.json SHA256
- efa4b30f839a3b00739169f3beadd06e7989552208e592f4f5440c9bc8246968.
-Source/skeleton review362e13cb; FINAL exact export review c33b7e89. Exactly8
-regular input files:4source archives,runner,manifest,and2accepted JSON receipts.
-No addon/cache/toolchain/dependency/runtime/auth input. The unchanged upstream
-archive has two reviewed safe relative symlinks; the successor has no links.
+Manifest docs/strict542/job608-compaction-combined2-export.json SHA256
+7995990bc28e736e62bd6c9b2a7ec0929a1646e6a36ad8c81f5e9e4f7d739ffa.
+Exact manifest commit3a201355. Source/skeleton review362e13cb and predecessor
+reviewc33b7e89 remain inherited source evidence; combined2 additionally requires
+its own exact independent export review before launch. Exactly8regular inputs:
+4source archives,runner,manifest,and2accepted JSON receipts. These7unchanged
+inputs retain predecessor inodes; only manifest purpose/predecessor/state changed.
+No binary/cache/toolchain/dependency/runtime/auth input. The unchanged upstream
+archive has two reviewed safe relative links; successor has no links.
 
-Require ordinary default2GiB1CPU admission and >=51min actual foreground worker
-lifetime remaining AT LAUNCH. From that exact export directory run ONCE:
+Only in a FUTURE normally admitted worker, verify exact review/manifest/input
+identity and at least51minutes actual foreground lifetime remaining AT LAUNCH.
+Keep ordinary default2GiB1CPU and existing controller/lease checks. From that
+exact export directory run ONCE:
 
     offload run --artifacts result598 -- timeout -k 15s 2700s sh run608.sh
 
-Do not launch from the maintained checkout, overlap stages, extend the outer
-45min+15s bound or upload the previous binary. This worker expires03:41:14Z and
-cannot qualify. Preserve settlement and all artifacts on any refusal/failure;
+Do not launch in the worker that reconciled exit75, reuse the spent export,
+overlap stages, extend outer45minutes+15seconds, upload previous native outputs,
+or run heavy work locally. Preserve settlement/artifacts on refusal/failure and
 review the actual outcome. Partial output never promotes the package route.
 
 Required:all240 affected checks; full native source rebuild yielding byte-exact

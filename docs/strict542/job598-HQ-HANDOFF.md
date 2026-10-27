@@ -1,13 +1,16 @@
 # Job598 to595: exact source-only application preparation
 
-Current608 continuation: see job608-to595.md, job608-bounded-outcome.json and
-its independent outcome/source review. The changed550dbbd0 run passed192 initial
-checks and2 real-bundler regressions. Cleanup admitted the unchanged memory floor;
-config15 then received SIGKILL after buildEnd at the2GiB ceiling. No complete
-runtime/tree/action/next-seal receipt exists. The typed whole-config scheduler
-candidate retains the canonical4352MiB guard and intentionally refuses a full2GiB
-build. This handoff is not application-ready. Existing execution sections below
-are future procedures and historical evidence, never current gate passes.
+Current608 status and ordered application gates are job608-to595.md and
+job608-resume-after-compaction.md. Separate new compaction native compile and
+matching121positive library tests are independently accepted; combined1 ended
+exit75 during addon compilation and is SPENT (evidence68f7dd3b). Its227scoped+
+9native positive checks do not supply build/package success. No complete runtime,
+tree/action/next-seal receipt exists. Fresh source-only combined2 manifest7995990b
+independently approved b530ed28 for ONE future normally admitted >=51min worker;
+there is no current-worker retry. The original config15 and later config46 resource
+failures remain historical evidence, not current acceptance. Complete combined
+success and the typed frozen package remain mandatory before application595.
+Existing execution sections below are future procedures, never current gate passes.
 
 This is a foreground HQ handoff, never an installation receipt. No installed,
 sealed, root-owned, unit, sudoers, gateway runtime or provider state was changed.
