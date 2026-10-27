@@ -1,12 +1,14 @@
 {
-  "kind": "compaction-combined608-launch",
-  "authority": "Decision Job618 (S, Telegram 1825): single unified config-15 build step on friend VPS at 4GiB/1CPU; do not split config15; floors/checks/tests unchanged",
-  "export": "/home/deploy/agentq/tmp/export608-native-compact-combined3 (hardlink copy of combined2 export; inputs byte-identical, re-verified before launch)",
-  "manifest_sha256": "7995990bc28e736e62bd6c9b2a7ec0929a1646e6a36ad8c81f5e9e4f7d739ffa",
-  "frozen_source": "6d9c429b4886d26c83888f1570f977ce63e215a7",
-  "difference_from_combined2": "budget only: --mem 4g --cpus 1 (was default 2g). No source, runner, floor (UNIFIED_GRAPH_THRASH_LIMIT_BYTES) or test change.",
-  "command": "offload run --mem 4g --cpus 1 --artifacts result598 -- timeout -k 15s 2700s sh run608.sh",
-  "log": "/home/deploy/agentq/runs/608/combined3-offload.log",
   "acceptance": "None until settled complete result and independent review; package/application595 remain gated",
-  "state": "LAUNCHED_ONCE; do not relaunch unchanged"
+  "authority": "Decision Job618 (S, Telegram 1825): single unified config-15 build step on friend VPS at 4GiB/1CPU; do not split config15; floors/checks/tests unchanged",
+  "command": "offload run --mem 4g --cpus 1 --artifacts result598 -- timeout -k 15s 2700s sh run608.sh",
+  "difference_from_combined2": "budget only: --mem 4g --cpus 1 (was default 2g). No source, runner, floor (UNIFIED_GRAPH_THRASH_LIMIT_BYTES) or test change.",
+  "export": "/home/deploy/agentq/tmp/export608-native-compact-combined3 (hardlink copy of combined2 export; inputs byte-identical, re-verified before launch)",
+  "frozen_source": "6d9c429b4886d26c83888f1570f977ce63e215a7",
+  "kind": "compaction-combined608-launch",
+  "log": "/home/deploy/agentq/runs/608/combined3-offload.log",
+  "log_sha256": "5e2c0809aaef1aed99b6d8389692e9359f3b4cb434f9c1cdbe1edb6c9390805d",
+  "manifest_sha256": "7995990bc28e736e62bd6c9b2a7ec0929a1646e6a36ad8c81f5e9e4f7d739ffa",
+  "outcome_time_utc": "2026-10-27T06:01Z",
+  "state": "NOT_EXECUTED: remote_lease_denied (remote_lease_refused_cleanly, attempt 1/4), offload exit 75, local_execution false, retry_requires_reconciliation true; export unconsumed and may be relaunched unchanged by the queue retry at 4g/1CPU"
 }
