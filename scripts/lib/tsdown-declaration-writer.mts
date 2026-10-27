@@ -43,6 +43,7 @@ export async function writeTsdownDeclarations(
   if (compilerEnv.OPENCLAW_608_BOUNDED_PACKAGE === "1" && compilerEnv.OPENCLAW_BUILD_CACHE !== "0") {
     throw new Error("native bounded declarations require disabled caches");
   }
+  if (compilerEnv.OPENCLAW_608_BOUNDED_PACKAGE === "1") Object.assign(process.env, compilerEnv);
   const stages: string[] = [];
   const createStage = () => {
     const stage = createDeclarationStage(root);

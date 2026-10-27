@@ -44,7 +44,7 @@ assert sha(test)==proof['test_log_sha256']
 # build.log is still open; snapshot it only after the preceding synchronous build
 # and packaging commands have exited. The final receipt is written after close.
 value={'source_commit':os.environ['STRICT542_SOURCE_COMMIT'],'source_export_sha256':os.environ['STRICT542_SOURCE_EXPORT_SHA256'],'lockfile_sha256':sha('pnpm-lock.yaml'),'toolchain':{'node':subprocess.check_output(['node','--version'],text=True).strip(),'pnpm':subprocess.check_output(['pnpm','--version'],text=True).strip(),'python':platform.python_version()},'execution':'admitted-offload','remote_run_id':os.environ['STRICT542_BUILD_RUN_ID'],'checks':proof['checks'],'test_exit':0,'build_exit':0,'test_log_sha256':sha(test),'build_log_sha256':sha('result598-build/build.log')}
-value.update(package_receipt=package,package_receipt_sha256=sha('result598-build/package-receipt.json'))
+value.update(package_receipt=package,package_receipt_sha256=sha('result598-build/package-receipt.json'),native_compile_receipt_sha256=sha('../.native608/receipt.json'),native_libtests_receipt_sha256=sha('../.native608/libtests-receipt.json'),native_addon_sha256=sha('../.native608/rolldown-binding.linux-x64-gnu.node'),compiler_route='boundedPackage-required-native608')
 Path('result598-build/evidence.json').write_text(json.dumps(value,sort_keys=True)+'\n')
 BUILD_EVIDENCE
 python3 docs/strict542/application598.py tree --runtime result598-build/runtime --lockfile pnpm-lock.yaml --build-evidence result598-build/evidence.json --build-log result598-build/build.log --test-log strict542-checks/tests.log --output result598-build/tree.json

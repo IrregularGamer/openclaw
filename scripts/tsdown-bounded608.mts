@@ -6,7 +6,7 @@ import { readProcessMemoryCapacity } from './lib/process-memory.mts';
 import { BOUNDED_COMPILER_ENV, admitBoundedCapacity608,
   typedConfigCensus, boundedConfigIndices, boundedResultSucceeded } from './lib/bounded-package608.mjs';
 const stage=process.argv[2] ?? '';
-trustedNativeCompilerEnvironment608(process.cwd(),process.env,{inherited:true});
+Object.assign(process.env,trustedNativeCompilerEnvironment608(process.cwd(),process.env,{inherited:true}).env);
 if (process.env.OPENCLAW_608_BOUNDED_PACKAGE !== '1') throw new Error('missing bounded native package policy');
 if (process.argv.length !== 3 || !['ai','packages','unified'].includes(stage)) throw new Error('invalid bounded compiler stage');
 for (const [key,value] of Object.entries(BOUNDED_COMPILER_ENV)) {
