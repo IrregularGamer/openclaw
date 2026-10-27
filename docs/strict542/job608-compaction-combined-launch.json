@@ -1,0 +1,15 @@
+{
+  "acceptance": "None until settled exact complete result and independent review; package/application595 remain gated",
+  "budget": "default 2GiB/1CPU; outer2700s+15s; >=51min remaining at launch",
+  "command": "offload run --artifacts result598 -- timeout -k 15s 2700s sh run608.sh",
+  "exec_session": 31288,
+  "export": "/home/deploy/agentq/tmp/export608-native-compact-combined1",
+  "frozen_source": "6d9c429b4886d26c83888f1570f977ce63e215a7",
+  "kind": "compaction-combined608-launch",
+  "log": "/home/deploy/agentq/tmp/compaction-combined1-run608.log",
+  "manifest_sha256": "efa4b30f839a3b00739169f3beadd06e7989552208e592f4f5440c9bc8246968",
+  "state": "LAUNCHED_ONCE; SPENT; do not relaunch",
+  "time_utc": "2026-10-27T03:32:43.101938+00:00",
+  "worker_expires_utc": "2026-10-27T04:31:27Z",
+  "worker_unit": "agentq-exec-608-1-a13c4da97696.service"
+}
