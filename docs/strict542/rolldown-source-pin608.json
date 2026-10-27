@@ -5,6 +5,8 @@
     "crates/rolldown/src/stages/generate_stage/finalize_modules.rs": "79e453acbc577aa76ff3b6e3d9938fa6623f6637bcdea826b546e425c8daecb8",
     "crates/rolldown/src/stages/generate_stage/mod.rs": "e172fb9803a8a8e8f861977e62347cef04964f75b458d48f4b6a4d0e7454c98d",
     "crates/rolldown/src/stages/generate_stage/render_chunk_to_assets.rs": "53bb87087540e90bb6197c8b859633e0edf9e94433565b3842e2339f3f204d4a",
+    "crates/rolldown/src/stages/link_stage/mod.rs": "66b52c2db0ffe0792907275993abd5f0bf935144cf21f8f6a21290f2221fa99e",
+    "crates/rolldown_ecmascript/src/ecma_ast/mod.rs": "cbe7294b949f84ac1df482296f7fb023edd7e895a19dfe0c519f70fef6c09245",
     "rust-toolchain.toml": "95831e86ed45e5f59d037dd2965d2f679ecb4525e915d6b9aebb205f9bf46a5c"
   },
   "rust_archive_sha256": "5326b36c53de11d148c8f8dab6553a3d1006c2cfd32123683073fad3c302605b",

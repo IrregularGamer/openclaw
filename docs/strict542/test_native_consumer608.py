@@ -18,6 +18,7 @@ class SourceOnlyConsumer(unittest.TestCase):
         common={key:{} for key in ['owner_inputs','patched_sources','cargo_policy','rustc','cmake',
             'cmake_wheel_sha256','upstream_commit','source_archive_sha256','rust_archive_sha256',
             'lifetime_tests_exit','retention_negative_detected']}
+        common['compaction_tests_exit']=0
         compile_receipt={**common,'kind':'NATIVE_COMPILER608_COMPILE_STAGE','stage':'compile',
             'complete':True,'addon_sha256':hashlib.sha256(b'compiled fixture').hexdigest()}
         tests={**common,'kind':'NATIVE_COMPILER608_LIBTEST_STAGE','stage':'libtests','complete':True,'native_lib_tests_exit':0}

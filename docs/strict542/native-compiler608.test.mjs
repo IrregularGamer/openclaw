@@ -17,7 +17,7 @@ function fixture(t,mutate=()=>{}) {
   const addon=Buffer.from('addon608');fs.writeFileSync(path.join(dir,'rolldown-binding.linux-x64-gnu.node'),addon);
   const common={upstream_commit:pin.upstream_commit,source_archive_sha256:pin.source_archive_sha256,rust_archive_sha256:pin.rust_archive_sha256,
     owner_inputs:Object.fromEntries(owners.map(o=>[o,sha(fs.readFileSync(o))])),cargo_policy:{codegen_units:64,jobs:1,locked:true,lto:false,opt_level:3},
-    lifetime_tests_exit:0,retention_negative_detected:true,complete:true,patched_sources:{a:'1'},rustc:'rustc 1.98.1 x',cmake:'cmake version 3.31.6',cmake_wheel_sha256:'c'};
+    lifetime_tests_exit:0,retention_negative_detected:true,compaction_tests_exit:0,complete:true,patched_sources:{a:'1'},rustc:'rustc 1.98.1 x',cmake:'cmake version 3.31.6',cmake_wheel_sha256:'c'};
   const receipts={compile:{...common,kind:'NATIVE_COMPILER608_COMPILE_STAGE',stage:'compile',addon_sha256:sha(addon)},
     libtests:{...common,kind:'NATIVE_COMPILER608_LIBTEST_STAGE',stage:'libtests',native_lib_tests_exit:0}};
   mutate(receipts,dir);
@@ -46,6 +46,8 @@ test('refuses missing, swapped, failed or disagreeing stage receipts and a chang
     [r=>{r.libtests.patched_sources={a:'2'};},/disagree: patched_sources/u],
     [r=>{r.libtests.rustc='rustc 1.98.1 y';},/disagree: rustc/u],
     [r=>{r.compile.retention_negative_detected=false;},/unaccepted/u],
+    [r=>{delete r.compile.compaction_tests_exit;},/unaccepted/u],
+    [r=>{r.libtests.compaction_tests_exit=1;},/unaccepted/u],
     [r=>{r.compile.owner_inputs['docs/strict542/build-native608.py']='0'.repeat(64);},/owner source mismatch/u],
     [(r,dir)=>{r.compile.addon_sha256=sha(Buffer.from('other'));},/addon mismatch/u],
   ];

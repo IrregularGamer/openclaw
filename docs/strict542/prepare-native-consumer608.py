@@ -31,11 +31,12 @@ def prepare(owner):
     if (compile_receipt.get('kind')!='NATIVE_COMPILER608_COMPILE_STAGE' or
         compile_receipt.get('stage')!='compile' or compile_receipt.get('complete') is not True or
         tests.get('kind')!='NATIVE_COMPILER608_LIBTEST_STAGE' or tests.get('stage')!='libtests' or
-        tests.get('complete') is not True or tests.get('native_lib_tests_exit')!=0):
+        tests.get('complete') is not True or tests.get('native_lib_tests_exit')!=0 or
+        compile_receipt.get('compaction_tests_exit')!=0 or tests.get('compaction_tests_exit')!=0):
         raise ValueError('completed compile and native lib-test receipts required')
     for key in ['owner_inputs','patched_sources','cargo_policy','rustc','cmake','cmake_wheel_sha256',
                 'upstream_commit','source_archive_sha256','rust_archive_sha256',
-                'lifetime_tests_exit','retention_negative_detected']:
+                'lifetime_tests_exit','retention_negative_detected','compaction_tests_exit']:
         if key not in compile_receipt or compile_receipt[key]!=tests.get(key):
             raise ValueError('stage receipt source/toolchain mismatch: '+key)
     # Same reviewed build recipe, toolchain, source and hard lease. No uploaded

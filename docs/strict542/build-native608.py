@@ -131,6 +131,16 @@ if stage == 'lifetime':
     shutil.rmtree(root)
     print(json.dumps(receipt,sort_keys=True))
     raise SystemExit(0)
+compaction_test='ecma_ast::compact_arena_tests::compact_clone_reclaims_abandoned_arena_and_preserves_scan_identity'
+compaction=subprocess.run(['cargo','test','--locked','--release','--jobs','1','-p','rolldown_ecmascript','--lib'],
+                         cwd=root / 'source',env=env,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+(out / 'compaction-tests.log').write_text(compaction.stdout)
+print(compaction.stdout,flush=True)
+if compaction.returncode != 0 or 'test '+compaction_test+' ... ok' not in compaction.stdout:
+    raise SystemExit('real compaction test missing or failed')
+receipt['compaction_tests_exit']=0
+receipt['compaction_test']=compaction_test
+save()
 if stage == 'compile':
     subprocess.run(['cargo','build','--locked','--release','--jobs','1','-p','rolldown_binding'],
                    cwd=root / 'source',env=env,check=True)
