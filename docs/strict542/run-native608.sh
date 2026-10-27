@@ -52,6 +52,7 @@ python3 -m unittest discover -s docs/strict542 -p test_native_consumer608.py -v
 python3 -m unittest discover -s docs/strict542 -p test_native_finalizer608.py -v
 python3 -m unittest discover -s docs/strict542 -p test_native_compaction608.py -v
 python3 -m unittest discover -s docs/strict542 -p test_frozen_package608.py -v
+python3 -m unittest discover -s docs/strict542 -p test_lease619_suite_gate.py -v
 node --test docs/strict542/worker-phases608.test.mjs docs/strict542/serial-probe598.test.mjs docs/strict542/isolated-config598.test.mjs docs/strict542/disposable-inputs608.test.mjs docs/strict542/native-compiler608.test.mjs docs/strict542/bounded-package608.test.mjs
 ) >strict542-checks/tests.log 2>&1
 status=$?
