@@ -10,6 +10,8 @@ import {
   type SpawnSyncReturns,
 } from "node:child_process";
 import fs from "node:fs";
+import { trustedNativeCompilerEnvironment608 } from "./lib/native-compiler608.mjs";
+import { admitBoundedCapacity608 } from "./lib/bounded-package608.mjs";
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
@@ -1064,6 +1066,29 @@ export function resolveTsdownBuildPlan(params: TsdownBuildParams = {}) {
         ? describeInsufficientTsdownHeap(preparedParams, budget)
         : null,
     invocations: resolveTsdownBuildInvocations(preparedParams),
+  };
+}
+
+/** Only the source-rebuilt native scheduler uses this measured bounded route.
+ * Ordinary full/package admission remains unchanged. Heap/concurrency still come
+ * exclusively from the canonical observed memory budget, with no caller override.
+ */
+export function resolveNativeBoundedTsdownPlan608(params: TsdownBuildParams = {}) {
+  const input = params.env ?? process.env;
+  if (params.resolvedMaxOldSpaceMb !== undefined ||
+      Object.hasOwn(input, TSDOWN_MAX_OLD_SPACE_MB_ENV) ||
+      Object.hasOwn(input, DOCKER_TSDOWN_MAX_OLD_SPACE_MB_ENV)) {
+    throw new Error("native bounded compiler refuses heap override");
+  }
+  const native = trustedNativeCompilerEnvironment608(process.cwd(), input, { inherited: true });
+  admitBoundedCapacity608(readProcessMemoryCapacity(params));
+  const budget = resolveTsdownMemoryBudget(params);
+  const prepared = { ...params, env: native.env, resolvedMaxOldSpaceMb: budget.maxOldSpaceMb };
+  return {
+    env: { ...resolveTsdownEnv(native.env, prepared), OPENCLAW_608_BOUNDED_PACKAGE: "1" },
+    maxOldSpaceMb: budget.maxOldSpaceMb,
+    heapShortfall: null,
+    invocations: resolveTsdownBuildInvocations(prepared),
   };
 }
 

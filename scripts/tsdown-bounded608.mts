@@ -1,25 +1,25 @@
 // Full/package build compiler scheduling only. The build-all owner retains all other gates.
 import {runWorkerPhases} from './lib/worker-phases608.mjs';
 import { performance } from 'node:perf_hooks';
+import { trustedNativeCompilerEnvironment608 } from './lib/native-compiler608.mjs';
 import { readProcessMemoryCapacity } from './lib/process-memory.mts';
-import { BOUNDED_COMPILER_ENV, UNIFIED_GRAPH_THRASH_LIMIT_BYTES,
+import { BOUNDED_COMPILER_ENV, admitBoundedCapacity608,
   typedConfigCensus, boundedConfigIndices, boundedResultSucceeded } from './lib/bounded-package608.mjs';
 const stage=process.argv[2] ?? '';
+trustedNativeCompilerEnvironment608(process.cwd(),process.env,{inherited:true});
+if (process.env.OPENCLAW_608_BOUNDED_PACKAGE !== '1') throw new Error('missing bounded native package policy');
 if (process.argv.length !== 3 || !['ai','packages','unified'].includes(stage)) throw new Error('invalid bounded compiler stage');
 for (const [key,value] of Object.entries(BOUNDED_COMPILER_ENV)) {
   if (process.env[key] !== value) throw new Error('bounded compiler policy not inherited: '+key);
 }
 function capacityAdmission() {
   const capacity=readProcessMemoryCapacity({});
-  if (capacity.unresolved || !Number.isFinite(capacity.limitBytes) ||
-      capacity.limitBytes! <= UNIFIED_GRAPH_THRASH_LIMIT_BYTES ||
-      !Number.isFinite(capacity.capacityBytes) || capacity.capacityBytes! > 2*1024**3)
-    throw new Error('bounded compiler capacity no longer admitted');
+  admitBoundedCapacity608(capacity);
   return capacity;
 }
 capacityAdmission();
 // Native allocator and pool controls must precede transitive native imports.
-const { resolveTsdownBuildPlan, resolveTsdownBuildInvocation, runTsdownBuildInvocation, sanitizeTsdownBuildOutputRoots,
+const { resolveNativeBoundedTsdownPlan608, resolveTsdownBuildInvocation, runTsdownBuildInvocation, sanitizeTsdownBuildOutputRoots,
   cleanTsdownOutputRoots, resolveTsdownCleanOutputRoots, pruneUntrackedGeneratedSourceDeclarations,
   pruneStaleRuntimeSymlinks } = await import('./tsdown-build.mts');
 const deadline=performance.now()+900_000;
@@ -32,8 +32,8 @@ const originalArgs=stage === 'ai' ? ['--config','tsdown.ai.config.ts'] :
 if (Object.hasOwn(process.env,'OPENCLAW_TSDOWN_MAX_OLD_SPACE_MB') ||
     Object.hasOwn(process.env,'OPENCLAW_DOCKER_BUILD_TSDOWN_MAX_OLD_SPACE_MB'))
   throw new Error('bounded compiler refuses heap override');
-const admission=resolveTsdownBuildPlan({args:originalArgs,env:process.env});
-if (admission.heapShortfall?.fatal) throw new Error(admission.heapShortfall.message);
+const admission=resolveNativeBoundedTsdownPlan608({args:originalArgs,env:process.env});
+Object.assign(process.env,admission.env);
 sanitizeTsdownBuildOutputRoots(originalArgs);
 pruneUntrackedGeneratedSourceDeclarations();
 pruneStaleRuntimeSymlinks();

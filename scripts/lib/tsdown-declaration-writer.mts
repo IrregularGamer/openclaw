@@ -1,5 +1,6 @@
 // Canonical declaration groups share one private compiler and publication lifetime.
 import fs from "node:fs";
+import { trustedNativeCompilerEnvironment608 } from "./native-compiler608.mjs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import {
@@ -34,6 +35,14 @@ export async function writeTsdownDeclarations(
   generatorEntry: string,
 ) {
   const root = fs.realpathSync.native(process.cwd());
+  const compilerEnv = Object.hasOwn(process.env, "OPENCLAW_608_BOUNDED_PACKAGE")
+    ? trustedNativeCompilerEnvironment608(root, process.env, { inherited: true }).env
+    : process.env;
+  if (Object.hasOwn(compilerEnv, "OPENCLAW_608_BOUNDED_PACKAGE") &&
+      compilerEnv.OPENCLAW_608_BOUNDED_PACKAGE !== "1") throw new Error("invalid bounded native package policy");
+  if (compilerEnv.OPENCLAW_608_BOUNDED_PACKAGE === "1" && compilerEnv.OPENCLAW_BUILD_CACHE !== "0") {
+    throw new Error("native bounded declarations require disabled caches");
+  }
   const stages: string[] = [];
   const createStage = () => {
     const stage = createDeclarationStage(root);
@@ -104,8 +113,12 @@ export async function writeTsdownDeclarations(
         const stage = createStage();
         const groupOutput = path.join(stage, "dist");
         requestDeclarationInputs(groupOutput, name, config.dts.entry);
+        if (compilerEnv.OPENCLAW_608_BOUNDED_PACKAGE === "1") {
+          trustedNativeCompilerEnvironment608(root, compilerEnv, { inherited: true });
+        }
         const plan = prepareTsdownBuildExecution(
           {
+            env: compilerEnv,
             args: ["--config", "tsdown.config.ts", "--filter", name, "--out-dir", groupOutput],
           },
           {
@@ -136,7 +149,7 @@ export async function writeTsdownDeclarations(
           rootDir: root,
           artifactRoot: stage,
           env: {
-            ...process.env,
+            ...compilerEnv,
             OPENCLAW_BUILD_PRIVATE_QA: process.env.OPENCLAW_BUILD_PRIVATE_QA === "1" ? "1" : "0",
           },
           inputSignature: (inputs: string[]) =>

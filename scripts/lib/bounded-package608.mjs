@@ -1,4 +1,4 @@
-// Whole-config scheduling for a complete typed package, under the existing 2 GiB lease.
+// Whole-config scheduling for a complete typed package under an admitted 4 GiB lease.
 export const BOUNDED_PACKAGE_DEADLINE_MS = 2_700_000;
 export const UNIFIED_GRAPH_THRASH_LIMIT_BYTES = 1625784320;
 export const BOUNDED_COMPILER_ENV = Object.freeze({
@@ -6,15 +6,18 @@ export const BOUNDED_COMPILER_ENV = Object.freeze({
   RAYON_NUM_THREADS: '1', TOKIO_WORKER_THREADS: '1', MIMALLOC_ALLOW_THP: '0',
   OPENCLAW_RUN_NODE_SKIP_DTS_BUILD: '0',
 });
-export function admitBoundedPackage(capacity, env) {
+export function admitBoundedCapacity608(capacity) {
   if (capacity.unresolved || !Number.isFinite(capacity.capacityBytes) ||
-      capacity.capacityBytes <= 0 || capacity.capacityBytes > 2 * 1024 ** 3 ||
+      capacity.capacityBytes <= 0 || capacity.capacityBytes > 4 * 1024 ** 3 ||
       !Number.isFinite(capacity.limitBytes) || capacity.limitBytes > capacity.capacityBytes ||
       capacity.limitBytes <= UNIFIED_GRAPH_THRASH_LIMIT_BYTES)
-    throw new Error('boundedPackage requires observed admitted capacity above the unchanged config15 floor and at most 2GiB');
+    throw new Error('boundedPackage requires observed admitted capacity above the unchanged config15 floor and at most 4GiB');
+}
+export function admitBoundedPackage(capacity, env) {
+  admitBoundedCapacity608(capacity);
   for (const key of Object.keys(env)) {
     if (key === 'TSX_DISABLE_CACHE' && env[key] === '1') continue;
-    if (['NODE_OPTIONS','NODE_PATH','OUTPUT_SOURCE_MAPS','RAYON_NUM_THREADS','RAYON_RS_NUM_CPUS','UV_THREADPOOL_SIZE','OPENCLAW_BUILD_VERBOSE','OPENCLAW_BUNDLED_PLUGIN_BUILD_IDS','OPENCLAW_INCLUDE_OPTIONAL_BUNDLED'].includes(key) ||
+    if (['OPENCLAW_608_BOUNDED_PACKAGE','NODE_OPTIONS','NODE_PATH','OUTPUT_SOURCE_MAPS','RAYON_NUM_THREADS','RAYON_RS_NUM_CPUS','UV_THREADPOOL_SIZE','OPENCLAW_BUILD_VERBOSE','OPENCLAW_BUNDLED_PLUGIN_BUILD_IDS','OPENCLAW_INCLUDE_OPTIONAL_BUNDLED'].includes(key) ||
         /^(TSDOWN_|TSX_|ROLLDOWN_|TOKIO_|MIMALLOC_|NAPI_RS_|OPENCLAW_(RUN_NODE_SKIP_DTS_BUILD|TSDOWN_|BUILD_PRIVATE_QA|INTERNAL_DOCKER_))/u.test(key))
       throw new Error(`boundedPackage refuses inherited compiler control: ${key}`);
   }

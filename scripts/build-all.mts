@@ -7,6 +7,7 @@ import { existsSync } from "node:fs";
 import { resolve } from "node:path";
 import { admitBoundedPackage, boundedCompilerStep, BOUNDED_PACKAGE_DEADLINE_MS, BOUNDED_COMPILER_ENV } from "./lib/bounded-package608.mjs";
 import { readProcessMemoryCapacity } from "./lib/process-memory.mts";
+import { trustedNativeCompilerEnvironment608 } from "./lib/native-compiler608.mjs";
 import { resolveNodeRuntimeExecutable } from "../src/infra/node-runtime-executable.ts";
 import {
   finalizeBuildStepCache,
@@ -41,6 +42,7 @@ import {
   TSDOWN_PACKAGES_CACHE_INPUT,
   listTsdownOutputRoots,
   resolveTsdownBuildPlan,
+  resolveNativeBoundedTsdownPlan608,
 } from "./tsdown-build.mts";
 
 const nodeBin = resolveNodeRuntimeExecutable() ?? process.execPath;
@@ -422,9 +424,8 @@ export function resolveBuildAllTsdownPlan(
   heapShortfall: ReturnType<typeof resolveTsdownBuildPlan>["heapShortfall"];
 } {
   if (profile === "boundedPackage") {
-    // Scheduling alone does not prove a lower memory requirement. Retain canonical
-    // full-graph admission until a reviewed post-link memory correction is proven.
-    const plan = resolveTsdownBuildPlan({ ...params, env, args: ["--config", "tsdown.config.ts"] });
+    // Required native bytes and reviewed complete-graph proof own this dedicated route.
+    const plan = resolveNativeBoundedTsdownPlan608({ ...params, env, args: ["--config", "tsdown.config.ts"] });
     return { env: { ...plan.env, ...BOUNDED_COMPILER_ENV, OPENCLAW_BUILD_CACHE: "0" }, heapShortfall: plan.heapShortfall };
   }
   if (
@@ -565,11 +566,14 @@ export async function runBuildAllSteps(
     }
   }
   const boundedDeadline = profile === "boundedPackage" ? performance.now() + BOUNDED_PACKAGE_DEADLINE_MS : null;
-  await preflightInstalledSourceArtifacts(params.env ?? process.env);
+  const sourceEnv = profile === "boundedPackage"
+    ? trustedNativeCompilerEnvironment608(params.cwd ?? process.cwd(), params.env ?? process.env).env
+    : params.env ?? process.env;
+  await preflightInstalledSourceArtifacts(sourceEnv);
   params.signal?.throwIfAborted();
   const { env: buildEnv, heapShortfall } = resolveBuildAllTsdownPlan(
     profile,
-    resolveBuildAllEnvironment(params.env),
+    resolveBuildAllEnvironment(sourceEnv),
     params.memoryLimit,
   );
   const steps = params.steps ?? resolveBuildAllSteps(profile, buildEnv);
