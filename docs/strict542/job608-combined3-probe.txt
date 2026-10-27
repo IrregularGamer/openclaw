@@ -1,0 +1,379 @@
+Scope: all 186 workspace projects
+. pnpm:devPreinstall$ node scripts/check-install-dependency-ownership.mjs
+. pnpm:devPreinstall: Done
+? Verifying lockfile against supply-chain policies (1706 entries)...
+Downloading cytoscape-fcose@2.2.0: 0.00 B/7.60 MB
+Packages are copied from the content-addressable store to the virtual store.
+  Content-addressable store is at: /work/.pnpm-store/v11
+  Virtual store is at:             node_modules/.pnpm
+Progress: resolved 1469, reused 0, downloaded 81, added 64
+[WARN] Tarball download average speed 29 KiB/s (size 31 KiB) is below 50 KiB/s: https://registry.npmjs.org/roughjs/-/roughjs-4.6.6.tgz (GET)
+[WARN] Tarball download average speed 24 KiB/s (size 29 KiB) is below 50 KiB/s: https://registry.npmjs.org/rolldown-plugin-dts/-/rolldown-plugin-dts-0.28.6.tgz (GET)
+[WARN] Tarball download average speed 28 KiB/s (size 35 KiB) is below 50 KiB/s: https://registry.npmjs.org/@lydell/node-pty-linux-x64/-/node-pty-linux-x64-1.2.0-beta.15.tgz (GET)
+[WARN] Tarball download average speed 12 KiB/s (size 14 KiB) is below 50 KiB/s: https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-8.4.2.tgz (GET)
+[WARN] Tarball download average speed 28 KiB/s (size 62 KiB) is below 50 KiB/s: https://registry.npmjs.org/@asamuzakjp/dom-selector/-/dom-selector-9.2.0.tgz (GET)
+[WARN] Tarball download average speed 29 KiB/s (size 75 KiB) is below 50 KiB/s: https://registry.npmjs.org/@types/react/-/react-19.3.0.tgz (GET)
+[WARN] Tarball download average speed 49 KiB/s (size 117 KiB) is below 50 KiB/s: https://registry.npmjs.org/marked/-/marked-18.0.11.tgz (GET)
+[WARN] Tarball download average speed 20 KiB/s (size 26 KiB) is below 50 KiB/s: https://registry.npmjs.org/@aws-sdk/credential-providers/-/credential-providers-3.1135.0.tgz (GET)
+[WARN] Tarball download average speed 23 KiB/s (size 45 KiB) is below 50 KiB/s: https://registry.npmjs.org/postcss-selector-parser/-/postcss-selector-parser-7.1.6.tgz (GET)
+[WARN] Tarball download average speed 46 KiB/s (size 88 KiB) is below 50 KiB/s: https://registry.npmjs.org/signal-utils/-/signal-utils-0.21.1.tgz (GET)
+[WARN] Tarball download average speed 34 KiB/s (size 49 KiB) is below 50 KiB/s: https://registry.npmjs.org/@opentelemetry/resources/-/resources-2.11.0.tgz (GET)
+[WARN] Tarball download average speed 39 KiB/s (size 102 KiB) is below 50 KiB/s: https://registry.npmjs.org/@aws-sdk/core/-/core-3.978.0.tgz (GET)
+[WARN] Tarball download average speed 36 KiB/s (size 116 KiB) is below 50 KiB/s: https://registry.npmjs.org/@aws-sdk/client-bedrock-runtime/-/client-bedrock-runtime-3.1136.0.tgz (GET)
+Progress: resolved 1469, reused 0, downloaded 164, added 160
+[WARN] Tarball download average speed 21 KiB/s (size 22 KiB) is below 50 KiB/s: https://registry.npmjs.org/@chevrotain/types/-/types-11.1.2.tgz (GET)
+[WARN] Tarball download average speed 17 KiB/s (size 22 KiB) is below 50 KiB/s: https://registry.npmjs.org/cose-base/-/cose-base-1.0.3.tgz (GET)
+Progress: resolved 1469, reused 0, downloaded 190, added 182
+[WARN] Tarball download average speed 22 KiB/s (size 36 KiB) is below 50 KiB/s: https://registry.npmjs.org/json-schema-typed/-/json-schema-typed-8.0.2.tgz (GET)
+[WARN] Tarball download average speed 11 KiB/s (size 24 KiB) is below 50 KiB/s: https://registry.npmjs.org/whatwg-url/-/whatwg-url-17.1.1.tgz (GET)
+[WARN] Tarball download average speed 44 KiB/s (size 49 KiB) is below 50 KiB/s: https://registry.npmjs.org/flatbuffers/-/flatbuffers-25.9.23.tgz (GET)
+[WARN] Tarball download average speed 31 KiB/s (size 163 KiB) is below 50 KiB/s: https://registry.npmjs.org/@noble/hashes/-/hashes-2.4.0.tgz (GET)
+Downloading @github/copilot-sdk-linux-x64@1.0.14: 0.00 B/46.89 MB
+[WARN] Tarball download average speed 29 KiB/s (size 114 KiB) is below 50 KiB/s: https://registry.npmjs.org/minimatch/-/minimatch-10.2.6.tgz (GET)
+Progress: resolved 1469, reused 0, downloaded 296, added 288
+Progress: resolved 1469, reused 0, downloaded 341, added 320
+Downloading @openai/codex@0.160.0-linux-x64: 0.00 B/163.27 MB
+Downloading @oxlint/binding-linux-x64-gnu@1.83.0: 0.00 B/6.51 MB
+Downloading @lancedb/lancedb-linux-x64-gnu@0.39.0: 0.00 B/72.71 MB
+Downloading @microsoft/mxc-sdk@0.8.0: 0.00 B/25.88 MB
+Progress: resolved 1469, reused 0, downloaded 380, added 358
+Downloading @anthropic-ai/claude-agent-sdk-linux-x64@0.3.274: 0.00 B/102.59 MB
+Downloading onnxruntime-node@1.30.0: 0.00 B/113.50 MB
+Progress: resolved 1469, reused 0, downloaded 431, added 416
+Progress: resolved 1469, reused 0, downloaded 458, added 448
+Downloading @oxlint-tsgolint/linux-x64@7.0.2002: 0.00 B/7.76 MB
+Progress: resolved 1469, reused 0, downloaded 495, added 480
+Downloading mermaid@11.17.2: 0.00 B/17.79 MB
+Downloading @typescript/typescript-linux-x64@7.1.0-dev.20260920.1: 0.00 B/10.11 MB
+Downloading @rolldown/binding-linux-x64-gnu@1.2.9: 0.00 B/7.92 MB
+Downloading @oxlint-tsgolint/linux-x64@7.0.2002: 1.44 MB/7.76 MB
+[WARN] Tarball download average speed 10 KiB/s (size 15 KiB) is below 50 KiB/s: https://registry.npmjs.org/sonic-boom/-/sonic-boom-4.2.1.tgz (GET)
+[WARN] Tarball download average speed 32 KiB/s (size 48 KiB) is below 50 KiB/s: https://registry.npmjs.org/tweetnacl/-/tweetnacl-1.0.3.tgz (GET)
+[WARN] Tarball download average speed 13 KiB/s (size 18 KiB) is below 50 KiB/s: https://registry.npmjs.org/minizlib/-/minizlib-3.1.0.tgz (GET)
+[WARN] Tarball download average speed 7 KiB/s (size 9 KiB) is below 50 KiB/s: https://registry.npmjs.org/pino-std-serializers/-/pino-std-serializers-7.1.0.tgz (GET)
+Downloading @tloncorp/tlon-skill-linux-x64@0.5.0: 0.00 B/40.66 MB
+[WARN] Tarball download average speed 46 KiB/s (size 104 KiB) is below 50 KiB/s: https://registry.npmjs.org/@peculiar/x509/-/x509-1.14.3.tgz (GET)
+[WARN] Tarball download average speed 22 KiB/s (size 45 KiB) is below 50 KiB/s: https://registry.npmjs.org/cjs-module-lexer/-/cjs-module-lexer-2.2.1.tgz (GET)
+[WARN] Tarball download average speed 29 KiB/s (size 59 KiB) is below 50 KiB/s: https://registry.npmjs.org/d3-geo/-/d3-geo-3.1.1.tgz (GET)
+[WARN] Tarball download average speed 49 KiB/s (size 105 KiB) is below 50 KiB/s: https://registry.npmjs.org/gaxios/-/gaxios-7.3.1.tgz (GET)
+Downloading @trycua/cua-driver-linux-x64-gnu@0.28.2: 0.00 B/13.49 MB
+Downloading node-pty@1.2.0-beta.15: 0.00 B/7.15 MB
+Progress: resolved 1469, reused 0, downloaded 583, added 576
+Downloading @lancedb/lancedb-linux-x64-gnu@0.39.0: 6.81 MB/72.71 MB
+Progress: resolved 1469, reused 0, downloaded 604, added 606
+✓ Lockfile passes supply-chain policies (1706 entries in 27.8s)
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1469, reused 0, downloaded 642, added 640
+Progress: resolved 1469, reused 0, downloaded 668, added 652
+Progress: resolved 1469, reused 0, downloaded 698, added 701
+Progress: resolved 1469, reused 0, downloaded 730, added 730
+Progress: resolved 1469, reused 0, downloaded 788, added 768
+Progress: resolved 1469, reused 0, downloaded 813, added 800
+Progress: resolved 1469, reused 0, downloaded 826, added 817
+Progress: resolved 1469, reused 0, downloaded 855, added 832
+Progress: resolved 1469, reused 0, downloaded 902, added 896
+Progress: resolved 1469, reused 0, downloaded 935, added 928
+Progress: resolved 1469, reused 0, downloaded 964, added 960
+Progress: resolved 1469, reused 0, downloaded 986, added 986
+Downloading @lancedb/lancedb-linux-x64-gnu@0.39.0: 30.17 MB/72.71 MB
+Downloading @lancedb/lancedb-linux-x64-gnu@0.39.0: 35.15 MB/72.71 MB
+Progress: resolved 1469, reused 0, downloaded 1018, added 993
+Progress: resolved 1469, reused 0, downloaded 1018, added 1023
+Progress: resolved 1469, reused 0, downloaded 1068, added 1056
+Downloading @lancedb/lancedb-linux-x64-gnu@0.39.0: 54.22 MB/72.71 MB
+Progress: resolved 1469, reused 0, downloaded 1097, added 1088
+Downloading @lancedb/lancedb-linux-x64-gnu@0.39.0: 59.81 MB/72.71 MB
+Downloading @lancedb/lancedb-linux-x64-gnu@0.39.0: 63.26 MB/72.71 MB
+Progress: resolved 1469, reused 0, downloaded 1178, added 1184
+Progress: resolved 1469, reused 0, downloaded 1220, added 1216
+Progress: resolved 1469, reused 0, downloaded 1242, added 1227
+Progress: resolved 1469, reused 0, downloaded 1286, added 1280
+Progress: resolved 1469, reused 0, downloaded 1300, added 1280
+Progress: resolved 1469, reused 0, downloaded 1306, added 1310
+Progress: resolved 1469, reused 0, downloaded 1306, added 1312
+Downloading onnxruntime-node@1.30.0: 86.31 MB/113.50 MB
+Progress: resolved 1469, reused 0, downloaded 1351, added 1344
+Progress: resolved 1469, reused 0, downloaded 1370, added 1347
+Progress: resolved 1469, reused 0, downloaded 1370, added 1375
+Downloading @anthropic-ai/claude-agent-sdk-linux-x64@0.3.274: 39.81 MB/102.59 MB
+Progress: resolved 1469, reused 0, downloaded 1402, added 1408
+Downloading @anthropic-ai/claude-agent-sdk-linux-x64@0.3.274: 44.93 MB/102.59 MB
+Progress: resolved 1469, reused 0, downloaded 1406, added 1408
+Downloading @openai/codex@0.160.0-linux-x64: 16.79 MB/163.27 MB
+Downloading @anthropic-ai/claude-agent-sdk-linux-x64@0.3.274: 71.22 MB/102.59 MB
+Downloading @anthropic-ai/claude-agent-sdk-linux-x64@0.3.274: 82.50 MB/102.59 MB
+Progress: resolved 1469, reused 0, downloaded 1434, added 1414
+Progress: resolved 1469, reused 0, downloaded 1434, added 1437
+Progress: resolved 1469, reused 0, downloaded 1439, added 1440
+Progress: resolved 1469, reused 0, downloaded 1444, added 1440
+Downloading @microsoft/mxc-sdk@0.8.0: 16.80 MB/25.88 MB
+Downloading @openai/codex@0.160.0-linux-x64: 39.88 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 45.90 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 53.38 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 58.55 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 62.04 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 70.41 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 78.96 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 85.97 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 104.56 MB/163.27 MB
+Downloading mermaid@11.17.2: 16.79 MB/17.79 MB
+Downloading @openai/codex@0.160.0-linux-x64: 125.88 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 138.03 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 149.07 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 152.85 MB/163.27 MB
+Downloading @openai/codex@0.160.0-linux-x64: 160.15 MB/163.27 MB
+Downloading @tloncorp/tlon-skill-linux-x64@0.5.0: 17.85 MB/40.66 MB
+Downloading @tloncorp/tlon-skill-linux-x64@0.5.0: 24.37 MB/40.66 MB
+Downloading @tloncorp/tlon-skill-linux-x64@0.5.0: 37.18 MB/40.66 MB
+Progress: resolved 1469, reused 0, downloaded 1463, added 1447
+Progress: resolved 1469, reused 0, downloaded 1463, added 1452
+Progress: resolved 1469, reused 0, downloaded 1463, added 1459
+Progress: resolved 1469, reused 0, downloaded 1463, added 1462
+Progress: resolved 1469, reused 0, downloaded 1463, added 1466
+Progress: resolved 1469, reused 0, downloaded 1463, added 1469
+Packages: +1469
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 1469, reused 0, downloaded 1463, added 1469, done
+.../esbuild@0.28.2/node_modules/esbuild postinstall$ node install.js
+.../esbuild@0.28.2/node_modules/esbuild postinstall: Done
+.../node_modules/@google/genai preinstall$ echo 'preinstall: no-op'
+.../node_modules/@google/genai preinstall: preinstall: no-op
+.../node_modules/@google/genai preinstall: Done
+.../@matrix-org/matrix-sdk-crypto-nodejs postinstall$ node download-lib.js
+.../@matrix-org/matrix-sdk-crypto-nodejs postinstall: Downloading lib matrix-sdk-crypto.linux-x64-gnu.node from https://github.com/matrix-org/matrix-rust-sdk-crypto-nodejs/releases/download/v0.6.6/matrix-sdk-crypto.linux-x64-gnu.node
+.../@matrix-org/matrix-sdk-crypto-nodejs postinstall: 0 b/s - 73.6% [17.4 MB/23.6 MB]
+.../@matrix-org/matrix-sdk-crypto-nodejs postinstall: Download Completed
+.../@matrix-org/matrix-sdk-crypto-nodejs postinstall: Done
+.../node_modules/node-pty install$ node scripts/prebuild.js || node-gyp rebuild
+.../node_modules/node-pty install: [32m> Checking prebuilds...[0m
+.../node_modules/node-pty install: Done
+.../node_modules/node-pty postinstall$ node scripts/post-install.js
+.../node_modules/node-pty postinstall: [32m> Cleaning release folder...[0m
+.../node_modules/node-pty postinstall: [32m> Moving conpty.dll...[0m
+.../node_modules/node-pty postinstall:   SKIPPED (not Windows)
+.../node_modules/node-pty postinstall: Done
+.../node_modules/@tloncorp/tlon-skill postinstall$ node scripts/postinstall.js
+.../node_modules/@tloncorp/tlon-skill postinstall: [tlon-skill] Binary ready: /work/source/node_modules/.pnpm/@tloncorp+tlon-skill-linux-x64@0.5.0/node_modules/@tloncorp/tlon-skill-linux-x64/tlon
+.../node_modules/@tloncorp/tlon-skill postinstall: Done
+.../node_modules/baileys preinstall$ node ./engine-requirements.js
+.../node_modules/baileys preinstall: Done
+. preinstall$ node scripts/preinstall-package-manager-warning.mjs
+. preinstall: Done
+. postinstall$ node scripts/postinstall-bundled-plugins.mjs
+. postinstall: Done
+. prepare$ node scripts/prepare-git-hooks.mjs
+. prepare: Done
+
+dependencies:
++ @agentclientprotocol/sdk 1.4.0
++ @anthropic-ai/sdk 0.127.0
++ @babel/generator 8.0.6
++ @babel/parser 8.0.6
++ @babel/traverse 8.0.6
++ @clack/core 1.5.1
++ @clack/prompts 1.8.1
++ @earendil-works/pi-tui 0.86.1
++ @google/genai 2.23.0
++ @grammyjs/transformer-throttler 1.2.1
++ @homebridge/ciao 1.3.12
++ @lydell/node-pty 1.2.0-beta.15
++ @mistralai/mistralai 2.7.0
++ @modelcontextprotocol/sdk 1.31.0
++ @mozilla/readability 0.6.0
++ @openclaw/ai link:packages/ai
++ @openclaw/fs-safe 0.21.1
++ @openclaw/proxyline 0.3.12
++ @silvia-odwyer/photon-node 0.3.4
++ @trycua/cua-driver 0.28.2
++ acorn 8.18.0
++ chalk 6.0.0
++ chokidar 5.0.0
++ chrome-devtools-mcp 1.9.0
++ clawpdf 0.3.2
++ commander 15.0.0
++ croner 10.0.1
++ diff 9.0.0
++ dotenv 18.0.1
++ entities 8.1.0
++ esbuild 0.28.2
++ execa 10.0.1
++ express 5.2.1
++ file-type 22.1.1
++ grammy 1.46.0
++ highlight.js 11.12.0
++ hosted-git-info 10.1.1
++ iconv-lite 0.7.3
++ ignore 7.0.9
++ import-meta-resolve 4.2.0
++ jiti 2.7.0
++ json5 2.2.3
++ jszip 3.10.2
++ koffi 3.3.1
++ kysely 0.29.6
++ linkedom 0.18.13
++ minimatch 10.2.6
++ node-edge-tts 1.2.10
++ npm 11.20.0
++ openai 7.20.0
++ p-limit 7.3.3
++ p-map 7.0.8
++ partial-json 0.1.7
++ playwright-core 1.63.0
++ qrcode 1.5.4
++ rastermill 0.3.3
++ semver 7.8.5
++ tar 7.5.22
++ tslog 5.2.0
++ typebox 1.3.34
++ undici 8.10.2
++ web-push 3.6.7
++ web-tree-sitter 0.27.0
++ ws 8.21.3
++ yaml 2.9.1
++ zod 4.6.5
+
+optionalDependencies:
++ sqlite-vec 0.1.9
+
+devDependencies:
++ @a2ui/lit 0.11.0
++ @a2ui/web_core 0.11.0
++ @babel/types 8.0.6
++ @copilotkit/aimock 1.42.1
++ @lit-labs/signals 0.3.0
++ @lit/context 1.1.6
++ @lit/task 1.0.3
++ @mdx-js/mdx 3.1.1
++ @openclaw/crabline 0.1.27
++ @openclaw/session-url-contract link:packages/session-url-contract
++ @opentelemetry/sdk-node 0.222.0
++ @pnpm/parse-overrides 1001.0.4
++ @shikijs/core 4.4.3
++ @shikijs/engine-javascript 4.4.3
++ @shikijs/engine-oniguruma 4.4.3
++ @sindresorhus/slugify 3.0.1
++ @types/express 5.0.6
++ @types/hosted-git-info 3.0.5
++ @types/jsdom 30.0.0
++ @types/markdown-it 14.2.0
++ @types/mdast 4.0.4
++ @types/node 26.6.2
++ @types/semver 7.8.0
++ @types/web-push 3.6.4
++ @types/ws 8.18.1
++ @vitest/coverage-v8 5.0.1
++ acpx 0.19.1
++ apache-arrow 21.2.0
++ baileys 7.0.0-rc14
++ htmlparser2 12.0.0
++ ipaddr.js 2.5.0
++ jscpd 5.3.0
++ jsdom 30.1.0
++ lit 3.3.3
++ lit-analyzer 2.0.3
++ markdown-it 15.0.2
++ markdown-it-anchor 10.0.0
++ marked 18.0.13
++ minipass 7.1.3
++ nostr-tools 2.25.2
++ oxfmt 0.68.0
++ oxlint 1.83.0
++ oxlint-tsgolint 7.0.2002
++ pako 3.0.2
++ playwright 1.63.0
++ postcss 8.5.28
++ postcss-lit 1.4.1
++ postcss-selector-parser 7.1.6
++ shiki 4.4.3
++ signal-utils 0.21.1
++ sigstore 5.0.0
++ string-width 8.2.2
++ stylelint 17.15.0
++ stylelint-config-recommended 18.0.0
++ tinyglobby 0.2.17
++ tree-sitter-bash 0.25.1
++ tsdown 0.23.0
++ tsx 4.23.15
++ typescript 7.1.0-dev.20260920.1
++ unrun 0.3.1
++ vite 8.3.0
++ vitest 5.0.1
+
+Done in 2m 0.3s using pnpm v12.5.1
+{"kind":"BEFORE_STORE_RELEASE608","capacity":{"limitBytes":3564015616,"capacityBytes":4294967296,"usageKnown":true,"unresolved":false,"availableBytes":14183329792},"stat":"anon 48656384\nfile 2944221184\nkernel 526798848\nkernel_stack 327680\npagetables 1769472\nsec_pagetables 0\npercpu 2712\nsock 0\nvmalloc 16384\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 20148224\nfile_dirty 69181440\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 48590848\ninactive_file 2687549440\nactive_file 256671744\nunevictable 0\nslab_reclaimable 524080352\nslab_unreclaimable 520416\nslab 524600768\nworkingset_refault_anon 0\nworkingset_refault_file 31633\nworkingset_activate_anon 0\nworkingset_activate_file 31633\nworkingset_restore_anon 0\nworkingset_restore_file 2746\nworkingset_nodereclaim 0\npgscan 980416\npgsteal 980390\npgscan_kswapd 0\npgscan_direct 980416\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 980390\npgsteal_khugepaged 0\npgfault 17382042\npgmajfault 1226\npgrefill 34401\npgactivate 9\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\n"}
+{"kind":"AFTER_STORE_RELEASE608","capacity":{"limitBytes":3860541440,"capacityBytes":4294967296,"usageKnown":true,"unresolved":false,"availableBytes":14185705472},"stat":"anon 48885760\nfile 1653497856\nkernel 337137664\nkernel_stack 327680\npagetables 1769472\nsec_pagetables 0\npercpu 2712\nsock 0\nvmalloc 16384\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 20217856\nfile_dirty 46755840\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 48865280\ninactive_file 1504067584\nactive_file 149430272\nunevictable 0\nslab_reclaimable 334417832\nslab_unreclaimable 523176\nslab 334941008\nworkingset_refault_anon 0\nworkingset_refault_file 31644\nworkingset_activate_anon 0\nworkingset_activate_file 31644\nworkingset_restore_anon 0\nworkingset_restore_file 2757\nworkingset_nodereclaim 0\npgscan 980416\npgsteal 980390\npgscan_kswapd 0\npgscan_direct 980416\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 980390\npgsteal_khugepaged 0\npgfault 17407176\npgmajfault 1226\npgrefill 34401\npgactivate 9\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\n"}
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.1 [39m[90m/work/source[39m
+
+ [32m✓[39m [30m[45m unit-fast [49m[39m test/scripts/build-all-bounded608.test.ts[2m > [22mcomplete typed bounded package scheduling[2m > [22mretains every canonical package phase in exactly the same order[32m 13[2mms[22m[39m
+ [32m✓[39m [30m[45m unit-fast [49m[39m test/scripts/build-all-bounded608.test.ts[2m > [22mcomplete typed bounded package scheduling[2m > [22mretains fatal full-graph admission under the advertised 2 GiB budget[32m 6[2mms[22m[39m
+ [32m✓[39m [30m[45m unit-fast [49m[39m test/scripts/build-all-bounded608.test.ts[2m > [22mcomplete typed bounded package scheduling[2m > [22mcannot turn boundedPackage into runtime-only output[32m 2[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m3 passed[39m[22m[90m (3)[39m
+[2m   Start at [22m 13:53:47
+[2m   Duration [22m 6.46s[2m (transform 52%, import 43%, setup 4%, worker 1%, tests 1%)[22m
+
+✔ real split worker retains side effects, names, dynamic imports, maps and legal text (420.418802ms)
+✔ real minifier rejects parse failure and redirected output without replacing bytes (390.914844ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1118.119832
+✔ native last-use codegen is byte-equal to stock for shared graphs, ESM/CJS, maps and minification (1103.946731ms)
+✔ release native addon emits existing link and generation phase spans to stdout (339.692764ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2079.812785
+✔ owning config enables lazy barrels only for the complete shared runtime graph (2673.648645ms)
+✔ lazy barrels preserve side effects, live singleton identity and dynamic exports (225.429049ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4274.695302
+✔ owning config enables lazy barrels only for the complete shared runtime graph (1837.098791ms)
+✔ lazy barrels preserve side effects, live singleton identity and dynamic exports (117.335564ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3712.073569
+✔ real split worker retains side effects, names, dynamic imports, maps and legal text (335.307654ms)
+✔ real minifier rejects parse failure and redirected output without replacing bytes (493.669237ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1406.739381
+{"kind":"UNIFIED_GRAPH_ADMISSION","capacity":{"limitBytes":3858796544,"capacityBytes":4294967296,"usageKnown":true,"unresolved":false,"availableBytes":14135508992}}
+file:///work/source/docs/strict542/serial-probe598-policy.mjs:7
+    throw new Error('probe requires observed capacity no larger than admitted2GiB');
+          ^
+
+Error: probe requires observed capacity no larger than admitted2GiB
+    at admitProbe (file:///work/source/docs/strict542/serial-probe598-policy.mjs:7:11)
+    at <anonymous> (/work/source/docs/strict542/isolated-probe598.mts:13:1)
+    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+    at async node:internal/modules/esm/loader:647:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.21.0

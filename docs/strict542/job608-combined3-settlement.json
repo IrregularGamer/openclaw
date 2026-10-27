@@ -1,0 +1,17 @@
+{
+  "entries": [
+    "export-manifest.json",
+    "result598",
+    "run608.sh"
+  ],
+  "live_lease_is_current_worker_only": true,
+  "live_lease_sha256": [
+    "f9c5b9a01adf94281bb3b7517136c30edbb8f2024ff55669a16beeead4719d2a"
+  ],
+  "managed_containers": 0,
+  "mutation_performed": false,
+  "observed_utc": "2026-10-27T13:55:16.664618+00:00",
+  "runner_lock_available": true,
+  "scope": "Read-only settled runner snapshot; current worker lease may remain until normal exit, future launch requires fresh normal worker admission",
+  "slot": "tmp-export608-native-compact-combined3-cb70d2dc"
+}

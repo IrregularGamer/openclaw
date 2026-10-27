@@ -10,18 +10,19 @@ installer/reviews and genuine receipt remain unchanged.
 ## Current run and mandatory settlement
 
 Actual combined3 launch4cb57dc0 used manifest7995990b and frozen6d9c429b once.
-It is ACTIVE as of13:40UTC, native compilation in progress. Log:
-/home/deploy/agentq/runs/608/combined3-actual-offload.log. Its source has a missed
-2GiB diagnostic upper ceiling and will refuse observed4GiB before config import.
-It supplies no successful config15 or package receipt. The source contradiction
-was independently confirmed; current finite execution was left under its existing
-2700s+15s bound because installed streaming client has no supported artifact-
-preserving remote-only cancellation. No SSH/client kill or controller stop.
-DO NOT RELAUNCH combined3. Preserve its actual result and prove settlement;
-independent outcome review is mandatory before the future corrected launch.
-Actual227 scoped checks passed; raw tests and evidence are committed in3edc7362.
-They cover frozen6d9 source, including real IPC/refusal/cancellation, not255 future
-checks or the corrected source's complete diagnostic.
+It is SPENT: normal offload exit1, no outer timeout. Actual observed capacity4GiB
+and limit3858796544 triggered the old2GiB source ceiling before config import.
+All240 affected checks pass, native9 positive tests/retention negative pass,
+8 stock/native parity variants pass, rebuilt receipt4a651254 and addon0b6607e7
+are BYTE-IDENTICAL to their independently accepted pins. No config15/all57
+census or diagnostic receipt was produced; no typed package ran. Full artifacts
+and exact hashes are job608-combined3-outcome.json and its referenced files.
+Read-only13:55:16Z runner-lock settlement found0managed containers, exactly this
+current worker's live lease, and only manifest/run/result entries. Source/native/
+store caches are absent. No lease was edited or revoked: normal worker exit and
+future fresh admission must reconcile that remaining worker lease. This snapshot
+is not proof of a future gap or installation. Independent exact outcome review
+is required before combined4. Never relaunch3 or upload its compiled addon.
 
 ## Exact unused future combined4
 

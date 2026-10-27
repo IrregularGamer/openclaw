@@ -1,0 +1,272 @@
+  2026-10-27T13:53:57.074398Z DEBUG rolldown::stages::link_stage: enter
+    at crates/rolldown/src/stages/link_stage/mod.rs:241
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.074456Z DEBUG rolldown::stages::link_stage::sort_modules: enter
+    at crates/rolldown/src/stages/link_stage/sort_modules.rs:32
+    in rolldown::stages::link_stage::sort_modules::sort_modules
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.074471Z DEBUG rolldown::stages::link_stage::sort_modules: close, time.busy: 14.2µs, time.idle: 1.20µs
+    at crates/rolldown/src/stages/link_stage/sort_modules.rs:32
+    in rolldown::stages::link_stage::sort_modules::sort_modules
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.074488Z DEBUG rolldown::stages::link_stage::compute_tla: enter
+    at crates/rolldown/src/stages/link_stage/compute_tla.rs:26
+    in rolldown::stages::link_stage::compute_tla::compute_tla
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.074497Z DEBUG rolldown::stages::link_stage::compute_tla: close, time.busy: 8.46µs, time.idle: 627ns
+    at crates/rolldown/src/stages/link_stage/compute_tla.rs:26
+    in rolldown::stages::link_stage::compute_tla::compute_tla
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.074528Z DEBUG rolldown::stages::link_stage::determine_module_exports_kind: enter
+    at crates/rolldown/src/stages/link_stage/determine_module_exports_kind.rs:11
+    in rolldown::stages::link_stage::determine_module_exports_kind::determine_module_exports_kind
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.074539Z DEBUG rolldown::stages::link_stage::determine_module_exports_kind: close, time.busy: 10.8µs, time.idle: 743ns
+    at crates/rolldown/src/stages/link_stage/determine_module_exports_kind.rs:11
+    in rolldown::stages::link_stage::determine_module_exports_kind::determine_module_exports_kind
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.074555Z DEBUG rolldown::stages::link_stage::determine_module_exports_kind: enter
+    at crates/rolldown/src/stages/link_stage/determine_module_exports_kind.rs:114
+    in rolldown::stages::link_stage::determine_module_exports_kind::determine_safely_merge_cjs_ns
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.074564Z DEBUG rolldown::stages::link_stage::determine_module_exports_kind: close, time.busy: 8.84µs, time.idle: 1.04µs
+    at crates/rolldown/src/stages/link_stage/determine_module_exports_kind.rs:114
+    in rolldown::stages::link_stage::determine_module_exports_kind::determine_safely_merge_cjs_ns
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.074591Z DEBUG rolldown::stages::link_stage::wrapping: enter
+    at crates/rolldown/src/stages/link_stage/wrapping.rs:88
+    in rolldown::stages::link_stage::wrapping::wrap_modules
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.074600Z DEBUG rolldown::stages::link_stage::wrapping: close, time.busy: 8.78µs, time.idle: 560ns
+    at crates/rolldown/src/stages/link_stage/wrapping.rs:88
+    in rolldown::stages::link_stage::wrapping::wrap_modules
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.074611Z DEBUG rolldown::stages::link_stage::generate_lazy_export: enter
+    at crates/rolldown/src/stages/link_stage/generate_lazy_export.rs:39
+    in rolldown::stages::link_stage::generate_lazy_export::generate_lazy_export
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.074718Z DEBUG rolldown::stages::link_stage::generate_lazy_export: close, time.busy: 104µs, time.idle: 1.38µs
+    at crates/rolldown/src/stages/link_stage/generate_lazy_export.rs:39
+    in rolldown::stages::link_stage::generate_lazy_export::generate_lazy_export
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.074756Z DEBUG rolldown::stages::link_stage::tree_shaking::determine_side_effects: enter
+    at crates/rolldown/src/stages/link_stage/tree_shaking/determine_side_effects.rs:16
+    in rolldown::stages::link_stage::tree_shaking::determine_side_effects::determine_side_effects
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.074767Z DEBUG rolldown::stages::link_stage::tree_shaking::determine_side_effects: close, time.busy: 10.5µs, time.idle: 1.03µs
+    at crates/rolldown/src/stages/link_stage/tree_shaking/determine_side_effects.rs:16
+    in rolldown::stages::link_stage::tree_shaking::determine_side_effects::determine_side_effects
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.074777Z DEBUG rolldown::stages::link_stage::bind_imports_and_exports: enter
+    at crates/rolldown/src/stages/link_stage/bind_imports_and_exports.rs:204
+    in rolldown::stages::link_stage::bind_imports_and_exports::bind_imports_and_exports
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.075043Z DEBUG rolldown::stages::link_stage::bind_imports_and_exports: close, time.busy: 264µs, time.idle: 930ns
+    at crates/rolldown/src/stages/link_stage/bind_imports_and_exports.rs:204
+    in rolldown::stages::link_stage::bind_imports_and_exports::bind_imports_and_exports
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.075075Z DEBUG rolldown::stages::link_stage::create_exports_for_ecma_modules: enter
+    at crates/rolldown/src/stages/link_stage/create_exports_for_ecma_modules.rs:51
+    in rolldown::stages::link_stage::create_exports_for_ecma_modules::create_exports_for_ecma_modules
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.075103Z DEBUG rolldown::stages::link_stage::create_exports_for_ecma_modules: close, time.busy: 27.5µs, time.idle: 1.56µs
+    at crates/rolldown/src/stages/link_stage/create_exports_for_ecma_modules.rs:51
+    in rolldown::stages::link_stage::create_exports_for_ecma_modules::create_exports_for_ecma_modules
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.075120Z DEBUG rolldown::stages::link_stage::reference_needed_symbols: enter
+    at crates/rolldown/src/stages/link_stage/reference_needed_symbols.rs:20
+    in rolldown::stages::link_stage::reference_needed_symbols::reference_needed_symbols
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.075209Z DEBUG rolldown::stages::link_stage::reference_needed_symbols: close, time.busy: 88.1µs, time.idle: 899ns
+    at crates/rolldown/src/stages/link_stage/reference_needed_symbols.rs:20
+    in rolldown::stages::link_stage::reference_needed_symbols::reference_needed_symbols
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.075232Z DEBUG rolldown::stages::link_stage::cross_module_optimization: enter
+    at crates/rolldown/src/stages/link_stage/cross_module_optimization.rs:72
+    in rolldown::stages::link_stage::cross_module_optimization::cross_module_optimization
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.075240Z DEBUG rolldown::stages::link_stage::cross_module_optimization: close, time.busy: 8.63µs, time.idle: 591ns
+    at crates/rolldown/src/stages/link_stage/cross_module_optimization.rs:72
+    in rolldown::stages::link_stage::cross_module_optimization::cross_module_optimization
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.075251Z DEBUG rolldown::stages::link_stage::tree_shaking::include_statements: enter
+    at crates/rolldown/src/stages/link_stage/tree_shaking/include_statements.rs:255
+    in rolldown::stages::link_stage::tree_shaking::include_statements::include_statements
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.075354Z DEBUG rolldown::stages::link_stage::tree_shaking::include_statements: close, time.busy: 101µs, time.idle: 874ns
+    at crates/rolldown/src/stages/link_stage/tree_shaking/include_statements.rs:255
+    in rolldown::stages::link_stage::tree_shaking::include_statements::include_statements
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.075376Z DEBUG rolldown::stages::link_stage::patch_module_dependencies: enter
+    at crates/rolldown/src/stages/link_stage/patch_module_dependencies.rs:10
+    in rolldown::stages::link_stage::patch_module_dependencies::patch_module_dependencies
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.075463Z DEBUG rolldown::stages::link_stage::patch_module_dependencies: close, time.busy: 85.4µs, time.idle: 1.15µs
+    at crates/rolldown/src/stages/link_stage/patch_module_dependencies.rs:10
+    in rolldown::stages::link_stage::patch_module_dependencies::patch_module_dependencies
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.075508Z DEBUG rolldown::stages::link_stage: close, time.busy: 1.11ms, time.idle: 5.69µs
+    at crates/rolldown/src/stages/link_stage/mod.rs:241
+    in rolldown::stages::link_stage::link
+
+  2026-10-27T13:53:57.075529Z DEBUG rolldown::stages::generate_stage: enter
+    at crates/rolldown/src/stages/generate_stage/mod.rs:146
+    in rolldown::stages::generate_stage::generate
+
+  2026-10-27T13:53:57.075559Z DEBUG rolldown::stages::generate_stage::code_splitting: enter
+    at crates/rolldown/src/stages/generate_stage/code_splitting.rs:53
+    in rolldown::stages::generate_stage::code_splitting::generate_chunks
+    in rolldown::stages::generate_stage::generate
+
+  2026-10-27T13:53:57.075630Z DEBUG rolldown::stages::generate_stage::code_splitting: enter
+    at crates/rolldown/src/stages/generate_stage/code_splitting.rs:53
+    in rolldown::stages::generate_stage::code_splitting::generate_chunks
+    in rolldown::stages::generate_stage::generate
+
+  2026-10-27T13:53:57.075647Z DEBUG rolldown::stages::generate_stage::code_splitting: close, time.busy: 86.9µs, time.idle: 2.27µs
+    at crates/rolldown/src/stages/generate_stage/code_splitting.rs:53
+    in rolldown::stages::generate_stage::code_splitting::generate_chunks
+    in rolldown::stages::generate_stage::generate
+
+  2026-10-27T13:53:57.075738Z DEBUG rolldown::stages::generate_stage::compute_cross_chunk_links: enter
+    at crates/rolldown/src/stages/generate_stage/compute_cross_chunk_links.rs:103
+    in rolldown::stages::generate_stage::compute_cross_chunk_links::compute_cross_chunk_links
+    in rolldown::stages::generate_stage::generate
+
+  2026-10-27T13:53:57.075895Z DEBUG rolldown::stages::generate_stage::compute_cross_chunk_links: close, time.busy: 156µs, time.idle: 1.34µs
+    at crates/rolldown/src/stages/generate_stage/compute_cross_chunk_links.rs:103
+    in rolldown::stages::generate_stage::compute_cross_chunk_links::compute_cross_chunk_links
+    in rolldown::stages::generate_stage::generate
+
+  2026-10-27T13:53:57.075934Z DEBUG rolldown::stages::generate_stage: enter
+    at crates/rolldown/src/stages/generate_stage/mod.rs:279
+    in rolldown::stages::generate_stage::generate_chunk_name_and_preliminary_filenames
+    in rolldown::stages::generate_stage::generate
+
+  2026-10-27T13:53:57.076003Z DEBUG rolldown::stages::generate_stage: enter
+    at crates/rolldown/src/stages/generate_stage/mod.rs:279
+    in rolldown::stages::generate_stage::generate_chunk_name_and_preliminary_filenames
+    in rolldown::stages::generate_stage::generate
+
+  2026-10-27T13:53:57.076023Z DEBUG rolldown::stages::generate_stage: close, time.busy: 87.9µs, time.idle: 2.11µs
+    at crates/rolldown/src/stages/generate_stage/mod.rs:279
+    in rolldown::stages::generate_stage::generate_chunk_name_and_preliminary_filenames
+    in rolldown::stages::generate_stage::generate
+
+  2026-10-27T13:53:57.076038Z DEBUG rolldown::stages::generate_stage: enter
+    at crates/rolldown/src/stages/generate_stage/mod.rs:231
+    in rolldown::stages::generate_stage::deconflict_chunk_symbols
+    in rolldown::stages::generate_stage::generate
+
+  2026-10-27T13:53:57.076072Z DEBUG rolldown::stages::generate_stage: close, time.busy: 33.1µs, time.idle: 1.08µs
+    at crates/rolldown/src/stages/generate_stage/mod.rs:231
+    in rolldown::stages::generate_stage::deconflict_chunk_symbols
+    in rolldown::stages::generate_stage::generate
+
+  2026-10-27T13:53:57.076091Z DEBUG rolldown::stages::generate_stage::resolve_file_urls: enter
+    at crates/rolldown/src/stages/generate_stage/resolve_file_urls.rs:25
+    in rolldown::stages::generate_stage::resolve_file_urls::resolve_file_urls
+    in rolldown::stages::generate_stage::generate
+
+  2026-10-27T13:53:57.076100Z DEBUG rolldown::stages::generate_stage::resolve_file_urls: enter
+    at crates/rolldown/src/stages/generate_stage/resolve_file_urls.rs:25
+    in rolldown::stages::generate_stage::resolve_file_urls::resolve_file_urls
+    in rolldown::stages::generate_stage::generate
+
+  2026-10-27T13:53:57.076107Z DEBUG rolldown::stages::generate_stage::resolve_file_urls: close, time.busy: 15.2µs, time.idle: 1.16µs
+    at crates/rolldown/src/stages/generate_stage/resolve_file_urls.rs:25
+    in rolldown::stages::generate_stage::resolve_file_urls::resolve_file_urls
+    in rolldown::stages::generate_stage::generate
+
+  2026-10-27T13:53:57.076116Z DEBUG rolldown::stages::generate_stage::finalize_modules: enter
+    at crates/rolldown/src/stages/generate_stage/finalize_modules.rs:17
+    in rolldown::stages::generate_stage::finalize_modules::finalize_modules
+    in rolldown::stages::generate_stage::generate
+
+  2026-10-27T13:53:57.076126Z DEBUG rolldown::stages::generate_stage::finalize_modules: enter
+    at crates/rolldown/src/stages/generate_stage/finalize_modules.rs:55
+    in rolldown::stages::generate_stage::finalize_modules::finalize_modules
+    in rolldown::stages::generate_stage::finalize_modules::finalize_modules
+    in rolldown::stages::generate_stage::generate
+
+  2026-10-27T13:53:57.076241Z DEBUG rolldown::stages::generate_stage::finalize_modules: close, time.busy: 113µs, time.idle: 1.32µs
+    at crates/rolldown/src/stages/generate_stage/finalize_modules.rs:55
+    in rolldown::stages::generate_stage::finalize_modules::finalize_modules
+    in rolldown::stages::generate_stage::finalize_modules::finalize_modules
+    in rolldown::stages::generate_stage::generate
+
+  2026-10-27T13:53:57.076264Z DEBUG rolldown::stages::generate_stage::finalize_modules: close, time.busy: 147µs, time.idle: 561ns
+    at crates/rolldown/src/stages/generate_stage/finalize_modules.rs:17
+    in rolldown::stages::generate_stage::finalize_modules::finalize_modules
+    in rolldown::stages::generate_stage::generate
+
+  2026-10-27T13:53:57.076279Z DEBUG rolldown::stages::generate_stage::render_chunk_to_assets: enter
+    at crates/rolldown/src/stages/generate_stage/render_chunk_to_assets.rs:148
+    in rolldown::stages::generate_stage::render_chunk_to_assets::instantiate_chunks
+    in rolldown::stages::generate_stage::generate
+
+  2026-10-27T13:53:57.076422Z DEBUG rolldown::stages::generate_stage::render_chunk_to_assets: enter
+    at crates/rolldown/src/stages/generate_stage/render_chunk_to_assets.rs:148
+    in rolldown::stages::generate_stage::render_chunk_to_assets::instantiate_chunks
+    in rolldown::stages::generate_stage::generate
+
+  2026-10-27T13:53:57.076448Z DEBUG rolldown::stages::generate_stage::render_chunk_to_assets: close, time.busy: 168µs, time.idle: 1.79µs
+    at crates/rolldown/src/stages/generate_stage/render_chunk_to_assets.rs:148
+    in rolldown::stages::generate_stage::render_chunk_to_assets::instantiate_chunks
+    in rolldown::stages::generate_stage::generate
+
+  2026-10-27T13:53:57.076491Z DEBUG rolldown::stages::generate_stage::minify_chunks: enter
+    at crates/rolldown/src/stages/generate_stage/minify_chunks.rs:21
+    in rolldown::stages::generate_stage::minify_chunks::minify_chunks
+    in rolldown::stages::generate_stage::generate
+
+  2026-10-27T13:53:57.076583Z DEBUG rolldown::stages::generate_stage::minify_chunks: close, time.busy: 91.8µs, time.idle: 1.32µs
+    at crates/rolldown/src/stages/generate_stage/minify_chunks.rs:21
+    in rolldown::stages::generate_stage::minify_chunks::minify_chunks
+    in rolldown::stages::generate_stage::generate
+
+  2026-10-27T13:53:57.076606Z DEBUG rolldown::stages::generate_stage::post_banner_footer: enter
+    at crates/rolldown/src/stages/generate_stage/post_banner_footer.rs:11
+    in rolldown::stages::generate_stage::post_banner_footer::post_banner_footer
+    in rolldown::stages::generate_stage::generate
+
+  2026-10-27T13:53:57.076615Z DEBUG rolldown::stages::generate_stage::post_banner_footer: close, time.busy: 8.44µs, time.idle: 713ns
+    at crates/rolldown/src/stages/generate_stage/post_banner_footer.rs:11
+    in rolldown::stages::generate_stage::post_banner_footer::post_banner_footer
+    in rolldown::stages::generate_stage::generate
+
+  2026-10-27T13:53:57.076672Z DEBUG rolldown::stages::generate_stage: enter
+    at crates/rolldown/src/stages/generate_stage/mod.rs:146
+    in rolldown::stages::generate_stage::generate
+
+  2026-10-27T13:53:57.076693Z DEBUG rolldown::stages::generate_stage: close, time.busy: 1.16ms, time.idle: 2.93µs
+    at crates/rolldown/src/stages/generate_stage/mod.rs:146
+    in rolldown::stages::generate_stage::generate
+

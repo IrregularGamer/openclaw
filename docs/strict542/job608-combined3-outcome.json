@@ -1,0 +1,67 @@
+{
+  "artifacts": {
+    "job608-combined3-broker.txt": "ef0e74d372bdacab8d62d0a56160c6af4fc294b834358bd5d40a42977b0a33a5",
+    "job608-combined3-native-build.txt": "426eb419f1ee83dcac17989f4c756fce1780c4b5fc142ed883fbaee4a99c95ab",
+    "job608-combined3-native-positive.txt": "68f469347e5a43f7cdd7c5a90ee959a399cb81f86a31cef9bd641a93e64ff642",
+    "job608-combined3-native-receipt.json": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+    "job608-combined3-parity.json": "56682414120f0dd5b29f15aef8feb24143a2619f888b92a33987f40487d24418",
+    "job608-combined3-probe.txt": "48b0d037cfe0aa39507f656f2ca22dee56da3c986bf9719961f6203e54f57ea8",
+    "job608-combined3-release-trace.txt": "1f2e90fa8b769bb37db6db3f42ebf66405e940b085b8f6ba03d48a1dbc496195",
+    "job608-combined3-retention-negative.txt": "0d22b30e323e79e3266d2f6a5af221775a84b79c3130561d5d98b96fd1f45440",
+    "job608-combined3-settlement.json": "c9b39e636a0cfba3b23114cc25c72ac34ac22dc0f123418b02673b77b7f6d0b7"
+  },
+  "config15_executed": false,
+  "full_config_census_executed": false,
+  "installed_fixture_checks_passed": 13,
+  "isolated_receipt_present": false,
+  "kind": "combined3-refused-old-source-ceiling-NOT-build-package-success",
+  "launch_commit": "4cb57dc06e8689743aa76c576b7ff83792e325ac",
+  "manifest_sha256": "7995990bc28e736e62bd6c9b2a7ec0929a1646e6a36ad8c81f5e9e4f7d739ffa",
+  "native_addon_sha256": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042",
+  "native_positive_tests_passed": 9,
+  "native_receipt_and_addon_byte_equal_to_independently_accepted_compile": true,
+  "native_receipt_complete": true,
+  "native_receipt_sha256": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+  "next": "Independent exact outcome/settlement review; then one future fresh>=51min foreground normally admitted corrected combined4, manifest89fe92b2/source d3925759/reviewe9dc7d11 at4g1CPU2700s+15. Current worker MUST NOT launch. All255 checks/full census/rebuild equality required before package promotion.",
+  "observed_capacity": {
+    "capacityBytes": 4294967296,
+    "limitBytes": 3858796544,
+    "unresolved": false,
+    "usageKnown": true
+  },
+  "offload_exit": 1,
+  "outer_timeout_hit": false,
+  "paired_libtest_receipt_sha256": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946",
+  "refusal": "probe requires observed capacity no larger than admitted2GiB (admitProbe before config import/diagnostic receipt)",
+  "retention_negative_detected": true,
+  "scoped_checks_passed": 227,
+  "settlement": {
+    "entries": [
+      "export-manifest.json",
+      "result598",
+      "run608.sh"
+    ],
+    "live_lease_is_current_worker_only": true,
+    "live_lease_sha256": [
+      "f9c5b9a01adf94281bb3b7517136c30edbb8f2024ff55669a16beeead4719d2a"
+    ],
+    "managed_containers": 0,
+    "mutation_performed": false,
+    "observed_utc": "2026-10-27T13:55:16.664618+00:00",
+    "runner_lock_available": true,
+    "scope": "Read-only settled runner snapshot; current worker lease may remain until normal exit, future launch requires fresh normal worker admission",
+    "slot": "tmp-export608-native-compact-combined3-cb70d2dc"
+  },
+  "source_commit": "6d9c429b4886d26c83888f1570f977ce63e215a7",
+  "source_correction": {
+    "change": "diagnostic upper capacity ceiling2->approved4GiB only; floor1625784320 unchanged",
+    "commit": "2021131975e1373c10e4bb23b77ca1aa3ae6bc3b",
+    "new_policy_sha256": "27ec4a3b17304d0438b301e8e8323a65a4a801d8786a32732179d914e65b7cda",
+    "old_policy_sha256": "89f1b494c1ecff48555b33565b67092037bc6439944ac4c35f0f53c70ac4d58f",
+    "review": "2e8dfc11955bb5131cbfb23c494c5f6ddadd3cb9"
+  },
+  "state": "SPENT; never relaunch combined3",
+  "stock_native_parity_variants": 8,
+  "total_affected_checks_passed": 240,
+  "typed_build_and_production_package": "NOT_RUN; no runtime action/tree/seal or install authority"
+}
