@@ -1,0 +1,101 @@
+{
+  "additional_current_source": "trusted native preparation dbb5f3c5 six focused tests pass; UNWIRED and not part of frozen combined4; independent review pending",
+  "all57_main_plus_ai_passed": true,
+  "all_four_worker_results_passed": true,
+  "artifacts": {
+    "job608-combined4-broker.txt.gz": "3ba3d50e6e12317ff44dda5e70db307ab2eccb9df064c5cb293b0e9fcd1f9312",
+    "job608-combined4-diagnostic-receipt.json": "09be7fd131a603910cf3f055e7955678daf78370f092f44a96164bbeba1bf6ac",
+    "job608-combined4-native-build.txt.gz": "a5db3562171c8a6aeb8e5aa692c066ee9fde1e627810bde2d835571ba4d5a21e",
+    "job608-combined4-native-positive.txt.gz": "5c14f9c452406129eb953db3413a25662dc742e539cd9be9830d92cdb28e98e7",
+    "job608-combined4-native-receipt.json": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+    "job608-combined4-parity.json": "56682414120f0dd5b29f15aef8feb24143a2619f888b92a33987f40487d24418",
+    "job608-combined4-probe.txt.gz": "be9a6968333eb29b5e44789a231c5e77d94e96a55bad7a9bc83b1d8dc446ac9b",
+    "job608-combined4-release-trace.txt.gz": "933396268385352273bb7e1e069ee0ee70349768a57936cb8a433764e9dc847a",
+    "job608-combined4-retention-negative.txt.gz": "a46ece2f307e98964ff7996ea4e8aca0bd9180fd5b548218cae903fe45da56fc",
+    "job608-combined4-settlement.json": "1368c5f68b5ee5b7482f5dd6044de66f622413564870e19ef21f58055a233734"
+  },
+  "baseline_proposal": "123114cc/post619 1a0009c1; independent review pending",
+  "config15_elapsed_ms": 86356.59909900001,
+  "installed_fixture_checks_passed": 13,
+  "kind": "COMPLETE_COMBINED4_DIAGNOSTIC_NOT_TYPED_BUILD_OR_PACKAGE",
+  "launch_commit": "99012768",
+  "manifest_sha256": "89fe92b2c216c08fa313cf066b11305343af97831e736cee85347d0315da7732",
+  "native_addon_sha256": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042",
+  "native_positive_tests_passed": 9,
+  "native_receipt_complete": true,
+  "native_receipt_sha256": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+  "next": "Exact independent diagnostic/baseline/helper review, then existing package promotion source work and fresh admitted full typed frozen package. No package/application authority.",
+  "observed_capacity": {
+    "availableBytes": 14141181952,
+    "capacityBytes": 4294967296,
+    "limitBytes": 4002062336,
+    "unresolved": false,
+    "usageKnown": true
+  },
+  "offload_exit": 0,
+  "outer_timeout_hit": false,
+  "paired_libtest_receipt_sha256": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946",
+  "probe_elapsed_ms": 430004.898697,
+  "raw_log_identities": {
+    "job608-combined4-broker.txt.gz": {
+      "encoding": "gzip; exact original bytes",
+      "sha256": "5b22ac9e2ecf2c7bc173a591929dc3c842fa13fbc9aeb38dad2b4e91f2d549a8",
+      "source": "/home/deploy/agentq/runs/608/combined4-actual-offload.log"
+    },
+    "job608-combined4-native-build.txt.gz": {
+      "encoding": "gzip; exact original bytes",
+      "sha256": "5b810e99414109fea52c1176b0ef9d6bd0529907dccf9c4c90122c04c16f2bde",
+      "source": "/home/deploy/agentq/runs/608/combined4-results/result598-isolated/native-compile.log"
+    },
+    "job608-combined4-native-positive.txt.gz": {
+      "encoding": "gzip; exact original bytes",
+      "sha256": "0a6769b4fc2808f4ab34556c28af9fcbd67151749c3a7b01a7328cdeecb9f8d6",
+      "source": "/home/deploy/agentq/runs/608/combined4-results/result598-native/compaction-tests.log"
+    },
+    "job608-combined4-probe.txt.gz": {
+      "encoding": "gzip; exact original bytes",
+      "sha256": "2d1fc66956e25f7a998d34f4b524aa21d54f4e1f41e540c5ebb3e01dd36070b8",
+      "source": "/home/deploy/agentq/runs/608/combined4-results/result598-isolated/probe.log"
+    },
+    "job608-combined4-release-trace.txt.gz": {
+      "encoding": "gzip; exact original bytes",
+      "sha256": "079a3a30f165bf582ac7b913deca1eb0776fefb1a0439e541096e6cd97130ef5",
+      "source": "/home/deploy/agentq/runs/608/combined4-results/result598-native/release-phase-trace.log"
+    },
+    "job608-combined4-retention-negative.txt.gz": {
+      "encoding": "gzip; exact original bytes",
+      "sha256": "07110c1cfd3fe3179563c0c6c304cf36420e03870b9d2468032d5c194c25b0f4",
+      "source": "/home/deploy/agentq/runs/608/combined4-results/result598-native/lifetime-retention-negative.log"
+    }
+  },
+  "retention_negative_detected": true,
+  "scoped_checks_passed": 242,
+  "settlement": {
+    "entries": [
+      "export-manifest.json",
+      "result598",
+      "run608.sh"
+    ],
+    "live_lease_is_current_worker_only": true,
+    "live_lease_sha256": [
+      "5173d0aee456ab38970c6ca95423fa5b9f7f60f26301b10da3e0ef3976dd424e"
+    ],
+    "managed_containers": 0,
+    "mutation_performed": false,
+    "observed_utc": "2026-10-27T14:56:22.916103+00:00",
+    "runner_lock_available": true,
+    "scope": "Read-only settled runner snapshot; current worker lease may remain until normal exit, future launch requires fresh normal worker admission",
+    "slot": "tmp-export608-native-compact-combined4-c853a4fd"
+  },
+  "source_commit": "d3925759b646cc44040dc5478d753085e25b4d86",
+  "state": "SPENT; never relaunch combined4",
+  "stock_native_parity_variants": 8,
+  "total_affected_checks_passed": 255,
+  "typed_build_and_production_package": "NOT_RUN; package wiring/action/tree/next seal/final reviews remain",
+  "worker_indices": [
+    46,
+    47,
+    48,
+    49
+  ]
+}
