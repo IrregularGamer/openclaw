@@ -1,0 +1,1 @@
+{"checks": ["gateway-scoped", "native-owner", "supervisor-ipc", "cancellation-settlement", "application-preparation", "frozen-package-policy"], "exit_code": 0, "source_commit": "6d9c429b4886d26c83888f1570f977ce63e215a7", "test_log_sha256": "86c20131abb7de2828b0c50e006ee7afd10f6690bf72e2298ac53e36caa11415"}

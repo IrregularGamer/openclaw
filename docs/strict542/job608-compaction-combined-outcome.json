@@ -1,0 +1,58 @@
+{
+  "addon_emitted": false,
+  "application_authority": false,
+  "broker_exit": 75,
+  "cause_limit": "Broker reported lease expired or revoked; exact revocation trigger not established. No implementation assertion failed.",
+  "ecmascript_release_time": "9m51s",
+  "elapsed_seconds": 1427.565,
+  "evidence_sha256": {
+    "job608-compaction-combined-broker.txt": "c77df336749001e93bce04d61002307f16cefad6096aac81fc1e9f1c18bf4a8a",
+    "job608-compaction-combined-checks.json": "1dbc17ed1b93d5225d3b2a63585866148f49f3a7d6ab63a672be8a7062b9c7c6",
+    "job608-compaction-combined-native-build.txt": "0193fd13c00e12f37c776743638721bbed10a148b8d1642e8fd0af2281c7fd69",
+    "job608-compaction-combined-native-negative.txt": "0d22b30e323e79e3266d2f6a5af221775a84b79c3130561d5d98b96fd1f45440",
+    "job608-compaction-combined-native-receipt.json": "20821f5b4634d9a126d7b25c4cb250b7cd8954881e4ad49f26487170635e7709",
+    "job608-compaction-combined-native-tests.txt": "f6a74e06f0e0a05f7166514a13becd96897d87f2c260eeb0ec232680ba267ff8",
+    "job608-compaction-combined-settlement.json": "2104caa311759ae8e1e8b0225f69a208846914f61220d12576702fb228b73103",
+    "job608-compaction-combined-tests.txt": "86c20131abb7de2828b0c50e006ee7afd10f6690bf72e2298ac53e36caa11415"
+  },
+  "exec_session": 31288,
+  "export_state": "SPENT; do not relaunch",
+  "full_typed_package": "NOT_RUN",
+  "kind": "INTERRUPTED_COMPACTION_COMBINED_LEASE_REVOKED_NOT_BUILD_SUCCESS",
+  "manifest_sha256": "efa4b30f839a3b00739169f3beadd06e7989552208e592f4f5440c9bc8246968",
+  "native_byte_equality_proved": false,
+  "native_negative_failures_expected": 3,
+  "native_positive_tests_passed": 9,
+  "native_receipt_complete": false,
+  "next": "Do not retry in this worker (exit75 rule). Next admitted worker must preserve spent inputs, reconcile retained slot before reuse, prepare a fresh exact secretless source-only export and obtain independent execution review; never upload prior addon/cache or bypass budgets.",
+  "scoped_node_groups": [
+    101,
+    34
+  ],
+  "scoped_python_groups": [
+    15,
+    18,
+    13,
+    19,
+    11,
+    3,
+    5,
+    2,
+    6
+  ],
+  "scoped_tests_passed": 227,
+  "settlement": {
+    "all_records_expiry_zero": false,
+    "all_records_revoked": false,
+    "lease_records": 426,
+    "live_leases": 0,
+    "managed_containers": 0,
+    "mutation_performed": false,
+    "observed_utc": "2026-10-27T04:05:42.236539+00:00",
+    "runner_lock_available": true
+  },
+  "slot": "tmp-export608-native-compact-combined1-c18fb246",
+  "source_commit": "6d9c429b4886d26c83888f1570f977ce63e215a7",
+  "typed_inventory_parity_fixtures_config_census": "NOT_RUN",
+  "underlying_offload_status": "remote_lease_denied"
+}

@@ -1,0 +1,26 @@
+{"kind":"BEFORE_ARCHIVE_RELEASE608","current":"922828800\n","stat":"anon 9625600\nfile 794656768\nkernel 118132736\nkernel_stack 180224\npagetables 700416\nsec_pagetables 0\npercpu 2520\nsock 0\nvmalloc 16384\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 0\nfile_dirty 203956224\nfile_writeback 360448\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 9596928\ninactive_file 791302144\nactive_file 3354624\nunevictable 0\nslab_reclaimable 116825248\nslab_unreclaimable 342376\nslab 117167624\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 60772\npgmajfault 45\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\n"}
+{"kind":"AFTER_ARCHIVE_RELEASE608","current":"923013120\n","stat":"anon 9961472\nfile 794656768\nkernel 118132736\nkernel_stack 180224\npagetables 708608\nsec_pagetables 0\npercpu 2520\nsock 0\nvmalloc 16384\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 0\nfile_dirty 169398272\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 9961472\ninactive_file 791302144\nactive_file 3354624\nunevictable 0\nslab_reclaimable 116826096\nslab_unreclaimable 342776\nslab 117168872\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 60863\npgmajfault 45\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\n"}
+✔ compiler warnings, unresolved imports and unsettled/failed runs refuse success (0.554961ms)
+✔ accepts only the owning tsx launcher cache-disabled value (0.542814ms)
+✔ refuses inherited output and native thread scheduling controls even when empty (0.660562ms)
+✔ refuses inherited allocator controls even when empty or matching generated policy (0.714167ms)
+✔ fixed allocator policy preserves caller and pool bounds without raising any budget (1.522394ms)
+✔ refuses the unified graph at or below the observed reclaim-thrash limit (1.390331ms)
+✔ refuses caller-selected native addon even when empty (1.035602ms)
+✔ refuses inherited native tracing filters and output destinations before imports (0.972902ms)
+✔ only config15 receives the fixed release phase tracing policy without caller mutation (0.569717ms)
+✔ only exact self-contained workers defer required minification (3.627217ms)
+✔ changed worker packaging/minify policy refuses instead of omitting a phase (0.763538ms)
+✔ each compiler refusal prevents minifier and second phase failure propagates (1.344236ms)
+✔ settled bundle precedes fixed minifier and expired deadline refuses (1.599491ms)
+✔ worker lazy barrels preserve owner input options and existing experimental policy (0.626397ms)
+ℹ tests 34
+ℹ suites 0
+ℹ pass 34
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1606.000249
+[offload-agent] job lease expired or revoked
+{"offload_status": "remote_lease_denied", "local_execution": false, "retry_requires_reconciliation": true}
