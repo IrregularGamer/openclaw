@@ -22,6 +22,8 @@ ROOT = Path('/var/lib/agentq-safety')
 SEAL = ROOT/'validation.json'
 JOURNAL = ROOT/'strict542-598-application.json'
 LOCK = ROOT/'admission.lock'
+BACKUP_ROOT = Path('/var/backups/strict542-598')
+OWNER_SOCKET = Path('/run/agentq-safety/owner542.sock')
 DB = Path('/home/deploy/agentq/state/agentq.db')
 BOOT = Path('/proc/sys/kernel/random/boot_id')
 # The original installed validator hashes through this preexisting sealed link.
@@ -257,13 +259,146 @@ def verify_disk(action,tree,prep):
     require(prep.file_hash(SEAL) == prep.file_hash(STAGE/'validation.next.json'),'installed full seal differs')
     seal_valid(read(SEAL),prep)
 
+def rollback_service_unchanged():
+    # Fixed read-only query, never a service action. A previously started or
+    # still active endpoint makes disk reversal unsafe even without a restart.
+    result=run(['/usr/bin/systemctl','show','strict542-owner.service','--no-pager',
+        '-p','MainPID','-p','ActiveState','-p','ExecMainStartTimestampMonotonic'],
+        capture_output=True,text=True,timeout=5)
+    values=dict(line.split('=',1) for line in result.stdout.splitlines() if '=' in line)
+    require(result.returncode == 0 and values == {'MainPID':'0','ActiveState':'inactive',
+        'ExecMainStartTimestampMonotonic':'0'} and not os.path.lexists(OWNER_SOCKET),
+        'root supervisor/socket was started or remains active; reviewed reconciliation required')
+
+def restorable_metadata(value):
+    # ctime proves original identity but the kernel does not permit restoring it.
+    return {key:value[key] for key in ('mode','uid','gid','mtime_ns','xattrs_sha256')}
+
+def check_backup(path,expected_hash,expected_metadata,prep):
+    protected(path.parent)
+    info=path.lstat()
+    require(stat.S_ISREG(info.st_mode) and info.st_nlink == 1,'original backup type drift')
+    saved=read(path.with_name(path.name+'.metadata.json'))
+    require(set(saved) == {'original','xattrs'} and saved['original'] == expected_metadata
+        and prep.digest(saved['xattrs']) == expected_metadata['xattrs_sha256'],
+        'original backup metadata receipt drift')
+    require(prep.file_hash(path) == expected_hash and xattrs(path) == saved['xattrs']
+        and restorable_metadata(metadata(path,prep)) == restorable_metadata(expected_metadata),
+        'original backup bytes/metadata drift')
+    return saved
+
+def check_new_source(path,change,tree,prep):
+    new=change['new'];info=path.lstat()
+    require(not path.is_symlink() and (stat.S_IMODE(info.st_mode),info.st_uid,info.st_gid)
+        == (new['mode'],new['uid'],new['gid']),'rollback new target identity drift')
+    if change['source'] == 'runtime':
+        protected(path.parent);prep.check_tree(tree,path)
+        for item in (path,*path.rglob('*')):
+            identity=item.lstat()
+            require((identity.st_uid,identity.st_gid) == (new['uid'],new['gid']),
+                'rollback runtime ownership drift')
+    else:
+        require(stat.S_ISREG(info.st_mode) and info.st_nlink == 1
+            and prep.file_hash(path) == new['sha256'],'rollback new target bytes drift')
+
+def check_new_file_at(parent_fd,name,new,prep):
+    fd=os.open(name,os.O_RDONLY|os.O_NOFOLLOW,dir_fd=parent_fd)
+    with os.fdopen(fd,'rb') as stream:
+        info=os.fstat(stream.fileno())
+        require(stat.S_ISREG(info.st_mode) and info.st_nlink == 1
+            and (stat.S_IMODE(info.st_mode),info.st_uid,info.st_gid)
+                == (new['mode'],new['uid'],new['gid'])
+            and prep.sha(stream.read()) == new['sha256'],'pinned rollback file drift')
+
+def rollback(action,tree,reviews,ack,prep):
+    record=read(JOURNAL);payload=action['action'];changes=payload['changes'];baseline=payload['baseline']
+    require(record.get('state') == 'DISK_APPLIED_SERVICES_UNCHANGED'
+        and record.get('action_sha256') == action['action_sha256']
+        and record.get('completed') == [change['target'] for change in changes],
+        'rollback requires the exact complete disk application; partial/poison/replay refused')
+    require(record.get('application_owner') == {'boot_id':ack['boot_id'],'owner':ack['owner']}
+        and ack['boot_id'] == baseline['boot_id'],
+        'rollback requires the original pre-restart owner; old/missing/replaced binding refused')
+    require(len(changes) == 6 and {change['target'] for change in changes} == set(prep.TARGETS.values())
+        and all(change['old'] == {'state':'absent'} for change in changes),
+        'rollback supports only the six originally absent fixed targets')
+    directory=Path(payload['exclusive_backup_root'])
+    require(record.get('backup') == str(directory) and directory.parent == BACKUP_ROOT
+        and prep.hexid(directory.name),'rollback backup identity drift')
+    protected(directory)
+    quarantine=directory/'rollback-quarantine'
+    require(not os.path.lexists(quarantine),'previous rollback quarantine requires reconciliation')
+    owner_check(ack,action,prep);quiet(prep);rollback_service_unchanged()
+    verify_disk(action,tree,prep)
+    original=directory/'original-full-seal'
+    saved=check_backup(original,baseline['seal_sha256'],baseline['seal_metadata'],prep)
+    original_seal=json.loads(original.read_bytes());seal_valid(original_seal,prep)
+    next_seal(original_seal,read(STAGE/'validation.next.json'),action,reviews,prep)
+    for item in payload['backup_inventory']:
+        if item['target'] == str(SEAL):continue
+        marker=(directory/item['backup_name']).with_suffix('.ABSENT')
+        protected(marker)
+        require(marker.stat().st_size <= 64*1024*1024 and marker.read_bytes() == prep.canonical(item),
+            'original absence backup drift')
+    for item in payload['unchanged_guard_backup_inventory']:
+        check_backup(directory/item['backup_name'],item['original']['sha256'],item['original']['metadata'],prep)
+    # Verify EVERY new target before any mutation, then repeat at each pinned
+    # rename. Renames preserve all bytes for review; no recursive deletion exists.
+    for change in changes:check_new_source(Path(change['target']),change,tree,prep)
+    record.update(state='ROLLBACK_INCOMPLETE_POISON',rollback_completed=[],rollback_quarantine=str(quarantine))
+    checkpoint(record,prep)
+    quarantine.mkdir(mode=0o700);protected(quarantine);fsync_dir(directory)
+    destination_fd=os.open(quarantine,os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW)
+    try:
+        for index,change in enumerate(changes):
+            owner_check(ack,action,prep);quiet(prep);rollback_service_unchanged();verify_guards(action,prep)
+            require(prep.file_hash(SEAL) == prep.file_hash(STAGE/'validation.next.json'),'rollback seal drift')
+            seal_valid(original_seal,prep)
+            target=Path(change['target']);check_new_source(target,change,tree,prep)
+            source_fd=parents(target)
+            try:
+                if change['source'] != 'runtime':check_new_file_at(source_fd,target.name,change['new'],prep)
+                # Root-only exclusive destination; EXDEV or any failure leaves
+                # poison and all original/quarantined bytes for reconciliation.
+                os.rename(target.name,str(index),src_dir_fd=source_fd,dst_dir_fd=destination_fd)
+                os.fsync(source_fd);os.fsync(destination_fd)
+            finally:os.close(source_fd)
+            check_new_source(quarantine/str(index),change,tree,prep)
+            record['rollback_completed'].append(change['target']);checkpoint(record,prep)
+    finally:os.close(destination_fd)
+    owner_check(ack,action,prep);quiet(prep);rollback_service_unchanged();verify_guards(action,prep)
+    require(all(not os.path.lexists(change['target']) for change in changes),'rollback target absence drift')
+    require(prep.file_hash(SEAL) == prep.file_hash(STAGE/'validation.next.json'),'rollback seal drift')
+    check_backup(original,baseline['seal_sha256'],baseline['seal_metadata'],prep)
+    seal_valid(original_seal,prep)
+    install_file(original,SEAL,baseline['seal_metadata'])
+    fd=os.open(SEAL,os.O_RDWR|os.O_NOFOLLOW)
+    try:
+        for name in os.listxattr(fd):
+            if name not in saved['xattrs']:os.removexattr(fd,name)
+        for name,value in saved['xattrs'].items():os.setxattr(fd,name,base64.b64decode(value,validate=True))
+        os.utime(fd,ns=(os.fstat(fd).st_atime_ns,baseline['seal_metadata']['mtime_ns']));os.fsync(fd)
+    finally:os.close(fd)
+    fsync_dir(SEAL.parent)
+    require(prep.file_hash(SEAL) == baseline['seal_sha256']
+        and restorable_metadata(metadata(SEAL,prep)) == restorable_metadata(baseline['seal_metadata']),
+        'restored original seal bytes/metadata drift')
+    seal_valid(read(SEAL),prep);verify_guards(action,prep)
+    require(all(not os.path.lexists(change['target']) for change in changes),'rollback target absence drift')
+    owner_check(ack,action,prep);quiet(prep);rollback_service_unchanged()
+    record.update(state='ROLLED_BACK_SERVICES_UNCHANGED',restored_seal_metadata=metadata(SEAL,prep),
+        metadata_limit='Original ctime is retained as evidence; kernel ctime cannot be restored. Preserve journal, backups and quarantine; no replay.')
+    checkpoint(record,prep)
+    return record
+
 def apply(action,tree,reviews,ack,prep):
     require(not os.path.lexists(JOURNAL),'application attempted already; independent reconciliation required')
     initial_checks(prep,action,reviews)
     directory=Path(action['action']['exclusive_backup_root'])
-    require(directory.parent == Path('/var/backups/strict542-598') and prep.hexid(directory.name),'fixed exclusive backup root required')
+    require(directory.parent == BACKUP_ROOT and prep.hexid(directory.name),'fixed exclusive backup root required')
     directory.parent.mkdir(mode=0o700,exist_ok=True);protected(directory.parent);directory.mkdir(mode=0o700)
-    record={'state':'INCOMPLETE_POISON','action_sha256':action['action_sha256'],'backup':str(directory),'completed':[]}
+    record={'state':'INCOMPLETE_POISON','action_sha256':action['action_sha256'],'backup':str(directory),'completed':[],
+        'application_owner':{'boot_id':ack['boot_id'],'owner':ack['owner']}}
     write_exclusive(JOURNAL,prep.canonical(record))
     backup(SEAL,directory/'original-full-seal',prep)
     for item in action['action']['backup_inventory']:
@@ -295,7 +430,7 @@ def apply(action,tree,reviews,ack,prep):
     return record
 
 def main():
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('command',choices=('preflight','apply','verify'));args=parser.parse_args()
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('command',choices=('preflight','apply','verify','rollback'));args=parser.parse_args()
     try:
         require(os.geteuid() == 0,'root required')
         signal.signal(signal.SIGALRM,expired);signal.setitimer(signal.ITIMER_REAL,900)
@@ -304,7 +439,8 @@ def main():
         with LOCK.open('r+') as stream:
             fcntl.flock(stream,fcntl.LOCK_EX|fcntl.LOCK_NB)
             action,tree,reviews,ack=load(prep)
-            if args.command == 'verify':
+            if args.command == 'rollback':print(prep.canonical(rollback(action,tree,reviews,ack,prep)).decode(),end='')
+            elif args.command == 'verify':
                 require(read(JOURNAL).get('state') == 'DISK_APPLIED_SERVICES_UNCHANGED','not a complete disk application')
                 quiet(prep);verify_disk(action,tree,prep);print('DISK_VERIFIED_ONLY; no restart, loaded generation, fresh postrestart HQ or accepted-run proof')
             elif args.command == 'preflight':
