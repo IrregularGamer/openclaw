@@ -1,6 +1,6 @@
 # Job608 lease-cap prerequisite: owned repair and exact resume gates
 
-2026-10-27 07:24 UTC. Job608 remains incomplete. No offload was attempted in
+2026-10-27 08:09 UTC. Job608 remains incomplete. No offload was attempted in
 this worker, and no installed, sealed, root, service or unit state was changed.
 
 The local sealed controller still has SHA256
@@ -40,8 +40,22 @@ decision or installation receipt. Exact approved candidate control.py SHA256:
 installer SHA256:
 `a5b105f37e603d30ffad029d9d6472854aef63a08356f3f92b67036471a9ec75`.
 
-Application continuation622 is done **without installation or an owner
-acknowledgement**. Its `runs/622/HQ-OWNER-GAP.md` is explicitly not a receipt;
+Application continuation622 finished **without installation or an owner
+acknowledgement**. At08:09UTC608 subsequently obtained a genuine ACK-only reply
+through the documented bridge to existing Pinch HQ, with no Telegram delivery.
+The verbatim [owner acknowledgement](job608-622-owner-ack.md) is preserved from
+`runs/622/owner-ack.md`, SHA256
+`d5bcde94e08c4be4cd39389df89aa04e8226c8bd955d697e4b256265c32730be`.
+Pinch accepts one later619 action only in a human-started foreground HQ turn
+in a natural settled gap; his reply explicitly supplies no self-continuation.
+The bridge turn was a queue relay and did not qualify for application. This is
+an acknowledgement of finite responsibility, not an application receipt or
+proof that a future turn/gap will occur. Its human-started-turn condition is
+Pinch's stated acceptance limit, not an added S approval requirement.
+The exact request/reply remain in608's run directory as
+`HQ-OWNERSHIP-REQUEST.md`, `HQ-OWNERSHIP-REPLY.json` and
+`HQ-OWNERSHIP-STDERR.log` (empty); gateway returned status`ok`.
+`runs/622/HQ-OWNER-GAP.md` remains a historical gap record, not a receipt;
 neither620 nor622 has HQ-RECEIPT.md. A done ops job or its unrecognized `HOLD:`
 text cannot satisfy application or prevent another608 dispatch. The live AND
 sealed controller still match OLD17338c48. Default2GiB offloads also refuse:
