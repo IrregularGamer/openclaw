@@ -36,6 +36,12 @@ for name,expected in m['native_stage_outputs'].items():
  assert hashlib.sha256(p.read_bytes()).hexdigest()==expected,name
 assert {str(p.relative_to('native608-stages')) for p in Path('native608-stages').rglob('*') if p.is_file()}=={'compile/receipt.json','libtests/receipt.json'}
 VERIFY_ARCHIVES
+# Ordinary tooling fixtures must not inherit the package-only native route.
+python3 - <<'ORDINARY_ENV'
+import os
+assert 'OPENCLAW_608_BOUNDED_PACKAGE' not in os.environ, 'inherited bounded package policy'
+assert not any(key.startswith('NAPI_RS_') for key in os.environ), 'inherited native compiler control'
+ORDINARY_ENV
 mkdir source native-source
 tar -xf source598.tar -C source
 tar -xf successor598.tar -C source
