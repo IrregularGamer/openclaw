@@ -78,10 +78,14 @@ node node_modules/vitest/vitest.mjs run --config test/vitest/vitest.tooling.conf
 # Failure output is surfaced above because a failed run returns no artifacts.
 # test/scripts files belong to the tooling shard; unit-fast auto-curation excludes them.
 cat strict542-checks/installed.log >>strict542-checks/tests.log
+echo STEP608 installed-checks-pass
 # These checks finish before the expensive source rebuild; no success receipt yet.
 node --input-type=module -e 'import {releaseDisposableStore} from "./scripts/lib/disposable-build-inputs.mjs"; releaseDisposableStore("..")'
 timeout -k 15s 2400s python3 docs/strict542/prepare-native-consumer608.py >strict542-checks/native-rebuild.log 2>&1 || { status=$?; tail -20 strict542-checks/native-rebuild.log; exit "$status"; }
+echo STEP608 native-rebuild-pass
 rm -rf ../native608-stages
+# A failed run returns no artifacts, so surface this block's own failure tail.
+set +e
 (
 set -e
 node --test docs/strict542/worker-minify608.test.mjs
@@ -91,6 +95,10 @@ NATIVE_ADDON=$(node --input-type=module -e 'import {nativeCompiler608} from "./s
 NAPI_RS_NATIVE_LIBRARY_PATH="$NATIVE_ADDON" node --import ./scripts/tsx.mjs --test docs/strict542/lazy-barrel608.test.mjs
 NAPI_RS_NATIVE_LIBRARY_PATH="$NATIVE_ADDON" node --test docs/strict542/worker-minify608.test.mjs
 ) >>strict542-checks/tests.log 2>&1
+status=$?
+set -e
+[ "$status" = 0 ] || { tail -40 strict542-checks/tests.log; exit "$status"; }
+echo STEP608 compiler-checks-pass
 # Only complete passing scoped + installed + real compiler checks emit this receipt.
 python3 - <<'CHECK_EVIDENCE'
 import json,hashlib
@@ -112,4 +120,5 @@ m=json.loads(Path('../export-manifest.json').read_text())
 for key,field in [('STRICT542_SOURCE_COMMIT','source_commit'),('STRICT542_SOURCE_EXPORT_SHA256','source_export_sha256'),('STRICT542_BUILD_RUN_ID','run_id')]:print(key+'='+shlex.quote(m[field]))
 BUILDER_IDENTITIES
 )"
+echo STEP608 builder-start
 env -i HOME="$HOME" PATH="$(dirname "$PNPM_COMMAND"):$(dirname "$NODE_PHYSICAL"):/usr/bin:/bin" STRICT542_SOURCE_COMMIT="$STRICT542_SOURCE_COMMIT" STRICT542_SOURCE_EXPORT_SHA256="$STRICT542_SOURCE_EXPORT_SHA256" STRICT542_BUILD_RUN_ID="$STRICT542_BUILD_RUN_ID" sh docs/strict542/build598.sh
