@@ -1,6 +1,6 @@
 # Job608 lease-cap prerequisite: owned repair and exact resume gates
 
-2026-10-27 06:35 UTC. Job608 remains incomplete. No offload was attempted in
+2026-10-27 07:24 UTC. Job608 remains incomplete. No offload was attempted in
 this worker, and no installed, sealed, root, service or unit state was changed.
 
 The local sealed controller still has SHA256
@@ -31,16 +31,54 @@ not an implementation test failure or a request for S to approve memory again.
   prohibition was respected. A later supported hold may be added only while608
   is queued, retaining all independent application gates after soft release.
 
-619's build request refers to a subsequent application task; the actual
-application owner is **620**, not619. Neither task authorizes strict542
+619's source preparation and automatic review621 are now complete. Delegated
+Decision624 accepts exact ops-work commit
+`78d0afd5a5f4b6304f80c18aa61f7a75c343b3c3`, with explicit privilege-policy
+review in ops-work `fad4877` (`reviews/decision624.md`). This is not a new S
+decision or installation receipt. Exact approved candidate control.py SHA256:
+`db4d290323a4e0d90ff597ed920da32dc610660813d1ac0c8a5798ae7d7bc3ce`;
+installer SHA256:
+`a5b105f37e603d30ffad029d9d6472854aef63a08356f3f92b67036471a9ec75`.
+
+Application continuation622 is done **without installation or an owner
+acknowledgement**. Its `runs/622/HQ-OWNER-GAP.md` is explicitly not a receipt;
+neither620 nor622 has HQ-RECEIPT.md. A done ops job or its unrecognized `HOLD:`
+text cannot satisfy application or prevent another608 dispatch. The live AND
+sealed controller still match OLD17338c48. Default2GiB offloads also refuse:
+the friend advertises capability4096 for every lease. Do not try a smaller
+budget as a workaround, request S approval again, or rerun unchanged admission.
+
+The genuine foreground nonqueue HQ owner must follow Decision624's exact
+approved `lease-cap-619/install_reviewed.py --check --approved-commit
+78d0afd5a5f4b6304f80c18aa61f7a75c343b3c3`, then the same without --check,
+using its original seal, settlement, backup/reseal/rollback gates. The full
+root command and post-application admitted baseline/candidate suites remain in
+`/home/deploy/agentq/runs/624/HQ-HANDOFF.md`. Do not execute it from608.
+Retain the original620 handoff; use622/HQ-RECEIPT.md for this actual continuation.
+Neither source approval nor that finite broker action authorizes strict542
 installation, a gateway restart or release497.
+
+The maintained dispatcher already implements and independently reviews the
+bounded external-install wait in agentq-ops `feature/598-external-install`
+commit3c18a58 (`docs/job598-external-wait.md`). Keep it by reference. It is
+uninstalled and cannot bootstrap its own gap. The separate pending dependency
+WAIT candidate in ops-work `dep-wait-620`/job623 is also uninstalled and only
+waits on jobs, not genuine HQ ownership. Do not emit either source-only marker
+to the live dispatcher, retarget575/588, reuse514's direct state restoration,
+or create another queue-worker-only application successor. No new provider
+call, detached installer or repeated docs-only admission retry supplies an owner.
 
 ## Resume only after actual reviewed application
 
 1. Consume619's exact independent automatic APPROVE and source/action/privilege/
-   seal reviews, then620's genuine nonqueue HQ application receipt at
-   `/home/deploy/agentq/runs/620/HQ-RECEIPT.md`. Revalidate original seal and exact
-   installed/current hashes; do not infer application from queue labels.
+   seal reviews at the exact624-approved artifact, then622's genuine nonqueue
+   HQ application receipt at `/home/deploy/agentq/runs/622/HQ-RECEIPT.md`.
+   Require actual installed AND sealed NEWdb4d2903, original-seal/backup/amendment
+   evidence, and accepted admitted baseline/candidate suite outcomes, inspecting
+   counts/timeouts as well as failures (run_suites.sh exit0 alone is insufficient).
+   Revalidate original seal and exact installed/current hashes; do not infer
+   application from queue labels or treat HQ-OWNER-GAP.md as success. Unknown,
+   missing, partial, or drifted evidence stops the build step without relaunch.
 2. In a fresh normally admitted worker with at least51minutes foreground life,
    revalidate all eight regular inputs of UNUSED
    `/home/deploy/agentq/tmp/export608-native-compact-combined3`. No result598

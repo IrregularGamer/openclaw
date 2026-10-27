@@ -1,6 +1,6 @@
 # Exact608 continuation after accepted compaction native stages
 
-CURRENT 2026-10-27 06:35Z: follow [the owned lease-cap prerequisite and resume gates](job608-lease-cap-prerequisite.md). Decision618 authorizes ONE4GiB/1CPU combined3 run after actual reviewed broker application620 of source619. The older combined2/default2GiB next-run directions below are historical and must not be executed. No build/package/application acceptance is added.
+CURRENT 2026-10-27 07:24Z: follow [the owned lease-cap prerequisite and resume gates](job608-lease-cap-prerequisite.md). Review621 and Decision624 approve source619 artifact78d0afd, but application continuation622 finished WITHOUT installation or HQ receipt; live/sealed controller remains17338c48. Do not retry offload until actual genuine HQ application/reseal and post-application suites satisfy those gates. Then Decision618 authorizes ONE4GiB/1CPU combined3 run. The older combined2/default2GiB next-run directions below are historical and must not be executed. No build/package/application acceptance is added.
 
 UPDATE 04:52Z: combined2 (manifest7995990b, launch fcd50009) is SPENT. Config15
 received SIGKILL (timedOut:false) in rolldown link_stage bind_imports_and_exports at
