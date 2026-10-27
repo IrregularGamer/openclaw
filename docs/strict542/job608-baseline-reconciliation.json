@@ -1,0 +1,300 @@
+{
+  "all_six_targets_remain_absent": true,
+  "application_authority": false,
+  "boot_unchanged": true,
+  "current_amendment_count": 33,
+  "current_complete_seal_checks": [
+    {
+      "path": "/etc/systemd/system.control/user@1000.service.d/50-MemoryHigh.conf",
+      "sha256": "22e7b1bbc0d7626abaec3dedb9c5794850cf9ee73b222a151dbd72a1621e470a"
+    },
+    {
+      "path": "/etc/systemd/system.control/user@1000.service.d/50-MemoryMax.conf",
+      "sha256": "ac2fa7212ae46984b9edb2165d1c9169c2e3a44557966703d5333dfc14a17420"
+    },
+    {
+      "path": "/etc/systemd/system.control/user@1000.service.d/50-MemorySwapMax.conf",
+      "sha256": "1dcc20473ac2a96df02e4692208ce9a25193aa4f2cb38da42f32f60aa9b01642"
+    },
+    {
+      "path": "/etc/systemd/system/abh-schedulers.slice",
+      "sha256": "3acaeb6b29f1cb693520cca2cb4fbb8d0fa243a17413bc5ecf49753446a45c43"
+    },
+    {
+      "path": "/etc/systemd/system/agentq-safety.service",
+      "sha256": "d3a9d826ffd786b962f859f6892c500502c8dac38c978f0e431893ec10adc7e8"
+    },
+    {
+      "path": "/etc/systemd/system/agentq-work.slice",
+      "sha256": "d17a978654c35ef3ea5a4e64a66b1e74df8e07ea73232a38c846a5a2070d9879"
+    },
+    {
+      "path": "/etc/systemd/system/offload-backup-drill.service.d/50-resource-safety.conf",
+      "sha256": "188d60276ad78de8699b02414c2460b9537700d5eae08e210e55b57dde340ccb"
+    },
+    {
+      "path": "/etc/systemd/system/offload-backup-push.service.d/50-resource-safety.conf",
+      "sha256": "188d60276ad78de8699b02414c2460b9537700d5eae08e210e55b57dde340ccb"
+    },
+    {
+      "path": "/etc/systemd/system/primperfection-db-backup.service.d/50-resource-safety.conf",
+      "sha256": "188d60276ad78de8699b02414c2460b9537700d5eae08e210e55b57dde340ccb"
+    },
+    {
+      "path": "/etc/systemd/system/recovery-maint.slice",
+      "sha256": "9440ca6246af8cf766d0fa7c4126dcdafcd3030357c878bc9418bf462eb0a5b8"
+    },
+    {
+      "path": "/home/deploy/.config/systemd/user.control/agentq.service.d/50-CPUQuota.conf",
+      "sha256": "038b6d9084bd73f54af90ad4a82da0feb2e017c9a1c1a5db10f584b638d49af6"
+    },
+    {
+      "path": "/home/deploy/.config/systemd/user.control/agentq.service.d/50-MemoryHigh.conf",
+      "sha256": "99e8ec4991bc701eb2bcca94cdfb1da35b1f6d5551f037b9a7b3977570b34be3"
+    },
+    {
+      "path": "/home/deploy/.config/systemd/user.control/agentq.service.d/50-MemoryMax.conf",
+      "sha256": "7706bf387087f26938b5912d5384169adb30e0fda37ac682c5721ea47fc52106"
+    },
+    {
+      "path": "/home/deploy/.config/systemd/user.control/agentq.service.d/50-MemorySwapMax.conf",
+      "sha256": "1dcc20473ac2a96df02e4692208ce9a25193aa4f2cb38da42f32f60aa9b01642"
+    },
+    {
+      "path": "/home/deploy/.config/systemd/user.control/agentq.service.d/50-TasksMax.conf",
+      "sha256": "968a2b50ae3dd8f11304648dbe15097f2698b7df5215f96145271ba90b8ff9db"
+    },
+    {
+      "path": "/home/deploy/.config/systemd/user.control/atlas.service.d/50-CPUQuota.conf",
+      "sha256": "038b6d9084bd73f54af90ad4a82da0feb2e017c9a1c1a5db10f584b638d49af6"
+    },
+    {
+      "path": "/home/deploy/.config/systemd/user.control/atlas.service.d/50-MemoryHigh.conf",
+      "sha256": "99e8ec4991bc701eb2bcca94cdfb1da35b1f6d5551f037b9a7b3977570b34be3"
+    },
+    {
+      "path": "/home/deploy/.config/systemd/user.control/atlas.service.d/50-MemoryMax.conf",
+      "sha256": "7706bf387087f26938b5912d5384169adb30e0fda37ac682c5721ea47fc52106"
+    },
+    {
+      "path": "/home/deploy/.config/systemd/user.control/atlas.service.d/50-MemorySwapMax.conf",
+      "sha256": "1dcc20473ac2a96df02e4692208ce9a25193aa4f2cb38da42f32f60aa9b01642"
+    },
+    {
+      "path": "/home/deploy/.config/systemd/user.control/atlas.service.d/50-TasksMax.conf",
+      "sha256": "a2c77612cd9f67eed8cfffd02531077cd1f55dabbd20f17ea43c6cc755875757"
+    },
+    {
+      "path": "/home/deploy/.config/systemd/user.control/codex-app-server-daemon.service.d/50-CPUQuota.conf",
+      "sha256": "3715bd9812abd154f7108e750b6f2ad78bc061014cb7fa865bd46ed002e31eea"
+    },
+    {
+      "path": "/home/deploy/.config/systemd/user.control/codex-app-server-daemon.service.d/50-MemoryHigh.conf",
+      "sha256": "65412676d299f0cc46af5bdaf5ba8ffaaadec0ffc4aee1d1106b66092fd80a6f"
+    },
+    {
+      "path": "/home/deploy/.config/systemd/user.control/codex-app-server-daemon.service.d/50-MemoryMax.conf",
+      "sha256": "8714f37da811546b5c7bc1babb7172cc7a42b27eb0cea820a323ef1b6d07eb44"
+    },
+    {
+      "path": "/home/deploy/.config/systemd/user.control/codex-app-server-daemon.service.d/50-MemorySwapMax.conf",
+      "sha256": "1dcc20473ac2a96df02e4692208ce9a25193aa4f2cb38da42f32f60aa9b01642"
+    },
+    {
+      "path": "/home/deploy/.config/systemd/user.control/codex-app-server-daemon.service.d/50-TasksMax.conf",
+      "sha256": "cfef6d2470ec06020555046f3f429606e0f9cd30389733990f6815b167709c6b"
+    },
+    {
+      "path": "/home/deploy/.config/systemd/user.control/openclaw-gateway.service.d/50-CPUQuota.conf",
+      "sha256": "ab464f824f689eb105b959ddaefbbf2ecf62c425729b0b926869ca5b72014cd7"
+    },
+    {
+      "path": "/home/deploy/.config/systemd/user.control/openclaw-gateway.service.d/50-MemoryHigh.conf",
+      "sha256": "02cc3cbfb501b18190ebe647634f0a4bb7d646b9f3d5802d4b241edd48dd11b2"
+    },
+    {
+      "path": "/home/deploy/.config/systemd/user.control/openclaw-gateway.service.d/50-MemoryMax.conf",
+      "sha256": "c1f9becb896a3242b8c2ce6bcd1d0a2ac1cf426aef2a01aafc611d4dc7b3fb0b"
+    },
+    {
+      "path": "/home/deploy/.config/systemd/user.control/openclaw-gateway.service.d/50-MemorySwapMax.conf",
+      "sha256": "1dcc20473ac2a96df02e4692208ce9a25193aa4f2cb38da42f32f60aa9b01642"
+    },
+    {
+      "path": "/home/deploy/.config/systemd/user.control/openclaw-gateway.service.d/50-TasksMax.conf",
+      "sha256": "bc1b29a0a7b2670264909de757faf165139cbb4b1a74cb358cf295db0ea34781"
+    },
+    {
+      "path": "/home/deploy/.local/bin/agentq-check",
+      "sha256": "f583e7642af8856a9ac6e88ff91383b09b4af772ed2497cd9cacdefdcad73a6a"
+    },
+    {
+      "path": "/home/deploy/.local/bin/devstack",
+      "sha256": "2be6bb7ada88dade5d86bfc5f99aa0651803ddb497a2b52048712224acba2828"
+    },
+    {
+      "path": "/home/deploy/.local/bin/offload",
+      "sha256": "1950b0030d10fb697d135901eaf508f8db40ec80405aa4d2423940d112c4cc60"
+    },
+    {
+      "path": "/home/deploy/agentq/agentq.py",
+      "sha256": "fa9a63fd9581a23f2acfbfe9455c9a53c8ba5d38d329c40a278aaab770d7bd8e"
+    },
+    {
+      "path": "/home/deploy/agentq/reasoning_policy.py",
+      "sha256": "8de5152b89546f29cb36213d4d7431efec96aaa1dabdcaeed925fee0a3b326f9"
+    },
+    {
+      "path": "/srv/primperfection/scripts/alphonomic_deploy_dev.sh",
+      "sha256": "bd2f54e8be3e8f2219f40a877ae32ea4cefbd3e2875e643d7a6f39b25d07a1da"
+    },
+    {
+      "path": "/srv/primperfection/scripts/alphonomic_deploy_prod.sh",
+      "sha256": "a3bf983dfd7ac0fecc45b7ec87450ead17537b2bdd62eec453736d852549fe41"
+    },
+    {
+      "path": "/srv/primperfection/scripts/backup-db.sh",
+      "sha256": "825daeefc4fcd86c8af5140b765e5f7de8b56ea3336f505dd5912cc142c6fb0b"
+    },
+    {
+      "path": "/srv/primperfection/scripts/deploy_dev.sh",
+      "sha256": "c69b26442057a2cf693c798f53443a35355cd1ba2bff41c690dc049b397da02f"
+    },
+    {
+      "path": "/srv/primperfection/scripts/deploy_frontend.sh",
+      "sha256": "5ca6a98c6458e913f1b5cd4769ae0f613abee2cefaaf09a9fc412fdbdda7581a"
+    },
+    {
+      "path": "/srv/primperfection/scripts/knowally_deploy_dev.sh",
+      "sha256": "060ca75f0dabfd6c9e835537e25dc7b7fc0b18c1fe9e0f3d83113250ddc4c9e9"
+    },
+    {
+      "path": "/srv/primperfection/scripts/knowally_deploy_prod.sh",
+      "sha256": "c28596e2b3706ca2dc6875f38251dcc5f38e6d13db04cd239c08b73d8484d25d"
+    },
+    {
+      "path": "/usr/local/libexec/agentq-safety/backup-preflight.py",
+      "sha256": "50325b072164d29b8d37dbf59b72a4fd650c92ddd1de496fb5d1bd370a6de587"
+    },
+    {
+      "path": "/usr/local/libexec/agentq-safety/checks.py",
+      "sha256": "2bd019912d7ae636e8423e399e1c875dfda9501232d08b70830faee4996d3c9e"
+    },
+    {
+      "path": "/usr/local/libexec/agentq-safety/control.py",
+      "sha256": "f47ac601705df39e44475859dbef352016fdb19ec1ee29920219a91700380789"
+    },
+    {
+      "path": "/usr/local/libexec/agentq-safety/fence.py",
+      "sha256": "b28ad5c602328ae8dce51569bc13f773fdc8e4bf02a7e353901de026a64557ef"
+    },
+    {
+      "path": "/usr/local/libexec/agentq-safety/maintenance.py",
+      "sha256": "931edbd72d44f5856c2aef1aaa559da18644cb55951eaede1be5f3bc9e63676b"
+    },
+    {
+      "path": "/usr/local/libexec/agentq-safety/plugin/index.mjs",
+      "sha256": "692db304733c3495f71b4c910474ae76fa88961324b7a772f1aaad0798f417ec"
+    },
+    {
+      "path": "/usr/local/libexec/agentq-safety/plugin/openclaw.plugin.json",
+      "sha256": "0a700c5bd2fccfd2ac51295194670d835d9a286ef9df1f75d475dba1e7458076"
+    },
+    {
+      "path": "/usr/local/libexec/agentq-safety/plugin/package.json",
+      "sha256": "adb19416804c1fdbadcdbd774223f9d56f90f4dcd72d317794d07e473cfcf10d"
+    },
+    {
+      "path": "/usr/local/libexec/agentq-safety/pressure.py",
+      "sha256": "857ab58ac25304df20b803f3fe0cf6c161ff1f2440dc5b041ab965a4b64be9d0"
+    },
+    {
+      "path": "/usr/local/libexec/agentq-safety/reasoning_policy.py",
+      "sha256": "8de5152b89546f29cb36213d4d7431efec96aaa1dabdcaeed925fee0a3b326f9"
+    },
+    {
+      "path": "/usr/local/sbin/agentq-control",
+      "sha256": "d22ac8dac955bae526b6139253b479ceddfe093f8b3527a2cc28276b776886ef"
+    },
+    {
+      "path": "/usr/local/sbin/offload-backup",
+      "sha256": "3e87bf602f561df8c8206df385a689defaed39ed8bb12e846bd9b10ef45e38f2"
+    },
+    {
+      "path": "/var/lib/agentq-safety/check-profiles.json",
+      "sha256": "7181951548723392c1002730d2c92804d5449fa4339dc504e3651b7c126e31a0"
+    },
+    {
+      "path": "/var/lib/agentq-safety/projects.json",
+      "sha256": "cb60d360808753728f97ff50b12fddc7134d0d7e864dc6097472c0b878a094e2"
+    }
+  ],
+  "current_complete_seal_entry_count": 56,
+  "current_complete_seal_sha256": "0cdd4aa5a932e149f4b816a251656f9aa257dc23ecd20c30fe046bed8aad9aa3",
+  "current_seal_metadata": {
+    "ctime_ns": 1793064557023531286,
+    "gid": 0,
+    "mode": 384,
+    "mtime_ns": 1793064557022531247,
+    "uid": 0,
+    "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+  },
+  "guard_delta_paths": [
+    "/usr/local/libexec/agentq-safety/control.py"
+  ],
+  "installed_hash_deltas": {
+    "/etc/systemd/system/agentq-work.slice": {
+      "new": "d17a978654c35ef3ea5a4e64a66b1e74df8e07ea73232a38c846a5a2070d9879",
+      "old": "0b7edd43dcafd6a3848ea55333ce567b77069727b285a7689a015d4b6c336274"
+    },
+    "/home/deploy/agentq/agentq.py": {
+      "new": "fa9a63fd9581a23f2acfbfe9455c9a53c8ba5d38d329c40a278aaab770d7bd8e",
+      "old": "96d8542d668a961168a944e020a5366e30ae66921a1abe0724c5473eabd9d9ea"
+    },
+    "/usr/local/libexec/agentq-safety/control.py": {
+      "new": "f47ac601705df39e44475859dbef352016fdb19ec1ee29920219a91700380789",
+      "old": "12f462f1259280896e7be8056252204298667fd03c81dcd309ef614ed3ddcd16"
+    }
+  },
+  "kind": "READ_ONLY_EXPLICIT_BASELINE_RECONCILIATION_PROPOSAL_NOT_ACTION",
+  "limits": "Original baseline remains unchanged and fails current application guards. This explicit successor proposal requires independent baseline reconciliation review. No action may consume it before that review and exact built artifact/action/privilege/seal/automatic-queue reviews; any subsequent seal, metadata, guard, boot or target drift refuses and requires new exact review. It does not validate the old seal against legitimately changed current files or provide install/reseal authority.",
+  "new_amendments": [
+    {
+      "authorization": "S, Alphonomic HQ Telegram 1802 (2026-10-26, 'no one is working, fix what caused this halt'); AGENTS.md fix policy (S tg 1378); Rook AGREE via gateway bridge 2026-10-26 ~22:10Z after one CHANGES round",
+      "by": "Pinch",
+      "changes": [
+        "on_success: REQUEUE while friend VPS is up (new friend_vps_up(): read-only cached health.json, same rule as offload healthy()) = continuation: next tick (2 min), event 'continued:', not counted toward the 12 VPS waits; capped 48/24h then BLOCKED (looping). VPS down: unchanged 30 min / 12 path. Fixes idle 30-min gaps and false 'VPS unavailable 24 h' blocks (#485, #608 at 10/12)."
+      ],
+      "files": [
+        "/home/deploy/agentq/agentq.py"
+      ],
+      "new_hash": "fa9a63fd9581a23f2acfbfe9455c9a53c8ba5d38d329c40a278aaab770d7bd8e",
+      "old_hash": "96d8542d668a961168a944e020a5366e30ae66921a1abe0724c5473eabd9d9ea",
+      "tests": "ops-work/inc-261026-requeue/test_efficiency.py: 3 new + 2 adjusted requeue tests pass, fail on old file; pre-existing env-dependent failures identical on old file",
+      "utc": "2026-10-26T22:30:11.379096+00:00"
+    },
+    {
+      "authorization": "AGENTS.md fix policy (S tg 1378); Rook AGREE via gateway bridge 2026-10-27 ~01:30Z (INC-261027-09)",
+      "by": "Pinch",
+      "changes": "agentq-work.slice and control.py launch(): worker MemoryHigh 768M -> 1024M (= MemoryMax). Soft-cap reclaim throttle of the worker showed as global memory PSI full>=1 and pressure.py fenced the queue (4 stops 00:46-01:24Z, job595, slice high events 228275). MemoryMax 1024M, swap 0, CPU, IO, tasks unchanged; aggregate budget unchanged. Note (Rook): an OOM inside agentq.slice still stops the queue.",
+      "files": "['/usr/local/libexec/agentq-safety/control.py', '/etc/systemd/system/agentq-work.slice']",
+      "new_hash": "{'/usr/local/libexec/agentq-safety/control.py': 'f47ac601705df39e44475859dbef352016fdb19ec1ee29920219a91700380789', '/etc/systemd/system/agentq-work.slice': 'd17a978654c35ef3ea5a4e64a66b1e74df8e07ea73232a38c846a5a2070d9879'}",
+      "old_hash": "{'/usr/local/libexec/agentq-safety/control.py': '12f462f1259280896e7be8056252204298667fd03c81dcd309ef614ed3ddcd16', '/etc/systemd/system/agentq-work.slice': '0b7edd43dcafd6a3848ea55333ce567b77069727b285a7689a015d4b6c336274'}",
+      "tests": "one-line diffs; control.py ast parse; systemd-analyze verify slice; post-install memory.high check",
+      "utc": "2026-10-27T01:29:17.022060+00:00"
+    }
+  ],
+  "observed_utc": "2026-10-27T02:57:32.193904+00:00",
+  "only_changed_seal_fields": [
+    "amendments",
+    "installed_hashes"
+  ],
+  "original_amendment_count": 31,
+  "original_amendments_preserved_as_prefix": true,
+  "original_baseline_sha256": "22253f3512e481177c7b335b768e3155cc1096ae96c475144d0ffda7c6b93f35",
+  "original_baseline_unchanged": true,
+  "original_complete_seal_backup": "/var/lib/agentq-safety/validation.json.bak-20261026T2153Z-continue",
+  "original_complete_seal_sha256": "7c404d1d04cce2bef262df508af5460a37f6228152466bc60d46e77841dbdfbb",
+  "proposed_baseline_sha256": "f3b3ced66253d30951005decf574c71be695f4ab42a6311a29509d4415042d92",
+  "protected_files_changed": false
+}
