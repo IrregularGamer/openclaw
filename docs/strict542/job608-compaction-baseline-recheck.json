@@ -1,0 +1,42 @@
+{
+  "application_authority": false,
+  "baseline_sha256": "22253f3512e481177c7b335b768e3155cc1096ae96c475144d0ffda7c6b93f35",
+  "baseline_unchanged": true,
+  "boot_matches": true,
+  "current_seal_entries_checked": 56,
+  "current_seal_errors": [],
+  "guard_deltas": {
+    "/usr/local/libexec/agentq-safety/control.py": {
+      "observed": {
+        "metadata": {
+          "ctime_ns": 1793064557019872006,
+          "gid": 0,
+          "mode": 420,
+          "mtime_ns": 1793064557019872006,
+          "uid": 0,
+          "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+        },
+        "sha256": "f47ac601705df39e44475859dbef352016fdb19ec1ee29920219a91700380789"
+      },
+      "original": {
+        "metadata": {
+          "ctime_ns": 1792844474057228238,
+          "gid": 0,
+          "mode": 420,
+          "mtime_ns": 1792844474056570546,
+          "uid": 0,
+          "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+        },
+        "sha256": "12f462f1259280896e7be8056252204298667fd03c81dcd309ef614ed3ddcd16"
+      }
+    }
+  },
+  "next_gate": "Any original baseline drift requires new exact independent review before constructing an action; never refresh baseline silently.",
+  "observed_seal_sha256": "0cdd4aa5a932e149f4b816a251656f9aa257dc23ecd20c30fe046bed8aad9aa3",
+  "observed_utc": "2026-10-27T01:58:30.536323+00:00",
+  "original_seal_bytes_match": false,
+  "original_seal_metadata_match": false,
+  "read_only": true,
+  "recorded_original_seal_sha256": "7c404d1d04cce2bef262df508af5460a37f6228152466bc60d46e77841dbdfbb",
+  "unexpected_present_targets": []
+}
