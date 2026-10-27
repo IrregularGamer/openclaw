@@ -1,0 +1,51 @@
+{
+  "addon_release_time": "20m21s",
+  "application_authority": false,
+  "broker_exit": 0,
+  "build_receipt_reproduced": false,
+  "config46_resource_fit_proved": false,
+  "ecmascript_release_time": "9m40s",
+  "ecmascript_tests_passed": 2,
+  "evidence_sha256": {
+    "job608-compaction-compile-broker.txt": "f2d89ccfa68f76031b84661c2af84e75998a24ac44f6bbccddaa52eaeb0e335d",
+    "job608-compaction-compile-build.txt": "54c364292385a3d2d58caba04cb8864e477eb4eacbc218325a814ca2975939bd",
+    "job608-compaction-compile-receipt.json": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+    "job608-compaction-compile-retention-negative.txt": "bb57ceaa264092e04c35cdb07d0fcf3fa41d973a389693087958dd6ffedfef46",
+    "job608-compaction-compile-tests.txt": "b2c951c8c48c0b03bc49f8977a1689e6bd36b7c02e0010301425780e62736cb0"
+  },
+  "full_native_libtests_run": false,
+  "kind": "COMPLETE_COMPACTION_NATIVE_COMPILE_NOT_PACKAGE",
+  "manifest_sha256": "0e3404864bf45469a9b859555200492475436461a7537e9af099080b22836584",
+  "new_addon_sha256": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042",
+  "new_owner_inputs": {
+    "docs/strict542/build-native608.py": "69c88b78ea040e3f26eb6620adc9e3b3919fc047d51f840f07a2568d1ba3229a",
+    "docs/strict542/rolldown-source-pin608.json": "ea256d2d182df85ec13f56bc764615d8eb8175f4d50f4d2367e96530e318bfa2",
+    "scripts/lib/last-use-ast608.rs": "8d293f921d754f3ffca6f60eaec8b61fc577ebef779d9c5714db5f46c4cf2da4",
+    "scripts/lib/prepare-native608.py": "2b3e703e536345ca023c2e47cd0c081689a4eb542fab32a664fe56674892ec94"
+  },
+  "new_patched_sources": {
+    "crates/rolldown/src/stages/generate_stage/finalize_modules.rs": "88c9269059aae8f79f0b6f7a7d79d618cc6209f91479026eb17b7e3c74360b1b",
+    "crates/rolldown/src/stages/generate_stage/last_use_ast_table.rs": "8d293f921d754f3ffca6f60eaec8b61fc577ebef779d9c5714db5f46c4cf2da4",
+    "crates/rolldown/src/stages/generate_stage/mod.rs": "db07fa1eaaf7e079a7645813ce25032105c522a557fbff7a854d2c1a4842c5b7",
+    "crates/rolldown/src/stages/generate_stage/render_chunk_to_assets.rs": "ea7fa82fd638d526104f4ae2eea0bfddf297e2082b6026c8bcc828466e81abc7",
+    "crates/rolldown/src/stages/link_stage/mod.rs": "18853d0aa7697d4c7dd38d03e1ec9c92520de179e7ea650302e7cf4efc29ac80",
+    "crates/rolldown_ecmascript/src/ecma_ast/mod.rs": "dfb684bce6712f574fb73195ec33b1a6c66b427bed63be01313464a373e9605c"
+  },
+  "old_addon_sha256": "17df206117097742019de475e8cd194fb1022f48d9c2b507195100abd13eb627",
+  "old_owner_inputs": {
+    "docs/strict542/build-native608.py": "f213797ea4b8eb45bb2b93564734714b41d3a3b8d2b2b2a20c3b3b8c531f269c",
+    "docs/strict542/rolldown-source-pin608.json": "644d4ab9b970df0aaa34070cd8db96add012fb82db9f72bce7878571549988ca",
+    "scripts/lib/last-use-ast608.rs": "8d293f921d754f3ffca6f60eaec8b61fc577ebef779d9c5714db5f46c4cf2da4",
+    "scripts/lib/prepare-native608.py": "cd172e32b7376e89300ee794c3e85ee6740a557951c81f72e8f8fb9a82e649be"
+  },
+  "old_patched_sources": {
+    "crates/rolldown/src/stages/generate_stage/finalize_modules.rs": "88c9269059aae8f79f0b6f7a7d79d618cc6209f91479026eb17b7e3c74360b1b",
+    "crates/rolldown/src/stages/generate_stage/last_use_ast_table.rs": "8d293f921d754f3ffca6f60eaec8b61fc577ebef779d9c5714db5f46c4cf2da4",
+    "crates/rolldown/src/stages/generate_stage/mod.rs": "db07fa1eaaf7e079a7645813ce25032105c522a557fbff7a854d2c1a4842c5b7",
+    "crates/rolldown/src/stages/generate_stage/render_chunk_to_assets.rs": "ea7fa82fd638d526104f4ae2eea0bfddf297e2082b6026c8bcc828466e81abc7"
+  },
+  "retention_negative_failures_expected": 3,
+  "slot": "tmp-export608-native-compact1-d32634d0",
+  "source_commit": "2f6788455aea5051cdc5b748cd06554f3ab039a1",
+  "standalone_lifetime_tests_passed": 7
+}
