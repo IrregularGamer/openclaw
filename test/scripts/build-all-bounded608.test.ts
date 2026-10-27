@@ -1,5 +1,5 @@
 import {describe,it,expect} from 'vitest';
-import {resolveBuildAllSteps,resolveBuildAllTsdownPlan} from '../../scripts/build-all.mts';
+import {parseBuildAllArgs,resolveBuildAllSteps,resolveBuildAllTsdownPlan} from '../../scripts/build-all.mts';
 import fs from 'node:fs';
 import {fixture} from '../../docs/strict542/native-compiler608-fixture.mjs';
 import {nativeCompiler608} from '../../scripts/lib/native-compiler608.mjs';
@@ -9,6 +9,13 @@ import {BOUNDED_COMPILER_ENV} from '../../scripts/lib/bounded-package608.mjs';
 const stages: Record<string,string> = {'tsdown-ai':'ai','tsdown-packages':'packages','tsdown-unified':'unified'};
 
 describe('complete typed bounded package scheduling',()=>{
+  it('standalone package builder uses the actual positional profile interface',()=>{
+    const script=fs.readFileSync('docs/strict542/build598.sh','utf8');
+    const line=script.split('\n').find(line=>line.startsWith('node --import ./scripts/tsx.mjs scripts/build-all.mts '));
+    expect(line).toBeDefined();
+    const args=line!.split(' ').slice(4);
+    expect(parseBuildAllArgs(args).profile).toBe('boundedPackage');
+  });
   it('retains every canonical package phase in exactly the same order',()=>{
     const original=resolveBuildAllSteps('package',{});
     const bounded=resolveBuildAllSteps('boundedPackage',{});

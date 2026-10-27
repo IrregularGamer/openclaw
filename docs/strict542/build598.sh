@@ -19,7 +19,7 @@ python3 docs/strict542/frozen-package608.py preflight
 pnpm install --frozen-lockfile
 python3 docs/strict542/frozen-package608.py preflight
 # Full canonical phase inventory with the separately reviewed required-native scheduler.
-node --import ./scripts/tsx.mjs scripts/build-all.mts --profile boundedPackage
+node --import ./scripts/tsx.mjs scripts/build-all.mts boundedPackage
 python3 docs/strict542/frozen-package608.py preflight
 pnpm --filter openclaw --prod deploy result598-build/runtime >result598-build/deploy.log 2>&1 || {
   status=$?; tail -30 result598-build/deploy.log; exit "$status";
