@@ -26,7 +26,7 @@ export function nativeCompiler608(root=process.cwd(), {required=false}={}) {
     if (receipt.kind!==kind || receipt.stage!==stage || receipt.complete!==true ||
         receipt.upstream_commit!==pin.upstream_commit || receipt.source_archive_sha256!==pin.source_archive_sha256 ||
         receipt.rust_archive_sha256!==pin.rust_archive_sha256 || receipt.lifetime_tests_exit!==0 ||
-        receipt.retention_negative_detected!==true ||
+        receipt.retention_negative_detected!==true || receipt.compaction_tests_exit!==0 ||
         JSON.stringify(receipt.cargo_policy)!==JSON.stringify({codegen_units:64,jobs:1,locked:true,lto:false,opt_level:3}))
       throw new Error('unaccepted native compiler receipt');
     if (JSON.stringify(Object.keys(receipt.owner_inputs ?? {}).sort())!==JSON.stringify([...owners].sort()))
