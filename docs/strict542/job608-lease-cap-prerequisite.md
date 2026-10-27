@@ -76,6 +76,11 @@ call, detached installer or repeated docs-only admission retry supplies an owner
    Require actual installed AND sealed NEWdb4d2903, original-seal/backup/amendment
    evidence, and accepted admitted baseline/candidate suite outcomes, inspecting
    counts/timeouts as well as failures (run_suites.sh exit0 alone is insufficient).
+   Additional source-only evidence gate: `job608-lease619-suite-gate.md` and
+   `verify-lease619-suites.py` require all78/90 tests, full completion, exactly
+   the original23 shared fixed-root errors and nine pinned baseline-only
+   diagnostics. This addition needs its own independent exact source review;
+   it changes neither the624-approved installer nor its application authority.
    Revalidate original seal and exact installed/current hashes; do not infer
    application from queue labels or treat HQ-OWNER-GAP.md as success. Unknown,
    missing, partial, or drifted evidence stops the build step without relaunch.

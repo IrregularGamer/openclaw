@@ -1,0 +1,23 @@
+test_invalid_capabilities_refused_cleanly (test_lease_cap_619.Capability.test_invalid_capabilities_refused_cleanly) ... ok
+test_legacy_2048_grant_admits (test_lease_cap_619.Capability.test_legacy_2048_grant_admits) ... ok
+test_new_4096_grant_admits (test_lease_cap_619.Capability.test_new_4096_grant_admits) ... ok
+test_rejected_accepted_flag_refused_cleanly (test_lease_cap_619.Capability.test_rejected_accepted_flag_refused_cleanly) ... ok
+test_renewal_4096_and_2048_keep_lease (test_lease_cap_619.Capability.test_renewal_4096_and_2048_keep_lease) ... ok
+test_renewal_overcap_after_4096_grant_cancels (test_lease_cap_619.Capability.test_renewal_overcap_after_4096_grant_cancels) ... ok
+test_rpc_loss_then_verified_cancel (test_lease_cap_619.Capability.test_rpc_loss_then_verified_cancel) ... ok
+test_unknown_cancellation_keeps_lease_fenced (test_lease_cap_619.Capability.test_unknown_cancellation_keeps_lease_fenced) ... ok
+test_wrong_cpu_or_ttl_refused_cleanly (test_lease_cap_619.Capability.test_wrong_cpu_or_ttl_refused_cleanly) ... ok
+test_epoch_and_state (test_lease_cap_619.OriginalPredicates.test_epoch_and_state) ... ok
+test_invocation_and_unit (test_lease_cap_619.OriginalPredicates.test_invocation_and_unit) ... ok
+test_maintain_skips_when_not_running (test_lease_cap_619.OriginalPredicates.test_maintain_skips_when_not_running) ... ok
+test_registration (test_lease_cap_619.OriginalPredicates.test_registration) ... ok
+test_resources (test_lease_cap_619.OriginalPredicates.test_resources) ... ok
+test_seal (test_lease_cap_619.OriginalPredicates.test_seal) ... ok
+test_wrong_token (test_lease_cap_619.OriginalPredicates.test_wrong_token) ... ok
+test_capability_is_exact_reviewed_set (test_lease_cap_619.SourceShape.test_capability_is_exact_reviewed_set) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.004s
+
+OK
+rc=0

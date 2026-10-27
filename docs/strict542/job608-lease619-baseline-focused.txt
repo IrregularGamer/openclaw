@@ -1,0 +1,140 @@
+test_invalid_capabilities_refused_cleanly (test_lease_cap_619.Capability.test_invalid_capabilities_refused_cleanly) ... 
+  test_invalid_capabilities_refused_cleanly (test_lease_cap_619.Capability.test_invalid_capabilities_refused_cleanly) (max_memory_MiB=2048.0) ... FAIL
+test_legacy_2048_grant_admits (test_lease_cap_619.Capability.test_legacy_2048_grant_admits) ... ok
+test_new_4096_grant_admits (test_lease_cap_619.Capability.test_new_4096_grant_admits) ... ERROR
+test_rejected_accepted_flag_refused_cleanly (test_lease_cap_619.Capability.test_rejected_accepted_flag_refused_cleanly) ... ok
+test_renewal_4096_and_2048_keep_lease (test_lease_cap_619.Capability.test_renewal_4096_and_2048_keep_lease) ... ERROR
+test_renewal_overcap_after_4096_grant_cancels (test_lease_cap_619.Capability.test_renewal_overcap_after_4096_grant_cancels) ... ERROR
+test_rpc_loss_then_verified_cancel (test_lease_cap_619.Capability.test_rpc_loss_then_verified_cancel) ... ok
+test_unknown_cancellation_keeps_lease_fenced (test_lease_cap_619.Capability.test_unknown_cancellation_keeps_lease_fenced) ... ok
+test_wrong_cpu_or_ttl_refused_cleanly (test_lease_cap_619.Capability.test_wrong_cpu_or_ttl_refused_cleanly) ... 
+  test_wrong_cpu_or_ttl_refused_cleanly (test_lease_cap_619.Capability.test_wrong_cpu_or_ttl_refused_cleanly) (key='max_cpus', value=True, cap=2048) ... FAIL
+  test_wrong_cpu_or_ttl_refused_cleanly (test_lease_cap_619.Capability.test_wrong_cpu_or_ttl_refused_cleanly) (key='max_cpus', value=1.0, cap=2048) ... FAIL
+  test_wrong_cpu_or_ttl_refused_cleanly (test_lease_cap_619.Capability.test_wrong_cpu_or_ttl_refused_cleanly) (key='lease_seconds', value=30.0, cap=2048) ... FAIL
+test_epoch_and_state (test_lease_cap_619.OriginalPredicates.test_epoch_and_state) ... ok
+test_invocation_and_unit (test_lease_cap_619.OriginalPredicates.test_invocation_and_unit) ... ok
+test_maintain_skips_when_not_running (test_lease_cap_619.OriginalPredicates.test_maintain_skips_when_not_running) ... ERROR
+test_registration (test_lease_cap_619.OriginalPredicates.test_registration) ... ok
+test_resources (test_lease_cap_619.OriginalPredicates.test_resources) ... ok
+test_seal (test_lease_cap_619.OriginalPredicates.test_seal) ... ok
+test_wrong_token (test_lease_cap_619.OriginalPredicates.test_wrong_token) ... ok
+test_capability_is_exact_reviewed_set (test_lease_cap_619.SourceShape.test_capability_is_exact_reviewed_set) ... ERROR
+
+======================================================================
+ERROR: test_new_4096_grant_admits (test_lease_cap_619.Capability.test_new_4096_grant_admits)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/deploy/agentq/ops-work/lease-cap-619/test_lease_cap_619.py", line 63, in test_new_4096_grant_admits
+    self.assertEqual(self.c.remote_admit(WORKER), {'admitted': True, 'lease_seconds': 30})
+                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/deploy/agentq/ops-work/lease-cap-619/baseline/control.py", line 1009, in remote_admit
+    raise PermissionError('remote_lease_refused_cleanly')
+PermissionError: remote_lease_refused_cleanly
+
+======================================================================
+ERROR: test_renewal_4096_and_2048_keep_lease (test_lease_cap_619.Capability.test_renewal_4096_and_2048_keep_lease)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/deploy/agentq/ops-work/lease-cap-619/test_lease_cap_619.py", line 68, in test_renewal_4096_and_2048_keep_lease
+    self.c.remote_admit(WORKER); self.c.remote_maintain(); self.c.remote_maintain()
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/deploy/agentq/ops-work/lease-cap-619/baseline/control.py", line 1009, in remote_admit
+    raise PermissionError('remote_lease_refused_cleanly')
+PermissionError: remote_lease_refused_cleanly
+
+======================================================================
+ERROR: test_renewal_overcap_after_4096_grant_cancels (test_lease_cap_619.Capability.test_renewal_overcap_after_4096_grant_cancels)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/deploy/agentq/ops-work/lease-cap-619/test_lease_cap_619.py", line 122, in test_renewal_overcap_after_4096_grant_cancels
+    self.reply['max_memory_MiB'] = 4096; self.c.remote_admit(WORKER)
+                                         ~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/deploy/agentq/ops-work/lease-cap-619/baseline/control.py", line 1009, in remote_admit
+    raise PermissionError('remote_lease_refused_cleanly')
+PermissionError: remote_lease_refused_cleanly
+
+======================================================================
+ERROR: test_maintain_skips_when_not_running (test_lease_cap_619.OriginalPredicates.test_maintain_skips_when_not_running)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/deploy/agentq/ops-work/lease-cap-619/test_lease_cap_619.py", line 162, in test_maintain_skips_when_not_running
+    self.reply['max_memory_MiB'] = 4096; self.c.remote_admit(WORKER); self.rpc.clear()
+                                         ~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/deploy/agentq/ops-work/lease-cap-619/baseline/control.py", line 1009, in remote_admit
+    raise PermissionError('remote_lease_refused_cleanly')
+PermissionError: remote_lease_refused_cleanly
+
+======================================================================
+ERROR: test_capability_is_exact_reviewed_set (test_lease_cap_619.SourceShape.test_capability_is_exact_reviewed_set)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/deploy/agentq/ops-work/lease-cap-619/test_lease_cap_619.py", line 170, in test_capability_is_exact_reviewed_set
+    self.assertEqual(control.LEASE_CAPABILITY_MiB, frozenset({2048, 4096}))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'control' has no attribute 'LEASE_CAPABILITY_MiB'
+
+======================================================================
+FAIL: test_invalid_capabilities_refused_cleanly (test_lease_cap_619.Capability.test_invalid_capabilities_refused_cleanly) (max_memory_MiB=2048.0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/deploy/agentq/ops-work/lease-cap-619/test_lease_cap_619.py", line 85, in test_invalid_capabilities_refused_cleanly
+    self.assert_clean_refusal()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/deploy/agentq/ops-work/lease-cap-619/test_lease_cap_619.py", line 73, in assert_clean_refusal
+    self.refused('remote_lease_refused_cleanly')
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deploy/agentq/ops-work/lease-cap-619/test_lease_cap_619.py", line 52, in refused
+    with self.assertRaises(PermissionError) as caught: self.c.remote_admit(WORKER)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: PermissionError not raised
+
+======================================================================
+FAIL: test_wrong_cpu_or_ttl_refused_cleanly (test_lease_cap_619.Capability.test_wrong_cpu_or_ttl_refused_cleanly) (key='max_cpus', value=True, cap=2048)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/deploy/agentq/ops-work/lease-cap-619/test_lease_cap_619.py", line 94, in test_wrong_cpu_or_ttl_refused_cleanly
+    self.assert_clean_refusal()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/deploy/agentq/ops-work/lease-cap-619/test_lease_cap_619.py", line 73, in assert_clean_refusal
+    self.refused('remote_lease_refused_cleanly')
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deploy/agentq/ops-work/lease-cap-619/test_lease_cap_619.py", line 52, in refused
+    with self.assertRaises(PermissionError) as caught: self.c.remote_admit(WORKER)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: PermissionError not raised
+
+======================================================================
+FAIL: test_wrong_cpu_or_ttl_refused_cleanly (test_lease_cap_619.Capability.test_wrong_cpu_or_ttl_refused_cleanly) (key='max_cpus', value=1.0, cap=2048)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/deploy/agentq/ops-work/lease-cap-619/test_lease_cap_619.py", line 94, in test_wrong_cpu_or_ttl_refused_cleanly
+    self.assert_clean_refusal()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/deploy/agentq/ops-work/lease-cap-619/test_lease_cap_619.py", line 73, in assert_clean_refusal
+    self.refused('remote_lease_refused_cleanly')
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deploy/agentq/ops-work/lease-cap-619/test_lease_cap_619.py", line 52, in refused
+    with self.assertRaises(PermissionError) as caught: self.c.remote_admit(WORKER)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: PermissionError not raised
+
+======================================================================
+FAIL: test_wrong_cpu_or_ttl_refused_cleanly (test_lease_cap_619.Capability.test_wrong_cpu_or_ttl_refused_cleanly) (key='lease_seconds', value=30.0, cap=2048)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/deploy/agentq/ops-work/lease-cap-619/test_lease_cap_619.py", line 94, in test_wrong_cpu_or_ttl_refused_cleanly
+    self.assert_clean_refusal()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/deploy/agentq/ops-work/lease-cap-619/test_lease_cap_619.py", line 73, in assert_clean_refusal
+    self.refused('remote_lease_refused_cleanly')
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deploy/agentq/ops-work/lease-cap-619/test_lease_cap_619.py", line 52, in refused
+    with self.assertRaises(PermissionError) as caught: self.c.remote_admit(WORKER)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: PermissionError not raised
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.008s
+
+FAILED (failures=4, errors=5)
+rc=1

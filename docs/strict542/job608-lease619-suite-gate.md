@@ -48,7 +48,7 @@ focused17-test619 module ran against each pinned controller with transport and
 private IO stubbed by its existing tests: candidate17PASS; baseline intentional
 4FAIL/5ERROR. The new parser accepts the actual complete logs, including real
 subtest formatting. No full control suite ran locally or remotely this worker.
-Logs are `job608-lease619-{baseline,candidate}-focused.log`. The old/new
+Logs are `job608-lease619-{baseline,candidate}-focused.txt`. The old/new
 controller and all16 input hashes are `lease619-suite-inputs.json`; exact
 baseline differences are `lease619-baseline-regressions.json`.
 
