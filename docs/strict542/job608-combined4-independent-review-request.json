@@ -1,0 +1,15 @@
+{
+  "job_id": 633,
+  "kind": "ACTUAL_PENDING_INDEPENDENT_PREREQUISITE_REVIEW_NOT_APPROVAL",
+  "limits": "Not automatic parent608 queue review; no action/privilege/seal/application approval. Require real exact verdict and committed review before package promotion.",
+  "outcome_receipt_sha256": "09be7fd131a603910cf3f055e7955678daf78370f092f44a96164bbeba1bf6ac",
+  "priority": 1,
+  "project": "ops",
+  "reviewed_outcome_commit": "9a01dc9e",
+  "scopes": [
+    "actual combined4 diagnostic evidence",
+    "explicit post619 baseline reconciliation proposal123114cc",
+    "trusted native preparation6fefbf95+dbb5f3c5"
+  ],
+  "status_at_recording": "queued"
+}

@@ -1,5 +1,13 @@
 # Job598 to595: exact source-only application preparation
 
+CURRENT6082026-10-27: combined4 complete diagnostic SUCCESS9a01dc9e/255checks;
+all57main+AI/fourworkers pass, exact native rebuild and settled0managed containers.
+Independent prerequisite review633 PENDING. Full typed package, final action/seal
+and all final reviews remain absent. Current continuation is
+[job608-resume-after-probe4g.md](job608-resume-after-probe4g.md), superseding every
+older status/next-run paragraph below. Ordered application/rollback/authority gates
+remain mandatory; this is no installation/application receipt.
+
 UPDATE 04:52Z: combined2 (manifest7995990b, launch fcd50009) is SPENT. Config15
 received SIGKILL (timedOut:false) in rolldown link_stage bind_imports_and_exports at
 the default2GiB ceiling after the compaction addon loaded; 34/34 policy checks passed,
