@@ -1,0 +1,56 @@
+[
+  [
+    "test_lease_cap_619.Capability.test_invalid_capabilities_refused_cleanly",
+    "FAIL",
+    " (max_memory_MiB=2048.0)",
+    "AssertionError: PermissionError not raised"
+  ],
+  [
+    "test_lease_cap_619.Capability.test_new_4096_grant_admits",
+    "ERROR",
+    "",
+    "PermissionError: remote_lease_refused_cleanly"
+  ],
+  [
+    "test_lease_cap_619.Capability.test_renewal_4096_and_2048_keep_lease",
+    "ERROR",
+    "",
+    "PermissionError: remote_lease_refused_cleanly"
+  ],
+  [
+    "test_lease_cap_619.Capability.test_renewal_overcap_after_4096_grant_cancels",
+    "ERROR",
+    "",
+    "PermissionError: remote_lease_refused_cleanly"
+  ],
+  [
+    "test_lease_cap_619.Capability.test_wrong_cpu_or_ttl_refused_cleanly",
+    "FAIL",
+    " (key='lease_seconds', value=30.0, cap=2048)",
+    "AssertionError: PermissionError not raised"
+  ],
+  [
+    "test_lease_cap_619.Capability.test_wrong_cpu_or_ttl_refused_cleanly",
+    "FAIL",
+    " (key='max_cpus', value=1.0, cap=2048)",
+    "AssertionError: PermissionError not raised"
+  ],
+  [
+    "test_lease_cap_619.Capability.test_wrong_cpu_or_ttl_refused_cleanly",
+    "FAIL",
+    " (key='max_cpus', value=True, cap=2048)",
+    "AssertionError: PermissionError not raised"
+  ],
+  [
+    "test_lease_cap_619.OriginalPredicates.test_maintain_skips_when_not_running",
+    "ERROR",
+    "",
+    "PermissionError: remote_lease_refused_cleanly"
+  ],
+  [
+    "test_lease_cap_619.SourceShape.test_capability_is_exact_reviewed_set",
+    "ERROR",
+    "",
+    "AttributeError: module 'control' has no attribute 'LEASE_CAPABILITY_MiB'"
+  ]
+]
