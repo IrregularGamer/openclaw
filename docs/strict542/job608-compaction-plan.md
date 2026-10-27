@@ -35,7 +35,7 @@ resource fit remain UNRUN until admitted offload. Serial replacement adds at
 most one module clone to the resident graph; default2GiB fit is not guaranteed.
 
 Next: independent exact source/export review, ONE fresh secretless compile stage
-with ordinary2GiB1CPU admission and outer2700s timeout while>=51min foreground
+with ordinary2GiB1CPU admission and outer2400s timeout while>=46min foreground
 lifetime remains. Then matching libtests, full combined238+2 checks/parity/AI+
 all57main/fourworkers and actual complete typed frozen package. No standalone
 lifetime rerun. No binary/cache/toolchain/dependencies uploaded. No local build.
