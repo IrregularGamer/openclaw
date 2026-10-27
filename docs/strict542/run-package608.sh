@@ -30,6 +30,11 @@ for name,key in [('source598.tar','base_source_archive_sha256'),('successor598.t
  with open(name,'rb') as f:
   for block in iter(lambda:f.read(1024*1024),b''):h.update(block)
  assert h.hexdigest()==m[key],name
+for name,expected in m['native_stage_outputs'].items():
+ p=Path('native608-stages')/name
+ assert p.is_file() and not p.is_symlink(),name
+ assert hashlib.sha256(p.read_bytes()).hexdigest()==expected,name
+assert {str(p.relative_to('native608-stages')) for p in Path('native608-stages').rglob('*') if p.is_file()}=={'compile/receipt.json','libtests/receipt.json'}
 VERIFY_ARCHIVES
 mkdir source native-source
 tar -xf source598.tar -C source
@@ -63,7 +68,7 @@ tail -22 strict542-checks/tests.log
 [ "$status" = 0 ] || exit "$status"
 # Resolve the physical pnpm before the clean standalone builder environment.
 npm exec --yes --package=pnpm@12.5.1 -- sh -c 'set -eu; [ "$(pnpm --version)" = 12.5.1 ]; pnpm install --frozen-lockfile; command -v pnpm >strict542-checks/pnpm-path.txt'
-node node_modules/vitest/vitest.mjs run --config test/vitest/vitest.tooling.config.ts --maxWorkers=1 --no-file-parallelism --passWithNoTests=false test/scripts/build-all-bounded608.test.ts test/scripts/tsdown-build.test.ts test/scripts/write-unified-entry-dts.test.ts test/scripts/write-plugin-sdk-entry-dts.test.ts >strict542-checks/installed.log 2>&1 || { status=$?; tail -60 strict542-checks/installed.log; exit "$status"; }
+node node_modules/vitest/vitest.mjs run --config test/vitest/vitest.tooling.config.ts --maxWorkers=1 --no-file-parallelism --passWithNoTests=false --reporter=default --reporter=json --outputFile.json=strict542-checks/installed.json test/scripts/build-all-bounded608.test.ts test/scripts/tsdown-build.test.ts test/scripts/write-unified-entry-dts.test.ts test/scripts/write-plugin-sdk-entry-dts.test.ts >strict542-checks/installed.log 2>&1 || { status=$?; tail -60 strict542-checks/installed.log; exit "$status"; }
 # Failure output is surfaced above because a failed run returns no artifacts.
 # test/scripts files belong to the tooling shard; unit-fast auto-curation excludes them.
 cat strict542-checks/installed.log >>strict542-checks/tests.log

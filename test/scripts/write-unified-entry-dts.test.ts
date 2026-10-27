@@ -3,6 +3,8 @@ import path from "node:path";
 import { describe, expect, vi } from "vitest";
 import { TSDOWN_NON_SDK_DTS_CONFIG_GROUPS } from "../../scripts/lib/tsdown-config-groups.mts";
 import { resolveTsdownDeclarationGeneratorInputs } from "../../scripts/lib/tsdown-declaration-generator-inputs.mts";
+import type { CommandFixture } from "../helpers/command-fixture.js";
+import { createFixtureLifetime } from "../helpers/fixture-lifetime.js";
 import { materializeNativeCompiler } from "./native-boundary-fixture.js";
 import {
   createDeclarationFixture as createFixture,
@@ -133,45 +135,74 @@ describe("write-unified-entry-dts", () => {
     }
   });
 
-  it("reuses unaffected canonical groups while rebuilding runtime after input edits", ({
-    command,
-    onTestFailed,
-  }) =>
-    command.lifetime.run(async () => {
-      const phases: Array<{
-        phase: string;
-        durationMs: number;
-        outcome: "returned" | "threw";
-        exitStatus?: number | null;
-      }> = [];
-      // Timeout reporting can precede this body's final phase receipt.
-      onTestFailed(() => {
-        console.error(`[unified-entry-dts phases] ${JSON.stringify(phases)}`);
-      });
-      const measurePhase = async <T>(
-        phase: string,
-        run: () => T | Promise<T>,
-        readExitStatus?: (result: T) => number | null,
-      ): Promise<T> => {
-        const started = performance.now();
-        let outcome: "returned" | "threw" = "threw";
-        let exitStatus: number | null | undefined;
-        try {
-          const result = await run();
-          exitStatus = readExitStatus?.(result);
-          outcome = "returned";
-          return result;
-        } finally {
-          phases.push({
-            phase,
-            durationMs: Math.round(performance.now() - started),
-            outcome,
-            ...(readExitStatus ? { exitStatus } : {}),
+  // One history owns the same filesystem/cache through all four finite cases.
+  // Commands remain owned by each case's abort signal and settle before teardown.
+  describe.sequential("canonical group cache history", () => {
+    const historyLifetime = createFixtureLifetime();
+    it.afterAll(async () => await historyLifetime.cleanup());
+    let stage = 0;
+    let history: {
+      root: string;
+      write: ReturnType<typeof createFixture>["write"];
+      preserved: Record<string, string>;
+      cache: string;
+      records: ReturnType<typeof declarationCacheRecords>;
+      originalFunction: string | undefined;
+      cached: Record<string, string>;
+      before: Record<string, string>;
+      mixedGeneration?: Record<string, string>;
+    };
+    let phases: Array<{
+      phase: string;
+      durationMs: number;
+      outcome: "returned" | "threw";
+      exitStatus?: number | null;
+    }> = [];
+    const measurePhase = async <T>(
+      phase: string,
+      run: () => T | Promise<T>,
+      readExitStatus?: (result: T) => number | null,
+    ): Promise<T> => {
+      const started = performance.now();
+      let outcome: "returned" | "threw" = "threw";
+      let exitStatus: number | null | undefined;
+      try {
+        const result = await run();
+        exitStatus = readExitStatus?.(result);
+        outcome = "returned";
+        return result;
+      } finally {
+        phases.push({
+          phase,
+          durationMs: Math.round(performance.now() - started),
+          outcome,
+          ...(readExitStatus ? { exitStatus } : {}),
+        });
+      }
+    };
+    function historyCase(
+      name: string,
+      expectedStage: number,
+      run: (command: CommandFixture) => Promise<void>,
+    ) {
+      it(
+        name,
+        ({ command, onTestFailed }) => command.lifetime.run(async () => {
+          phases = [];
+          onTestFailed(() => {
+            console.error(`[unified-entry-dts phases] ${JSON.stringify(phases)}`);
           });
-        }
-      };
+          // A failed earlier phase must fail successors, never skip or fabricate history.
+          expect(stage, "previous canonical history phase completed").toBe(expectedStage);
+          await historyLifetime.run(async () => await run(command));
+          stage += 1;
+        }),
+        120000,
+      );
+    }
+    historyCase("builds initial canonical groups and checks consumer types", 0, async (command) => {
       const { root, write, production, declarations } = await measurePhase("fixture", () =>
-        createFixture(command, TSDOWN_NON_SDK_DTS_CONFIG_GROUPS),
+        createFixture(historyLifetime, TSDOWN_NON_SDK_DTS_CONFIG_GROUPS),
       );
       await measurePhase("native-compiler-fixture", () => materializeNativeCompiler(root));
       expect(Object.values(declarations).every((entries) => entries.length > 0)).toBe(true);
@@ -297,6 +328,10 @@ describe("write-unified-entry-dts", () => {
       const before = await measurePhase("initial-dist-hash", () =>
         treeHashes(path.join(root, "dist")),
       );
+      history = { root, write, preserved, cache, records, originalFunction, cached, before };
+    });
+    historyCase("reuses canonical groups after unrelated input edits", 1, async (command) => {
+      const { root, write, preserved, cache, cached, before } = history;
       write("test/unrelated.test.ts", "export const test = 2;\n");
       write("ui/unrelated.ts", "export const view = 2;\n");
       write(".github/workflows/unrelated.yml", "name: unrelated after\n");
@@ -321,6 +356,11 @@ describe("write-unified-entry-dts", () => {
         await measurePhase("unchanged-dist-hash", () => treeHashes(path.join(root, "dist"))),
       ).toEqual(before);
       expect(await measurePhase("unchanged-cache-hash", () => treeHashes(cache))).toEqual(cached);
+    });
+    historyCase("rebuilds runtime and only the edited canonical group", 2, async (command) => {
+      const { root, write, cache, records, originalFunction, cached } = history;
+      const readPluginDeclaration = () =>
+        fs.readFileSync(path.join(root, "dist/extensions/fixture-a/index.d.ts"), "utf8");
       const pluginInput = "extensions/fixture-a/index.ts";
       // A prior literal allocation must not reorder the unchanged function's public type.
       write(
@@ -359,6 +399,10 @@ describe("write-unified-entry-dts", () => {
       const mixedGeneration = await measurePhase("edited-dist-hash", () =>
         treeHashes(path.join(root, "dist")),
       );
+      history.mixedGeneration = mixedGeneration;
+    });
+    historyCase("matches cold declarations to the mixed cached generation and cleans staging", 3, async (command) => {
+      const { root, mixedGeneration } = history;
       const cold = await measurePhase(
         "cold-writer",
         async () => await runUnifiedWriter(command, root, { OPENCLAW_BUILD_CACHE: "0" }),
@@ -372,7 +416,8 @@ describe("write-unified-entry-dts", () => {
         await measurePhase("cold-dist-hash", () => treeHashes(path.join(root, "dist"))),
       ).toEqual(mixedGeneration);
       expectStagingClean(root);
-    }));
+    });
+  });
 
   it("records successful empty partitions for a bounded plugin selection", ({ command }) =>
     command.lifetime.run(async () => {
