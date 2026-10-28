@@ -1,0 +1,66 @@
+{
+  "action": null,
+  "actual_offload_exit": 124,
+  "command": "offload run --timeout 2460 --mem 4g --cpus 1 --artifacts result608-unified-0 -- timeout -k 15s 2400s sh run608.sh",
+  "correction_commit": "00221e2d",
+  "failed_run_artifact_recovery": "read-only rsync of exact result608-unified-0, rc0; client automatically pulls only successful runs",
+  "focused_tests": {
+    "green": "8/8 focused tests; no skipped/cancelled/todo",
+    "red": "missing supported launcher after actual old-owner second-acquisition refusal",
+    "shell_syntax": "build598.sh, run-build-stage608.sh, run-stage608.sh PASS"
+  },
+  "kind": "JOB608_UNIFIED0_TIMEOUT_NOT_CHECKPOINT",
+  "manifest_sha256": "49777b6a39513a3cb78157a2c64d586365ee127ebf449f732fedddac22c80203",
+  "metadata_observations": [
+    "source/.artifacts/dist-artifacts.lock exists, directory13:26:12",
+    "source/dist restored, directory13:28:53",
+    "build608-checkpoints/unified exists, directory13:30:31",
+    "no declaration staging directory observed at source root",
+    "build.log ends pnpm install success2m6.6s; no successful invocation or checkpoint record"
+  ],
+  "next_seal": null,
+  "outputs": {
+    "build.log": {
+      "bytes": 15106,
+      "compressed_file": "job608-unified0-build.log.gz",
+      "compressed_sha256": "02113da85d41878001fc7f9843a6d5cf4f9ebf7d7332a895e52c1d12389fb698",
+      "uncompressed_sha256": "92782335665692f3ef712315ea68bb346b2640d3c09e23be5e3836ecd83e5290"
+    },
+    "entry-source.mts": {
+      "bytes": 1059,
+      "compressed_file": "job608-unified0-entry-source.mts.gz",
+      "compressed_sha256": "e5083776528facbef3c1534923b4ea85f4d1fcd52c7654853b60d7fb5f0d7da8",
+      "uncompressed_sha256": "3863454d32f4be7dc74d427bba391a2d4546390aae641088c59f0c7a5b43b359"
+    },
+    "offload.log": {
+      "bytes": 2111,
+      "compressed_file": "job608-unified0-offload.log.gz",
+      "compressed_sha256": "82ea22d0540d6cffa811781aa906d86e2dafe28216eedadd6d887928985efd3a",
+      "uncompressed_sha256": "924c705a14f30560b15162df30e9d74bf2e26f6b6eb005cd0ef3c728e5af50dd"
+    },
+    "owner-source.mts": {
+      "bytes": 7897,
+      "compressed_file": "job608-unified0-owner-source.mts.gz",
+      "compressed_sha256": "35374b3fc6de96268bcd335057d969d897b26cc635c8e81f5308a411c1eaf3de",
+      "uncompressed_sha256": "65cfa739ad25cd4e2e9f1781c27cb692fcb81890bd22d8d721e47fd790913276"
+    },
+    "regression-green.log": {
+      "bytes": 1214,
+      "compressed_file": "job608-unified0-regression-green.log.gz",
+      "compressed_sha256": "24c4d24e07851e7fb445204043f1ba99202ed102c12973d9dd4a1b002b08dc6b",
+      "uncompressed_sha256": "af14339a3957ef66d763e31aa891897241107857a431a2a3ef90f83dda20413b"
+    },
+    "regression-red.log": {
+      "bytes": 1147,
+      "compressed_file": "job608-unified0-regression-red.log.gz",
+      "compressed_sha256": "2a11f968bb1aa00394702f3ac8273894bc782cfefb5282b9e82a639cfe5e0780",
+      "uncompressed_sha256": "0275cdee0ec18a69fde4ae7c2d6ae72b6cb9fea973d6a11309b8a1840b4e27dc"
+    }
+  },
+  "package_receipt": null,
+  "result_exit_code_file_present": false,
+  "root_cause": "Source and bounded actual-owner fixture demonstrate unsupported nested artifact lock acquisition. Metadata is consistent with this wait, but no live stack/profile was captured. Do not claim CPU or memory compiler failure.",
+  "source_commit": "2b543da30204b358d4b58a8fb52b060f405f3789",
+  "source_export_sha256": "a19f36956cc6f215571dcc6d037772533053e351d018941f97eb846f8df9cc49",
+  "successful_stage_receipt_present": false
+}

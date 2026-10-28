@@ -1,5 +1,7 @@
 # Job608 exact declaration-stage continuation after package7
 
+**Current source correction:** unified0 at2b timed out124 on an unsupported nested artifact-owner entry. See [job608-after-unified0-continuation.md](job608-after-unified0-continuation.md) and correction00221e2d. Its reviewed new freeze and complete admitted stages are required; all2b receipts are historical for that new source.595 MUST NOT APPLY.
+
 Status: INCOMPLETE SOURCE PREPARATION. No package/tree/action, exact artifact
 reviews or automatic queue approval exists.595 MUST NOT APPLY. No installed,
 sealed, unit, sudoers, service, config, credential or provider change occurred.

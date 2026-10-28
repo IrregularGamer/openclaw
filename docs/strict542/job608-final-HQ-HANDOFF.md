@@ -1,5 +1,7 @@
 # Job608: exact preparation handoff to595
 
+**Current source correction:** unified0 at2b timed out124 on an unsupported nested artifact-owner entry. See [job608-after-unified0-continuation.md](job608-after-unified0-continuation.md) and correction00221e2d. Its reviewed new freeze and complete admitted stages are required; all2b receipts are historical for that new source.595 MUST NOT APPLY.
+
 This is SOURCE preparation. No application, root/unit/sudoers/seal change,
 service operation, gateway restart, provider call or scheduler release occurred.
 This document supersedes status and next-run paragraphs in job608-to595.md and
