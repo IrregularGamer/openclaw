@@ -1,0 +1,27 @@
+{
+  "export": "export608-stage-native-035255",
+  "kind": "JOB608_STAGE_RESULT",
+  "manifest_sha256": "ef592ee8c79d2e2708702713f4464f2e8f1eb3cbfbc880a736be2e6943eed3b5",
+  "outcome": "PASS rc0 STEP608 native-rebuild-pass (4g1CPU outer 2385s+15)",
+  "pinned_reproduction": {
+    "addon_sha256": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042",
+    "matches_native3_addon": true
+  },
+  "preserved_for_compiler_and_package_stages": "export608-stage-native-035255/result608-native",
+  "source_commit": "591158cfe4a569c9e857780e9cc185cb4590b9b7",
+  "source_review": "APPROVE 4a38e973 (591158cf census sha256)",
+  "stage": "native",
+  "stage_receipt": {
+    "exit_code": 0,
+    "kind": "JOB608_STAGE_RECEIPT",
+    "manifest_sha256": "ef592ee8c79d2e2708702713f4464f2e8f1eb3cbfbc880a736be2e6943eed3b5",
+    "outputs": {
+      "native/libtests-receipt.json": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946",
+      "native/receipt.json": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+      "native/rolldown-binding.linux-x64-gnu.node": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042"
+    },
+    "run_id": "stage608-native-035255",
+    "source_commit": "591158cfe4a569c9e857780e9cc185cb4590b9b7",
+    "stage": "native"
+  }
+}
