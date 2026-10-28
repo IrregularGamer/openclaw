@@ -71,7 +71,8 @@ def main():
     ident={'base_source_archive_sha256':m['base_source_archive_sha256'],'source_commit':commit,'successor_archive_sha256':sha(dest/'successor598.tar')}
     prev=sha(base/'export-manifest.json');m.update(ident)
     m.update(stage=a.stage,execution_state='UNUSED',run_id='stage608-%s-%s'%(a.stage,dest.name.rsplit('-',1)[-1]),
-     runner_sha256=sha(dest/'run608.sh'),successor_paths=paths,predecessor_manifest_sha256=prev,
+     runner_commit=commit,runner_sha256=sha(dest/'run608.sh'),stage_helper_sha256=sha(dest/'stage608.py'),
+     successor_paths=paths,predecessor_manifest_sha256=prev,
      source_export_sha256=hashlib.sha256(json.dumps(ident,sort_keys=True,separators=(',',':')).encode()).hexdigest(),
      predecessor_package_attempt=m['run_id']+' (superseded by source '+commit[:8]+')')
     if a.stage=='native': m['purpose']=m['purpose'].replace('stage checks: verified archives + scoped gateway/supervisor-IPC/cancellation tests + frozen install + installed tooling checks (120000ms/case, maxConcurrency=1); 4g/1CPU, outer wall <=24','stage native: verified archives + reviewed 2400s native rebuild returning pinned receipts/addon; 4g/1CPU, outer wall <=24')

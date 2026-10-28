@@ -2,8 +2,10 @@
 import errno
 import hashlib
 import importlib.util
+import json
 from pathlib import Path
 import tempfile
+import sys
 import unittest
 from unittest.mock import patch
 
@@ -68,6 +70,30 @@ class LinkInputTest(unittest.TestCase):
     def test_parent_traversal_refused(self):
         with self.assertRaisesRegex(ValueError, 'traversal'):
             prepare.link_input(self.root / '..' / self.root.name / 'producer', self.dst, self.digest)
+
+    def test_new_export_replaces_inherited_runner_and_helper_identity(self):
+        base=self.root/'base';base.mkdir();dest=self.root/'export'
+        m={'source_commit':'old','successor_paths':[], 'native_stage_outputs':{},
+           'run_id':'old-run','purpose':'test','runner_commit':'stale',
+           'stage_helper_sha256':'stale'}
+        for name,key in [('source598.tar','base_source_archive_sha256'),('native598.tar','native_export_sha256'),
+                         ('rolldown608-source.tar.gz','compiler_upstream_archive_sha256')]:
+            (base/name).write_bytes(name.encode());m[key]=prepare.sha(base/name)
+        (base/'native608-stages').mkdir();(base/'export-manifest.json').write_text(json.dumps(m))
+        helper=(HERE/'stage608.py').read_bytes();runner=b'#!/bin/sh\nexit 0\n'
+        def git(*args):
+            if args[0]=='rev-parse':return b'new-commit\n'
+            if args[0] in ('diff','ls-tree'):return b''
+            if args[0]=='show':return helper if args[1].endswith('/stage608.py') else runner
+            raise AssertionError(args)
+        def archive(*args,**kwargs):kwargs['stdout'].write(b'committed overlay')
+        with patch.object(prepare,'git',side_effect=git),patch.object(prepare.subprocess,'run',side_effect=archive),\
+             patch.object(sys,'argv',['prepare','--base',str(base),'--dest',str(dest),'--commit','new','--stage','native']):
+            prepare.main()
+        result=json.loads((dest/'export-manifest.json').read_text())
+        self.assertEqual(result['runner_commit'],'new-commit')
+        self.assertEqual(result['runner_sha256'],prepare.sha(dest/'run608.sh'))
+        self.assertEqual(result['stage_helper_sha256'],prepare.sha(dest/'stage608.py'))
 
 
 if __name__ == '__main__':
