@@ -73,7 +73,11 @@ ops label does not supply HQ ownership. No ack or accepted-run record is created
 by this handoff.595 exits normally; it must not apply from its worker.
 2. Refer only to the separately reviewed owning dispatcher preparation,
 agentq-ops feature/598-external-install commit3c18a58,
-docs/job598-external-wait.md. Its EXTERNAL_INSTALL_WAIT marker is UNINSTALLED
+docs/job598-external-wait.md. Exact independent source review is
+job598/EXTERNAL-WAIT-REVIEW.md at that commit, SHA256
+a7d3846a906ff914bd35befc05e3174c9748548a061bc70b11aa0235ae0473d2;
+job598/EXTERNAL-WAIT-VERIFICATION.md records129 admitted passing checks.
+Its EXTERNAL_INSTALL_WAIT marker is UNINSTALLED
 and cannot bootstrap this gap. Current dispatcher continuations may run on the
 next tick when the friend is up: do not assume the historical30minute delay or
 reserve admission.595 finishes its source preparation normally after the genuine
