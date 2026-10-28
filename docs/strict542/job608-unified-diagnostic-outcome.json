@@ -1,0 +1,113 @@
+{
+  "build_exit": 124,
+  "claim_limit": "600s includes install/preparation; child compiler ran168.4s before SIGTERM, not a full2400s reproduction and not proof all historical32min native cost is solved",
+  "client_exit": 0,
+  "diagnostic": {
+    "command_exit": 124,
+    "compiler_wall_limit_seconds": 600,
+    "elapsed_seconds": 682.2506108283997,
+    "kind": "DIAGNOSTIC_ONLY_NOT_BUILD_RECEIPT608",
+    "purpose": "phase/CPU/wait diagnosis only; no checkpoint/package/install authority",
+    "source_commit": "5f7d810b7f254e4f06dbf7761b557ba90bf1a2b0",
+    "source_export_sha256": "76b4b47a0e5c3e0a157f75ff1b76d60753c8acdbf5f76bc495668dd985d70f64"
+  },
+  "diagnostic_source_commit": "857ca78356d1302ff882edc7ae45acde9d64e000",
+  "evidence_tar_gz_bytes": 262482,
+  "evidence_tar_gz_sha256": "1d56021edf5b01a95105b8d8de9bcd3bd917af1b4ec89e00e9b01d3283dbbc46",
+  "first_run_observer": "same-thread857; six profiles captured after synchronous295s phase yielded; no second run",
+  "independent_prelaunch_review": "397d22f1",
+  "kind": "ACTUAL_DIAGNOSTIC_EVIDENCE_ONLY608",
+  "manifest_sha256": "3d5634ac91c09e0129a58285f90f1df1bcd7cc733f4284784f74a10b3c727435",
+  "no_authority": "NO checkpoint/package/artifact/action/install/release authority;595 MUST NOT APPLY",
+  "prepared_observer_successor": "06d042e2/reviewa91625ac; not used in actual diagnostic",
+  "profiles": [
+    {
+      "endTime": 558916012457,
+      "path": "unified-0/profiles/node-237-0.cpuprofile",
+      "samples": 15261,
+      "startTime": 558620525301
+    },
+    {
+      "endTime": 558976010977,
+      "path": "unified-0/profiles/node-237-1.cpuprofile",
+      "samples": 3819,
+      "startTime": 558916402163
+    },
+    {
+      "endTime": 559036011746,
+      "path": "unified-0/profiles/node-237-2.cpuprofile",
+      "samples": 3817,
+      "startTime": 558976100850
+    },
+    {
+      "endTime": 559084629562,
+      "path": "unified-0/profiles/node-237-3.cpuprofile",
+      "samples": 4472,
+      "startTime": 559036033505
+    },
+    {
+      "endTime": 558976320805,
+      "path": "unified-0/profiles/node-317-0.cpuprofile",
+      "samples": 3845,
+      "startTime": 558916213621
+    },
+    {
+      "endTime": 559036320686,
+      "path": "unified-0/profiles/node-317-1.cpuprofile",
+      "samples": 3657,
+      "startTime": 558976426821
+    }
+  ],
+  "raw_file_inventory": {
+    "diagnostic.json": {
+      "bytes": 398,
+      "sha256": "1418db43218cf0dd7c42d8c9088b8a748a8469abc7942a4f5b28ff5bf64c4c01"
+    },
+    "runner.log": {
+      "bytes": 4064,
+      "sha256": "863d07c781fd59d4c9ca539497d938bb998a34640f15a7a01764b0957c0f7a0f"
+    },
+    "samples.jsonl": {
+      "bytes": 143930,
+      "sha256": "ab9f38f550647450277bd2bd51c9878ad9efb4a8072920c4d83b20a538285198"
+    },
+    "unified-0/exit-code.txt": {
+      "bytes": 4,
+      "sha256": "ca2ebdf97d7469496b1f4b78958f9dc8447efdcb623953fee7b6996b762f6fff"
+    },
+    "unified-0/profiles/node-237-0.cpuprofile": {
+      "bytes": 1636032,
+      "sha256": "80b09db20eb6c88ca5fb29acd314e2fabd9fd4ffa431c33f39ea1fd97d29be9b"
+    },
+    "unified-0/profiles/node-237-1.cpuprofile": {
+      "bytes": 32600,
+      "sha256": "79593180e5371e9dbf366734674995df4625b15765cf55c881aed4ca4b4b2823"
+    },
+    "unified-0/profiles/node-237-2.cpuprofile": {
+      "bytes": 32703,
+      "sha256": "799d8308d22b55f10cd1987bc811c3c0df51f1e33e5a462b0e617746c6e8b444"
+    },
+    "unified-0/profiles/node-237-3.cpuprofile": {
+      "bytes": 55790,
+      "sha256": "c00a0d5c31a67f933959239899635464c4888e3fc3f3ad6451d7ce5cd33051f6"
+    },
+    "unified-0/profiles/node-317-0.cpuprofile": {
+      "bytes": 459026,
+      "sha256": "46879f12158f8e3927b0affa20f88f8ea58724d614e52214781968d970f26524"
+    },
+    "unified-0/profiles/node-317-1.cpuprofile": {
+      "bytes": 155362,
+      "sha256": "8d603eee06c0203ae5a2ba940130bed3f5ccc338e30dc9f2120e6d12953525c5"
+    },
+    "unified-0/strict542-checks/pnpm-path.txt": {
+      "bytes": 56,
+      "sha256": "78e386bf2d4e2a6a28436ebce3501c0dd07e7d8719ac70e6acdc0ff1b0bbc06c"
+    },
+    "unified-0/unified-0/build.log": {
+      "bytes": 18673,
+      "sha256": "2f1a3b24d3048021566eaac9b88561011737f948cb3419697f6f82d6e65fb19f"
+    }
+  },
+  "sample_count": 68,
+  "sample_span_seconds": 672.2340471744537
+}
