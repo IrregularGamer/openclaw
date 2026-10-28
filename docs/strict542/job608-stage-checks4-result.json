@@ -1,0 +1,26 @@
+{
+  "export": "export608-stage-checks-024237",
+  "kind": "JOB608_STAGE_RESULT",
+  "manifest_sha256": "6379bfac949f21b633b52c2309e2d3163ab7544d17e7c88ebd2244dc1beeb958",
+  "outcome": "PASS rc0 STEP608 installed-checks-pass (4g1CPU outer 2385s+15)",
+  "outputs_verified": true,
+  "preserved_for_package_stage": "export608-stage-checks-024237/result608-checks",
+  "source_commit": "6ae72a29b920fcab79f3f68b20ca7fc2a4cdbcc4",
+  "source_review": "APPROVE 1862a58b (6ae72a29 split compiler evidence dir)",
+  "stage": "checks",
+  "stage_receipt": {
+    "exit_code": 0,
+    "kind": "JOB608_STAGE_RECEIPT",
+    "manifest_sha256": "6379bfac949f21b633b52c2309e2d3163ab7544d17e7c88ebd2244dc1beeb958",
+    "outputs": {
+      "checks/installed.json": "1b91e296da841c791f7246207bd7379517629fab9db3923d2b502cfd51171cb9",
+      "checks/tests.log": "c218b176d848d91f77066f8ff523512f8d60714fab617760001de61047aa2ad3"
+    },
+    "run_id": "stage608-checks-024237",
+    "source_commit": "6ae72a29b920fcab79f3f68b20ca7fc2a4cdbcc4",
+    "stage": "checks"
+  },
+  "stage_receipt_sha256": "cc9e92583ee80c8a7ab41f3ceab3805339750dc86822b0eee8af2536408177a8",
+  "supersedes": "checks3 stage608-checks-014144 (lost with worker, no result)",
+  "window_utc": "2026-10-28T02:45Z->~03:05Z"
+}
