@@ -1,5 +1,10 @@
 # Job598 to595: exact source-only application preparation
 
+CURRENT 2026-10-28: [the exact current handoff](job608-final-HQ-HANDOFF.md)
+supersedes ALL historical status and next-run paragraphs below. Actual package6
+outcome and final exact action/tree/seal reviews must be checked there. Older
+notes are historical evidence, never current retry or application authority.
+
 CURRENT6082026-10-27: combined4 complete diagnostic SUCCESS9a01dc9e/255checks;
 all57main+AI/fourworkers pass, exact native rebuild and settled0managed containers.
 Independent prerequisite review633 PENDING. Full typed package, final action/seal
