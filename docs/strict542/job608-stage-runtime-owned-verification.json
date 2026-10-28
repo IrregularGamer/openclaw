@@ -1,0 +1,104 @@
+{
+  "actual_offload_exit": 0,
+  "all_returned_files_sha256": {
+    "exit-code.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "runtime/build.log": "c4391af26306925211fcc940e0c6a4abd303c6b0b683aedb3cafde78f253b82a",
+    "runtime/checkpoint.tar": "656a128d9966400beb6a92d8ebccca02e1d5bba737d03f1d922bc6ce95c88459",
+    "runtime/stage-receipt.json": "a4ef26da99c7d13ad21f1ed94d36b0bb85657cf7507f943c52539f65eabb712f",
+    "strict542-checks/pnpm-path.txt": "78e386bf2d4e2a6a28436ebce3501c0dd07e7d8719ac70e6acdc0ff1b0bbc06c"
+  },
+  "checkpoint_identity": {
+    "configCensusSha256": "76965d4a46a3b264d181e2af4dcdfadc22f599fcf196a58a1d156037e9861f6d",
+    "environment": {
+      "CI": "1",
+      "GIT_COMMIT": "5f7d810b7f254e4f06dbf7761b557ba90bf1a2b0",
+      "LANG": "C",
+      "LC_ALL": "C",
+      "OPENCLAW_BUILD_TIMESTAMP": "2026-10-25T16:00:00.000Z",
+      "SOURCE_DATE_EPOCH": "1792944000",
+      "TZ": "UTC"
+    },
+    "lockSha256": "091ede3cb510110ed2b1ca8858100066add16cb3b91bcd0ff097d89f75035751",
+    "nativeAddonSha256": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042",
+    "nativeCompileSha256": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+    "nativeLibtestsSha256": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946",
+    "node": "v24.21.0",
+    "packageSha256": "09f313df5a3b93723c7f408bba1887e9978156bbcfd4fa0b3c3bccb61c4779c8",
+    "pnpm": "12.5.1",
+    "sourceCommit": "5f7d810b7f254e4f06dbf7761b557ba90bf1a2b0",
+    "sourceExportSha256": "76b4b47a0e5c3e0a157f75ff1b76d60753c8acdbf5f76bc495668dd985d70f64",
+    "workspaceSha256": "5e672012b9678d1d40ec40e9fdff43283b7c4f947052cc24168b88d1f51ec872"
+  },
+  "checkpoint_inventory_entries": 8956,
+  "checkpoint_inventory_kinds": {
+    "directory": 192,
+    "file": 8764,
+    "link": 0
+  },
+  "checkpoint_phases": [
+    {
+      "durationMs": 398.1571530000074,
+      "label": "clean:dist",
+      "status": "ran"
+    },
+    {
+      "durationMs": 18700.907639000012,
+      "label": "plugins:assets:build",
+      "status": "ran"
+    },
+    {
+      "durationMs": 67383.45118599999,
+      "label": "tsdown-ai",
+      "status": "ran"
+    },
+    {
+      "durationMs": 520613.427098,
+      "label": "tsdown-packages",
+      "status": "ran"
+    },
+    {
+      "durationMs": 396680.741547,
+      "label": "tsdown-unified",
+      "status": "ran"
+    }
+  ],
+  "compressed_evidence": {
+    "job608-stage-runtime-owned-build.log.gz": {
+      "expanded_bytes": 63836,
+      "expanded_sha256": "c4391af26306925211fcc940e0c6a4abd303c6b0b683aedb3cafde78f253b82a",
+      "sha256": "12c58708e512d875495c82435565905163ec4e85aede97a2ab1a99fc6315f72b"
+    },
+    "job608-stage-runtime-owned-offload.log.gz": {
+      "expanded_bytes": 2138,
+      "expanded_sha256": "aaf4874b30acc6cf988047aa76d9f911ba622d9c6ac4a1803c3e431669ef45d1",
+      "sha256": "895b2193e9c1c9a5c814f8c229b42694d7cb3e0fc8e477c9d7d98db8678cb04c"
+    }
+  },
+  "export": "/home/deploy/agentq/tmp/export608-stage-runtime-owned-next",
+  "receipt": {
+    "exit_code": 0,
+    "kind": "JOB608_STAGE_RECEIPT",
+    "manifest_sha256": "cf8907d39394721c84a496cd9aed4d52f33f4bf335335cf91a7a03252329cd80",
+    "outputs": {
+      "runtime/build.log": "c4391af26306925211fcc940e0c6a4abd303c6b0b683aedb3cafde78f253b82a",
+      "runtime/checkpoint.tar": "656a128d9966400beb6a92d8ebccca02e1d5bba737d03f1d922bc6ce95c88459"
+    },
+    "run_id": "stage608-runtime-next",
+    "source_commit": "5f7d810b7f254e4f06dbf7761b557ba90bf1a2b0",
+    "source_export_sha256": "76b4b47a0e5c3e0a157f75ff1b76d60753c8acdbf5f76bc495668dd985d70f64",
+    "stage": "runtime",
+    "stage_inputs": {
+      "native/libtests-receipt.json": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946",
+      "native/receipt.json": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+      "native/rolldown-binding.linux-x64-gnu.node": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042",
+      "native/stage-receipt.json": "f40df3a579bd600c154b14ad9d9ac863b5ab26381f8615aa54d0829c0ea05069"
+    }
+  },
+  "receipt_sha256": "a4ef26da99c7d13ad21f1ed94d36b0bb85657cf7507f943c52539f65eabb712f",
+  "remaining": "NEW current unified0..5/middle/sdk0..1/tail/package; final artifact/source/action/privilege/seal/REAL automatic queue reviews.595 MUST NOT APPLY",
+  "result_exit": 0,
+  "returned_bytes": 313378134,
+  "scope": "ACTUAL_RUNTIME_CHECKPOINT_ONLY_NOT_COMPLETE_GATEWAY_BUILD_PACKAGE_OR_APPLICATION",
+  "source_commit": "5f7d810b7f254e4f06dbf7761b557ba90bf1a2b0",
+  "source_export_sha256": "76b4b47a0e5c3e0a157f75ff1b76d60753c8acdbf5f76bc495668dd985d70f64"
+}
