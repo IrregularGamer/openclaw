@@ -1,0 +1,13 @@
+{
+  "archive_pins": "streamed and verified by preparation helper; not copied from mutable checkout",
+  "execution_rule": "Sequential admitted offload only, after native producer exits and settles; check deadline before selecting a finite timeout plus195s reserve. Shorter wall time never skips a check; a timed-out run is not acceptance. No run may outlive this worker.",
+  "export": "/home/deploy/agentq/tmp/export608-stage-checks-owned-next",
+  "free_bytes": 742256640,
+  "manifest_sha256": "afd3a1870bcf3ff7cad682c808acc39a42917f91d2877c134dbe4ca8b4c3e8f3",
+  "runner_helper_committed_bytes": "PASS",
+  "source_commit": "5f7d810b7f254e4f06dbf7761b557ba90bf1a2b0",
+  "source_export_sha256": "76b4b47a0e5c3e0a157f75ff1b76d60753c8acdbf5f76bc495668dd985d70f64",
+  "stage": "checks",
+  "state": "PREPARED_UNUSED_NOT_LAUNCHED",
+  "verify_inputs": "PASS"
+}
