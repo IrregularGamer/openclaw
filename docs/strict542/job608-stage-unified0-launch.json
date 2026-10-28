@@ -1,0 +1,15 @@
+{
+  "kind": "JOB608_STAGE_LAUNCH",
+  "stage": "unified-0",
+  "utc": "2026-10-28T13:22:30.634088+00:00",
+  "export": "/home/deploy/agentq/tmp/export608-stage-unified-0-1235",
+  "manifest_sha256": "49777b6a39513a3cb78157a2c64d586365ee127ebf449f732fedddac22c80203",
+  "source_commit": "2b543da30204b358d4b58a8fb52b060f405f3789",
+  "source_export_sha256": "a19f36956cc6f215571dcc6d037772533053e351d018941f97eb846f8df9cc49",
+  "command": "offload run --timeout 2460 --mem 4g --cpus 1 --artifacts result608-unified-0 -- timeout -k 15s 2400s sh run608.sh",
+  "foreground_log": "/home/deploy/agentq/runs/608/stage-unified0-offload.log",
+  "status": "LAUNCHED_NO_RESULT_YET",
+  "local_exact_manifest_runner_helper": "PASS",
+  "local_stage_input_verifier": "PASS",
+  "worker_deadline": "2026-10-28T14:15:34Z"
+}
