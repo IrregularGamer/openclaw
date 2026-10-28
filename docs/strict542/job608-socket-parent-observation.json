@@ -1,0 +1,27 @@
+{
+  "ancestors": [
+    {
+      "gid": 0,
+      "mode": 493,
+      "path": "/",
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "mode": 493,
+      "path": "/run",
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "mode": 493,
+      "path": "/run/agentq-safety",
+      "uid": 0
+    }
+  ],
+  "application_authority": false,
+  "kind": "READ_ONLY_SOCKET_ANCESTRY_PREREQUISITE_NOT_APPLICATION",
+  "observed_utc": "2026-10-28T07:00:30.891037+00:00",
+  "rule": "Repeat actual root ownership, nonwritable directory ancestry, deploy search access and socket absence before reviewed HQ application/start; no ownership or permission change is prepared.",
+  "socket_absent": true
+}

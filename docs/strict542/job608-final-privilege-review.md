@@ -116,3 +116,22 @@ Pending package6 receipt and exact action/tree identities. Historical598
 baseline/control/seal hashes are not current installation authority. Any current
 baseline drift requires independently reviewed reconciliation and exact action
 regeneration; silently refreshing a baseline is not approved.
+
+## Socket-ancestry prerequisite and handoff clarification
+
+I independently checked the read-only observation
+`job608-socket-parent-observation.json`, SHA256
+`43ceab08a560e2e3fc53c22e62637a697ad42572308171c65aa4b0d17e6bfb31`,
+and step3 of `job608-final-HQ-HANDOFF.md`, SHA256
+`ae4c329753b400589994655a8b6c8eb119614cd4ea1fa1aa84cf8a7cf3dc53cf`.
+The exact clarification is approved as privilege preparation: repeat actual
+root ownership, nonwritable directory ancestry, deploy search access and socket
+absence before application/start; do not change shared directory permissions or
+ownership to make a failed prerequisite pass. My read-only independent lstat
+checks found `/`, `/run` and `/run/agentq-safety` to be real root:root0755
+directories, with deploy search access and no POSIX access ACLs. The fixed
+socket was absent including no dangling symlink. These observations grant no
+installation authority and must be repeated by actual foreground HQ in its
+natural settled gap. Executable hashes and pending artifact binding above are
+unchanged; no additional test execution was needed for this documentation-only
+clarification.

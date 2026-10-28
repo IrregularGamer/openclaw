@@ -83,7 +83,10 @@ REQUEUE docs or install the optional dispatcher successor to arrange itself.
 HQ stages only reviewed secretless bytes at the fixed root-protected
 /var/lib/agentq-safety/strict542-598-input. Validate original complete seal,
 exact baseline metadata/guards, tree/action/helper/review hashes and native
-registered-worker/fixture/remote settlement. Stage the REAL root-protected
+registered-worker/fixture/remote settlement. Require fixed socket absence and
+root-owned nonwritable directory ancestry with deploy search permission. The
+read-only socket-parent observation records current0755 root:root ancestry;
+repeat it, never silently change shared ownership/permissions. Stage the REAL root-protected
 hq-ack.json with exact scope,owner,boot_id,created_wall,expires_wall,
 created_mono,expires_mono,action_sha256. Scope=strict542-gateway-install598.
 No config/auth/credential/state transfer or provider call is needed.
