@@ -1,5 +1,11 @@
 # job608 unified-0 (1bed) diagnostic relaunch — sampler wrapper, export unchanged
 
+**Superseded launch intent:** the attempted diagnostic was refused before execution
+at the transfer guard (`source/.npmrc`); no samples or receipt resulted. The claim
+below that the prior remote copy was discarded was not established. Use
+`job608-unified-0-diag-reconciliation.md` and the fresh-path observer command for
+the reviewed next diagnostic. The 2980/2920-second command below was not executed.
+
 Why not edit run-stage608.sh: prepare-stage608-export.py binds every stage receipt to the
 source commit (`rec['source_commit']==commit`). A runner edit is a new commit and would
 invalidate the accepted native 8866a036, compiler 53664cdb and runtime 7d3d1bd6 receipts
