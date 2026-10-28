@@ -107,7 +107,7 @@ import hashlib,json,sys
 from pathlib import Path
 root=Path(sys.argv[1]);m=json.loads((root/'export-manifest.json').read_text())
 assert m['source_commit']=='1bed4d1bb53eff145f724cc6a448dc73b3609015'
-assert m['source_export_sha256']=='fbeed48cc8ecc375257396e34ff4bfaf1708a141ffa21af979ff2efc49dbbfc8'
+assert m['source_export_sha256']=='5d7e9d57fb660e2b54f5595e81ddf332027e21b303937c2cd6bc7f718f311263'
 assert m['stage']=='package'
 assert (root/'result608-package/exit-code.txt').read_text().strip()=='0'
 source=Path(sys.argv[2])/'docs/strict542'
