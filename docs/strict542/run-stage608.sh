@@ -19,7 +19,7 @@ out=Path(os.environ['STAGE608_RESULT']); src=Path('source')
 for name in ['strict542-checks','result598-build','result598-native']:
  p=src/name
  if p.exists():shutil.move(str(p),str(out/name))
-for name in ['source','native-source','.pnpm-store','.native608']:
+for name in ['source','native-source','.pnpm-store','.native608','build608-checkpoints']:
  p=Path(name)
  if p.exists():shutil.rmtree(p)
 CLEAN
@@ -77,6 +77,8 @@ checks)
   python3 -m unittest discover -s docs/strict542 -p test_native_compaction608.py -v
   python3 -m unittest discover -s docs/strict542 -p test_frozen_package608.py -v
   python3 -m unittest discover -s docs/strict542 -p test_lease619_suite_gate.py -v
+  python3 -m unittest discover -s docs/strict542 -p test_stage608.py -v
+  node --test docs/strict542/declaration-checkpoint608.test.mjs docs/strict542/build-checkpoint608.test.mjs
   node --test docs/strict542/worker-phases608.test.mjs docs/strict542/serial-probe598.test.mjs docs/strict542/isolated-config598.test.mjs docs/strict542/disposable-inputs608.test.mjs docs/strict542/native-compiler608.test.mjs docs/strict542/bounded-package608.test.mjs
   ) >strict542-checks/tests.log 2>&1
   status=$?
@@ -114,8 +116,27 @@ compiler)
   mkdir "../$RESULT/compiler"
   cp strict542-checks/tests.log "../$RESULT/compiler/"
   ;;
+runtime|unified-[0-5]|middle|sdk-[0-1]|tail)
+  (cd .. && python3 stage608.py stage-native && python3 stage608.py restore-build)
+  mkdir "../$RESULT/$STAGE"
+  npm exec --yes --package=pnpm@12.5.1 -- sh -c 'set -eu; [ "$(pnpm --version)" = 12.5.1 ]; command -v pnpm >strict542-checks/pnpm-path.txt'
+  PNPM_COMMAND=$(cat strict542-checks/pnpm-path.txt)
+  NODE_PHYSICAL=$(realpath "$(command -v node)")
+  eval "$(python3 - <<'STAGE_IDENTITIES'
+import json,shlex
+from pathlib import Path
+m=json.loads(Path('../export-manifest.json').read_text())
+for key,field in [('STRICT542_SOURCE_COMMIT','source_commit'),('STRICT542_SOURCE_EXPORT_SHA256','source_export_sha256'),('STRICT542_BUILD_RUN_ID','run_id')]:print(key+'='+shlex.quote(m[field]))
+STAGE_IDENTITIES
+)"
+  env -i HOME="$HOME" PATH="$(dirname "$PNPM_COMMAND"):$(dirname "$NODE_PHYSICAL"):/usr/bin:/bin" STRICT542_SOURCE_COMMIT="$STRICT542_SOURCE_COMMIT" STRICT542_SOURCE_EXPORT_SHA256="$STRICT542_SOURCE_EXPORT_SHA256" STRICT542_BUILD_RUN_ID="$STRICT542_BUILD_RUN_ID" sh docs/strict542/run-build-stage608.sh "$STAGE" >"../$RESULT/$STAGE/build.log" 2>&1 || {
+    status=$?; tail -80 "../$RESULT/$STAGE/build.log"; exit "$status";
+  }
+  (cd .. && python3 stage608.py archive-build "$RESULT")
+  echo "STEP608 $STAGE-pass"
+  ;;
 package)
-  (cd .. && python3 stage608.py stage-native && python3 stage608.py merge-logs source/strict542-checks/tests.log)
+  (cd .. && python3 stage608.py stage-native && python3 stage608.py restore-build && python3 stage608.py merge-logs source/strict542-checks/tests.log)
   # Same evidence the single run wrote after its passing checks; the merged
   # log is exactly the checks + compiler stage logs pinned by their receipts.
   python3 - <<'CHECK_EVIDENCE'
@@ -140,7 +161,7 @@ for key,field in [('STRICT542_SOURCE_COMMIT','source_commit'),('STRICT542_SOURCE
 BUILDER_IDENTITIES
 )"
   echo STEP608 builder-start
-  env -i HOME="$HOME" PATH="$(dirname "$PNPM_COMMAND"):$(dirname "$NODE_PHYSICAL"):/usr/bin:/bin" STRICT542_SOURCE_COMMIT="$STRICT542_SOURCE_COMMIT" STRICT542_SOURCE_EXPORT_SHA256="$STRICT542_SOURCE_EXPORT_SHA256" STRICT542_BUILD_RUN_ID="$STRICT542_BUILD_RUN_ID" sh docs/strict542/build598.sh || {
+  env -i HOME="$HOME" PATH="$(dirname "$PNPM_COMMAND"):$(dirname "$NODE_PHYSICAL"):/usr/bin:/bin" STRICT542_SOURCE_COMMIT="$STRICT542_SOURCE_COMMIT" STRICT542_SOURCE_EXPORT_SHA256="$STRICT542_SOURCE_EXPORT_SHA256" STRICT542_BUILD_RUN_ID="$STRICT542_BUILD_RUN_ID" sh docs/strict542/build598.sh checkpoint608 || {
     # A failed offload returns no artifacts and build598.sh writes only to its
     # log, so surface the log tail on stdout; the failure status is unchanged.
     status=$?; echo "STEP608 builder-fail $status"; tail -n 80 result598-build/build.log 2>/dev/null || true; exit "$status"

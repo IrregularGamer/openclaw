@@ -542,6 +542,7 @@ export async function runBuildAllSteps(
   profile: string,
   params: {
     cacheEnabled?: boolean;
+    boundedCheckpointStage?: string;
     signal?: AbortSignal;
     requireVerifiedGatewayFence?: boolean;
     cwd?: string;
@@ -559,7 +560,9 @@ export async function runBuildAllSteps(
   } = {},
 ): Promise<BuildAllResult> {
   params.signal?.throwIfAborted();
+  if (params.boundedCheckpointStage && profile !== "boundedPackage") throw new Error("checkpoints require boundedPackage");
   if (profile === "boundedPackage") {
+    if (params.steps) throw new Error("boundedPackage refuses caller-selected steps");
     admitBoundedPackage(readProcessMemoryCapacity(params.memoryLimit ?? {}), params.env ?? process.env);
     if ([".git", "dist", "dist-runtime"].some((entry) => existsSync(resolve(params.cwd ?? process.cwd(), entry)))) {
       throw new Error("boundedPackage requires a fresh disposable source export");
@@ -576,7 +579,7 @@ export async function runBuildAllSteps(
     resolveBuildAllEnvironment(sourceEnv),
     params.memoryLimit,
   );
-  const steps = params.steps ?? resolveBuildAllSteps(profile, buildEnv);
+  let steps = params.steps ?? resolveBuildAllSteps(profile, buildEnv);
   const cacheEnabled = profile !== "boundedPackage" && (params.cacheEnabled ?? buildEnv.OPENCLAW_BUILD_CACHE !== "0");
   const logger = params.logger ?? console;
   // One owner for both `pnpm build` and run-node dirty-tree auto-build: both
@@ -595,6 +598,13 @@ export async function runBuildAllSteps(
       admissionRefused: true,
     };
   }
+  const checkpoint = params.boundedCheckpointStage
+    ? await (await import("./build-checkpoint608.mts")).prepareBuildCheckpoint608({
+        stage: params.boundedCheckpointStage, root: params.cwd ?? process.cwd(), env: buildEnv,
+        labels: steps.map(step => step.label), outputRoots: listTsdownOutputRoots(),
+      })
+    : null;
+  if (checkpoint) steps = steps.filter(step => checkpoint.labels.includes(step.label));
   const now = params.now ?? performance.now.bind(performance);
   const resolveCacheState = params.resolveCacheState ?? resolveBuildStepCacheState;
   const restoreCache = params.restoreCache ?? restoreBuildStepCacheOutputs;
@@ -657,7 +667,9 @@ export async function runBuildAllSteps(
     }
     logger.error(`[build-all] ${step.label}${reusedCache ? " (cache restored)" : ""}`);
     const invocation = resolveBuildAllStep(stepToRun, { env: buildEnv });
-    const result = await runStep(invocation);
+    const result = checkpoint?.join && ["write-unified-entry-dts", "write-plugin-sdk-entry-dts"].includes(step.label)
+      ? (await checkpoint.join(), { status: 0 })
+      : await runStep(invocation);
     params.signal?.throwIfAborted();
     const durationMs = cacheDurationMs + now() - startedAt;
     if (result.status !== 0) {
@@ -674,6 +686,7 @@ export async function runBuildAllSteps(
     timings.push({ label: step.label, status: reusedCache ? "reused" : "ran", durationMs });
     logger.error(`[build-all] ${step.label} done in ${formatBuildAllDuration(durationMs)}`);
   }
+  if (exitCode === 0) checkpoint?.finish(timings);
   logger.error(formatBuildAllTimingSummary(timings));
   return { exitCode, timings };
 }

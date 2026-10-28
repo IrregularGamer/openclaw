@@ -2,6 +2,8 @@
 # SOURCE ONLY. Run only through admitted offload from a committed secretless export.
 # This builds a portable directory, never an image, runtime installation or service.
 set -eu
+case "${1-}" in '') BUILD_MODE=ordinary;; checkpoint608) BUILD_MODE=checkpoint608;; *) exit 2;; esac
+[ "$#" -le 1 ] || exit 2
 [ ! -e result598-build ] || { echo 'refuse existing result598-build'; exit 2; }
 mkdir result598-build
 : "${STRICT542_SOURCE_COMMIT:?export exact committed source identity}"
@@ -21,7 +23,11 @@ pnpm install --frozen-lockfile
 node --input-type=module -e 'import fs from "node:fs"; import {releaseDisposableStore} from "./scripts/lib/disposable-build-inputs.mjs"; if (fs.lstatSync("../.pnpm-store",{throwIfNoEntry:false})) releaseDisposableStore("..")'
 python3 docs/strict542/frozen-package608.py preflight
 # Full canonical phase inventory with the separately reviewed required-native scheduler.
+if [ "$BUILD_MODE" = checkpoint608 ]; then
+  node --import ./scripts/tsx.mjs scripts/build-checkpoint608.mts complete
+else
 node --import ./scripts/tsx.mjs scripts/build-all.mts boundedPackage
+fi
 python3 docs/strict542/frozen-package608.py preflight
 pnpm --filter openclaw --prod deploy result598-build/runtime >result598-build/deploy.log 2>&1 || {
   status=$?; tail -30 result598-build/deploy.log; exit "$status";
