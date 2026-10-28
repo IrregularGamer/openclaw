@@ -543,6 +543,9 @@ export async function runBuildAllSteps(
   params: {
     cacheEnabled?: boolean;
     boundedCheckpointStage?: string;
+    // Injected by the build-checkpoint608.mts entry: importing that module from here while it is the
+    // entry still awaiting this call is a top-level-await cycle that never settles (node exit 13).
+    prepareCheckpoint?: (typeof import("./build-checkpoint608.mts"))["prepareBuildCheckpoint608"];
     signal?: AbortSignal;
     requireVerifiedGatewayFence?: boolean;
     cwd?: string;
@@ -599,7 +602,7 @@ export async function runBuildAllSteps(
     };
   }
   const checkpoint = params.boundedCheckpointStage
-    ? await (await import("./build-checkpoint608.mts")).prepareBuildCheckpoint608({
+    ? await (params.prepareCheckpoint ?? (await import("./build-checkpoint608.mts")).prepareBuildCheckpoint608)({
         stage: params.boundedCheckpointStage, root: params.cwd ?? process.cwd(), env: buildEnv,
         labels: steps.map(step => step.label), outputRoots: listTsdownOutputRoots(),
       })

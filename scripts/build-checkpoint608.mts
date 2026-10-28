@@ -78,6 +78,6 @@ if(isDirectRunUrl(process.argv[1],import.meta.url)) {
  const args=process.argv.slice(2);if(args.length!==1)throw new Error('Usage: scripts/build-checkpoint608.mts <runtime|unified-0..5|middle|sdk-0..1|tail|complete>');
  const {runBuildAllSteps}=await import('./build-all.mts');
  const {withDistArtifactOwnership}=await import('./lib/dist-artifact-ownership.mts');
- const result=await withDistArtifactOwnership(process.cwd(),()=>runBuildAllSteps('boundedPackage',{boundedCheckpointStage:args[0]}));
+ const result=await withDistArtifactOwnership(process.cwd(),()=>runBuildAllSteps('boundedPackage',{boundedCheckpointStage:args[0],prepareCheckpoint:prepareBuildCheckpoint608}));
  process.exitCode=result.exitCode;
 }

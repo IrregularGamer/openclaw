@@ -2,6 +2,7 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
+import {spawnSync} from 'node:child_process';
 import {buildStage608, workspaceInventory608, writeBuildCheckpoint608, restoreBuildCheckpoint608, validatePhaseResults608} from '../../scripts/lib/bounded-build-checkpoint608.mjs';
 const labels=['clean:dist','plugins:assets:build','tsdown-ai','tsdown-packages','tsdown-unified','write-unified-entry-dts','external-plugins:local-dist','check-cli-bootstrap-imports','plugins:assets:copy','runtime-postbuild','build-stamp','runtime-postbuild-stamp','write-plugin-sdk-entry-dts','check-plugin-sdk-exports','ui:build','write-build-info','write-cli-startup-metadata'];
 const groups={unified:['base','e1','e2','e3','e4','e5'],sdk:['s1','s2']};
@@ -81,4 +82,20 @@ test('checkpoint links resolving to exactly the parent or above are refused (F1)
  assert.doesNotThrow(()=>check({dist:{kind:'directory',mode:0o755},'dist/same':{kind:'link',mode:0o777,target:'.'},'dist/up':{kind:'link',mode:0o777,target:'..'}}));
  for(const outputs of [{up:{kind:'link',mode:0o777,target:'..'}},{dist:{kind:'directory',mode:0o755},'dist/up2':{kind:'link',mode:0o777,target:'../..'}},{up3:{kind:'link',mode:0o777,target:'a/../../b'}}])
   assert.throws(()=>check(outputs),/escapes source/);
+});
+
+test('job608 checkpoint entry injects its preparer instead of a top-level-await self-import cycle', () => {
+ // Runtime stage exit 13 (2026-10-28): build-all dynamically imported build-checkpoint608.mts while that
+ // module was the entry still awaiting runBuildAllSteps, so neither promise could settle.
+ const entry=fs.readFileSync(new URL('../../scripts/build-checkpoint608.mts',import.meta.url),'utf8');
+ const all=fs.readFileSync(new URL('../../scripts/build-all.mts',import.meta.url),'utf8');
+ assert.match(entry,/runBuildAllSteps\('boundedPackage',\{boundedCheckpointStage:args\[0\],prepareCheckpoint:prepareBuildCheckpoint608\}\)/);
+ assert.match(all,/params\.prepareCheckpoint \?\? \(await import\("\.\/build-checkpoint608\.mts"\)\)\.prepareBuildCheckpoint608/);
+ const dir=fs.mkdtempSync('/var/tmp/tla608-');
+ fs.writeFileSync(path.join(dir,'main.mjs'),"export function prep(){return 'ok'}\nconst {run}=await import('./lib.mjs');\nconsole.log(await run(process.argv[2]==='inject'?prep:null));\n");
+ fs.writeFileSync(path.join(dir,'lib.mjs'),"export async function run(p){return (p ?? (await import('./main.mjs')).prep)();}\n");
+ const run=mode=>spawnSync(process.execPath,[path.join(dir,'main.mjs'),mode],{encoding:'utf8'});
+ assert.equal(run('import').status,13);
+ const injected=run('inject');assert.equal(injected.status,0);assert.equal(injected.stdout.trim(),'ok');
+ fs.rmSync(dir,{recursive:true,force:true});
 });
