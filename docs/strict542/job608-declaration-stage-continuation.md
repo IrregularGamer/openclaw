@@ -132,3 +132,10 @@ the fresh reviewed scheduler request after every original gate.
   middle, sdk-0..1, tail, package; then receipt/hashes, action/privilege/seal
   and automatic queue reviews, final ordered HQ handoff for 595.
 - Nothing installed, sealed, restarted or changed in sudoers/units/budgets.
+
+## 2026-10-28 checks7 + compiler/runtime preparation (Claude, worker 608-3)
+
+- checks7 at frozen 835714fb: export `tmp/export608-stage-checks-0933` (manifest 50cb97b9), exit 0, `STEP608 installed-checks-pass`, 51 node tests pass / 0 fail; receipt `job608-stage-checks7-receipt.json` (tests.log 853041a7, installed.json b0384fd0). Result kept in the export's `result608-checks` as package-stage input.
+- Prepared UNUSED with `prepare-stage608-export.py --input` (pinned native6 inputs, `stage608.py verify-inputs` OK): compiler `tmp/export608-stage-compiler-0945` (manifest 5b83e5bb), runtime `tmp/export608-stage-runtime-0945` (manifest c1803fc4).
+- Compiler (~40 min) did not fit the remaining worker deadline. NEXT worker, FIRST step: `cd tmp/export608-stage-compiler-0945 && offload run --timeout 2460 --mem 4g --cpus 1 --artifacts result608-compiler -- timeout -k 15s 2400s sh run608.sh`; then runtime the same way (`--artifacts result608-runtime`) in a further worker if it does not fit.
+- Host `/` was at 100% (5.7 MB free) during this worker. Freed about 690 MB without deleting anything: `export608-stage-compiler-011517/source598.tar` (superseded, byte-identical per cmp) is now a hardlink to the canonical e79a0e45 archive. The same relink of two more copies was stopped by the tool time limit before it finished; both copies are intact. Free space is still low (~600 MB), so infra should look at it.
