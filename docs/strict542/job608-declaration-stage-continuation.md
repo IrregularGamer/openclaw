@@ -232,3 +232,25 @@ original peer/cgroup/MainPID refusal and cancellation/descendant-settlement case
 pass synthetically; no live HQ owner/provider availability is claimed. Package
 must consume checks from tmp/export608-stage-checks-1112/result608-checks.
 The older checks7 receipt at835714fb remains unusable for this frozen source.
+
+
+All six unified exports are now PREPARED, VERIFIED, NEVER LAUNCHED. Exact paths,
+full manifests, source/runner/helper/input pins and independent review identities
+are in job608-unified-exports-ready.json; each individual manifest is committed.
+The same-filesystem inputs share unchanged accepted producer inodes. Each export
+passed the frozen input verifier after preparation. Final free space is recorded
+in the index; reserve256MiB for each group return and32MiB for export overhead,
+rechecking actual space before each later stage and allowing for accumulated
+outputs. These reserves are conservative estimates, not a claim about actual
+unbuilt output size. No output checkpoint/package exists for any unified group.
+Legacy descriptive purpose/runner_commit metadata in inherited manifests cannot
+supersede the actual stage/source_commit fields, executable hashes and source/
+export pins. Independent handoff reviewb106b5ef approves ba5c61b2 preparation only.
+
+NEXT worker FIRST action is the unified-0-1235 command above with full2460s
+broker timeout /2400s stage allowance and195s settlement, after deadline and
+space checks. Do not prepare exports again or rerun checks/native/compiler/
+runtime: accepted current inputs are already preserved at frozen2b543da3.
+Continue unified1..5 from their exact ready-index paths one at a time. No current
+worker offload is still running. All required downstream artifact/action/policy/
+seal/automatic reviews and genuine595 natural-gap execution remain unfulfilled.

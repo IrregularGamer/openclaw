@@ -1,0 +1,132 @@
+{
+  "kind": "JOB608_PREPARED_UNIFIED_EXPORTS",
+  "free_bytes": 779014144,
+  "return_reserve_bytes": 268435456,
+  "metadata_reserve_bytes": 33554432,
+  "helper_commit": "1a8b422d6e43897d5b8036585218e1585226b515",
+  "helper_review": "4832c8c1f25f3e48d98ea95c260b3eea0eb4c310",
+  "combined_source_review": "3d178871afd0e759fdd0b4e0cc376a7cfc0b3df1",
+  "current_handoff_review": "b106b5ef38a8e57eaeb4a62bbc3876fe10370593",
+  "exports": [
+    {
+      "stage": "unified-0",
+      "export": "/home/deploy/agentq/tmp/export608-stage-unified-0-1235",
+      "manifest_sha256": "49777b6a39513a3cb78157a2c64d586365ee127ebf449f732fedddac22c80203",
+      "source_commit": "2b543da30204b358d4b58a8fb52b060f405f3789",
+      "source_export_sha256": "a19f36956cc6f215571dcc6d037772533053e351d018941f97eb846f8df9cc49",
+      "stage_inputs": {
+        "native/libtests-receipt.json": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946",
+        "native/receipt.json": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+        "native/rolldown-binding.linux-x64-gnu.node": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042",
+        "native/stage-receipt.json": "32bd246a35634b09cbb88455d5cc41fff833d5b9315a3e8f104ca2438dfaf6d4",
+        "runtime/build.log": "aeb9f6531b80227d7a1aa8d72312a0fc3cddd59a99e9a157913d2763883dfbe5",
+        "runtime/checkpoint.tar": "7657104323a6c818b38705ae214d71b2216a145d990e9f4cb83da698acd029ed",
+        "runtime/stage-receipt.json": "641c069ab74330ce50f006fb0e1e5a7f0760c7cf0df57b8d1e6ab3fd9ada4d13"
+      },
+      "state": "PREPARED_NEVER_LAUNCHED",
+      "input_verifier": "PASS",
+      "runner_and_helper_match_frozen_source": true,
+      "producer_inodes_unchanged": true
+    },
+    {
+      "stage": "unified-1",
+      "export": "/home/deploy/agentq/tmp/export608-stage-unified-1-1243",
+      "manifest_sha256": "c172a68b519647be1c1dcfe4e33a67aa777af449f20a775270d0bfd19ec56a22",
+      "source_commit": "2b543da30204b358d4b58a8fb52b060f405f3789",
+      "source_export_sha256": "a19f36956cc6f215571dcc6d037772533053e351d018941f97eb846f8df9cc49",
+      "stage_inputs": {
+        "native/libtests-receipt.json": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946",
+        "native/receipt.json": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+        "native/rolldown-binding.linux-x64-gnu.node": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042",
+        "native/stage-receipt.json": "32bd246a35634b09cbb88455d5cc41fff833d5b9315a3e8f104ca2438dfaf6d4",
+        "runtime/build.log": "aeb9f6531b80227d7a1aa8d72312a0fc3cddd59a99e9a157913d2763883dfbe5",
+        "runtime/checkpoint.tar": "7657104323a6c818b38705ae214d71b2216a145d990e9f4cb83da698acd029ed",
+        "runtime/stage-receipt.json": "641c069ab74330ce50f006fb0e1e5a7f0760c7cf0df57b8d1e6ab3fd9ada4d13"
+      },
+      "state": "PREPARED_NEVER_LAUNCHED",
+      "input_verifier": "PASS",
+      "runner_and_helper_match_frozen_source": true,
+      "producer_inodes_unchanged": true
+    },
+    {
+      "stage": "unified-2",
+      "export": "/home/deploy/agentq/tmp/export608-stage-unified-2-1243",
+      "manifest_sha256": "288f56200806631ed69932a1b0bc4d227311761f39d1504cc2b1aa0bc9559c72",
+      "source_commit": "2b543da30204b358d4b58a8fb52b060f405f3789",
+      "source_export_sha256": "a19f36956cc6f215571dcc6d037772533053e351d018941f97eb846f8df9cc49",
+      "stage_inputs": {
+        "native/libtests-receipt.json": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946",
+        "native/receipt.json": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+        "native/rolldown-binding.linux-x64-gnu.node": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042",
+        "native/stage-receipt.json": "32bd246a35634b09cbb88455d5cc41fff833d5b9315a3e8f104ca2438dfaf6d4",
+        "runtime/build.log": "aeb9f6531b80227d7a1aa8d72312a0fc3cddd59a99e9a157913d2763883dfbe5",
+        "runtime/checkpoint.tar": "7657104323a6c818b38705ae214d71b2216a145d990e9f4cb83da698acd029ed",
+        "runtime/stage-receipt.json": "641c069ab74330ce50f006fb0e1e5a7f0760c7cf0df57b8d1e6ab3fd9ada4d13"
+      },
+      "state": "PREPARED_NEVER_LAUNCHED",
+      "input_verifier": "PASS",
+      "runner_and_helper_match_frozen_source": true,
+      "producer_inodes_unchanged": true
+    },
+    {
+      "stage": "unified-3",
+      "export": "/home/deploy/agentq/tmp/export608-stage-unified-3-1243",
+      "manifest_sha256": "540ee1f24044567f1a51696a147a21ad3664885b7d46576c9067d48d374088f9",
+      "source_commit": "2b543da30204b358d4b58a8fb52b060f405f3789",
+      "source_export_sha256": "a19f36956cc6f215571dcc6d037772533053e351d018941f97eb846f8df9cc49",
+      "stage_inputs": {
+        "native/libtests-receipt.json": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946",
+        "native/receipt.json": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+        "native/rolldown-binding.linux-x64-gnu.node": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042",
+        "native/stage-receipt.json": "32bd246a35634b09cbb88455d5cc41fff833d5b9315a3e8f104ca2438dfaf6d4",
+        "runtime/build.log": "aeb9f6531b80227d7a1aa8d72312a0fc3cddd59a99e9a157913d2763883dfbe5",
+        "runtime/checkpoint.tar": "7657104323a6c818b38705ae214d71b2216a145d990e9f4cb83da698acd029ed",
+        "runtime/stage-receipt.json": "641c069ab74330ce50f006fb0e1e5a7f0760c7cf0df57b8d1e6ab3fd9ada4d13"
+      },
+      "state": "PREPARED_NEVER_LAUNCHED",
+      "input_verifier": "PASS",
+      "runner_and_helper_match_frozen_source": true,
+      "producer_inodes_unchanged": true
+    },
+    {
+      "stage": "unified-4",
+      "export": "/home/deploy/agentq/tmp/export608-stage-unified-4-1243",
+      "manifest_sha256": "b8eb01e2a419ce7d6a172dcaa44c09e28be9699b88060fb856aae6db7a17e565",
+      "source_commit": "2b543da30204b358d4b58a8fb52b060f405f3789",
+      "source_export_sha256": "a19f36956cc6f215571dcc6d037772533053e351d018941f97eb846f8df9cc49",
+      "stage_inputs": {
+        "native/libtests-receipt.json": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946",
+        "native/receipt.json": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+        "native/rolldown-binding.linux-x64-gnu.node": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042",
+        "native/stage-receipt.json": "32bd246a35634b09cbb88455d5cc41fff833d5b9315a3e8f104ca2438dfaf6d4",
+        "runtime/build.log": "aeb9f6531b80227d7a1aa8d72312a0fc3cddd59a99e9a157913d2763883dfbe5",
+        "runtime/checkpoint.tar": "7657104323a6c818b38705ae214d71b2216a145d990e9f4cb83da698acd029ed",
+        "runtime/stage-receipt.json": "641c069ab74330ce50f006fb0e1e5a7f0760c7cf0df57b8d1e6ab3fd9ada4d13"
+      },
+      "state": "PREPARED_NEVER_LAUNCHED",
+      "input_verifier": "PASS",
+      "runner_and_helper_match_frozen_source": true,
+      "producer_inodes_unchanged": true
+    },
+    {
+      "stage": "unified-5",
+      "export": "/home/deploy/agentq/tmp/export608-stage-unified-5-1243",
+      "manifest_sha256": "3c5aaf77463d09e53c9ae9013f47ef4c1e34ec30bafc9c13a6847d012a1a115a",
+      "source_commit": "2b543da30204b358d4b58a8fb52b060f405f3789",
+      "source_export_sha256": "a19f36956cc6f215571dcc6d037772533053e351d018941f97eb846f8df9cc49",
+      "stage_inputs": {
+        "native/libtests-receipt.json": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946",
+        "native/receipt.json": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+        "native/rolldown-binding.linux-x64-gnu.node": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042",
+        "native/stage-receipt.json": "32bd246a35634b09cbb88455d5cc41fff833d5b9315a3e8f104ca2438dfaf6d4",
+        "runtime/build.log": "aeb9f6531b80227d7a1aa8d72312a0fc3cddd59a99e9a157913d2763883dfbe5",
+        "runtime/checkpoint.tar": "7657104323a6c818b38705ae214d71b2216a145d990e9f4cb83da698acd029ed",
+        "runtime/stage-receipt.json": "641c069ab74330ce50f006fb0e1e5a7f0760c7cf0df57b8d1e6ab3fd9ada4d13"
+      },
+      "state": "PREPARED_NEVER_LAUNCHED",
+      "input_verifier": "PASS",
+      "runner_and_helper_match_frozen_source": true,
+      "producer_inodes_unchanged": true
+    }
+  ]
+}
