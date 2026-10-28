@@ -32,7 +32,7 @@ fs.mkdirSync(output,{recursive:true});
 const spawn=childProcess.spawn;
 childProcess.spawn=function(command,args,options){
  if(command!==process.execPath)return spawn.apply(this,arguments);
- const argv=Array.isArray(args)?args:[],settings=Array.isArray(args)?options:args;
+ const argv=Array.isArray(args)?args:[],settings=(Array.isArray(args)||args==null)?options:args;
  const observed=argv.includes(self)?argv:['--import',self,...argv];
  return spawn.call(this,command,observed,settings);
 };
