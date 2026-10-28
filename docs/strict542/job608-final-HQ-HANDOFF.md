@@ -24,9 +24,18 @@ not a final artifact/tree or installed-target inventory.
 New native and checks exports use this SAME freeze/common export identity.
 Native launch/preflight is job608-native-owned-launch.json atdc4e4710; its
 manifest SHA256 is708a52c26402db1b4b030c0a0a64a91911fb6dd15d9798ade2e12b091c2f9e2e.
-The finite4GiB/1CPU/swap0 native run is in progress at the time of this handoff
-refresh; no current successful receipt is claimed here. The checks export is
-prepared UNUSED, not yet run. Record their actual verified outcomes separately.
+The finite4GiB/1CPU/swap0 native run completed with actual offload/result0.
+job608-stage-native-owned-verification.json records all10returned hashes and
+exact deterministic receipt/addon pins; independent review4cef7377 approves
+ACTUAL NATIVE-STAGE EVIDENCE ONLY. It freshly ran7lifetime/2compaction checks
+and the expected retention-negative control; the exact independently pinned
+library-test receipt is carried, not a new library-test run.
+The compiler stage also completed with actual offload/result0 and all10compiler
+test cases passing, with no failed/cancelled/skipped/todo cases. See
+job608-stage-compiler-owned-verification.json for exact current receipt/log pins.
+The current checks and runtime exports are prepared UNUSED, not yet run. They
+supply no passing-check, build/package or application authority. Exact next
+commands and stage acceptance are in job608-after-native-owned-continuation.md.
 Exact native source pin/addon expectation remains
 `0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042`.
 Inherited descriptive runner_commit/source_correction_review metadata in the
@@ -36,8 +45,9 @@ edit or relabel a launched manifest or an old successful receipt.
 
 ALL2b native7/compiler7/runtime7/checks8 receipts are HISTORICAL ONLY for5f.
 Checks8's477passing scoped checks do not establish current-source acceptance.
-New native/checks/compiler/runtime, all unified0..5, middle, sdk0..1, tail and
-package stages MUST complete at5f with exact accepted predecessor receipts.
+Native and compiler are complete as scoped above. New checks/runtime, all
+unified0..5, middle, sdk0..1, tail and package stages MUST complete at5f with
+exact accepted predecessor receipts.
 The canonical finite stage DAG, full diagnostics, production package lifecycle,
 IPC/refusal/cancellation/settlement tests and native pins remain unchanged.
 See job608-after-unified0-continuation.md for the corrected inherited-owner

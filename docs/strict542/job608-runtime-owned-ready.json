@@ -1,0 +1,12 @@
+{
+  "archive_pins": "streamed and checked by reviewed preparer",
+  "export": "/home/deploy/agentq/tmp/export608-stage-runtime-owned-next",
+  "free_bytes": 670105600,
+  "gate": "check deadline and output space before actual launch; complete all original runtime steps; no old2b checkpoint reuse",
+  "manifest_sha256": "cf8907d39394721c84a496cd9aed4d52f33f4bf335335cf91a7a03252329cd80",
+  "runner_helper_accepted_native_inputs": "PASS",
+  "source_commit": "5f7d810b7f254e4f06dbf7761b557ba90bf1a2b0",
+  "source_export_sha256": "76b4b47a0e5c3e0a157f75ff1b76d60753c8acdbf5f76bc495668dd985d70f64",
+  "stage": "runtime",
+  "state": "PREPARED_UNUSED_NOT_LAUNCHED"
+}

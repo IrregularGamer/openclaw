@@ -1,0 +1,94 @@
+{
+  "actual_offload_exit": 0,
+  "all_returned_files_sha256": {
+    "compiler/stage-receipt.json": "abe9b47e4164c3bef57b28386ed74fa3addfaacf8a56ba4120345d14093a161f",
+    "compiler/tests.log": "d586c58efa91de76202bee30cd2c5695b0c12b585824589999d77dc19653c57b",
+    "exit-code.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "result598-native/release-phase-trace.log": "883163865c91e1d811c90c1c51bdb25a92f193c0fbc2dfca061982006f96d45b",
+    "result598-native/stock-patched-equality.json": "56682414120f0dd5b29f15aef8feb24143a2619f888b92a33987f40487d24418",
+    "strict542-checks/tests.log": "d586c58efa91de76202bee30cd2c5695b0c12b585824589999d77dc19653c57b"
+  },
+  "compressed_evidence": {
+    "job608-stage-compiler-owned-offload.log.gz": {
+      "expanded_bytes": 16413,
+      "expanded_sha256": "6d83e681c3df31ef1cc97ca7089fee1ad3354530a0023a96158ac6fa0feb2786",
+      "sha256": "cd7e85e62244cfe9fb38ed30095473920e24d450b09ff121d1c4de2681b22b56"
+    },
+    "job608-stage-compiler-owned-tests.log.gz": {
+      "expanded_bytes": 1594,
+      "expanded_sha256": "d586c58efa91de76202bee30cd2c5695b0c12b585824589999d77dc19653c57b",
+      "sha256": "003370a886ea173236c1b9d1e8ca96559e3b20db1b008af05af28e5f83731853"
+    }
+  },
+  "export": "/home/deploy/agentq/tmp/export608-stage-compiler-owned-next",
+  "receipt": {
+    "exit_code": 0,
+    "kind": "JOB608_STAGE_RECEIPT",
+    "manifest_sha256": "4360629f09ff27f0817bdf91dd6d8558dee14fd77d5b2d55d4b94bee6ee3c14a",
+    "outputs": {
+      "compiler/tests.log": "d586c58efa91de76202bee30cd2c5695b0c12b585824589999d77dc19653c57b"
+    },
+    "run_id": "stage608-compiler-next",
+    "source_commit": "5f7d810b7f254e4f06dbf7761b557ba90bf1a2b0",
+    "source_export_sha256": "76b4b47a0e5c3e0a157f75ff1b76d60753c8acdbf5f76bc495668dd985d70f64",
+    "stage": "compiler",
+    "stage_inputs": {
+      "native/libtests-receipt.json": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946",
+      "native/receipt.json": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+      "native/rolldown-binding.linux-x64-gnu.node": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042",
+      "native/stage-receipt.json": "f40df3a579bd600c154b14ad9d9ac863b5ab26381f8615aa54d0829c0ea05069"
+    }
+  },
+  "receipt_sha256": "abe9b47e4164c3bef57b28386ed74fa3addfaacf8a56ba4120345d14093a161f",
+  "remaining": "current checks/runtime/unified0..5/middle/sdk0..1/tail/package and exact artifact/action/privilege/seal/automatic reviews;595 MUST NOT APPLY",
+  "result_exit": 0,
+  "scope": "ACTUAL_COMPILER_CHECKS_STAGE_ONLY_NOT_GATEWAY_BUILD_PACKAGE_OR_APPLICATION",
+  "source_commit": "5f7d810b7f254e4f06dbf7761b557ba90bf1a2b0",
+  "source_export_sha256": "76b4b47a0e5c3e0a157f75ff1b76d60753c8acdbf5f76bc495668dd985d70f64",
+  "test_inventory": {
+    "cancelled": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "fail": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "pass": [
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "skipped": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "tests": [
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "todo": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "total_compiler_checks": 10,
+  "verification": "PASS"
+}
