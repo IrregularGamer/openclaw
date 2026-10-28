@@ -1,0 +1,13 @@
+{
+  "actual_free_bytes": 6395822080,
+  "current_unique_bytes": 928642757,
+  "forecast_unique_bytes": 4216977093,
+  "free_reserve_bytes": 2147483648,
+  "future14_overlay_caps_bytes": 234881024,
+  "future_all15_return_caps_bytes": 2919235584,
+  "future_free_bytes_after_caps_and_reserve": 3107487744,
+  "kind": "READ_ONLY_CANDIDATE95_RETAINED_STORAGE_FORECAST608",
+  "metadata_reserve_bytes": 134217728,
+  "scope": "Conservative current retained base/all historical outputs plus candidate95 UNUSED checks export already present, all15 future capped returns and14 future16MiB source overlays; no deletions, stores or policy changes.",
+  "store_max_bytes": 4294967296
+}

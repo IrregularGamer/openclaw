@@ -59,6 +59,17 @@ remain mandatory. Commit/push evidence and obtain exact independent acceptance.
 
 ## Then rebuild the exact candidate stage DAG
 
+First reconcile and independently review the ACTUAL diagnostic outcome. Native
+CPU progress and the callback-only correction do not establish a timeout fix.
+Do not launch an expensive unchanged native/build retry solely on the seven
+focused tests or narrow source approval. If the completed diagnostic still
+shows a long native phase without a successful checkpoint, resolve that phase
+in its existing owner (supported bounded split or measured correction), review
+and refreeze it BEFORE new expensive build stages. The checks stage above may
+verify candidate95 correctness, but cannot waive this performance gate. Any
+later source correction requires NEW affected manifests/receipts, not reuse of
+candidate95 evidence as acceptance for changed bytes.
+
 All producing receipts from1bed and earlier freezes are historical for candidate95.
 Do not mix or relabel them even if deterministic native addon bytes match.
 Prepare a NEW native export using the committed preparer --base <private>/base
