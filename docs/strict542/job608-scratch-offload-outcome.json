@@ -1,0 +1,93 @@
+{
+  "client_exit": 0,
+  "compressed_evidence": {
+    "job608-scratch-attempt1-offload.gz": {
+      "gzip_sha256": "a03884369c7e205527f4f1795dfca6285572ea22214a32a7ea4180de2a9d4ddf",
+      "raw_bytes": 2218,
+      "raw_sha256": "501e9ed0f8e0d8ee82745c25d8b54aa00930f33250e0dfed345dd7306f4a51c9"
+    },
+    "job608-scratch-attempt1-rc.gz": {
+      "gzip_sha256": "c28cc69d141393e44a931229323624ef7b8c5bde3ee047ca9b87332daef23c82",
+      "raw_bytes": 2,
+      "raw_sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    "job608-scratch-exit-code.txt.gz": {
+      "gzip_sha256": "89ed3b723e0e40d8957a2df55fcb04d57b6d95fa665c5fe67b098df7f29694ae",
+      "raw_bytes": 2,
+      "raw_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "job608-scratch-local-green.gz": {
+      "gzip_sha256": "5d1bf166d87808b656e3d7063de5139d66444241e67f12ee0c0fc7d22724524d",
+      "raw_bytes": 3716,
+      "raw_sha256": "0169fd45bf643f07e68639e0a8a4109396fffd8d9ec2afaa40f452ef3e439ad7"
+    },
+    "job608-scratch-node-version.txt.gz": {
+      "gzip_sha256": "8c10e4b474adf88cb80cfdd5a1c08fc82b31424295fb4cc986c22709f7d7c7b5",
+      "raw_bytes": 9,
+      "raw_sha256": "f2ec568164f99546161909b0189b57bb5be3e80f8e2ccd8a51a4aed8c4055a04"
+    },
+    "job608-scratch-offload-rc.gz": {
+      "gzip_sha256": "89ed3b723e0e40d8957a2df55fcb04d57b6d95fa665c5fe67b098df7f29694ae",
+      "raw_bytes": 2,
+      "raw_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "job608-scratch-offload.gz": {
+      "gzip_sha256": "784e015628072feede5321604893a7682edb886f218424a1d9b0b84af2321661",
+      "raw_bytes": 108,
+      "raw_sha256": "262afa868f621d41b5536e6f39f42553cc7522d711e7a27cb39d2259493dd26e"
+    },
+    "job608-scratch-red.gz": {
+      "gzip_sha256": "58861b38ac5c36df17db438a092e3b323434fe4d613f5a5305375c40626df5a9",
+      "raw_bytes": 1369,
+      "raw_sha256": "4f912352cafc2aa199ae7268da1f1a8d660403f6ca5b4a35fe325716612caef1"
+    },
+    "job608-scratch-source-sha256.txt.gz": {
+      "gzip_sha256": "e7fbcd77ce8794aaefd0416f09ca7ee8dd247ec107956f4201c83d65a3aeee8d",
+      "raw_bytes": 953,
+      "raw_sha256": "ccf1f843c4ff17f97ea22aa435024c9eb76cc95b97d5071c42479cb8c759ba9c"
+    },
+    "job608-scratch-tests.log.gz": {
+      "gzip_sha256": "0c294f495673655ad99406f64fc62272dd83cd6b1c2d38003bf9939fc4024ae6",
+      "raw_bytes": 6172,
+      "raw_sha256": "1c2d9ca1eb7343c318d8329b6fc739d2b3bbdefbbfba5ead8ece55986199d4e3"
+    }
+  },
+  "correction_commit": "41ee9e9fd56494da6b1a4815f4fb31d2718d26e9",
+  "counts": {
+    "cancelled": 0,
+    "fail": 0,
+    "pass": 17,
+    "skipped": 0,
+    "tests": 17,
+    "todo": 0
+  },
+  "first_attempt": "client1;15PASS/2ENOENT missing fixture files; no acceptance, no weakened assertion",
+  "kind": "ACTUAL_FOCUSED_SOURCE_CHECKS_ONLY608",
+  "new_owner_sha256": "55e0cd136077c8b30e8da6dcb9a76fa480c6bbfad6674a489ac3602a890bddce",
+  "next": "exact independent runner/outcome acceptance; new reviewed freeze and full affected482checks plus all build/package/action/privilege/seal/automatic/HQ gates;595MUSTNOTAPPLY",
+  "node": "v24.21.0",
+  "old_owner_sha256": "ee87431017449c2abdf9bcea1915606a2b02cb574efbdd1747653d11fec29286",
+  "result_exit": 0,
+  "returned_files": {
+    "exit-code.txt": {
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "node-version.txt": {
+      "bytes": 9,
+      "sha256": "f2ec568164f99546161909b0189b57bb5be3e80f8e2ccd8a51a4aed8c4055a04"
+    },
+    "source-sha256.txt": {
+      "bytes": 953,
+      "sha256": "ccf1f843c4ff17f97ea22aa435024c9eb76cc95b97d5071c42479cb8c759ba9c"
+    },
+    "tests.log": {
+      "bytes": 6172,
+      "sha256": "1c2d9ca1eb7343c318d8329b6fc739d2b3bbdefbbfba5ead8ece55986199d4e3"
+    }
+  },
+  "runner_followup": "d61282d8",
+  "scope": "all3completefocusedfiles,17cases,not482fullchecks/native/build/package",
+  "source_commit": "c7ad5f108b4806ff800bc7d54d96d8aa27693488",
+  "source_correction_review": "558f36ac7983579f1a76450c9a9ba78ad85f36cf"
+}
