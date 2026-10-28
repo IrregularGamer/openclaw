@@ -50,7 +50,7 @@ function validateInventory608(inventory) {
  for(const [name,item]of Object.entries(inventory)) {
   require608(safeName(name)&&item&&['directory','file','link'].includes(item.kind)&&Number.isInteger(item.mode)&&item.mode>=0&&item.mode<=0o7777,'invalid checkpoint inventory entry');
   if(item.kind==='file')require608(/^[a-f0-9]{64}$/.test(item.sha256??''),'invalid checkpoint file digest');
-  if(item.kind==='link')require608(typeof item.target==='string'&&!path.isAbsolute(item.target)&&!path.win32.isAbsolute(item.target)&&!path.posix.normalize(path.posix.join(path.posix.dirname(name),item.target)).startsWith('../'),'checkpoint link escapes source');
+  if(item.kind==='link')require608(typeof item.target==='string'&&!path.isAbsolute(item.target)&&!path.win32.isAbsolute(item.target)&&(resolved=>resolved!=='..'&&!resolved.startsWith('../'))(path.posix.normalize(path.posix.join(path.posix.dirname(name),item.target))),'checkpoint link escapes source');
   for(let parent=path.posix.dirname(name);parent!=='.';parent=path.posix.dirname(parent))require608(inventory[parent]?.kind==='directory','checkpoint output ancestor is not a directory');
  }
 }
@@ -94,4 +94,25 @@ export function restoreBuildCheckpoint608({root,target,stage,identity,before,exp
  materialize608(path.join(target,'data'),root,receipt.outputs);
  const restored=workspaceInventory608(root);for(const [name,item]of Object.entries(receipt.outputs))require608(same(restored[name],item),'restored checkpoint inventory mismatch');
  return receipt;
+}
+
+// Stage ancestry/group binding validators (moved unchanged from build-checkpoint608.mts so they are directly testable).
+export function validateGroupBinding608(binding,{kind,group,predecessor,identity}) {
+ require608(binding?.schema==='strict542-build-group-binding608-v1'&&binding.status==='COMPILED_GROUP_NOT_PUBLISHED'&&same(binding.identity,identity)&&binding.kind===kind&&binding.group===group&&binding.predecessorSha256===digest608(predecessor),'declaration predecessor workspace identity mismatch');
+ require608(binding.receipt?.status==='COMPILED_GROUP_NOT_PUBLISHED'&&binding.receipt.group===group&&binding.receipt.source_commit===identity.sourceCommit&&binding.receipt.source_export_sha256===identity.sourceExportSha256,'missing successful canonical group receipt');
+ require608(/^[a-f0-9]{64}$/.test(binding.inventorySha256??''),'missing complete group inventory binding');
+}
+export function validateBuildChain608(receipt,{identity,before,outputRoots,labels,groups}) {
+ validateBuildReceipt608(receipt,{stage:receipt.stage,identity,before,expectedLabels:buildStage608(receipt.stage,labels,groups).labels});
+ require608(['runtime','middle','tail'].includes(receipt.stage)&&same(receipt.outputRoots,outputRoots),'invalid canonical checkpoint stage or roots');
+ if(receipt.stage==='runtime'){require608(receipt.ancestors.length===0,'runtime checkpoint has predecessors');return;}
+ const kind=receipt.stage==='middle'?'unified':'sdk',predecessor=receipt.stage==='middle'?'runtime':'middle';
+ require608(receipt.ancestors.length===groups[kind].length+1&&receipt.ancestors[0]?.stage===predecessor,'missing exact checkpoint ancestry');
+ validateBuildChain608(receipt.ancestors[0],{identity,before,outputRoots,labels,groups});
+ for(const [index,group]of groups[kind].entries())validateGroupBinding608(receipt.ancestors[index+1],{kind,group,predecessor:receipt.ancestors[0],identity});
+}
+export function validateCompleteCheckpoint608(predecessor,labels) {
+ require608(predecessor?.stage==='tail','complete requires canonical tail');
+ const middle=predecessor.ancestors[0],runtime=middle.ancestors[0];
+ validatePhaseResults608([...runtime.phases,...middle.phases,...predecessor.phases],labels);
 }

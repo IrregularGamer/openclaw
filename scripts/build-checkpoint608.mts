@@ -9,7 +9,7 @@ import {isDirectRunUrl} from './lib/direct-run.mjs';
 import {typedConfigCensus,typedConfigCensusDigest} from './lib/bounded-package608.mjs';
 import {TSDOWN_NON_SDK_DTS_CONFIG_GROUPS,TSDOWN_PLUGIN_SDK_DTS_CONFIG_GROUPS} from './lib/tsdown-config-groups.mts';
 import {writeBoundedDeclarationCheckpoint608} from './lib/tsdown-declaration-writer.mts';
-import {buildStage608,portableBuildIdentity608,digest608,shaFile608,readJson608,workspaceInventory608,writeBuildCheckpoint608,restoreBuildCheckpoint608,validateBuildReceipt608,validatePhaseResults608} from './lib/bounded-build-checkpoint608.mjs';
+import {buildStage608,portableBuildIdentity608,digest608,shaFile608,readJson608,workspaceInventory608,writeBuildCheckpoint608,restoreBuildCheckpoint608,validateBuildReceipt608,validatePhaseResults608,validateBuildChain608,validateGroupBinding608,validateCompleteCheckpoint608} from './lib/bounded-build-checkpoint608.mjs';
 const groups={unified:[...TSDOWN_NON_SDK_DTS_CONFIG_GROUPS],sdk:[...TSDOWN_PLUGIN_SDK_DTS_CONFIG_GROUPS]};
 const require608=(ok:unknown,message:string)=>{if(!ok)throw new Error(message);};
 export function resolveBuildCheckpointStage608(stage:string,labels:string[]) {return buildStage608(stage,labels,groups);}
@@ -34,20 +34,8 @@ export async function prepareBuildCheckpoint608({stage,root,env,labels,outputRoo
   environment:Object.fromEntries(['GIT_COMMIT','OPENCLAW_BUILD_TIMESTAMP','SOURCE_DATE_EPOCH','TZ','LANG','LC_ALL','CI'].map(name=>[name,env[name]??'']))};
  const before=workspaceInventory608(root);
  const expected=(name:string)=>resolveBuildCheckpointStage608(name,labels).labels;
- const validateChain=(receipt:any):void=>{
-  validateBuildReceipt608(receipt,{stage:receipt.stage,identity,before,expectedLabels:expected(receipt.stage)});
-  require608(['runtime','middle','tail'].includes(receipt.stage)&&same(receipt.outputRoots,outputRoots),'invalid canonical checkpoint stage or roots');
-  if(receipt.stage==='runtime'){require608(receipt.ancestors.length===0,'runtime checkpoint has predecessors');return;}
-  const kind=receipt.stage==='middle'?'unified':'sdk',predecessor=receipt.stage==='middle'?'runtime':'middle';
-  require608(receipt.ancestors.length===groups[kind].length+1&&receipt.ancestors[0]?.stage===predecessor,'missing exact checkpoint ancestry');
-  validateChain(receipt.ancestors[0]);
-  for(const [index,group]of groups[kind].entries())validateBinding(receipt.ancestors[index+1],kind,group,receipt.ancestors[0]);
- };
- const validateBinding=(binding:any,kind:'unified'|'sdk',group:string,predecessor:any)=>{
-  require608(binding?.schema==='strict542-build-group-binding608-v1'&&binding.status==='COMPILED_GROUP_NOT_PUBLISHED'&&same(binding.identity,identity)&&binding.kind===kind&&binding.group===group&&binding.predecessorSha256===digest608(predecessor),'declaration predecessor workspace identity mismatch');
-  require608(binding.receipt?.status==='COMPILED_GROUP_NOT_PUBLISHED'&&binding.receipt.group===group&&binding.receipt.source_commit===identity.sourceCommit&&binding.receipt.source_export_sha256===identity.sourceExportSha256,'missing successful canonical group receipt');
-  require608(/^[a-f0-9]{64}$/.test(binding.inventorySha256??''),'missing complete group inventory binding');
- };
+ const validateChain=(receipt:any):void=>validateBuildChain608(receipt,{identity,before,outputRoots,labels,groups});
+ const validateBinding=(binding:any,kind:'unified'|'sdk',group:string,predecessor:any)=>validateGroupBinding608(binding,{kind,group,predecessor,identity});
  let predecessor:any=null;
  if(selection.predecessor) {
   const target=path.join(directory,selection.predecessor);
@@ -78,11 +66,7 @@ export async function prepareBuildCheckpoint608({stage,root,env,labels,outputRoo
   validateBinding(binding,kind,selection.group,predecessor);
   fs.writeFileSync(stored+'.build608.json',JSON.stringify(binding)+'\n',{flag:'wx',mode:0o600});
  }
- if(stage==='complete') {
-  require608(predecessor?.stage==='tail','complete requires canonical tail');
-  const middle=predecessor.ancestors[0],runtime=middle.ancestors[0];
-  validatePhaseResults608([...runtime.phases,...middle.phases,...predecessor.phases],labels);
- }
+ if(stage==='complete')validateCompleteCheckpoint608(predecessor,labels);
  return {labels:selection.labels,
   join:selection.join?()=>declaration(selection.join as 'unified'|'sdk','join'):null,
   finish:(phases:any[])=>{

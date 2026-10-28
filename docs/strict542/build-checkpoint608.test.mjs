@@ -40,3 +40,45 @@ test('portable source census is identical across fresh export roots',async()=>{
  const {portableBuildIdentity608,digest608}=await import('../../scripts/lib/bounded-build-checkpoint608.mjs');
  assert.equal(digest608(portableBuildIdentity608({entry:{base:'/export/A/src/base.ts'},outDir:'/export/A/dist'},'/export/A')),digest608(portableBuildIdentity608({entry:{base:'/export/B/src/base.ts'},outDir:'/export/B/dist'},'/export/B')));
 });
+
+test('stage ancestry/group bindings refuse missing, extra, foreign, drifted, reordered and incomplete chains',async()=>{
+ const {validateBuildChain608,validateCompleteCheckpoint608,digest608}=await import('../../scripts/lib/bounded-build-checkpoint608.mjs');
+ const identity={sourceCommit:'a'.repeat(40),sourceExportSha256:'b'.repeat(64)},before={'source.ts':{kind:'file',mode:0o644,sha256:'c'.repeat(64)}},outputRoots=['dist'];
+ const phases=stage=>buildStage608(stage,labels,groups).labels.map(label=>({label,status:'ran',durationMs:1}));
+ const checkpoint=(stage,ancestors)=>({schema:'strict542-build-checkpoint608-v1',status:'CHECKPOINT_NOT_BUILT',stage,identity,baselineSha256:digest608(before),phases:phases(stage),ancestors,outputRoots,outputs:{},deleted:[]});
+ const binding=(kind,group,predecessor)=>({schema:'strict542-build-group-binding608-v1',status:'COMPILED_GROUP_NOT_PUBLISHED',kind,group,identity,predecessorSha256:digest608(predecessor),
+  receipt:{status:'COMPILED_GROUP_NOT_PUBLISHED',group,source_commit:identity.sourceCommit,source_export_sha256:identity.sourceExportSha256},inventorySha256:'d'.repeat(64)});
+ const runtime=checkpoint('runtime',[]);
+ const middle=checkpoint('middle',[runtime,...groups.unified.map(g=>binding('unified',g,runtime))]);
+ const tail=checkpoint('tail',[middle,...groups.sdk.map(g=>binding('sdk',g,middle))]);
+ const options={identity,before,outputRoots,labels,groups};
+ assert.doesNotThrow(()=>validateBuildChain608(tail,options));assert.doesNotThrow(()=>validateCompleteCheckpoint608(tail,labels));
+ const clone=value=>structuredClone(value);
+ const mutated=[
+  [t=>{t.ancestors[0].ancestors.pop();},/ancestry/],                                   // missing unified group
+  [t=>{t.ancestors.push(binding('sdk','s3',t.ancestors[0]));},/ancestry/],            // extra sdk group
+  [t=>{[t.ancestors[1],t.ancestors[2]]=[t.ancestors[2],t.ancestors[1]];},/predecessor/],// reordered groups
+  [t=>{t.ancestors[1].predecessorSha256='0'.repeat(64);},/predecessor/],              // foreign predecessor digest
+  [t=>{t.ancestors[0].ancestors[3].identity={...identity,sourceCommit:'e'.repeat(40)};},/predecessor/],// group source drift
+  [t=>{t.ancestors[2].receipt.source_export_sha256='f'.repeat(64);},/group receipt/],  // group receipt drift
+  [t=>{t.ancestors[1].receipt.status='BUILT';},/group receipt/],
+  [t=>{delete t.ancestors[1].inventorySha256;},/inventory/],
+  [t=>{t.outputRoots=['dist','extra'];},/roots/],
+  [t=>{t.ancestors[0].ancestors[0].ancestors=[clone(runtime)];},/predecessors/],
+  [t=>{t.ancestors[0]=clone(tail);},/ancestry/],                                        // wrong predecessor stage order
+  [t=>{t.identity={...identity,sourceCommit:'e'.repeat(40)};},/identity/],
+  [t=>{t.phases.pop();},/./],
+ ];
+ for(const [change,error] of mutated){const t=clone(tail);change(t);assert.throws(()=>validateBuildChain608(t,options),error);}
+ for(const predecessor of [null,middle,runtime])assert.throws(()=>validateCompleteCheckpoint608(predecessor,labels),/canonical tail/);
+ const short=clone(tail);short.phases.pop();assert.throws(()=>validateCompleteCheckpoint608(short,labels));
+});
+test('checkpoint links resolving to exactly the parent or above are refused (F1)',async()=>{
+ const {validateBuildReceipt608,digest608}=await import('../../scripts/lib/bounded-build-checkpoint608.mjs');
+ const identity={sourceCommit:'a'.repeat(40)},before={};
+ const receipt=outputs=>({schema:'strict542-build-checkpoint608-v1',status:'CHECKPOINT_NOT_BUILT',stage:'runtime',identity,baselineSha256:digest608(before),phases:[{label:'a',status:'ran',durationMs:1}],ancestors:[],outputRoots:[],outputs,deleted:[]});
+ const check=outputs=>validateBuildReceipt608(receipt(outputs),{stage:'runtime',identity,before,expectedLabels:['a']});
+ assert.doesNotThrow(()=>check({dist:{kind:'directory',mode:0o755},'dist/same':{kind:'link',mode:0o777,target:'.'},'dist/up':{kind:'link',mode:0o777,target:'..'}}));
+ for(const outputs of [{up:{kind:'link',mode:0o777,target:'..'}},{dist:{kind:'directory',mode:0o755},'dist/up2':{kind:'link',mode:0o777,target:'../..'}},{up3:{kind:'link',mode:0o777,target:'a/../../b'}}])
+  assert.throws(()=>check(outputs),/escapes source/);
+});
