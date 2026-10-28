@@ -1,0 +1,5934 @@
+{
+  "application_action": null,
+  "build_package_receipt": null,
+  "changes": [
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "4a6512d153a5692964f2f4ce0e5795157e18da2bcba627a86d3f1a9c36750cb9",
+        "state": "present"
+      },
+      "old": {
+        "git_mode": "100644",
+        "sha256": "f65de3f8e5d5a58cc4302a29965cea17a54b24f1b3a638d0d31e22ee809bf4a0",
+        "state": "present"
+      },
+      "path": "docs/strict542/application598.py"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "10ff28fc821c8bcf9bcb4f288a39ef7d9f82b79bcff24a43e95b3cfb0f500153",
+        "state": "present"
+      },
+      "old": {
+        "git_mode": "100644",
+        "sha256": "06089bb171dfeab0e24ed65fbeb628afa07235e8a7c6dfa57d05c877dd0229d2",
+        "state": "present"
+      },
+      "path": "docs/strict542/apply598.py"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "57b92fee56fa98dcc6bc203f90762fc9ae4ee6f5999f279cb5a54453c6407e81",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/bounded-package608.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "3e5ba766e8037583dfdc2fb76722f395f2b0f4125c748386e3ea9f77a1e4c910",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/bounded-package608.test.mjs"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "50ef4d64ec2ad25e9fdb91f2e4aa1c09ae69d0169a640de6744d161cf5aab800",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/build-checkpoint608.test.mjs"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "69c88b78ea040e3f26eb6620adc9e3b3919fc047d51f840f07a2568d1ba3229a",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/build-native608.py"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "1ddddab751a55ea7357e3430a70d11dffc34c3aa4db7c0a502d71bfe5e5c6a76",
+        "state": "present"
+      },
+      "old": {
+        "git_mode": "100644",
+        "sha256": "534319c9c491bda8290e06ae223c6f41640b7a9951f78ee7474a791259307e77",
+        "state": "present"
+      },
+      "path": "docs/strict542/build598.sh"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "ce6e3c15253e4d9dad76070f143c225990cd57015ebac47f5e8c29891745c521",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/checkpoint-owned608.test.mjs"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "3716eeb232c46545dd08b0e2f3bbbcd451970e6648853d9a8a05500b76f6a443",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/declaration-checkpoint608.test.mjs"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "044b55ce8970dd6bddb63cee6ad36cf2c5af68198182dfba3fa69e8909f6b831",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/disposable-inputs608.test.mjs"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "d50f132546dd4b6489c207f7d1ec8d4a9629abab1f97ecf1a32d64fcf0089c84",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/frozen-package608.py"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "eb4c89eec5d2aa738011202776dae913763de8e9646efb4126839bb4c41173c7",
+        "state": "present"
+      },
+      "old": {
+        "git_mode": "100644",
+        "sha256": "008da3923649075878beb97339e85d0659e608bc4668730d9013851efd9d350e",
+        "state": "present"
+      },
+      "path": "docs/strict542/isolated-probe598.mts"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "892a0d883cc1fb7873bd3478f55cb0a01f6904445c7706686c727ba82aec04e2",
+        "state": "present"
+      },
+      "old": {
+        "git_mode": "100644",
+        "sha256": "5659f6eb30231be6839bfe9256a0699cdf52480764858ef7f433afcb7a06d8ea",
+        "state": "present"
+      },
+      "path": "docs/strict542/job598-HQ-HANDOFF.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "d5bcde94e08c4be4cd39389df89aa04e8226c8bd955d697e4b256265c32730be",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-622-owner-ack.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "e2509d74a7f778f6d2d46e897e0f9c525d5d5f5b897b4431911d08def1dceae5",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-after-unified0-continuation.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "13e72a28e1f9e8b39d650a13e0cb12ce1567a7e63a40be70a06fe026fa988780",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-assertion-split637.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "b96a9361ab9e0a57f3616770db61bf52c0091d3f12320632b4a82508312274bb",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-baseline-recheck.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "4f3feed7d3a239f548205095fec68a2f36e2e5028b7c77ab29d6cac790aa1e67",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-baseline-reconciliation-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "52391a10ebc2dfb917a5c7f82ecb4dbfd64a5ea658ad31ec6b8538f22e936bda",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-baseline-reconciliation.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "f3b3ced66253d30951005decf574c71be695f4ab42a6311a29509d4415042d92",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-baseline-successor-proposal.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "150bd32cb1ecc980711440e4dee6463db61122806a4434992d0c72546a899bc0",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-bounded-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "815877713f2c1320fe1fa1ff4a2d18686f98a259700f5a4e7cf7e20ba3e08b42",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-bounded-input-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "6b9330d5c46f05db3cddf659970455b1b6d39f4d12ea67788e3b62899902fba4",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-bounded-offload.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "4577a674ef4024f21db26b03c53b9becac1de119c76bb9367d353642d14291a0",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-bounded-outcome.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "fd001797dec586f396654907b9c118ea8513716f66a2a3958cb826e41749166a",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-bounded-parent-after.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "06b46017aed4a14e55ea0d8138a4a3794177742baf6ef682b4e1ecad4283e236",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-bounded-plan.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "7a551fab6c153d890ed46676b187d9ab60887d9c8516061ab4cab952b53e529f",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-bounded-probe.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "9ed82ba499f8f851a06c33f17f839377cd82fce351df6d63fc3a9ab258a881bc",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-bounded-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "c2c7ed5441998f0eae3e2b9ed87b8d9ea6f2851f5cb00972366b24140fac48ba",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-bounded-source-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "70f1906b1c165346dce6016c478cee018e15b987285e7f591caaf1bcfc08c31d",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-bounded-tests.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "dfce779c9c9ba51b2fb1c91a731cea6c5f0a0028bcb69813317ce49ebb4acc7b",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-bounded-tests.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "220151d262393c9180280463497c6fe354c37493f6ac0c7e704acec10d321724",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-ce32086b-independent-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "c76fca9d426c22fb3e0f1c6d1363d96a5c25e9904c59efe1b71e759b7f4e7a91",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-census-digest-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "910a9838babc2a314ad8022a7dd518ed086525bc42366312a83892eea76448de",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-checks2-source-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "b504a4c10ddcb24177887c00019899d566687ab9252b044278d101dd0de3d9f4",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined3-actual-launch.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "ef0e74d372bdacab8d62d0a56160c6af4fc294b834358bd5d40a42977b0a33a5",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined3-broker.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "426eb419f1ee83dcac17989f4c756fce1780c4b5fc142ed883fbaee4a99c95ab",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined3-native-build.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "68f469347e5a43f7cdd7c5a90ee959a399cb81f86a31cef9bd641a93e64ff642",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined3-native-positive.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined3-native-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "51cac50c314c9f3e7fe923b7cdfb30f370525513d9896d592c00c5d6bf6e019b",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined3-outcome-independent-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "fc1e7657e236f04f6f7759411d9243a4b57e1bd256a8dd6b415a9fed9006688b",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined3-outcome.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "56682414120f0dd5b29f15aef8feb24143a2619f888b92a33987f40487d24418",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined3-parity.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "48b0d037cfe0aa39507f656f2ca22dee56da3c986bf9719961f6203e54f57ea8",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined3-probe.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "1f2e90fa8b769bb37db6db3f42ebf66405e940b085b8f6ba03d48a1dbc496195",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined3-release-trace.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "0d22b30e323e79e3266d2f6a5af221775a84b79c3130561d5d98b96fd1f45440",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined3-retention-negative.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "0011c7b429ca77060d7556f5cc8db86eb35bcefca5238ac2be2589ac7d7e67c5",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined3-scoped-evidence.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "643f4617e39262c2594b51a4a430a26ad211e4a2d216383b08b590a2738405e2",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined3-scoped-tests.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "c9b39e636a0cfba3b23114cc25c72ac34ac22dc0f123418b02673b77b7f6d0b7",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined3-settlement.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "9f61674c7df7412c96d0bacbbe62d3236fcf80507362c3164b1e10adb790ea4d",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined4-actual-launch.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "3ba3d50e6e12317ff44dda5e70db307ab2eccb9df064c5cb293b0e9fcd1f9312",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined4-broker.txt.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "09be7fd131a603910cf3f055e7955678daf78370f092f44a96164bbeba1bf6ac",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined4-diagnostic-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "e684eb929c393a505cdf111df8e1fb38c6938dd835f92887fc068032627130d1",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined4-independent-review-request.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "a5db3562171c8a6aeb8e5aa692c066ee9fde1e627810bde2d835571ba4d5a21e",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined4-native-build.txt.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "5c14f9c452406129eb953db3413a25662dc742e539cd9be9830d92cdb28e98e7",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined4-native-positive.txt.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined4-native-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "ab99f32aa888ae0d411c17cdbb2091751bb360da6a72a130fa1a270005a2d9e0",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined4-outcome.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "56682414120f0dd5b29f15aef8feb24143a2619f888b92a33987f40487d24418",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined4-parity.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "8c0d1c89160e65a93cc5591ae8375824e00afc7cf25f3568949f896a88e672d9",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined4-prerequisites-independent-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "be9a6968333eb29b5e44789a231c5e77d94e96a55bad7a9bc83b1d8dc446ac9b",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined4-probe.txt.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "933396268385352273bb7e1e069ee0ee70349768a57936cb8a433764e9dc847a",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined4-release-trace.txt.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "a46ece2f307e98964ff7996ea4e8aca0bd9180fd5b548218cae903fe45da56fc",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined4-retention-negative.txt.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "91f28ca330246b1c622d341acfc6a4e6990a5164459da56be3e44887ef416db8",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined4-scoped-evidence.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "37ae903ef9c1f3a2f81bca43e54b5049d52c9f30a0f9a3baa7cb008f17515659",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined4-scoped-tests.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "1368c5f68b5ee5b7482f5dd6044de66f622413564870e19ef21f58055a233734",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-combined4-settlement.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "4caf8b0de22e861d73e8f4f30c330a15ef43f0a0bd422db376a83214d2c1a5f4",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-baseline-recheck.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "c77df336749001e93bce04d61002307f16cefad6096aac81fc1e9f1c18bf4a8a",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-combined-broker.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "1dbc17ed1b93d5225d3b2a63585866148f49f3a7d6ab63a672be8a7062b9c7c6",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-combined-checks.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "a16708cac471a4e31ebe677a45a521d2dd6104637b46e4743e0e5a01664ab709",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-combined-export-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "efa4b30f839a3b00739169f3beadd06e7989552208e592f4f5440c9bc8246968",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-combined-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "0469e6da6806165623ae864f83b03e3cf4b0308c1c8bb3988a4304cb75d25e4e",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-combined-launch.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "0193fd13c00e12f37c776743638721bbed10a148b8d1642e8fd0af2281c7fd69",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-combined-native-build.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "0d22b30e323e79e3266d2f6a5af221775a84b79c3130561d5d98b96fd1f45440",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-combined-native-negative.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "20821f5b4634d9a126d7b25c4cb250b7cd8954881e4ad49f26487170635e7709",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-combined-native-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "f6a74e06f0e0a05f7166514a13becd96897d87f2c260eeb0ec232680ba267ff8",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-combined-native-tests.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "c7383922e00b465a7ffc0b9f89c5ad30f552daf2e79b4e2e5d1034f6e1454140",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-combined-outcome-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "8c87580b4fb01eff025f621cea98be9f2cba55f3f1baec544990b4f898bd4e75",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-combined-outcome.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "2104caa311759ae8e1e8b0225f69a208846914f61220d12576702fb228b73103",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-combined-settlement.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "567973642d449e138ca2a46d61759768304e84016b82e4776d941eb344d05d67",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-combined-source-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "86c20131abb7de2828b0c50e006ee7afd10f6690bf72e2298ac53e36caa11415",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-combined-tests.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "faf1b5c241aa14c750283ac1441f454a2a2e984b8bf2e9f4c8402f5ba47ee92a",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-combined2-export-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "7995990bc28e736e62bd6c9b2a7ec0929a1646e6a36ad8c81f5e9e4f7d739ffa",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-combined2-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "f6877df361dd6ecc9797fa7306d6aeaab0512303de0991dcf68ef5b6cbfeda44",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-combined2-launch.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "13fbd5bba8d334374f8ed3e8330c4f6404f08c9a125224c506658a39f5991ada",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-combined2-outcome.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "bda3614cbb976e837ec75daf388cf574a9548c3af40da42cb0c2a5062115dad5",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-combined3-launch.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "30ede1e55da717e140a8a471af938a59950ba1251689b101005445b6b9ca5c91",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-combined4-export-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "89fe92b2c216c08fa313cf066b11305343af97831e736cee85347d0315da7732",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-combined4-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "f2d89ccfa68f76031b84661c2af84e75998a24ac44f6bbccddaa52eaeb0e335d",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-compile-broker.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "54c364292385a3d2d58caba04cb8864e477eb4eacbc218325a814ca2975939bd",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-compile-build.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "eac0c69efee325cfc1b6d5837a3511bcf58355a78926c02940a975d377b874aa",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-compile-export-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "0e3404864bf45469a9b859555200492475436461a7537e9af099080b22836584",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-compile-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "1d65ba9c715306b68f36317db404f3149f86ea9d9603008ab00aeaf7ce62e225",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-compile-launch.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "a645b69558a4879e67ceaf111c317765b0626880135e52191b07f990ca863f41",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-compile-outcome-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "cbc6b3eb91a9f94c9e5a1b334a0b3c4ceea6caf81b1e711f79961981d3c5b31e",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-compile-outcome.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-compile-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "bb57ceaa264092e04c35cdb07d0fcf3fa41d973a389693087958dd6ffedfef46",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-compile-retention-negative.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "b2c951c8c48c0b03bc49f8977a1689e6bd36b7c02e0010301425780e62736cb0",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-compile-tests.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "a6707d4eff38012da33ddc34bc6dc076a3b17151cfc9aef223c8790cbe64c3da",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-green.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "38e4655f2176369964a92b226aae25faba3e1ead45b881ec3f4fde22374d5374",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-handoff-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "189a8b4181d3c6b8ca7be0bca9b3f81f79072140fc0c66dca1af864e91c368fb",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-libtests-broker.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "2b1dc9b211c60c70b0cca424f7a2140d9346f9c7e7890b82746ae018cd9c5cb4",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-libtests-build.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "24c196e5e298b10d59587e48bb543aa8ef492c01bbd0180e2153fdd2e634d65c",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-libtests-export-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "283c9f61f73726295f8de01a6cd127e08ea8d150a0a571deb02f101f8b806d0e",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-libtests-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "25b2ea70e9a559d066d80ffcdea8f78ebf546aa08588fff8d5f453e3c6faf1c1",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-libtests-outcome-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "569d08a78338c0b9bbbd53b14c45ea51d078ea2d986ebc16d7c3c5d270e7e518",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-libtests-outcome.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-libtests-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "bb57ceaa264092e04c35cdb07d0fcf3fa41d973a389693087958dd6ffedfef46",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-libtests-retention-negative.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "6a53fe85ca5f9d3316242aa8040cf395e4b3d4fdc814aa90cc9a7f8a05bba4f8",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-libtests-tests.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "0eb7714d217d5b5b3c694ec50a0488767bc121148c86ffb1af68adfa4056aa36",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-plan.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "10bba92a361826253314ac4444ae3a985c48978ef28bf69410819681d31353c8",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-prerequisite-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "7aff0eb750225185634d7af46f12e807c7793408808bab01eb30c5ad8ee0da16",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-red.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "6832c44184d7390c3aee6d6e9b08cee57463b0663f6fe6f075a6cb5de4e7f516",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-source-inventory.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "12242656bdcd25e88fec22fe78900600272884cf5eb66d2bac83c06c8209352e",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compaction-source-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "8db602b66f4cdd2bb16d7b2b4e3f8ee9877eb92fda1dcba08f68d712351a5fc2",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compile2-export-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "2b37ab28f156bfcd26d020e40324806fe32f392f6f8904761ef8b0601112c962",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compile3-export-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "279d44c492f64f4dd1710d8f5af72920b3c1073c8dcba9fd7dfd3eb3a25c430f",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-compile4-export-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "d930ac27a9db6b9c83779b14739ca40ee9ae5703469031738a74cd04d0c2a195",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-config15-partition-analysis.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "47f1433b031ec86136882aad4b5ebf74ff0ff8a71fefc06384c8c9baa9313ff7",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-b-checks-evidence.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "6edb52488f2f70e9eda0060544900deaecb04e4c3d15395547fc2d9e322ad166",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-b-checks.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "e210de64481feece6ae64ee192c0e14626cc112f2ef4c47c7fac526f7fc7faad",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-b-native-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "3008f15b45a2db438605eea20f2a9844d209923c1b3a24761392e5a636e530cc",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-b-offload.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "6f65b4428f07a415a61a2681b17b58016312c7fd11f6de5b0146d25d730c88be",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-b-outcome.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "3b01c8102d22f14548a1662efb4bb330b236f811cb36fca141f1e6fe4a486df0",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-b-parity.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "30bab8050627b7063b4d542cbcd7a313d451e9dce354c2c1c6b58f9e3896b44c",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-b-probe.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "fbb8a962f5ddacf2a48acc3283a74353223d64fb0e7b9d95b52592d398372fdd",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-b-probe.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "aa0937420fe01e0ff844374f9f6b6a0c91b3b2b5a861d1f126fb3bb0281f5760",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-b-recovery-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "334f3e2f4847dc9a20c3991d10570cb9ecea062aa82b7f2bb79376929123dd8b",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-interrupted-result598-isolated-native-compile.log"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "c8323083465d2d74ddf1bb54e5434e26feecca644742927d3e8930b04733f43a",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-interrupted-result598-native-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "14811a0db1f6ee3132c29e50c1769d068e2eef5bb8b489847ad814f251ca51d0",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-interrupted-state.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "382f582cb2182452107eecc2fdeef547ca6ce06400d74d0a460bcf08b1369933",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-interrupted-strict542-checks-evidence.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "f82380f0b2a6f5904223c66f5a1e63d19f1a122dedfb7636cb29108585243a0f",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-interrupted-strict542-checks-tests.log"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "3602599f34ff807543bfcf3d75549b5ac57f052246e5916f5fd567dcf4302827",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-recovery-checks.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "fe74bb6132a3e163823589ab44ee2e1b5b40fd7f16cd9ddc3949a1b719f27346",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-recovery-checks.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "dd259bdf02e53048aa55062fce2a8329d4555b0bf244c8de752458581d3fd0b8",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-recovery-native-compile.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "e210de64481feece6ae64ee192c0e14626cc112f2ef4c47c7fac526f7fc7faad",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-recovery-native-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "6bfd100aecd0df6db93f098cceb53354db829a7416431fcd1ba91a53fa0d7bb6",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-recovery-offload.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "5459440859753b2b42394d818867f596b3c705bbb1793df3c9c490b49cb00ea1",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-recovery-outcome-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "18ee9bb4b564e9914b8c3e41e1da7614f3edaefc668c028d296c517a222165e4",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-recovery-outcome.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "5bbad745a4cceceea5884d206ae09d2afe6ce1dc05327c6b1c0810148d2e36ab",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-recovery-probe.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "f5fa7dfa134c8d70faed99afdc40e045d3abec1c8cb94129c07618f6ba7505e2",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-recovery-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "d86deac5a459836bd3f5caccad778582529f445fad6170e7ff9cd385d7f86859",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-consumer-slot-refusal.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "9f084f6986030be1a506efa2231151baf19ce9e302db029a5e14500e1f1fc8ef",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-current-baseline-validation.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "b52bf2efba9f44599290c39847010b75381e891f4f27244b5fa3f114f8ae2ad8",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-current-handoff-ba5c61b2-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "2209f9fcead610800eda684c7646df3dc5a915a250f29efec1c295bf3cc6d304",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-current-source-inventory.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "86d3800fa259ad10efe7b8821f18c62fc50f31e4f09c8056dec04ec7ac9e1042",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-declaration-checkpoint-independent-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "25f2c9a0d17321a2b016a24f2dec94846245e4b4545dfaf10bc587b9e4411278",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-declaration-stage-continuation.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "10cc71d1b067a6d2c267787abb9cfaa281a94b962d2eee012cbbfc296930b9ca",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-dtsprobe1-offload.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "1ef71d33013469efad5b29c4c5ca16a87e919a5a222eee872c0629c5fe73bd73",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-dtsprobe1-runner.sh"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "f8b010ba903463a2910074b5a45b09c33b2beb7837b54821cfb13004c64b9b95",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-early-finalizer-source-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "9d8790ee8fd3a71c4adc461854998eef8fdf9fdd8f317f3d054ca5f93b8ee661",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-f1fe77e8-independent-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "ad31c13fda8383fd393049e99c36ea6262c7ed69933d5a934c63b6a216578ad3",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-final-HQ-HANDOFF.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "428ced690f0b3a3cb8a7a2a4fc38570ffa71fa98d7298423376a26fd3ee6a9c9",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-final-baseline-proposal.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "1ca5e708d5f62dbe9ea921dc7438de56da037b434b6901af9247d0db26c57e30",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-final-baseline-reconciliation-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "24df81200a89111fec6c06fc27ebf91fec40e8525fe19e930c8edcf591201695",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-final-baseline-reconciliation.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "13b42cca1d4657eb5b17c4c8631b424b0512191140a4565963bfe175e64a1eee",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-final-baseline-reconciliation.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "17d23bf77b37cc08927cae08039007092ff20b53fc2d4ce522ce29ee4d4624ba",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-final-independent-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "bf8edf2bcfdd273dd2d8633ca4db164efdc3418f53ea3edafb8b493e2271b5b8",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-final-privilege-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "7c404d1d04cce2bef262df508af5460a37f6228152466bc60d46e77841dbdfbb",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-final-seal-historical-original.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "51170230064a8da20e074497eae6a6c968d293d262e9e31523dd7365a5c128d3",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-final-seal-original.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "c3cc26cad907492e579748575e90b06114da62dd1b0314a6b51494d452841f09",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-final-source-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "a12b7cb43c9d9134b5bb1b35e9096b66775d9e92e7611d1cc92b02edd6782a87",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-finalizer-type-green.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "753a464903c9b70f01f24ae0d0f288365d133b0095c473807a3dc918838fd81d",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-finalizer-type-red.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "bd6feb65ecff06cff463df5e33d17a0d74ae9ccc368c4b9daea0848b7de01272",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-frozen-package-plan.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "809cca10ce0a4f77b847dbefda320c9c2fa7e0e5e39222661763a51157f29a50",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-frozen-package-source-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "2350bc2d8cd9a764d823ab47a39623d79af515578de333a62ece8e61b3cdbd50",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-frozen2b543da3-inventory-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "21406a8b8c719a60648e51b21960ac93df81fa4e3f177be6c77e0afcd855fae7",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-frozen2b543da3-source-inventory.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "9adeace7ae5d726bf240633777d8cab832c11b9468dff0aa5094ce27ca627da6",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-frozen2b543da3-source-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "ce3ad69ba6254b8ac42b12844d62ad90f029f7e098fae4139b482bc4a4c345cb",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-hardlink-helper-independent-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "bf51882355acaf4e38e6dc0f01546e82d360c39d6236415cdbe0e798adee069e",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-hardlink-helper-preparation.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "4a7dd35d2af74511ce27a4c30d2300aaa3ca67b1a9a7a030101fc457ce5852df",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-hardlink-helper-tests.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "35376919c40ac60e92d4583027fdbe5346c8c033c7e985c80a8d1b2feb245439",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-installed-dts-timeout-baseline.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "b9fd7738eab11e2d294f8bc6f9113c7ca8aa9beada664c64987cab8479f65660",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-installed-dts-timeout-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "cdcd078ec71eec2ce922c04c70090a7d9c752b56f55749f381c04a340fec2469",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-installed637-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "d8ecdd35f7f52936bda65508e7dee7c69fa7d58f38c1df2c5264e5008fd5c5ed",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-installer-source-policy-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "e998816ee07a3f2217a9bf68ada2918c60f6386729749de1ffe487e48842f05d",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-inventory-evidence.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "29746963a9726f6ead478baeb3ab77dfa846dc1a183814af091bb9cc55521a62",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-inventory-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "eea62fef9a3bd89c63385c591bf2d0e7a52e3efeaef8b1163090b41dd2ccedd8",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-inventory-offload.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "356c81939f652225ff5bf3c84acd007915507e6d9e176d0446782f2856cf8608",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-inventory-outcome.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "90d7a524eb4173e684c6881764180868a7a377ca741d99aaa852c54178400759",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-inventory-source-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "b1be0804d6afd49b3319353a7afb3a79665eb2dbd00fa42550cc3ba4e5e5ab28",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-inventory-tests.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "14b05ae3aca615c9b6358adf51eff311169eda173f3ed14d5290144b6870257f",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-inventory-vitest.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "2537c0582cae688cdd4b68f1dda5558e3a83773897ecf1a9f6686d73823e29c0",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-lease-cap-prerequisite.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "32d5c8833df82077b8a126cb06086179c9f4c84b787b0f569d6330445d9369fe",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-lease619-baseline-focused.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "93432f9b508283ca3c2b7cb2cfc877b618ff2090104acc7e6765125e3e7245aa",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-lease619-baseline-full.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "dbb303fc0f288e246b30416bd3d42cf5eb57199c7791793c9ea3e37d2e6fe72f",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-lease619-candidate-focused.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "670b5392057ee1a8f291db642c8ddffdd60c7dbc22e7b20ed30b7161842e226c",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-lease619-candidate-full.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "fe7aface6fd346bff8f6333e5932444919b2eb1e2cb7364854cadae9b7d6890e",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-lease619-full-gate-red.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "fd21f5d906448ae8d4f890d16ada912719b5fece0a5cc18ba916e2259eee5067",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-lease619-full-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "c66498c303993c41f3719f168f1d7167924df4965d9860be6949d04baf4b829e",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-lease619-outcome-independent-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "0dabeff51d46b8ee9c793770d934dcab5d2b1c6ab8f57c61a80b9fe17a4b41b8",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-lease619-outcome-reconciliation.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "d8918c7191cfbc66b49811a9a6e8f114b87b10cbfbcc2b8b98cc522a7a7307fa",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-lease619-reconciliation-green.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "6d8a2c417ca99176e6fe4583169ac6850ae7ded1016e855f3f54405031be7be7",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-lease619-reconciliation-red.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "86fc41018105056aa07ff0d5daae0a45ce32f6b4fa997988bf11e9c6c181e4a8",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-lease619-suite-gate-review626.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "8191b12e0ed5ad45f8568ce80b954a6c7be2e780de06256aa7814d282c468888",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-lease619-suite-gate.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "30e87bda8b2c6f44ffb782041253b40d4d0c8c93d512e2d060d303766127803c",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-libtests2-export-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "c5c5ca0c28a89038d6208fc85950fdbd93e7a203753b1aa7bc88fbe4526a4edd",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-libtests3-export-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "a5f120ed9ca70353787d097b68f4e9ab65ab523eb5b464fc603e70540aad1bdf",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-lifetime-export-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "8ae7fd23504acac7b94efd728fc0a749d7f0b6a8e52e981b90a357e629bdae68",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-lifetime2-export-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "763cd0dd9225f16b920483e3b1b96edcc44d30678c7ec47001e532dd2f97bb39",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-cmake-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "34813fb8ada8915e284427c257e2a90155308d068e8e0834b053eb0ad7344b03",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-cmake-input-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "9f1b859f9c01979de8bf4d6d7789c04a0955ae88921602c8bf93ecc1aef4c579",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-cmake-offload.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "cca2678585338323355fc36deb87e8973069163dd30e39d968ae7fabd1f16de7",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-cmake-outcome.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "929f2ba7d2a7761de5ff6f62795bd4e2bd9cb089c1be1b825891a2184c9ee805",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-compile-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "f6da2f2a249ca62f8eec9c9f9d4d02d347c5982840d38684a2bad5a5c827ba25",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-compile-offload.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "e210de64481feece6ae64ee192c0e14626cc112f2ef4c47c7fac526f7fc7faad",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-compile-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "3c481df46f219536cd8297f0891cfaf494381f41b01ef7bd4327b6d69e3a43fe",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-compile2-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "2a1fd0ee44fcec95c8981622ab2176786b298202ca0f1f3bc69f61d9eed03cdc",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-compile2-offload.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "c92aaa8974f856c783b15888a4c35f119bad3998d1447cf7b8b8bd8d44f5743d",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-compile3-build-tail.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "324e3cd4aeb6cf8efff9fc46ab7f8d4496c3ed66b5e3622a142fe880c20dac80",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-compile3-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "1de081361b650bf3156732604d5993513856daecdb53aaa60d2b239bb3172492",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-compile3-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "d6344922082344d48d0fb54c72cd9caf04e40f3621f9443f1d79ee4652bae593",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-compile4-broker.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "3868dff85c1a9c14ea110d86d04bd6aa7b3598f3052c2d104757835a21337cca",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-compile4-build.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "f1bf87c254b67b64f31c4074003538cf975b7991c4c6078ef0c28a008a84e8c6",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-compile4-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "216f40a6f4cd5bb6de806700ac6b9d6fe2eda99b6fc6400ecff4a014dcc40b9a",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-compile4-offload.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "46214d0e07f2bd40fc6b19a9d5d586ab5ec8067174c834df3807b891fc4307fa",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-compile4-outcome-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "9f18438c2b47aeeef3e6e871037b2da9e23c73dc6745b4a7b2c1b91a17dffd4e",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-compile4-outcome.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "bc741801b805fb6792e0e67fc4f8e3b88425096d41e6e6216927cff140f9d9b6",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-compile4-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "2dbef5131d3f7d10ea857de01661b67d97672a03ab65a76d9812858fcef752d8",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-compile4-retention-negative.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "3b229ab77bd5fc86e77239f465de3d25b0f007eec7443f68a31d35ce540b1b5d",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-consumer-source-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "a09747e3c64033c41f86e40f0dc0e42b26b4fe5926dfbc33d4fe4ad63d05e494",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-consumer-unitfast-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "e34578b45096c143004edd6a0e37fbb89e2339226471665379e5a9ec814f4f01",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-consumer-unitfast-source-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "398532f47bb0dd5036160908df6a9d9b935f9cc11b74f8908251f8b99fa76bf1",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-early-finalizer-broker.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "ba2a856087348bbedeebd33feebedf89b95f824f0c0694d53607b052e288ee57",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-early-finalizer-checks.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "4b2a5c68b36841db16d861b52a60490640e98c5937dcbe2dc2afff0c7d1935d8",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-early-finalizer-checks.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "73e870974101e2254e2d1c602630fc4aec7b672d680f7fe65f14d88c9a2f0868",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-early-finalizer-export-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "42dab6ad8acba848839988378969da444bb126efc4601a3a8620362a08ad483d",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-early-finalizer-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "04b50403235a48ed623b65ed2dbd5b1b282eb6dff0cdd63049625d6f4a85f889",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-early-finalizer-native-compile.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "1de081361b650bf3156732604d5993513856daecdb53aaa60d2b239bb3172492",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-early-finalizer-native-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "a5a860d811a6210b457c64e5f23e8832616595dd6a4d308420b292668b3dcb23",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-early-finalizer-offload.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "91bb5f596f98a045ee6428415bf6f511444c7b3b526978534c400c6c91013d92",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-early-finalizer-outcome-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "5c0f861565879aa0896a3d78d4944ef3d162a206375db89f6bae434756dc58d6",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-early-finalizer-outcome.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "6edf03c3db8b080d129835fffd4d8ac7247aa6b707bce8dec1c86bd8bc0f0edd",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-early-finalizer-parity.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "37b704ac34e0217b7ecdf92558c74567a2f2ee291f6bb757423e4e0d9141e51d",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-early-finalizer-probe.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "c36daac7fc9fd4ab1d71c50ee8a4b5b7ed8163f050cc1b24d56a313b5f3d8ce4",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-early-finalizer-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "0934d1e68ae7ab028fcf5a5a9a71d70352a5b3d0c82fb9963f4b2111bf4413c9",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-early-finalizer-retention-negative.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "f6d8951e5c2bf139377e163ea139c08acc50e92b93a7812eb749637a65e05956",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-last-use-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "88ce688f5408619df2355b355aeb8db2df556baf14c47928a54ef3a7790b7499",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-last-use-input-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "9698c54c619e8371262f24648409cdcf9e6c7414646aa07de208fcd25a6e8dea",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-last-use-offload.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "e36e96d1c7994c807e21da5d6510c206b5378b14a32739728b626149cfac07c9",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-last-use-outcome.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "642c07a672392f900b9814d47c5682e289d17d3e2982731b314f495143bf1ed4",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-last-use-plan.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "66391c434b1d89577385ef00ffaea9617bbbe043c118d353cd2477a451acba6a",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-last-use-source-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "c1f511010acb7d6d9abe3ad5103cba9e71c4044c40477ec2c0042ae3f7d9f60f",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-libtests-build.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "c1d7a002b8d377ae29d73c47a1e2f9fbdb08a8dc3d8e6afe50b25eb4948953cc",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-libtests-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "43b5d85c141c0a4a7e96fd4f25cbbc4bb523012bba6f47719aa7eecb3f1c4516",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-libtests-interrupted-build.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "8ff9560e1e2fcc6c0e6fefe893abbbf7a512b714095c43378b4290bd29ce5bd0",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-libtests-interrupted-lifetime-retention-negative.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "052c1c87c8e3984df559ac2ff011c718ff527763261ba48e0746f12c2514ecf7",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-libtests-interrupted-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "54e7461ac5c2f2b7fb3b91408b77b7811728c7432ef9e0ca574e496fb28a7bf1",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-libtests-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "88bff78a6c00efc0d44fe6dd5f4f31dc71fc503065447b309553c675fdc32aba",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-libtests-recovery-offload.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "760b29f2eb446bca00aaffeaa70761ed197ceca9fdad18239fc8e553296d961d",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-libtests-recovery-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "47c89ed17cc8a68db6f06fe9279b066a9d7e96d8959976fe3e24c2afc6f4ede3",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-libtests2-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "821a574544c5859ed7f889464303f929df5eca9dc7436bac672205543b7f239f",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-libtests2-outcome.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "d2a8c010e96cf561179b6021fd89dd6bbb7032889e62fff189beb088c6ca240d",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-libtests2-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "cc9c51b9050582eed21e4f0d1889fbf925fb46f7ab241624bcaa4e90104f1916",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-libtests2-results.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "1b6eeb94d751e2f330faa9cec158f5c2116021e9bfd6358b82541a29cf01b4f6",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-libtests3-broker.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "7c6cff64de4254caaf4946a95ea1e23d3fdf3aabbb6a65199af8095be040b244",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-libtests3-build.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "3047f378a219497f392994bbe6ef36d7ffe6e23b5aaaf1e51681b8136076fb94",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-libtests3-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "5400a589c752492c469089cd3a3d59d21b6b296ee8ab96257edf8959d1b643ac",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-libtests3-offload.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "2534dcb5abfdc88286c3e0784f7fb65701c46f814dd253aa7a409543af1c45b9",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-libtests3-outcome-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "47dae4daff76ad1be25eb0e70458c492768f24a6b2392b2d632befd544c1dafa",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-libtests3-outcome.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "84a8d51f34da3e788482de3e817b5583917a9351a22cb8ad2f7cf1b1ec218a93",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-libtests3-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "bb57ceaa264092e04c35cdb07d0fcf3fa41d973a389693087958dd6ffedfef46",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-libtests3-retention-negative.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "ee21170d41bcac7edfdc0d2186c3e6d951e33f03896fc2d4e84f1084adabece4",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-lifetime-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "42372be3dcc4d2292a3fc68edf5305c970e887ae8fc619d776c807d75aebb49d",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-lifetime-offload.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "49e173bfd77d1e12e318a4b9db555635d19029c367e9e761c267cba5a41e882e",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-lifetime2-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "ca837c9316a078e8a52572c1f1eb5cc2da19b8312fc00843663c25891848508e",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-lifetime2-offload.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "3b38aa03dd0f8ba729e7ca1eb331ede7eb6286dba7126e4b48449d8b6db91358",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-lifetime2-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "23a741b96d68bb5da6ca5bd421a7f28385c9ebc1f65cea013e49d7fc18b1d149",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-phase-export-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "5291b14769c92e56e4a2f306e087846debb7387c372264552a8d458a37f9556c",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-phase-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "234b854118d7cf0c48e7fa20db7923a3a5b0455fa0bb910c55650fad3860d27b",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-phase-focused.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "7c1f35b5932fcf3e1105eddcdb5e82f5520e33a0127d05c47903595de8c06bcd",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-phase-green.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "5e1896e592b98425e81c7207f273f8fa4e6f4d2385d484f0cee5739430ad6f88",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-phase-launch.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "9c36c5074733fae86bbf78dca3167c1f5cfd0d55ee74a8693c951d80cc755cc3",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-phase-offload.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "e4d55c8cb34bf9a1b53249aba84766e19ae7419057ee2d921c6da2da04bb1bdd",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-phase-outcome.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "7d63dbb411330513bbcc95e816dc3b8e732779669787cc90b805b04e486a5b46",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-phase-recovered-checks.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "bf7904959a774550128d989b63e6dcd12a17f8491e0f903fd553416445f7275b",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-phase-recovered-checks.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "9e9a1d2b5bc41439c158307fff64ad3a3205f3e6e117e8e23b230194926cc9c4",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-phase-recovered-parity.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "e78bb3b7394306875910e9c833066bb5240d6a343c3ffacefb2a32b6c21a30bf",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-phase-recovered-probe.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "4f8c902e9adbdd8bd50cd78fec0489013693846cffd2736f185e6e94b953716a",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-phase-recovered-probe.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "bc741801b805fb6792e0e67fc4f8e3b88425096d41e6e6216927cff140f9d9b6",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-phase-recovered-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "ebd17e68fd1b8d8a6a98015292a876daa7b8fd1e14b0c35707f8934bf4edb621",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-phase-recovered-trace.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "f33aa6fa03445a5f037a49e2bae808c9fbae8977e976fba02cfbf8ce3235373c",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-phase-recovered.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "71597a03f85f495deebf5351fe4219eee9ff3f36ae916c02c10398a48f0bc4f0",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-phase-red.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "74549524c3e0afcfc0e8b8b134e1144487168b87bca5b82d7302462b17bb5f4a",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-phase-source-inventory.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "82ec419cb5aa27079f849baa874e39f9591793d5ebd392ef294fe64aea0572fe",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-phase-trace-plan.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "68548a422b43be310218df67512ec0331c613a038bc9e4918e52f1f835d30776",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-post-metadata-broker.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "c11091989b7764eac97371746811dc83e1171c1aeaa62cb103bcb27a627c1818",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-post-metadata-checks.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "05f9030dbb8de1833dad5c458eb267580265e3fa0cb37720297006ee4db85980",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-post-metadata-checks.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "6d748aa18df0170f3450c5c1d1534fbb1f6fa3f9e6c40e2848a09def2302ffe4",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-post-metadata-export-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "eba2def84390b7e50e9221976503ed0c2bf143f950e5b8404a133d730fb1bcb0",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-post-metadata-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "c998bd5fc2a9c68d2c51fff37b3dcc01e9f5d33dcdc6c977b5eb9e8a0c4ba29e",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-post-metadata-launch.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "206055dd5bdffadc73211f60fe5b18b891efa950d51d9d9056e3235e93211d74",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-post-metadata-native-compile.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "bc741801b805fb6792e0e67fc4f8e3b88425096d41e6e6216927cff140f9d9b6",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-post-metadata-native-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "9a87d4efe1b2c02a9afa72b2b0489059781d91b1f9d0f796c5c8a5961fefaf69",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-post-metadata-offload.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "d9d938812837a6875ec449fb38bf10e2beb0bcd16bd620955e21a40091a221e0",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-post-metadata-outcome-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "efb60dd838b5b383a63d4ded58c32b53b4be8ec89f80ec3265f4c996629c33b6",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-post-metadata-outcome.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "9e9a1d2b5bc41439c158307fff64ad3a3205f3e6e117e8e23b230194926cc9c4",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-post-metadata-parity.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "844dbec5f5afd6ee3f9df5000e20a80bb9ac37dfc0ff5bf56eac862ea21018dd",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-post-metadata-probe.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "26c3b67d066fcbcc628ddf7159e2293617712ae40f947fad071da3af9ef0c113",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-post-metadata-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "3af294a2d0c242a47db7bad15d75cb4d015984a3a0c179552b1fd481f38d327e",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-post-metadata-remote-root-list.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "5dbb37c43317250215aeae4152cf19a3d8db1e60a76172e4174b6d9458ddd393",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-post-metadata-retention-negative.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "af13dddebec435a9a8906e6a83cd25ecca4b0205506dbc6c095e8b2d45408e2a",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-split-plan.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "2b240399b7c8ac59e8c3b85d301b50edcf2b9c1f9aadf1289ca237719696010e",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-split-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "a858d245a23163d298ea753c662bd1b7613294247bff66a99e4bebe2bd109c99",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-worker-lazy-broker.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "c5d2e13be0a6321a7280ad63d59f754ae7e81990eaf72fe22e609a64b38028cb",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-worker-lazy-checks.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "22ac7df240fe89917b94686628bacbd02988d7ccfba337b7ae13cacec6a8a0c8",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-worker-lazy-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "bd0fb19319953fc655f9a5decf9a21960cbc933f78f1083abed425e2d4e78612",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-worker-lazy-native-compile.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "e210de64481feece6ae64ee192c0e14626cc112f2ef4c47c7fac526f7fc7faad",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-worker-lazy-native-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "2433d355f32936c6b8fd86fef855e75c791702ca391757fdcd77754c2036ba27",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-worker-lazy-outcome-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "ace3402eb7d5c8eec35a9e7d14ca4ecc0e41a526a7bbf1f960f8c5ccbea5f9c5",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-worker-lazy-outcome.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "3b01c8102d22f14548a1662efb4bb330b236f811cb36fca141f1e6fe4a486df0",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-worker-lazy-parity.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "ed7f84a715a4e647b4b50d7d015c3bb2ebe60cf2e768ef9f07eef849dfa398e8",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-worker-lazy-probe.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "936241691a52dbf73b53113e4159205597ec988cee08a3cfaf2f5808c12f1a01",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-worker-lazy-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "7635d542be80ec9763b56e1b02614c970dc4d1370c07c3b9218dc1b6f8731aa8",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-worker-lazy-retention-negative.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "0616ee1f3590a9025e6b2aa70ee5247e47219ff533c84f699cafbd5565334bce",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-worker-lazy-source-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "4d605b38125ed48ad96af1f0bf1da67cc5f53e5a72d04dffceef8417c3950c2b",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-native-worker-lazy-tests.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "d53b483dc21f818daedb81598689df74101a9f62d4dd56fefda40aa5bf7a221d",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-owned-entry-independent-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "37458c1518ed04d450d7d14c818a5abc25a43b6f7bb4c1266b96ac1b6835077c",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-package-prerequisites-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "a4d9e1296bdfcd83b4e1c25b92321934cb151404e16088188c789f2c89795103",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-package-promotion-plan.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "3ef0828f4959100cca73d850e5ca4bd90db2617879b6be4c6d16b77f085d7115",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-package-selector-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "93986c954e3fc74174c3da34ead6f11c4e6d0ae61dbc5f9408a51dbefa02cb67",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-package-wiring-independent-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "417ecc62e54c2999f6d004d7aa534c533e2ae556085b6792fe57f52849a790c6",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-package1-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "5d3cb3bb3785e8571a07ae98ac71b13c4dc7b28a44589831ac7e703e061ffe79",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-package1-offload.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "e5792528cabfef290395f567180ae2d34b837122f94c498fc5875790d9e509bf",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-package2-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "e48b4fbf9565e6abe2b33eb6f041a2a527ac1e6713c65edd63b4bff2c5c04a4f",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-package2-offload.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "a8041db9b95de84a773b30296ce8c54b1b145acdaf8ba45f615529dcd2d9ab43",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-package3-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "a0f6f3c956662da1e94c76a153248a2b59f8b790531622791bbaeecc131656c8",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-package3-offload.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "006ee66b5f8590b0a2a84a4dcb5cefcdb91a2602a3900e0f054aea70a3008edd",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-package5-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "238b805b3d1dfa8c5b630a34ab232714975d7827812a9b6f59b70af306a5bf6f",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-package6-provenance-addendum.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "2541efe42cbabab65494651860485c38a438ca3d9e4af265942ca8e0e5fbf258",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-package7-partial-build.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "3af9edb7d28edb287da9b64cfe5fb108650b0d5edc2eac9121f383cb5c17387e",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-plugin-sdk-split-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "946571e37434c2e07acebda22499f75985bd548d6c053f0f441b9b242d229ee3",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-plugin-sdk-split.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "b6e779840260d4b5ca5873c809a0acefb09e53c815bde8739f2184bda3f40440",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-post-libtests3-handoff-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "c70c2110624246da189d8c71f5be7e0671974d1987b0c54e76657c9fcb6d8226",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-post-metadata-green.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "2e350cb0549173a97d70f119695353b0493472bd2ccbc0b62ceee232abd3c72f",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-post-metadata-handoff-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "2eedcb0335a6bf708d8ed8475a8c026a6c83f069fdecfd8c06d981592d114a90",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-post-metadata-plan.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "b9b9bfd36a473955dfaffdce2db775a074e1cd197fc5f45e1bc894bf5af96f1c",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-post-metadata-red.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "7db0f089f9d928692a5a4be4c840c54909177aeb59279c3729975f194ba15718",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-post-metadata-scope-red.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "61c0c9ffd2c17b27f9c053531855c6ab3143ac7d98f0c319b04f93c7f20585c9",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-post-metadata-source-inventory.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "ae64b0dc756260fdc9d65e277273fb67fc0987f5bb31ede523a93d55ae2cbe0f",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-post-metadata-source-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "1a0009c13df9f0981b355e0a0e31428fe8872dbf35f4124ed41368b65e9e56f2",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-post619-baseline-proposal.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "8038e8bda298d19969673967e000646d1613aef190e80ed1a38cdb12fba50efa",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-post619-baseline-reconciliation.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "7c62e3ae2a11a5f97899b17fdf68ee0662eaad92263fe95b9b5691b206ef5ddc",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-post619-baseline-reconciliation.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "8b726db9843e02eabc2c42ac03128b0d66d71fe579a7bdf9ca1b7748dbe5030c",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-probe4g-correction.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "0f2496943dc91ea4ca776c0f38db2f448b6fef3ba0577c1b14c495e53000121f",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-probe4g-green.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "85eee76c5de9bbab6875abfc632a92b0146d5d1c89d45b9280f2c17ede73f194",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-probe4g-independent-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "1541a0d5e0e7a267967ef0ebeb4385917820f05a17134a145a26b4d7a399f151",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-probe4g-red.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "8ea7ee77c35776d3654bcb869060211a813c86ff298f9edc51b3ee27edc0ca7e",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-resume-after-compaction.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "a48db2d91362f0f44ded9395cac275a334fa972c3c6cf934fe8c23c2c4e23a74",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-resume-after-compile2.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "43858b69db8cfa87df34ca8657ced4a979e2322254f20774f4db0eecf29e37c8",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-resume-after-lifetime.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "568600d9f2e3a3c9647f4389c2ab154832c2db027060884fd70656aa032205cd",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-resume-after-post-metadata.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "342d76a62beedda7d2848db77fc16f832bc5bbdede7630d8b2ae60f8fe9e3f55",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-resume-after-probe4g.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "2ced82e1a4b24cfee7e0b2467823330e3a0604d6ee9715aee2dcf6d8f2e84076",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-resume-after-unitfast.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "ec8762b915c2e0b7881769e207a8f42706416a75866ac1184c8f8c7f8f6b9bca",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-resume-after-workers.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "33ec4ad9df7982c8bc858918281d09fec31cf21cf1f141681de8c70adb5d7cdc",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-review-e564e781.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "4f771dba75fc0f35a71a841592efb2892d3ccfcfc802edc077c4d12812f6eda3",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-review-gates-independent-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "bfe8c6a9f158e6efbeddd8cf0f41e621993e0d875be613eecf57e2fee186f83d",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-review-gates.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "d69dab64ac98030ad5a7a8482b4da34397ce9057d9f544f8ca38049d8888c343",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-rollback-ad7d4365-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "175ed17b73c83d3637da607e08ba16e7ae07cba5f6a18e3c8c8498ffb6666da3",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-runner-builder-fail-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "43ceab08a560e2e3fc53c22e62637a697ad42572308171c65aa4b0d17e6bfb31",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-socket-parent-observation.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "64d170dbb6a64d45852ed16066ff79a0406b019b7e997d98ad23fe80998c1b15",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-source-consumer-plan.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "cc56be049206b1da1c20918ca7da366fe424b4693012b8f08dcabb07f1d237fb",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-source-inventory.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "528be15e505b1239868591ce49573487d7a164f12e912cc33e056a92f0482351",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-split637-independent-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "f3b479ea544bc5248beadd501fdcbd1de8c798f425e42a47cbf8a0bbce3bbe57",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-checks-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "7475c7fc73628164fc372b27d8bb1fcfd5779b9bc8991c540b66db2e1f59580c",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-checks1-offload.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "d0035b42b05f4587268f84ff4c151625acd17e1c2f11871c60f3a0681f21f46f",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-checks2-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "cae094554d1d0567dfb2365fef59f4b050f452545b8e71f68929856f2010e740",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-checks2-offload.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "2d6edd3d422580b31bcd9b4db04a57b5ede8532475e1067ccf6d389cf2c77e51",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-checks2-result.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "e77ec16fc2fb59f66d77e6d242ffeb2573a7dd995e1d30a923b379096dadccad",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-checks3-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "6379bfac949f21b633b52c2309e2d3163ab7544d17e7c88ebd2244dc1beeb958",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-checks4-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "ed8d2874f255663c49f29838e6306aa9caed5ffa132d8b13b4531059e2b40017",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-checks4-offload.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "26a00558712ede51945e00ccdb3a95d9d6e53d6edea621f43fd6cbc19baed069",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-checks4-result.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "0a462117ffae69c84f12aac6dfb5b670c450c94f543a25e2cf9275657afc24f6",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-checks6-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "7c0c8a66f995e038bd4133b2943da77d8034e909625a1a07cd85ef2c79b152d6",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-checks6-installed.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "ad1915045916f15242c0d517cb46950ac1da20ca1422ca6c52f09e2fc5305c17",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-checks6-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "04633629cf13e1f9d98f752e250299fb69229b083a96e5b7296f64f608892ace",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-checks6-tests.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "50cb97b9c1fe3c40691442bbeb75e65a16b7b4d05b8b8bb96c5d0bf1d2784a8e",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-checks7-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "e8704c5112afc0a840ad20e6d66e8657cdfeb49a2c122b52f11040f152af9b4d",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-checks7-offload.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "2bc9ccf4587177872327fd71e7cc1a44580b2f3739f820af04a2db9477469443",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-checks7-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "cadc20eaf0af004df78454bb25766357e0fd325d6c05faa2a4bc441de2372f7f",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-checks7-tests.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "ab83cb606fa9d46b6f2a17e96f9fbedeb37485d3e6194795acd8b6503d9c8189",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-checks8-installed.json.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "70a4d91bf9e927a8f7e181680a24c4e0a8e47bb639ede096d91383b4b41c46a7",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-checks8-manifest.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "6ed49bb8ec9f3a5e69460823118cf11205c7ff538622254c4e5e0e427dcf8f31",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-checks8-offload.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "2946ef46666640f086419ef0117aee43140f63e40bfbd13f4f1241c7aa9be309",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-checks8-outcome.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "e170756df225aaa679af6d2a8c59ab8fd4bb81be6c489330c952acee335a1ce4",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-checks8-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "36ef4404f072e71f6e25c9e4c732234072148a81efbefce4527f7e589720ea89",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-checks8-tests.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "300d146ac971be31bfb10251e6acf2559617ad7254b871118c05ac7e3065cbd3",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-checks8-verification.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "5b83e5bb8c26a96d4db6ec6d373baf8cb100e5dee3d2c94cb2e1b6812dcdf9d0",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-compiler-0945-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "a41aa87be6b339772a55c897d04e417d3fd3600c1c13cc4ead15c64579e0669c",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-compiler-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "635a88c40ebc2674549b55494f88559c78e5933184a4568c2f91968b254fdc6c",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-compiler2-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "58990691e3143998fb522c926542ebefee5056ba331d1435b75f1bfe961a48b3",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-compiler2-refused.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "1fc2c49a3040088a3094e72fda6c97f6114966cd35409df6e0a5750ac8e2dfa0",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-compiler2b-offload.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "e182b0711257421c4d398b7f98c86801a59405c3882b3d1e3eb8f4c8185fe947",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-compiler2b-result.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "7f5f82691b110515fff14950ad1b3171d6310417f9a6fc04448518344ae800aa",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-compiler3-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "6c64316c329e6cedebce14e54f168f44d36f0f3905e10c03d24ed0e57b5f914d",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-compiler3-offload.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "077b00b646836be39f22a8ca17f32ee80c58de8b322be82f1ee1148dcda8173f",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-compiler3-result.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "37a07f911e159dbb7d4eb2595f72ea3aaf8894df97c37f10fbd8f9133747c299",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-compiler5-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "1c148a60629f96ca8b4549ea57c9aabd1b899bb04f51f00286cff4a066ba73d2",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-compiler5-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "2d6c4698bcbdfb0a4b2ad78177f7c127a5a5dcee570d32d88b48243f93418106",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-compiler5-tests.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "3fa3e1eaa175cd8756c27431d8ad470bc334911f7d325f08f559d66dfe94d941",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-compiler6-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "d40ce458766c1ba6ae6951360928f47173d4e471e86422f99e4e70be4fbf9d60",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-compiler7-offload.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "5649ca9db9748c4902d849b527252b1100a0cd5c296b5bde6b787f104b7a5872",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-compiler7-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "4073dfeafd1a7d84b9f45784d52cdde437dd220e5dca52ecc07c3e139df19177",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-launches.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "f9fd52ad1ff09651c49285b6e7e5150e81914830dccc08a31e4bc415681bbcbb",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-mkdir-green.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "8922a986cceca253946910f6d0f32c26ccee12f37e6ac9d364c9ca043ab13a9d",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-mkdir-red.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "38af0cecad5278e43e895676c3128d59be1bd1b9f0a8f6e0765576ca869a4179",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-mkdir-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "cbe89ba40901b7ee8a5714293e1cfef24964823d7b8c7d4fea04dab87fd8ab4a",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-native-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "4035c53349abd7013214b4aa1e76dbf1f6fabc145dc2e6e3a12fa55438593a15",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-native-result.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "aa687617f6468246457f2ef66de7bfb502b392252266215d6018ddad948ebd00",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-native2-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "67af6033619b7ac4b9f7575e7e0c4999c51310cf2b377b3ec3e71d58ba5e8b57",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-native2-offload.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "52f88c0e607e1ac2a3b849787127eecb2637fb5bba859de17373b47caac981f7",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-native2-result.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "bf3a4fb0ae1dab75426ec9886bd16a2572d8a9510667f1f00a32a3941ab77eba",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-native3-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "82fdf561e4cd89db4da51da4b96e5d4b75a2d3ca4cccdb36742fc9eb18c51829",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-native3-offload.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "6854a95cd0ddc6f91811bed3ccfac5e0504fd4527d718b9f39f21b568e88f446",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-native3-result.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "612ac72cc173243d5d894857da61bf72c1f69b9640049b71b8c6f36ff20828e2",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-native5-offload.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "cce17650d2de7634750f65c425d52bc2362ca488184e3d5d1a2a259265c997ed",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-native5-result.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "0602a5eb78861091153b0f52ddeb3281800615fdae986e5ddbb4b8f7ed6812e8",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-native6-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "a10b3364427940b1c82f95f2b4ed5630f9ef6546007f5d0d972688a8767803e0",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-native6-offload.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "fc13a5e7bb1104013147e3ce29a4f910db3e9639bb49f3e64f81ea467bbab82e",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-native6-result.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "a86f86ef02a29d6b6f42c772cc1c197595d99cc357e31b3de2e147ce2e100443",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-native7-offload.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "476cbd0eb95877b49a69c13e65e1f51bf0dd1e7e4800498c5d0c5572069fc349",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-native7-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "84b93d313edbcf5cae0bca3e0558959e9d3f338c373496ba0a01de3d382eb10a",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-package3-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "d7a909ae1c9349e6a056fa9076d61e77412d099b569915c151521501af07e55c",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-package3-offload.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "127108335cf648a41ec942964a314ca99199513b3d17b03eb6856dfbaa2e8dfb",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-package4-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "53e309a6c0aa7a0aba52e0916bd7cb7d03572111723fee38ce0daf4f4d3f37fd",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-package4-offload.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "117f527b50cdc39fad21ca6774d086945764403a7d0954bc78a63c431df98651",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-package6-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "8dbcc09855aba2e88ae8506dbf5e10264690629719e41d72999f6f9843bc92e8",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-package6-launch.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "3588339e70c8d7a5a78464e613e779eae98c8c14d4bfd9edacf1de7c55cd9004",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-package7-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "888bdf3c84895bc8dfc2175f7b7357f36ea2c30bd0cdfd793be8ff70837b185d",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-package7-launch.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "4b767e84ee89050c33f0915b78a9101889968cf1602c5103cd5483f73b15a16e",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-package7-offload.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "3b222fdb617bed5422db246f413229065a8528c650bd0fb4a49ef743c7bb987e",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-package7-outcome-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "0ec83c5c37268cf391cddff1054ae4308a112c5df174876e6f01b80f77caed39",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-package7-outcome.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "c1803fc45364e93dd43bdb3c152aee36b7ebfb81917952032d70b0ea3c83639a",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-runtime-0945-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "cd1c998c65a88c0769e991e0cfdcec4e3e4a38be5d4cee75d6ef346ea889656b",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-runtime7-offload.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "641c069ab74330ce50f006fb0e1e5a7f0760c7cf0df57b8d1e6ab3fd9ada4d13",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-runtime7-receipt.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "873a8676261ab9f7339729c9a44ad4a17f5efa275bc8fd4684d8ad7e65dba4dc",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-split-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "c577735210e0b065903278a79b8994ae9db98103682cd2def2cc3b3778534649",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-stage-unified0-launch.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "60b260a5df591797c430bc993a011f4eebf8e49fa7bfa9e50aba2d212e8ab2a2",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-to595.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "78d32fbf8e51cca92b73d0619134cabedebe0c79a56390218bddbf6639ad58ee",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-trusted-native-green.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "af1db4505a580f9e037d15a24afcdfd660ad99eda1810b249723ab488eae95ca",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-trusted-native-preparation.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "c6addb6f660399a1709d151b497442fd13e1cb696ae81b0d5c327846b1e60d67",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-trusted-native-red.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "61c75911cb77303d1890d84d60663555dae5cd42ddd54a98d99b6b0074844269",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-unified-exports-ready.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "02113da85d41878001fc7f9843a6d5cf4f9ebf7d7332a895e52c1d12389fb698",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-unified0-build.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "e5083776528facbef3c1534923b4ea85f4d1fcd52c7654853b60d7fb5f0d7da8",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-unified0-entry-source.mts.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "49777b6a39513a3cb78157a2c64d586365ee127ebf449f732fedddac22c80203",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-unified0-export-manifest.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "ce6af5321d78a3e05804d1ca985764802281e1740c1f8ed73838667294a27537",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-unified0-export-preflight.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "82ea22d0540d6cffa811781aa906d86e2dafe28216eedadd6d887928985efd3a",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-unified0-offload.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "d61c82d231e8086b6913615495b8476bcfd0b89d67b808f722fd5ffccc03a592",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-unified0-outcome-independent-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "a250ce368f84e0c8476c7b309a57e589b8b4871edfa27f97b94e6ac3e7d6f0eb",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-unified0-outcome.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "35374b3fc6de96268bcd335057d969d897b26cc635c8e81f5308a411c1eaf3de",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-unified0-owner-source.mts.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "24c4d24e07851e7fb445204043f1ba99202ed102c12973d9dd4a1b002b08dc6b",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-unified0-regression-green.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "2a11f968bb1aa00394702f3ac8273894bc782cfefb5282b9e82a639cfe5e0780",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-unified0-regression-red.log.gz"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "8813c75db4ffb990227d7dc946d6608c19b0bc5d9b2faaf02184d88b0fd168cd",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-unified1-5-export-preflight.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "c172a68b519647be1c1dcfe4e33a67aa777af449f20a775270d0bfd19ec56a22",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-unified1-export-manifest.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "288f56200806631ed69932a1b0bc4d227311761f39d1504cc2b1aa0bc9559c72",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-unified2-export-manifest.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "540ee1f24044567f1a51696a147a21ad3664885b7d46576c9067d48d374088f9",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-unified3-export-manifest.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "b8eb01e2a419ce7d6a172dcaa44c09e28be9699b88060fb856aae6db7a17e565",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-unified4-export-manifest.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "3c5aaf77463d09e53c9ae9013f47ef4c1e34ec30bafc9c13a6847d012a1a115a",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-unified5-export-manifest.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "3e9bce05245b5d373110fb3e71268f5b82751a77d930278a2c88bf3ec56739ac",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-worker-lazy-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "3991e67af910e46052ee6be8a16acf54a2633a7200282b37243a5f3e766dd790",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-worker-lazy-source-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "0f736c0bbeb5e6c98e7e493cfe49275448bcfe734c88822b2f6a97eed23d35b6",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-worker-phase-export.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "9f8c53f1d95f7eea7114d8abf82fb717461c7594c4a38dd3bb4a9df1694b4318",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-worker-phase-plan.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "c005b7db785ff43e823ec568755d09b57982b8ad45f0af8ca82ebe1668752eb8",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-worker-phase-source-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "d4d082d2fb5e004c8898b13423cd00cc1569865be2a06c754e77968bdda27661",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-worker-phases-a-evidence.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-worker-phases-a-offload.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "00d2e60dfcd43abbf8d9d7bbb19c08b94628bbf4a5c3d4cbbcdc03a3ce2ef805",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-worker-phases-a-outcome.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "1c54eca5d84df9c0c68df989206fbfea3ebc5eaf68b9365e87c982424056609b",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-worker-phases-a-probe.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "aaf2c676c40e1f0d3bd50ba597881af018d47b021f4b7212019ca85329b41466",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-worker-phases-a-tests.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "21325a55f1fb14645b2ae20489310ba2e8338818f91db42f03cf6ee2853516a7",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-worker-phases-a-vitest.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "71f26690098ffefc59d8a0285d0c565efe04cca8fdfdff43a4a9b0129aaf52bb",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-worker-phases-b-evidence.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-worker-phases-b-offload.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "aae18e2c7215cbf7633a9ce67c1bcc0f19bdc55124807aacbcd505e9120a4066",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-worker-phases-b-outcome-review.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "8ea205e54d0ce588fa09bb96e706763015a5a187b5a381f5f82e7785ad48d910",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-worker-phases-b-outcome.md"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "f9447edba12c82d5d3e617b23bc122fdbc8d6d2acdde17958a4225693b720e24",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-worker-phases-b-probe.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "7ebd81be9ce88f11cc844e5683a8ba4219085740f28d4d41dbf308a6af391d15",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-worker-phases-b-tests.txt"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "e330f8830a65f56c0b26b6131d2411387f0bd4f4b131d0c3825bb3d0d4511f45",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/job608-worker-phases-b-vitest.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "6b83adc269c3fbd08a576f28a0ad690fe1e9e1ae3de1f007c67e39f6ae1b66b9",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/lazy-barrel608.test.mjs"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "eac325452d87c7c201e162197288ead0416f6ba72540a841cf60ea8ff758c882",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/lease619-baseline-regressions.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "e346a2dc3ce0e728a9ccd21808f6f863994b21bbcdc37646df53164deb99352e",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/lease619-shared-diagnostics.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "9cad154df09d72d3053238aed0d3b9b3b23e757df0ff5777f00b751f685685f6",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/lease619-suite-inputs.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "b969c1636f6225d32f1a4a97815a02c07fb38cb36024cc699ce9744b1e91c1f0",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/native-codegen608.fixture.mjs"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "2718660a970de4cb55dcabc898904f2d2eb5bedaf4174750e87efd9454392377",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/native-codegen608.test.mjs"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "dd2b51396a99e3250bb54b2185c950fad39cec60bf6aa7c13bc370921bc4b375",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/native-compiler608-fixture.mjs"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "43f21a9947d45d37a3ac057d49d30a5f6c40012fe9c1205c07e5ac9781735edd",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/native-compiler608.test.mjs"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "686af52165a6a51d35260c56ee5f6e8be1d1cf4d51a25cb71afe164ea167a225",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/native-declaration-checkpoint608.test.mjs"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "3e9754aaa4ebeb7567a416930ab2a13adc68786d410ece3d4c4b5404451d9a93",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/native-phase608.fixture.mjs"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "161067f7291a78a98dd4e9f253f843bb3a823b4b667a7f483c2dee58346d395a",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/prepare-finite608-export.py"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "3b5a7250e0d50e3b87466b578b4dd0ca55354712bbed545a2e0d20a2f3aaf06c",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/prepare-native-consumer608.py"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "8d32a3c4300a45073949d663bbb9fc1a30239235cdceb74945fea8121c6167d4",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/prepare-stage608-export.py"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "ea256d2d182df85ec13f56bc764615d8eb8175f4d50f4d2367e96530e318bfa2",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/rolldown-source-pin608.json"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "6c90a6e53001ac941cd33ca44e392c6905f99973408d3da741544008ba64ef5c",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/run-bounded608.sh"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "e6c1270bf3e41e53e80f904fcf054df0636966e4b5f75c46ffaf890243ca326c",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/run-build-stage608.sh"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "0b6ccb08f97f0d6ceea23cfd3a016c5e1907d83bc42d81add371cef892859762",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/run-installed-split608.sh"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "7003f547f2c66044bba2de8867bfac7888455cd99d79511c96097609308a9be1",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/run-inventory608.sh"
+    },
+    {
+      "new": {
+        "git_mode": "100755",
+        "sha256": "2c6e313a9aa7dddfbbdfe36986325bed7f46346d6e05822d4c032ca344290e57",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/run-native608-stage.sh"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "50280014f3a1acf2534ac549e283b2d019715874945dbbb7b77cc170d18e0d3c",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/run-native608.sh"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "6c7ea0a8fcd0c3afd4583a5d99ede0a936b877cce84c52eb7a3c53c5a679e7ac",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/run-package608.sh"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "728b162324c8241a2e6027de4e5f390adb8570efcdf1059678cdef92e1288f02",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/run-stage608.sh"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "093333b9f5c939b97eab91ae8de107be331cd117ef5120789a455ad12a2eab10",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/run-workers608.sh"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "27ec4a3b17304d0438b301e8e8323a65a4a801d8786a32732179d914e65b7cda",
+        "state": "present"
+      },
+      "old": {
+        "git_mode": "100644",
+        "sha256": "07bd183a7331ba70272ede4e34e8079679c964c153167de9d0b3fd7c0e5001a5",
+        "state": "present"
+      },
+      "path": "docs/strict542/serial-probe598-policy.mjs"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "afa670101aa70938fa4fd9bb26983c33611b089c403528dce8f957320188929e",
+        "state": "present"
+      },
+      "old": {
+        "git_mode": "100644",
+        "sha256": "42e829a45841b95addb4e61fe61bdcff415d763cf2ff19ab39a382ee735c2bdc",
+        "state": "present"
+      },
+      "path": "docs/strict542/serial-probe598.test.mjs"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "c162c5a15c9fc1392c5fbec06f543127f176031a162d99aaf4ea3b6b2c2a5d52",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/stage608.py"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "4631dfb0b7bb62a7f8b07381da2c5e2c8117fa243b3cfc5a19f2828db9e71f6d",
+        "state": "present"
+      },
+      "old": {
+        "git_mode": "100644",
+        "sha256": "851a7e7a8cb66bd1adadb27bf8346c7a7b47591c4f143a7b0b198649d05ceae0",
+        "state": "present"
+      },
+      "path": "docs/strict542/test_application598.py"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "c16bc584a0f690ed26d914031c4df8123b7396928ef0bad94867519378714a45",
+        "state": "present"
+      },
+      "old": {
+        "git_mode": "100644",
+        "sha256": "a457b228e4d0b49944ebf6685ea2619e41814b42159336b5deba86cfcc233d0a",
+        "state": "present"
+      },
+      "path": "docs/strict542/test_apply598.py"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "6432a24cb0fd1fd179f243d8fed18d5a5005db476e503b2a97af146393f1038d",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/test_frozen_package608.py"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "ae1c0433344ae45768d370daab5f0f38a2618a7a322e07a40a05554ddb678a74",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/test_lease619_suite_gate.py"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "bc1f20ac3cff982a5ccbad49e1b9099a96d8cbd2d7c8fbd1f6a2ef31b06da0a8",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/test_native_compaction608.py"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "c728a5d928997bd99cf51433e3af8c6f7074d7296c9c1d18384cdd64d9fe0d53",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/test_native_consumer608.py"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "8e8d33f9bb7f59e161e75f6cf6897e0004665485319d6e32f8a297eb211a7fa7",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/test_native_finalizer608.py"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "b40cc6c947792f8509a8beb847310f7545d110d1d0595650eeb14e271055d6e0",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/test_prepare_stage608_export.py"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "6a7a164902939538d75639dd79ef46fe11e2f8127cfbf8f3a7cba4f99ff821e1",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/test_stage608.py"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "e0efe8eb631801b2bce4317919477e1afa15dfeb547bb84facec867886a2d5e4",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/verify-lease619-suites.py"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "1c180c4d427feaa2056948c8d7901ed44a01756e22098ce02ce60307fcea0df5",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/worker-minify608.test.mjs"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "d1bd0fb337e71309cbbb725123c4a0b2e9510afb1164f0ed842133136ae2d260",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/worker-phases608.test.mjs"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "6bf64c30c7918854ab90434af029a4200315c535f423eda5a9c0d894866f7663",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "docs/strict542/worker-probe608.mts"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "4b923e4627999e6b6978444d2d8bfc76c3c6fa640de41136afa55345637754b7",
+        "state": "present"
+      },
+      "old": {
+        "git_mode": "100644",
+        "sha256": "a1849e7453147791d866994a850c0dd158a0ad9b79dc525335399b3aa9f90e91",
+        "state": "present"
+      },
+      "path": "scripts/build-all.mts"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "be5e3b1e745499a11027c892c2ee3a3f260bc5846a75808d4be526aabc99dd3e",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "scripts/build-checkpoint608-owned.mjs"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "c69ffb9400f5521090450bbbb3fe090fe5c75462d5f20886a15b5c4331000790",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "scripts/build-checkpoint608.mts"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "ee87431017449c2abdf9bcea1915606a2b02cb574efbdd1747653d11fec29286",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "scripts/lib/bounded-build-checkpoint608.mjs"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "4f35b9baaf1262f6f631f2bcf722665bdfbf2acc6a7179f864f87f70bf5c6774",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "scripts/lib/bounded-package608.mjs"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "981645225a3ce4cddd627860c13e196941f03e7a543390dd9ab5ed5ab2e6ed8a",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "scripts/lib/declaration-checkpoint608.mjs"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "f116ae6b0a0417f56878de9b2ba91bab92de3a767fa060f07b3e60c9344d7695",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "scripts/lib/disposable-build-inputs.mjs"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "8d293f921d754f3ffca6f60eaec8b61fc577ebef779d9c5714db5f46c4cf2da4",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "scripts/lib/last-use-ast608.rs"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "c3670b0b3448f64a3e247beac48c62f93596620bbb2ee92d362f45bfee77ce0a",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "scripts/lib/native-compiler608.mjs"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "2b3e703e536345ca023c2e47cd0c081689a4eb542fab32a664fe56674892ec94",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "scripts/lib/prepare-native608.py"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "9f33711c418315bcf237bc9f8edaf17c810198ebc8d270d3a16547d1341807ef",
+        "state": "present"
+      },
+      "old": {
+        "git_mode": "100644",
+        "sha256": "9c1f664f84d58378499f1c62e66d991c22b84b11bf380e1af8435a02ef9242c9",
+        "state": "present"
+      },
+      "path": "scripts/lib/tsdown-declaration-writer.mts"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "61f8d142a4ca089d0ca0e61f637f748ae6c5049555c76daee5ef2f187919f0b6",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "scripts/lib/worker-phases608.mjs"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "0b24c48de613884eb3f62ad3854ae39563e720b2830f97f0109f3c975bd636d2",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "scripts/minify-worker608.mjs"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "16b3a6690878f186356ed58f8e10bde36095d100a54e142c0ae404014c2307f1",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "scripts/tsdown-bounded608.mts"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "6b43ffdfa0f4a8e3c6e3698bac2b095e1099a8fb8ed115d8e508f76268387ff0",
+        "state": "present"
+      },
+      "old": {
+        "git_mode": "100644",
+        "sha256": "96a82d7ed394cf75eb51f2cbd33036e4d1dfdf6e1212aa7f58990e9adbf091db",
+        "state": "present"
+      },
+      "path": "scripts/tsdown-build.mts"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "13491547f8db0938061b3264df594a7799ea4b24841f5dd2aa28d499f75d177e",
+        "state": "present"
+      },
+      "old": {
+        "git_mode": "100644",
+        "sha256": "a496b1d06b3de8ed43ec01f89a4bab51ab5d74ffe4dfca4cf5b434c70f3735d5",
+        "state": "present"
+      },
+      "path": "src/gateway/strict542/test_native_owner_server.py"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "7adc664681a8b533291279b9e01b7b654a4dd0d0dae78cf07e4c77e2d7ff57ef",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "test/scripts/build-all-bounded608.test.ts"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "4d5f79d181431874ff20efeafaea3f1bf18bf2274120ba72cfef7a7ac8fc3ca6",
+        "state": "present"
+      },
+      "old": {
+        "git_mode": "100644",
+        "sha256": "2ff4512781a3a9eac19db14d8949139ae33251ae4dfb956513ce5dc468aa1efb",
+        "state": "present"
+      },
+      "path": "test/scripts/write-plugin-sdk-entry-dts.test.ts"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "0fca5bcb99adeda007b0946e06447634b5bd892367b354902f69bfc503fc627b",
+        "state": "present"
+      },
+      "old": {
+        "git_mode": "100644",
+        "sha256": "74596322ae009112579b17c767fdd5e30192aeafb99ec26bb289f6eb1c1d897f",
+        "state": "present"
+      },
+      "path": "test/scripts/write-unified-entry-dts.test.ts"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "deca5c73ac01443d72ea51778cfef01857e8b4171d8ec323bde9ab8835b9543d",
+        "state": "present"
+      },
+      "old": {
+        "state": "absent"
+      },
+      "path": "tsdown.bounded608.config.ts"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "6b73cafa59023041a6a3e51e2ebf0e819b7cdb0c25bf129e76c179087feaba12",
+        "state": "present"
+      },
+      "old": {
+        "git_mode": "100644",
+        "sha256": "0409b9c08650f8276cf38e92d6551995e88bfe08049f0899a5a3fa8be3a63d46",
+        "state": "present"
+      },
+      "path": "tsdown.config.ts"
+    },
+    {
+      "new": {
+        "git_mode": "100644",
+        "sha256": "15b7cafd80d413bc7e509a4fe72f0eeeaaaff5f0d29d0d742ee9eb0740a5336f",
+        "state": "present"
+      },
+      "old": {
+        "git_mode": "100644",
+        "sha256": "114844cb31d7a9b42eb235a0c68e62120095f4022cc6510e483bba4e41d85d94",
+        "state": "present"
+      },
+      "path": "tsdown.isolated598.config.ts"
+    }
+  ],
+  "installed_target_inventory_reference": "application598.py fixed TARGETS/GUARDS; current baseline job608-final-baseline-proposal.json 428ced690f0b3a3cb8a7a2a4fc38570ffa71fa98d7298423376a26fd3ee6a9c9 and original seal job608-final-seal-original.json 51170230064a8da20e074497eae6a6c968d293d262e9e31523dd7365a5c128d3; must freshly validate before application, never silently refresh.",
+  "new_source_commit": "5f7d810b7f254e4f06dbf7761b557ba90bf1a2b0",
+  "next_seal": null,
+  "old_source_commit": "877458d730d2455528fb639710ff3f9ba8aae5b2",
+  "purpose": "Complete tracked source-preparation diff through the exact independently reviewed frozen build source. Includes evidence/docs at that snapshot; subsequent evidence/review/export/handoff commits remain explicit Git history. No installed bytes, artifact receipt or application authority.",
+  "schema": "job608-source-changes-not-artifact-v1",
+  "source_export_sha256": "76b4b47a0e5c3e0a157f75ff1b76d60753c8acdbf5f76bc495668dd985d70f64",
+  "source_review_basis": "Prior combined freeze review3d178871 plus exact owned-entry correction00221e2d reviewed5108bb4a and outcome60f3da40 reviewed5f7d810b; build freeze5f7d810b contains all. No final artifact review.",
+  "source_review_commit": "5108bb4a8545829668d6764b24034a12e71d4720"
+}
