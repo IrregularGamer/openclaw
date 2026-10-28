@@ -97,3 +97,20 @@ owner binding AND accepted-run acknowledgements. No fabricated old510/515 ack,
 optional dispatcher-marker bootstrap, direct queue edits or repeated docs retry.
 575/588 and592 remain reference-only;553 owns SAME510;497 alone later submits
 the fresh reviewed scheduler request after every original gate.
+
+## Continuation after f1fe77e8 (2026-10-28T08:50Z)
+
+- `f1fe77e8` commits the finite stage DAG (runtime, unified-0..5, middle,
+  sdk-0..1, tail, package) with verified checkpoint archive/restore, the
+  finite export preparer and builder-failure surfacing in `build598.sh`.
+- Removed the compiler-stage reference to
+  `native-declaration-checkpoint608.test.mjs`: that native fixture was never
+  written. No existing check was removed; the native declaration fixture is
+  still owed before the compiler stage is frozen.
+- Focused checks at f1fe77e8: `test_stage608.py` 14/14,
+  `build-checkpoint608.test.mjs` 4/4, `declaration-checkpoint608.test.mjs` 6/6.
+- Not done: exact independent source review of f1fe77e8, native declaration
+  fixture, admitted offloads (native stage needs ~2385s, so it must be the
+  first step of a fresh worker), package receipt, action/privilege/seal
+  reviews, automatic queue review, final ordered HQ handoff for 595.
+- Nothing installed, sealed, restarted or changed in sudoers/units/budgets.
