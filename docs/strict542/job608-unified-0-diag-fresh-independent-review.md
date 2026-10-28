@@ -1,7 +1,7 @@
 # Independent prelaunch review: unified-0 fresh observer
 
-VERDICT: APPROVE the exact source-only diagnostic design at 3f10895ee3d135c8b3f50345bbf358902596a57c,
-subject to the final fresh-export checks below. No launch was performed by this
+VERDICT: APPROVE the exact source-only diagnostic design at 3f10895ee3d135c8b3f50345bbf358902596a57c
+and the independently checked fresh export below. No launch was performed by this
 reviewer. No install, acceptance, application or reseal authority. **595 MUST NOT APPLY.**
 
 ## Exact scope and evidence
@@ -69,10 +69,29 @@ native ownership, identity, membership, private output inventories, cancellation
 and settlement, and complete final joins. Repeating unchanged with more budget
 would not resolve that source-level question.
 
-## Final export checks required before launch
+## Independent fresh-export supplement
 
-Confirm NEW destination, UNUSED unified-0 manifest, exact source/export pins,
-byte-identical frozen runner/helper and observer, accepted native/runtime input
-digests, verify-inputs rc0, and absence of source/ or prior results. Preparation
-must use the committed streaming-hash preparer without overlapping an upload.
-This design review does not claim those pending export checks have run.
+Read-only independent verification of
+`/srv/encrypted/dev-move-98/agentq-source608-20261028-private/stage-unified-0-diag-fresh608`
+passed. Manifest SHA256 is
+`e7b2dc2ea5493fe20e8ef148849250a500ff9cf1f84976497bf1e604ff43aa39`;
+stage unified-0, execution_state UNUSED, run_id stage608-unified-0-fresh608,
+source and runner commit 1bed4d1bb53eff145f724cc6a448dc73b3609015, common export
+`5d7e9d57fb660e2b54f5595e81ddf332027e21b303937c2cd6bc7f718f311263`.
+
+All three script files are byte-identical to their exact committed source above.
+stage608.py SHA256 is
+`a558db9afacd22111fb5c2590fe902298b12ea06910eac6efab43f4aa27c0de4`.
+All seven staged input digests match the manifest, including native addon
+0b6607e7 and runtime archive e8ae538c. Native e8198c1d and runtime 726b81a2 stage
+receipts also match the accepted committed receipt files byte for byte. Hashes
+were streamed with 1MiB buffers; no large base archives were rehashed.
+
+There is no source/ or result608-unified-0 directory. Using the installed offload
+slug algorithm gives fresh `agentq-source608-20261028-private-stage--7029fa9c`,
+distinct from original `agentq-source608-20261028-private-stage--213e6bb7`.
+
+Before launch the coordinator must confirm the running bounded verify-inputs
+returns rc0 and the current worker deadline admits the exact command. This
+review did not run that command or any offload. Preparation was reported to use
+the committed streaming-hash preparer; the independent checks cover its output.
