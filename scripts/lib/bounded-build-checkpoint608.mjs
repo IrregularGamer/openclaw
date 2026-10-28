@@ -6,7 +6,10 @@ import {isDeepStrictEqual as same} from 'node:util';
 import {checkpointAncestry608} from './declaration-checkpoint608.mjs';
 const require608=(ok,message)=>{if(!ok)throw new Error(message);};
 export function shaFile608(file) {
- const fd=fs.openSync(file,fs.constants.O_RDONLY|fs.constants.O_NOFOLLOW),buffer=Buffer.allocUnsafe(1024*1024),hash=createHash('sha256');
+ return shaFileWithScratch608(file,Buffer.allocUnsafe(1024*1024));
+}
+function shaFileWithScratch608(file,buffer) {
+ const fd=fs.openSync(file,fs.constants.O_RDONLY|fs.constants.O_NOFOLLOW),hash=createHash('sha256');
  try {const before=fs.fstatSync(fd);require608(before.isFile(),'checkpoint requires regular file');for(let n;(n=fs.readSync(fd,buffer,0,buffer.length,null))>0;)hash.update(buffer.subarray(0,n));const after=fs.fstatSync(fd);require608(before.size===after.size&&before.mtimeMs===after.mtimeMs&&before.ctimeMs===after.ctimeMs,'checkpoint file changed during read');return hash.digest('hex');}finally{fs.closeSync(fd);}
 }
 export function portableBuildIdentity608(value,root) {
@@ -35,14 +38,14 @@ export function validatePhaseResults608(phases,labels) {
 const safeName=name=>typeof name==='string'&&name&&!path.isAbsolute(name)&&!path.win32.isAbsolute(name)&&!name.split(/[\\/]/).some(part=>part==='..'||part==='.'||part==='');
 const excluded=name=>['node_modules','.git','.artifacts','result598-build','strict542-checks'].includes(name)||name.startsWith('result608-');
 export function workspaceInventory608(root,{data=false}={}) {
- checkpointAncestry608(root);const inventory={};
+ checkpointAncestry608(root);const inventory={};let scratch;
  function walk(directory,prefix='') {for(const name of fs.readdirSync(directory).sort()) {
   if(!data&&(name==='node_modules'||(!prefix&&excluded(name))))continue;
   const relative=prefix?`${prefix}/${name}`:name,file=path.join(directory,name),stat=fs.lstatSync(file);
   const mode=stat.mode&0o7777;
   if(stat.isDirectory()){inventory[relative]={kind:'directory',mode};walk(file,relative);}
   else if(stat.isSymbolicLink())inventory[relative]={kind:'link',mode,target:fs.readlinkSync(file)};
-  else {require608(stat.isFile()&&(!data||stat.nlink===1),'unsupported or hardlinked checkpoint output');inventory[relative]={kind:'file',mode,sha256:shaFile608(file)};}
+  else {require608(stat.isFile()&&(!data||stat.nlink===1),'unsupported or hardlinked checkpoint output');scratch??=Buffer.allocUnsafe(1024*1024);inventory[relative]={kind:'file',mode,sha256:shaFileWithScratch608(file,scratch)};}
  }}walk(root);return inventory;
 }
 function validateInventory608(inventory) {
