@@ -1,0 +1,22 @@
+{
+  "application_authority": false,
+  "design_review": "f7fad8b4",
+  "export": "/srv/encrypted/dev-move-98/agentq-source608-20261028-private/stage-unified-0-diag-fresh608",
+  "kind": "DIAGNOSTIC_PREFLIGHT_NOT_BUILD_RECEIPT",
+  "manifest_sha256": "e7b2dc2ea5493fe20e8ef148849250a500ff9cf1f84976497bf1e604ff43aa39",
+  "observer_sha256": "73d17f3c1e0892cd3366986d28e69b86e8f4fb9da4e5b91f9a8510b61a20c186",
+  "runner_sha256": "eac266cfaab7efef7c92ed94c53a0a55e75303b8ee4810bc15f21f243a76b8ee",
+  "source_commit": "1bed4d1bb53eff145f724cc6a448dc73b3609015",
+  "source_export_sha256": "5d7e9d57fb660e2b54f5595e81ddf332027e21b303937c2cd6bc7f718f311263",
+  "stage_helper_sha256": "a558db9afacd22111fb5c2590fe902298b12ea06910eac6efab43f4aa27c0de4",
+  "stage_inputs": {
+    "native/libtests-receipt.json": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946",
+    "native/receipt.json": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+    "native/rolldown-binding.linux-x64-gnu.node": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042",
+    "native/stage-receipt.json": "e8198c1d77689af20b4d31c73bb8d5b7f82941c18a5f36faf4eb50c2aad3187e",
+    "runtime/build.log": "f30637b6798d4d54a8f1d4a36039ac91812f7806dab58a106e5d308b7baf3a10",
+    "runtime/checkpoint.tar.gz": "e8ae538cdcb89bcd4b2975690035bc0fd7327ac6631e05243fc06dea1a42af31",
+    "runtime/stage-receipt.json": "726b81a2a5bd59fdcdf355b0f2d818ffcc8b408d027c7cf3b8253cb7e89b2bd4"
+  },
+  "verify_inputs_actual_exit": 0
+}
