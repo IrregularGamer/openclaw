@@ -1,4 +1,8 @@
-# Job608: current declaration diagnosis continuation
+# Job608: historical5f declaration diagnosis continuation
+
+CURRENT execution instructions are job608-after-scratch-continuation.md.
+All next-run/implement directions below are historical for5f, not launch authority.
+New9fb3d439 source requires fresh exact stage receipts; never replay5f exports.
 
 This current status replaces all former runtime-FIRST/UNUSED instructions in
 this file. They are retained only in Git history. No historical installer changes.

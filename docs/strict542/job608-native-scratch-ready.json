@@ -1,0 +1,25 @@
+{
+  "base_archive_sha256": "e79a0e45a4eaea4afe325ca94ba201d5ae43d09d8c15dc07d0695c87ba743de3",
+  "common_export_sha256": "fbeed48cc8ecc375257396e34ff4bfaf1708a141ffa21af979ff2efc49dbbfc8",
+  "execution_state": "UNUSED; NEVER LAUNCHED",
+  "export": "/home/deploy/agentq/tmp/export608-stage-native-scratch-next",
+  "free_bytes": 288092160,
+  "freeze": "9fb3d43951f4f2e2b84388b0ad6d1eb994de4dae",
+  "future_runtime_checkpoint_bytes_previous": 313378134,
+  "future_space_gate": "Native reserve fits; before later stages, check actual free space and full expected output reserve. Prior runtime checkpoint alone exceeded current free space. No deletion authorized; if still short, implement/review compressed carrier in existing stage owner before expensive rebuilds; never waive hashes or fabricate receipt.",
+  "helper_sha256": "c162c5a15c9fc1392c5fbec06f543127f176031a162d99aaf4ea3b6b2c2a5d52",
+  "kind": "UNUSED_SOURCE_ONLY_NATIVE_PREFLIGHT608",
+  "manifest_sha256": "f99a16bd9ee223d4814f473925d4fe6a059400c9f99d8a536f29a6987e7a13cf",
+  "native_external_archive_sha256": "d73e4e35720ffcb71856ce8168e75fa3b4fd49251fd78c811e1abded8b2701de",
+  "native_return_reserve_bytes": 67108864,
+  "native_stage_outputs": {
+    "compile/receipt.json": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+    "libtests/receipt.json": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946"
+  },
+  "not_authority": "No native rebuild/checks482/runtime/declarations/package/artifact/action/privilege/seal/automatic approval;595 MUST NOT APPLY",
+  "preparer": "canonical committed prepare-stage608-export.py,streamed all raw archive pins and samefilesystem hardlinks; actual exit0",
+  "review_basis": "scratch41ee558f;runner+actual17PASS9fbf4ed;diagnostica71c7ad",
+  "runner_sha256": "2604fe3410a452951c4214ae37de0762935914443a9fc3456e5b5c041e9bb21c",
+  "stage_inputs": {},
+  "successor_archive_sha256": "3dc6dc27db3dc589a2717451b6fe692e5e563463341d3cef590f4e6fa409d187"
+}
