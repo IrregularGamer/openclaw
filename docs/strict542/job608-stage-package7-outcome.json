@@ -1,0 +1,38 @@
+{
+  "broker_record": "2026-10-28T08:11:05Z run remote rc=124 2607s /home/deploy/agentq/tmp/export608-stage-package-0731",
+  "budget": "4GiB/1CPU/swap0, admitted offload, no budget change",
+  "build_package_tree_action_receipt": null,
+  "client_log_sha256": "947dd21a7736ec0d7c270d34c483a92f2df26e99eac5653731abe32779c31d1e",
+  "completed_phases": {
+    "tsdown-packages": "8m14.1s",
+    "tsdown-unified": "6m23s"
+  },
+  "exit_code": 124,
+  "export": "/home/deploy/agentq/tmp/export608-stage-package-0731",
+  "failed_compiler_records": [],
+  "kind": "JOB608_PACKAGE7_TIMEOUT_NOT_PACKAGE_RECEIPT",
+  "manifest_sha256": "3588339e70c8d7a5a78464e613e779eae98c8c14d4bfd9edacf1de7c55cd9004",
+  "next": "review existing declaration owner per-group producer/join correction; wire finite runtime/declaration/finalization stages and full new-source admitted checks before package/action/reviews",
+  "partial_build_log_bytes": 66101,
+  "partial_build_log_capture": "read-only friend proc-cwd build log before timeout; diagnostic only, not full final log or artifact",
+  "partial_build_log_sha256": "b12fa0cc4226dd86339d9aa60ac56d0fbdce1ac3f0d0e884ecf99249a5fa0132",
+  "remaining_phase": "write-unified-entry-dts; same first native API process observed for at least15min, no invocation-finished record",
+  "resource_observation": {
+    "leaf_oom_events": 0,
+    "leaf_oom_kill_events": 0,
+    "limits": "single read-only samples; not a measured whole-run peak or proof of exact native API subphase",
+    "memory_current_bytes": 4227616768,
+    "native_api_cpu_percent": 65.7,
+    "native_api_rss_kib": 3110016,
+    "psi_full_avg10": 10.17
+  },
+  "reuse": "export consumed; no unchanged package retry or partial artifact promotion",
+  "runtime_changes": false,
+  "source_commit": "591158cfe4a569c9e857780e9cc185cb4590b9b7",
+  "successful_compiler_record_counts": {
+    "ai": 1,
+    "packages": 15,
+    "unified": 42
+  },
+  "timeout_seconds": 2385
+}

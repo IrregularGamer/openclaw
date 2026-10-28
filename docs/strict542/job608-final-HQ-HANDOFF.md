@@ -17,8 +17,16 @@ Package5 and package6 are consumed/lost interrupted executions, never retry
 authority. Their existing launch manifests remain historical evidence. The
 finite package7 continuation is recorded in job608-stage-package7-launch.md
 and its immutable manifest3588339e70c8d7a5a78464e613e779eae98c8c14d4bfd9edacf1de7c55cd9004.
-Package7 build/tree/action/next-seal bindings are PENDING until returned results
-are verified and independently reviewed. No partial result supplies a gate.
+Package7 timed out124 at08:11:05Z while write-unified-entry-dts remained in
+its first native API invocation. All58 compiler records passed (AI1, packages15,
+unified42), packages8m14 and unified6m23; config15 is no longer the stalled step.
+There is NO package/tree/action/next-seal receipt. Exact diagnostics are in
+job608-stage-package7-outcome.json and the retained partial build/client logs.
+Export0731 is consumed; do not retry it or promote its partial output.
+The next work is an owning declaration writer per-group checkpoint correction,
+then complete finite stage integration and fresh new-source admitted checks.
+Existing459 checks and native receipts remain evidence only for591158cf;
+they cannot be attributed to new executable source.595 must not apply.
 
 Current explicit baseline proposal is job608-final-baseline-proposal.json,
 SHA256428ced690f0b3a3cb8a7a2a4fc38570ffa71fa98d7298423376a26fd3ee6a9c9.
