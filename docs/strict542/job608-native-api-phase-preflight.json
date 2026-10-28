@@ -1,0 +1,37 @@
+{
+  "application_authority": false,
+  "build_acceptance": false,
+  "command": "offload run --timeout 1740 --mem 4g --cpus 1 --artifacts native-api608 -- python3 -B diagnose-native-api608.py",
+  "export": "/srv/encrypted/dev-move-98/agentq-source608-20261028-private/stage-api-phase608-next",
+  "external_source_commit": "2cf46c119c32b3399e56a86ca1861f22d9be5fea",
+  "kind": "SINGLE_API_PHASE_DIAGNOSTIC_PREFLIGHT_NOT_BUILD608",
+  "limits": {
+    "cpu": 1,
+    "memory": "4g",
+    "offload_seconds": 1740,
+    "preload_smoke_seconds": 30,
+    "probe_seconds": 900,
+    "setup_probe_seconds": 1500,
+    "swap": 0
+  },
+  "pins": {
+    "diagnose-native-api608.py": "60ed1de80517068f420fcad1f530daa859f8940ca291ac6a4f0f462720347d12",
+    "export-manifest.json": "ab506ff33c625943be405669f1911ed44888bbfe1d97aab42d66c83af34eaa92",
+    "install-native-api-phases608.mjs": "87fb06525b6baa62adf05a8308f5281271659a952422126582c1d14b7c307d83",
+    "native-api-phases608.mjs": "f50191444745bf8710fe513b66d36a2cfb16b50f9427d5875bb1aba8a68be87d",
+    "run608.sh": "eac266cfaab7efef7c92ed94c53a0a55e75303b8ee4810bc15f21f243a76b8ee",
+    "stage608.py": "a558db9afacd22111fb5c2590fe902298b12ea06910eac6efab43f4aa27c0de4"
+  },
+  "prelaunch_review_required": true,
+  "source_commit": "1bed4d1bb53eff145f724cc6a448dc73b3609015",
+  "source_export_sha256": "5d7e9d57fb660e2b54f5595e81ddf332027e21b303937c2cd6bc7f718f311263",
+  "stage_inputs": {
+    "native/libtests-receipt.json": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946",
+    "native/receipt.json": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+    "native/rolldown-binding.linux-x64-gnu.node": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042",
+    "native/stage-receipt.json": "e8198c1d77689af20b4d31c73bb8d5b7f82941c18a5f36faf4eb50c2aad3187e",
+    "runtime/build.log": "f30637b6798d4d54a8f1d4a36039ac91812f7806dab58a106e5d308b7baf3a10",
+    "runtime/checkpoint.tar.gz": "e8ae538cdcb89bcd4b2975690035bc0fd7327ac6631e05243fc06dea1a42af31",
+    "runtime/stage-receipt.json": "726b81a2a5bd59fdcdf355b0f2d818ffcc8b408d027c7cf3b8253cb7e89b2bd4"
+  }
+}
