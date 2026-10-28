@@ -114,3 +114,21 @@ the fresh reviewed scheduler request after every original gate.
   first step of a fresh worker), package receipt, action/privilege/seal
   reviews, automatic queue review, final ordered HQ handoff for 595.
 - Nothing installed, sealed, restarted or changed in sudoers/units/budgets.
+
+## Native6 stage at frozen 835714fb (2026-10-28T09:29Z)
+
+- Review: f1fe77e8 CHANGES_REQUIRED (F1 link to exactly `..`, F2 untested ancestry)
+  -> fixed in ce32086b; native producer/join fixture 01c7a18e; independent
+  re-review APPROVED (job608-ce32086b-independent-review.md). Source frozen at
+  835714fb; every later stage MUST use `--commit 835714fb` (common identity
+  d24311285f518942071b8919660786394a1d6a7657aa86eceac1496d44f1003b).
+- Native6: export tmp/export608-stage-native-0852 (manifest 0602a5eb...), one
+  admitted offload 4g/1CPU/2385s, exit 0, `STEP608 native-rebuild-pass`.
+  Outputs: receipt.json 4a651254..., libtests-receipt.json 2f81179f...,
+  addon 0b6607e7...; stage-receipt fc13a5e7.... Retained locally at
+  tmp/export608-stage-native-0852/result608-native (predecessor for later stages).
+- Next (fresh worker, each its own admitted offload, deadline-checked):
+  checks (no predecessor), compiler (native), runtime (native), unified-0..5,
+  middle, sdk-0..1, tail, package; then receipt/hashes, action/privilege/seal
+  and automatic queue reviews, final ordered HQ handoff for 595.
+- Nothing installed, sealed, restarted or changed in sudoers/units/budgets.
