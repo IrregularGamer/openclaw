@@ -23,8 +23,12 @@ unified42), packages8m14 and unified6m23; config15 is no longer the stalled step
 There is NO package/tree/action/next-seal receipt. Exact diagnostics are in
 job608-stage-package7-outcome.json and the retained partial build/client logs.
 Export0731 is consumed; do not retry it or promote its partial output.
-The next work is an owning declaration writer per-group checkpoint correction,
-then complete finite stage integration and fresh new-source admitted checks.
+The owning declaration writer per-group producer/join candidate is now
+9607b3318120686605ab466d1d5b0af69046ce59, independently source-reviewedf1e0907a
+with6 focused checks passing. Actual timeout evidence is independently
+reviewed67abcdee. Finite stage integration and fresh full new-source admitted
+checks remain required; exact continuation is
+[job608-declaration-stage-continuation.md](job608-declaration-stage-continuation.md).
 Existing459 checks and native receipts remain evidence only for591158cf;
 they cannot be attributed to new executable source.595 must not apply.
 
