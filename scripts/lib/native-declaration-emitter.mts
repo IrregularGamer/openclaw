@@ -91,7 +91,9 @@ export async function compileNativeProject({
     ]);
     view = createDeclarationFileSystem(
       root,
-      assertInput ? admit : undefined,
+      // The filesystem applies its own fresh physical boundary before the
+      // caller policy. Snapshot reads retain composed admission in before.
+      assertInput,
       virtualFiles,
       before.readText,
     );
