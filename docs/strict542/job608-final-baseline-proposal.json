@@ -1,0 +1,111 @@
+{
+  "boot_id": "5a127a2b-505e-40f1-93d6-fdad224520c8",
+  "observed_guards": {
+    "/home/deploy/.config/systemd/user/openclaw-gateway.service": {
+      "metadata": {
+        "ctime_ns": 1791474120723871494,
+        "gid": 1000,
+        "mode": 384,
+        "mtime_ns": 1791474120318838917,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "sha256": "7127f9e1eee65ceb5b7484153cadb7add18aef9031d8a30b79ec29609e936888"
+    },
+    "/home/deploy/.config/systemd/user/openclaw-gateway.service.d/60-stop-budget.conf": {
+      "metadata": {
+        "ctime_ns": 1792858444720308419,
+        "gid": 1000,
+        "mode": 436,
+        "mtime_ns": 1792858444720308419,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "sha256": "4b8f1e02d7a697f093ce5d95578515354a18ef4e61389ee31f7a634acdab6a57"
+    },
+    "/home/deploy/.config/systemd/user/openclaw-gateway.service.d/70-heap-cap.conf": {
+      "metadata": {
+        "ctime_ns": 1792858559463846554,
+        "gid": 1000,
+        "mode": 436,
+        "mtime_ns": 1792858559463846554,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "sha256": "09afa011c8c676ba8096b25fb70500408952576c0dc339ece80a476391b46612"
+    },
+    "/home/deploy/.local/lib/node_modules/openclaw/dist/index.js": {
+      "metadata": {
+        "ctime_ns": 1791472428355121948,
+        "gid": 1000,
+        "mode": 509,
+        "mtime_ns": 1791472428355121948,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "sha256": "154951cdae1f71391e64a97f6738284a84e18660e919345bc1fd92906af48f02"
+    },
+    "/home/deploy/.local/lib/node_modules/openclaw/package.json": {
+      "metadata": {
+        "ctime_ns": 1791472430451284881,
+        "gid": 1000,
+        "mode": 436,
+        "mtime_ns": 1791472430451284881,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "sha256": "214e9551a924a9ced04ecf38c7ed8f6bff8beeab33431db12ed6250eaa959e95"
+    },
+    "/usr/local/libexec/agentq-safety/control.py": {
+      "metadata": {
+        "ctime_ns": 1793105594146763883,
+        "gid": 0,
+        "mode": 420,
+        "mtime_ns": 1793105594145543976,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "sha256": "db4d290323a4e0d90ff597ed920da32dc610660813d1ac0c8a5798ae7d7bc3ce"
+    },
+    "/usr/local/libexec/agentq-safety/maintenance.py": {
+      "metadata": {
+        "ctime_ns": 1792844474061228393,
+        "gid": 0,
+        "mode": 420,
+        "mtime_ns": 1792844474060209640,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "sha256": "931edbd72d44f5856c2aef1aaa559da18644cb55951eaede1be5f3bc9e63676b"
+    }
+  },
+  "seal_metadata": {
+    "ctime_ns": 1793169464429169652,
+    "gid": 0,
+    "mode": 384,
+    "mtime_ns": 1793169464428511708,
+    "uid": 0,
+    "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+  },
+  "seal_sha256": "51170230064a8da20e074497eae6a6c968d293d262e9e31523dd7365a5c128d3",
+  "targets": {
+    "/etc/systemd/system/strict542-owner.service": {
+      "state": "absent"
+    },
+    "/home/deploy/.config/systemd/user/openclaw-gateway.service.d/90-strict542-598.conf": {
+      "state": "absent"
+    },
+    "/opt/openclaw-strict542/598/native/maintenance.py": {
+      "state": "absent"
+    },
+    "/opt/openclaw-strict542/598/runtime": {
+      "state": "absent"
+    },
+    "/usr/local/libexec/agentq-safety/native_owner_server542.py": {
+      "state": "absent"
+    },
+    "/usr/local/libexec/agentq-safety/root_owner_supervisor542.py": {
+      "state": "absent"
+    }
+  }
+}

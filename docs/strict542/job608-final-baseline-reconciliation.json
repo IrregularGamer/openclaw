@@ -1,0 +1,1020 @@
+{
+  "all_six_targets_remain_absent": true,
+  "amendment_hash_chain": [
+    {
+      "amendment_utc": "2026-10-26T22:30:11.379096+00:00",
+      "new_sha256": "fa9a63fd9581a23f2acfbfe9455c9a53c8ba5d38d329c40a278aaab770d7bd8e",
+      "old_sha256": "96d8542d668a961168a944e020a5366e30ae66921a1abe0724c5473eabd9d9ea",
+      "path": "/home/deploy/agentq/agentq.py"
+    },
+    {
+      "amendment_utc": "2026-10-27T01:29:17.022060+00:00",
+      "new_sha256": "f47ac601705df39e44475859dbef352016fdb19ec1ee29920219a91700380789",
+      "old_sha256": "12f462f1259280896e7be8056252204298667fd03c81dcd309ef614ed3ddcd16",
+      "path": "/usr/local/libexec/agentq-safety/control.py"
+    },
+    {
+      "amendment_utc": "2026-10-27T01:29:17.022060+00:00",
+      "new_sha256": "d17a978654c35ef3ea5a4e64a66b1e74df8e07ea73232a38c846a5a2070d9879",
+      "old_sha256": "0b7edd43dcafd6a3848ea55333ce567b77069727b285a7689a015d4b6c336274",
+      "path": "/etc/systemd/system/agentq-work.slice"
+    },
+    {
+      "amendment_utc": "2026-10-27T04:00:47.797574+00:00",
+      "new_sha256": "17338c484ade9c242be7f28e87a94ec108efd37b42befb66acefba4826c1e4ca",
+      "old_sha256": "f47ac601705df39e44475859dbef352016fdb19ec1ee29920219a91700380789",
+      "path": "/usr/local/libexec/agentq-safety/control.py"
+    },
+    {
+      "amendment_utc": "2026-10-27T12:53Z",
+      "new_sha256": "db4d290323a4e0d90ff597ed920da32dc610660813d1ac0c8a5798ae7d7bc3ce",
+      "old_sha256": "17338c484ade9c242be7f28e87a94ec108efd37b42befb66acefba4826c1e4ca",
+      "path": "/usr/local/libexec/agentq-safety/control.py"
+    },
+    {
+      "amendment_utc": "2026-10-27T13:00:13.256708+00:00",
+      "new_sha256": "71b400ca308f07376b94ccc8a2fb10e0c00f224931fac546040dd9c49eb1ee50",
+      "old_sha256": "fa9a63fd9581a23f2acfbfe9455c9a53c8ba5d38d329c40a278aaab770d7bd8e",
+      "path": "/home/deploy/agentq/agentq.py"
+    },
+    {
+      "amendment_utc": "2026-10-27T13:05:31.402577+00:00",
+      "new_sha256": "492189a6af53123b21a57402bdd00089944a98bfd12810daefc29173fa6eb6f5",
+      "old_sha256": "71b400ca308f07376b94ccc8a2fb10e0c00f224931fac546040dd9c49eb1ee50",
+      "path": "/home/deploy/agentq/agentq.py"
+    },
+    {
+      "amendment_utc": "2026-10-28T06:37Z",
+      "new_sha256": "4c4fe4f6d38d1ebd06378943715992b65ab59b6bdd2d4a4b6d79d775bc1ea555",
+      "old_sha256": "492189a6af53123b21a57402bdd00089944a98bfd12810daefc29173fa6eb6f5",
+      "path": "/home/deploy/agentq/agentq.py"
+    },
+    {
+      "amendment_utc": "2026-10-28T06:37Z",
+      "new_sha256": "ec9d874ace63c60a4b4111aaa7014ac07cfdfff8d1d141a13cced02ed4b25c2a",
+      "old_sha256": "1950b0030d10fb697d135901eaf508f8db40ec80405aa4d2423940d112c4cc60",
+      "path": "/home/deploy/.local/bin/offload"
+    }
+  ],
+  "application_authority": false,
+  "boot_id": "5a127a2b-505e-40f1-93d6-fdad224520c8",
+  "boot_unchanged": true,
+  "changed_guard_paths": [
+    "/usr/local/libexec/agentq-safety/control.py"
+  ],
+  "current_amendment_count": 38,
+  "current_complete_seal_bytes_hashed": 304983,
+  "current_complete_seal_checks": [
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792857593255812093,
+        "gid": 0,
+        "mode": 420,
+        "mtime_ns": 1792857593255812093,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/etc/systemd/system.control/user@1000.service.d/50-MemoryHigh.conf",
+      "sha256": "22e7b1bbc0d7626abaec3dedb9c5794850cf9ee73b222a151dbd72a1621e470a",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792171196524450219,
+        "gid": 0,
+        "mode": 420,
+        "mtime_ns": 1792171196524450219,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/etc/systemd/system.control/user@1000.service.d/50-MemoryMax.conf",
+      "sha256": "ac2fa7212ae46984b9edb2165d1c9169c2e3a44557966703d5333dfc14a17420",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792171196524874327,
+        "gid": 0,
+        "mode": 420,
+        "mtime_ns": 1792171196524874327,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/etc/systemd/system.control/user@1000.service.d/50-MemorySwapMax.conf",
+      "sha256": "1dcc20473ac2a96df02e4692208ce9a25193aa4f2cb38da42f32f60aa9b01642",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792790442756594755,
+        "gid": 0,
+        "mode": 420,
+        "mtime_ns": 1792790442754594678,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/etc/systemd/system/abh-schedulers.slice",
+      "sha256": "3acaeb6b29f1cb693520cca2cb4fbb8d0fa243a17413bc5ecf49753446a45c43",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792790442753594639,
+        "gid": 0,
+        "mode": 420,
+        "mtime_ns": 1792790442752594601,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/etc/systemd/system/agentq-safety.service",
+      "sha256": "d3a9d826ffd786b962f859f6892c500502c8dac38c978f0e431893ec10adc7e8",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1793064557021729768,
+        "gid": 0,
+        "mode": 420,
+        "mtime_ns": 1793064557021729768,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/etc/systemd/system/agentq-work.slice",
+      "sha256": "d17a978654c35ef3ea5a4e64a66b1e74df8e07ea73232a38c846a5a2070d9879",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792175942896743819,
+        "gid": 0,
+        "mode": 420,
+        "mtime_ns": 1792175942896743819,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/etc/systemd/system/offload-backup-drill.service.d/50-resource-safety.conf",
+      "sha256": "188d60276ad78de8699b02414c2460b9537700d5eae08e210e55b57dde340ccb",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792175942896552754,
+        "gid": 0,
+        "mode": 420,
+        "mtime_ns": 1792175942896552754,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/etc/systemd/system/offload-backup-push.service.d/50-resource-safety.conf",
+      "sha256": "188d60276ad78de8699b02414c2460b9537700d5eae08e210e55b57dde340ccb",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792175942896303351,
+        "gid": 0,
+        "mode": 420,
+        "mtime_ns": 1792175942896303351,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/etc/systemd/system/primperfection-db-backup.service.d/50-resource-safety.conf",
+      "sha256": "188d60276ad78de8699b02414c2460b9537700d5eae08e210e55b57dde340ccb",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792175942894719592,
+        "gid": 0,
+        "mode": 420,
+        "mtime_ns": 1792175942894719592,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/etc/systemd/system/recovery-maint.slice",
+      "sha256": "9440ca6246af8cf766d0fa7c4126dcdafcd3030357c878bc9418bf462eb0a5b8",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792158310676854029,
+        "gid": 1000,
+        "mode": 420,
+        "mtime_ns": 1792158310676854029,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/home/deploy/.config/systemd/user.control/agentq.service.d/50-CPUQuota.conf",
+      "sha256": "038b6d9084bd73f54af90ad4a82da0feb2e017c9a1c1a5db10f584b638d49af6",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792860972619629604,
+        "gid": 1000,
+        "mode": 420,
+        "mtime_ns": 1792860972619629604,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/home/deploy/.config/systemd/user.control/agentq.service.d/50-MemoryHigh.conf",
+      "sha256": "99e8ec4991bc701eb2bcca94cdfb1da35b1f6d5551f037b9a7b3977570b34be3",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792860972620776887,
+        "gid": 1000,
+        "mode": 420,
+        "mtime_ns": 1792860972620776887,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/home/deploy/.config/systemd/user.control/agentq.service.d/50-MemoryMax.conf",
+      "sha256": "7706bf387087f26938b5912d5384169adb30e0fda37ac682c5721ea47fc52106",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792158310676553360,
+        "gid": 1000,
+        "mode": 420,
+        "mtime_ns": 1792158310676553360,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/home/deploy/.config/systemd/user.control/agentq.service.d/50-MemorySwapMax.conf",
+      "sha256": "1dcc20473ac2a96df02e4692208ce9a25193aa4f2cb38da42f32f60aa9b01642",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792158310677189989,
+        "gid": 1000,
+        "mode": 420,
+        "mtime_ns": 1792158310677189989,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/home/deploy/.config/systemd/user.control/agentq.service.d/50-TasksMax.conf",
+      "sha256": "968a2b50ae3dd8f11304648dbe15097f2698b7df5215f96145271ba90b8ff9db",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792158310687591216,
+        "gid": 1000,
+        "mode": 420,
+        "mtime_ns": 1792158310687591216,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/home/deploy/.config/systemd/user.control/atlas.service.d/50-CPUQuota.conf",
+      "sha256": "038b6d9084bd73f54af90ad4a82da0feb2e017c9a1c1a5db10f584b638d49af6",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792158310686722500,
+        "gid": 1000,
+        "mode": 420,
+        "mtime_ns": 1792158310686722500,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/home/deploy/.config/systemd/user.control/atlas.service.d/50-MemoryHigh.conf",
+      "sha256": "99e8ec4991bc701eb2bcca94cdfb1da35b1f6d5551f037b9a7b3977570b34be3",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792158310686972529,
+        "gid": 1000,
+        "mode": 420,
+        "mtime_ns": 1792158310686972529,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/home/deploy/.config/systemd/user.control/atlas.service.d/50-MemoryMax.conf",
+      "sha256": "7706bf387087f26938b5912d5384169adb30e0fda37ac682c5721ea47fc52106",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792158310687262871,
+        "gid": 1000,
+        "mode": 420,
+        "mtime_ns": 1792158310687262871,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/home/deploy/.config/systemd/user.control/atlas.service.d/50-MemorySwapMax.conf",
+      "sha256": "1dcc20473ac2a96df02e4692208ce9a25193aa4f2cb38da42f32f60aa9b01642",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792158310687973513,
+        "gid": 1000,
+        "mode": 420,
+        "mtime_ns": 1792158310687973513,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/home/deploy/.config/systemd/user.control/atlas.service.d/50-TasksMax.conf",
+      "sha256": "a2c77612cd9f67eed8cfffd02531077cd1f55dabbd20f17ea43c6cc755875757",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792171196455544710,
+        "gid": 1000,
+        "mode": 420,
+        "mtime_ns": 1792171196455544710,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/home/deploy/.config/systemd/user.control/codex-app-server-daemon.service.d/50-CPUQuota.conf",
+      "sha256": "3715bd9812abd154f7108e750b6f2ad78bc061014cb7fa865bd46ed002e31eea",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792171196454415369,
+        "gid": 1000,
+        "mode": 420,
+        "mtime_ns": 1792171196454415369,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/home/deploy/.config/systemd/user.control/codex-app-server-daemon.service.d/50-MemoryHigh.conf",
+      "sha256": "65412676d299f0cc46af5bdaf5ba8ffaaadec0ffc4aee1d1106b66092fd80a6f",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792171196454784505,
+        "gid": 1000,
+        "mode": 420,
+        "mtime_ns": 1792171196454784505,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/home/deploy/.config/systemd/user.control/codex-app-server-daemon.service.d/50-MemoryMax.conf",
+      "sha256": "8714f37da811546b5c7bc1babb7172cc7a42b27eb0cea820a323ef1b6d07eb44",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792171196455136129,
+        "gid": 1000,
+        "mode": 420,
+        "mtime_ns": 1792171196455136129,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/home/deploy/.config/systemd/user.control/codex-app-server-daemon.service.d/50-MemorySwapMax.conf",
+      "sha256": "1dcc20473ac2a96df02e4692208ce9a25193aa4f2cb38da42f32f60aa9b01642",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792171196456006982,
+        "gid": 1000,
+        "mode": 420,
+        "mtime_ns": 1792171196456006982,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/home/deploy/.config/systemd/user.control/codex-app-server-daemon.service.d/50-TasksMax.conf",
+      "sha256": "cfef6d2470ec06020555046f3f429606e0f9cd30389733990f6815b167709c6b",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792158310665426322,
+        "gid": 1000,
+        "mode": 420,
+        "mtime_ns": 1792158310665426322,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/home/deploy/.config/systemd/user.control/openclaw-gateway.service.d/50-CPUQuota.conf",
+      "sha256": "ab464f824f689eb105b959ddaefbbf2ecf62c425729b0b926869ca5b72014cd7",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792740600463922721,
+        "gid": 1000,
+        "mode": 420,
+        "mtime_ns": 1792740600463922721,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/home/deploy/.config/systemd/user.control/openclaw-gateway.service.d/50-MemoryHigh.conf",
+      "sha256": "02cc3cbfb501b18190ebe647634f0a4bb7d646b9f3d5802d4b241edd48dd11b2",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792158310664473485,
+        "gid": 1000,
+        "mode": 420,
+        "mtime_ns": 1792158310664473485,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/home/deploy/.config/systemd/user.control/openclaw-gateway.service.d/50-MemoryMax.conf",
+      "sha256": "c1f9becb896a3242b8c2ce6bcd1d0a2ac1cf426aef2a01aafc611d4dc7b3fb0b",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792158310664910017,
+        "gid": 1000,
+        "mode": 420,
+        "mtime_ns": 1792158310664910017,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/home/deploy/.config/systemd/user.control/openclaw-gateway.service.d/50-MemorySwapMax.conf",
+      "sha256": "1dcc20473ac2a96df02e4692208ce9a25193aa4f2cb38da42f32f60aa9b01642",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792158310666017347,
+        "gid": 1000,
+        "mode": 420,
+        "mtime_ns": 1792158310666017347,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/home/deploy/.config/systemd/user.control/openclaw-gateway.service.d/50-TasksMax.conf",
+      "sha256": "bc1b29a0a7b2670264909de757faf165139cbb4b1a74cb358cf295db0ea34781",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792764759594570543,
+        "gid": 1000,
+        "mode": 493,
+        "mtime_ns": 1792173798520768062,
+        "uid": 1000,
+        "xattrs_sha256": "0d9b4c5f4991206f6d0d5bf21ed6a22d022f928deae796431c3c2d44fcafe881"
+      },
+      "path": "/home/deploy/.local/bin/agentq-check",
+      "sha256": "f583e7642af8856a9ac6e88ff91383b09b4af772ed2497cd9cacdefdcad73a6a",
+      "xattrs": {
+        "system.posix_acl_access": "AgAAAAEABwD/////AgAFAOQDAAAEAAUA/////xAABQD/////IAAFAP////8="
+      }
+    },
+    {
+      "inherited_symlink": "/home/deploy/claw-workspace/offload/hetzner/devstack",
+      "metadata": {
+        "ctime_ns": 1791743555572939926,
+        "gid": 1000,
+        "mode": 511,
+        "mtime_ns": 1791743555572939926,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/home/deploy/.local/bin/devstack",
+      "sha256": "2be6bb7ada88dade5d86bfc5f99aa0651803ddb497a2b52048712224acba2828",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1793169464427169572,
+        "gid": 1000,
+        "mode": 493,
+        "mtime_ns": 1793169464425985961,
+        "uid": 1000,
+        "xattrs_sha256": "7176360ac12cf773196c08ce0270c51bf85157e7767b8265dc2da1d04ef27cd5"
+      },
+      "path": "/home/deploy/.local/bin/offload",
+      "sha256": "ec9d874ace63c60a4b4111aaa7014ac07cfdfff8d1d141a13cced02ed4b25c2a",
+      "xattrs": {
+        "system.posix_acl_access": "AgAAAAEABwD/////AgAFAOQDAAAEAAcA/////xAABQD/////IAAFAP////8="
+      }
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1793169464425169493,
+        "gid": 1000,
+        "mode": 509,
+        "mtime_ns": 1793169464423605753,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/home/deploy/agentq/agentq.py",
+      "sha256": "4c4fe4f6d38d1ebd06378943715992b65ab59b6bdd2d4a4b6d79d775bc1ea555",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792626735799506079,
+        "gid": 0,
+        "mode": 420,
+        "mtime_ns": 1792626735798389917,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/home/deploy/agentq/reasoning_policy.py",
+      "sha256": "8de5152b89546f29cb36213d4d7431efec96aaa1dabdcaeed925fee0a3b326f9",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792174623504344538,
+        "gid": 1000,
+        "mode": 493,
+        "mtime_ns": 1792174623497070793,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/srv/primperfection/scripts/alphonomic_deploy_dev.sh",
+      "sha256": "bd2f54e8be3e8f2219f40a877ae32ea4cefbd3e2875e643d7a6f39b25d07a1da",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792174623548346253,
+        "gid": 1000,
+        "mode": 493,
+        "mtime_ns": 1792174623542802652,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/srv/primperfection/scripts/alphonomic_deploy_prod.sh",
+      "sha256": "a3bf983dfd7ac0fecc45b7ec87450ead17537b2bdd62eec453736d852549fe41",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792761129357915360,
+        "gid": 0,
+        "mode": 493,
+        "mtime_ns": 1792761129282455615,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/srv/primperfection/scripts/backup-db.sh",
+      "sha256": "825daeefc4fcd86c8af5140b765e5f7de8b56ea3336f505dd5912cc142c6fb0b",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792174623454342589,
+        "gid": 1000,
+        "mode": 488,
+        "mtime_ns": 1792174623446637596,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/srv/primperfection/scripts/deploy_dev.sh",
+      "sha256": "c69b26442057a2cf693c798f53443a35355cd1ba2bff41c690dc049b397da02f",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792174623439342004,
+        "gid": 1000,
+        "mode": 493,
+        "mtime_ns": 1792174623432945674,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/srv/primperfection/scripts/deploy_frontend.sh",
+      "sha256": "5ca6a98c6458e913f1b5cd4769ae0f613abee2cefaaf09a9fc412fdbdda7581a",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792174623534345707,
+        "gid": 1000,
+        "mode": 493,
+        "mtime_ns": 1792174623527519415,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/srv/primperfection/scripts/knowally_deploy_dev.sh",
+      "sha256": "060ca75f0dabfd6c9e835537e25dc7b7fc0b18c1fe9e0f3d83113250ddc4c9e9",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792174623518345083,
+        "gid": 1000,
+        "mode": 493,
+        "mtime_ns": 1792174623512188732,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/srv/primperfection/scripts/knowally_deploy_prod.sh",
+      "sha256": "c28596e2b3706ca2dc6875f38251dcc5f38e6d13db04cd239c08b73d8484d25d",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792175942895913304,
+        "gid": 0,
+        "mode": 420,
+        "mtime_ns": 1792175942895913304,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/usr/local/libexec/agentq-safety/backup-preflight.py",
+      "sha256": "50325b072164d29b8d37dbf59b72a4fd650c92ddd1de496fb5d1bd370a6de587",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792173798453120103,
+        "gid": 0,
+        "mode": 420,
+        "mtime_ns": 1792173798451344114,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/usr/local/libexec/agentq-safety/checks.py",
+      "sha256": "2bd019912d7ae636e8423e399e1c875dfda9501232d08b70830faee4996d3c9e",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1793105594146763883,
+        "gid": 0,
+        "mode": 420,
+        "mtime_ns": 1793105594145543976,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/usr/local/libexec/agentq-safety/control.py",
+      "sha256": "db4d290323a4e0d90ff597ed920da32dc610660813d1ac0c8a5798ae7d7bc3ce",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792158266456059956,
+        "gid": 0,
+        "mode": 420,
+        "mtime_ns": 1792158266454630193,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/usr/local/libexec/agentq-safety/fence.py",
+      "sha256": "b28ad5c602328ae8dce51569bc13f773fdc8e4bf02a7e353901de026a64557ef",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792844474061228393,
+        "gid": 0,
+        "mode": 420,
+        "mtime_ns": 1792844474060209640,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/usr/local/libexec/agentq-safety/maintenance.py",
+      "sha256": "931edbd72d44f5856c2aef1aaa559da18644cb55951eaede1be5f3bc9e63676b",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792158797422665349,
+        "gid": 0,
+        "mode": 420,
+        "mtime_ns": 1792158797421822293,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/usr/local/libexec/agentq-safety/plugin/index.mjs",
+      "sha256": "692db304733c3495f71b4c910474ae76fa88961324b7a772f1aaad0798f417ec",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792158797422665349,
+        "gid": 0,
+        "mode": 420,
+        "mtime_ns": 1792158797422665349,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/usr/local/libexec/agentq-safety/plugin/openclaw.plugin.json",
+      "sha256": "0a700c5bd2fccfd2ac51295194670d835d9a286ef9df1f75d475dba1e7458076",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792158797422665349,
+        "gid": 0,
+        "mode": 420,
+        "mtime_ns": 1792158797422191114,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/usr/local/libexec/agentq-safety/plugin/package.json",
+      "sha256": "adb19416804c1fdbadcdbd774223f9d56f90f4dcd72d317794d07e473cfcf10d",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792621429082565311,
+        "gid": 0,
+        "mode": 420,
+        "mtime_ns": 1792621429082565311,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/usr/local/libexec/agentq-safety/pressure.py",
+      "sha256": "857ab58ac25304df20b803f3fe0cf6c161ff1f2440dc5b041ab965a4b64be9d0",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792626735800802028,
+        "gid": 0,
+        "mode": 420,
+        "mtime_ns": 1792626735800802028,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/usr/local/libexec/agentq-safety/reasoning_policy.py",
+      "sha256": "8de5152b89546f29cb36213d4d7431efec96aaa1dabdcaeed925fee0a3b326f9",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792158266460008991,
+        "gid": 0,
+        "mode": 493,
+        "mtime_ns": 1792158266460008991,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/usr/local/sbin/agentq-control",
+      "sha256": "d22ac8dac955bae526b6139253b479ceddfe093f8b3527a2cc28276b776886ef",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792176385508624188,
+        "gid": 0,
+        "mode": 493,
+        "mtime_ns": 1792176385508624188,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/usr/local/sbin/offload-backup",
+      "sha256": "3e87bf602f561df8c8206df385a689defaed39ed8bb12e846bd9b10ef45e38f2",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792173798527884617,
+        "gid": 0,
+        "mode": 384,
+        "mtime_ns": 1792173798527884617,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/var/lib/agentq-safety/check-profiles.json",
+      "sha256": "7181951548723392c1002730d2c92804d5449fa4339dc504e3651b7c126e31a0",
+      "xattrs": {}
+    },
+    {
+      "inherited_symlink": null,
+      "metadata": {
+        "ctime_ns": 1792158266503061780,
+        "gid": 0,
+        "mode": 384,
+        "mtime_ns": 1792158266501129268,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "path": "/var/lib/agentq-safety/projects.json",
+      "sha256": "cb60d360808753728f97ff50b12fddc7134d0d7e864dc6097472c0b878a094e2",
+      "xattrs": {}
+    }
+  ],
+  "current_complete_seal_entry_count": 56,
+  "current_complete_seal_sha256": "51170230064a8da20e074497eae6a6c968d293d262e9e31523dd7365a5c128d3",
+  "current_seal_metadata": {
+    "ctime_ns": 1793169464429169652,
+    "gid": 0,
+    "mode": 384,
+    "mtime_ns": 1793169464428511708,
+    "uid": 0,
+    "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+  },
+  "current_seal_xattrs": {},
+  "installed_hash_deltas": {
+    "/etc/systemd/system/agentq-work.slice": {
+      "new": "d17a978654c35ef3ea5a4e64a66b1e74df8e07ea73232a38c846a5a2070d9879",
+      "old": "0b7edd43dcafd6a3848ea55333ce567b77069727b285a7689a015d4b6c336274"
+    },
+    "/home/deploy/.local/bin/offload": {
+      "new": "ec9d874ace63c60a4b4111aaa7014ac07cfdfff8d1d141a13cced02ed4b25c2a",
+      "old": "1950b0030d10fb697d135901eaf508f8db40ec80405aa4d2423940d112c4cc60"
+    },
+    "/home/deploy/agentq/agentq.py": {
+      "new": "4c4fe4f6d38d1ebd06378943715992b65ab59b6bdd2d4a4b6d79d775bc1ea555",
+      "old": "96d8542d668a961168a944e020a5366e30ae66921a1abe0724c5473eabd9d9ea"
+    },
+    "/usr/local/libexec/agentq-safety/control.py": {
+      "new": "db4d290323a4e0d90ff597ed920da32dc610660813d1ac0c8a5798ae7d7bc3ce",
+      "old": "12f462f1259280896e7be8056252204298667fd03c81dcd309ef614ed3ddcd16"
+    }
+  },
+  "kind": "READ_ONLY_EXPLICIT_FINAL_BASELINE_RECONCILIATION_PROPOSAL_NOT_ACTION",
+  "limits": "Original baseline and seal remain immutable historical evidence; proposal is explicit, separately reviewed observation only. Any subsequent boot/seal/guard/target drift requires exact reconciliation and new action/seal review; no install or reseal authority.",
+  "new_amendments_since_post619": [
+    {
+      "authorization": "INC-261027-18 (Pinch, delegated); AGENTS.md fix policy (S tg 1378); queue #639",
+      "backups": "/home/deploy/agentq/backups/639",
+      "by": "Pinch",
+      "change": "Worker prompt states its absolute end time (RuntimeMaxSec=1h unchanged). offload run --timeout N refuses (exit 76, before any lease/transfer, no placement marker) when N+195s exceeds the time left in the calling agentq-exec unit (systemctl RuntimeMaxUSec/ActiveEnterTimestampMonotonic); untimed runs are capped at the time left; unreadable deadline fails closed; outside a worker unchanged. Remote command wrapped in timeout -k 15 N. No cap or safety floor changed.",
+      "files": {
+        "/home/deploy/.local/bin/offload": {
+          "new": "ec9d874ace63c60a4b4111aaa7014ac07cfdfff8d1d141a13cced02ed4b25c2a",
+          "old": "1950b0030d10fb697d135901eaf508f8db40ec80405aa4d2423940d112c4cc60"
+        },
+        "/home/deploy/agentq/agentq.py": {
+          "new": "4c4fe4f6d38d1ebd06378943715992b65ab59b6bdd2d4a4b6d79d775bc1ea555",
+          "old": "492189a6af53123b21a57402bdd00089944a98bfd12810daefc29173fa6eb6f5"
+        }
+      },
+      "tests": "inc-261027-18/test_inc_261027_18 (12) + test_efficiency baseline-equal; see runs/639/NOTES.md",
+      "utc": "2026-10-28T06:37Z"
+    }
+  ],
+  "observed_guards_with_xattrs": {
+    "/home/deploy/.config/systemd/user/openclaw-gateway.service": {
+      "metadata": {
+        "ctime_ns": 1791474120723871494,
+        "gid": 1000,
+        "mode": 384,
+        "mtime_ns": 1791474120318838917,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "sha256": "7127f9e1eee65ceb5b7484153cadb7add18aef9031d8a30b79ec29609e936888",
+      "xattrs": {}
+    },
+    "/home/deploy/.config/systemd/user/openclaw-gateway.service.d/60-stop-budget.conf": {
+      "metadata": {
+        "ctime_ns": 1792858444720308419,
+        "gid": 1000,
+        "mode": 436,
+        "mtime_ns": 1792858444720308419,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "sha256": "4b8f1e02d7a697f093ce5d95578515354a18ef4e61389ee31f7a634acdab6a57",
+      "xattrs": {}
+    },
+    "/home/deploy/.config/systemd/user/openclaw-gateway.service.d/70-heap-cap.conf": {
+      "metadata": {
+        "ctime_ns": 1792858559463846554,
+        "gid": 1000,
+        "mode": 436,
+        "mtime_ns": 1792858559463846554,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "sha256": "09afa011c8c676ba8096b25fb70500408952576c0dc339ece80a476391b46612",
+      "xattrs": {}
+    },
+    "/home/deploy/.local/lib/node_modules/openclaw/dist/index.js": {
+      "metadata": {
+        "ctime_ns": 1791472428355121948,
+        "gid": 1000,
+        "mode": 509,
+        "mtime_ns": 1791472428355121948,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "sha256": "154951cdae1f71391e64a97f6738284a84e18660e919345bc1fd92906af48f02",
+      "xattrs": {}
+    },
+    "/home/deploy/.local/lib/node_modules/openclaw/package.json": {
+      "metadata": {
+        "ctime_ns": 1791472430451284881,
+        "gid": 1000,
+        "mode": 436,
+        "mtime_ns": 1791472430451284881,
+        "uid": 1000,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "sha256": "214e9551a924a9ced04ecf38c7ed8f6bff8beeab33431db12ed6250eaa959e95",
+      "xattrs": {}
+    },
+    "/usr/local/libexec/agentq-safety/control.py": {
+      "metadata": {
+        "ctime_ns": 1793105594146763883,
+        "gid": 0,
+        "mode": 420,
+        "mtime_ns": 1793105594145543976,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "sha256": "db4d290323a4e0d90ff597ed920da32dc610660813d1ac0c8a5798ae7d7bc3ce",
+      "xattrs": {}
+    },
+    "/usr/local/libexec/agentq-safety/maintenance.py": {
+      "metadata": {
+        "ctime_ns": 1792844474061228393,
+        "gid": 0,
+        "mode": 420,
+        "mtime_ns": 1792844474060209640,
+        "uid": 0,
+        "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      "sha256": "931edbd72d44f5856c2aef1aaa559da18644cb55951eaede1be5f3bc9e63676b",
+      "xattrs": {}
+    }
+  },
+  "observed_utc": "2026-10-28T06:52:59.105109+00:00",
+  "only_changed_seal_fields": [
+    "amendments",
+    "installed_hashes"
+  ],
+  "original_amendment_count": 31,
+  "original_amendments_preserved_as_prefix": true,
+  "original_baseline_sha256": "22253f3512e481177c7b335b768e3155cc1096ae96c475144d0ffda7c6b93f35",
+  "original_baseline_unchanged": true,
+  "original_complete_seal_backup": "/var/lib/agentq-safety/validation.json.bak-20261026T2153Z-continue",
+  "original_complete_seal_metadata": {
+    "ctime_ns": 1793051625226338613,
+    "gid": 0,
+    "mode": 384,
+    "mtime_ns": 1792860972683704654,
+    "uid": 0,
+    "xattrs_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+  },
+  "original_complete_seal_sha256": "7c404d1d04cce2bef262df508af5460a37f6228152466bc60d46e77841dbdfbb",
+  "original_complete_seal_xattrs": {},
+  "prior_complete_seal_sha256": "5301d131e85af4a637344464f0d52f0b3b801c0fe8ede75f7fe1a9a6c12d0e64",
+  "prior_proposal_sha256": "1a0009c13df9f0981b355e0a0e31428fe8872dbf35f4124ed41368b65e9e56f2",
+  "prior_reviewed_amendments_preserved": true,
+  "proposed_baseline_sha256": "428ced690f0b3a3cb8a7a2a4fc38570ffa71fa98d7298423376a26fd3ee6a9c9",
+  "protected_files_changed": false,
+  "seal_bytes_and_metadata_stable": true
+}

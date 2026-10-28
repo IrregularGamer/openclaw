@@ -1,0 +1,686 @@
+{
+  "passed": true,
+  "policy_revision": 1,
+  "validated_utc": "2026-10-16T18:53:14.298732+00:00",
+  "authorization_messages": [
+    294,
+    308
+  ],
+  "scope": "Controlled coding/testing, one global bounded worker. Both providers enabled sequentially. Not unrestricted infrastructure/deployment execution.",
+  "installed_hashes": {
+    "/usr/local/libexec/agentq-safety/control.py": "db4d290323a4e0d90ff597ed920da32dc610660813d1ac0c8a5798ae7d7bc3ce",
+    "/usr/local/libexec/agentq-safety/backup-preflight.py": "50325b072164d29b8d37dbf59b72a4fd650c92ddd1de496fb5d1bd370a6de587",
+    "/usr/local/libexec/agentq-safety/pressure.py": "857ab58ac25304df20b803f3fe0cf6c161ff1f2440dc5b041ab965a4b64be9d0",
+    "/usr/local/libexec/agentq-safety/fence.py": "b28ad5c602328ae8dce51569bc13f773fdc8e4bf02a7e353901de026a64557ef",
+    "/usr/local/libexec/agentq-safety/checks.py": "2bd019912d7ae636e8423e399e1c875dfda9501232d08b70830faee4996d3c9e",
+    "/usr/local/libexec/agentq-safety/plugin/package.json": "adb19416804c1fdbadcdbd774223f9d56f90f4dcd72d317794d07e473cfcf10d",
+    "/usr/local/libexec/agentq-safety/plugin/index.mjs": "692db304733c3495f71b4c910474ae76fa88961324b7a772f1aaad0798f417ec",
+    "/usr/local/libexec/agentq-safety/plugin/openclaw.plugin.json": "0a700c5bd2fccfd2ac51295194670d835d9a286ef9df1f75d475dba1e7458076",
+    "/usr/local/sbin/agentq-control": "d22ac8dac955bae526b6139253b479ceddfe093f8b3527a2cc28276b776886ef",
+    "/home/deploy/.local/bin/agentq-check": "f583e7642af8856a9ac6e88ff91383b09b4af772ed2497cd9cacdefdcad73a6a",
+    "/home/deploy/.local/bin/offload": "ec9d874ace63c60a4b4111aaa7014ac07cfdfff8d1d141a13cced02ed4b25c2a",
+    "/home/deploy/.local/bin/devstack": "2be6bb7ada88dade5d86bfc5f99aa0651803ddb497a2b52048712224acba2828",
+    "/home/deploy/agentq/agentq.py": "4c4fe4f6d38d1ebd06378943715992b65ab59b6bdd2d4a4b6d79d775bc1ea555",
+    "/var/lib/agentq-safety/projects.json": "cb60d360808753728f97ff50b12fddc7134d0d7e864dc6097472c0b878a094e2",
+    "/var/lib/agentq-safety/check-profiles.json": "7181951548723392c1002730d2c92804d5449fa4339dc504e3651b7c126e31a0",
+    "/etc/systemd/system/agentq-safety.service": "d3a9d826ffd786b962f859f6892c500502c8dac38c978f0e431893ec10adc7e8",
+    "/etc/systemd/system/agentq-work.slice": "d17a978654c35ef3ea5a4e64a66b1e74df8e07ea73232a38c846a5a2070d9879",
+    "/etc/systemd/system/recovery-maint.slice": "9440ca6246af8cf766d0fa7c4126dcdafcd3030357c878bc9418bf462eb0a5b8",
+    "/srv/primperfection/scripts/backup-db.sh": "825daeefc4fcd86c8af5140b765e5f7de8b56ea3336f505dd5912cc142c6fb0b",
+    "/usr/local/sbin/offload-backup": "3e87bf602f561df8c8206df385a689defaed39ed8bb12e846bd9b10ef45e38f2",
+    "/srv/primperfection/scripts/deploy_frontend.sh": "5ca6a98c6458e913f1b5cd4769ae0f613abee2cefaaf09a9fc412fdbdda7581a",
+    "/srv/primperfection/scripts/deploy_dev.sh": "c69b26442057a2cf693c798f53443a35355cd1ba2bff41c690dc049b397da02f",
+    "/srv/primperfection/scripts/alphonomic_deploy_dev.sh": "bd2f54e8be3e8f2219f40a877ae32ea4cefbd3e2875e643d7a6f39b25d07a1da",
+    "/srv/primperfection/scripts/knowally_deploy_prod.sh": "c28596e2b3706ca2dc6875f38251dcc5f38e6d13db04cd239c08b73d8484d25d",
+    "/srv/primperfection/scripts/knowally_deploy_dev.sh": "060ca75f0dabfd6c9e835537e25dc7b7fc0b18c1fe9e0f3d83113250ddc4c9e9",
+    "/srv/primperfection/scripts/alphonomic_deploy_prod.sh": "a3bf983dfd7ac0fecc45b7ec87450ead17537b2bdd62eec453736d852549fe41",
+    "/home/deploy/.config/systemd/user.control/codex-app-server-daemon.service.d/50-MemoryMax.conf": "8714f37da811546b5c7bc1babb7172cc7a42b27eb0cea820a323ef1b6d07eb44",
+    "/home/deploy/.config/systemd/user.control/codex-app-server-daemon.service.d/50-TasksMax.conf": "cfef6d2470ec06020555046f3f429606e0f9cd30389733990f6815b167709c6b",
+    "/home/deploy/.config/systemd/user.control/codex-app-server-daemon.service.d/50-MemorySwapMax.conf": "1dcc20473ac2a96df02e4692208ce9a25193aa4f2cb38da42f32f60aa9b01642",
+    "/home/deploy/.config/systemd/user.control/codex-app-server-daemon.service.d/50-CPUQuota.conf": "3715bd9812abd154f7108e750b6f2ad78bc061014cb7fa865bd46ed002e31eea",
+    "/home/deploy/.config/systemd/user.control/codex-app-server-daemon.service.d/50-MemoryHigh.conf": "65412676d299f0cc46af5bdaf5ba8ffaaadec0ffc4aee1d1106b66092fd80a6f",
+    "/home/deploy/.config/systemd/user.control/agentq.service.d/50-MemoryMax.conf": "7706bf387087f26938b5912d5384169adb30e0fda37ac682c5721ea47fc52106",
+    "/home/deploy/.config/systemd/user.control/agentq.service.d/50-TasksMax.conf": "968a2b50ae3dd8f11304648dbe15097f2698b7df5215f96145271ba90b8ff9db",
+    "/home/deploy/.config/systemd/user.control/agentq.service.d/50-MemorySwapMax.conf": "1dcc20473ac2a96df02e4692208ce9a25193aa4f2cb38da42f32f60aa9b01642",
+    "/home/deploy/.config/systemd/user.control/agentq.service.d/50-CPUQuota.conf": "038b6d9084bd73f54af90ad4a82da0feb2e017c9a1c1a5db10f584b638d49af6",
+    "/home/deploy/.config/systemd/user.control/agentq.service.d/50-MemoryHigh.conf": "99e8ec4991bc701eb2bcca94cdfb1da35b1f6d5551f037b9a7b3977570b34be3",
+    "/home/deploy/.config/systemd/user.control/atlas.service.d/50-MemoryMax.conf": "7706bf387087f26938b5912d5384169adb30e0fda37ac682c5721ea47fc52106",
+    "/home/deploy/.config/systemd/user.control/atlas.service.d/50-TasksMax.conf": "a2c77612cd9f67eed8cfffd02531077cd1f55dabbd20f17ea43c6cc755875757",
+    "/home/deploy/.config/systemd/user.control/atlas.service.d/50-MemorySwapMax.conf": "1dcc20473ac2a96df02e4692208ce9a25193aa4f2cb38da42f32f60aa9b01642",
+    "/home/deploy/.config/systemd/user.control/atlas.service.d/50-CPUQuota.conf": "038b6d9084bd73f54af90ad4a82da0feb2e017c9a1c1a5db10f584b638d49af6",
+    "/home/deploy/.config/systemd/user.control/atlas.service.d/50-MemoryHigh.conf": "99e8ec4991bc701eb2bcca94cdfb1da35b1f6d5551f037b9a7b3977570b34be3",
+    "/home/deploy/.config/systemd/user.control/openclaw-gateway.service.d/50-MemoryMax.conf": "c1f9becb896a3242b8c2ce6bcd1d0a2ac1cf426aef2a01aafc611d4dc7b3fb0b",
+    "/home/deploy/.config/systemd/user.control/openclaw-gateway.service.d/50-TasksMax.conf": "bc1b29a0a7b2670264909de757faf165139cbb4b1a74cb358cf295db0ea34781",
+    "/home/deploy/.config/systemd/user.control/openclaw-gateway.service.d/50-MemorySwapMax.conf": "1dcc20473ac2a96df02e4692208ce9a25193aa4f2cb38da42f32f60aa9b01642",
+    "/home/deploy/.config/systemd/user.control/openclaw-gateway.service.d/50-CPUQuota.conf": "ab464f824f689eb105b959ddaefbbf2ecf62c425729b0b926869ca5b72014cd7",
+    "/home/deploy/.config/systemd/user.control/openclaw-gateway.service.d/50-MemoryHigh.conf": "02cc3cbfb501b18190ebe647634f0a4bb7d646b9f3d5802d4b241edd48dd11b2",
+    "/etc/systemd/system.control/user@1000.service.d/50-MemoryMax.conf": "ac2fa7212ae46984b9edb2165d1c9169c2e3a44557966703d5333dfc14a17420",
+    "/etc/systemd/system.control/user@1000.service.d/50-MemorySwapMax.conf": "1dcc20473ac2a96df02e4692208ce9a25193aa4f2cb38da42f32f60aa9b01642",
+    "/etc/systemd/system.control/user@1000.service.d/50-MemoryHigh.conf": "22e7b1bbc0d7626abaec3dedb9c5794850cf9ee73b222a151dbd72a1621e470a",
+    "/etc/systemd/system/primperfection-db-backup.service.d/50-resource-safety.conf": "188d60276ad78de8699b02414c2460b9537700d5eae08e210e55b57dde340ccb",
+    "/etc/systemd/system/offload-backup-push.service.d/50-resource-safety.conf": "188d60276ad78de8699b02414c2460b9537700d5eae08e210e55b57dde340ccb",
+    "/etc/systemd/system/offload-backup-drill.service.d/50-resource-safety.conf": "188d60276ad78de8699b02414c2460b9537700d5eae08e210e55b57dde340ccb",
+    "/home/deploy/agentq/reasoning_policy.py": "8de5152b89546f29cb36213d4d7431efec96aaa1dabdcaeed925fee0a3b326f9",
+    "/usr/local/libexec/agentq-safety/reasoning_policy.py": "8de5152b89546f29cb36213d4d7431efec96aaa1dabdcaeed925fee0a3b326f9",
+    "/usr/local/libexec/agentq-safety/maintenance.py": "931edbd72d44f5856c2aef1aaa559da18644cb55951eaede1be5f3bc9e63676b",
+    "/etc/systemd/system/abh-schedulers.slice": "3acaeb6b29f1cb693520cca2cb4fbb8d0fa243a17413bc5ecf49753446a45c43"
+  },
+  "proofs": {
+    "python_tests": 127,
+    "ingress_adapter_tests": 10,
+    "real_local_tests": 17,
+    "strict_database_restores": 11,
+    "clusters": 5,
+    "recovered_application_cores": [
+      "abh",
+      "alphonomic",
+      "knowally",
+      "mail-control/web"
+    ],
+    "worker_fixture_stop_seconds": 1.108,
+    "canary_survived": true,
+    "fresh_gateway_providers": 2,
+    "production_https_routes": 6,
+    "application_database_credentials": 5,
+    "strict_database_restore_checks_revalidated": true,
+    "concurrent_tick_and_admission_denial_regressions": true
+  },
+  "owner_deferred": [
+    "Independent recovery key copy/proof"
+  ],
+  "held": [
+    "Trans execution until guaranteed resource approval",
+    "Unbudgeted builds/deployments; existing explicit production approvals remain"
+  ],
+  "limitations": [
+    "No full outbound SMTP/JMAP mail cold-start drill",
+    "No real owner Telegram stop ingress receipt observed; installed authenticated adapter/controller and independent monitor tested",
+    "New complete nightly schedule has not yet run; synthetic success/error wiring tested and incident recovery set strictly validated",
+    "Sudo retained: controls are not tamper-proof against deliberate privileged bypass"
+  ],
+  "amendments": [
+    {
+      "utc": "2026-10-17T20:29:09.236929+00:00",
+      "by": "Pinch",
+      "authorization": "S, Alphonomic HQ Telegram msg 962 (2026-10-17 20:25 UTC): assess AgentQ issues and fix them",
+      "files": [
+        "/usr/local/libexec/agentq-safety/control.py",
+        "/home/deploy/agentq/agentq.py",
+        "/home/deploy/.local/bin/offload"
+      ],
+      "changes": [
+        "remote_admit: specific fenced reasons; a refused FIRST lease grant is revoked on Trans and remote_used cleared, so the monitor no longer fences everything; unverifiable revocation and lost granted leases still fence",
+        "CLI error output adds fixed-vocabulary reason",
+        "offload: logs refusal reason; retries only pre-RPC local-resource refusals 3x/20s; no local fallback",
+        "agentq: dependency holds (deps table, agentq hold --until) released automatically when needed jobs are done; handoff dir parsing ignores stray files"
+      ],
+      "tests": "mocked remote_admit grant/refuse/cancel/rpc-error/renewal/local-fence; release_holds on DB copy; py_compile",
+      "backups": "/srv/encrypted/incidents/20261016-vps/control.py.before-20261017-lease-fix, validation.json.before-20261017, /home/deploy/agentq/backups/"
+    },
+    {
+      "utc": "2026-10-18T00:14:29.656560+00:00",
+      "by": "Pinch",
+      "authorization": "S, Alphonomic HQ Telegram msg 971 (2026-10-18 00:13 UTC): if 265 gets blocked take care of it, keep the automation flowing",
+      "files": [
+        "/home/deploy/agentq/agentq.py"
+      ],
+      "changes": [
+        "remote_lease_denied is a known placement result; job auto-requeues every 15 min up to 8 times in 12h without spending an attempt, then blocks",
+        "Telegram alert whenever a job blocks on an infrastructure placement result"
+      ],
+      "backups": "/home/deploy/agentq/backups/agentq.py.20261018-pre-lease-retry"
+    },
+    {
+      "utc": "2026-10-18T10:13:10.779138+00:00",
+      "by": "Pinch",
+      "authorization": "S, Alphonomic HQ Telegram msg 976 (2026-10-18 10:09 UTC): go over AgentQ problems and complaints and find fixes",
+      "files": [
+        "/usr/local/libexec/agentq-safety/control.py",
+        "/home/deploy/.local/bin/offload",
+        "/home/deploy/agentq/agentq.py"
+      ],
+      "changes": [
+        "remote_admit: any refused grant or renewal is revoked on Trans; when Trans verifies stopped+revoked, remote_used is cleared and the error is remote_lease_refused_cleanly",
+        "monitor renew_loop: remote_lease_refused_cleanly no longer fences the system; any other renewal failure still fences",
+        "offload: remote rc 95 (lease refused/revoked/slot busy) reports remote_lease_denied, which agentq retries automatically",
+        "agentq: BLOCKED questions create a priority-1 Pinch decide job (S delegation 945/956/968/971); only S-only matters reach S"
+      ],
+      "not_sealed_but_related": "/home/deploy/agentq/stop-notify.py auto-resume (max 3 per 6h, known non-emergency reasons, controller resume path, resource_ready required)",
+      "backups": "/srv/encrypted/incidents/20261016-vps/control.py.before-20261018-renewal-fix, /home/deploy/agentq/backups/"
+    },
+    {
+      "utc": "2026-10-18T13:40:57.890124+00:00",
+      "by": "Pinch",
+      "authorization": "S, Alphonomic HQ Telegram msg 1003 (2026-10-18 13:39 UTC): too many per-job question messages, Pinch answering all of them, share with Codex",
+      "files": [
+        "/home/deploy/agentq/agentq.py"
+      ],
+      "changes": [
+        "Decide jobs prefer any agent; a burst of BLOCKED questions is appended to one queued decider",
+        "no Telegram per question or per decide result",
+        "builder prompt: infrastructure/test-environment problems are not BLOCKED questions; offload exit 75 is retried by the queue"
+      ],
+      "backups": "/home/deploy/agentq/backups/agentq.py.20261018-pre-decide-coalesce"
+    },
+    {
+      "utc": "2026-10-18T16:26:11.111690+00:00",
+      "by": "Pinch",
+      "authorization": "agentq #273 (ABH B-2) change approved by decide job #296 under S delegation 945/956/968/971; reviewed by Pinch 2026-10-18 16:3x UTC: diff adds offline restore check (fail sets BACKUP_FAILED) and comments out failing dev dump; bash -n ok; manual run 14:20 UTC succeeded",
+      "files": [
+        "/srv/primperfection/scripts/backup-db.sh"
+      ],
+      "backups": "/srv/primperfection/scripts/backup-db.sh.bak-20261018-b2"
+    },
+    {
+      "utc": "2026-10-18T16:26:36.091856+00:00",
+      "by": "Pinch",
+      "authorization": "S, Alphonomic HQ Telegram msg 1011 (2026-10-18 16:25 UTC): \"are you stuck\" (queue frozen by unresealed sealed-file change)",
+      "files": [
+        "/home/deploy/agentq/agentq.py"
+      ],
+      "changes": [
+        "tick still reaps finished jobs, lifts holds and writes status when not eligible (never dispatches)",
+        "builder prompt: sealed files list and SEALED-CHANGE marker"
+      ],
+      "backups": "/home/deploy/agentq/backups/agentq.py.20261018-pre-tick-reap"
+    },
+    {
+      "utc": "2026-10-18T17:11:46.262379+00:00",
+      "by": "Pinch",
+      "authorization": "S, Alphonomic HQ Telegram msg 1019 (2026-10-18 17:11 UTC): explain job 274 (wrongly blocked)",
+      "files": [
+        "/home/deploy/agentq/agentq.py"
+      ],
+      "changes": [
+        "placement sidecar ignored when the worker exits 0 with a final message",
+        "offload deny vocabulary (local_check_admission_denied, devstack_resource_broker_unavailable) recognised"
+      ],
+      "backups": "/home/deploy/agentq/backups/agentq.py.20261018-pre-placement-exit0"
+    },
+    {
+      "utc": "2026-10-19T05:51:30.895892+00:00",
+      "by": "Pinch",
+      "authorization": "S, Alphonomic HQ Telegram msg 1068 (2026-10-19): 'if you have a better idea do it' (agentq job #318); prompt placement per Telegram 1074, Trans placement approved Telegram 941",
+      "files": [
+        "/usr/local/libexec/agentq-safety/pressure.py",
+        "/home/deploy/agentq/agentq.py"
+      ],
+      "changes": [
+        "pressure.py: OOM stop only for global OOMs or OOMs in agentq.slice (worker scope); memcg-limit OOMs in other top-level cgroups (memory.events oom+oom_kill) are counted as ignored_memcg_ooms; unreadable cgroups fail closed; all other thresholds unchanged",
+        "agentq.py: retry/hold refuse running jobs; reap settles orphaned worker registration whose unit is gone; REQUEUE: final requeues in 30 min without spending an attempt (max 12/24h, then BLOCKED)",
+        "agentq.py worker prompt: heavy steps (full vite/SSR build, Playwright, full suites) go through offload run when health is up; Hetzner bounded-local only for small steps; otherwise REQUEUE"
+      ],
+      "tests": "test_pressure.py 11 ok; test_efficiency.py 5 new ok (5 pre-existing failures unchanged vs sealed baseline); real offload run npm ci+npm run build rc=0 from job 318 worker",
+      "backups": "/home/deploy/agentq/backups/pressure.py.20261019-pre-memcg-oom, agentq.py.20261019-pre-318, validation.json.20261019-pre-318"
+    },
+    {
+      "utc": "2026-10-19T14:36:47.194653+00:00",
+      "by": "Pinch",
+      "authorization": "S, Alphonomic HQ Telegram msg 1123 (2026-10-19): 'sure fix' (dispatch order + duplicate reviews)",
+      "files": [
+        "/home/deploy/agentq/agentq.py"
+      ],
+      "changes": [
+        "agentq.py dispatch(): job-major order; the single slot goes to the most urgent queued job (priority, id) for any eligible agent, instead of offering it to codex first. All eligibility rules (prefer, review/plan only on claude unless parked, refusal, project busy, parallel) unchanged."
+      ],
+      "tests": "dry-run on DB copy: both free -> #339 review on claude; only codex free -> codex build; test_efficiency.py same result as baseline",
+      "backups": "/home/deploy/agentq/backups/agentq.py.20261019-pre-dispatch-order, validation.json.20261019-pre-dispatch-order"
+    },
+    {
+      "utc": "2026-10-20T12:41:56.992796+00:00",
+      "by": "Pinch",
+      "authorization": "S, Alphonomic HQ Telegram msg 1226 (2026-10-20): 'do what u gotta do to move on with this dont leave stuff stopped' (reply to proposal to make a worker timeout fail only that job)",
+      "files": [
+        "/usr/local/libexec/agentq-safety/control.py"
+      ],
+      "changes": [
+        "control.py observe(): a worker unit with Result=timeout (its own RuntimeMaxSec) no longer stops the whole queue. The monitor revokes its remote lease and local checks (same as settle()) and marks it reconciled; agentq.py reap() then retries the job with a handoff. If the lease or checks cannot be verified stopped, it still stops the queue as before. oom-kill, watchdog, core-dump and signal still stop the queue unchanged."
+      ],
+      "tests": "mock unit test of observe(): timeout -> no stop and reconciled; timeout with lease not revoked -> stop; oom-kill -> stop; success -> nothing. py_compile ok.",
+      "backups": "/home/deploy/agentq/backups/control.py.20261020-guard-timeout, validation.json.20261020-guard-timeout"
+    },
+    {
+      "utc": "2026-10-21T20:40:08.188777+00:00",
+      "by": "Pinch",
+      "authorization": "S, Alphonomic HQ Telegram msg 1286 (2026-10-21): \"Do what you can instead of a fixed rate cant we percentage say 90 of memory goes to testing builds\"",
+      "files": [
+        "/home/deploy/.local/bin/offload"
+      ],
+      "changes": [
+        "offload health(): friend-VPS low-RAM gate changed from fixed MemAvailable<2048MiB to <1024MiB+10% of MemTotal, matching the 90% rule installed on Trans (placement 90% of MemTotal>=2GiB, lease start 1GiB+10%, revoke under 5%, runner oom_score_adj 1000)."
+      ],
+      "tests": "py_compile; health run after swap"
+    },
+    {
+      "utc": "2026-10-21T21:14:40.888337+00:00",
+      "by": "Pinch",
+      "authorization": "S, Alphonomic HQ Telegram msg 1327 (2026-10-21): \"sure do it\" (re: batching the hold-release HQ messages)",
+      "files": [
+        "/home/deploy/agentq/agentq.py"
+      ],
+      "changes": [
+        "release_holds(): one HQ message per set of finished dependencies listing all released jobs, instead of one message per job; wording 'starts now' -> 'free to start (the queue picks it up when it has room)'. Notification only; hold/dep logic unchanged."
+      ],
+      "tests": "py_compile; release_holds on an isolated DB copy with telegram mocked (1 message, other-dep jobs stay held)"
+    },
+    {
+      "utc": "2026-10-21T22:23:49.082996+00:00",
+      "by": "Pinch",
+      "authorization": "S, Alphonomic HQ Telegram msg 1357 (2026-10-22): \"lets up the limit to 2.5 gb as your suggestion\"; same message: \"gateway restarts should happen periodically so why is a restart hurting our queue\"",
+      "files": [
+        "/usr/local/libexec/agentq-safety/control.py",
+        "/usr/local/libexec/agentq-safety/pressure.py"
+      ],
+      "changes": [
+        "Admission headroom 3584 MiB -> 2560 MiB (pressure.py good/headroom, control.py resource_ready/diagnostic_ready). Stop rules (critical <1280, low <2048, PSI, OOM) unchanged.",
+        "observe(): gateway unavailable blocks admission (blocker gateway_restarting) and only stops the queue after 180s continuous unavailability, so a routine ~30s gateway restart no longer fences the queue or kills a running worker."
+      ],
+      "tests": "test_pressure.py (11 OK, headroom test moved to 2560); mocked observe() grace test (no stop <180s, stop at 181s, timer resets on recovery); py_compile"
+    },
+    {
+      "utc": "2026-10-21T23:12:00.858305+00:00",
+      "by": "Pinch",
+      "authorization": "S, Alphonomic HQ Telegram msg 1378 (2026-10-22): S must not be asked whether to fix things; Pinch and Rook agreed via the gateway 2026-10-22; queue job #421",
+      "files": [
+        "/home/deploy/agentq/agentq.py"
+      ],
+      "changes": [
+        "on_success review branch: after MAX_REVIEW_ROUNDS the parent is still set blocked, but instead of the Telegram 'Tag Pinch to decide' ping it now creates (or reuses) a priority-1 'Decide: blocked #N' ops job with DECIDE_BODY and the final review text. HQ only hears if the decider escalates with BLOCKED (existing path).",
+        "BLOCKED-path decider routing (open decider / append to queued decider / add_job) factored into route_to_decider(), shared by both paths; behaviour unchanged."
+      ],
+      "tests": "tmp/review-decide/test_efficiency.py: 3 new tests (review exhaustion -> decider, no telegram; reuses open decider; BLOCKED still creates decider) pass; test_claude_model_by_kind fails identically on the old sealed file (pre-existing); py_compile",
+      "old_hash": "80dbd7f8a81715da74803daa58d85015bfd95e74e8f76e80d9e93d3f86000ea5",
+      "new_hash": "3e926d07c7ac87194fdd8efb184f42bebaec2624810be926855ae4775ebc90fe"
+    },
+    {
+      "utc": "20261021T235215Z",
+      "by": "Pinch",
+      "authorization": "S HQ Telegram 433; queue job 423; gateway design agreement",
+      "files": [
+        "/home/deploy/agentq/reasoning_policy.py",
+        "/usr/local/libexec/agentq-safety/reasoning_policy.py",
+        "/home/deploy/agentq/agentq.py",
+        "/usr/local/libexec/agentq-safety/control.py"
+      ],
+      "backups": "/home/deploy/agentq/backups/reasoning-423-20261021T235215Z",
+      "review": "/home/deploy/claw-workspace/memory/reviews/423-review.md",
+      "review_sha256": "610b2cfcdd443c3e9478c44441ff475816f51ea9674eb6d539cbd326a8c9f097",
+      "tests": {
+        "status": "passed",
+        "suite": "python3 -m unittest discover -v; AGENTQ_PRESSURE_PY=pressure.py",
+        "baseline_known_failure": "baseline/test_efficiency.py::test_claude_model_by_kind (pre-existing; fixture corrected at controller boundary)",
+        "net_efficiency": "not measured",
+        "tests": 85,
+        "placement": "offload run, friend VPS, fresh git archive",
+        "tested_source_commit": "e5a9574860065b29b85ffe0cef9eb4195c17891e",
+        "log_sha256": "b317183436a762709a6c1e2cfaaaae12f4feb5c60ccb862956279ad839a6666b",
+        "guard_audit": "Only intended dispatcher/controller methods differ; pressure.py, fence.py, checks.py byte-identical to sealed baseline",
+        "review_fixes": "Actual python3 -I invocation from unrelated cwd; installer refuses absent/pending/failed verification before admission"
+      },
+      "changes": [
+        "Fixed GPT-6.1 Sol; job-local Medium/High policy with structured correction reasons; atomic run snapshots; successful correction resets Medium; guards unchanged."
+      ]
+    },
+    {
+      "utc": "2026-10-22T06:55:04.868748+00:00",
+      "by": "Rook",
+      "authorization": "Queue job 435: durable offload-work.slice activation; independent Pinch review and reseal required",
+      "status": "pending_independent_review",
+      "host": "friend-vps",
+      "files": [
+        "/home/offload/.config/systemd/user/offload-lease-watch.service"
+      ],
+      "backups": "friend-vps:/usr/local/lib/offload-safety/backup-435/ (watchdog unit and slice)",
+      "changes": [
+        "Add Wants=offload-work.slice and After=offload-work.slice to watchdog [Unit]. No limit or Python/agent changes."
+      ],
+      "old_hash": "bde8ef3eb80e6003ce685d10ee3c236a6351855742eb09c2834554a3b2c099cc",
+      "tests": "systemd-analyze --user verify passed; daemon-reload; starting watchdog with inactive empty slice activates both; cgroup limits unchanged; heartbeat healthy; forced-command status lease_watchdog_healthy=true; trivial offload probe exit0; managed=0 after probe. Full mail Vitest pending. Full mail Vitest attempted once from fresh export e20235f: exit75 remote_environment_blocked, integration setup spawn docker ENOENT; not waived, existing broker prerequisite. Final heartbeat healthy, managed=0, NRestarts=0. Log /home/deploy/agentq/runs/435/vitest.log.",
+      "seal_action": "Installed hashes unchanged. Reviewer must verify amendment and remote file hashes before resealing.",
+      "new_hash": "e68970fbc49ff0c4148384d8aee01fc3d93d63df63b0a70c6e79005d635421ad",
+      "slice_hash": "f5f4636cf1031790f02d674971b93fc1ade86c2bdc8b920184064f5c2297b60b",
+      "evidence_commit": "e20235f",
+      "review": "Pending independent Pinch queue review and reseal, not builder-approved."
+    },
+    {
+      "utc": "2026-10-22T08:57:44.112380+00:00",
+      "by": "Pinch",
+      "agreed_by": "Rook (gateway bridge, 2026-10-22)",
+      "authorization": "S, Alphonomic HQ Telegram msg 1434 (2026-10-22): \"increase limits to 1 hour or more for big jobs\"",
+      "files": [
+        "/usr/local/libexec/agentq-safety/control.py"
+      ],
+      "changes": [
+        "launch(): normal worker RuntimeMaxSec 1800 -> 3600 (probe 90s and probe_check 900s unchanged). Memory/CPU/task budgets unchanged."
+      ],
+      "tests": "py_compile; diff is the single RuntimeMaxSec literal"
+    },
+    {
+      "utc": "2026-10-22T15:00:26.077384+00:00",
+      "by": "Pinch (HQ gateway session, controller owner per job 462 routing)",
+      "agreed_by": "Rook (gateway bridge, 2026-10-22, INC-261022-15; rev2 after CHANGES 1-5)",
+      "authorization": "Queue jobs 457/459/462: one-time initial controller-owner bootstrap outside queue workers; S fix policy HQ tg 1378",
+      "files": [
+        "/usr/local/libexec/agentq-safety/maintenance.py",
+        "/usr/local/libexec/agentq-safety/control.py",
+        "/etc/systemd/system/agentq-safety.service"
+      ],
+      "backups": "/var/lib/agentq-boot459/20261022T145954Z",
+      "review": "/var/lib/agentq-maintenance-candidates/457/ee43a643568151ce8c4c6f9ba91ea50ba797f12d/independent-review.md; bootstrap script reviewed by Rook (runs/459/NOTES.md)",
+      "changes": [
+        "Install 457-reviewed controller pair: control.py c76c4610 -> 1cacedf5, maintenance.py new 4c6637af (fixed maintenance-request verb, local pair only).",
+        "agentq-safety.service ReadWritePaths += /usr/local/libexec/agentq-safety so the monitor can apply a reviewed pair transaction. No budget/limit change."
+      ],
+      "tests": "457: 25 controller + 59 broker tests (offload run, ee43a64); staged py_compile + import with installed guards"
+    },
+    {
+      "maintenance_manifest": "3aee1e0e7a83ac118b30502a0858a80aeb864422f65a03acf3252c009fa0c169",
+      "reviewer": "/root/review_remote_maintenance",
+      "source_revision": "cb711b0e345df4237bcb9afb1770b543b695c32d",
+      "backup": "/var/lib/agentq-safety/maintenance-backups/3aee1e0e7a83ac118b30502a0858a80aeb864422f65a03acf3252c009fa0c169",
+      "old_new": {
+        "/usr/local/libexec/agentq-safety/control.py": {
+          "new": "f2dff984158940522b60c7f3e37fa8460ca87b097e846fbcdba960383cacb569",
+          "old": "1cacedf590440fed13c280c0cc847894c453459f5c98d79a385b765e652c1b06"
+        },
+        "/usr/local/libexec/agentq-safety/maintenance.py": {
+          "new": "ba331191980a73a542b3eb84b3a46f50743d4a72a7c18d4f75902830a5e4fdfd",
+          "old": "4c6637af057fc2fb281ba5da4849eda032632801600e94d40e0be56ec45b7b01"
+        }
+      },
+      "time": 1792682688.9405634
+    },
+    {
+      "maintenance_manifest": "0d123f21edbef2a240eaa87e7c731da0154486123361844de7e46ba19ab9bc95",
+      "reviewer": "/root/review_remote_helper",
+      "source_revision": "c6549a4798c1d212ef94211ba1aa8c5c1c5b386b",
+      "backup": "/var/lib/agentq-safety/maintenance-backups/0d123f21edbef2a240eaa87e7c731da0154486123361844de7e46ba19ab9bc95",
+      "old_new": {
+        "/usr/local/libexec/agentq-safety/control.py": {
+          "new": "f2dff984158940522b60c7f3e37fa8460ca87b097e846fbcdba960383cacb569",
+          "old": "f2dff984158940522b60c7f3e37fa8460ca87b097e846fbcdba960383cacb569"
+        },
+        "/usr/local/libexec/agentq-safety/maintenance.py": {
+          "new": "32512ad5079a87dabe531f719f533d3faf4ab1b025547e25057ced37ccfa0e98",
+          "old": "ba331191980a73a542b3eb84b3a46f50743d4a72a7c18d4f75902830a5e4fdfd"
+        }
+      },
+      "time": 1792684552.5990036
+    },
+    {
+      "utc": "2026-10-23T07:30:00.546484+00:00",
+      "by": "Pinch",
+      "authorization": "S, Alphonomic HQ Telegram msg 1515 (2026-10-23): \"take initiative ... up it to 3gb and once it reaches 3 gb it auto restarts\"",
+      "files": [
+        "/home/deploy/.config/systemd/user.control/openclaw-gateway.service.d/50-MemoryHigh.conf"
+      ],
+      "old_new": {
+        "/home/deploy/.config/systemd/user.control/openclaw-gateway.service.d/50-MemoryHigh.conf": {
+          "old": "f3548e8bdba3682d1a5c260cde7dc518dbc8774713d1ab014b6591047703ce2c",
+          "new": "02cc3cbfb501b18190ebe647634f0a4bb7d646b9f3d5802d4b241edd48dd11b2"
+        }
+      },
+      "changes": [
+        "openclaw-gateway MemoryHigh 2684354560 -> 3221225472 (= MemoryMax, unchanged 3 GiB; no throttling below the cap). New unsealed gateway-guard.timer restarts the gateway cleanly at 2.75 GiB (when no chat turn) / 2.90 GiB (always) so the cap is never hit; incidents.py holds Pinch pages during restarts."
+      ]
+    },
+    {
+      "utc": "2026-10-23T13:12:16.316603+00:00",
+      "by": "Pinch",
+      "authorization": "S, Telegram 1476 (2026-10-22): '429 is approved' (job #417 ABH container rename, recorded on #417 2026-10-22T19:20:41Z)",
+      "files": [
+        "/srv/primperfection/scripts/backup-db.sh"
+      ],
+      "old_new": {
+        "/srv/primperfection/scripts/backup-db.sh": {
+          "old": "9074e9330c816b50e4fc9e02dedf3679bd6b1aaa38a8478e24d771a80c43d8df",
+          "new": "825daeefc4fcd86c8af5140b765e5f7de8b56ea3336f505dd5912cc142c6fb0b"
+        }
+      },
+      "changes": [
+        "backup-db.sh: pg_dump and roles spec target container abh_db instead of primperfection_db (container renamed by job #417; same DB volume repo_primperfection_db_data). Unsealed companions changed in the same window: restore_test.sh PROTECTED_NAMES adds abh_db abh_api; archive-logs.sh logs abh_db. Rollback: reinstall /home/deploy/agentq/runs/417/staged-scripts/*.orig and restore this hash."
+      ]
+    },
+    {
+      "maintenance_manifest": "13e94b8eff5bdf02e33a775cb44a8c8d24afa1faa635bd0b7df1bb85bfafb659",
+      "reviewer": "/root/review_scheduler",
+      "source_revision": "c65f6df122834f6154a7b15788b27497d9ba705e",
+      "backup": "/var/lib/agentq-safety/maintenance-backups/13e94b8eff5bdf02e33a775cb44a8c8d24afa1faa635bd0b7df1bb85bfafb659",
+      "old_new": {
+        "/usr/local/libexec/agentq-safety/control.py": {
+          "new": "fde270a2d0b3b8cc44594415df969e57f6649cf907c6bedbee071db6718543c0",
+          "old": "f2dff984158940522b60c7f3e37fa8460ca87b097e846fbcdba960383cacb569"
+        },
+        "/usr/local/libexec/agentq-safety/maintenance.py": {
+          "new": "7da309596d50b1f6ee611205b91d1f2782631a08acf51d57144483813f32cd31",
+          "old": "32512ad5079a87dabe531f719f533d3faf4ab1b025547e25057ced37ccfa0e98"
+        }
+      },
+      "time": 1792770028.074831
+    },
+    {
+      "job": 496,
+      "reviewer": "independent agent APPROVE (independent-review.md)",
+      "review_sha256": "b3c25a2692f8608393e07b538d46edae80cf771b2837832cc8262b89477cc434",
+      "source_revision": "cf50c21",
+      "backup": "/var/lib/agentq-safety/maintenance-backups/job496-unit",
+      "old_seal": "2cc628037d885cc5b09766cffd65565a84e0da311b66b53e1c0785099d1e0bdc",
+      "old_new": {
+        "/etc/systemd/system/agentq-safety.service": {
+          "old": "399769e836947a6065777b8c86c593653bffa070a6057ac04e0379b07c0e57da",
+          "new": "d3a9d826ffd786b962f859f6892c500502c8dac38c978f0e431893ec10adc7e8"
+        },
+        "/etc/systemd/system/abh-schedulers.slice": {
+          "old": null,
+          "new": "3acaeb6b29f1cb693520cca2cb4fbb8d0fa243a17413bc5ecf49753446a45c43"
+        }
+      },
+      "note": "ReadWritePaths=/srv/primperfection/repo; slice preprovisioned+enabled link, not started",
+      "applied_by": "HQ owner Pinch, gap STOPPED maintenance496-unit",
+      "time": 1792790442.7592316
+    },
+    {
+      "maintenance_manifest": "aa21822c8105473b73f62ec2d47f045b6e189829c196608308fe581fd8667351",
+      "reviewer": "/root/review_maintenance499",
+      "source_revision": "9fc6d245d54400987e7d082cf8208e150c6b6ade",
+      "backup": "/var/lib/agentq-safety/maintenance-backups/aa21822c8105473b73f62ec2d47f045b6e189829c196608308fe581fd8667351",
+      "old_new": {
+        "/usr/local/libexec/agentq-safety/control.py": {
+          "new": "adeae3f81bf3dc76ee55a7a5d55267cca46a2b922b9801a43c1aa4b8ee9d96c1",
+          "old": "fde270a2d0b3b8cc44594415df969e57f6649cf907c6bedbee071db6718543c0"
+        },
+        "/usr/local/libexec/agentq-safety/maintenance.py": {
+          "new": "7da309596d50b1f6ee611205b91d1f2782631a08acf51d57144483813f32cd31",
+          "old": "7da309596d50b1f6ee611205b91d1f2782631a08acf51d57144483813f32cd31"
+        }
+      },
+      "time": 1792792676.4911094
+    },
+    {
+      "maintenance_manifest": "030e14b5d9b1fc9238608c369b056fc43bb6871beac448b6a570021c82f65898",
+      "reviewer": "/root/review_writer505",
+      "source_revision": "1e63ba5aa1b3d35c48e4fa64752ccd6f526f68ea",
+      "backup": "/var/lib/agentq-safety/maintenance-backups/030e14b5d9b1fc9238608c369b056fc43bb6871beac448b6a570021c82f65898",
+      "old_new": {
+        "/usr/local/libexec/agentq-safety/control.py": {
+          "new": "a155f0bd81613f276f8927c92af970e2851c8ffa6b647e9d097cec6279daf557",
+          "old": "adeae3f81bf3dc76ee55a7a5d55267cca46a2b922b9801a43c1aa4b8ee9d96c1"
+        },
+        "/usr/local/libexec/agentq-safety/maintenance.py": {
+          "new": "7da309596d50b1f6ee611205b91d1f2782631a08acf51d57144483813f32cd31",
+          "old": "7da309596d50b1f6ee611205b91d1f2782631a08acf51d57144483813f32cd31"
+        }
+      },
+      "time": 1792796094.4386368
+    },
+    {
+      "maintenance_manifest": "95e7135abf157e42335398fac6efb5348a274f96c1521d09d0856a463d43b056",
+      "reviewer": "/root/install_review515",
+      "source_revision": "cdb7d6f9eb7132d503243375845e6088a1eee5e3",
+      "backup": "/var/lib/agentq-safety/maintenance-backups/95e7135abf157e42335398fac6efb5348a274f96c1521d09d0856a463d43b056",
+      "old_new": {
+        "/usr/local/libexec/agentq-safety/control.py": {
+          "new": "12f462f1259280896e7be8056252204298667fd03c81dcd309ef614ed3ddcd16",
+          "old": "a155f0bd81613f276f8927c92af970e2851c8ffa6b647e9d097cec6279daf557"
+        },
+        "/usr/local/libexec/agentq-safety/maintenance.py": {
+          "new": "c45de9f76d6faf0c6c679ea10e9b43d689f139adcab18043a9ac791d8a693d7b",
+          "old": "7da309596d50b1f6ee611205b91d1f2782631a08acf51d57144483813f32cd31"
+        }
+      },
+      "time": 1792821963.573288
+    },
+    {
+      "maintenance_manifest": "f7bba9e2c23c09f08dcf3c48579faa4ae7a859cfd8c0c2d52f63a0572d3faad0",
+      "reviewer": "/root/install_review525",
+      "source_revision": "7d8c8a6a28d1d44f609ea9eb847145470cd907e0",
+      "backup": "/var/lib/agentq-safety/maintenance-backups/f7bba9e2c23c09f08dcf3c48579faa4ae7a859cfd8c0c2d52f63a0572d3faad0",
+      "old_new": {
+        "/usr/local/libexec/agentq-safety/control.py": {
+          "new": "12f462f1259280896e7be8056252204298667fd03c81dcd309ef614ed3ddcd16",
+          "old": "12f462f1259280896e7be8056252204298667fd03c81dcd309ef614ed3ddcd16"
+        },
+        "/usr/local/libexec/agentq-safety/maintenance.py": {
+          "new": "931edbd72d44f5856c2aef1aaa559da18644cb55951eaede1be5f3bc9e63676b",
+          "old": "c45de9f76d6faf0c6c679ea10e9b43d689f139adcab18043a9ac791d8a693d7b"
+        }
+      },
+      "time": 1792844474.0641327
+    },
+    {
+      "time": 1792848127.5043988,
+      "by": "Pinch (HQ session)",
+      "authorization": "S Telegram 1620 (2026-10-24): fix dependency stalls now, outside the queue",
+      "change": "agentq.py: dependency holds become soft. Dead deps (blocked/cancelled/missing) release holds; when the queue is idle with nothing startable and no timed retry due within 1h, the held job most others wait for runs; hold refuses cycles, dead deps and re-holding after an idle drop.",
+      "old_new": {
+        "/home/deploy/agentq/agentq.py": {
+          "old": "6cf168beeb6bac57e9f09e9c608642a3fbb1d8c0977bcf7ddc6c576585e1b788",
+          "new": "96d8542d668a961168a944e020a5366e30ae66921a1abe0724c5473eabd9d9ea"
+        }
+      },
+      "backup": "/home/deploy/agentq/backups/agentq.py.20261024-pre-softdeps"
+    },
+    {
+      "utc": "2026-10-24T15:59Z",
+      "by": "Pinch",
+      "authorization": "S Telegram 1641 'raise the limit' (Alphonomic HQ)",
+      "files": {
+        "/etc/systemd/system.control/user@1000.service.d/50-MemoryHigh.conf": {
+          "old": "02cc3cbfb501b18190ebe647634f0a4bb7d646b9f3d5802d4b241edd48dd11b2",
+          "new": "22e7b1bbc0d7626abaec3dedb9c5794850cf9ee73b222a151dbd72a1621e470a"
+        }
+      },
+      "change": "user@1000 MemoryHigh 3221225472 -> 3758096384 (= user@1000 MemoryMax, unchanged 3.5 GiB). Gateway+codex helper group was throttled at 3 GiB and PSI stalls stopped the queue 6x on 2026-10-24. MemoryMax values checked by control.py unchanged."
+    },
+    {
+      "utc": "2026-10-24T16:56Z",
+      "by": "Pinch",
+      "authorization": "AGENTS.md fix policy (S tg 1378); Rook AGREE via gateway bridge 2026-10-24 ~16:58Z; INC-261024-20",
+      "files": {
+        "/home/deploy/.config/systemd/user.control/agentq.service.d/50-MemoryHigh.conf": {
+          "old": "a6f408f0f2827ccbc786c07678219332532a6bc0ec9228da14d92f1d1f1f3c04",
+          "new": "99e8ec4991bc701eb2bcca94cdfb1da35b1f6d5551f037b9a7b3977570b34be3"
+        },
+        "/home/deploy/.config/systemd/user.control/agentq.service.d/50-MemoryMax.conf": {
+          "old": "957a21839af8df7eb0a6a4b225f7acdcda46cf6d62463531ef510b26b968e26f",
+          "new": "7706bf387087f26938b5912d5384169adb30e0fda37ac682c5721ea47fc52106"
+        }
+      },
+      "change": "agentq.service (dispatcher tick) MemoryHigh 96M->256M, MemoryMax 128M->384M. reconcile_quota() runs codex app-server inside the unit; at ~100MB it was throttled at memory.high and its full-stall tripped pressure.py stops 20s after every resume (7 stops 2026-10-24). control.py does not check these values; user@1000 MemoryMax 3.5G unchanged."
+    },
+    {
+      "utc": "2026-10-26T22:30:11.379096+00:00",
+      "by": "Pinch",
+      "authorization": "S, Alphonomic HQ Telegram 1802 (2026-10-26, 'no one is working, fix what caused this halt'); AGENTS.md fix policy (S tg 1378); Rook AGREE via gateway bridge 2026-10-26 ~22:10Z after one CHANGES round",
+      "files": [
+        "/home/deploy/agentq/agentq.py"
+      ],
+      "changes": [
+        "on_success: REQUEUE while friend VPS is up (new friend_vps_up(): read-only cached health.json, same rule as offload healthy()) = continuation: next tick (2 min), event 'continued:', not counted toward the 12 VPS waits; capped 48/24h then BLOCKED (looping). VPS down: unchanged 30 min / 12 path. Fixes idle 30-min gaps and false 'VPS unavailable 24 h' blocks (#485, #608 at 10/12)."
+      ],
+      "tests": "ops-work/inc-261026-requeue/test_efficiency.py: 3 new + 2 adjusted requeue tests pass, fail on old file; pre-existing env-dependent failures identical on old file",
+      "old_hash": "96d8542d668a961168a944e020a5366e30ae66921a1abe0724c5473eabd9d9ea",
+      "new_hash": "fa9a63fd9581a23f2acfbfe9455c9a53c8ba5d38d329c40a278aaab770d7bd8e"
+    },
+    {
+      "utc": "2026-10-27T01:29:17.022060+00:00",
+      "by": "Pinch",
+      "authorization": "AGENTS.md fix policy (S tg 1378); Rook AGREE via gateway bridge 2026-10-27 ~01:30Z (INC-261027-09)",
+      "files": "['/usr/local/libexec/agentq-safety/control.py', '/etc/systemd/system/agentq-work.slice']",
+      "changes": "agentq-work.slice and control.py launch(): worker MemoryHigh 768M -> 1024M (= MemoryMax). Soft-cap reclaim throttle of the worker showed as global memory PSI full>=1 and pressure.py fenced the queue (4 stops 00:46-01:24Z, job595, slice high events 228275). MemoryMax 1024M, swap 0, CPU, IO, tasks unchanged; aggregate budget unchanged. Note (Rook): an OOM inside agentq.slice still stops the queue.",
+      "tests": "one-line diffs; control.py ast parse; systemd-analyze verify slice; post-install memory.high check",
+      "old_hash": "{'/usr/local/libexec/agentq-safety/control.py': '12f462f1259280896e7be8056252204298667fd03c81dcd309ef614ed3ddcd16', '/etc/systemd/system/agentq-work.slice': '0b7edd43dcafd6a3848ea55333ce567b77069727b285a7689a015d4b6c336274'}",
+      "new_hash": "{'/usr/local/libexec/agentq-safety/control.py': 'f47ac601705df39e44475859dbef352016fdb19ec1ee29920219a91700380789', '/etc/systemd/system/agentq-work.slice': 'd17a978654c35ef3ea5a4e64a66b1e74df8e07ea73232a38c846a5a2070d9879'}"
+    },
+    {
+      "utc": "2026-10-27T04:00:47.797574+00:00",
+      "by": "Pinch",
+      "authorization": "AGENTS.md fix policy (S tg 1378); Rook AGREE via gateway bridge 2026-10-27 ~04:10Z (INC-261027-11)",
+      "files": "['/usr/local/libexec/agentq-safety/control.py']",
+      "changes": "control.py monitor renew_loop: log refusal/error reason as JSON; PermissionError remote_fenced_local_resources (local health sample stale or PSI blip, refused before any RPC) now skips that renewal instead of fencing. observe() still owns pressure stops; a lapsed lease is stopped by the Trans watchdog and the next renewal is refused and cancel-verified (clean) or fences. All other refusals/errors still fence. Cause: 03:55:48Z stop killed job608 (RUNBOOK known gap from #318).",
+      "tests": "py_compile; agentq/tmp/renewblip/t.py: blip+recovery no fence, blip then expiry->clean no fence, unverified cancel fences, other refusal fences, transport error fences; original code fails case 1",
+      "old_hash": "{'/usr/local/libexec/agentq-safety/control.py': 'f47ac601705df39e44475859dbef352016fdb19ec1ee29920219a91700380789'}",
+      "new_hash": "{'/usr/local/libexec/agentq-safety/control.py': '17338c484ade9c242be7f28e87a94ec108efd37b42befb66acefba4826c1e4ca'}"
+    },
+    {
+      "utc": "2026-10-27T12:53Z",
+      "by": "Pinch (HQ, non-worker)",
+      "authorization": "job619 build, independent APPROVE of ops-work 78d0afd5a5f4b6304f80c18aa61f7a75c343b3c3; job618 friend cap 4g (S tg 1825); HQ application ops620",
+      "files": {
+        "/usr/local/libexec/agentq-safety/control.py": {
+          "old": "17338c484ade9c242be7f28e87a94ec108efd37b42befb66acefba4826c1e4ca",
+          "new": "db4d290323a4e0d90ff597ed920da32dc610660813d1ac0c8a5798ae7d7bc3ce"
+        }
+      },
+      "backups": "/home/deploy/agentq/backups/619",
+      "change": "remote_admit/renewal accept exact int lease capability 2048 or 4096 MiB; max_cpus int 1, lease_seconds int 30, all other gates unchanged",
+      "tests": "lease-cap-619/test_lease_cap_619 + existing control suites via offload; runs/619/NOTES.md"
+    },
+    {
+      "utc": "2026-10-27T13:00:13.256708+00:00",
+      "by": "Pinch",
+      "authorization": "S, Alphonomic HQ Telegram 1842 (2026-10-27, 'fix the issue of both of you being idle'); AGENTS.md fix policy (S tg 1378); Rook AGREE via gateway bridge 2026-10-27 ~13:00Z",
+      "files": [
+        "/home/deploy/agentq/agentq.py"
+      ],
+      "changes": [
+        "on_success: REQUEUE continuation now tracks progress (commit list + WIP patch digest vs previous handoff, field 'stalled'); 3 consecutive no-progress continuations -> BLOCKED 'waiting without progress' routed to the decider instead of relaunching every 2 min up to 48x. Root cause: job416 REQUEUE-polled for the HQ #619 install, so the queue never had the settled gap that install needed (deadlock). save_handoff returns its info. Prompt: never REQUEUE just to wait for HQ/another job/an install/a receipt."
+      ],
+      "tests": "agentq/tmp/noprogress/t.py on a DB copy: no-progress job416 BLOCKED on the 4th REQUEUE and routed to decider; job with new commits each round keeps continuing",
+      "old_hash": "fa9a63fd9581a23f2acfbfe9455c9a53c8ba5d38d329c40a278aaab770d7bd8e",
+      "new_hash": "71b400ca308f07376b94ccc8a2fb10e0c00f224931fac546040dd9c49eb1ee50"
+    },
+    {
+      "utc": "2026-10-27T13:05:31.402577+00:00",
+      "by": "Pinch",
+      "authorization": "S, Alphonomic HQ Telegram 1842 (2026-10-27, 'fix the issue of both of you being idle'); AGENTS.md fix policy (S tg 1378); Rook AGREE via gateway bridge 2026-10-27 ~13:00Z",
+      "files": [
+        "/home/deploy/agentq/agentq.py"
+      ],
+      "changes": [
+        "FIX of the 13:00Z amendment (71b400ca): my new latest_handoff(job) shadowed the existing latest_handoff(job_id) and crashed ticks (13:04Z, TypeError, no worker affected); renamed to handoff_info(job_id) reusing latest_handoff. Same behaviour otherwise: on_success: REQUEUE continuation now tracks progress (commit list + WIP patch digest vs previous handoff, field 'stalled'); 3 consecutive no-progress continuations -> BLOCKED 'waiting without progress' routed to the decider instead of relaunching every 2 min up to 48x. Root cause: job416 REQUEUE-polled for the HQ #619 install, so the queue never had the settled gap that install needed (deadlock). save_handoff returns its info. Prompt: never REQUEUE just to wait for HQ/another job/an install/a receipt."
+      ],
+      "tests": "agentq/tmp/noprogress/t.py on a DB copy: no-progress job416 BLOCKED on the 4th REQUEUE and routed to decider; job with new commits each round keeps continuing; ops-work/inc-261026-requeue/test_efficiency.py identical results to fa9a63fd (2 known pre-existing failures)",
+      "old_hash": "71b400ca308f07376b94ccc8a2fb10e0c00f224931fac546040dd9c49eb1ee50",
+      "new_hash": "492189a6af53123b21a57402bdd00089944a98bfd12810daefc29173fa6eb6f5"
+    },
+    {
+      "utc": "2026-10-28T06:37Z",
+      "by": "Pinch",
+      "authorization": "INC-261027-18 (Pinch, delegated); AGENTS.md fix policy (S tg 1378); queue #639",
+      "files": {
+        "/home/deploy/agentq/agentq.py": {
+          "old": "492189a6af53123b21a57402bdd00089944a98bfd12810daefc29173fa6eb6f5",
+          "new": "4c4fe4f6d38d1ebd06378943715992b65ab59b6bdd2d4a4b6d79d775bc1ea555"
+        },
+        "/home/deploy/.local/bin/offload": {
+          "old": "1950b0030d10fb697d135901eaf508f8db40ec80405aa4d2423940d112c4cc60",
+          "new": "ec9d874ace63c60a4b4111aaa7014ac07cfdfff8d1d141a13cced02ed4b25c2a"
+        }
+      },
+      "backups": "/home/deploy/agentq/backups/639",
+      "change": "Worker prompt states its absolute end time (RuntimeMaxSec=1h unchanged). offload run --timeout N refuses (exit 76, before any lease/transfer, no placement marker) when N+195s exceeds the time left in the calling agentq-exec unit (systemctl RuntimeMaxUSec/ActiveEnterTimestampMonotonic); untimed runs are capped at the time left; unreadable deadline fails closed; outside a worker unchanged. Remote command wrapped in timeout -k 15 N. No cap or safety floor changed.",
+      "tests": "inc-261027-18/test_inc_261027_18 (12) + test_efficiency baseline-equal; see runs/639/NOTES.md"
+    }
+  ]
+}
