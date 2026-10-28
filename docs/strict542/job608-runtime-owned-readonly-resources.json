@@ -1,0 +1,24 @@
+{
+  "after": {
+    "cpu.max": "100000 100000\n",
+    "cpu.pressure": "some avg10=55.37 avg60=47.51 avg300=29.40 total=12278068554\nfull avg10=49.60 avg60=43.07 avg300=27.26 total=10968682592\n",
+    "cpu.stat": "usage_usec 110664314258\nuser_usec 85526698911\nsystem_usec 25137615347\ncore_sched.force_idle_usec 0\nnr_periods 1222633\nnr_throttled 506408\nthrottled_usec 17139942392\nnr_bursts 0\nburst_usec 0\n",
+    "memory.current": "2016960512\n",
+    "memory.events": "low 0\nhigh 4362663\nmax 5526434\noom 14\noom_kill 9\noom_group_kill 0\n",
+    "memory.high": "4294967296\n",
+    "memory.max": "4294967296\n",
+    "memory.pressure": "some avg10=1.31 avg60=0.75 avg300=0.83 total=2236621766\nfull avg10=0.00 avg60=0.10 avg300=0.54 total=1463626400\n"
+  },
+  "before": {
+    "cpu.max": "100000 100000\n",
+    "cpu.pressure": "some avg10=55.46 avg60=47.26 avg300=29.22 total=12276907146\nfull avg10=50.18 avg60=42.93 avg300=27.12 total=10967631821\n",
+    "cpu.stat": "usage_usec 110662295971\nuser_usec 85524769564\nsystem_usec 25137526406\ncore_sched.force_idle_usec 0\nnr_periods 1222613\nnr_throttled 506388\nthrottled_usec 17137244298\nnr_bursts 0\nburst_usec 0\n",
+    "memory.current": "2010157056\n",
+    "memory.events": "low 0\nhigh 4362663\nmax 5526434\noom 14\noom_kill 9\noom_group_kill 0\n",
+    "memory.high": "4294967296\n",
+    "memory.max": "4294967296\n",
+    "memory.pressure": "some avg10=1.38 avg60=0.74 avg300=0.83 total=2236607967\nfull avg10=0.00 avg60=0.10 avg300=0.55 total=1463619660\n"
+  },
+  "interval_seconds": 2,
+  "kind": "READ_ONLY_RUNTIME_RESOURCE_SAMPLE"
+}
