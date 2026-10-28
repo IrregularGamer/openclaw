@@ -33,9 +33,15 @@ library-test receipt is carried, not a new library-test run.
 The compiler stage also completed with actual offload/result0 and all10compiler
 test cases passing, with no failed/cancelled/skipped/todo cases. See
 job608-stage-compiler-owned-verification.json for exact current receipt/log pins.
-The current checks and runtime exports are prepared UNUSED, not yet run. They
-supply no passing-check, build/package or application authority. Exact next
-commands and stage acceptance are in job608-after-native-owned-continuation.md.
+The current checks stage completed with actual client/result0 and478passing
+scoped checks (154Node/126Python/198installed), zero failures/cancellations/skips/
+pending/todo. job608-stage-checks-owned-verification.json records its exact
+receipt c375ddd855d16b1b35f33a99681acb1905dafc28d87fda83f4a3b26edde95045,
+all7returned hashes and raw evidence. Independent exact acceptance is required.
+The earlier485estimate double-counted seven existing build-checkpoint cases;
+all frozen checks ran. Runtime remains UNUSED, not yet run. Successful checks
+are no build/package or application authority. Exact runtime-FIRST command
+and stage acceptance are in job608-after-native-owned-continuation.md.
 Exact native source pin/addon expectation remains
 `0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042`.
 Inherited descriptive runner_commit/source_correction_review metadata in the
@@ -45,7 +51,7 @@ edit or relabel a launched manifest or an old successful receipt.
 
 ALL2b native7/compiler7/runtime7/checks8 receipts are HISTORICAL ONLY for5f.
 Checks8's477passing scoped checks do not establish current-source acceptance.
-Native and compiler are complete as scoped above. New checks/runtime, all
+Native, compiler and checks are complete as scoped above. New runtime, all
 unified0..5, middle, sdk0..1, tail and package stages MUST complete at5f with
 exact accepted predecessor receipts.
 The canonical finite stage DAG, full diagnostics, production package lifecycle,

@@ -1,4 +1,4 @@
-# Job608: verified native/compiler, exact remaining executable continuation
+# Job608: verified native/compiler/checks, exact runtime-first continuation
 
 SOURCE preparation remains INCOMPLETE;595 MUST NOT APPLY. No installed, sealed,
 root, unit, sudoers, service, gateway, scheduler, credential or provider mutation
@@ -17,38 +17,54 @@ Neither successful stage is a current full-check, gateway build/package or
 application receipt. All2b receipts/exports remain historical and unusable for
 current stage acceptance. Never relabel a receipt or retry a spent export.
 
-Two NEW exports are verified and UNUSED:
-- checks: /home/deploy/agentq/tmp/export608-stage-checks-owned-next,
-  manifest afd3a1870bcf3ff7cad682c808acc39a42917f91d2877c134dbe4ca8b4c3e8f3;
-  ready record job608-checks-owned-ready.json.
+The checks export /home/deploy/agentq/tmp/export608-stage-checks-owned-next is
+now SPENT/SUCCESSFUL, actual client/result0 and receipt
+c375ddd855d16b1b35f33a99681acb1905dafc28d87fda83f4a3b26edde95045.
+Manifest remains afd3a1870bcf3ff7cad682c808acc39a42917f91d2877c134dbe4ca8b4c3e8f3.
+job608-stage-checks-owned-verification.json and job608-stage-checks-owned-outcome.md
+record all478 actual scoped checks passing:154Node/126Python/198installed,
+zero failures/cancellations/skips/pending/todo. The earlier485 estimate counted
+seven preexisting cases twice: the independent8/8 run comprised ONE new owner
+regression plus seven existing build-checkpoint cases. The actual runner and
+all original checks remain unchanged. No current full upstream suite or complete
+gateway build/package is claimed. Obtain independent exact checks acceptance.
+
+The runtime export remains verified and UNUSED:
 - runtime: /home/deploy/agentq/tmp/export608-stage-runtime-owned-next,
   manifest cf8907d39394721c84a496cd9aed4d52f33f4bf335335cf91a7a03252329cd80;
   ready record job608-runtime-owned-ready.json. It stages the actual accepted
   native outputs/receipt, never the old2b runtime checkpoint.
 
-NEXT fresh worker FIRST: check clean source/remote pin, offload health/deadline,
+NEXT fresh worker FIRST run runtime: check clean source/remote pin, offload health/deadline,
 exact manifest/runner/helper/input pins, no result directory and sufficient disk
 return reserve. Giant archive digests are streamed by the preparer; never use
 read_bytes() on the690MB archive. Do not prepare exports during another upload.
-The prior installed checks alone took864.7s; the current worker therefore does
-not gamble a late short run. Execute ALL checks, including actual supervisor/IPC
-refusal/cancellation/settlement suites and new inherited-entry regressions:
+Current checks completed all original supervisor/IPC refusal/cancellation and
+settlement suites plus the new inherited-entry regression. Installed tooling
+took858.41s. Its actual receipt, raw client rc, all seven returned file hashes,
+raw test/installed/client logs and installed JSON are committed; do not rerun it
+or substitute a historical2b receipt. The existing ready record is preparation
+history, not a current UNUSED assertion for the spent checks export.
+
+Runtime's supported2100s timeout plus195s settlement reserve no longer fits the
+checks worker. Launch the still-UNUSED runtime export FIRST in a fresh worker
+using its full finite allowance, after exact verifier/disk/deadline checks:
 
 ```sh
-cd /home/deploy/agentq/tmp/export608-stage-checks-owned-next
+cd /home/deploy/agentq/tmp/export608-stage-runtime-owned-next
 offload deadline
 python3 stage608.py verify-inputs
-offload run --timeout 2460 --mem 4g --cpus 1 --artifacts result608-checks -- timeout -k 15s 2400s sh run608.sh
+offload run --timeout 2460 --mem 4g --cpus 1 --artifacts result608-runtime -- timeout -k 15s 2400s sh run608.sh
 ```
 
 Capture the ACTUAL client exit/log in runs/608, verify result exit0, exact stage
 receipt/source/common export/manifest/output hashes and complete test inventories,
 then commit/push the raw evidence and independently review acceptance. A partial
 log, missing exit/receipt, skip, cancellation, refusal or timeout is not success.
-The original477scoped checks plus the8new owner regressions are expected to run;
-record actual counts, not an assumed485. No full upstream suite is claimed.
+All checks-stage inventory is now actual478 as reconciled above; do not invent
+additional cases from the prior independent combined8/8 run.
 
-Then run the UNUSED runtime export after exact verifier/disk/deadline checks.
+For a later bounded scheduling decision, the supported runtime alternative is:
 If2460s plus195s settlement fits, use the same outer2460/inner2400 command.
 Otherwise a supported finite35minute runtime run may be used ONLY if2100s plus
 195s settlement fits; the source stage and every original phase/check remain

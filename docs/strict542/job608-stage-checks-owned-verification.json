@@ -1,0 +1,137 @@
+{
+  "actual_offload_exit": 0,
+  "all_returned_files_sha256": {
+    "checks/installed.json": "6950ea5f6cf7fca85ca7ab80a25cecffcee840af2b9bf1a59aec0932cc79f37e",
+    "checks/stage-receipt.json": "c375ddd855d16b1b35f33a99681acb1905dafc28d87fda83f4a3b26edde95045",
+    "checks/tests.log": "15f5e9e40c991c30e7e08bc026d0cd55c3a3996a2dec40399d600b3994d1116c",
+    "exit-code.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "strict542-checks/installed.json": "6950ea5f6cf7fca85ca7ab80a25cecffcee840af2b9bf1a59aec0932cc79f37e",
+    "strict542-checks/installed.log": "c9c4a28ae2ea13cbc1fb9c16914b13aee76f85ce8856c70aa12ef60e754a3ec7",
+    "strict542-checks/tests.log": "15f5e9e40c991c30e7e08bc026d0cd55c3a3996a2dec40399d600b3994d1116c"
+  },
+  "compressed_evidence": {
+    "job608-stage-checks-owned-installed.json.gz": {
+      "expanded_bytes": 68274,
+      "expanded_sha256": "6950ea5f6cf7fca85ca7ab80a25cecffcee840af2b9bf1a59aec0932cc79f37e",
+      "sha256": "33f3f799e91fd9fd2b17e3bab380c8fc81f4d613eeb329025c34e1d712e10986"
+    },
+    "job608-stage-checks-owned-installed.log.gz": {
+      "expanded_bytes": 6535,
+      "expanded_sha256": "c9c4a28ae2ea13cbc1fb9c16914b13aee76f85ce8856c70aa12ef60e754a3ec7",
+      "sha256": "9b1ac87ab3a6d01baa899574c23b3aa6ce149960a6c5f814504c5a2414716a9c"
+    },
+    "job608-stage-checks-owned-offload.log.gz": {
+      "expanded_bytes": 18703,
+      "expanded_sha256": "4721879faf2cabac0f6f112f7860bfbb0c4776a8a4cc0071464b4556cc04ce85",
+      "sha256": "a9e2002bdce706f0d0a48698f4a7dc403e684a4f137cc29bcbb9614e888fa744"
+    },
+    "job608-stage-checks-owned-tests.log.gz": {
+      "expanded_bytes": 47179,
+      "expanded_sha256": "15f5e9e40c991c30e7e08bc026d0cd55c3a3996a2dec40399d600b3994d1116c",
+      "sha256": "c7f669b32dc3f17bb31b06b6454a5596228e6d8e9887d048f285fa441479aa60"
+    }
+  },
+  "count_reconciliation": "Prior477 plus ONE new checkpoint-owned608.test.mjs test =478. Earlier independent8/8 reviewed checkpoint-owned plus seven existing build-checkpoint cases; those seven already belong to477. No test removed or waived; full frozen runner inventory ran.",
+  "export": "/home/deploy/agentq/tmp/export608-stage-checks-owned-next",
+  "installed": {
+    "numFailedTests": 0,
+    "numPassedTests": 198,
+    "numPendingTests": 0,
+    "numTodoTests": 0,
+    "numTotalTestSuites": 13,
+    "numTotalTests": 198,
+    "success": true
+  },
+  "installed_test_file_inventory": [
+    {
+      "cases": 4,
+      "path": "/work/source/test/scripts/build-all-bounded608.test.ts",
+      "status": "passed"
+    },
+    {
+      "cases": 165,
+      "path": "/work/source/test/scripts/tsdown-build.test.ts",
+      "status": "passed"
+    },
+    {
+      "cases": 15,
+      "path": "/work/source/test/scripts/write-plugin-sdk-entry-dts.test.ts",
+      "status": "passed"
+    },
+    {
+      "cases": 14,
+      "path": "/work/source/test/scripts/write-unified-entry-dts.test.ts",
+      "status": "passed"
+    }
+  ],
+  "node_summary": {
+    "cancelled": [
+      0,
+      0,
+      0
+    ],
+    "fail": [
+      0,
+      0,
+      0
+    ],
+    "pass": [
+      101,
+      15,
+      38
+    ],
+    "skipped": [
+      0,
+      0,
+      0
+    ],
+    "tests": [
+      101,
+      15,
+      38
+    ],
+    "todo": [
+      0,
+      0,
+      0
+    ]
+  },
+  "node_total": 154,
+  "python_OK_summaries": 11,
+  "python_runs": [
+    15,
+    18,
+    13,
+    19,
+    17,
+    3,
+    5,
+    2,
+    6,
+    14,
+    14
+  ],
+  "python_total": 126,
+  "receipt": {
+    "exit_code": 0,
+    "kind": "JOB608_STAGE_RECEIPT",
+    "manifest_sha256": "afd3a1870bcf3ff7cad682c808acc39a42917f91d2877c134dbe4ca8b4c3e8f3",
+    "outputs": {
+      "checks/installed.json": "6950ea5f6cf7fca85ca7ab80a25cecffcee840af2b9bf1a59aec0932cc79f37e",
+      "checks/tests.log": "15f5e9e40c991c30e7e08bc026d0cd55c3a3996a2dec40399d600b3994d1116c"
+    },
+    "run_id": "stage608-checks-next",
+    "source_commit": "5f7d810b7f254e4f06dbf7761b557ba90bf1a2b0",
+    "source_export_sha256": "76b4b47a0e5c3e0a157f75ff1b76d60753c8acdbf5f76bc495668dd985d70f64",
+    "stage": "checks",
+    "stage_inputs": {}
+  },
+  "receipt_sha256": "c375ddd855d16b1b35f33a99681acb1905dafc28d87fda83f4a3b26edde95045",
+  "remaining": "runtime/unified0..5/middle/sdk0..1/tail/package, exact artifact/source/action/privilege/seal and REAL automatic queue reviews;595 MUST NOT APPLY",
+  "result_exit": 0,
+  "scope": "ACTUAL_COMPLETE_FINITE_CHECKS_STAGE_ONLY_NOT_FULL_UPSTREAM_SUITE_BUILD_PACKAGE_OR_APPLICATION",
+  "source_commit": "5f7d810b7f254e4f06dbf7761b557ba90bf1a2b0",
+  "source_export_sha256": "76b4b47a0e5c3e0a157f75ff1b76d60753c8acdbf5f76bc495668dd985d70f64",
+  "total_scoped_checks": 478,
+  "verification": "PASS"
+}
