@@ -1,5 +1,54 @@
 # Independent exact native API observer review608
 
+Current verdict: APPROVE CORRECTED EXTERNAL SOURCE ONLY at
+da316fb6a5b47efab05446db17401b78acdc3f5a. This supersedes the CHANGES verdict
+below for4a52e828 only. The observer remains UNLAUNCHED; no actual installed
+preload smoke, diagnostic launcher/export, build/checkpoint receipt or
+application is approved. Candidate95 executable source remains unchanged.
+
+I independently reran the corrected focused suite:10 passed,0 failed/skipped,
+512.291056ms on Node24.21.0. Actual working observer/preload/test/doc bytes equal
+exactda316fb6. Observer SHA256 is
+f50191444745bf8710fe513b66d36a2cfb16b50f9427d5875bb1aba8a68be87d;
+preload SHA256 is
+87fb06525b6baa62adf05a8308f5281271659a952422126582c1d14b7c307d83.
+Both node syntax checks and git diff --check passed.
+
+The correction independently resolves both original findings. Clock/sink
+exceptions are contained and mark returned observation state failed; original
+API dispatch, awaited value and rejection remain intact. The preload examines
+that state at beforeExit and refuses otherwise successful natural completion,
+while preserving an existing failure code. This refusal path is statically
+reviewed, not an actual preload integration result. Observation failures must
+never be interpreted as compiler failures or successful diagnostic evidence.
+
+Child detection now stops at the application/-- boundary and recognizes the
+--import pair and --import= form in the option prefix. The application argument
+collision regressions pass, as do prior option-object/result/error forwarding
+cases. No change-request findings remain. The future exact launcher must still
+validate its actual Node arguments and child module loading under admitted
+integration.
+
+I read both committed review-regression logs. RED SHA256
+f6434cc30ad334045f6966abfa1ddc309669131940dcd373fc6f41d704442816 contains
+the original seven passes plus three expected failures for sink, clock and
+application-argument collision. GREEN SHA256
+452d9e6cb31a22a1fca9e23189b1441dd7661279a56b11552c9290b4ba78b88b contains
+10 passes. The independent run above confirms GREEN on the reviewed bytes;
+I did not restore old source to rerun RED.
+
+The captured actual API/export/source-reference checks below remain applicable.
+The corrected wrappers still observe only the fixed public method set and do
+not alter compiler options, owner predicates, diagnostics, source membership,
+source bytes, cancellation or publication controls. Actual installed preload
+smoke is REQUIRED before interpreting future phase output; the exact external
+launcher/export requires separate review and must suppress receipts, preserve
+actual status separation and obey finite budget/settlement gates. All original
+final source/artifact/action/privilege/seal/automatic-queue/HQ and post-restart
+owner plus accepted-run acknowledgement gates remain.595 MUST NOT APPLY.
+
+## Initial exact4a52e828 review and resolved findings
+
 Verdict: CHANGES for source4a52e82814b0bd197cf8b5bbeae986e82d119740.
 This is an external, UNLAUNCHED diagnostic observer review only. Candidate95
 executable freeze is unchanged. No diagnostic launcher/export is prepared or
