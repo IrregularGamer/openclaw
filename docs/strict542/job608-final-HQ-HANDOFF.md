@@ -9,38 +9,46 @@ job598-HQ-HANDOFF.md; their detailed fixed-owner restrictions still apply.
 
 ## Exact evidence and remaining gates
 
-The current frozen BUILD source is `2b543da30204b358d4b58a8fb52b060f405f3789`
+The current frozen BUILD source is `5f7d810b7f254e4f06dbf7761b557ba90bf1a2b0`
 on maintained `IrregularGamer/openclaw:strict542-source552`, common export identity
-`a19f36956cc6f215571dcc6d037772533053e351d018941f97eb846f8df9cc49`.
-Native7, compiler7, runtime7 and checks8 receipts bind that exact source/export.
-Their committed receipts are job608-stage-{native7,compiler7,runtime7,checks8}-receipt.json.
-Native7 reproduces independently pinned addon
+`76b4b47a0e5c3e0a157f75ff1b76d60753c8acdbf5f76bc495668dd985d70f64`.
+Exact owned-entry correction00221e2d has independent source approval5108bb4a;
+its actual unified0 outcome60f3da40 has independent evidence review5f7d810b.
+The earlier combined source review3d178871 remains the baseline review for2b;
+the exact correction review supplies the subsequent executable-source change.
+The refreshed complete old877458d7/new5f7d810b source inventory is committed at
+2001a386, independently reviewedf1e69d66:535paths,552present old/new blob
+occurrences,537distinct blobs and518old absences. It supplies source identities,
+not a final artifact/tree or installed-target inventory.
+
+New native and checks exports use this SAME freeze/common export identity.
+Native launch/preflight is job608-native-owned-launch.json atdc4e4710; its
+manifest SHA256 is708a52c26402db1b4b030c0a0a64a91911fb6dd15d9798ade2e12b091c2f9e2e.
+The finite4GiB/1CPU/swap0 native run is in progress at the time of this handoff
+refresh; no current successful receipt is claimed here. The checks export is
+prepared UNUSED, not yet run. Record their actual verified outcomes separately.
+Exact native source pin/addon expectation remains
 `0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042`.
-Checks8 actual admitted offload/result exit0 and verified output hashes are in
-job608-stage-checks8-verification.json:477 scoped checks pass, comprising153Node,
-126Python and198installed tooling cases, with no skips/todo/failures. Raw JSON
-and logs are committed. This includes actual fd3 transport/synthetic supervisor,
-peer/cgroup/MainPID refusal and cancellation/descendant-settlement coverage.
-It does not establish live HQ ownership, loaded production code or provider access.
+Inherited descriptive runner_commit/source_correction_review metadata in the
+launch manifest is historical; actual current runner/helper bytes, source pin,
+common export identity and correction review above control acceptance. Never
+edit or relabel a launched manifest or an old successful receipt.
 
-Exact combined SOURCE ONLY review3d178871 covers frozen2b543da3, including all
-checkpoint changes and unchanged earlier591 installer/supervisor/IPC source.
-The per-group producer/join is integrated into the finite stage DAG and reviewed;
-real unified-0..5, middle, sdk-0/1, tail and package runs remain required.
-Decision644 helper correction1a8b422d has independent approval4832c8c1 and six
-passing tiny filesystem checks. It hardlinks immutable accepted inputs and keeps
-every source/export/native/output digest check. Do not move the build pin to
-these later preparation/evidence commits. New unified exports are prepared and
-verified individually; exact manifests, space preflights and next commands are in
-[job608-declaration-stage-continuation.md](job608-declaration-stage-continuation.md).
+ALL2b native7/compiler7/runtime7/checks8 receipts are HISTORICAL ONLY for5f.
+Checks8's477passing scoped checks do not establish current-source acceptance.
+New native/checks/compiler/runtime, all unified0..5, middle, sdk0..1, tail and
+package stages MUST complete at5f with exact accepted predecessor receipts.
+The canonical finite stage DAG, full diagnostics, production package lifecycle,
+IPC/refusal/cancellation/settlement tests and native pins remain unchanged.
+See job608-after-unified0-continuation.md for the corrected inherited-owner
+entry; the old2b unified exports and older timed-out package attempts cannot be
+retried or promoted. Do not move the build pin for later evidence-only commits.
 
-Historical package7 at591158cf timed out124 during its first declaration API
-invocation after all58 compiler records passed. Its outcome/independent review
-remain diagnostics only. All older591158cf/835714fb stage receipts and spent or
-interrupted exports are unusable for current acceptance. Never retry a spent or
-unknown export, or promote partial output. There is NO completed current
-package/tree/action/next-seal receipt, artifact old/new hashes, exact artifact/
-action/privilege/seal approval or automatic queue approval.595 MUST NOT APPLY.
+There is NO completed current package/tree/action/next-seal receipt, artifact
+old/new hashes, exact artifact/action/privilege/seal approval or automatic queue
+approval. Source policy reviews remain limited to their exact stated scope.
+595 MUST NOT APPLY. No local heavy build, root/unit/sudoers/service/budget/config/
+credential/provider or scheduler change is authorized by this preparation.
 
 Current explicit baseline proposal is job608-final-baseline-proposal.json,
 SHA256428ced690f0b3a3cb8a7a2a4fc38570ffa71fa98d7298423376a26fd3ee6a9c9.
@@ -69,15 +77,15 @@ current baseline/seal pair, not the older post619 runs note.
 
 ```sh
 set -eu
-: "${FINAL_EXPORT608:?actual successful frozen2b543da3 package export required}"
+: "${FINAL_EXPORT608:?actual successful frozen5f7d810b package export required}"
 SOURCE608=/home/deploy/agentq/tmp/source552
 RESULT608="$FINAL_EXPORT608/result608-package"
 python3 - "$FINAL_EXPORT608" "$SOURCE608" <<'VERIFY608'
 import hashlib,json,sys
 from pathlib import Path
 root=Path(sys.argv[1]);m=json.loads((root/'export-manifest.json').read_text())
-assert m['source_commit']=='2b543da30204b358d4b58a8fb52b060f405f3789'
-assert m['source_export_sha256']=='a19f36956cc6f215571dcc6d037772533053e351d018941f97eb846f8df9cc49'
+assert m['source_commit']=='5f7d810b7f254e4f06dbf7761b557ba90bf1a2b0'
+assert m['source_export_sha256']=='76b4b47a0e5c3e0a157f75ff1b76d60753c8acdbf5f76bc495668dd985d70f64'
 assert m['stage']=='package'
 assert (root/'result608-package/exit-code.txt').read_text().strip()=='0'
 source=Path(sys.argv[2])/'docs/strict542'
@@ -88,10 +96,10 @@ STAGE608=$(mktemp -d /home/deploy/agentq/tmp/stage608.XXXXXX)
 cp -a "$RESULT608/result598-build/runtime" "$STAGE608/runtime"
 cp "$RESULT608/result598-build/tree.json" "$STAGE608/tree.json"
 tar -xOf "$FINAL_EXPORT608/native598.tar" tools/scheduler_handoff/candidate/maintenance.py >"$STAGE608/maintenance.py"
-git -C "$SOURCE608" show 2b543da3:src/gateway/strict542/native_owner_server.py >"$STAGE608/native_owner_server542.py"
-git -C "$SOURCE608" show 2b543da3:src/gateway/strict542/root_owner_supervisor.py >"$STAGE608/root_owner_supervisor542.py"
+git -C "$SOURCE608" show 5f7d810b:src/gateway/strict542/native_owner_server.py >"$STAGE608/native_owner_server542.py"
+git -C "$SOURCE608" show 5f7d810b:src/gateway/strict542/root_owner_supervisor.py >"$STAGE608/root_owner_supervisor542.py"
 for name608 in strict542-owner.service 90-strict542-598.conf application598.py apply598.py; do
-  git -C "$SOURCE608" show "2b543da3:docs/strict542/$name608" >"$STAGE608/$name608"
+  git -C "$SOURCE608" show "5f7d810b:docs/strict542/$name608" >"$STAGE608/$name608"
 done
 python3 "$STAGE608/application598.py" action --tree "$STAGE608/tree.json" --stage "$STAGE608" --baseline "$SOURCE608/docs/strict542/job608-final-baseline-proposal.json" --output "$STAGE608/action.json"
 python3 - "$STAGE608" "$SOURCE608/docs/strict542/job608-final-seal-original.json" <<'NEXTSEAL608'
