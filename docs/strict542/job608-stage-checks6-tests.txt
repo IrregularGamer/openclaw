@@ -1,0 +1,448 @@
+(node:52) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ actual selected memory source owners
+  ✔ preserves ordinary egress redaction refresh while the new decoder stays read-only (7.780629ms)
+  ✔ records the controller's committed route after preparation and refresh overlays (7.299965ms)
+  ✔ refuses model headers and owner-attached transport overrides on capture and completion (1.395566ms)
+  ✔ reads the concrete session and decodes only its already selected memory credential (1.233997ms)
+  ✔ invalidates an existing lease through the actual owner mutation (1.01018ms)
+  ✔ invalidates an existing lease through the actual owner mutation (1.0207ms)
+  ✔ invalidates an existing lease through the actual owner mutation (0.99302ms)
+  ✔ invalidates an existing lease through the actual owner mutation (1.03842ms)
+  ✔ invalidates an existing lease through the actual owner mutation (1.35104ms)
+  ✔ refuses a key without producer selection and never resolves a stored or fallback key (0.951698ms)
+  ✔ invalidates on an auth reload and refuses instead of selecting storage credentials (0.945767ms)
+  ✔ rejects an undecodable process-local sentinel without credential fallback (0.802938ms)
+  ✔ fences the exact active-run registration and rejects its replacement (1.276909ms)
+✔ actual selected memory source owners (31.1481ms)
+▶ selected existing memory auth read
+  ✔ accepts the exact active OAuth model and finite unexpired selected credential (26.007651ms)
+  ✔ accepts explicit API-key selection without an expiry (0.330439ms)
+  ✔ refuses unsupported or absent selected mode undefined (0.328547ms)
+  ✔ refuses unsupported or absent selected mode  (0.253864ms)
+  ✔ refuses unsupported or absent selected mode token (0.319286ms)
+  ✔ refuses unsupported or absent selected mode aws-sdk (0.229634ms)
+  ✔ refuses unsupported or absent selected mode native (0.236136ms)
+  ✔ refuses unsupported or absent selected mode configured (0.326419ms)
+  ✔ refuses OAuth with unusable expiry undefined (0.43598ms)
+  ✔ refuses OAuth with unusable expiry null (0.500003ms)
+  ✔ refuses OAuth with unusable expiry NaN (0.263758ms)
+  ✔ refuses OAuth with unusable expiry Infinity (0.174948ms)
+  ✔ refuses OAuth with unusable expiry -Infinity (0.185719ms)
+  ✔ refuses OAuth with unusable expiry 999 (0.133587ms)
+  ✔ refuses OAuth with unusable expiry 1000 (0.188008ms)
+  ✔ refuses missing or placeholder memory selection undefined (0.180374ms)
+  ✔ refuses missing or placeholder memory selection  (0.13082ms)
+  ✔ refuses missing or placeholder memory selection    (0.122168ms)
+  ✔ refuses missing or placeholder memory selection __aws_sdk_auth__ (0.123316ms)
+  ✔ refuses an override that was not installed by the model/auth selector (0.270993ms)
+  ✔ refuses a selected modelId from a different route (0.240418ms)
+  ✔ refuses a selected api from a different route (0.152436ms)
+  ✔ refuses a selected baseUrl from a different route (0.200242ms)
+  ✔ expires before the before/after acceptance check without a refresh (0.794405ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.340691ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.291881ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.281568ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.257712ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.260452ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.279207ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.243492ms)
+  ✔ invalidates after the existing auth owner or selection changes (0.305636ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.403392ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.248743ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.243245ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.256273ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.241472ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.250794ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.244214ms)
+  ✔ invalidates after session disposal, replacement or actual route changes (0.282587ms)
+  ✔ refuses absent, disposed or unidentified concrete sessions (0.28787ms)
+  ✔ refuses absent, disposed or unidentified concrete sessions (0.193634ms)
+  ✔ refuses absent, disposed or unidentified concrete sessions (0.199238ms)
+  ✔ invalidates an ABA auth replacement even with identical final key bytes (0.345675ms)
+  ✔ invalidates a route round trip recorded by the actual model mutation epoch (0.311918ms)
+  ✔ rechecks after auth capture before returning a session lease (0.323907ms)
+✔ selected existing memory auth read (50.763445ms)
+(node:66) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ accepts exact native result only with settled acknowledgement (19.538197ms)
+✔ cancellation waits for explicit native settled acknowledgement (83.744478ms)
+✔ EOF without settlement refuses (5.414126ms)
+✔ cancellation without native acknowledgement refuses by shared deadline (253.904508ms)
+✔ wrong correlation, nonsettled, malformed owner and oversize refuse (24.550924ms)
+✔ deadline above 10 seconds and already cancelled refuse before connection (1.995292ms)
+✔ native owner decoder refuses caller echoes and extra fields (1.725121ms)
+✔ actual Node to Python adapter accepts pinned predicates and acknowledges settled cancellation (2021.927714ms)
+▶ usage.preflight exact542 request schema
+  ✔ accepts exactly the exact542 keys (3.109685ms)
+  ✔ refuses extra, missing and malformed keys (1.268606ms)
+✔ usage.preflight exact542 request schema (8.14647ms)
+▶ usage.preflight acceptance
+  ✔ returns verified fresh AVAILABLE windows for the actual active route (8.287912ms)
+  ✔ never serves cache or historical success (1.868665ms)
+✔ usage.preflight acceptance (11.254074ms)
+▶ usage.preflight identity and route refusals
+  ✔ refuses unknown agent (1.891514ms)
+  ✔ refuses wrong HQ session (0.785801ms)
+  ✔ refuses wrong owner name (1.008481ms)
+  ✔ refuses PID1 placeholder (0.836473ms)
+  ✔ refuses PID reuse (start differs) (1.411752ms)
+  ✔ refuses model drift (2.770699ms)
+  ✔ refuses provider drift (1.412298ms)
+  ✔ refuses an idle/unbound session (0.96996ms)
+  ✔ refuses ambiguous or missing in-memory auth (1.289312ms)
+  ✔ refuses expired auth with zero provider, refresh or write calls (0.742912ms)
+  ✔ never sends the token to a non-default or non-Anthropic route (1.295262ms)
+  ✔ refuses API-key auth and models without known window applicability (1.069916ms)
+  ✔ refuses native owner refusal, unavailability and owner change after the read (2.478017ms)
+  ✔ refuses auth/account or model replacement observed after the provider GET (2.171377ms)
+✔ usage.preflight identity and route refusals (24.229388ms)
+▶ usage.preflight provider window refusals
+  ✔ refuses empty, partial, malformed, nonfinite and out-of-range windows (6.723985ms)
+  ✔ reports UNAVAILABLE for any exhausted applicable window, including above 100% (2.013866ms)
+  ✔ reports UNAVAILABLE for exhausted non-applicable or unlisted-but-known windows (1.206873ms)
+  ✔ reports UNAVAILABLE when an exhausted window accompanies a missing one (0.853754ms)
+  ✔ does not let non-applicable windows mask exhaustion or a missing window (1.263275ms)
+  ✔ refuses 401/403/429/5xx, unexpected status, network failure and body errors (3.758032ms)
+✔ usage.preflight provider window refusals (20.53472ms)
+▶ usage.preflight deadline, cancellation and clocks
+  ✔ refuses a late provider response after the shared deadline (27.63496ms)
+  ✔ aborts a hanging provider GET at the real deadline with no later publication (1003.237501ms)
+  ✔ propagates caller cancellation to the provider transport (14.986625ms)
+  ✔ refuses an already-cancelled request without native or provider work (1.452636ms)
+  ✔ refuses wall-clock anomalies (1.824411ms)
+✔ usage.preflight deadline, cancellation and clocks (1051.987948ms)
+▶ strict Anthropic usage GET
+  ✔ sends one GET with no redirect, cache or retry and hides error bodies (136.321503ms)
+  ✔ parses JSON, bounds the body and maps aborts (6.503864ms)
+✔ strict Anthropic usage GET (143.757947ms)
+▶ gateway registration
+  ✔ registers usage.preflight as an operator.read method and keeps usage.status (0.833447ms)
+  ✔ leaves the usage.status handler byte-identical (30.572796ms)
+  ✔ binds preflight only to the strict dependencies and refuses unauthenticated clients (1.449291ms)
+✔ gateway registration (33.733821ms)
+ℹ tests 101
+ℹ suites 9
+ℹ pass 101
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5802.501371
+test_actual_existing_predicates_accept_root_gateway_peer (test_native_owner_server.NativeTransport.test_actual_existing_predicates_accept_root_gateway_peer) ... ok
+test_cancel_ack_means_actual_child_reaped (test_native_owner_server.NativeTransport.test_cancel_ack_means_actual_child_reaped) ... ok
+test_escaped_descendant_is_adopted_and_settled_with_pidfd (test_native_owner_server.NativeTransport.test_escaped_descendant_is_adopted_and_settled_with_pidfd) ... ok
+test_exited_leader_does_not_publish_before_descendant_settlement (test_native_owner_server.NativeTransport.test_exited_leader_does_not_publish_before_descendant_settlement) ... ok
+test_external_pin_drift_refuses_before_execution (test_native_owner_server.NativeTransport.test_external_pin_drift_refuses_before_execution) ... ok
+test_extra_keys_and_overlong_deadline_refuse_without_work (test_native_owner_server.NativeTransport.test_extra_keys_and_overlong_deadline_refuse_without_work) ... ok
+test_grandchild_holding_stdout_is_killed_and_reaped_before_ack (test_native_owner_server.NativeTransport.test_grandchild_holding_stdout_is_killed_and_reaped_before_ack) ... ok
+test_ignored_sigterm_is_killed_and_reaped_before_ack (test_native_owner_server.NativeTransport.test_ignored_sigterm_is_killed_and_reaped_before_ack) ... ok
+test_native_caller_cgroup_refuses_queue (test_native_owner_server.NativeTransport.test_native_caller_cgroup_refuses_queue) ... ok
+test_native_mainpid_refuses_other_gateway (test_native_owner_server.NativeTransport.test_native_mainpid_refuses_other_gateway) ... ok
+test_nonroot_endpoint_refuses_without_work (test_native_owner_server.NativeTransport.test_nonroot_endpoint_refuses_without_work) ... ok
+test_peer_start_change_between_actual_owner_checks_refuses (test_native_owner_server.NativeTransport.test_peer_start_change_between_actual_owner_checks_refuses) ... ok
+test_root_endpoint_outside_gateway_cgroup_refuses (test_native_owner_server.NativeTransport.test_root_endpoint_outside_gateway_cgroup_refuses) ... ok
+test_shared_deadline_terminates_and_reaps (test_native_owner_server.NativeTransport.test_shared_deadline_terminates_and_reaps) ... ok
+test_subreaper_setup_failure_refuses_without_work (test_native_owner_server.NativeTransport.test_subreaper_setup_failure_refuses_without_work) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 1.549s
+
+OK
+test_actual_synthetic_child_is_killed_and_reaped_on_cancel (test_native_preparation.NativePreparation.test_actual_synthetic_child_is_killed_and_reaped_on_cancel) ... ok
+test_actual_synthetic_child_is_killed_and_reaped_on_timeout (test_native_preparation.NativePreparation.test_actual_synthetic_child_is_killed_and_reaped_on_timeout) ... ok
+test_bad_mainpid_refuses (test_native_preparation.NativePreparation.test_bad_mainpid_refuses) ... ok
+test_cancel_refuses_and_restores_handlers (test_native_preparation.NativePreparation.test_cancel_refuses_and_restores_handlers) ... ok
+test_cli_read_precedes_controller_and_mutating_error_handler (test_native_preparation.NativePreparation.test_cli_read_precedes_controller_and_mutating_error_handler) ... ok
+test_deadline_covers_all_native_checks (test_native_preparation.NativePreparation.test_deadline_covers_all_native_checks) ... ok
+test_deadline_invalid_expired_and_overlong (test_native_preparation.NativePreparation.test_deadline_invalid_expired_and_overlong) ... ok
+test_derived_identity_and_existing_predicate_before_after (test_native_preparation.NativePreparation.test_derived_identity_and_existing_predicate_before_after) ... ok
+test_exact_existing_cgroup_predicate_refuses_queue (test_native_preparation.NativePreparation.test_exact_existing_cgroup_predicate_refuses_queue) ... ok
+test_gateway_mainpid_change_refuses (test_native_preparation.NativePreparation.test_gateway_mainpid_change_refuses) ... ok
+test_missing_or_malformed_proc_refuses (test_native_preparation.NativePreparation.test_missing_or_malformed_proc_refuses) ... ok
+test_nonroot_refuses (test_native_preparation.NativePreparation.test_nonroot_refuses) ... ok
+test_nonzero_systemctl_refuses (test_native_preparation.NativePreparation.test_nonzero_systemctl_refuses) ... ok
+test_root_with_valid_gateway_but_queue_caller_refuses (test_native_preparation.NativePreparation.test_root_with_valid_gateway_but_queue_caller_refuses) ... ok
+test_second_owner_check_caller_cgroup_change_refuses (test_native_preparation.NativePreparation.test_second_owner_check_caller_cgroup_change_refuses) ... ok
+test_second_owner_check_root_loss_refuses (test_native_preparation.NativePreparation.test_second_owner_check_root_loss_refuses) ... ok
+test_second_owner_check_start_change_refuses (test_native_preparation.NativePreparation.test_second_owner_check_start_change_refuses) ... ok
+test_start_change_refuses (test_native_preparation.NativePreparation.test_start_change_refuses) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.869s
+
+OK
+test_endpoint_idle_lifetime_and_parent_death_refuse (test_root_owner_supervisor.RootSupervisor.test_endpoint_idle_lifetime_and_parent_death_refuse) ... ok
+test_gateway_mainpid_change_ends_before_cpu_or_next_request (test_root_owner_supervisor.RootSupervisor.test_gateway_mainpid_change_ends_before_cpu_or_next_request) ... ok
+test_gateway_pidfd_exit_and_cpu_budget_end_monitor (test_root_owner_supervisor.RootSupervisor.test_gateway_pidfd_exit_and_cpu_budget_end_monitor) ... ok
+test_parent_sigkill_cancels_real_native_tree_before_receipt (test_root_owner_supervisor.RootSupervisor.test_parent_sigkill_cancels_real_native_tree_before_receipt) ... ok
+test_partial_framing_has_absolute_deadline_and_checks_lifecycle (test_root_owner_supervisor.RootSupervisor.test_partial_framing_has_absolute_deadline_and_checks_lifecycle) ... ok
+test_placement_mismatch_refuses_without_limits_or_serving (test_root_owner_supervisor.RootSupervisor.test_placement_mismatch_refuses_without_limits_or_serving) ... ok
+test_real_fd3_endpoint_and_escaped_descendant_settle_on_shutdown (test_root_owner_supervisor.RootSupervisor.test_real_fd3_endpoint_and_escaped_descendant_settle_on_shutdown) ... ok
+test_reviewed_server_bytes_and_isolated_external_pin (test_root_owner_supervisor.RootSupervisor.test_reviewed_server_bytes_and_isolated_external_pin) ... ok
+test_self_only_exact_cgroup_placement_and_limits (test_root_owner_supervisor.RootSupervisor.test_self_only_exact_cgroup_placement_and_limits) ... ok
+test_server_pin_drift_refuses_before_execution (test_root_owner_supervisor.RootSupervisor.test_server_pin_drift_refuses_before_execution) ... ok
+test_socket_parent_writable_refuses_before_bind (test_root_owner_supervisor.RootSupervisor.test_socket_parent_writable_refuses_before_bind) ... ok
+test_source_path_writable_or_symlink_refuses (test_root_owner_supervisor.RootSupervisor.test_source_path_writable_or_symlink_refuses) ... ok
+test_worker_and_nonroot_and_argument_contexts_refuse_before_source (test_root_owner_supervisor.RootSupervisor.test_worker_and_nonroot_and_argument_contexts_refuse_before_source) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.400s
+
+OK
+test_action_binding_and_independent_reviews (test_application598.PreparationTests.test_action_binding_and_independent_reviews) ... ok
+test_action_native_hash_refuses_without_patch (test_application598.PreparationTests.test_action_native_hash_refuses_without_patch) ... ok
+test_action_stage_tamper_refuses (test_application598.PreparationTests.test_action_stage_tamper_refuses) ... ok
+test_check_tree_revalidates_all_evidence_shape (test_application598.PreparationTests.test_check_tree_revalidates_all_evidence_shape) ... ok
+test_deterministic_tree (test_application598.PreparationTests.test_deterministic_tree) ... ok
+test_escaping_and_absolute_symlinks_refuse (test_application598.PreparationTests.test_escaping_and_absolute_symlinks_refuse) ... ok
+test_fixture_cannot_claim_built (test_application598.PreparationTests.test_fixture_cannot_claim_built) ... ok
+test_fixture_receipt_cannot_be_promoted (test_application598.PreparationTests.test_fixture_receipt_cannot_be_promoted) ... ok
+test_internal_symlink_is_recorded (test_application598.PreparationTests.test_internal_symlink_is_recorded) ... ok
+test_missing_dependency_or_dist_refuses (test_application598.PreparationTests.test_missing_dependency_or_dist_refuses) ... ok
+test_nonzero_build_and_tampered_log_refuse (test_application598.PreparationTests.test_nonzero_build_and_tampered_log_refuse) ... ok
+test_receipt_output_cannot_overwrite (test_application598.PreparationTests.test_receipt_output_cannot_overwrite) ... ok
+test_runtime_mutation_refuses_validation (test_application598.PreparationTests.test_runtime_mutation_refuses_validation) ... ok
+test_runtime_root_mode_refuses (test_application598.PreparationTests.test_runtime_root_mode_refuses) ... ok
+test_secret_names_refuse (test_application598.PreparationTests.test_secret_names_refuse) ... ok
+test_source_reference_and_lock_drift_refuse (test_application598.PreparationTests.test_source_reference_and_lock_drift_refuse) ... ok
+test_special_file_fifo_refuses (test_application598.PreparationTests.test_special_file_fifo_refuses) ... ok
+test_tree_rejects_setuid (test_application598.PreparationTests.test_tree_rejects_setuid) ... ok
+test_unknown_target_or_missing_seal_refuses (test_application598.PreparationTests.test_unknown_target_or_missing_seal_refuses) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.168s
+
+OK
+test_file_ancestor_refuses (test_apply598.Application.test_file_ancestor_refuses) ... ok
+test_new_release_parent_directories (test_apply598.Application.test_new_release_parent_directories) ... ok
+test_symlink_ancestor_refuses (test_apply598.Application.test_symlink_ancestor_refuses) ... ok
+test_absolute_lifetime_interrupts_with_refusal (test_apply598.GuardedApplication.test_absolute_lifetime_interrupts_with_refusal) ... ok
+test_intermediate_directory_replacement_cannot_redirect_privileged_write (test_apply598.GuardedApplication.test_intermediate_directory_replacement_cannot_redirect_privileged_write) ... ok
+test_native_quiet_refuses_fixture_or_remote_uncertainty (test_apply598.GuardedApplication.test_native_quiet_refuses_fixture_or_remote_uncertainty) ... ok
+test_native_quiet_requires_valid_registered_worker (test_apply598.GuardedApplication.test_native_quiet_requires_valid_registered_worker) ... ok
+test_original_seal_accepts_only_exact_existing_link_and_target_bytes (test_apply598.GuardedApplication.test_original_seal_accepts_only_exact_existing_link_and_target_bytes) ... ok
+test_previous_application_journal_refuses_replay (test_apply598.GuardedApplication.test_previous_application_journal_refuses_replay) ... ok
+test_queue_gate_requires_actual_done_build_matching_review_and_exact_result (test_apply598.GuardedApplication.test_queue_gate_requires_actual_done_build_matching_review_and_exact_result) ... ok
+test_unchanged_guard_drift_refuses_final_verification (test_apply598.GuardedApplication.test_unchanged_guard_drift_refuses_final_verification) ... ok
+test_changed_new_file_or_runtime_refuses_before_first_mutation (test_apply598.RollbackApplication.test_changed_new_file_or_runtime_refuses_before_first_mutation) ... /usr/local/lib/python3.14/unittest/mock.py:2259: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7822f0de8f40>
+  def __init__(self, name, parent):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/local/lib/python3.14/unittest/mock.py:2259: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7822f0de8d60>
+  def __init__(self, name, parent):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/local/lib/python3.14/unittest/mock.py:2259: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7822f0de94e0>
+  def __init__(self, name, parent):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/local/lib/python3.14/unittest/mock.py:2259: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7822f0de97b0>
+  def __init__(self, name, parent):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/local/lib/python3.14/unittest/mock.py:2259: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7822f0de98a0>
+  def __init__(self, name, parent):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/local/lib/python3.14/unittest/mock.py:2259: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7822f0de9a80>
+  def __init__(self, name, parent):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/local/lib/python3.14/unittest/mock.py:2259: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7822f0de9990>
+  def __init__(self, name, parent):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/local/lib/python3.14/unittest/mock.py:2259: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7822f0de9b70>
+  def __init__(self, name, parent):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/local/lib/python3.14/unittest/mock.py:2259: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7822f0de9c60>
+  def __init__(self, name, parent):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/local/lib/python3.14/unittest/mock.py:2259: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7822f0de9d50>
+  def __init__(self, name, parent):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/local/lib/python3.14/unittest/mock.py:2259: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7822f0de9e40>
+  def __init__(self, name, parent):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/local/lib/python3.14/unittest/mock.py:2259: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7822f0de9f30>
+  def __init__(self, name, parent):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/local/lib/python3.14/unittest/mock.py:2259: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7822f0dea020>
+  def __init__(self, name, parent):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/local/lib/python3.14/unittest/mock.py:2259: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7822f0dea110>
+  def __init__(self, name, parent):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/local/lib/python3.14/unittest/mock.py:2259: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7822f0dea200>
+  def __init__(self, name, parent):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_complete_unchanged_owner_rolls_back_by_quarantining_all_exact_new_targets (test_apply598.RollbackApplication.test_complete_unchanged_owner_rolls_back_by_quarantining_all_exact_new_targets) ... ok
+test_nonabsent_baseline_or_changed_backup_or_new_bytes_refuses_before_quarantine (test_apply598.RollbackApplication.test_nonabsent_baseline_or_changed_backup_or_new_bytes_refuses_before_quarantine) ... ok
+test_partial_old_or_postrestart_owner_journals_refuse_without_mutation (test_apply598.RollbackApplication.test_partial_old_or_postrestart_owner_journals_refuse_without_mutation) ... ok
+test_quarantine_failure_poison_survives_and_cannot_be_replayed (test_apply598.RollbackApplication.test_quarantine_failure_poison_survives_and_cannot_be_replayed) ... ok
+test_started_root_supervisor_refuses (test_apply598.RollbackApplication.test_started_root_supervisor_refuses) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.321s
+
+OK
+test_exact_rebuilt_receipt_and_addon_publish_only_verified_bytes (test_native_consumer608.SourceOnlyConsumer.test_exact_rebuilt_receipt_and_addon_publish_only_verified_bytes) ... ok
+test_rebuilt_addon_or_receipt_drift_never_publishes_native_directory (test_native_consumer608.SourceOnlyConsumer.test_rebuilt_addon_or_receipt_drift_never_publishes_native_directory) ... ok
+test_uploaded_binary_or_redirected_receipt_refuses_before_compilation (test_native_consumer608.SourceOnlyConsumer.test_uploaded_binary_or_redirected_receipt_refuses_before_compilation) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.034s
+
+OK
+test_changed_filter_refuses (test_native_finalizer608.FinalizerPatch.test_changed_filter_refuses) ... ok
+test_early_release_follows_metadata_and_precedes_crosslinks_without_other_changes (test_native_finalizer608.FinalizerPatch.test_early_release_follows_metadata_and_precedes_crosslinks_without_other_changes) ... ok
+test_early_release_refuses_changed_metadata_boundary (test_native_finalizer608.FinalizerPatch.test_early_release_refuses_changed_metadata_boundary) ... ok
+test_patch_preserves_original_finalizer_predicate_and_all_other_bytes (test_native_finalizer608.FinalizerPatch.test_patch_preserves_original_finalizer_predicate_and_all_other_bytes) ... ok
+test_old_retention_mutation_keeps_rust_delimiters (test_native_finalizer608.RetentionNegativeControl.test_old_retention_mutation_keeps_rust_delimiters) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 2.155s
+
+OK
+test_changed_context_refuses_before_writing (test_native_compaction608.CompactPatch.test_changed_context_refuses_before_writing) ... ok
+test_serial_replacement_precedes_link_metadata_without_changing_other_bytes (test_native_compaction608.CompactPatch.test_serial_replacement_precedes_link_metadata_without_changing_other_bytes) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+OK
+test_caller_package_policy_refuses_even_empty (test_frozen_package608.FrozenPackage.test_caller_package_policy_refuses_even_empty) ... ok
+test_legacy_fallback_or_postphase_drift_never_emits_receipt (test_frozen_package608.FrozenPackage.test_legacy_fallback_or_postphase_drift_never_emits_receipt) ... ok
+test_lifecycle_cooldown_and_lock_trust_overlays_refuse (test_frozen_package608.FrozenPackage.test_lifecycle_cooldown_and_lock_trust_overlays_refuse) ... ok
+test_missing_or_redirected_target_lock_refuses (test_frozen_package608.FrozenPackage.test_missing_or_redirected_target_lock_refuses) ... ok
+test_original_source_or_config_drift_refuses (test_frozen_package608.FrozenPackage.test_original_source_or_config_drift_refuses) ... ok
+test_success_records_both_lock_identities_and_exclusive_receipt (test_frozen_package608.FrozenPackage.test_success_records_both_lock_identities_and_exclusive_receipt) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.034s
+
+OK
+test_baseline_unrelated_failure_refuses (test_lease619_suite_gate.EvidenceGate.test_baseline_unrelated_failure_refuses) ... ok
+test_candidate_new_failure_refuses (test_lease619_suite_gate.EvidenceGate.test_candidate_new_failure_refuses) ... ok
+test_complete_reviewed_difference_has_exact_counts_and_hashes (test_lease619_suite_gate.EvidenceGate.test_complete_reviewed_difference_has_exact_counts_and_hashes) ... ok
+test_exact_reviewed_shared_diagnostics_can_include_stale_dispatcher_fixture (test_lease619_suite_gate.EvidenceGate.test_exact_reviewed_shared_diagnostics_can_include_stale_dispatcher_fixture) ... ok
+test_missing_baseline_regression_is_not_accepted_as_equivalence (test_lease619_suite_gate.EvidenceGate.test_missing_baseline_regression_is_not_accepted_as_equivalence) ... ok
+test_missing_failure_trace_refuses (test_lease619_suite_gate.EvidenceGate.test_missing_failure_trace_refuses) ... ok
+test_omitted_or_duplicated_test_refuses (test_lease619_suite_gate.EvidenceGate.test_omitted_or_duplicated_test_refuses) ... ok
+test_partial_log_without_any_failing_names_refuses (test_lease619_suite_gate.EvidenceGate.test_partial_log_without_any_failing_names_refuses) ... ok
+test_python_older_class_labels_and_subtests (test_lease619_suite_gate.EvidenceGate.test_python_older_class_labels_and_subtests) ... ok
+test_shared_arbitrary_error_is_not_a_known_fixture_exception (test_lease619_suite_gate.EvidenceGate.test_shared_arbitrary_error_is_not_a_known_fixture_exception) ... ok
+test_skipped_case_refuses (test_lease619_suite_gate.EvidenceGate.test_skipped_case_refuses) ... ok
+test_success_label_cannot_hide_error (test_lease619_suite_gate.EvidenceGate.test_success_label_cannot_hide_error) ... ok
+test_timeout_cannot_pass_even_if_shell_would_exit_zero (test_lease619_suite_gate.EvidenceGate.test_timeout_cannot_pass_even_if_shell_would_exit_zero) ... ok
+test_wrong_completion_count_refuses (test_lease619_suite_gate.EvidenceGate.test_wrong_completion_count_refuses) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.067s
+
+OK
+✔ bounded package preserves observed capacity floor and refuses compiler overrides (3.17324ms)
+✔ bounded package refuses verbose control that disables reviewed lazy barrels (0.70547ms)
+✔ bounded package refuses every bundled plugin selector by presence (1.665637ms)
+✔ whole config selection retains object identity and exact typed inventory (2.756494ms)
+✔ bounded compiler stages cannot skip canonical typed gates (0.724505ms)
+✔ compiler scanner failures and timeout cannot become package evidence (0.433497ms)
+✔ consumed archives and private store release preserves installed bytes and links (14.951845ms)
+✔ escaping installed link refuses before deleting store (7.352412ms)
+✔ unsupported install policy and archive symlinks refuse (5.949303ms)
+✔ census preserves every ordered config and alias/source pair including duplicate group names (16.660559ms)
+✔ selection returns the entire original graph by identity (1.950321ms)
+✔ refuses invalid indices, declaration graphs and drifted inventory (8.458208ms)
+✔ one-CPU diagnostic owns fixed native pools without changing caller environment (1.257187ms)
+✔ refuses inherited native worker controls before owner generates limits (3.950026ms)
+✔ accepts matching compile and lib-test stage receipts with the pinned addon (30.574534ms)
+✔ required native compiler refuses absence while diagnostic stock mode stays explicit (19.385041ms)
+✔ refuses missing, swapped, failed or disagreeing stage receipts and a changed addon (133.703831ms)
+✔ trusted native environment derives required bytes without mutating the caller (18.484292ms)
+✔ parent refuses native controls and child accepts only the exact validated addon (39.102146ms)
+✔ trusted child revalidates bytes and cannot fall back when the required compiler disappears (17.242591ms)
+✔ admits fixed serial diagnostic only with observed bounded capacity (12.150566ms)
+✔ admits the approved4GiB diagnostic ceiling with observed bounded remainder (7.003454ms)
+✔ refuses unknown or oversized capacity and existing output (1.522668ms)
+✔ refuses caller-controlled compiler budget, selection, preload or plugin exclusions (1.729474ms)
+✔ compiler warnings, unresolved imports and unsettled/failed runs refuse success (1.040791ms)
+✔ accepts only the owning tsx launcher cache-disabled value (0.871175ms)
+✔ refuses inherited output and native thread scheduling controls even when empty (1.113955ms)
+✔ refuses inherited allocator controls even when empty or matching generated policy (1.269693ms)
+✔ fixed allocator policy preserves caller and pool bounds without raising any budget (2.927475ms)
+✔ refuses the unified graph at or below the observed reclaim-thrash limit (5.766126ms)
+✔ refuses caller-selected native addon even when empty (1.228246ms)
+✔ refuses inherited native tracing filters and output destinations before imports (1.613993ms)
+✔ only config15 receives the fixed release phase tracing policy without caller mutation (1.019166ms)
+✔ only exact self-contained workers defer required minification (3.238012ms)
+✔ changed worker packaging/minify policy refuses instead of omitting a phase (0.723936ms)
+✔ each compiler refusal prevents minifier and second phase failure propagates (1.245093ms)
+✔ settled bundle precedes fixed minifier and expired deadline refuses (1.38175ms)
+✔ worker lazy barrels preserve owner input options and existing experimental policy (0.586006ms)
+ℹ tests 38
+ℹ suites 0
+ℹ pass 38
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1936.692238
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.1 [39m[90m/work/source[39m
+
+[90mstderr[2m | test/scripts/tsdown-build.test.ts[2m > [22m[2mresolveTsdownBuildInvocation[2m > [22m[2mrefuses a direct tsdown entry before executeBuild when the live Gateway fence trips
+[22m[39m[openclaw] Refusing to rebuild dist while a managed Gateway is still running.
+
+ [32m✓[39m [30m[46m tooling [49m[39m test/scripts/tsdown-build.test.ts [2m([22m[2m165 tests[22m[2m)[22m[33m 16890[2mms[22m[39m
+   [32m✓[39m resolveTsdownBuildInvocation [2m(123)[22m
+     [33m[2m✓[22m[39m prints wrapper help without invoking pnpm or tsdown[33m 2277[2mms[22m[39m
+     [33m[2m✓[22m[39m preserves separately owned outputs during default build cleanup[33m 1406[2mms[22m[39m
+     [33m[2m✓[22m[39m preserves separately owned outputs during source launcher --no-clean cleanup[33m 1308[2mms[22m[39m
+     [33m[2m✓[22m[39m preserves separately owned outputs during build-all startup metadata cleanup[33m 2442[2mms[22m[39m
+     [33m[2m✓[22m[39m preserves separately owned outputs during cached build-all cleanup[33m 2448[2mms[22m[39m
+     [33m[2m✓[22m[39m sanitizes selected declarations only after a successful direct build[33m 538[2mms[22m[39m
+   [32m✓[39m runTsdownBuildInvocation [2m(12)[22m
+     [33m[2m✓[22m[39m reports cleanup rejecting a successful compiler with a remaining descendant[33m 463[2mms[22m[39m
+     [33m[2m✓[22m[39m preserves successful native declarations when source syntax is invalid[33m 2310[2mms[22m[39m
+     [33m[2m✓[22m[39m preserves successful runtime JavaScript when source syntax is invalid[33m 1001[2mms[22m[39m
+     [33m[2m✓[22m[39m cleans process-group descendants before forwarding parent SIGTERM[33m 1016[2mms[22m[39m
+ [32m✓[39m [30m[46m tooling [49m[39m test/scripts/write-unified-entry-dts.test.ts [2m([22m[2m14 tests[22m[2m)[22m[33m 390238[2mms[22m[39m
+   [32m✓[39m write-unified-entry-dts [2m(14)[22m
+     [33m[2m✓[22m[39m owns the executable generator closure without unrelated CI planning code[33m 2020[2mms[22m[39m
+     [33m[2m✓[22m[39m still traverses a compiler source when the generator also imports it[33m 1135[2mms[22m[39m
+     [33m[2m✓[22m[39m rejects an unowned dynamic edge in the real generator graph[33m 1411[2mms[22m[39m
+     [33m[2m✓[22m[39m rejects an unresolved static edge in the real generator graph[33m 1442[2mms[22m[39m
+     [33m[2m✓[22m[39m rejects a same-count computed import retarget[33m 3073[2mms[22m[39m
+     [33m[2m✓[22m[39m leaves physical and external installed dependencies to lockfile topology[33m 6137[2mms[22m[39m
+     [32m✓[39m canonical group cache history [2m(4)[22m
+       [33m[2m✓[22m[39m builds initial canonical groups and checks consumer types[33m 73878[2mms[22m[39m
+       [33m[2m✓[22m[39m reuses canonical groups after unrelated input edits[33m 16396[2mms[22m[39m
+       [33m[2m✓[22m[39m rebuilds runtime and only the edited canonical group[33m 24216[2mms[22m[39m
+       [33m[2m✓[22m[39m matches cold declarations to the mixed cached generation and cleans staging[33m 52439[2mms[22m[39m
+     [33m[2m✓[22m[39m records successful empty partitions for a bounded plugin selection[33m 43685[2mms[22m[39m
+     [33m[2m✓[22m[39m preserves the previous generation on last compiler failure[33m 44692[2mms[22m[39m
+     [33m[2m✓[22m[39m preserves the previous generation on missing successful receipt[33m 51413[2mms[22m[39m
+     [33m[2m✓[22m[39m preserves the previous generation on cached input mutation after emit[33m 66784[2mms[22m[39m
+ [32m✓[39m [30m[46m tooling [49m[39m test/scripts/write-plugin-sdk-entry-dts.test.ts [2m([22m[2m15 tests[22m[2m)[22m[33m 437748[2mms[22m[39m
+   [32m✓[39m write-plugin-sdk-entry-dts [2m(15)[22m
+     [33m[2m✓[22m[39m retains private stages and both compiler errors when a child is unjoined[33m 11041[2mms[22m[39m
+     [33m[2m✓[22m[39m preserves repository input metadata during direct declaration builds[33m 27508[2mms[22m[39m
+     [33m[2m✓[22m[39m rejects newly selected bounded plugins instead of restoring their previous SDK cache[33m 44610[2mms[22m[39m
+     [33m[2m✓[22m[39m rejects newly selected optional plugins instead of restoring their previous SDK cache[33m 37888[2mms[22m[39m
+     [33m[2m✓[22m[39m rejects newly selected Docker plugins instead of restoring their previous SDK cache[33m 44887[2mms[22m[39m
+     [32m✓[39m canonical partition history [2m(4)[22m
+       [33m[2m✓[22m[39m publishes initial production partitions without unrelated inputs[33m 31014[2mms[22m[39m
+       [33m[2m✓[22m[39m emits extra canonical QA entries for identical sources[33m 55991[2mms[22m[39m
+       [33m[2m✓[22m[39m rebuilds changed partitions and removes obsolete declarations[33m 52228[2mms[22m[39m
+       [33m[2m✓[22m[39m restores byte-stable relocated cache and public nominal identity[33m 12763[2mms[22m[39m
+     [33m[2m✓[22m[39m rejects source declaration export before replacing published or local declarations[33m 15663[2mms[22m[39m
+     [33m[2m✓[22m[39m rejects transitive declaration export before replacing published or local declarations[33m 16730[2mms[22m[39m
+     [33m[2m✓[22m[39m rejects missing entry before replacing published or local declarations[33m 15794[2mms[22m[39m
+     [33m[2m✓[22m[39m rejects invalid config before replacing published or local declarations[33m 2998[2mms[22m[39m
+     [33m[2m✓[22m[39m rejects missing declaration before replacing published or local declarations[33m 14495[2mms[22m[39m
+     [33m[2m✓[22m[39m rejects input mutation after emit before replacing published or local declarations[33m 53206[2mms[22m[39m
+ [32m✓[39m [30m[46m tooling [49m[39m test/scripts/build-all-bounded608.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 2745[2mms[22m[39m
+   [32m✓[39m complete typed bounded package scheduling [2m(4)[22m
+     [33m[2m✓[22m[39m requires actual native bytes, derives bounded heap and retains ordinary full/package guard[33m 2724[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m4 passed[39m[22m[90m (4)[39m
+[2m      Tests [22m [1m[32m198 passed[39m[22m[90m (198)[39m
+[2m   Start at [22m 05:50:45
+[2m   Duration [22m 857.52s[2m (tests 99%)[22m
+
+JSON report written to /work/source/strict542-checks/installed.json

@@ -1,0 +1,50 @@
+✔ real split worker retains side effects, names, dynamic imports, maps and legal text (926.49584ms)
+✔ real minifier rejects parse failure and redirected output without replacing bytes (544.176082ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2429.033138
+✔ native last-use codegen is byte-equal to stock for shared graphs, ESM/CJS, maps and minification (1660.786356ms)
+✔ release native addon emits existing link and generation phase spans to stdout (474.149373ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3024.690999
+✔ owning config enables lazy barrels only for the complete shared runtime graph (2970.496756ms)
+✔ lazy barrels preserve side effects, live singleton identity and dynamic exports (106.945255ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4327.524353
+✔ owning config enables lazy barrels only for the complete shared runtime graph (1358.55893ms)
+✔ lazy barrels preserve side effects, live singleton identity and dynamic exports (190.655334ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2437.819073
+✔ real split worker retains side effects, names, dynamic imports, maps and legal text (455.026451ms)
+✔ real minifier rejects parse failure and redirected output without replacing bytes (264.708762ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1030.276914
