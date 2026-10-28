@@ -30,9 +30,11 @@ fs.mkdirSync(output,{recursive:true});
 // Observe every actual Node compiler child, without changing its environment,
 // source files, command selection, cancellation/settlement, or admission policy.
 const spawn=childProcess.spawn;
-childProcess.spawn=function(command,args=[],options){
- const observed=command===process.execPath&&!args.includes(self)?['--import',self,...args]:args;
- return spawn.call(this,command,observed,options);
+childProcess.spawn=function(command,args,options){
+ if(command!==process.execPath)return spawn.apply(this,arguments);
+ const argv=Array.isArray(args)?args:[],settings=Array.isArray(args)?options:args;
+ const observed=argv.includes(self)?argv:['--import',self,...argv];
+ return spawn.call(this,command,observed,settings);
 };
 syncBuiltinESMExports();
 const session=new Session();session.connect();
