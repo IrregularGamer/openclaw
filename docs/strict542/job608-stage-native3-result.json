@@ -1,0 +1,29 @@
+{
+  "export": "export608-stage-native-014144",
+  "kind": "JOB608_STAGE_RESULT",
+  "manifest_sha256": "bf3a4fb0ae1dab75426ec9886bd16a2572d8a9510667f1f00a32a3941ab77eba",
+  "outcome": "PASS rc0 STEP608 native-rebuild-pass (4g1CPU outer 2385s+15)",
+  "pinned_reproduction": {
+    "addon_sha256": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042",
+    "matches_manifest_native_stage_outputs": true
+  },
+  "preserved_for_compiler_and_package_stages": "export608-stage-native-014144/result608-native",
+  "source_commit": "6ae72a29b920fcab79f3f68b20ca7fc2a4cdbcc4",
+  "source_review": "APPROVE 1862a58b (6ae72a29 split compiler evidence dir)",
+  "stage": "native",
+  "stage_receipt": {
+    "exit_code": 0,
+    "kind": "JOB608_STAGE_RECEIPT",
+    "manifest_sha256": "bf3a4fb0ae1dab75426ec9886bd16a2572d8a9510667f1f00a32a3941ab77eba",
+    "outputs": {
+      "native/libtests-receipt.json": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946",
+      "native/receipt.json": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+      "native/rolldown-binding.linux-x64-gnu.node": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042"
+    },
+    "run_id": "stage608-native-014144",
+    "source_commit": "6ae72a29b920fcab79f3f68b20ca7fc2a4cdbcc4",
+    "stage": "native"
+  },
+  "stage_receipt_sha256": "0d03207533f2a5535e7c61ef8febbc4acc3f2c4e9695ba9d20a5db711d51cee2",
+  "window_utc": "2026-10-28T01:48Z->~02:23Z"
+}
