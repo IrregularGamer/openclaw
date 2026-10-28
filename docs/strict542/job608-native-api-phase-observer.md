@@ -53,3 +53,11 @@ path; these are source-analysis references, not a runtime/toolchain substitution
   "options.js": "6459db5d95cfabcad20bcb484dc76378eb6c524b0a137ec37c4758161deb35a7",
   "options.d.ts": "851f64314506da47a3d1a6372a8f92e3f56cfe82837c6e0f4fa8a5694af94515"
 }
+
+Independent review caught sink/clock failures that could prevent or replace a
+native result, and an application argument that could suppress child observation.
+The corrected observer isolates logger/clock failures, records failed observation
+state, preserves the original method's result/error, and makes the preload
+process refuse successful exit when observation failed. Existing preload detection
+only scans Node option prefixes, never application arguments. Review-regression
+RED had3 failures; GREEN has10/10 passes. Native API loading is still untested.

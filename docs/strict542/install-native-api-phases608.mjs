@@ -12,6 +12,12 @@ const resolved=require.resolve('typescript/unstable/async');
 const inside=file=>{const relative=path.relative(root,file);return relative!=='..'&&!relative.startsWith('..'+path.sep)&&!path.isAbsolute(relative);};
 if(!inside(resolved)||!inside(fs.realpathSync.native(resolved)))throw new Error('native observer requires physical checkout API');
 const api=await import(pathToFileURL(resolved).href);
-observeNativeApi608(api);
+const observation=observeNativeApi608(api);
+process.once('beforeExit',()=>{
+ if(observation.failed){
+  if(!process.exitCode)process.exitCode=1;
+  try{process.stderr.write('NATIVE_API_OBSERVER_REFUSED608\n');}catch{}
+ }
+});
 propagateNativeObserver608(childProcess,fileURLToPath(import.meta.url));
 syncBuiltinESMExports();

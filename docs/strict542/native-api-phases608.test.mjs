@@ -52,3 +52,22 @@ test('preserves original spawn errors',()=>{
  const expected=new Error('spawn failure'),cp={spawn(){throw expected;}};
  propagateNativeObserver608(cp,'/observer.mjs','/fixed/node');assert.throws(()=>cp.spawn('/fixed/node',[]),error=>error===expected);
 });
+test('observer sink failures cannot prevent or replace the original call',async()=>{
+ const api=fixture(),expected=new Error('compiler'),events=[];
+ api.Program.prototype.getBindDiagnostics=async()=>{throw expected;};
+ const state=observeNativeApi608(api,event=>{events.push(event);throw new Error('sink');});
+ assert.deepEqual(await new api.API().parseConfigFile('value'),['private','value']);
+ await assert.rejects(new api.Program().getBindDiagnostics(),error=>error===expected);
+ assert.equal(state.failed,true);assert.equal(events.length,4);
+});
+test('observer clock failures remain invalid evidence without changing API results',async()=>{
+ const api=fixture();const state=observeNativeApi608(api,()=>{},()=>{throw new Error('clock');});
+ assert.deepEqual(await new api.API().parseConfigFile(),['private']);assert.equal(state.failed,true);
+});
+test('an observer path in application arguments cannot suppress propagation',()=>{
+ const calls=[],cp={spawn(...args){calls.push(args);}};propagateNativeObserver608(cp,'/observer.mjs','/fixed/node');
+ cp.spawn('/fixed/node',['app.mjs','/observer.mjs']);
+ assert.deepEqual(calls[0][1],['--import','/observer.mjs','app.mjs','/observer.mjs']);
+ cp.spawn('/fixed/node',['app.mjs','--import','/observer.mjs']);assert.equal(calls[1][1].length,5);
+ cp.spawn('/fixed/node',['--import=/observer.mjs','app.mjs']);assert.equal(calls[2][1].length,2);
+});
