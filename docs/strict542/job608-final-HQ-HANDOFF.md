@@ -4,7 +4,8 @@
 frozen executable source is `95e62f8b6c7af341b2dfc21163627aa8a533649d`, common
 export `805d8049971ef41db03eeb8d701c87ce5c0dafb848ba89f37c19e5b7322d1419`.
 Native lookup correction3c0901de has independent narrow approvale5aadaa5;
-its seven focused real-filesystem composition cases pass. The fixtures use
+its seven focused real-filesystem composition cases pass, including admitted
+remote client/result0 independently accepted27d6bf31. The fixtures use
 compiler/API/seal doubles and do not establish real compilation or a build.
 Commit95e62f8b additionally requires all original scoped checks PLUS the actual
 native compiler, snapshot and declaration-resolution suites, with all original
@@ -28,7 +29,8 @@ and completed with actual client/inner124 at2300seconds,4GiB/1CPU. It preserves 
 source and can never accept the changed candidate95. Actual19-sample outcome is
 job608-unified-0-diag-fresh-outcome.json: native CPU delta1397s versus declaration
 Node43s over2044observed seconds, no returned checkpoint. Exact query and pressure
-history remain unknown. Independent final evidence review is still required. The launch manifest's UNUSED field is historical prelaunch metadata,
+history remain unknown. Independent final evidence reviewccaf092a approves
+EVIDENCE ONLY. The launch manifest's UNUSED field is historical prelaunch metadata,
 not replay permission. Do not repeat this export or the refused/stale remote slug.
 
 There is NO completed current package/tree/action/next-seal receipt, final
@@ -36,6 +38,9 @@ artifact old/new hashes, exact artifact/action/privilege/seal approval or actual
 automatic queue approval. Narrow source/prelaunch/evidence reviews cannot
 substitute for those final gates. The commands below are gated preparation
 for the actual successful candidate95 package; they MUST NOT run now.
+After the measured native-phase correction, explicitly reconcile the final
+freeze/common/source inventory and these command pins before final artifact
+reviews. Never apply candidate95 command pins to a different source.
 
 This source preparation changes no installed/sealed/root/unit/sudoers/service,
 gateway, scheduler, auth, credential, budget, provider or production state.

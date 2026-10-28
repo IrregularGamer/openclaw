@@ -114,7 +114,7 @@ The completed diagnostic was only frozen1bed: NEW export manifest e7b2dc2e,
 observer73d17f3c, prelaunch review1e9ab044, actual client log/rc under
 <private>/unified-0-diag-fresh-offload.{log,rc}. It used2460outer/2300inner seconds and ended124 at2300s.
 Its actual outcome is committed in job608-unified-0-diag-fresh-outcome.json;
-independent final interpretation is required. It is spent
+independent final interpretationccaf092a approves EVIDENCE ONLY. It is spent
 after this single launch, regardless of the manifest's original UNUSED label.
 No output can establish candidate95 acceptance. The earlier claimed21:46 launch
 was actually a180-byte transfer refusal; raw refusal and correction are committed.
@@ -132,3 +132,13 @@ acknowledgements; require fresh genuine post-restart owner binding AND accepted
 run acknowledgements. Keep575/588/592 by reference,553 sole SAME510 owner,
 approval1529 only INTERNAL_REPORT_URL/API_BASE_URL, and497 sole later fresh
 independently reviewed scheduler-request submitter after all original gates.
+
+
+Final current receipts:47736353 records actual diagnostic timeout and focused
+remote proof; ccaf092a independently accepts diagnostic evidence only, and
+27d6bf31 independently accepts the seven passing remote composition cases only.
+Observer source da316fb6 has limited approval10bb157a and ten passing unit cases;
+its actual preload smoke/phase launcher remains UNLAUNCHED. No complete package,
+artifact/action/privilege/seal/automatic review or genuine HQ acknowledgements
+exist. Fresh final-source inventory and application command pins must be
+reconciled after the measured native-phase correction, before final reviews.
