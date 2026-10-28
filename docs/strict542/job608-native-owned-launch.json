@@ -1,0 +1,16 @@
+{
+  "authority": "source-only finite admitted build; no application authority",
+  "command": "offload run --timeout 2460 --mem 4g --cpus 1 --artifacts result608-native -- timeout -k 15s 2400s sh run608.sh",
+  "execution_state": "UNUSED",
+  "export": "/home/deploy/agentq/tmp/export608-stage-native-owned-next",
+  "free_bytes": 756387840,
+  "log": "/home/deploy/agentq/runs/608/stage-native-owned-offload.log",
+  "manifest_sha256": "708a52c26402db1b4b030c0a0a64a91911fb6dd15d9798ade2e12b091c2f9e2e",
+  "preparer_streamed_archive_pins": "PASS",
+  "runner_helper_committed_bytes": "PASS",
+  "source_commit": "5f7d810b7f254e4f06dbf7761b557ba90bf1a2b0",
+  "source_export_sha256": "76b4b47a0e5c3e0a157f75ff1b76d60753c8acdbf5f76bc495668dd985d70f64",
+  "stage": "native",
+  "utc": "2026-10-28T14:24:35.941383+00:00",
+  "verify_inputs": "PASS"
+}
