@@ -1,0 +1,36 @@
+{
+  "archive_sha256": "0a1f4dbfcaf1f06ebe1e28197825eb77728f8a37849f09d5acb7d91f684e613f",
+  "command": [
+    "offload",
+    "run",
+    "--timeout",
+    "180",
+    "--mem",
+    "2g",
+    "--cpus",
+    "1",
+    "--artifacts",
+    "result608-admission",
+    "--",
+    "sh",
+    "-c",
+    "mkdir result608-admission; timeout -k 15s 120s node --test --test-reporter=tap docs/strict542/native-admission608.test.mjs >result608-admission/tests.log 2>&1; status=$?; cat result608-admission/tests.log; printf \"%s\\n\" \"$status\" >result608-admission/exit-code.txt; exit \"$status\""
+  ],
+  "commit": "95e62f8b6c7af341b2dfc21163627aa8a533649d",
+  "export": "/home/deploy/agentq/tmp/export608-admission95-focused.n_rr23g0",
+  "files": {
+    "docs/strict542/native-admission608.fixture.mjs": "e1c4200c64ebd527c2f543978f0d55bf4d62d779dd9130de4ad417dc0ac737e4",
+    "docs/strict542/native-admission608.test.mjs": "4fad11c1c7783b599152a3b837d1db736c1e78e9e4d37191838bfe18e8742c10",
+    "scripts/lib/local-check-runtime.mts": "0677859daa8187b8a5b6a1653a6ba559539f9111d85f440e6716dc4582bcc1e5",
+    "scripts/lib/native-declaration-emitter.mts": "2f8a05d0b713daf4d60d4e0359efe677b8f2710b05b1fd594e401adf1a3a2431",
+    "scripts/lib/native-declaration-filesystem.mts": "b45a6a8d34945f612a1edbb7dc755bd77efb91e5f87aea5ef455745abb6cdacf"
+  },
+  "kind": "FOCUSED_COMPOSITION_TEST_SOURCE_ONLY",
+  "launch_gate": "Only after current diagnostic actually returns/settles, no overlap, deadline admits180+195; source pins and extra-root-file manifest checked before launch; no package/compiler acceptance.",
+  "not_acceptance_for": [
+    "compiler",
+    "seal",
+    "package",
+    "application"
+  ]
+}
