@@ -1,6 +1,6 @@
 # Job608: exact preparation handoff to595
 
-**Current source correction:** unified0 at2b timed out124 on an unsupported nested artifact-owner entry. See [job608-after-unified0-continuation.md](job608-after-unified0-continuation.md) and correction00221e2d. Its reviewed new freeze and complete admitted stages are required; all2b receipts are historical for that new source.595 MUST NOT APPLY.
+**Current boundary (2026-10-28):** frozen5f native/compiler/checks/runtime evidence is accepted in its stated scope. Unified0 at5f later timed out124 inside openclaw-dts-base after native TypeScript startup; it produced NO checkpoint. A single new finite external CPU diagnostic is in progress under [the exact diagnostic plan](job608-unified-diagnostic-plan.md), source857ca783/review397d22f1/ready30cdae52. Do not rerun either spent unified0 export unchanged. No package/application authority exists;595 MUST NOT APPLY.
 
 This is SOURCE preparation. No application, root/unit/sudoers/seal change,
 service operation, gateway restart, provider call or scheduler release occurred.
@@ -37,11 +37,15 @@ The current checks stage completed with actual client/result0 and478passing
 scoped checks (154Node/126Python/198installed), zero failures/cancellations/skips/
 pending/todo. job608-stage-checks-owned-verification.json records its exact
 receipt c375ddd855d16b1b35f33a99681acb1905dafc28d87fda83f4a3b26edde95045,
-all7returned hashes and raw evidence. Independent exact acceptance is required.
+all7returned hashes and raw evidence. Independent exact acceptance is d35b80fa.
 The earlier485estimate double-counted seven existing build-checkpoint cases;
-all frozen checks ran. Runtime remains UNUSED, not yet run. Successful checks
-are no build/package or application authority. Exact runtime-FIRST command
-and stage acceptance are in job608-after-native-owned-continuation.md.
+all frozen checks ran. Runtime completed with actual client/result0 at92f33b70,
+receipt a4ef26da99c7d13ad21f1ed94d36b0bb85657cf7507f943c52539f65eabb712f.
+Independent acceptance a09ec5cd verifies every8956archive entry/mode/hash, all
+five successful original phases and58compiler result events without timeout.
+See job608-stage-runtime-owned-independent-review.md. This establishes the
+exact runtime checkpoint only, not declaration/package/application authority.
+The native/runtime exports are SPENT/SUCCESS; never relaunch them unchanged.
 Exact native source pin/addon expectation remains
 `0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042`.
 Inherited descriptive runner_commit/source_correction_review metadata in the
@@ -51,9 +55,11 @@ edit or relabel a launched manifest or an old successful receipt.
 
 ALL2b native7/compiler7/runtime7/checks8 receipts are HISTORICAL ONLY for5f.
 Checks8's477passing scoped checks do not establish current-source acceptance.
-Native, compiler and checks are complete as scoped above. New runtime, all
-unified0..5, middle, sdk0..1, tail and package stages MUST complete at5f with
-exact accepted predecessor receipts.
+Native, compiler, checks and runtime are complete as scoped above. All
+unified0..5, middle, sdk0..1, tail and package remain incomplete. Diagnose
+the actual5f unified0 failure before any changed-source run. Any source
+correction requires independent review, a new freeze/export and newly valid
+exact predecessor receipts; never relabel the5f receipts as successor evidence.
 The canonical finite stage DAG, full diagnostics, production package lifecycle,
 IPC/refusal/cancellation/settlement tests and native pins remain unchanged.
 See job608-after-unified0-continuation.md for the corrected inherited-owner
