@@ -15,7 +15,7 @@ No singleton graph split, lower admission floor or unchanged long retry follows.
 2. ONE admitted offload,4GiB/1CPU/swap0, --timeout1080, outer timeout1020.
    Diagnostic compiler wall600seconds includes frozen install; the original
    owner, input checks, compiler diagnostics, cancellation/settlement stay.
-   Per-phase marks,60second low-frequency V8 profiles and10second proc/cgroup
+   60second low-frequency V8 profiles and10second proc/cgroup
    samples distinguish synchronous CPU from native API wait. No command lines,
    environment/auth files, runtime credentials or provider calls are captured.
 3. Inspect actual return and hashes. This intentionally instrumented disposable
@@ -26,3 +26,10 @@ No singleton graph split, lower admission floor or unchanged long retry follows.
 
 This is the explicitly requested bounded diagnostic from committed secretless
 source, not a renewed full build attempt. No live/root/unit/seal/config change.
+
+Prelaunch independent review found the first instrumentation approach would
+change the checkpoint baseline before validation. It was never launched. The
+corrected diagnostic keeps every inventoried source byte pristine and adds an
+external observer preload to the normal Node entry/Node compiler children.
+No NODE_OPTIONS override or admission-policy exception is introduced. V8
+profiles and native process CPU/wait samples replace source phase markers.

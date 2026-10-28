@@ -19,24 +19,35 @@ PINS = {
 }
 
 PROFILER = r'''
-import { Session as DiagnosticSession608 } from 'node:inspector';
-const diagnosticSession608 = new DiagnosticSession608();
-diagnosticSession608.connect();
-const diagnosticPost608 = (name, args = {}) => new Promise((resolve, reject) => diagnosticSession608.post(name,args,(error,result)=>error?reject(error):resolve(result)));
-const diagnosticMark608 = name => console.error(JSON.stringify({kind:'DECLARATION_PHASE608',name,at:Date.now(),cpu:process.cpuUsage(),memory:process.memoryUsage()}));
-await diagnosticPost608('Profiler.enable');
-await diagnosticPost608('Profiler.setSamplingInterval',{interval:10000});
-await diagnosticPost608('Profiler.start');
-let diagnosticBusy608 = false, diagnosticIndex608 = 0;
-const diagnosticTimer608 = setInterval(async()=>{
- if(diagnosticBusy608)return;diagnosticBusy608=true;
- try { const {profile}=await diagnosticPost608('Profiler.stop');
-  fs.writeFileSync(path.join(process.env.STRICT542_DIAGNOSTIC_DIR,`node-${process.pid}-${diagnosticIndex608++}.cpuprofile`),JSON.stringify(profile));
-  await diagnosticPost608('Profiler.start');
- }catch(error){console.error('DIAGNOSTIC_PROFILE_ERROR608',String(error));process.exitCode=1;}
- finally {diagnosticBusy608=false;}
-},60000);diagnosticTimer608.unref();
-diagnosticMark608('module-ready');
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { Session } from 'node:inspector';
+import childProcess from 'node:child_process';
+import { syncBuiltinESMExports } from 'node:module';
+const self=fileURLToPath(import.meta.url),output=path.join(path.dirname(self),'result608-unified-0/profiles');
+fs.mkdirSync(output,{recursive:true});
+// Observe every actual Node compiler child, without changing its environment,
+// source files, command selection, cancellation/settlement, or admission policy.
+const spawn=childProcess.spawn;
+childProcess.spawn=function(command,args=[],options){
+ const observed=command===process.execPath&&!args.includes(self)?['--import',self,...args]:args;
+ return spawn.call(this,command,observed,options);
+};
+syncBuiltinESMExports();
+const session=new Session();session.connect();
+const post=(name,args={})=>new Promise((resolve,reject)=>session.post(name,args,(error,result)=>error?reject(error):resolve(result)));
+await post('Profiler.enable');await post('Profiler.setSamplingInterval',{interval:10000});await post('Profiler.start');
+console.error('DIAGNOSTIC_PROFILER608',process.pid,Date.now());
+let busy=false,index=0;
+async function flush(restart){
+ if(busy)return;busy=true;
+ try {const {profile}=await post('Profiler.stop');fs.writeFileSync(path.join(output,`node-${process.pid}-${index++}.cpuprofile`),JSON.stringify(profile));if(restart)await post('Profiler.start');}
+ catch(error){console.error('DIAGNOSTIC_PROFILE_ERROR608',String(error));process.exitCode=1;}
+ finally{busy=false;}
+}
+const timer=setInterval(()=>void flush(true),60000);timer.unref();
+process.once('beforeExit',()=>{clearInterval(timer);return flush(false);});
 '''
 
 
@@ -44,44 +55,6 @@ def once(text, old, new):
     if text.count(old) != 1:
         raise ValueError('diagnostic source boundary changed: ' + old[:80])
     return text.replace(old, new, 1)
-
-
-def instrument():
-    for name, digest in PINS.items():
-        file = Path('scripts/lib') / name
-        if file.is_symlink() or hashlib.sha256(file.read_bytes()).hexdigest() != digest:
-            raise ValueError('diagnostic requires exact original source: ' + name)
-    file = Path('scripts/lib/native-declaration-emitter.mts')
-    text = file.read_text()
-    text = once(text, 'export type NativeDeclaration = {', PROFILER + '\nexport type NativeDeclaration = {')
-    pairs = [
-        ('const before = snapshot();', 'snapshot-before'),
-        ('before.signature(admittedConfig, args, [], stage);', 'signature-before'),
-        ('const configured = await api.parseConfigFile(config);', 'parse-config'),
-        ('const nativeSnapshot = await api.createSnapshot({', 'create-snapshot'),
-        ('const errors = await collectNativeTypeScriptDiagnosticsAsync(project, {', 'diagnostics'),
-        ('const result = await project.program.emitToString(EmitOnly.OnlyDts);', 'emit'),
-        ('for (const file of await project.program.getSourceFileNames()) {', 'source-files'),
-        ('await api.close();', 'api-close'),
-        ('const after = snapshot();', 'snapshot-after'),
-        ('after.seal(admittedConfig, args, inputs, before, preparationStartedAt, stage, producedFiles);', 'seal-after'),
-    ]
-    for statement, phase in pairs:
-        text = once(text, statement, f"diagnosticMark608('{phase}:enter');\n    " + statement)
-    # Marks immediately after the relevant await/statement show real completion.
-    for statement, phase in [
-        ('before.signature(admittedConfig, args, [], stage);', 'signature-before'),
-        ('const configured = await api.parseConfigFile(config);', 'parse-config'),
-        ('await api.close();', 'api-close'),
-        ('after.seal(admittedConfig, args, inputs, before, preparationStartedAt, stage, producedFiles);', 'seal-after'),
-    ]:
-        text = once(text, statement, statement + f"\n    diagnosticMark608('{phase}:done');")
-    text = once(text, 'const project = nativeSnapshot.getConfiguredProject(config);', "diagnosticMark608('create-snapshot:done');\n    const project = nativeSnapshot.getConfiguredProject(config);")
-    text = once(text, 'if (result.emitSkipped || result.diagnostics.length) {', "diagnosticMark608('emit:done');\n      if (result.emitSkipped || result.diagnostics.length) {")
-    file.write_text(text)
-    file = Path('scripts/lib/native-typescript-diagnostics.mts')
-    text = once(file.read_text(), 'diagnostics.push(...(await project.program[query]()));', "console.error('DIAGNOSTIC_QUERY608 enter',query,Date.now());\n    diagnostics.push(...(await project.program[query]()));\n    console.error('DIAGNOSTIC_QUERY608 done',query,Date.now());")
-    file.write_text(text)
 
 
 def sample():
@@ -106,9 +79,6 @@ def sample():
 
 
 def main():
-    if sys.argv[1:] == ['instrument']:
-        instrument()
-        return
     if sys.argv[1:]:
         raise ValueError('no caller-selected diagnostic command')
     manifest = json.loads(Path('export-manifest.json').read_text())
@@ -121,11 +91,25 @@ def main():
     script = once(script, 'python3 stage608.py archive-build "$RESULT"', 'echo DIAGNOSTIC_ONLY_NO_CHECKPOINT608')
     script = once(script, 'python3 stage608.py receipt "$RESULT"', 'echo DIAGNOSTIC_ONLY_NO_STAGE_RECEIPT608')
     Path('diagnostic-inner608.sh').write_text(script)
+    Path('profiler608.mjs').write_text(PROFILER)
+    # Keep all inventoried source bytes pristine. Only the external launch gains
+    # an observer preload; the existing build gates/owner remain the entry point.
     Path('diagnostic-build608.sh').write_text('''set -eu
-export STRICT542_DIAGNOSTIC_DIR="$PWD/../result608-unified-0/profiles"
-mkdir "$STRICT542_DIAGNOSTIC_DIR"
-python3 ../diagnose-unified608.py instrument
-timeout -k 15s 600s sh docs/strict542/run-build-stage608.sh "$1"
+python3 - <<'PRISTINE'
+import hashlib
+from pathlib import Path
+pins = ''' + repr(PINS) + '''
+for name,digest in pins.items():
+ p=Path('scripts/lib')/name
+ assert not p.is_symlink() and hashlib.sha256(p.read_bytes()).hexdigest()==digest,name
+p=Path('docs/strict542/run-build-stage608.sh')
+s=p.read_text()
+a='node --import ./scripts/tsx.mjs scripts/build-checkpoint608-owned.mjs "$STAGE"'
+b='node --import ../profiler608.mjs --import ./scripts/tsx.mjs scripts/build-checkpoint608-owned.mjs "$STAGE"'
+assert s.count(a)==1
+Path('../diagnostic-launch608.sh').write_text(s.replace(a,b))
+PRISTINE
+timeout -k 15s 600s sh ../diagnostic-launch608.sh "$1"
 ''')
     result = Path('diagnostic608')
     result.mkdir()
