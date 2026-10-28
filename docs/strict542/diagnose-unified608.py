@@ -22,7 +22,7 @@ PROFILER = r'''
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { Session } from 'node:inspector';
+import { Worker } from 'node:worker_threads';
 import childProcess from 'node:child_process';
 import { syncBuiltinESMExports } from 'node:module';
 const self=fileURLToPath(import.meta.url),output=path.join(path.dirname(self),'result608-unified-0/profiles');
@@ -37,19 +37,39 @@ childProcess.spawn=function(command,args,options){
  return spawn.call(this,command,observed,settings);
 };
 syncBuiltinESMExports();
-const session=new Session();session.connect();
-const post=(name,args={})=>new Promise((resolve,reject)=>session.post(name,args,(error,result)=>error?reject(error):resolve(result)));
-await post('Profiler.enable');await post('Profiler.setSamplingInterval',{interval:10000});await post('Profiler.start');
+const worker=new Worker(new URL('./profiler-worker608.cjs',import.meta.url),{execArgv:[],workerData:{output}});
+await new Promise((resolve,reject)=>{worker.once('error',reject);worker.once('message',message=>message==='ready'?resolve():reject(new Error(String(message))));});
+worker.on('error',error=>{console.error('DIAGNOSTIC_PROFILE_ERROR608',String(error));process.exitCode=1;});
+worker.on('message',message=>{if(message?.error){console.error('DIAGNOSTIC_PROFILE_ERROR608',message.error);process.exitCode=1;}});
+worker.unref();
 console.error('DIAGNOSTIC_PROFILER608',process.pid,Date.now());
-let busy=false,index=0;
-async function flush(restart){
- if(busy)return;busy=true;
- try {const {profile}=await post('Profiler.stop');fs.writeFileSync(path.join(output,`node-${process.pid}-${index++}.cpuprofile`),JSON.stringify(profile));if(restart)await post('Profiler.start');}
- catch(error){console.error('DIAGNOSTIC_PROFILE_ERROR608',String(error));process.exitCode=1;}
- finally{busy=false;}
+process.once('beforeExit',()=>{worker.ref();worker.postMessage('stop');});
+'''
+
+
+PROFILE_WORKER = r'''
+const fs=require('node:fs'),path=require('node:path');
+const {parentPort,workerData}=require('node:worker_threads');
+const {Session}=require('node:inspector');
+const session=new Session();session.connectToMainThread();
+const post=(name,args={})=>new Promise((resolve,reject)=>session.post(name,args,(error,result)=>error?reject(error):resolve(result)));
+let running=false,stopping=false,index=0,timer,chain=Promise.resolve();
+async function capture(restart){
+ if(running){const {profile}=await post('Profiler.stop');running=false;fs.writeFileSync(path.join(workerData.output,`node-${process.pid}-${index++}.cpuprofile`),JSON.stringify(profile));}
+ if(restart&&!stopping){await post('Profiler.start');running=true;}
 }
-const timer=setInterval(()=>void flush(true),60000);timer.unref();
-process.once('beforeExit',()=>{clearInterval(timer);return flush(false);});
+function fail(error){parentPort.postMessage({error:String(error)});clearInterval(timer);session.disconnect();parentPort.close();process.exitCode=1;}
+// Keep the worker alive while inspector commands to the busy main thread settle.
+parentPort.on('message',message=>{
+ if(message!=='stop'||stopping)return;
+ stopping=true;clearInterval(timer);
+ chain=chain.then(()=>capture(false)).then(()=>{session.disconnect();parentPort.close();}).catch(fail);
+});
+(async()=>{
+ await post('Profiler.enable');await post('Profiler.setSamplingInterval',{interval:10000});await post('Profiler.start');running=true;
+ timer=setInterval(()=>{chain=chain.then(()=>capture(true)).catch(fail);},60000);
+ parentPort.postMessage('ready');
+})().catch(fail);
 '''
 
 
@@ -94,6 +114,7 @@ def main():
     script = once(script, 'python3 stage608.py receipt "$RESULT"', 'echo DIAGNOSTIC_ONLY_NO_STAGE_RECEIPT608')
     Path('diagnostic-inner608.sh').write_text(script)
     Path('profiler608.mjs').write_text(PROFILER)
+    Path('profiler-worker608.cjs').write_text(PROFILE_WORKER)
     # Keep all inventoried source bytes pristine. Only the external launch gains
     # an observer preload; the existing build gates/owner remain the entry point.
     Path('diagnostic-build608.sh').write_text('''set -eu
