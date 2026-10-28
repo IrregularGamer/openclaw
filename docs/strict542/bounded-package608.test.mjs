@@ -1,7 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {admitBoundedPackage, boundedConfigIndices, typedConfigCensus,
- selectTypedWholeConfig, boundedResultSucceeded, UNIFIED_GRAPH_THRASH_LIMIT_BYTES,
+ selectTypedWholeConfig, typedConfigCensusDigest, boundedResultSucceeded, UNIFIED_GRAPH_THRASH_LIMIT_BYTES,
  boundedCompilerStep, BOUNDED_COMPILER_ENV} from '../../scripts/lib/bounded-package608.mjs';
 const admitted={unresolved:false,capacityBytes:2*1024**3,limitBytes:1800*1024**2};
 test('bounded package preserves observed capacity floor and refuses compiler overrides',()=>{
@@ -33,9 +33,13 @@ test('whole config selection retains object identity and exact typed inventory',
  const census=typedConfigCensus(configs);
  assert.deepEqual(boundedConfigIndices(census,'packages'),[0]);
  assert.deepEqual(boundedConfigIndices(census,'unified'),[1]);
- assert.equal(selectTypedWholeConfig(configs,'1',JSON.stringify(census)),configs[1]);
- assert.throws(()=>selectTypedWholeConfig(configs,'1','[]'));
- assert.throws(()=>selectTypedWholeConfig(configs,'3',JSON.stringify(census)));
+ assert.equal(selectTypedWholeConfig(configs,'1',typedConfigCensusDigest(census)),configs[1]);
+ assert.throws(()=>selectTypedWholeConfig(configs,'1',typedConfigCensusDigest([])),/census changed/);
+ assert.throws(()=>selectTypedWholeConfig(configs,'1',JSON.stringify(census)),/census digest/);
+ assert.throws(()=>selectTypedWholeConfig(configs,'1',undefined),/census digest/);
+ assert.throws(()=>selectTypedWholeConfig(configs,'3',typedConfigCensusDigest(census)));
+ // Regression: the child environment value stays far below MAX_ARG_STRLEN (131072).
+ assert.equal(typedConfigCensusDigest(census).length,64);
  assert.throws(()=>boundedConfigIndices([{...census[0],dts:false}],'packages'));
  assert.throws(()=>boundedConfigIndices([{...census[1],dts:true}],'unified'));
 });

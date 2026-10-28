@@ -4,7 +4,7 @@ import { performance } from 'node:perf_hooks';
 import { trustedNativeCompilerEnvironment608 } from './lib/native-compiler608.mjs';
 import { readProcessMemoryCapacity } from './lib/process-memory.mts';
 import { BOUNDED_COMPILER_ENV, admitBoundedCapacity608,
-  typedConfigCensus, boundedConfigIndices, boundedResultSucceeded } from './lib/bounded-package608.mjs';
+  typedConfigCensus, typedConfigCensusDigest, boundedConfigIndices, boundedResultSucceeded } from './lib/bounded-package608.mjs';
 const stage=process.argv[2] ?? '';
 Object.assign(process.env,trustedNativeCompilerEnvironment608(process.cwd(),process.env,{inherited:true}).env);
 if (process.env.OPENCLAW_608_BOUNDED_PACKAGE !== '1') throw new Error('missing bounded native package policy');
@@ -41,7 +41,7 @@ cleanTsdownOutputRoots({roots:resolveTsdownCleanOutputRoots(originalArgs),
   env:{...process.env,OPENCLAW_RUN_NODE_SKIP_DTS_BUILD:stage === 'unified' ? '1' : '0'}});
 const plans=stage === 'ai' ? [{config:null,label:'ai',args:['--config','tsdown.ai.config.ts','--concurrency','1'],env:process.env}] :
   indices.map(index=>({config:configs[index],label:`main-config-${index}`,args:['--config','tsdown.bounded608.config.ts','--concurrency','1'],
-    env:{...process.env,OPENCLAW_608_CONFIG_INDEX:String(index),OPENCLAW_608_CONFIG_CENSUS:JSON.stringify(census)}}));
+    env:{...process.env,OPENCLAW_608_CONFIG_INDEX:String(index),OPENCLAW_608_CONFIG_CENSUS_SHA256:typedConfigCensusDigest(census)}}));
 for (const plan of plans) {
   const capacity=capacityAdmission();
   const remaining=Math.floor(deadline-performance.now());

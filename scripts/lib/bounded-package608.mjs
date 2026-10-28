@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 // Whole-config scheduling for a complete typed package under an admitted 4 GiB lease.
 export const BOUNDED_PACKAGE_DEADLINE_MS = 2_700_000;
 export const UNIFIED_GRAPH_THRASH_LIMIT_BYTES = 1625784320;
@@ -38,8 +39,14 @@ export function typedConfigCensus(configs) {
     return {index,name:config.name ?? null,entry:config.entry,outDir:config.outDir ?? 'dist',dts:config.dts};
   });
 }
-export function selectTypedWholeConfig(configs,indexText,expectedCensus) {
-  if (JSON.stringify(typedConfigCensus(configs)) !== expectedCensus) throw new Error('typed config census changed');
+// The full census exceeds the kernel's 128 KiB per-environment-string limit
+// (spawn E2BIG), so children receive its sha256 and recompute it exactly.
+export function typedConfigCensusDigest(census) {
+  return createHash('sha256').update(JSON.stringify(census)).digest('hex');
+}
+export function selectTypedWholeConfig(configs,indexText,expectedCensusSha256) {
+  if (!/^[0-9a-f]{64}$/u.test(expectedCensusSha256 ?? '')) throw new Error('invalid typed config census digest');
+  if (typedConfigCensusDigest(typedConfigCensus(configs)) !== expectedCensusSha256) throw new Error('typed config census changed');
   if (!/^(0|[1-9]\d*)$/u.test(indexText ?? '')) throw new Error('invalid config index');
   const index = Number(indexText);
   if (!Number.isSafeInteger(index) || index >= configs.length) throw new Error('config index out of range');
