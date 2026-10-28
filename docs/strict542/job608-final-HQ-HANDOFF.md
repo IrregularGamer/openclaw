@@ -7,30 +7,38 @@ job598-HQ-HANDOFF.md; their detailed fixed-owner restrictions still apply.
 
 ## Exact evidence and remaining gates
 
-The production source is `591158cfe4a569c9e857780e9cc185cb4590b9b7` on maintained
-`IrregularGamer/openclaw:strict542-source552`. Native5, checks6 and compiler5
-receipts all bind that source. Checks6 has198/198 installed tooling checks,
-plus the complete scoped gateway/native/supervisor/refusal/cancellation and
-application checks. Native5 reproduces the independently pinned addon
+The current frozen BUILD source is `2b543da30204b358d4b58a8fb52b060f405f3789`
+on maintained `IrregularGamer/openclaw:strict542-source552`, common export identity
+`a19f36956cc6f215571dcc6d037772533053e351d018941f97eb846f8df9cc49`.
+Native7, compiler7, runtime7 and checks8 receipts bind that exact source/export.
+Their committed receipts are job608-stage-{native7,compiler7,runtime7,checks8}-receipt.json.
+Native7 reproduces independently pinned addon
 `0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042`.
-Package5 and package6 are consumed/lost interrupted executions, never retry
-authority. Their existing launch manifests remain historical evidence. The
-finite package7 continuation is recorded in job608-stage-package7-launch.md
-and its immutable manifest3588339e70c8d7a5a78464e613e779eae98c8c14d4bfd9edacf1de7c55cd9004.
-Package7 timed out124 at08:11:05Z while write-unified-entry-dts remained in
-its first native API invocation. All58 compiler records passed (AI1, packages15,
-unified42), packages8m14 and unified6m23; config15 is no longer the stalled step.
-There is NO package/tree/action/next-seal receipt. Exact diagnostics are in
-job608-stage-package7-outcome.json and the retained partial build/client logs.
-Export0731 is consumed; do not retry it or promote its partial output.
-The owning declaration writer per-group producer/join candidate is now
-9607b3318120686605ab466d1d5b0af69046ce59, independently source-reviewedf1e0907a
-with6 focused checks passing. Actual timeout evidence is independently
-reviewed67abcdee. Finite stage integration and fresh full new-source admitted
-checks remain required; exact continuation is
+Checks8 actual admitted offload/result exit0 and verified output hashes are in
+job608-stage-checks8-verification.json:477 scoped checks pass, comprising153Node,
+126Python and198installed tooling cases, with no skips/todo/failures. Raw JSON
+and logs are committed. This includes actual fd3 transport/synthetic supervisor,
+peer/cgroup/MainPID refusal and cancellation/descendant-settlement coverage.
+It does not establish live HQ ownership, loaded production code or provider access.
+
+Exact combined SOURCE ONLY review3d178871 covers frozen2b543da3, including all
+checkpoint changes and unchanged earlier591 installer/supervisor/IPC source.
+The per-group producer/join is integrated into the finite stage DAG and reviewed;
+real unified-0..5, middle, sdk-0/1, tail and package runs remain required.
+Decision644 helper correction1a8b422d has independent approval4832c8c1 and six
+passing tiny filesystem checks. It hardlinks immutable accepted inputs and keeps
+every source/export/native/output digest check. Do not move the build pin to
+these later preparation/evidence commits. New unified exports are prepared and
+verified individually; exact manifests, space preflights and next commands are in
 [job608-declaration-stage-continuation.md](job608-declaration-stage-continuation.md).
-Existing459 checks and native receipts remain evidence only for591158cf;
-they cannot be attributed to new executable source.595 must not apply.
+
+Historical package7 at591158cf timed out124 during its first declaration API
+invocation after all58 compiler records passed. Its outcome/independent review
+remain diagnostics only. All older591158cf/835714fb stage receipts and spent or
+interrupted exports are unusable for current acceptance. Never retry a spent or
+unknown export, or promote partial output. There is NO completed current
+package/tree/action/next-seal receipt, artifact old/new hashes, exact artifact/
+action/privilege/seal approval or automatic queue approval.595 MUST NOT APPLY.
 
 Current explicit baseline proposal is job608-final-baseline-proposal.json,
 SHA256428ced690f0b3a3cb8a7a2a4fc38570ffa71fa98d7298423376a26fd3ee6a9c9.
@@ -48,6 +56,77 @@ The ACTUAL automatic queue608 review runs after preparation finishes; record its
 real review job, exact result SHA256 and first APPROVE verdict. No future ID,
 copied label, synthetic review or self-issued automatic approval is supplied.
 The application helper reads these queue facts read-only and refuses otherwise.
+
+## Source-only action preparation after a successful package
+
+These commands create a new LOCAL secretless review bundle, not root application.
+Do not run them before the exact package receipt/output/native/check pins have
+been verified. FINAL_EXPORT608 must be the actual successful finite package
+export; no placeholder result or synthetic review may substitute. Use this
+current baseline/seal pair, not the older post619 runs note.
+
+```sh
+set -eu
+: "${FINAL_EXPORT608:?actual successful frozen2b543da3 package export required}"
+SOURCE608=/home/deploy/agentq/tmp/source552
+RESULT608="$FINAL_EXPORT608/result608-package"
+python3 - "$FINAL_EXPORT608" "$SOURCE608" <<'VERIFY608'
+import hashlib,json,sys
+from pathlib import Path
+root=Path(sys.argv[1]);m=json.loads((root/'export-manifest.json').read_text())
+assert m['source_commit']=='2b543da30204b358d4b58a8fb52b060f405f3789'
+assert m['source_export_sha256']=='a19f36956cc6f215571dcc6d037772533053e351d018941f97eb846f8df9cc49'
+assert m['stage']=='package'
+assert (root/'result608-package/exit-code.txt').read_text().strip()=='0'
+source=Path(sys.argv[2])/'docs/strict542'
+for name,digest in [('job608-final-baseline-proposal.json','428ced690f0b3a3cb8a7a2a4fc38570ffa71fa98d7298423376a26fd3ee6a9c9'),('job608-final-seal-original.json','51170230064a8da20e074497eae6a6c968d293d262e9e31523dd7365a5c128d3')]:
+    assert hashlib.sha256((source/name).read_bytes()).hexdigest()==digest,name
+VERIFY608
+STAGE608=$(mktemp -d /home/deploy/agentq/tmp/stage608.XXXXXX)
+cp -a "$RESULT608/result598-build/runtime" "$STAGE608/runtime"
+cp "$RESULT608/result598-build/tree.json" "$STAGE608/tree.json"
+tar -xOf "$FINAL_EXPORT608/native598.tar" tools/scheduler_handoff/candidate/maintenance.py >"$STAGE608/maintenance.py"
+git -C "$SOURCE608" show 2b543da3:src/gateway/strict542/native_owner_server.py >"$STAGE608/native_owner_server542.py"
+git -C "$SOURCE608" show 2b543da3:src/gateway/strict542/root_owner_supervisor.py >"$STAGE608/root_owner_supervisor542.py"
+for name608 in strict542-owner.service 90-strict542-598.conf application598.py apply598.py; do
+  git -C "$SOURCE608" show "2b543da3:docs/strict542/$name608" >"$STAGE608/$name608"
+done
+python3 "$STAGE608/application598.py" action --tree "$STAGE608/tree.json" --stage "$STAGE608" --baseline "$SOURCE608/docs/strict542/job608-final-baseline-proposal.json" --output "$STAGE608/action.json"
+python3 - "$STAGE608" "$SOURCE608/docs/strict542/job608-final-seal-original.json" <<'NEXTSEAL608'
+import importlib.util,json,sys
+from pathlib import Path
+stage=Path(sys.argv[1]);original=Path(sys.argv[2])
+spec=importlib.util.spec_from_file_location('prep608',stage/'application598.py')
+prep=importlib.util.module_from_spec(spec);spec.loader.exec_module(prep)
+action=prep.read_json(stage/'action.json');tree=prep.read_json(stage/'tree.json')
+assert prep.file_hash(original)==action['action']['baseline']['seal_sha256']
+old=prep.read_json(original);new=json.loads(json.dumps(old))
+for change in action['action']['changes']:
+    if change['source']!='runtime':new['installed_hashes'][change['target']]=change['new']['sha256']
+entries={entry['path']:entry for entry in tree['entries']}
+for name in ('package.json','dist/index.js'):
+    assert entries[name]['kind']=='file'
+    new['installed_hashes'][prep.TARGETS['runtime']+'/'+name]=entries[name]['sha256']
+new.setdefault('amendments',[]).append({'kind':'strict542-598','action_sha256':action['action_sha256']})
+prep.emit(stage/'validation.next.json',new)
+NEXTSEAL608
+sha256sum "$STAGE608/action.json" "$STAGE608/tree.json" "$STAGE608/validation.next.json"
+```
+
+Before independent exact reviews, reconcile the actual package broker/status,
+source/export/run identities, all raw check/build/deploy evidence and frozen
+lock/package/native receipts. Verify every returned runtime entry against tree.json
+and every staged file against its exact reviewed source. The canonical action
+must include the full affected inventory and SIX old/new target identities,
+seven unchanged guards, complete metadata/backups and both helper hashes.
+Record exact whole-original/next-seal hashes. Deterministic serialization and
+artifact hashes do not claim two-build reproducibility. Obtain real independent
+source/artifact/action/privilege/seal reviews and ACTUAL automatic queue approval;
+the source-scope review must also bind the actual completed artifact/tree/action
+(the earlier source-only approval cannot substitute). reviews.json must contain
+the five authentic source/action/privilege/seal/automatic scopes required by the
+existing validator. Only then validate the bundle with application598.py validate
+and that authentic reviews.json. The ordered HQ procedure below remains separately gated.
 
 ## Transport, inventory and privilege
 

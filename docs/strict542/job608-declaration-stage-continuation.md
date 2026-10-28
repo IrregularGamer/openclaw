@@ -165,3 +165,70 @@ the fresh reviewed scheduler request after every original gate.
 - runtime7: exit 0, `STEP608 runtime-pass` (~17 min). Receipt `job608-stage-runtime7-receipt.json` (checkpoint.tar 76571043, 313 MB; build.log aeb9f653; both verified locally); log `job608-stage-runtime7-offload.log.gz`. Result kept at `tmp/export608-stage-runtime-1112/result608-runtime` as unified/middle input.
 - Not launched: checks-1112 (prepared, UNUSED) because ~19 min remained.
 - DISK SHORTFALL: host `/` now 822 MB free. `prepare-stage608-export.py` copies stage inputs (`shutil.copyfile`), so each unified-N export would add a 313 MB runtime checkpoint copy; six of them do not fit. Nothing was deleted. Next worker: hardlink byte-identical pinned inputs instead of copying (small preparer change in runs/608, pins unchanged), or prepare/launch/clean one unified export at a time with S-approved cleanup of superseded 835714fb exports.
+
+
+## Decision644 resumed preparation (2026-10-28)
+
+Build source remains frozen2b543da30204b358d4b58a8fb52b060f405f3789 and common
+export identitya19f36956cc6f215571dcc6d037772533053e351d018941f97eb846f8df9cc49.
+Exact combined SOURCE ONLY review3d178871 approves this source, including prior591
+installer/supervisor/IPC source unchanged and all subsequent checkpoint owners.
+It does not approve a package, action, privilege policy, seal or application.
+
+Decision644 local preparation correction1a8b422d, independently APPROVED4832c8c1,
+hardlinks accepted immutable stage inputs without copying their313MB runtime
+checkpoint. Six focused filesystem checks pass. The corrected helper is synced
+to runs/608; its original is preserved as prepare-stage608-export.py.bak-decision644.
+Do not advance the build pin to these helper/evidence commits. Never mutate
+producer or linked input bytes. Every consumer still checks all native, source,
+export, predecessor and output digests; source archive hashing uses1MiB buffers.
+No deletion, new budget, waiver or installed change is authorized here.
+
+Prepared unified-0 export: /home/deploy/agentq/tmp/export608-stage-unified-0-1235,
+manifest49777b6a39513a3cb78157a2c64d586365ee127ebf449f732fedddac22c80203.
+The frozen verifier passed; every staged input shares its accepted producer inode.
+Recorded free835039232bytes exceeds256MiB return reserve plus32MiB export reserve.
+The preparation receipt/manifest are committed beside this note. Other prepared
+unified exports and their per-stage space/pin receipts are recorded separately.
+Recheck actual free space before EACH launch/return; cumulative artifacts can
+exhaust this filesystem. Preserve inputs on shortfall; no repeated fill-and-retry.
+
+FIRST step of a fresh worker: offload deadline, then confirm no previous launch
+or unknown run/result for unified-0-1235. Its immutable manifest UNUSED field is
+preparation metadata, not an independent launch-history proof. If unspent and
+2460s timeout plus195s settlement fits, launch exactly once:
+
+```sh
+cd /home/deploy/agentq/tmp/export608-stage-unified-0-1235
+offload run --timeout 2460 --mem 4g --cpus 1 --artifacts result608-unified-0 -- timeout -k 15s 2400s sh run608.sh > /home/deploy/agentq/runs/608/stage-unified0-offload.log 2>&1
+```
+
+Only an actual successful broker exit, exit-code.txt0 and exact stage-receipt
+source/export/manifest/input/output hashes admit its result. Keep complete logs
+and checkpoints; commit/push each accepted stage and write its commit in NOTES.
+Then unified-1..5, middle(native+runtime+ALL unified), sdk-0/1(native+middle),
+tail(native+middle+BOTH sdk), package(native+checks+compiler+tail), one offload
+at a time. Each stage retains the original checks and budgets. Long steps run
+first in fresh workers; no preparer runs during uploads. Respect exit75/76/95 and
+unknown completion reconciliation; never relaunch a spent/unknown export.
+
+After package success, follow job608-final-HQ-HANDOFF.md (the authoritative
+post639 baseline/seal handoff, superseding older runs notes) for exact build/
+tree/native/check receipts, old/new inventory, action, privilege and full-seal
+reviews, original seal validation/reseal/rollback, ACTUAL automatic queue review,
+and595 genuine foreground natural-gap ownership. The existing ordered handoff
+still requires fresh post-restart native owner binding AND accepted-run ACKs;
+old510/515 ACKs cannot survive gateway restart.575/588 and553 remain reference-only.
+No prepared export, source approval or soft hold release grants install/release
+authority. No installed/sealed/root/unit/sudoers/service/restart/provider action
+occurred in this continuation.
+
+
+Checks8 accepted in037bfbf0: offload/result exit0, all477 scoped checks PASS
+(153Node+126Python+198installed, no skips/todo/failures). Exact receipt
+job608-stage-checks8-receipt.json and raw compressed tests/JSON/logs are committed.
+Source/export/manifest/output digests rechecked. Actual fd3 supervisor IPC,
+original peer/cgroup/MainPID refusal and cancellation/descendant-settlement cases
+pass synthetically; no live HQ owner/provider availability is claimed. Package
+must consume checks from tmp/export608-stage-checks-1112/result608-checks.
+The older checks7 receipt at835714fb remains unusable for this frozen source.
