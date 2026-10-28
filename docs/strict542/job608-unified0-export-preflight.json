@@ -1,0 +1,56 @@
+{
+  "stage": "unified-0",
+  "manifest_sha256": "49777b6a39513a3cb78157a2c64d586365ee127ebf449f732fedddac22c80203",
+  "source_commit": "2b543da30204b358d4b58a8fb52b060f405f3789",
+  "source_export_sha256": "a19f36956cc6f215571dcc6d037772533053e351d018941f97eb846f8df9cc49",
+  "execution_state": "UNUSED",
+  "files": [
+    {
+      "path": "native/libtests-receipt.json",
+      "sha256": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946",
+      "size": 2062,
+      "same_inode": true
+    },
+    {
+      "path": "native/receipt.json",
+      "sha256": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+      "size": 2117,
+      "same_inode": true
+    },
+    {
+      "path": "native/rolldown-binding.linux-x64-gnu.node",
+      "sha256": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042",
+      "size": 24303312,
+      "same_inode": true
+    },
+    {
+      "path": "native/stage-receipt.json",
+      "sha256": "32bd246a35634b09cbb88455d5cc41fff833d5b9315a3e8f104ca2438dfaf6d4",
+      "size": 680,
+      "same_inode": true
+    },
+    {
+      "path": "runtime/build.log",
+      "sha256": "aeb9f6531b80227d7a1aa8d72312a0fc3cddd59a99e9a157913d2763883dfbe5",
+      "size": 64183,
+      "same_inode": true
+    },
+    {
+      "path": "runtime/checkpoint.tar",
+      "sha256": "7657104323a6c818b38705ae214d71b2216a145d990e9f4cb83da698acd029ed",
+      "size": 313313280,
+      "same_inode": true
+    },
+    {
+      "path": "runtime/stage-receipt.json",
+      "sha256": "641c069ab74330ce50f006fb0e1e5a7f0760c7cf0df57b8d1e6ab3fd9ada4d13",
+      "size": 960,
+      "same_inode": true
+    }
+  ],
+  "free_bytes": 835039232,
+  "return_reserve_bytes": 268435456,
+  "metadata_reserve_bytes": 33554432,
+  "producer_bytes_unchanged": "all producer pre/post digests checked by reviewed helper; inode identity reconfirmed here; frozen consumer verifies same bytes",
+  "verify_inputs": "PASS"
+}

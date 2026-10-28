@@ -1,0 +1,11 @@
+test_bad_digest_refused_before_link (docs.strict542.test_prepare_stage608_export.LinkInputTest.test_bad_digest_refused_before_link) ... ok
+test_cross_device_error_never_falls_back_to_copy (docs.strict542.test_prepare_stage608_export.LinkInputTest.test_cross_device_error_never_falls_back_to_copy) ... ok
+test_existing_destination_and_destination_symlink_parent_refused (docs.strict542.test_prepare_stage608_export.LinkInputTest.test_existing_destination_and_destination_symlink_parent_refused) ... ok
+test_hardlink_preserves_producer_inode_bytes_and_mode (docs.strict542.test_prepare_stage608_export.LinkInputTest.test_hardlink_preserves_producer_inode_bytes_and_mode) ... ok
+test_parent_traversal_refused (docs.strict542.test_prepare_stage608_export.LinkInputTest.test_parent_traversal_refused) ... ok
+test_source_and_parent_symlinks_refused (docs.strict542.test_prepare_stage608_export.LinkInputTest.test_source_and_parent_symlinks_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.007s
+
+OK
