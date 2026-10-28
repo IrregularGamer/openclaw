@@ -1,0 +1,25 @@
+{
+  "export": "export608-stage-compiler-022430",
+  "inputs": "native3 export608-stage-native-014144/result608-native",
+  "kind": "JOB608_STAGE_RESULT",
+  "manifest_sha256": "7f5f82691b110515fff14950ad1b3171d6310417f9a6fc04448518344ae800aa",
+  "outcome": "PASS rc0 STEP608 compiler-checks-pass (4g1CPU outer 2385s+15)",
+  "outputs_verified": true,
+  "preserved_for_package_stage": "export608-stage-compiler-022430/result608-compiler",
+  "source_commit": "6ae72a29b920fcab79f3f68b20ca7fc2a4cdbcc4",
+  "source_review": "APPROVE 1862a58b",
+  "stage": "compiler",
+  "stage_receipt": {
+    "exit_code": 0,
+    "kind": "JOB608_STAGE_RECEIPT",
+    "manifest_sha256": "7f5f82691b110515fff14950ad1b3171d6310417f9a6fc04448518344ae800aa",
+    "outputs": {
+      "compiler/tests.log": "bdc96e48e8b5186fb865e9970df839414e120ca14e54867f6cb65d0463391477"
+    },
+    "run_id": "stage608-compiler-022430",
+    "source_commit": "6ae72a29b920fcab79f3f68b20ca7fc2a4cdbcc4",
+    "stage": "compiler"
+  },
+  "stage_receipt_sha256": "86349f2316c6ecb56c4ab50c5e8ed75dfed6c43e78b9ec3ea596d1966cc0cb6f",
+  "window_utc": "2026-10-28T03:05Z->~03:12Z"
+}
