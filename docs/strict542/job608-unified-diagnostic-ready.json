@@ -1,0 +1,16 @@
+{
+  "kind": "SOURCE_ONLY_BOUNDED_DIAGNOSTIC608",
+  "diagnostic_source_commit": "857ca78356d1302ff882edc7ae45acde9d64e000",
+  "diagnostic_sha256": "7ffb4a1b8e813034e2c742f485072c4975136230448c545f1d8859230f2e6288",
+  "export": "/home/deploy/agentq/tmp/export608-diag-unified-1731",
+  "manifest_sha256": "3d5634ac91c09e0129a58285f90f1df1bcd7cc733f4284784f74a10b3c727435",
+  "original_source_commit": "5f7d810b7f254e4f06dbf7761b557ba90bf1a2b0",
+  "original_source_export_sha256": "76b4b47a0e5c3e0a157f75ff1b76d60753c8acdbf5f76bc495668dd985d70f64",
+  "execution_state": "UNUSED",
+  "outer_offload_timeout": 1080,
+  "outer_command_timeout": 1020,
+  "inner_build_wall_seconds": 600,
+  "resource_budget": "4GiB/1CPU/swap0 unchanged admitted friend cap",
+  "artifact_authority": "NONE: no accepted build checkpoint/package/installation receipt",
+  "return_space_reserve_bytes": 104857600
+}
