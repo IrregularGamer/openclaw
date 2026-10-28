@@ -156,3 +156,9 @@ the fresh reviewed scheduler request after every original gate.
 - One admitted offload 4g/1CPU `--timeout 2460`, exit 0, `STEP608 native-rebuild-pass`. Receipt `job608-stage-native7-receipt.json`; log `job608-stage-native7-offload.log.gz`. Result retained at `tmp/export608-stage-native-1025/result608-native`.
 - Every later stage MUST use `--commit 2b543da3` and native7 inputs.
 - NEXT fresh worker, FIRST step: prepare checks export (no predecessor) and compiler/runtime exports with `--input` from native7 (`stage608.py verify-inputs`), launch compiler (~6 min) and runtime one at a time with deadline checks; then unified-0..5, middle, sdk-0..1, tail, package.
+
+## 2026-10-28 checks/compiler/runtime at freeze 2b543da3 (Claude, worker 608-1-9ea7)
+
+- Prepared UNUSED with `runs/608/prepare-stage608-export.py --base export608-stage-native-1025 --commit 2b543da3` (archives hardlinked; compiler/runtime `--input` native7 result): checks `tmp/export608-stage-checks-1112` (manifest 70a4d91b), compiler `tmp/export608-stage-compiler-1112` (d2a150a5), runtime `tmp/export608-stage-runtime-1112` (b279a205). Host `/` 1.1 GB free, nothing deleted.
+- compiler7: one admitted offload 4g/1CPU `--timeout 2460`, exit 0, `STEP608 compiler-checks-pass`. Receipt `job608-stage-compiler7-receipt.json` (tests.log 9e24c229, verified locally); log `job608-stage-compiler7-offload.log.gz`.
+- runtime launched next from `tmp/export608-stage-runtime-1112`, same flags, `--artifacts result608-runtime`.
