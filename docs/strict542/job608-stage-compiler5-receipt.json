@@ -1,0 +1,1 @@
+{"exit_code": 0, "kind": "JOB608_STAGE_RECEIPT", "manifest_sha256": "37a07f911e159dbb7d4eb2595f72ea3aaf8894df97c37f10fbd8f9133747c299", "outputs": {"compiler/tests.log": "2d6c4698bcbdfb0a4b2ad78177f7c127a5a5dcee570d32d88b48243f93418106"}, "run_id": "stage608-compiler-043520", "source_commit": "591158cfe4a569c9e857780e9cc185cb4590b9b7", "stage": "compiler"}
