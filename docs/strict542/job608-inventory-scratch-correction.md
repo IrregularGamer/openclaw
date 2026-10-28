@@ -47,3 +47,10 @@ from new committed secretless exports. Keep every full affected check. Final
 artifact/old-new inventory/action/privilege/seal and REAL automatic queue reviews
 and the ordered genuine nonqueue HQ handoff remain.595 MUST NOT APPLY.
 No installed/sealed/root/unit/sudoers/service/gateway/provider change occurred.
+
+The new4regressions are wired into the canonical full checks-stage runner, so
+the new complete scoped inventory is482(previous478+4), subject to actual run
+reconciliation. A first focused remote export omitted build-artifact-cache.mts
+and the writer read by existing fixture tests;15passed/2ENOENT fixture failures.
+That export is SPENT/FAILED and grants no acceptance. The corrected NEW export
+includes both exact committed fixtures; assertions and scope stay unchanged.
