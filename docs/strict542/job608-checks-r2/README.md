@@ -7,4 +7,4 @@ Evidence for source preparation only. **595 MUST NOT APPLY.**
 - Receipt: stage checks, source 1bed4d1bb53eff145f724cc6a448dc73b3609015, export 5d7e9d57fb660e2b54f5595e81ddf332027e21b303937c2cd6bc7f718f311263, manifest 20111ce5f68e7764e7176a670df6e9097deafa51d02291810bf65dd41c8c7c2d.
 - Vitest: 13/13 suites, 198/198 tests. Node test runner: 158 pass, 0 fail, 0 cancelled.
 - Raw sha256: installed.json 9843dc48…, stage-receipt.json c8ad16cd…, tests.log 3712c046….
-- Open: earlier NOTES call this the "canonical491" checks. The 356 assertions counted here are not yet reconciled with that figure. The next independent review must confirm the inventory before the native stage uses this receipt.
+- Inventory reconciled (19:26Z): the log also holds 12 Python unittest runs totalling 135 tests, all OK, 0 FAILED/ERROR lines. 135 Python + 158 Node + 198 Vitest = 491, matching the planned canonical491 runner count. An independent reviewer should still confirm this from tests.log.gz (raw sha256 3712c046…) before native relies on it.
