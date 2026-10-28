@@ -149,3 +149,10 @@ the fresh reviewed scheduler request after every original gate.
 - Fix e564e781: `runBuildAllSteps` takes an optional `prepareCheckpoint`, and the checkpoint entry injects its own `prepareBuildCheckpoint608`. A regression test was added (7/7). Independent review APPROVED: `job608-review-e564e781.md`.
 - Consequence: the source identity changes, so the native6/checks7/compiler6 receipts at 835714fb are SUPERSEDED for the new freeze. They stay as history and are not reused (verify-inputs binds the common export identity).
 - NEXT fresh worker, FIRST step: freeze the commit that carries this review, prepare the native stage export with `prepare-stage608-export.py` (as for export608-stage-native-0852), and launch native (~2385s timeout). Then checks, compiler and runtime from the new native result, then unified-0..5, middle, sdk-0..1, tail, and complete/package.
+
+## Native7 stage at frozen 2b543da3 (2026-10-28T11:0xZ)
+
+- Export `tmp/export608-stage-native-1025` prepared with `runs/608/prepare-stage608-export.py --base export608-stage-native-0852 --commit 2b543da3 --stage native` (archives hardlinked, no new disk use), manifest 9c30f24b.
+- One admitted offload 4g/1CPU `--timeout 2460`, exit 0, `STEP608 native-rebuild-pass`. Receipt `job608-stage-native7-receipt.json`; log `job608-stage-native7-offload.log.gz`. Result retained at `tmp/export608-stage-native-1025/result608-native`.
+- Every later stage MUST use `--commit 2b543da3` and native7 inputs.
+- NEXT fresh worker, FIRST step: prepare checks export (no predecessor) and compiler/runtime exports with `--input` from native7 (`stage608.py verify-inputs`), launch compiler (~6 min) and runtime one at a time with deadline checks; then unified-0..5, middle, sdk-0..1, tail, package.

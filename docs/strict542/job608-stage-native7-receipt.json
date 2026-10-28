@@ -1,0 +1,24 @@
+{
+ "exit_code_file": "0",
+ "export": "tmp/export608-stage-native-1025",
+ "export_manifest_sha256": "9c30f24b82126c784d9d366c0650377659aa73464700aa038dc108d718fa3533",
+ "offload": "admitted friend VPS 4g/1CPU --timeout 2460, lease b7d5796b, exit 0, STEP608 native-rebuild-pass",
+ "outputs_sha256": {
+  "exit-code.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+  "native/libtests-receipt.json": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946",
+  "native/receipt.json": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+  "native/rolldown-binding.linux-x64-gnu.node": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042",
+  "native/stage-receipt.json": "32bd246a35634b09cbb88455d5cc41fff833d5b9315a3e8f104ca2438dfaf6d4",
+  "result598-native/compaction-tests.log": "69b1bce3ed8e3ac773dc7d350d4b5dd74055a6c46ed968d18f113fb0e0aa90e8",
+  "result598-native/lifetime-retention-negative.log": "3fc693025e73d756be88f5d6c090f57b26c8f823770a3b76cb18dc70783171d1",
+  "result598-native/receipt.json": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+  "result598-native/rolldown-binding.linux-x64-gnu.node": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042",
+  "strict542-checks/native-rebuild.log": "eb9557dcf2f581ab0b35836edb438fce4312e7d50e58a995f7972739bbbbcec5"
+ },
+ "retained_locally": "tmp/export608-stage-native-1025/result608-native (predecessor for checks/compiler/runtime)",
+ "run": "native7",
+ "source_commit": "2b543da3",
+ "stage": "native",
+ "state": "evidence; no install/seal/unit/sudoers change",
+ "supersedes": "native6 at 835714fb (source changed by e564e781/2b543da3)"
+}
