@@ -1,0 +1,4 @@
+FAIL: test_compiler_stage_creates_every_evidence_dir_its_tests_write (test_stage608.Stage608Test.test_compiler_stage_creates_every_evidence_dir_its_tests_write)
+AssertionError: 'mkdir result598-native\n' not found in '  (cd .. && python3 stage608.py stage-native)\n  npm exec --yes --package=pnpm@12.5.1 -- sh -c \'set -eu; [ "$(pnpm --version)" = 12.5.1 ]; pnpm install --frozen-lockfile\'\n  node --input-type=module -e \'import {releaseDisposableStore} from "./scripts/lib/disposable-build-inputs.mjs"; releaseDisposableStore("..")\'\n  set +e\n  (\n  set -e\n  node --test docs/strict542/worker-minify608.test.mjs\n  node --import ./scripts/tsx.mjs --test docs/strict542/' : native-codegen608.test.mjs writes result598-native
+Ran 9 tests in 0.021s
+FAILED (failures=1)

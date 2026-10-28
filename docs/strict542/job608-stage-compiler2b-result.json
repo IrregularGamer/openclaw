@@ -1,0 +1,13 @@
+{
+  "export": "export608-stage-compiler-011517",
+  "kind": "JOB608_STAGE_RESULT",
+  "manifest_sha256": "87601b260f650a4d3a3b32286305ad2db793c14c556c96fba38dd327d3590326",
+  "outcome": "FAIL rc1 (offload rc0 transport; runner exit 1) STEP608 compiler checks: native-codegen608.test.mjs 2/2 ENOENT writing result598-native/{stock-patched-equality.json,release-phase-trace.log}",
+  "cause": "stage-split defect in run-stage608.sh: the single run's native rebuild created source/result598-native; the split compiler stage never ran it, so the evidence dir did not exist. Not a codegen/native assertion: both failures are at fs.writeFile after computation.",
+  "artifacts_returned": "none (failed offload returns no artifacts)",
+  "export_state": "CONSUMED (do not relaunch; runner_sha256 superseded by the mkdir fix)",
+  "source_commit": "5ec111ba29ba738b37a8d0c8371536b3ab956865",
+  "launched_utc": "2026-10-28T01:32:13Z",
+  "finished_utc": "~2026-10-28T01:38Z",
+  "fix": "run-stage608.sh compiler branch: mkdir result598-native before compiler checks; regression test test_compiler_stage_creates_every_evidence_dir_its_tests_write (red job608-stage-mkdir-red.txt, green job608-stage-mkdir-green.txt)"
+}

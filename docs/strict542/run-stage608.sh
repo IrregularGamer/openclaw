@@ -92,6 +92,9 @@ checks)
   ;;
 compiler)
   (cd .. && python3 stage608.py stage-native)
+  # The single run's native rebuild created result598-native; the compiler
+  # checks write their codegen/phase-trace evidence there (returned by cleanup).
+  mkdir result598-native
   npm exec --yes --package=pnpm@12.5.1 -- sh -c 'set -eu; [ "$(pnpm --version)" = 12.5.1 ]; pnpm install --frozen-lockfile'
   node --input-type=module -e 'import {releaseDisposableStore} from "./scripts/lib/disposable-build-inputs.mjs"; releaseDisposableStore("..")'
   set +e

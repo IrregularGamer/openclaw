@@ -66,6 +66,14 @@ class Stage608Test(unittest.TestCase):
             rp.write_text(json.dumps(v));m['stage_inputs']['native/stage-receipt.json']=sha(rp.read_bytes())
         with self.assertRaisesRegex(ValueError,'independently pinned compile'):stage608.verify_inputs(self.build('compiler',swap))
 
+    def test_compiler_stage_creates_every_evidence_dir_its_tests_write(self):
+        here=Path(__file__).resolve().parent;runner=(here/'run-stage608.sh').read_text()
+        branch=runner.split('\ncompiler)\n',1)[1].split('\n  ;;\n',1)[0]
+        import re
+        for test in re.findall(r'docs/strict542/(\S+\.test\.mjs)',branch):
+            for d in set(re.findall(r"writeFile\('([^'/]+)/",(here/test).read_text())):
+                self.assertIn('mkdir '+d+'\n',branch.split(test,1)[0],test+' writes '+d)
+
     def test_receipt_pins_outputs(self):
         root=self.build('checks');res=root/'result608-checks';(res/'checks').mkdir(parents=True)
         (res/'checks/tests.log').write_bytes(b'checks\n');(res/'checks/installed.json').write_bytes(b'{}')
