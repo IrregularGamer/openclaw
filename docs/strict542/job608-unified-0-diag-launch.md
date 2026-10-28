@@ -16,8 +16,8 @@ reported 3318 s longest safe):
 
     offload run --timeout 2980 --mem 4g --cpus 1 --artifacts result608-unified-0 -- sh -c '
       S=$(date +%s)
-      ( while sleep 240; do echo "SAMPLE608 t=$(( $(date +%s)-S ))s"; ps -eo pid,etimes,time,rss,args --sort=-time 2>/dev/null | head -6 | cut -c1-200; done ) & P=$!
-      timeout -k 15s 2920s sh run608.sh; rc=$?; kill $P 2>/dev/null; echo "SAMPLE608 end rc=$rc t=$(( $(date +%s)-S ))s"; exit $rc'
+      ( trap '"'"'kill $s 2>/dev/null; exit 0'"'"' TERM; while :; do sleep 240 & s=$!; wait $s; echo "SAMPLE608 t=$(( $(date +%s)-S ))s"; ps -eo pid,etimes,time,rss,args --sort=-time 2>/dev/null | head -6 | cut -c1-200; done ) & P=$!
+      timeout -k 15s 2920s sh run608.sh; rc=$?; kill $P 2>/dev/null; wait $P 2>/dev/null; echo "SAMPLE608 end rc=$rc t=$(( $(date +%s)-S ))s"; exit $rc'
 
 - Budget: 4g/1CPU as before (the offload maximum admission; no floor, gate or check changed).
   Inner wall 2920 s instead of 2400 s, still inside the admitted `offload run --timeout`
@@ -29,3 +29,9 @@ reported 3318 s longest safe):
 - If rc=0: record the unified-0 receipt and continue unified-1..5. If rc!=0: the samples
   decide the source-level split of openclaw-dts-base, prepared as a new reviewed commit.
 - 595 MUST NOT APPLY. Nothing installed or sealed.
+
+## Independent review (agent aad13e87): CHANGES -> fixed
+Runner identity (eac266cf), no secrets, and the receipt-binding claim were confirmed. Finding: `kill $P`
+left the in-flight `sleep 240` orphaned holding stdout (could exceed --timeout 2980). Fixed: the sampler
+traps TERM and kills its own sleep; the wrapper waits for it. Stub test (run608.sh = `sleep 3; exit 7`):
+rc=7 propagated, returned in 3 s, no orphan sleep left. Launched with this fixed wrapper.
