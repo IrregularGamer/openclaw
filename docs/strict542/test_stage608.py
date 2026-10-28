@@ -74,6 +74,17 @@ class Stage608Test(unittest.TestCase):
             for d in set(re.findall(r"writeFile\('([^'/]+)/",(here/test).read_text())):
                 self.assertIn('mkdir '+d+'\n',branch.split(test,1)[0],test+' writes '+d)
 
+    def test_package_builder_failure_surfaces_log_tail_and_keeps_status(self):
+        import re,subprocess
+        branch=(Path(__file__).resolve().parent/'run-stage608.sh').read_text().split('\npackage)\n',1)[1]
+        block=re.search(r'\n  env -i [^\n]*build598\.sh( \|\| \{\n.*?\n  \}\n)',branch,re.S)
+        self.assertIsNotNone(block,'builder failure must not be silent')
+        d=Path(tempfile.mkdtemp());(d/'result598-build').mkdir()
+        (d/'fake.sh').write_text('echo hidden-build-error >result598-build/build.log; exit 7\n')
+        r=subprocess.run(['sh','-c','set -eu\nsh fake.sh'+block.group(1)+'echo reached\n'],cwd=d,capture_output=True,text=True)
+        self.assertEqual(r.returncode,7);self.assertIn('STEP608 builder-fail 7',r.stdout)
+        self.assertIn('hidden-build-error',r.stdout);self.assertNotIn('reached',r.stdout)
+
     def test_receipt_pins_outputs(self):
         root=self.build('checks');res=root/'result608-checks';(res/'checks').mkdir(parents=True)
         (res/'checks/tests.log').write_bytes(b'checks\n');(res/'checks/installed.json').write_bytes(b'{}')

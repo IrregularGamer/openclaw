@@ -140,7 +140,11 @@ for key,field in [('STRICT542_SOURCE_COMMIT','source_commit'),('STRICT542_SOURCE
 BUILDER_IDENTITIES
 )"
   echo STEP608 builder-start
-  env -i HOME="$HOME" PATH="$(dirname "$PNPM_COMMAND"):$(dirname "$NODE_PHYSICAL"):/usr/bin:/bin" STRICT542_SOURCE_COMMIT="$STRICT542_SOURCE_COMMIT" STRICT542_SOURCE_EXPORT_SHA256="$STRICT542_SOURCE_EXPORT_SHA256" STRICT542_BUILD_RUN_ID="$STRICT542_BUILD_RUN_ID" sh docs/strict542/build598.sh
+  env -i HOME="$HOME" PATH="$(dirname "$PNPM_COMMAND"):$(dirname "$NODE_PHYSICAL"):/usr/bin:/bin" STRICT542_SOURCE_COMMIT="$STRICT542_SOURCE_COMMIT" STRICT542_SOURCE_EXPORT_SHA256="$STRICT542_SOURCE_EXPORT_SHA256" STRICT542_BUILD_RUN_ID="$STRICT542_BUILD_RUN_ID" sh docs/strict542/build598.sh || {
+    # A failed offload returns no artifacts and build598.sh writes only to its
+    # log, so surface the log tail on stdout; the failure status is unchanged.
+    status=$?; echo "STEP608 builder-fail $status"; tail -n 80 result598-build/build.log 2>/dev/null || true; exit "$status"
+  }
   echo STEP608 builder-pass
   ;;
 esac
