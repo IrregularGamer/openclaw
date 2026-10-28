@@ -1,0 +1,62 @@
+{
+  "actual_offload_exit": 0,
+  "all_returned_files_sha256": {
+    "exit-code.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "native/libtests-receipt.json": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946",
+    "native/receipt.json": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+    "native/rolldown-binding.linux-x64-gnu.node": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042",
+    "native/stage-receipt.json": "f40df3a579bd600c154b14ad9d9ac863b5ab26381f8615aa54d0829c0ea05069",
+    "result598-native/compaction-tests.log": "9baf81c8c4758a952a264925c0120c831a9fa2dca492952bc06306f53a13fb56",
+    "result598-native/lifetime-retention-negative.log": "be12743dadb6946c99c4b7d5757119fa521e5972a89062f1507c8af7a9c4d35b",
+    "result598-native/receipt.json": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+    "result598-native/rolldown-binding.linux-x64-gnu.node": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042",
+    "strict542-checks/native-rebuild.log": "204f2c42ff51386a022734a03051a4a2d418ddddeb2418b2032e987f0095abe7"
+  },
+  "compressed_evidence": {
+    "job608-stage-native-owned-compaction.log.gz": {
+      "expanded_bytes": 10053,
+      "expanded_sha256": "9baf81c8c4758a952a264925c0120c831a9fa2dca492952bc06306f53a13fb56",
+      "sha256": "7a7f180e594cb940c802482d42c730ae9f8b2a7b9662b3ffd2485bd990d41aa5"
+    },
+    "job608-stage-native-owned-offload.log.gz": {
+      "expanded_bytes": 2119,
+      "expanded_sha256": "ccb7ebda230470fd60e16a75c75b5e48fabd1ac2aca8b775a3b8c5eea32a9c43",
+      "sha256": "90edc6d562c81de2ab692b79cdd5809762ccca441d29b8187de00bc7d5b340cb"
+    },
+    "job608-stage-native-owned-rebuild.log.gz": {
+      "expanded_bytes": 26495,
+      "expanded_sha256": "204f2c42ff51386a022734a03051a4a2d418ddddeb2418b2032e987f0095abe7",
+      "sha256": "4c159d9ba6b7130ccb50734e9647e194866283cb1f5ca2a694fdb5ed0e16865a"
+    },
+    "job608-stage-native-owned-retention-negative.log.gz": {
+      "expanded_bytes": 1897,
+      "expanded_sha256": "be12743dadb6946c99c4b7d5757119fa521e5972a89062f1507c8af7a9c4d35b",
+      "sha256": "02996a848143ebe80ff6292f81de29f570921db75fdcb7bfa744b2a0e3e75c67"
+    }
+  },
+  "deterministic_native_addon_sha256": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042",
+  "export": "/home/deploy/agentq/tmp/export608-stage-native-owned-next",
+  "independent_compile_and_libtests_pins": "exact receipt bytes match manifest pins; rebuilt addon matches compile receipt",
+  "receipt": {
+    "exit_code": 0,
+    "kind": "JOB608_STAGE_RECEIPT",
+    "manifest_sha256": "708a52c26402db1b4b030c0a0a64a91911fb6dd15d9798ade2e12b091c2f9e2e",
+    "outputs": {
+      "native/libtests-receipt.json": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946",
+      "native/receipt.json": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+      "native/rolldown-binding.linux-x64-gnu.node": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042"
+    },
+    "run_id": "stage608-native-next",
+    "source_commit": "5f7d810b7f254e4f06dbf7761b557ba90bf1a2b0",
+    "source_export_sha256": "76b4b47a0e5c3e0a157f75ff1b76d60753c8acdbf5f76bc495668dd985d70f64",
+    "stage": "native",
+    "stage_inputs": {}
+  },
+  "receipt_sha256": "f40df3a579bd600c154b14ad9d9ac863b5ab26381f8615aa54d0829c0ea05069",
+  "remaining": "current checks/compiler/runtime/unified0..5/middle/sdk0..1/tail/package; exact artifact/action/privilege/seal/automatic reviews;595 MUST NOT APPLY",
+  "result_exit": 0,
+  "scope": "ACTUAL_NATIVE_STAGE_ONLY_NOT_GATEWAY_BUILD_PACKAGE_OR_APPLICATION",
+  "source_commit": "5f7d810b7f254e4f06dbf7761b557ba90bf1a2b0",
+  "source_export_sha256": "76b4b47a0e5c3e0a157f75ff1b76d60753c8acdbf5f76bc495668dd985d70f64",
+  "verification": "PASS"
+}
