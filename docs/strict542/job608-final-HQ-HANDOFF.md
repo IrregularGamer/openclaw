@@ -74,9 +74,9 @@ agentq-ops feature/598-external-install commit3c18a58,
 docs/job598-external-wait.md. Its EXTERNAL_INSTALL_WAIT marker is UNINSTALLED
 and cannot bootstrap this gap. Current dispatcher continuations may run on the
 next tick when the friend is up: do not assume the historical30minute delay or
-reserve admission. Use an existing timed slot only if its actual installed
-semantics provide one after the genuine handoff; otherwise finish the source
-preparation normally and retain the handoff in actual HQ. Never direct-edit
+reserve admission.595 finishes its source preparation normally after the genuine
+handoff and retains it in actual HQ. No current timed gap has been established.
+Never direct-edit
 DB/status/counters, force stop/resume, start a detached installer, repeatedly
 REQUEUE docs or install the optional dispatcher successor to arrange itself.
 3. After all workers/fixtures/remote runs naturally settle, genuine foreground
