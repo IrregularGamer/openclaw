@@ -1,0 +1,103 @@
+{
+  "actual_client_exit": 124,
+  "actual_inner_end": {
+    "command_exit_code": 124,
+    "elapsed_seconds": 2300
+  },
+  "analyzer_review": "80e7c4cf",
+  "analyzer_source": "691b7845",
+  "application_authority": false,
+  "build_package_receipt": null,
+  "kind": "DIAGNOSTIC_EVIDENCE_ONLY_NO_BUILD_OR_APPLICATION608",
+  "limits": [
+    "Printed top processes only; CPU/RSS between samples is unobserved.",
+    "Printed PID continuity is not native ownership or kernel start identity.",
+    "RSS is sampled per-process; no cgroup pressure/OOM history is established.",
+    "CPU progress identifies active work, not the exact native API query or full timeout cause.",
+    "Optional direct read-only systemctl counter lookup was refused96 by remote command policy; no retry or bypass.",
+    "Candidate95 callback fix is narrow and does not establish a native CPU timeout fix."
+  ],
+  "manifest_sha256": "e7b2dc2ea5493fe20e8ef148849250a500ff9cf1f84976497bf1e604ff43aa39",
+  "observer_sha256": "73d17f3c1e0892cd3366986d28e69b86e8f4fb9da4e5b91f9a8510b61a20c186",
+  "prelaunch_review": "1e9ab044",
+  "process_summaries": [
+    {
+      "first_cpu_seconds": 93,
+      "first_sample_seconds": 120,
+      "largest_sampled_rss_bytes": 858591232,
+      "last_cpu_seconds": 93,
+      "last_sample_seconds": 120,
+      "observations": 1,
+      "observed_cpu_delta_seconds": 0,
+      "pid": 83,
+      "role": "installer"
+    },
+    {
+      "first_cpu_seconds": 43,
+      "first_sample_seconds": 241,
+      "largest_sampled_rss_bytes": 600461312,
+      "last_cpu_seconds": 47,
+      "last_sample_seconds": 2285,
+      "observations": 18,
+      "observed_cpu_delta_seconds": 4,
+      "pid": 245,
+      "role": "checkpoint-node"
+    },
+    {
+      "first_cpu_seconds": 5,
+      "first_sample_seconds": 241,
+      "largest_sampled_rss_bytes": 18628608,
+      "last_cpu_seconds": 68,
+      "last_sample_seconds": 2285,
+      "observations": 18,
+      "observed_cpu_delta_seconds": 63,
+      "pid": 253,
+      "role": "esbuild-service"
+    },
+    {
+      "first_cpu_seconds": 12,
+      "first_sample_seconds": 241,
+      "largest_sampled_rss_bytes": 614035456,
+      "last_cpu_seconds": 55,
+      "last_sample_seconds": 2285,
+      "observations": 18,
+      "observed_cpu_delta_seconds": 43,
+      "pid": 307,
+      "role": "declaration-node"
+    },
+    {
+      "first_cpu_seconds": 1,
+      "first_sample_seconds": 241,
+      "largest_sampled_rss_bytes": 3390652416,
+      "last_cpu_seconds": 1398,
+      "last_sample_seconds": 2285,
+      "observations": 18,
+      "observed_cpu_delta_seconds": 1397,
+      "pid": 330,
+      "role": "native-typescript"
+    }
+  ],
+  "replay": "SPENT_DIAGNOSTIC; manifest UNUSED is prelaunch metadata only",
+  "retained_raw_pins": {
+    "analysis.json": {
+      "bytes": 46125,
+      "sha256": "31fbaac172cbdf22f9cdefa6b21f26f117eec8906748ab8c58d350b19f5fb4d8"
+    },
+    "export-manifest.json": {
+      "bytes": 38820,
+      "sha256": "e7b2dc2ea5493fe20e8ef148849250a500ff9cf1f84976497bf1e604ff43aa39"
+    },
+    "offload.log": {
+      "bytes": 44699,
+      "sha256": "cc8a5d74f7068cb401b25128df182aac44d7959cfd1f98c35bbf6d877bb285d5"
+    },
+    "offload.rc": {
+      "bytes": 4,
+      "sha256": "ca2ebdf97d7469496b1f4b78958f9dc8447efdcb623953fee7b6996b762f6fff"
+    }
+  },
+  "returned_stage_receipt": null,
+  "sample_count": 19,
+  "source_commit": "1bed4d1bb53eff145f724cc6a448dc73b3609015",
+  "source_export_sha256": "5d7e9d57fb660e2b54f5595e81ddf332027e21b303937c2cd6bc7f718f311263"
+}

@@ -18,7 +18,28 @@ old/new SHA256/mode inventory is job608-frozen95e62f8b-source-inventory.json.
 Installed target/seal inventory still comes from the original baseline and
 application598.py; source inventory is never installed or artifact acceptance.
 
-## First long step of the next fresh worker
+## Next required source work before expensive build continuation
+
+The actual1bed diagnostic ended client/inner124 at2300seconds with19samples and
+no checkpoint. Native CPU delta1397s dominated Node43s; exact API query and memory
+pressure remain unproved. Do not repeat the CPU sampler or start an unchanged
+expensive native/build attempt. The external native API phase observer is now
+implemented atda316fb6 and independently source-approved10bb157a,10focused cases
+passing. See job608-native-api-phase-observer.md and its independent review.
+
+FIRST prepare the separately reviewed finite diagnostic launcher/export and
+admitted actual preload smoke/phase observation using that external observer,
+unchanged1bed owning-source bytes and accepted same1bed native/runtime inputs.
+All original source/input/owner/admission/cancellation checks remain; suppress
+build/checkpoint publication and preserve actual nonzero inner status. Review
+exact launcher/export before execution. This avoids rebuilding the native addon
+just to identify its expensive API query. Then implement/review the measured
+owning-source correction or supported bounded native-phase split. Do not waive
+semantic diagnostics, membership/seals, settlement, budgets or complete joins.
+Choose a final freeze only after that correction; candidate95 below is prepared
+correctness verification, not evidence that its callback change fixes native CPU.
+
+## Prepared candidate95 checks (conditional; not an unchanged build retry)
 
 After exact independent preflight review, read offload health/deadline, check
 storage608.py check --root /srv/encrypted/dev-move-98/agentq-source608-20261028-private
@@ -89,10 +110,11 @@ actual receipt and independently accept it before a consumer. If new evidence
 requires another source correction, review it and refreeze/rebuild affected
 receipts; never retry an unchanged known timeout as though it were new work.
 
-The running diagnostic is only frozen1bed: NEW export manifest e7b2dc2e,
+The completed diagnostic was only frozen1bed: NEW export manifest e7b2dc2e,
 observer73d17f3c, prelaunch review1e9ab044, actual client log/rc under
-<private>/unified-0-diag-fresh-offload.{log,rc}. It uses2460outer/2300inner seconds.
-Its actual outcome must be committed and independently reviewed. It is spent
+<private>/unified-0-diag-fresh-offload.{log,rc}. It used2460outer/2300inner seconds and ended124 at2300s.
+Its actual outcome is committed in job608-unified-0-diag-fresh-outcome.json;
+independent final interpretation is required. It is spent
 after this single launch, regardless of the manifest's original UNUSED label.
 No output can establish candidate95 acceptance. The earlier claimed21:46 launch
 was actually a180-byte transfer refusal; raw refusal and correction are committed.

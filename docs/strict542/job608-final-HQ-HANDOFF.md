@@ -24,10 +24,11 @@ The1bed pipeline had actual checks491/native/compiler/runtime results (commits
 without a returned receipt (b4a0de05). Its claimed21:46 diagnostic was actually
 refused by the transfer guard before execution. The corrected NEW-path diagnostic
 has manifeste7b2dc2e, observer73d17f3c, independent prelaunch approval1e9ab044,
-and is running with2460outer/2300inner seconds,4GiB/1CPU. It preserves frozen1bed
-source and can never accept the changed candidate95. Its actual outcome belongs
-in job608-unified-0-diag-fresh-outcome.json; before that file exists, the run is
-pending. The launch manifest's UNUSED field is historical prelaunch metadata,
+and completed with actual client/inner124 at2300seconds,4GiB/1CPU. It preserves frozen1bed
+source and can never accept the changed candidate95. Actual19-sample outcome is
+job608-unified-0-diag-fresh-outcome.json: native CPU delta1397s versus declaration
+Node43s over2044observed seconds, no returned checkpoint. Exact query and pressure
+history remain unknown. Independent final evidence review is still required. The launch manifest's UNUSED field is historical prelaunch metadata,
 not replay permission. Do not repeat this export or the refused/stale remote slug.
 
 There is NO completed current package/tree/action/next-seal receipt, final

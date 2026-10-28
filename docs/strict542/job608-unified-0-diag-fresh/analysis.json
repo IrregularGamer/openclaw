@@ -1,0 +1,1367 @@
+{
+  "end": {
+    "command_exit_code": 124,
+    "elapsed_seconds": 2300
+  },
+  "kind": "DIAGNOSTIC_PS_SAMPLES_ONLY_NOT_ACCEPTANCE608",
+  "limits": [
+    "Printed top processes only; CPU/RSS between samples is unobserved.",
+    "Printed PID continuity is not native ownership or kernel start identity.",
+    "RSS is sampled per-process; no cgroup pressure/OOM history is established.",
+    "CPU progress identifies active work, not the exact native API query or full timeout cause."
+  ],
+  "process_summaries": [
+    {
+      "first_cpu_seconds": 93,
+      "first_sample_seconds": 120,
+      "largest_sampled_rss_bytes": 858591232,
+      "last_cpu_seconds": 93,
+      "last_sample_seconds": 120,
+      "observations": 1,
+      "observed_cpu_delta_seconds": 0,
+      "pid": 83,
+      "role": "installer"
+    },
+    {
+      "first_cpu_seconds": 43,
+      "first_sample_seconds": 241,
+      "largest_sampled_rss_bytes": 600461312,
+      "last_cpu_seconds": 47,
+      "last_sample_seconds": 2285,
+      "observations": 18,
+      "observed_cpu_delta_seconds": 4,
+      "pid": 245,
+      "role": "checkpoint-node"
+    },
+    {
+      "first_cpu_seconds": 5,
+      "first_sample_seconds": 241,
+      "largest_sampled_rss_bytes": 18628608,
+      "last_cpu_seconds": 68,
+      "last_sample_seconds": 2285,
+      "observations": 18,
+      "observed_cpu_delta_seconds": 63,
+      "pid": 253,
+      "role": "esbuild-service"
+    },
+    {
+      "first_cpu_seconds": 12,
+      "first_sample_seconds": 241,
+      "largest_sampled_rss_bytes": 614035456,
+      "last_cpu_seconds": 55,
+      "last_sample_seconds": 2285,
+      "observations": 18,
+      "observed_cpu_delta_seconds": 43,
+      "pid": 307,
+      "role": "declaration-node"
+    },
+    {
+      "first_cpu_seconds": 1,
+      "first_sample_seconds": 241,
+      "largest_sampled_rss_bytes": 3390652416,
+      "last_cpu_seconds": 1398,
+      "last_sample_seconds": 2285,
+      "observations": 18,
+      "observed_cpu_delta_seconds": 1397,
+      "pid": 330,
+      "role": "native-typescript"
+    }
+  ],
+  "raw_log_bytes": 44699,
+  "raw_log_sha256": "cc8a5d74f7068cb401b25128df182aac44d7959cfd1f98c35bbf6d877bb285d5",
+  "sample_count": 19,
+  "samples": [
+    {
+      "elapsed_seconds": 120,
+      "processes": [
+        {
+          "age_seconds": 97,
+          "cpu_seconds": 93,
+          "pid": 83,
+          "ppid": 78,
+          "printed_command_prefix": "pnpm install --frozen-lockfile",
+          "role": "installer",
+          "rss_bytes": 858591232
+        },
+        {
+          "age_seconds": 129,
+          "cpu_seconds": 0,
+          "pid": 1,
+          "ppid": 0,
+          "printed_command_prefix": "/sbin/docker-init -- bash /entry.sh",
+          "role": "other",
+          "rss_bytes": 753664
+        },
+        {
+          "age_seconds": 0,
+          "cpu_seconds": 0,
+          "pid": 121,
+          "ppid": 32,
+          "printed_command_prefix": "ps -eo pid,ppid,etimes,time,rss,args --sort=-time",
+          "role": "other",
+          "rss_bytes": 4239360
+        },
+        {
+          "age_seconds": 129,
+          "cpu_seconds": 0,
+          "pid": 8,
+          "ppid": 1,
+          "printed_command_prefix": "bash /cmd.sh",
+          "role": "other",
+          "rss_bytes": 3043328
+        },
+        {
+          "age_seconds": 120,
+          "cpu_seconds": 0,
+          "pid": 28,
+          "ppid": 8,
+          "printed_command_prefix": "timeout -k 15 2460 sh -c sh observe-unified608.sh",
+          "role": "other",
+          "rss_bytes": 1454080
+        },
+        {
+          "age_seconds": 120,
+          "cpu_seconds": 0,
+          "pid": 29,
+          "ppid": 28,
+          "printed_command_prefix": "sh -c sh observe-unified608.sh",
+          "role": "other",
+          "rss_bytes": 1609728
+        },
+        {
+          "age_seconds": 120,
+          "cpu_seconds": 0,
+          "pid": 30,
+          "ppid": 29,
+          "printed_command_prefix": "sh observe-unified608.sh",
+          "role": "other",
+          "rss_bytes": 1638400
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 241,
+      "processes": [
+        {
+          "age_seconds": 73,
+          "cpu_seconds": 43,
+          "pid": 245,
+          "ppid": 78,
+          "printed_command_prefix": "node --import ./scripts/tsx.mjs scripts/build-checkpoint608-owned.mjs unified-0",
+          "role": "checkpoint-node",
+          "rss_bytes": 600461312
+        },
+        {
+          "age_seconds": 16,
+          "cpu_seconds": 12,
+          "pid": 307,
+          "ppid": 245,
+          "printed_command_prefix": "/usr/local/bin/node node_modules/tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean --concurrency 1 --config tsdown.config.ts --filter openclaw-dts-base --out-dir",
+          "role": "declaration-node",
+          "rss_bytes": 448720896
+        },
+        {
+          "age_seconds": 72,
+          "cpu_seconds": 5,
+          "pid": 253,
+          "ppid": 245,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@esbuild+linux-x64@0.28.2/node_modules/@esbuild/linux-x64/bin/esbuild --service=0.28.2 --ping",
+          "role": "esbuild-service",
+          "rss_bytes": 18628608
+        },
+        {
+          "age_seconds": 4,
+          "cpu_seconds": 1,
+          "pid": 330,
+          "ppid": 307,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@typescript+typescript-linux-x64@7.1.0-dev.20260920.1/node_modules/@typescript/typescript-linux-x64/lib/tsc --api --async --cwd /work/source --callba",
+          "role": "native-typescript",
+          "rss_bytes": 56389632
+        },
+        {
+          "age_seconds": 250,
+          "cpu_seconds": 0,
+          "pid": 1,
+          "ppid": 0,
+          "printed_command_prefix": "/sbin/docker-init -- bash /entry.sh",
+          "role": "other",
+          "rss_bytes": 753664
+        },
+        {
+          "age_seconds": 249,
+          "cpu_seconds": 0,
+          "pid": 8,
+          "ppid": 1,
+          "printed_command_prefix": "bash /cmd.sh",
+          "role": "other",
+          "rss_bytes": 3043328
+        },
+        {
+          "age_seconds": 0,
+          "cpu_seconds": 0,
+          "pid": 339,
+          "ppid": 32,
+          "printed_command_prefix": "ps -eo pid,ppid,etimes,time,rss,args --sort=-time",
+          "role": "other",
+          "rss_bytes": 4300800
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 361,
+      "processes": [
+        {
+          "age_seconds": 125,
+          "cpu_seconds": 75,
+          "pid": 330,
+          "ppid": 307,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@typescript+typescript-linux-x64@7.1.0-dev.20260920.1/node_modules/@typescript/typescript-linux-x64/lib/tsc --api --async --cwd /work/source --call",
+          "role": "native-typescript",
+          "rss_bytes": 2875125760
+        },
+        {
+          "age_seconds": 136,
+          "cpu_seconds": 53,
+          "pid": 307,
+          "ppid": 245,
+          "printed_command_prefix": "/usr/local/bin/node node_modules/tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean --concurrency 1 --config tsdown.config.ts --filter openclaw-dts-base --out-dir",
+          "role": "declaration-node",
+          "rss_bytes": 614035456
+        },
+        {
+          "age_seconds": 193,
+          "cpu_seconds": 44,
+          "pid": 245,
+          "ppid": 78,
+          "printed_command_prefix": "node --import ./scripts/tsx.mjs scripts/build-checkpoint608-owned.mjs unified-0",
+          "role": "checkpoint-node",
+          "rss_bytes": 388771840
+        },
+        {
+          "age_seconds": 192,
+          "cpu_seconds": 6,
+          "pid": 253,
+          "ppid": 245,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@esbuild+linux-x64@0.28.2/node_modules/@esbuild/linux-x64/bin/esbuild --service=0.28.2 --ping",
+          "role": "esbuild-service",
+          "rss_bytes": 7991296
+        },
+        {
+          "age_seconds": 370,
+          "cpu_seconds": 0,
+          "pid": 1,
+          "ppid": 0,
+          "printed_command_prefix": "/sbin/docker-init -- bash /entry.sh",
+          "role": "other",
+          "rss_bytes": 753664
+        },
+        {
+          "age_seconds": 0,
+          "cpu_seconds": 0,
+          "pid": 346,
+          "ppid": 32,
+          "printed_command_prefix": "ps -eo pid,ppid,etimes,time,rss,args --sort=-time",
+          "role": "other",
+          "rss_bytes": 3563520
+        },
+        {
+          "age_seconds": 0,
+          "cpu_seconds": 0,
+          "pid": 347,
+          "ppid": 32,
+          "printed_command_prefix": "head -8",
+          "role": "other",
+          "rss_bytes": 1384448
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 482,
+      "processes": [
+        {
+          "age_seconds": 245,
+          "cpu_seconds": 159,
+          "pid": 330,
+          "ppid": 307,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@typescript+typescript-linux-x64@7.1.0-dev.20260920.1/node_modules/@typescript/typescript-linux-x64/lib/tsc --api --async --cwd /work/source --call",
+          "role": "native-typescript",
+          "rss_bytes": 3169951744
+        },
+        {
+          "age_seconds": 256,
+          "cpu_seconds": 53,
+          "pid": 307,
+          "ppid": 245,
+          "printed_command_prefix": "/usr/local/bin/node node_modules/tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean --concurrency 1 --config tsdown.config.ts --filter openclaw-dts-base --out-dir",
+          "role": "declaration-node",
+          "rss_bytes": 472891392
+        },
+        {
+          "age_seconds": 314,
+          "cpu_seconds": 45,
+          "pid": 245,
+          "ppid": 78,
+          "printed_command_prefix": "node --import ./scripts/tsx.mjs scripts/build-checkpoint608-owned.mjs unified-0",
+          "role": "checkpoint-node",
+          "rss_bytes": 386220032
+        },
+        {
+          "age_seconds": 313,
+          "cpu_seconds": 8,
+          "pid": 253,
+          "ppid": 245,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@esbuild+linux-x64@0.28.2/node_modules/@esbuild/linux-x64/bin/esbuild --service=0.28.2 --ping",
+          "role": "esbuild-service",
+          "rss_bytes": 6787072
+        },
+        {
+          "age_seconds": 490,
+          "cpu_seconds": 0,
+          "pid": 1,
+          "ppid": 0,
+          "printed_command_prefix": "/sbin/docker-init -- bash /entry.sh",
+          "role": "other",
+          "rss_bytes": 753664
+        },
+        {
+          "age_seconds": 481,
+          "cpu_seconds": 0,
+          "pid": 32,
+          "ppid": 30,
+          "printed_command_prefix": "sh observe-unified608.sh",
+          "role": "other",
+          "rss_bytes": 1150976
+        },
+        {
+          "age_seconds": 0,
+          "cpu_seconds": 0,
+          "pid": 352,
+          "ppid": 32,
+          "printed_command_prefix": "ps -eo pid,ppid,etimes,time,rss,args --sort=-time",
+          "role": "other",
+          "rss_bytes": 3862528
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 602,
+      "processes": [
+        {
+          "age_seconds": 365,
+          "cpu_seconds": 239,
+          "pid": 330,
+          "ppid": 307,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@typescript+typescript-linux-x64@7.1.0-dev.20260920.1/node_modules/@typescript/typescript-linux-x64/lib/tsc --api --async --cwd /work/source --call",
+          "role": "native-typescript",
+          "rss_bytes": 3185623040
+        },
+        {
+          "age_seconds": 377,
+          "cpu_seconds": 55,
+          "pid": 307,
+          "ppid": 245,
+          "printed_command_prefix": "/usr/local/bin/node node_modules/tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean --concurrency 1 --config tsdown.config.ts --filter openclaw-dts-base --out-dir",
+          "role": "declaration-node",
+          "rss_bytes": 472092672
+        },
+        {
+          "age_seconds": 434,
+          "cpu_seconds": 45,
+          "pid": 245,
+          "ppid": 78,
+          "printed_command_prefix": "node --import ./scripts/tsx.mjs scripts/build-checkpoint608-owned.mjs unified-0",
+          "role": "checkpoint-node",
+          "rss_bytes": 386670592
+        },
+        {
+          "age_seconds": 433,
+          "cpu_seconds": 10,
+          "pid": 253,
+          "ppid": 245,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@esbuild+linux-x64@0.28.2/node_modules/@esbuild/linux-x64/bin/esbuild --service=0.28.2 --ping",
+          "role": "esbuild-service",
+          "rss_bytes": 6631424
+        },
+        {
+          "age_seconds": 611,
+          "cpu_seconds": 0,
+          "pid": 1,
+          "ppid": 0,
+          "printed_command_prefix": "/sbin/docker-init -- bash /entry.sh",
+          "role": "other",
+          "rss_bytes": 753664
+        },
+        {
+          "age_seconds": 602,
+          "cpu_seconds": 0,
+          "pid": 32,
+          "ppid": 30,
+          "printed_command_prefix": "sh observe-unified608.sh",
+          "role": "other",
+          "rss_bytes": 1150976
+        },
+        {
+          "age_seconds": 0,
+          "cpu_seconds": 0,
+          "pid": 358,
+          "ppid": 32,
+          "printed_command_prefix": "ps -eo pid,ppid,etimes,time,rss,args --sort=-time",
+          "role": "other",
+          "rss_bytes": 3616768
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 723,
+      "processes": [
+        {
+          "age_seconds": 486,
+          "cpu_seconds": 322,
+          "pid": 330,
+          "ppid": 307,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@typescript+typescript-linux-x64@7.1.0-dev.20260920.1/node_modules/@typescript/typescript-linux-x64/lib/tsc --api --async --cwd /work/source --call",
+          "role": "native-typescript",
+          "rss_bytes": 3201298432
+        },
+        {
+          "age_seconds": 497,
+          "cpu_seconds": 55,
+          "pid": 307,
+          "ppid": 245,
+          "printed_command_prefix": "/usr/local/bin/node node_modules/tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean --concurrency 1 --config tsdown.config.ts --filter openclaw-dts-base --out-dir",
+          "role": "declaration-node",
+          "rss_bytes": 472092672
+        },
+        {
+          "age_seconds": 554,
+          "cpu_seconds": 45,
+          "pid": 245,
+          "ppid": 78,
+          "printed_command_prefix": "node --import ./scripts/tsx.mjs scripts/build-checkpoint608-owned.mjs unified-0",
+          "role": "checkpoint-node",
+          "rss_bytes": 387129344
+        },
+        {
+          "age_seconds": 553,
+          "cpu_seconds": 13,
+          "pid": 253,
+          "ppid": 245,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@esbuild+linux-x64@0.28.2/node_modules/@esbuild/linux-x64/bin/esbuild --service=0.28.2 --ping",
+          "role": "esbuild-service",
+          "rss_bytes": 6672384
+        },
+        {
+          "age_seconds": 731,
+          "cpu_seconds": 0,
+          "pid": 1,
+          "ppid": 0,
+          "printed_command_prefix": "/sbin/docker-init -- bash /entry.sh",
+          "role": "other",
+          "rss_bytes": 753664
+        },
+        {
+          "age_seconds": 722,
+          "cpu_seconds": 0,
+          "pid": 32,
+          "ppid": 30,
+          "printed_command_prefix": "sh observe-unified608.sh",
+          "role": "other",
+          "rss_bytes": 1150976
+        },
+        {
+          "age_seconds": 0,
+          "cpu_seconds": 0,
+          "pid": 364,
+          "ppid": 32,
+          "printed_command_prefix": "ps -eo pid,ppid,etimes,time,rss,args --sort=-time",
+          "role": "other",
+          "rss_bytes": 4071424
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 843,
+      "processes": [
+        {
+          "age_seconds": 606,
+          "cpu_seconds": 403,
+          "pid": 330,
+          "ppid": 307,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@typescript+typescript-linux-x64@7.1.0-dev.20260920.1/node_modules/@typescript/typescript-linux-x64/lib/tsc --api --async --cwd /work/source --call",
+          "role": "native-typescript",
+          "rss_bytes": 3215622144
+        },
+        {
+          "age_seconds": 617,
+          "cpu_seconds": 55,
+          "pid": 307,
+          "ppid": 245,
+          "printed_command_prefix": "/usr/local/bin/node node_modules/tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean --concurrency 1 --config tsdown.config.ts --filter openclaw-dts-base --out-dir",
+          "role": "declaration-node",
+          "rss_bytes": 472092672
+        },
+        {
+          "age_seconds": 674,
+          "cpu_seconds": 45,
+          "pid": 245,
+          "ppid": 78,
+          "printed_command_prefix": "node --import ./scripts/tsx.mjs scripts/build-checkpoint608-owned.mjs unified-0",
+          "role": "checkpoint-node",
+          "rss_bytes": 387559424
+        },
+        {
+          "age_seconds": 673,
+          "cpu_seconds": 16,
+          "pid": 253,
+          "ppid": 245,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@esbuild+linux-x64@0.28.2/node_modules/@esbuild/linux-x64/bin/esbuild --service=0.28.2 --ping",
+          "role": "esbuild-service",
+          "rss_bytes": 7081984
+        },
+        {
+          "age_seconds": 851,
+          "cpu_seconds": 0,
+          "pid": 1,
+          "ppid": 0,
+          "printed_command_prefix": "/sbin/docker-init -- bash /entry.sh",
+          "role": "other",
+          "rss_bytes": 753664
+        },
+        {
+          "age_seconds": 842,
+          "cpu_seconds": 0,
+          "pid": 32,
+          "ppid": 30,
+          "printed_command_prefix": "sh observe-unified608.sh",
+          "role": "other",
+          "rss_bytes": 1150976
+        },
+        {
+          "age_seconds": 0,
+          "cpu_seconds": 0,
+          "pid": 370,
+          "ppid": 32,
+          "printed_command_prefix": "ps -eo pid,ppid,etimes,time,rss,args --sort=-time",
+          "role": "other",
+          "rss_bytes": 3530752
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 963,
+      "processes": [
+        {
+          "age_seconds": 726,
+          "cpu_seconds": 486,
+          "pid": 330,
+          "ppid": 307,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@typescript+typescript-linux-x64@7.1.0-dev.20260920.1/node_modules/@typescript/typescript-linux-x64/lib/tsc --api --async --cwd /work/source --call",
+          "role": "native-typescript",
+          "rss_bytes": 3228487680
+        },
+        {
+          "age_seconds": 737,
+          "cpu_seconds": 55,
+          "pid": 307,
+          "ppid": 245,
+          "printed_command_prefix": "/usr/local/bin/node node_modules/tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean --concurrency 1 --config tsdown.config.ts --filter openclaw-dts-base --out-dir",
+          "role": "declaration-node",
+          "rss_bytes": 472092672
+        },
+        {
+          "age_seconds": 795,
+          "cpu_seconds": 45,
+          "pid": 245,
+          "ppid": 78,
+          "printed_command_prefix": "node --import ./scripts/tsx.mjs scripts/build-checkpoint608-owned.mjs unified-0",
+          "role": "checkpoint-node",
+          "rss_bytes": 387579904
+        },
+        {
+          "age_seconds": 794,
+          "cpu_seconds": 19,
+          "pid": 253,
+          "ppid": 245,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@esbuild+linux-x64@0.28.2/node_modules/@esbuild/linux-x64/bin/esbuild --service=0.28.2 --ping",
+          "role": "esbuild-service",
+          "rss_bytes": 6582272
+        },
+        {
+          "age_seconds": 971,
+          "cpu_seconds": 0,
+          "pid": 1,
+          "ppid": 0,
+          "printed_command_prefix": "/sbin/docker-init -- bash /entry.sh",
+          "role": "other",
+          "rss_bytes": 753664
+        },
+        {
+          "age_seconds": 962,
+          "cpu_seconds": 0,
+          "pid": 32,
+          "ppid": 30,
+          "printed_command_prefix": "sh observe-unified608.sh",
+          "role": "other",
+          "rss_bytes": 1150976
+        },
+        {
+          "age_seconds": 0,
+          "cpu_seconds": 0,
+          "pid": 376,
+          "ppid": 32,
+          "printed_command_prefix": "ps -eo pid,ppid,etimes,time,rss,args --sort=-time",
+          "role": "other",
+          "rss_bytes": 3616768
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 1083,
+      "processes": [
+        {
+          "age_seconds": 846,
+          "cpu_seconds": 568,
+          "pid": 330,
+          "ppid": 307,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@typescript+typescript-linux-x64@7.1.0-dev.20260920.1/node_modules/@typescript/typescript-linux-x64/lib/tsc --api --async --cwd /work/source --call",
+          "role": "native-typescript",
+          "rss_bytes": 3231993856
+        },
+        {
+          "age_seconds": 858,
+          "cpu_seconds": 55,
+          "pid": 307,
+          "ppid": 245,
+          "printed_command_prefix": "/usr/local/bin/node node_modules/tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean --concurrency 1 --config tsdown.config.ts --filter openclaw-dts-base --out-dir",
+          "role": "declaration-node",
+          "rss_bytes": 472092672
+        },
+        {
+          "age_seconds": 915,
+          "cpu_seconds": 46,
+          "pid": 245,
+          "ppid": 78,
+          "printed_command_prefix": "node --import ./scripts/tsx.mjs scripts/build-checkpoint608-owned.mjs unified-0",
+          "role": "checkpoint-node",
+          "rss_bytes": 387588096
+        },
+        {
+          "age_seconds": 914,
+          "cpu_seconds": 23,
+          "pid": 253,
+          "ppid": 245,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@esbuild+linux-x64@0.28.2/node_modules/@esbuild/linux-x64/bin/esbuild --service=0.28.2 --ping",
+          "role": "esbuild-service",
+          "rss_bytes": 6656000
+        },
+        {
+          "age_seconds": 1092,
+          "cpu_seconds": 0,
+          "pid": 1,
+          "ppid": 0,
+          "printed_command_prefix": "/sbin/docker-init -- bash /entry.sh",
+          "role": "other",
+          "rss_bytes": 753664
+        },
+        {
+          "age_seconds": 1083,
+          "cpu_seconds": 0,
+          "pid": 32,
+          "ppid": 30,
+          "printed_command_prefix": "sh observe-unified608.sh",
+          "role": "other",
+          "rss_bytes": 1150976
+        },
+        {
+          "age_seconds": 0,
+          "cpu_seconds": 0,
+          "pid": 382,
+          "ppid": 32,
+          "printed_command_prefix": "ps -eo pid,ppid,etimes,time,rss,args --sort=-time",
+          "role": "other",
+          "rss_bytes": 3637248
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 1203,
+      "processes": [
+        {
+          "age_seconds": 966,
+          "cpu_seconds": 652,
+          "pid": 330,
+          "ppid": 307,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@typescript+typescript-linux-x64@7.1.0-dev.20260920.1/node_modules/@typescript/typescript-linux-x64/lib/tsc --api --async --cwd /work/source --call",
+          "role": "native-typescript",
+          "rss_bytes": 3242213376
+        },
+        {
+          "age_seconds": 978,
+          "cpu_seconds": 55,
+          "pid": 307,
+          "ppid": 245,
+          "printed_command_prefix": "/usr/local/bin/node node_modules/tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean --concurrency 1 --config tsdown.config.ts --filter openclaw-dts-base --out-dir",
+          "role": "declaration-node",
+          "rss_bytes": 472092672
+        },
+        {
+          "age_seconds": 1035,
+          "cpu_seconds": 46,
+          "pid": 245,
+          "ppid": 78,
+          "printed_command_prefix": "node --import ./scripts/tsx.mjs scripts/build-checkpoint608-owned.mjs unified-0",
+          "role": "checkpoint-node",
+          "rss_bytes": 387592192
+        },
+        {
+          "age_seconds": 1034,
+          "cpu_seconds": 27,
+          "pid": 253,
+          "ppid": 245,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@esbuild+linux-x64@0.28.2/node_modules/@esbuild/linux-x64/bin/esbuild --service=0.28.2 --ping",
+          "role": "esbuild-service",
+          "rss_bytes": 6676480
+        },
+        {
+          "age_seconds": 1212,
+          "cpu_seconds": 0,
+          "pid": 1,
+          "ppid": 0,
+          "printed_command_prefix": "/sbin/docker-init -- bash /entry.sh",
+          "role": "other",
+          "rss_bytes": 753664
+        },
+        {
+          "age_seconds": 1203,
+          "cpu_seconds": 0,
+          "pid": 32,
+          "ppid": 30,
+          "printed_command_prefix": "sh observe-unified608.sh",
+          "role": "other",
+          "rss_bytes": 1150976
+        },
+        {
+          "age_seconds": 0,
+          "cpu_seconds": 0,
+          "pid": 388,
+          "ppid": 32,
+          "printed_command_prefix": "ps -eo pid,ppid,etimes,time,rss,args --sort=-time",
+          "role": "other",
+          "rss_bytes": 4046848
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 1323,
+      "processes": [
+        {
+          "age_seconds": 1087,
+          "cpu_seconds": 734,
+          "pid": 330,
+          "ppid": 307,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@typescript+typescript-linux-x64@7.1.0-dev.20260920.1/node_modules/@typescript/typescript-linux-x64/lib/tsc --api --async --cwd /work/source --call",
+          "role": "native-typescript",
+          "rss_bytes": 3276238848
+        },
+        {
+          "age_seconds": 1098,
+          "cpu_seconds": 55,
+          "pid": 307,
+          "ppid": 245,
+          "printed_command_prefix": "/usr/local/bin/node node_modules/tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean --concurrency 1 --config tsdown.config.ts --filter openclaw-dts-base --out-dir",
+          "role": "declaration-node",
+          "rss_bytes": 472092672
+        },
+        {
+          "age_seconds": 1155,
+          "cpu_seconds": 46,
+          "pid": 245,
+          "ppid": 78,
+          "printed_command_prefix": "node --import ./scripts/tsx.mjs scripts/build-checkpoint608-owned.mjs unified-0",
+          "role": "checkpoint-node",
+          "rss_bytes": 387596288
+        },
+        {
+          "age_seconds": 1154,
+          "cpu_seconds": 31,
+          "pid": 253,
+          "ppid": 245,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@esbuild+linux-x64@0.28.2/node_modules/@esbuild/linux-x64/bin/esbuild --service=0.28.2 --ping",
+          "role": "esbuild-service",
+          "rss_bytes": 8396800
+        },
+        {
+          "age_seconds": 1332,
+          "cpu_seconds": 0,
+          "pid": 1,
+          "ppid": 0,
+          "printed_command_prefix": "/sbin/docker-init -- bash /entry.sh",
+          "role": "other",
+          "rss_bytes": 753664
+        },
+        {
+          "age_seconds": 1323,
+          "cpu_seconds": 0,
+          "pid": 32,
+          "ppid": 30,
+          "printed_command_prefix": "sh observe-unified608.sh",
+          "role": "other",
+          "rss_bytes": 1150976
+        },
+        {
+          "age_seconds": 0,
+          "cpu_seconds": 0,
+          "pid": 394,
+          "ppid": 32,
+          "printed_command_prefix": "ps -eo pid,ppid,etimes,time,rss,args --sort=-time",
+          "role": "other",
+          "rss_bytes": 4157440
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 1444,
+      "processes": [
+        {
+          "age_seconds": 1207,
+          "cpu_seconds": 811,
+          "pid": 330,
+          "ppid": 307,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@typescript+typescript-linux-x64@7.1.0-dev.20260920.1/node_modules/@typescript/typescript-linux-x64/lib/tsc --api --async --cwd /work/source --call",
+          "role": "native-typescript",
+          "rss_bytes": 3280261120
+        },
+        {
+          "age_seconds": 1218,
+          "cpu_seconds": 55,
+          "pid": 307,
+          "ppid": 245,
+          "printed_command_prefix": "/usr/local/bin/node node_modules/tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean --concurrency 1 --config tsdown.config.ts --filter openclaw-dts-base --out-dir",
+          "role": "declaration-node",
+          "rss_bytes": 472092672
+        },
+        {
+          "age_seconds": 1275,
+          "cpu_seconds": 46,
+          "pid": 245,
+          "ppid": 78,
+          "printed_command_prefix": "node --import ./scripts/tsx.mjs scripts/build-checkpoint608-owned.mjs unified-0",
+          "role": "checkpoint-node",
+          "rss_bytes": 387604480
+        },
+        {
+          "age_seconds": 1274,
+          "cpu_seconds": 33,
+          "pid": 253,
+          "ppid": 245,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@esbuild+linux-x64@0.28.2/node_modules/@esbuild/linux-x64/bin/esbuild --service=0.28.2 --ping",
+          "role": "esbuild-service",
+          "rss_bytes": 6705152
+        },
+        {
+          "age_seconds": 1452,
+          "cpu_seconds": 0,
+          "pid": 1,
+          "ppid": 0,
+          "printed_command_prefix": "/sbin/docker-init -- bash /entry.sh",
+          "role": "other",
+          "rss_bytes": 753664
+        },
+        {
+          "age_seconds": 1443,
+          "cpu_seconds": 0,
+          "pid": 32,
+          "ppid": 30,
+          "printed_command_prefix": "sh observe-unified608.sh",
+          "role": "other",
+          "rss_bytes": 1150976
+        },
+        {
+          "age_seconds": 0,
+          "cpu_seconds": 0,
+          "pid": 400,
+          "ppid": 32,
+          "printed_command_prefix": "ps -eo pid,ppid,etimes,time,rss,args --sort=-time",
+          "role": "other",
+          "rss_bytes": 3616768
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 1564,
+      "processes": [
+        {
+          "age_seconds": 1327,
+          "cpu_seconds": 895,
+          "pid": 330,
+          "ppid": 307,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@typescript+typescript-linux-x64@7.1.0-dev.20260920.1/node_modules/@typescript/typescript-linux-x64/lib/tsc --api --async --cwd /work/source --call",
+          "role": "native-typescript",
+          "rss_bytes": 3301584896
+        },
+        {
+          "age_seconds": 1338,
+          "cpu_seconds": 55,
+          "pid": 307,
+          "ppid": 245,
+          "printed_command_prefix": "/usr/local/bin/node node_modules/tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean --concurrency 1 --config tsdown.config.ts --filter openclaw-dts-base --out-dir",
+          "role": "declaration-node",
+          "rss_bytes": 472092672
+        },
+        {
+          "age_seconds": 1396,
+          "cpu_seconds": 46,
+          "pid": 245,
+          "ppid": 78,
+          "printed_command_prefix": "node --import ./scripts/tsx.mjs scripts/build-checkpoint608-owned.mjs unified-0",
+          "role": "checkpoint-node",
+          "rss_bytes": 387604480
+        },
+        {
+          "age_seconds": 1395,
+          "cpu_seconds": 36,
+          "pid": 253,
+          "ppid": 245,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@esbuild+linux-x64@0.28.2/node_modules/@esbuild/linux-x64/bin/esbuild --service=0.28.2 --ping",
+          "role": "esbuild-service",
+          "rss_bytes": 6627328
+        },
+        {
+          "age_seconds": 1572,
+          "cpu_seconds": 0,
+          "pid": 1,
+          "ppid": 0,
+          "printed_command_prefix": "/sbin/docker-init -- bash /entry.sh",
+          "role": "other",
+          "rss_bytes": 753664
+        },
+        {
+          "age_seconds": 1563,
+          "cpu_seconds": 0,
+          "pid": 32,
+          "ppid": 30,
+          "printed_command_prefix": "sh observe-unified608.sh",
+          "role": "other",
+          "rss_bytes": 1150976
+        },
+        {
+          "age_seconds": 0,
+          "cpu_seconds": 0,
+          "pid": 406,
+          "ppid": 32,
+          "printed_command_prefix": "ps -eo pid,ppid,etimes,time,rss,args --sort=-time",
+          "role": "other",
+          "rss_bytes": 3645440
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 1684,
+      "processes": [
+        {
+          "age_seconds": 1447,
+          "cpu_seconds": 978,
+          "pid": 330,
+          "ppid": 307,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@typescript+typescript-linux-x64@7.1.0-dev.20260920.1/node_modules/@typescript/typescript-linux-x64/lib/tsc --api --async --cwd /work/source --call",
+          "role": "native-typescript",
+          "rss_bytes": 3304312832
+        },
+        {
+          "age_seconds": 1458,
+          "cpu_seconds": 55,
+          "pid": 307,
+          "ppid": 245,
+          "printed_command_prefix": "/usr/local/bin/node node_modules/tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean --concurrency 1 --config tsdown.config.ts --filter openclaw-dts-base --out-dir",
+          "role": "declaration-node",
+          "rss_bytes": 472092672
+        },
+        {
+          "age_seconds": 1516,
+          "cpu_seconds": 46,
+          "pid": 245,
+          "ppid": 78,
+          "printed_command_prefix": "node --import ./scripts/tsx.mjs scripts/build-checkpoint608-owned.mjs unified-0",
+          "role": "checkpoint-node",
+          "rss_bytes": 387608576
+        },
+        {
+          "age_seconds": 1515,
+          "cpu_seconds": 41,
+          "pid": 253,
+          "ppid": 245,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@esbuild+linux-x64@0.28.2/node_modules/@esbuild/linux-x64/bin/esbuild --service=0.28.2 --ping",
+          "role": "esbuild-service",
+          "rss_bytes": 6660096
+        },
+        {
+          "age_seconds": 1692,
+          "cpu_seconds": 0,
+          "pid": 1,
+          "ppid": 0,
+          "printed_command_prefix": "/sbin/docker-init -- bash /entry.sh",
+          "role": "other",
+          "rss_bytes": 753664
+        },
+        {
+          "age_seconds": 1683,
+          "cpu_seconds": 0,
+          "pid": 32,
+          "ppid": 30,
+          "printed_command_prefix": "sh observe-unified608.sh",
+          "role": "other",
+          "rss_bytes": 1150976
+        },
+        {
+          "age_seconds": 1692,
+          "cpu_seconds": 0,
+          "pid": 8,
+          "ppid": 1,
+          "printed_command_prefix": "bash /cmd.sh",
+          "role": "other",
+          "rss_bytes": 3043328
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 1804,
+      "processes": [
+        {
+          "age_seconds": 1567,
+          "cpu_seconds": 1063,
+          "pid": 330,
+          "ppid": 307,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@typescript+typescript-linux-x64@7.1.0-dev.20260920.1/node_modules/@typescript/typescript-linux-x64/lib/tsc --api --async --cwd /work/source --call",
+          "role": "native-typescript",
+          "rss_bytes": 3312746496
+        },
+        {
+          "age_seconds": 1579,
+          "cpu_seconds": 55,
+          "pid": 307,
+          "ppid": 245,
+          "printed_command_prefix": "/usr/local/bin/node node_modules/tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean --concurrency 1 --config tsdown.config.ts --filter openclaw-dts-base --out-dir",
+          "role": "declaration-node",
+          "rss_bytes": 472092672
+        },
+        {
+          "age_seconds": 1636,
+          "cpu_seconds": 46,
+          "pid": 245,
+          "ppid": 78,
+          "printed_command_prefix": "node --import ./scripts/tsx.mjs scripts/build-checkpoint608-owned.mjs unified-0",
+          "role": "checkpoint-node",
+          "rss_bytes": 387612672
+        },
+        {
+          "age_seconds": 1635,
+          "cpu_seconds": 45,
+          "pid": 253,
+          "ppid": 245,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@esbuild+linux-x64@0.28.2/node_modules/@esbuild/linux-x64/bin/esbuild --service=0.28.2 --ping",
+          "role": "esbuild-service",
+          "rss_bytes": 6668288
+        },
+        {
+          "age_seconds": 1813,
+          "cpu_seconds": 0,
+          "pid": 1,
+          "ppid": 0,
+          "printed_command_prefix": "/sbin/docker-init -- bash /entry.sh",
+          "role": "other",
+          "rss_bytes": 753664
+        },
+        {
+          "age_seconds": 1804,
+          "cpu_seconds": 0,
+          "pid": 32,
+          "ppid": 30,
+          "printed_command_prefix": "sh observe-unified608.sh",
+          "role": "other",
+          "rss_bytes": 1150976
+        },
+        {
+          "age_seconds": 0,
+          "cpu_seconds": 0,
+          "pid": 418,
+          "ppid": 32,
+          "printed_command_prefix": "ps -eo pid,ppid,etimes,time,rss,args --sort=-time",
+          "role": "other",
+          "rss_bytes": 3584000
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 1924,
+      "processes": [
+        {
+          "age_seconds": 1687,
+          "cpu_seconds": 1148,
+          "pid": 330,
+          "ppid": 307,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@typescript+typescript-linux-x64@7.1.0-dev.20260920.1/node_modules/@typescript/typescript-linux-x64/lib/tsc --api --async --cwd /work/source --call",
+          "role": "native-typescript",
+          "rss_bytes": 3345526784
+        },
+        {
+          "age_seconds": 1699,
+          "cpu_seconds": 55,
+          "pid": 307,
+          "ppid": 245,
+          "printed_command_prefix": "/usr/local/bin/node node_modules/tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean --concurrency 1 --config tsdown.config.ts --filter openclaw-dts-base --out-dir",
+          "role": "declaration-node",
+          "rss_bytes": 472092672
+        },
+        {
+          "age_seconds": 1755,
+          "cpu_seconds": 50,
+          "pid": 253,
+          "ppid": 245,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@esbuild+linux-x64@0.28.2/node_modules/@esbuild/linux-x64/bin/esbuild --service=0.28.2 --ping",
+          "role": "esbuild-service",
+          "rss_bytes": 6717440
+        },
+        {
+          "age_seconds": 1756,
+          "cpu_seconds": 46,
+          "pid": 245,
+          "ppid": 78,
+          "printed_command_prefix": "node --import ./scripts/tsx.mjs scripts/build-checkpoint608-owned.mjs unified-0",
+          "role": "checkpoint-node",
+          "rss_bytes": 387616768
+        },
+        {
+          "age_seconds": 1933,
+          "cpu_seconds": 0,
+          "pid": 1,
+          "ppid": 0,
+          "printed_command_prefix": "/sbin/docker-init -- bash /entry.sh",
+          "role": "other",
+          "rss_bytes": 753664
+        },
+        {
+          "age_seconds": 1924,
+          "cpu_seconds": 0,
+          "pid": 32,
+          "ppid": 30,
+          "printed_command_prefix": "sh observe-unified608.sh",
+          "role": "other",
+          "rss_bytes": 1150976
+        },
+        {
+          "age_seconds": 0,
+          "cpu_seconds": 0,
+          "pid": 426,
+          "ppid": 32,
+          "printed_command_prefix": "sh observe-unified608.sh",
+          "role": "other",
+          "rss_bytes": 327680
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 2045,
+      "processes": [
+        {
+          "age_seconds": 1808,
+          "cpu_seconds": 1225,
+          "pid": 330,
+          "ppid": 307,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@typescript+typescript-linux-x64@7.1.0-dev.20260920.1/node_modules/@typescript/typescript-linux-x64/lib/tsc --api --async --cwd /work/source --call",
+          "role": "native-typescript",
+          "rss_bytes": 3356950528
+        },
+        {
+          "age_seconds": 1875,
+          "cpu_seconds": 57,
+          "pid": 253,
+          "ppid": 245,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@esbuild+linux-x64@0.28.2/node_modules/@esbuild/linux-x64/bin/esbuild --service=0.28.2 --ping",
+          "role": "esbuild-service",
+          "rss_bytes": 6651904
+        },
+        {
+          "age_seconds": 1819,
+          "cpu_seconds": 55,
+          "pid": 307,
+          "ppid": 245,
+          "printed_command_prefix": "/usr/local/bin/node node_modules/tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean --concurrency 1 --config tsdown.config.ts --filter openclaw-dts-base --out-dir",
+          "role": "declaration-node",
+          "rss_bytes": 472092672
+        },
+        {
+          "age_seconds": 1876,
+          "cpu_seconds": 46,
+          "pid": 245,
+          "ppid": 78,
+          "printed_command_prefix": "node --import ./scripts/tsx.mjs scripts/build-checkpoint608-owned.mjs unified-0",
+          "role": "checkpoint-node",
+          "rss_bytes": 387620864
+        },
+        {
+          "age_seconds": 2053,
+          "cpu_seconds": 0,
+          "pid": 1,
+          "ppid": 0,
+          "printed_command_prefix": "/sbin/docker-init -- bash /entry.sh",
+          "role": "other",
+          "rss_bytes": 753664
+        },
+        {
+          "age_seconds": 2044,
+          "cpu_seconds": 0,
+          "pid": 32,
+          "ppid": 30,
+          "printed_command_prefix": "sh observe-unified608.sh",
+          "role": "other",
+          "rss_bytes": 1150976
+        },
+        {
+          "age_seconds": 0,
+          "cpu_seconds": 0,
+          "pid": 430,
+          "ppid": 32,
+          "printed_command_prefix": "ps -eo pid,ppid,etimes,time,rss,args --sort=-time",
+          "role": "other",
+          "rss_bytes": 3489792
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 2165,
+      "processes": [
+        {
+          "age_seconds": 1928,
+          "cpu_seconds": 1311,
+          "pid": 330,
+          "ppid": 307,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@typescript+typescript-linux-x64@7.1.0-dev.20260920.1/node_modules/@typescript/typescript-linux-x64/lib/tsc --api --async --cwd /work/source --call",
+          "role": "native-typescript",
+          "rss_bytes": 3367694336
+        },
+        {
+          "age_seconds": 1996,
+          "cpu_seconds": 61,
+          "pid": 253,
+          "ppid": 245,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@esbuild+linux-x64@0.28.2/node_modules/@esbuild/linux-x64/bin/esbuild --service=0.28.2 --ping",
+          "role": "esbuild-service",
+          "rss_bytes": 6660096
+        },
+        {
+          "age_seconds": 1939,
+          "cpu_seconds": 55,
+          "pid": 307,
+          "ppid": 245,
+          "printed_command_prefix": "/usr/local/bin/node node_modules/tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean --concurrency 1 --config tsdown.config.ts --filter openclaw-dts-base --out-dir",
+          "role": "declaration-node",
+          "rss_bytes": 472092672
+        },
+        {
+          "age_seconds": 1997,
+          "cpu_seconds": 47,
+          "pid": 245,
+          "ppid": 78,
+          "printed_command_prefix": "node --import ./scripts/tsx.mjs scripts/build-checkpoint608-owned.mjs unified-0",
+          "role": "checkpoint-node",
+          "rss_bytes": 387624960
+        },
+        {
+          "age_seconds": 2174,
+          "cpu_seconds": 0,
+          "pid": 1,
+          "ppid": 0,
+          "printed_command_prefix": "/sbin/docker-init -- bash /entry.sh",
+          "role": "other",
+          "rss_bytes": 753664
+        },
+        {
+          "age_seconds": 0,
+          "cpu_seconds": 0,
+          "pid": 436,
+          "ppid": 32,
+          "printed_command_prefix": "ps -eo pid,ppid,etimes,time,rss,args --sort=-time",
+          "role": "other",
+          "rss_bytes": 3604480
+        },
+        {
+          "age_seconds": 2165,
+          "cpu_seconds": 0,
+          "pid": 32,
+          "ppid": 30,
+          "printed_command_prefix": "sh observe-unified608.sh",
+          "role": "other",
+          "rss_bytes": 1150976
+        }
+      ]
+    },
+    {
+      "elapsed_seconds": 2285,
+      "processes": [
+        {
+          "age_seconds": 2048,
+          "cpu_seconds": 1398,
+          "pid": 330,
+          "ppid": 307,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@typescript+typescript-linux-x64@7.1.0-dev.20260920.1/node_modules/@typescript/typescript-linux-x64/lib/tsc --api --async --cwd /work/source --call",
+          "role": "native-typescript",
+          "rss_bytes": 3390652416
+        },
+        {
+          "age_seconds": 2116,
+          "cpu_seconds": 68,
+          "pid": 253,
+          "ppid": 245,
+          "printed_command_prefix": "/work/source/node_modules/.pnpm/@esbuild+linux-x64@0.28.2/node_modules/@esbuild/linux-x64/bin/esbuild --service=0.28.2 --ping",
+          "role": "esbuild-service",
+          "rss_bytes": 6696960
+        },
+        {
+          "age_seconds": 2060,
+          "cpu_seconds": 55,
+          "pid": 307,
+          "ppid": 245,
+          "printed_command_prefix": "/usr/local/bin/node node_modules/tsdown/dist/run.mjs --config-loader unrun --logLevel warn --no-clean --concurrency 1 --config tsdown.config.ts --filter openclaw-dts-base --out-dir",
+          "role": "declaration-node",
+          "rss_bytes": 472092672
+        },
+        {
+          "age_seconds": 2117,
+          "cpu_seconds": 47,
+          "pid": 245,
+          "ppid": 78,
+          "printed_command_prefix": "node --import ./scripts/tsx.mjs scripts/build-checkpoint608-owned.mjs unified-0",
+          "role": "checkpoint-node",
+          "rss_bytes": 387629056
+        },
+        {
+          "age_seconds": 2294,
+          "cpu_seconds": 0,
+          "pid": 1,
+          "ppid": 0,
+          "printed_command_prefix": "/sbin/docker-init -- bash /entry.sh",
+          "role": "other",
+          "rss_bytes": 753664
+        },
+        {
+          "age_seconds": 2285,
+          "cpu_seconds": 0,
+          "pid": 32,
+          "ppid": 30,
+          "printed_command_prefix": "sh observe-unified608.sh",
+          "role": "other",
+          "rss_bytes": 1150976
+        },
+        {
+          "age_seconds": 0,
+          "cpu_seconds": 0,
+          "pid": 442,
+          "ppid": 32,
+          "printed_command_prefix": "ps -eo pid,ppid,etimes,time,rss,args --sort=-time",
+          "role": "other",
+          "rss_bytes": 4280320
+        }
+      ]
+    }
+  ]
+}
