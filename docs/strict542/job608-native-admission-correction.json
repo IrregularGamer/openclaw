@@ -1,0 +1,31 @@
+{
+  "kind": "SOURCE_CORRECTION_NOT_BUILD_ACCEPTANCE",
+  "baseline": "1bed4d1bb53eff145f724cc6a448dc73b3609015",
+  "changes": [
+    {
+      "path": "scripts/lib/native-declaration-emitter.mts",
+      "old_sha256": "8e1ba4705f959b85a7330494bc8ad60a0b17a6d059f75feed2e2d5a446c50927",
+      "new_sha256": "2f8a05d0b713daf4d60d4e0359efe677b8f2710b05b1fd594e401adf1a3a2431"
+    },
+    {
+      "path": "docs/strict542/run-stage608.sh",
+      "old_sha256": "eac266cfaab7efef7c92ed94c53a0a55e75303b8ee4810bc15f21f243a76b8ee",
+      "new_sha256": "38bfffdc1a269d293ba0b0908970f5119000965b219855b2b930572d6c84de41"
+    },
+    {
+      "path": "docs/strict542/native-admission608.test.mjs",
+      "old_sha256": null,
+      "new_sha256": "4fad11c1c7783b599152a3b837d1db736c1e78e9e4d37191838bfe18e8742c10"
+    },
+    {
+      "path": "docs/strict542/native-admission608.fixture.mjs",
+      "old_sha256": null,
+      "new_sha256": "e1c4200c64ebd527c2f543978f0d55bf4d62d779dd9130de4ad417dc0ac737e4"
+    }
+  ],
+  "red": "lookups expected2 internal physical assertions, observed4; six policy tests passed",
+  "green": "all7 focused cases passed; compiler/API/seal doubles isolate filesystem admission; no build acceptance",
+  "full_checks_required": true,
+  "current_diagnostic_source": "1bed4d1bb53eff145f724cc6a448dc73b3609015",
+  "application_authority": false
+}

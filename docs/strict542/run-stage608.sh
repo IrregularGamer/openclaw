@@ -79,7 +79,7 @@ checks)
   python3 -m unittest discover -s docs/strict542 -p test_lease619_suite_gate.py -v
   python3 -m unittest discover -s docs/strict542 -p test_stage608.py -v
   python3 -m unittest discover -s docs/strict542 -p test_prepare_stage608_export.py -v
-  node --test docs/strict542/declaration-checkpoint608.test.mjs docs/strict542/build-checkpoint608.test.mjs docs/strict542/native-declaration-checkpoint608.test.mjs docs/strict542/checkpoint-owned608.test.mjs docs/strict542/checkpoint-scratch608.test.mjs
+  node --test docs/strict542/declaration-checkpoint608.test.mjs docs/strict542/build-checkpoint608.test.mjs docs/strict542/native-declaration-checkpoint608.test.mjs docs/strict542/checkpoint-owned608.test.mjs docs/strict542/checkpoint-scratch608.test.mjs docs/strict542/native-admission608.test.mjs
   node --test docs/strict542/worker-phases608.test.mjs docs/strict542/serial-probe598.test.mjs docs/strict542/isolated-config598.test.mjs docs/strict542/disposable-inputs608.test.mjs docs/strict542/native-compiler608.test.mjs docs/strict542/bounded-package608.test.mjs
   ) >strict542-checks/tests.log 2>&1
   status=$?
