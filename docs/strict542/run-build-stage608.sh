@@ -14,4 +14,4 @@ python3 docs/strict542/frozen-package608.py preflight
 pnpm install --frozen-lockfile
 node --input-type=module -e 'import fs from "node:fs"; import {releaseDisposableStore} from "./scripts/lib/disposable-build-inputs.mjs"; if (fs.lstatSync("../.pnpm-store",{throwIfNoEntry:false})) releaseDisposableStore("..")'
 python3 docs/strict542/frozen-package608.py preflight
-node --import ./scripts/tsx.mjs scripts/build-checkpoint608.mts "$STAGE"
+node --import ./scripts/tsx.mjs scripts/build-checkpoint608-owned.mjs "$STAGE"

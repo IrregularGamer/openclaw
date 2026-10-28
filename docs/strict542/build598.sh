@@ -24,7 +24,7 @@ node --input-type=module -e 'import fs from "node:fs"; import {releaseDisposable
 python3 docs/strict542/frozen-package608.py preflight
 # Full canonical phase inventory with the separately reviewed required-native scheduler.
 if [ "$BUILD_MODE" = checkpoint608 ]; then
-  node --import ./scripts/tsx.mjs scripts/build-checkpoint608.mts complete
+  node --import ./scripts/tsx.mjs scripts/build-checkpoint608-owned.mjs complete
 else
 node --import ./scripts/tsx.mjs scripts/build-all.mts boundedPackage
 fi
