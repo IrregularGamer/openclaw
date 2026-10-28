@@ -5,7 +5,7 @@ compile separately; only their existing owner may join and publish them. Each
 consumer verifies exact producing receipts, common source/export identity,
 all output digests and independently pinned native receipts/addon bytes.
 """
-import hashlib,json,shutil,sys,tarfile
+import gzip,hashlib,json,shutil,sys,tarfile
 from pathlib import Path
 
 BUILD_STAGES=['runtime']+['unified-'+str(i) for i in range(6)]+['middle','sdk-0','sdk-1','tail']
@@ -18,7 +18,7 @@ STAGES={'native':[],'checks':[],'compiler':['native'],'runtime':['native'],
 OUTPUTS={'native':['native/receipt.json','native/libtests-receipt.json','native/rolldown-binding.linux-x64-gnu.node'],
          'checks':['checks/tests.log','checks/installed.json'],
          'compiler':['compiler/tests.log']}
-OUTPUTS.update({n:[n+'/checkpoint.tar',n+'/build.log'] for n in BUILD_STAGES})
+OUTPUTS.update({n:[n+'/checkpoint.tar.gz',n+'/build.log'] for n in BUILD_STAGES})
 ADDON='rolldown-binding.linux-x64-gnu.node'
 def sha(p):
     with Path(p).open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
@@ -35,7 +35,7 @@ def checkpoint_path(stage):
 def extract_checkpoint(archive,directory,stage):
     """Extract only fixed checkpoint ownership; reject redirects before any write."""
     expected=checkpoint_path(stage);directory=Path(directory)
-    with tarfile.open(regular(Path(archive)),'r:') as source:
+    with tarfile.open(regular(Path(archive)),'r:*') as source:
         entries=source.getmembers();seen=set();types={}
         sidecar=expected+'.build608.json' if stage.startswith(('unified-','sdk-')) else None
         for entry in entries:
@@ -72,7 +72,7 @@ def extract_checkpoint(archive,directory,stage):
 def restore_build(root):
     verify_inputs(root);m=manifest(root)
     for n in STAGES[m['stage']]:
-        if n in BUILD_STAGES:extract_checkpoint(root/'stage608-inputs'/n/'checkpoint.tar',root/'build608-checkpoints',n)
+        if n in BUILD_STAGES:extract_checkpoint(root/'stage608-inputs'/n/'checkpoint.tar.gz',root/'build608-checkpoints',n)
 
 
 def archive_build(root,result):
@@ -80,11 +80,15 @@ def archive_build(root,result):
     base=root/'build608-checkpoints';target=base/name
     if target.is_symlink() or not target.is_dir():raise ValueError('missing build owner checkpoint')
     out=Path(result)/stage;out.mkdir(exist_ok=True)
-    with tarfile.open(out/'checkpoint.tar','x',format=tarfile.PAX_FORMAT) as archive:
-        archive.add(target,arcname=name)
-        if stage.startswith(('unified-','sdk-')):
-            sidecar=regular(base/(name+'.build608.json'))
-            archive.add(sidecar,arcname=name+'.build608.json')
+    # Stream directly to the compressed carrier: no full tar or payload buffer.
+    # Empty filename and fixed mtime make gzip framing independent of run/time.
+    with (out/'checkpoint.tar.gz').open('xb') as raw:
+        with gzip.GzipFile(filename='',mode='wb',fileobj=raw,compresslevel=1,mtime=0) as compressed:
+            with tarfile.open(fileobj=compressed,mode='w|',format=tarfile.PAX_FORMAT) as archive:
+                archive.add(target,arcname=name)
+                if stage.startswith(('unified-','sdk-')):
+                    sidecar=regular(base/(name+'.build608.json'))
+                    archive.add(sidecar,arcname=name+'.build608.json')
 
 
 def manifest(root):

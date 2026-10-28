@@ -15,7 +15,7 @@ class Stage608Test(unittest.TestCase):
                'native/'+stage608.ADDON:addon,'checks/tests.log':b'checks\n','checks/installed.json':b'{}',
                'compiler/tests.log':b'compiler\n'}
         for n in getattr(stage608,'BUILD_STAGES',[]):
-            files.update({n+'/checkpoint.tar':b'archive',n+'/build.log':b'build\n'})
+            files.update({stage608.OUTPUTS[n][0]:b'archive',n+'/build.log':b'build\n'})
         needed=stage608.STAGES[stage];pins={}
         for n in needed:
             outs={o:sha(files[o]) for o in stage608.OUTPUTS[n]}
@@ -71,6 +71,40 @@ class Stage608Test(unittest.TestCase):
         self.assertEqual((restored/'entry').stat().st_mode&0o777,0o664)
         self.assertEqual(restored.stat().st_mode&0o777,0o775)
         self.assertTrue((restored/'alias').is_symlink())
+
+    def test_compressed_carrier_is_small_repeatable_and_restores_exact_bytes(self):
+        root=self.build('runtime');data=root/'build608-checkpoints/runtime/data/dist'
+        data.mkdir(parents=True);payload=b'bounded checkpoint\n'*60000
+        (data/'entry').write_bytes(payload);(data/'entry').chmod(0o664)
+        (data/'alias').symlink_to('entry');data.chmod(0o775)
+        carriers=[]
+        for name in ['first','second']:
+            result=root/name;result.mkdir();stage608.archive_build(root,result)
+            carrier=result/'runtime/checkpoint.tar.gz';carriers.append(carrier)
+            self.assertTrue(carrier.exists(),'stage owner must emit the compressed carrier')
+            self.assertLess(carrier.stat().st_size,len(payload)//20)
+            self.assertEqual(carrier.read_bytes()[:2],b'\x1f\x8b')
+        self.assertEqual(stage608.sha(carriers[0]),stage608.sha(carriers[1]))
+        stage608.extract_checkpoint(carriers[0],root/'restored','runtime')
+        restored=root/'restored/runtime/data/dist'
+        self.assertEqual((restored/'alias').read_bytes(),payload)
+        self.assertEqual((restored/'entry').stat().st_mode&0o777,0o664)
+        self.assertEqual(restored.stat().st_mode&0o777,0o775)
+        self.assertEqual(stage608.OUTPUTS['runtime'],['runtime/checkpoint.tar.gz','runtime/build.log'])
+
+    def test_compressed_carrier_retains_refusal_before_any_restore_write(self):
+        import io,tarfile
+        for mode in ['w','w:gz']:
+            for name,link in [('runtime/escape','../../escape'),('runtime/data/file','')]:
+                root=Path(tempfile.mkdtemp());carrier=root/'bad.tar.gz'
+                with tarfile.open(carrier,mode) as t:
+                    t.addfile(tarfile.TarInfo('runtime'))
+                    entry=tarfile.TarInfo(name)
+                    if link:entry.type=tarfile.SYMTYPE;entry.linkname=link;t.addfile(entry)
+                    else:
+                        entry.size=1;t.addfile(entry,io.BytesIO(b'x'));t.addfile(entry,io.BytesIO(b'x'))
+                with self.assertRaises((ValueError,tarfile.ReadError)):stage608.extract_checkpoint(carrier,root/'restored','runtime')
+                self.assertFalse((root/'restored').exists())
 
     def test_package_stages_native_and_merges_logs_in_order(self):
         root=self.build('package');stage608.verify_inputs(root);stage608.stage_native(root)
