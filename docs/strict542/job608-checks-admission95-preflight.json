@@ -1,0 +1,24 @@
+{
+  "authority": false,
+  "export": "/srv/encrypted/dev-move-98/agentq-source608-20261028-private/stage-checks-admission95-next",
+  "installed_suite_files": [
+    "test/scripts/build-all-bounded608.test.ts",
+    "test/scripts/tsdown-build.test.ts",
+    "test/scripts/write-unified-entry-dts.test.ts",
+    "test/scripts/write-plugin-sdk-entry-dts.test.ts",
+    "test/scripts/native-declaration-boundary.test.ts",
+    "test/scripts/compiler-input-snapshot.test.ts",
+    "test/scripts/tsdown-declaration-resolution.test.ts"
+  ],
+  "kind": "CANDIDATE_CHECKS_PREFLIGHT_NOT_ACCEPTANCE608",
+  "manifest_sha256": "549525757a063b0242103abc1e5fb703c74e1547a889017d4b6ddc07c5b12c9b",
+  "runner_sha256": "eb662d8191b7abeb5474e61546e1a97811e4bdb621aa6687e36982bc76644b01",
+  "source_commit": "95e62f8b6c7af341b2dfc21163627aa8a533649d",
+  "source_export_sha256": "805d8049971ef41db03eeb8d701c87ce5c0dafb848ba89f37c19e5b7322d1419",
+  "source_inventory_sha256": "1544f3b7415874d7cfa64fd0d78478c6752cfbc4083290b77afdafad878b0895",
+  "stage_helper_sha256": "a558db9afacd22111fb5c2590fe902298b12ea06910eac6efab43f4aa27c0de4",
+  "stage_inputs": {},
+  "state": "UNUSED",
+  "test_count": "actual result inventory required; prior491 plus7focused plus actual added native-suite cases; no estimated final count",
+  "verify_inputs_actual_exit": 0
+}
