@@ -1,3 +1,5 @@
+SUPERSEDED CURRENT STATUS: see job608-after-carrier-continuation.md. This historical9fb native export remains UNUSED; its launch example below is retired and must not be executed. Current freeze is1bed4d1b and all new native/build/package launches are storage-gated.
+
 # Job608: scratch-corrected finite source continuation
 
 SOURCE preparation remains INCOMPLETE;595 MUST NOT APPLY. No installed, sealed,

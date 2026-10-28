@@ -1,6 +1,6 @@
 # Job608: exact preparation handoff to595
 
-**Current boundary (2026-10-28):** measured inventory scratch correction41ee9e9f is independently approved558f36ac; complete focused offload17PASS9fb3d439 is independently approvedf4edb8c3. NEW frozen BUILD source is `9fb3d43951f4f2e2b84388b0ad6d1eb994de4dae`, common export `fbeed48cc8ecc375257396e34ff4bfaf1708a141ffa21af979ff2efc49dbbfc8`. Its native export is UNUSED, manifestf99a16bd. Full new482checks and all native/compiler/runtime/declaration/package stages remain. The actual5f diagnostic a71d150f/reviewc7ad5f10 proves a hashing/allocation hotspot, not complete resolution of the old2400second declaration timeout. See [the exact new continuation](job608-after-scratch-continuation.md). ALL5f receipts below are HISTORICAL for this new source.595 MUST NOT APPLY.
+**Current boundary (2026-10-28):** streaming compressed checkpoint owner2888b2bd and exact canonical helper/runner pin correction1bed4d1b have independent source approval1b63fa7a. Frozen executable source is `1bed4d1bb53eff145f724cc6a448dc73b3609015`, common export `5d7e9d57fb660e2b54f5595e81ddf332027e21b303937c2cd6bc7f718f311263`. Current source inventory contains621 paths. Only the full491-check stage is prepared for admitted execution; the new native/build/package pipeline is gated on end-to-end retained storage capacity. No current producing-stage acceptance exists yet. Historical5f receipts and unused9fb/2888 exports remain historical/UNUSED. See [the carrier continuation](job608-after-carrier-continuation.md).595 MUST NOT APPLY.
 
 This is SOURCE preparation. No application, root/unit/sudoers/seal change,
 service operation, gateway restart, provider call or scheduler release occurred.
@@ -99,14 +99,14 @@ current baseline/seal pair, not the older post619 runs note.
 
 ```sh
 set -eu
-: "${FINAL_EXPORT608:?actual successful frozen9fb3d439 package export required}"
+: "${FINAL_EXPORT608:?actual successful frozen1bed4d1b package export required}"
 SOURCE608=/home/deploy/agentq/tmp/source552
 RESULT608="$FINAL_EXPORT608/result608-package"
 python3 - "$FINAL_EXPORT608" "$SOURCE608" <<'VERIFY608'
 import hashlib,json,sys
 from pathlib import Path
 root=Path(sys.argv[1]);m=json.loads((root/'export-manifest.json').read_text())
-assert m['source_commit']=='9fb3d43951f4f2e2b84388b0ad6d1eb994de4dae'
+assert m['source_commit']=='1bed4d1bb53eff145f724cc6a448dc73b3609015'
 assert m['source_export_sha256']=='fbeed48cc8ecc375257396e34ff4bfaf1708a141ffa21af979ff2efc49dbbfc8'
 assert m['stage']=='package'
 assert (root/'result608-package/exit-code.txt').read_text().strip()=='0'
@@ -118,10 +118,10 @@ STAGE608=$(mktemp -d /home/deploy/agentq/tmp/stage608.XXXXXX)
 cp -a "$RESULT608/result598-build/runtime" "$STAGE608/runtime"
 cp "$RESULT608/result598-build/tree.json" "$STAGE608/tree.json"
 tar -xOf "$FINAL_EXPORT608/native598.tar" tools/scheduler_handoff/candidate/maintenance.py >"$STAGE608/maintenance.py"
-git -C "$SOURCE608" show 9fb3d439:src/gateway/strict542/native_owner_server.py >"$STAGE608/native_owner_server542.py"
-git -C "$SOURCE608" show 9fb3d439:src/gateway/strict542/root_owner_supervisor.py >"$STAGE608/root_owner_supervisor542.py"
+git -C "$SOURCE608" show 1bed4d1b:src/gateway/strict542/native_owner_server.py >"$STAGE608/native_owner_server542.py"
+git -C "$SOURCE608" show 1bed4d1b:src/gateway/strict542/root_owner_supervisor.py >"$STAGE608/root_owner_supervisor542.py"
 for name608 in strict542-owner.service 90-strict542-598.conf application598.py apply598.py; do
-  git -C "$SOURCE608" show "9fb3d439:docs/strict542/$name608" >"$STAGE608/$name608"
+  git -C "$SOURCE608" show "1bed4d1b:docs/strict542/$name608" >"$STAGE608/$name608"
 done
 python3 "$STAGE608/application598.py" action --tree "$STAGE608/tree.json" --stage "$STAGE608" --baseline "$SOURCE608/docs/strict542/job608-final-baseline-proposal.json" --output "$STAGE608/action.json"
 python3 - "$STAGE608" "$SOURCE608/docs/strict542/job608-final-seal-original.json" <<'NEXTSEAL608'

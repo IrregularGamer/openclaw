@@ -1,0 +1,27 @@
+{
+  "checks_return_reserve_bytes": 16777216,
+  "common_export_sha256": "5d7e9d57fb660e2b54f5595e81ddf332027e21b303937c2cd6bc7f718f311263",
+  "compression_measurement": {
+    "elapsed_seconds": 52.212,
+    "gzip1_bytes": 88505333,
+    "historical_only": true,
+    "output_written": false,
+    "raw_bytes": 313313280
+  },
+  "expected_checks": {
+    "installed": 198,
+    "node": 158,
+    "python": 135,
+    "total": 491
+  },
+  "export": "/home/deploy/agentq/tmp/export608-stage-checks-carrier-next",
+  "free_bytes": 253890560,
+  "helper_sha256": "a558db9afacd22111fb5c2590fe902298b12ea06910eac6efab43f4aa27c0de4",
+  "kind": "CHECKS_ONLY_UNUSED_PREFLIGHT608",
+  "manifest_sha256": "20111ce5f68e7764e7176a670df6e9097deafa51d02291810bf65dd41c8c7c2d",
+  "native_runtime_package_launch": "REFUSED pending conservative end-to-end retained carrier and final package storage reserve",
+  "not_authority": "No build/package/action/privilege/seal/automatic approval;595 MUST NOT APPLY",
+  "prior_unused_export": "export608-stage-native-carrier-next at2888b2bd remains UNUSED; not current freeze; helper metadata inherited stale",
+  "runner_sha256": "eac266cfaab7efef7c92ed94c53a0a55e75303b8ee4810bc15f21f243a76b8ee",
+  "source_commit": "1bed4d1bb53eff145f724cc6a448dc73b3609015"
+}
