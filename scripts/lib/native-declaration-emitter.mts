@@ -147,6 +147,9 @@ export async function compileNativeProject({
           // emit result for declaration errors without a second preflight.
           noEmitOnError: false,
           noCheck: false,
+          // Keep the native API's whole-program diagnostic work sequential
+          // within the admitted single-CPU build budget.
+          singleThreaded: true,
         },
       }),
     );
