@@ -1,0 +1,33 @@
+{
+ "export": "tmp/export608-stage-checks-000307",
+ "installed_vitest": {
+  "numFailedTestSuites": 0,
+  "numFailedTests": 0,
+  "numPassedTests": 198,
+  "numPendingTests": 0,
+  "numTotalTestSuites": 13,
+  "numTotalTests": 198
+ },
+ "kind": "JOB608_STAGE_RESULT",
+ "manifest_sha256": "d0035b42b05f4587268f84ff4c151625acd17e1c2f11871c60f3a0681f21f46f",
+ "outcome": "PASS rc0 STEP608 installed-checks-pass",
+ "preserved_for_package_stage": "../export608-stage-checks-000307/result608-checks",
+ "source_commit": "5ec111ba29ba738b37a8d0c8371536b3ab956865",
+ "source_review": "APPROVE c5d5b84e (5ec111ba test-only fix + checks2 export)",
+ "stage": "checks",
+ "stage_receipt": {
+  "exit_code": 0,
+  "kind": "JOB608_STAGE_RECEIPT",
+  "manifest_sha256": "d0035b42b05f4587268f84ff4c151625acd17e1c2f11871c60f3a0681f21f46f",
+  "outputs": {
+   "checks/installed.json": "c7232500af4af2baf16953824a23a698f4a5da40154e3937007044e37183048b",
+   "checks/tests.log": "998aff5143b2b28308ef474cf790a469e3771835ce1c918d8d22d948ae97bebf"
+  },
+  "run_id": "stage608-checks-000307",
+  "source_commit": "5ec111ba29ba738b37a8d0c8371536b3ab956865",
+  "stage": "checks"
+ },
+ "stage_receipt_sha256": "c9e003d506e3f1ae18b38521952d2e0807b10fb6ad00b2dac3dabd75c6d3c276",
+ "unit_suites": "10 unittest OK (incl. test_native_owner_server 15/15, sigterm race test ok), node --test pass 101+38 fail 0",
+ "window_utc": "2026-10-28T00:13Z->00:36Z (~23min, 4g/1CPU, outer 2385s+15)"
+}
