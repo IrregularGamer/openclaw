@@ -13,9 +13,11 @@ receipts all bind that source. Checks6 has198/198 installed tooling checks,
 plus the complete scoped gateway/native/supervisor/refusal/cancellation and
 application checks. Native5 reproduces the independently pinned addon
 `0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042`.
-The finite package6 run is recorded in job608-stage-package6-launch.md and its
-immutable export manifest. Package5 is consumed/lost, never retry authority.
-Package6 build/tree/action/next-seal bindings are PENDING until returned results
+Package5 and package6 are consumed/lost interrupted executions, never retry
+authority. Their existing launch manifests remain historical evidence. The
+finite package7 continuation is recorded in job608-stage-package7-launch.md
+and its immutable manifest3588339e70c8d7a5a78464e613e779eae98c8c14d4bfd9edacf1de7c55cd9004.
+Package7 build/tree/action/next-seal bindings are PENDING until returned results
 are verified and independently reviewed. No partial result supplies a gate.
 
 Current explicit baseline proposal is job608-final-baseline-proposal.json,
@@ -89,7 +91,10 @@ read-only socket-parent observation records current0755 root:root ancestry;
 repeat it, never silently change shared ownership/permissions. Stage the REAL root-protected
 hq-ack.json with exact scope,owner,boot_id,created_wall,expires_wall,
 created_mono,expires_mono,action_sha256. Scope=strict542-gateway-install598.
-No config/auth/credential/state transfer or provider call is needed.
+The actual execution acknowledgement must be fresh at this step: renew it
+through the genuine HQ owner if the earlier handoff window expired;595
+acknowledging a future handoff does not reserve or extend a900s application
+window. No config/auth/credential/state transfer or provider call is needed.
 4. The SAME genuine HQ owner invokes ONLY these fixed reviewed commands:
 
    ```sh
