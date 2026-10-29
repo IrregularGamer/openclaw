@@ -28,6 +28,8 @@ type NativeCompilationOptions = {
   assertInput?: (file: string) => string;
   producedFiles?: ReadonlySet<string>;
   emit?: boolean;
+  /** false only for a declaration-emit session whose full check runs in its own session. */
+  check?: boolean;
 };
 
 /** Compile behind one filesystem boundary; callers publish only the sealed result. */
@@ -46,6 +48,7 @@ async function compileNativeProjectOnce({
   assertInput,
   producedFiles,
   emit = true,
+  check = true,
 }: NativeCompilationOptions) {
   // Build/lint callers require a checkout boundary. SDK revision rendering
   // intentionally uses its installed compiler and linked dependency snapshots.
@@ -78,7 +81,7 @@ async function compileNativeProjectOnce({
     const toolchainFiles = nativeTypeScriptToolchainFiles(compilerPackage, admit);
     const args = [
       "bounded-native-api",
-      JSON.stringify({ roots, compilerOptions, diagnostics, emit }),
+      JSON.stringify({ roots, compilerOptions, diagnostics, emit, check }),
     ];
     const snapshot = () =>
       new CompilerInputSnapshot(root, {
@@ -152,7 +155,7 @@ async function compileNativeProjectOnce({
           // Validate the requested diagnostics below, then use the in-memory
           // emit result for declaration errors without a second preflight.
           noEmitOnError: false,
-          noCheck: false,
+          noCheck: !check,
           // Keep the native API's whole-program diagnostic work sequential
           // within the admitted single-CPU build budget.
           singleThreaded: true,
@@ -169,9 +172,12 @@ async function compileNativeProjectOnce({
     if (!project) {
       throw new Error(`Native TypeScript did not open ${config}`);
     }
-    const errors = await collectNativeTypeScriptDiagnosticsAsync(project, {
-      includeSemantic: diagnostics === "all",
-    });
+    // A noCheck emit session is only opened after its full-check session passed.
+    const errors = check
+      ? await collectNativeTypeScriptDiagnosticsAsync(project, {
+          includeSemantic: diagnostics === "all",
+        })
+      : [];
     view.assertValid();
     if (errors.length) {
       throw new Error(formatNativeTypeScriptDiagnostics(errors));
@@ -238,14 +244,30 @@ export async function emitNativeDeclarations(
   if (!options.roots.length) {
     return { inputs: [], declarations };
   }
-  const compilation = await compileNativeProject({
+  const session = {
     ...options,
     compilerOptions: {
       ...options.compilerOptions,
       rootDir: fs.realpathSync.native(options.cwd),
       declarationMap: true,
     },
+  };
+  // One native program holding both the full checker and the declaration emit
+  // state exceeds the admitted 4 GiB build lease (job608 unified-0). Run the
+  // unchanged full check (same roots, ambient files, options and all diagnostic
+  // queries) in its own session first, then emit declarations from a fresh
+  // noCheck session so only one program is resident at a time.
+  const checked = await compileNativeProject({ ...session, emit: false });
+  const compilation = await compileNativeProject({
+    ...session,
+    check: false,
   });
+  if (
+    checked.inputs.length !== compilation.inputs.length ||
+    checked.inputs.some((file, index) => file !== compilation.inputs[index])
+  ) {
+    throw new Error("Native declaration emit and check sessions disagree on source membership");
+  }
   const inputs = new Set(compilation.inputs);
   for (const [file, output] of compilation.outputFiles) {
     if (!/\.d\.[cm]?ts$/u.test(file)) {
