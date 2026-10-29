@@ -40,8 +40,13 @@ the 586 rule. Do not `git pull` source552 in a worker. 595 MUST NOT APPLY.
   independent ACCEPT 52c178f7. Accepted input: P/stage-checks-m674/result608-checks.
 - compiler m674: rc0 (evidence 17c0ea58; foreground, offload.rc 0, 245s), tests pass 0 fail, 0 group/other-writable,
   preflight APPROVE 8566c2b9, independent ACCEPT 61e3dd9e. Accepted input: P/stage-compiler-m674/result608-compiler.
-- NEXT fresh worker, FIRST heavy action: runtime m674 (prepare, gates, independent preflight, ONE launch) with
-  `--input P/stage-native-m674/result608-native`, --dest P/stage-<S>-m674, same caps as the stage's tsccwdf6a4
-  launch doc (compiler 600/540s, runtime 2460/2400s, 14g/4CPU), all gates above, one launch per worker.
+- runtime m674: rc0 (evidence ee84e508; background Bash 2800s, offload.rc 0, build +726s, runtime-pass),
+  checkpoint 6178cfd9 8959 entries 0 group/other-writable, preflight APPROVE 4b777a33, independent ACCEPT 388d36b8.
+  Accepted input: P/stage-runtime-m674/result608-runtime.
+- NEXT fresh worker, FIRST heavy action: unified-0 m674 (prepare, gates, independent preflight, ONE launch) with
+  `--input P/stage-native-m674/result608-native --input P/stage-runtime-m674/result608-runtime` (STAGES['unified-N']
+  = native, runtime), --dest P/stage-unified-0-m674, caps as job608-unified-0-tsccwdf6a4-launch.md (2460/2400s, 14g/4CPU),
+  all gates above, one launch per worker; then unified-1..5 the same way, one per fresh worker.
   Worker harness: give the Bash call running `offload run` a timeout >= offload --timeout + 300s (ms), or run it in
   the foreground with timeout 600000 only if --timeout <= 420; the background default kills at 600s.
+  prepare-stage608-export.py took ~3 min here; start it immediately so the >=2655s gate still holds at launch.
