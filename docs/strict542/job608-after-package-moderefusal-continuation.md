@@ -34,6 +34,12 @@ the 586 rule. Do not `git pull` source552 in a worker. 595 MUST NOT APPLY.
 ## Progress (tag m674, C = 674840b6)
 - native m674: rc0 (evidence 53bda0a0), addon 0b6607e7 (identical to tsccwdf6a4), 0 group/other-writable,
   preflight APPROVE 6049ed36, independent ACCEPT 5a412599. Accepted input: P/stage-native-m674/result608-native.
-- NEXT fresh worker, FIRST heavy action: checks m674 (then compiler, runtime) with
-  `--input P/stage-native-m674/result608-native` (plus only new-run accepted inputs each stage needs), --dest
-  P/stage-<S>-m674, same caps as the stage's tsccwdf6a4 launch doc, all gates above, one launch per worker.
+- checks m674: rc0 (evidence df554bc5; offload runs.log rc=0 811s, client rc file not captured because the wrapping
+  bash was killed to dodge the harness 600s background limit, disclosed), 14/14 checks, 0 group/other-writable,
+  stage_inputs {} (STAGES['checks']=[]: do NOT pass --input for checks), preflight APPROVE 2e9a908c,
+  independent ACCEPT 52c178f7. Accepted input: P/stage-checks-m674/result608-checks.
+- NEXT fresh worker, FIRST heavy action: compiler m674 (then runtime) with
+  `--input P/stage-native-m674/result608-native`, --dest P/stage-<S>-m674, same caps as the stage's tsccwdf6a4
+  launch doc (compiler 600/540s, runtime 2460/2400s, 14g/4CPU), all gates above, one launch per worker.
+  Worker harness: give the Bash call running `offload run` a timeout >= offload --timeout + 300s (ms), or run it in
+  the foreground with timeout 600000 only if --timeout <= 420; the background default kills at 600s.
