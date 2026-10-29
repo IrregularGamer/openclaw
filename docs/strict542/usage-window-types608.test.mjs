@@ -23,7 +23,11 @@ test("actual usage window parser typechecks with checked indexed access", () => 
       "--noUncheckedIndexedAccess", "--target", "es2022", "--module", "esnext",
       "--typeRoots", root,
       "--skipLibCheck", "--noEmit", input,
-    ], { encoding: "utf8", timeout: 30000, maxBuffer: 1024 * 1024 });
+    ], {
+      // Run outside the repo so tsc never discovers the root tsconfig.json
+      // (TS5112 refuses explicit files when one is present).
+      cwd: root, encoding: "utf8", timeout: 30000, maxBuffer: 1024 * 1024,
+    });
     assert.equal(result.error, undefined, String(result.error));
     assert.equal(result.signal, null);
     assert.equal(result.status, 0, result.stdout + result.stderr);

@@ -1,0 +1,4 @@
+37ff1b9ebd37523754e0060f132e078f79ed07aaaf1ac201eff5e8696f7dcc50  tsconfig.json
+eb9478c8182ae95fcd16ac72202983fe45943694944a0670e5823bca983dced5  src/gateway/strict542/usage-preflight.ts
+4ea193364f7ed854bf202b9ceba207eca8980ba3508cfb15fd22a3c6369aa499  old/usage-window-types608.test.mjs
+d729ffb226fd7b03390e516a2ea522cbc208b5ef9a3f0c249c607a0eee0d07c7  docs/strict542/usage-window-types608.test.mjs
