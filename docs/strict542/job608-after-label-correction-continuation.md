@@ -60,7 +60,9 @@ real supervisor IPC refusal/cancellation/settlement cases, storage-return0
 within16MiB, committed complete evidence and independent acceptance.
 
 NEW native-label49d31 preparation uses same49d3/common0bb5 and empty inputs;
-its exact preflight/review must be prepared before launch. Existing native
+manifest61c98062564508324da33f5f9c54ef0eb8954630aa97fedb4100a379c2d68401
+in job608-native-label49d31-preflight.json; exact independent preflight APPROVE
+is required before launch. Existing native
 2400s inner/2460s outer14g/4CPU remains unchanged; launch FIRST next fresh worker
 only after actual independently ACCEPTED NEW checks, exact native preflight,
 inputs/storage0, fresh healthup/no competing run/UNUSED nooutputs/log/rc and
