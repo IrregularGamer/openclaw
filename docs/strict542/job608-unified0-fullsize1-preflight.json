@@ -1,0 +1,38 @@
+{
+  "export": "/srv/encrypted/dev-move-98/agentq-source608-20261028-private/stage-unified-0-fullsize1a39a",
+  "helper_sha256": "a558db9afacd22111fb5c2590fe902298b12ea06910eac6efab43f4aa27c0de4",
+  "launch": [
+    "offload",
+    "run",
+    "--timeout",
+    "2460",
+    "--mem",
+    "14g",
+    "--cpus",
+    "4",
+    "--artifacts",
+    "result608-unified-0",
+    "--",
+    "timeout",
+    "-k",
+    "15s",
+    "2400s",
+    "sh",
+    "run608.sh"
+  ],
+  "manifest_sha256": "666a56b55f397e326331306d9e6ca472515c418e9f6665c12b657eb0664fc691",
+  "run_id": "stage608-unified-0-fullsize1a39a",
+  "runner_sha256": "e2ed7e1337f5d0564b56e61174d0837440655cd38f75416608bff3de82780605",
+  "source_commit": "a39ad5ee95609193502850d0dbb87b5dcbb5e3e3",
+  "source_export_sha256": "d28756248bc60436831085e9c03b7738795efc6dd1fc4ad79de2e216c0ef3f62",
+  "stage_inputs": {
+    "native/libtests-receipt.json": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946",
+    "native/receipt.json": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+    "native/rolldown-binding.linux-x64-gnu.node": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042",
+    "native/stage-receipt.json": "a301fb35b8da76283393d3b8420028c75d95a50bdde34bf5429392ad0a120f93",
+    "runtime/build.log": "13ed360ce36c3ff73fb3f5b83dd5ea335267909742e159e52c8078705ce8d969",
+    "runtime/checkpoint.tar.gz": "85f3d1e3b92da6803c810a099c14d10286feac8475fef133cce4350054d95991",
+    "runtime/stage-receipt.json": "eb4488f2e5ef31baca3580ae5542d56302d2b15c53a622b4b26abd4e9a92e81b"
+  },
+  "state": "UNUSED"
+}
