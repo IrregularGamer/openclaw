@@ -1,0 +1,18 @@
+{
+  "child_result": "status1 signalnull parentSignalnull timedOutfalse cleanupnone observedProcessStatedead observationScopeprocess-group finalStatus1; 152.5s",
+  "client_exit": 1,
+  "client_log_sha256": "5a9da761227212aef4ef57347497a97cc817e4bbe5871c9012135a6eb778909c",
+  "failure": "Native declaration typecheck TS2322 at usage-preflight.ts byte13195: WINDOW_LABELS[key] is string|undefined for required label:string; TS6500 declaration at byte1370. No resource floor refusal or timeout.",
+  "manifest_sha256": "912af4bc9ff88303a0a78765a16620b415f22e39984957adcfcb172b56b56468",
+  "markers": [
+    "STEP608 unified-0-stage-native-start +11s",
+    "STEP608 unified-0-restore-build-done +19s",
+    "STEP608 unified-0-build-start budget=2254s +26s",
+    "STEP608 unified-0-build-fail 1 +279s"
+  ],
+  "result_returned": false,
+  "scope": "Evidence only; no compiler successor, package or application authority;595 MUST NOT APPLY",
+  "source_commit": "5aff81feb4098654ce07e7ff09e336119770be85",
+  "source_export_sha256": "230f79f5b6f95826a02a15f1c5fdd9d1fbc5a7abd60064b33e3d1776af0f086d",
+  "state": "SPENT_FAILURE_NO_REPLAY"
+}
