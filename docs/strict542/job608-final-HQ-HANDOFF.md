@@ -1,3 +1,14 @@
+**Full-size continuation (2026-10-29, S1902/1905):** the fixed4GiB/1CPU
+ceiling and Decision649 are superseded. Cancelled650 source is excluded.
+Retain the unchanged accepted a39a/common d287 lineage, per independent
+review87be798f. The NEW canonical unified-0 fullsize1a39a attempt has exact
+preflight7b7a27cf (manifest666a56b5) and runs once at14GiB/4CPU, with every
+original check and deadline. See [current full-size continuation](job608-fullsize-continuation.md).
+Historical failed exports/diagnostics below remain SPENT. Do not rerun them,
+refreeze merely for evidence commits, or ask S the already resolved cap question.
+Actual package/action/seal/automatic-review gates below remain incomplete.
+**595 MUST NOT APPLY.**
+
 # Job608: exact preparation handoff to595
 
 **Current boundary (2026-10-29):** preparation remains INCOMPLETE. Executable

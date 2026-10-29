@@ -1,3 +1,11 @@
+**Superseding continuation (S1902/1905, job652):** use
+[job608-fullsize-continuation.md](job608-fullsize-continuation.md).
+Decision649 and the fixed4GiB/1CPU ceiling are superseded. Cancelled650 changes
+are excluded, a39a/common d287 and accepted predecessors remain unchanged.
+A NEW exact independently reviewed full-size canonical unified-0 attempt
+replaces the old spent run/diagnostic as the next operation. All final gates
+remain incomplete;595 MUST NOT APPLY. Historical launch blocks below stay spent.
+
 # job608 continuation after unified-0 substep-budget correction
 
 SOURCE ONLY; preparation incomplete; **595 MUST NOT APPLY.** Supersedes only the
