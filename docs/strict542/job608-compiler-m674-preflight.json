@@ -1,0 +1,23 @@
+{
+ "run_id": "stage608-compiler-m674",
+ "stage": "compiler",
+ "state": "UNUSED",
+ "scope": "SOURCE ONLY; compiler rerun at reviewed mode fix 674840b6; 595 MUST NOT APPLY",
+ "source_commit": "674840b669c43af54a62e30b4028f219f4a428c9",
+ "source_approval": "674840b6 independent APPROVE 017cd166",
+ "export": "/srv/encrypted/dev-move-98/agentq-source608-20261028-private/stage-compiler-m674",
+ "prepare": "prepare-stage608-export.py --base P/stage-unified-0-tsccwdf6a4 --commit 674840b6 --stage compiler --input P/stage-native-m674/result608-native --dest P/stage-compiler-m674",
+ "manifest_sha256": "0807dbe2a6ebf2e45ab9d421bc9cbe12a1e7b896e53a2c84715d7a5a442354ba",
+ "runner_sha256": "b04abd4d6d08f2352bd04e5ecc4e3e56d9f6c67223c175a03e98fa44cc0b7816",
+ "stage_helper_sha256": "a558db9afacd22111fb5c2590fe902298b12ea06910eac6efab43f4aa27c0de4",
+ "source_export_sha256": "e1a6de3552e9f3a40cb4fbd9bb13acc63f16d725c21a0994d022ed9f4084461b",
+ "successor_archive_sha256": "9374675e9d48f846cfe8a428cb1b32bbc188e41c021bf653224084f0f6190296",
+ "stage_inputs_from": "native m674 accepted 5a412599 (addon 0b6607e7)",
+ "gates_at_prepare": {"verify_inputs": 0, "sh_n": 0, "storage608_check": 0, "free_bytes": 4879495168},
+ "launch": ["offload","run","--timeout","600","--mem","14g","--cpus","4","--artifacts","result608-compiler","--","timeout","-k","15s","540s","sh","run608.sh"],
+ "caps_source": "identical to job608-compiler-tsccwdf6a4-launch.md",
+ "log": "/srv/encrypted/dev-move-98/agentq-source608-20261028-private/compiler-m674-offload.log",
+ "rc": "/srv/encrypted/dev-move-98/agentq-source608-20261028-private/compiler-m674-offload.rc",
+ "minimum_worker_seconds": 975,
+ "acceptance_extra": "result mode listing: zero group/other-writable entries"
+}
