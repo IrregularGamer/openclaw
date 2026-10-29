@@ -5,8 +5,8 @@ Actual client/result0 from the exact reviewed native-fullsize5aff1 export
 435ef3f26d1045eaca54ea9e8057737a812a5e279681e2c3bdd278f30fb62515.
 The source rebuild reproduced compile receipt4a651254 and addon0b6607e7
 byte-for-byte; libtests2f81179f is the separately accepted pinned inherited
-receipt, not a new lib-test run. Seven real lifetime tests and two real
-compaction tests passed; the deliberate retention mutation failed as required.
+receipt, not a new lib-test run. Seven real lifetime tests and two real library tests
+(including the compaction regression) passed; the deliberate retention mutation failed as required.
 Cargo release builds reported9m48s and20m31s, within reviewed2460/2400s bounds.
 
 Fresh verify-inputs0 and storage result0,48652056B<67108864B. outcome.json
