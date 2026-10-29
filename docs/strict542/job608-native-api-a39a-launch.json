@@ -1,0 +1,28 @@
+{
+  "application_authority": false,
+  "build_acceptance": false,
+  "client_status_file": "../api-phase-a39a-diag1-offload.rc",
+  "command": "offload run --timeout 1740 --mem 4g --cpus 1 --artifacts native-api608 -- python3 -B diagnose-native-api608.py",
+  "execution_state": "CLIENT_STARTED_OUTCOME_PENDING_DO_NOT_REPLAY",
+  "export": "/srv/encrypted/dev-move-98/agentq-source608-20261028-private/stage-api-phase-a39a-diag1",
+  "external_source_commit": "a970c798ce41e91df07f8cb720ffe27e07342f3f",
+  "kind": "A39A_API_RESOURCE_DIAGNOSTIC_LAUNCH_NOT_RESULT608",
+  "manifest_sha256": "0cba05c7a70e1f4fd1c66f4f840f326616ce6bf23568200cf4005d5a3826d3b6",
+  "observed_at": "2026-10-29T06:01:52.099516+00:00",
+  "offload_session": 81557,
+  "prelaunch": {
+    "all_pins_match": true,
+    "health": "up",
+    "minimum_worker_seconds": 2115,
+    "storage_current_unique_bytes": 1361938608,
+    "storage_free_bytes": 5962850304,
+    "storage_return_cap_bytes": 33554432,
+    "validate_exit": 0,
+    "verify_inputs_exit": 0,
+    "worker_seconds_left": 3508
+  },
+  "raw_log": "../api-phase-a39a-diag1-offload.log",
+  "review_commit": "9f71ca46",
+  "source_commit": "a39ad5ee95609193502850d0dbb87b5dcbb5e3e3",
+  "source_export_sha256": "d28756248bc60436831085e9c03b7738795efc6dd1fc4ad79de2e216c0ef3f62"
+}
