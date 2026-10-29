@@ -124,6 +124,20 @@ test('overlap refuses and poisons diagnostic acceptance without a second origina
   assert.equal(count(f,'query'),1);assert.equal(count(f,'stop'),1);assert.equal(f.state.failed,true);
 });
 
+test('late API ambiguity immediately reports refusal after a timer receipt, preserving the original failure',async()=>{
+  const work=deferred(),original=Error('genuine original failure'),f=fixture({query:()=>work.promise});
+  f.api.createSnapshot();const pending=f.program.getGlobalDiagnostics();await turn();
+  f.timers[0].callback();await turn();assert.equal(f.state.receipt,f.receipt);
+  assert.throws(()=>new f.API().createSnapshot(),/CPU profile diagnostic refused/);
+  assert.deepEqual(f.reports.filter(event=>event.phase==='refused'),[
+    {kind:'NATIVE_CPU_PROFILE608',phase:'refused',reason:'ambiguous-api'},
+  ]);
+  await assert.rejects(f.program.getGlobalDiagnostics(),/CPU profile diagnostic refused/);
+  assert.equal(f.reports.filter(event=>event.phase==='refused').length,1);
+  work.reject(original);await assert.rejects(pending,error=>error===original);
+  assert.equal(count(f,'query'),1);assert.equal(count(f,'stop'),1);assert.equal(f.state.failed,true);
+});
+
 test('a second API owner refuses without replacing the captured genuine owner',async()=>{
   const f=fixture();f.api.createSnapshot();
   assert.throws(()=>new f.API().createSnapshot(),/CPU profile diagnostic refused/);

@@ -67,11 +67,16 @@ function fixedStore() {
 /** Hooks isolate timers/filesystem/reporting in tests; production supplies only api. */
 export function installNativeCpuProfile608(api, hooks = {}) {
   const state = {failed:false,reason:null,receipt:null};
-  const fail = reason => { state.failed=true; state.reason ??= reason; };
   const createStore = hooks.createStore ?? fixedStore;
   const schedule = hooks.setTimeout ?? setTimeout;
   const clear = hooks.clearTimeout ?? clearTimeout;
   const report = hooks.report ?? (event => process.stderr.write(JSON.stringify(event)+'\n'));
+  const fail = reason => {
+    if (state.failed) return;
+    state.failed=true;state.reason=reason;
+    // Emit immediately: a later outer timeout may kill us before beforeExit.
+    try { report({kind:'NATIVE_CPU_PROFILE608',phase:'refused',reason}); } catch {}
+  };
   const patches = [
     [api.API?.prototype,'createSnapshot'],
     [api.Program?.prototype,'getGlobalDiagnostics'],
