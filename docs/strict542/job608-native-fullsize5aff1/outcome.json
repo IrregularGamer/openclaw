@@ -1,0 +1,76 @@
+{
+  "client_exit": 0,
+  "client_log_sha256": "5709e6e065057ea86940777cbd244047d407b96458ac81bd56597903e9f72424",
+  "common_export_sha256": "230f79f5b6f95826a02a15f1c5fdd9d1fbc5a7abd60064b33e3d1776af0f086d",
+  "files": {
+    "exit-code.txt": {
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "native/libtests-receipt.json": {
+      "bytes": 2062,
+      "sha256": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946"
+    },
+    "native/receipt.json": {
+      "bytes": 2117,
+      "sha256": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e"
+    },
+    "native/rolldown-binding.linux-x64-gnu.node": {
+      "bytes": 24303312,
+      "sha256": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042"
+    },
+    "native/stage-receipt.json": {
+      "bytes": 689,
+      "sha256": "435ef3f26d1045eaca54ea9e8057737a812a5e279681e2c3bdd278f30fb62515"
+    },
+    "result598-native/compaction-tests.log": {
+      "bytes": 10053,
+      "sha256": "f55d6d32bbaf22450b149aed713243048636d778da6acfbf2760eea6895bb9ce"
+    },
+    "result598-native/lifetime-retention-negative.log": {
+      "bytes": 1897,
+      "sha256": "12bc3d68c5387a44c515fd490a5f97fa08c95274b47a962c9c4a09b7ebf5bbcf"
+    },
+    "result598-native/receipt.json": {
+      "bytes": 2117,
+      "sha256": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e"
+    },
+    "result598-native/rolldown-binding.linux-x64-gnu.node": {
+      "bytes": 24303312,
+      "sha256": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042"
+    },
+    "strict542-checks/native-rebuild.log": {
+      "bytes": 26495,
+      "sha256": "4e76ec0345c21ccee49c8de187c929ace4becf285aa0502fe43cd635b5f5802b"
+    }
+  },
+  "launch": [
+    "offload",
+    "run",
+    "--timeout",
+    "2460",
+    "--mem",
+    "14g",
+    "--cpus",
+    "4",
+    "--artifacts",
+    "result608-native",
+    "--",
+    "timeout",
+    "-k",
+    "15s",
+    "2400s",
+    "sh",
+    "run608.sh"
+  ],
+  "logical_return_bytes": 48652056,
+  "manifest_sha256": "301a3b3c62bfedf3b40896cb7fb01f595acb9ba5d29449ad338bfb2c07ad72c6",
+  "result_exit": 0,
+  "return_cap_bytes": 67108864,
+  "run_id": "stage608-native-fullsize5aff1",
+  "scope": "Native rebuild only. Libtests receipt is inherited pinned evidence; not a rerun. No runtime/package/artifact/action/application authority.",
+  "source_commit": "5aff81feb4098654ce07e7ff09e336119770be85",
+  "stage": "native",
+  "stage_receipt_sha256": "435ef3f26d1045eaca54ea9e8057737a812a5e279681e2c3bdd278f30fb62515",
+  "state": "SPENT/SUCCESS"
+}
