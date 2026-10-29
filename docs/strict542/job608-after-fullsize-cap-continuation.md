@@ -36,8 +36,9 @@ all four raw logs are recorded in job608-native-fullsize5aff1/; storage0,
 ## FIRST heavy action in the next fresh worker: runtime
 
 Do not repeat accepted checks/native, old freezes or historical diagnostics.
-The NEW runtime export is UNUSED; exact independent preflight approval is
-required before launch. Native predecessor is ONLY the accepted NEW435ef3f2
+The NEW runtime export is UNUSED and independently APPROVED in
+job608-runtime-fullsize5aff1-preflight-independent-review.md, subject to all
+live admission gates below. Native predecessor is ONLY the accepted NEW435ef3f2
 producing receipt and its three pinned outputs, never an a39a producer receipt.
 Manifest46f4f743157f10fa3b64b4256b179c5256b79f51632e17afb8c519b4311995ac;
 run_idstage608-runtime-fullsize5aff1. Runner e2ed7e13/helpera558db9a and common
@@ -84,7 +85,9 @@ for NEW unified-0 at5aff/common230f with ONLY accepted NEW native+runtime inputs
 Require exact preflight/review and full14g/4CPU admitted lease, complete actual
 result/checkpoint and independent acceptance. Only genuine accepted unified-0
 unlocks compiler execution. The NEW compiler export668db7e1 is prepared, UNUSED, with complete pins in
-job608-compiler-fullsize5aff1-preflight.json; its600/540s14g/4CPU command
+job608-compiler-fullsize5aff1-preflight.json, independently CONDITIONALLY
+approved in job608-compiler-fullsize5aff1-preflight-independent-review.md.
+Its600/540s14g/4CPU command
 remains conditionally gated on accepted unified-0
 and>=975s after preflight; no compiler runs in this worker. Then unified-1..5,
 middle, sdk-0/1, tail, package, each per exact stage608.py STAGES/OUTPUTS and
