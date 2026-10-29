@@ -1,0 +1,18 @@
+✔ observes exact receiver, arguments and result without logging arguments (10.522897ms)
+✔ preserves rejection identity and emits failure (3.360928ms)
+✔ does not complete or serialize pending requests (0.600044ms)
+✔ refuses unsupported APIs before modifying any method (0.439396ms)
+✔ refuses a duplicate installation (0.389095ms)
+✔ propagates only to exact Node children and preserves options and results (0.548694ms)
+✔ preserves original spawn errors (0.302392ms)
+✔ observer sink failures cannot prevent or replace the original call (0.615243ms)
+✔ observer clock failures remain invalid evidence without changing API results (0.383472ms)
+✔ an observer path in application arguments cannot suppress propagation (0.425945ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 186.187858

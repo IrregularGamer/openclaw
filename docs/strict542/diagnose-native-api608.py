@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Finite external API observer for the unchanged, reviewed 1bed unified-0.
+"""Finite external API observer for the unchanged, reviewed a39a unified-0.
 
 Only an admitted committed secretless export may execute this fixed entry point.
 Timeout is diagnostic evidence, never checkpoint or installation authority.
@@ -13,9 +13,9 @@ import subprocess
 import sys
 import time
 
-FREEZE = '1bed4d1bb53eff145f724cc6a448dc73b3609015'
-COMMON = '5d7e9d57fb660e2b54f5595e81ddf332027e21b303937c2cd6bc7f718f311263'
-RUNNER = 'eac266cfaab7efef7c92ed94c53a0a55e75303b8ee4810bc15f21f243a76b8ee'
+FREEZE = 'a39ad5ee95609193502850d0dbb87b5dcbb5e3e3'
+COMMON = 'd28756248bc60436831085e9c03b7738795efc6dd1fc4ad79de2e216c0ef3f62'
+RUNNER = 'e2ed7e1337f5d0564b56e61174d0837440655cd38f75416608bff3de82780605'
 BUILD = 'e6c1270bf3e41e53e80f904fcf054df0636966e4b5f75c46ffaf890243ca326c'
 HELPER = 'a558db9afacd22111fb5c2590fe902298b12ea06910eac6efab43f4aa27c0de4'
 OBSERVERS = {
@@ -59,7 +59,7 @@ timeout -k 15s 900s node --import ../install-native-api-phases608.mjs --import .
 def validate():
     manifest = json.loads(Path('export-manifest.json').read_text())
     if (manifest['source_commit'], manifest['source_export_sha256'], manifest['stage']) != (FREEZE, COMMON, 'unified-0'):
-        raise ValueError('requires exact unchanged 1bed unified-0 export')
+        raise ValueError('requires exact unchanged a39a unified-0 export')
     if manifest['runner_sha256'] != RUNNER or digest('run608.sh') != RUNNER:
         raise ValueError('runner pin mismatch')
     if digest('stage608.py') != HELPER:
