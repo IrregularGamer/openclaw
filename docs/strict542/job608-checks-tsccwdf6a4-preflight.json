@@ -1,0 +1,50 @@
+{
+ "common_archive_pins": {
+  "base_source_archive_sha256": "e79a0e45a4eaea4afe325ca94ba201d5ae43d09d8c15dc07d0695c87ba743de3",
+  "compiler_upstream_archive_sha256": "203aa4834d7a52522c758c81f6e493bea9fea828d4454fe2a25b9519d2d258ac",
+  "native_export_sha256": "d73e4e35720ffcb71856ce8168e75fa3b4fd49251fd78c811e1abded8b2701de"
+ },
+ "export": "/srv/encrypted/dev-move-98/agentq-source608-20261028-private/stage-checks-tsccwdf6a4",
+ "helper_sha256": "a558db9afacd22111fb5c2590fe902298b12ea06910eac6efab43f4aa27c0de4",
+ "launch": [
+  "offload",
+  "run",
+  "--timeout",
+  "1200",
+  "--mem",
+  "14g",
+  "--cpus",
+  "4",
+  "--artifacts",
+  "result608-checks",
+  "--",
+  "timeout",
+  "-k",
+  "15s",
+  "1140s",
+  "sh",
+  "run608.sh"
+ ],
+ "launch_gates": [
+  "exact independent approval of f6a4de2e test-cwd correction + this preflight",
+  "fresh healthup/no competing run/inputs0/storage0/no result/log/rc",
+  "remaining>=1575s after preflight including1200+195settle+180transfer",
+  "no historical5aff receipt relabelling; no unchanged replay after admission"
+ ],
+ "log": "/srv/encrypted/dev-move-98/agentq-source608-20261028-private/checks-tsccwdf6a4-offload.log",
+ "manifest_sha256": "c22d769620f4eecd0e146d7e0eaa66bec9aaf835a6f69c89b19d5b9db49d1833",
+ "minimum_worker_seconds": 1575,
+ "predecessor": "stage608-checks-label49d31 SPENT_FAILURE rc1 TS5112 (job608-checks-label49d31/README.md); no replay",
+ "rc": "/srv/encrypted/dev-move-98/agentq-source608-20261028-private/checks-tsccwdf6a4-offload.rc",
+ "required_checks": 14,
+ "run_id": "stage608-checks-tsccwdf6a4",
+ "runner_sha256": "715e53bd43979434f317807973d9712bc58d6ecbeec357561f92053b8aa3cd6a",
+ "scope": "SOURCE ONLY; checks unexecuted at f6a4de2e; 595 MUST NOT APPLY",
+ "source_approval": "386f7231 (49d3 label fix) + PENDING independent review of f6a4de2e test-cwd correction",
+ "source_commit": "f6a4de2ebc6924d16fe559f9858bf8c50dce1eba",
+ "source_export_sha256": "e81e07d2770ad597bb11de77e1dbf899d5f5286b8d3d52e8c5616faa74458145",
+ "stage": "checks",
+ "stage_inputs": {},
+ "state": "UNUSED",
+ "successor_archive_sha256": "88fc8d3f1934c00d65e75324b79d8745f743a6fe426aaa98ecd50d38bef69ac9"
+}
