@@ -10,3 +10,8 @@ Launch ONCE exactly as job608-package-tsccwdf6a4-preflight.md says, and only onc
 review ends with APPROVE. Then evidence and independent acceptance, then the final artifact and old/new
 inventory, the action/privilege/seal/reseal and automatic queue reviews, and the genuine ordered HQ595
 handoff. Do not `git pull` source552 in a worker. 595 MUST NOT APPLY.
+
+Package preflight independent APPROVE 1cc5bf20. Carry its risks into acceptance. R1: there is no inner
+build budget, so a kill by the outer 2400s limit is rc124/137 and fails loudly. R2: a result over the 2048MiB
+cap is REFUSED; never raise the cap after the fact. R3: the receipt has no output hashes, so acceptance must
+pin them via result-files.sha256/tree.json.
