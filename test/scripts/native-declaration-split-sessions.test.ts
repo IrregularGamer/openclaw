@@ -47,3 +47,26 @@ describe("split native declaration sessions (job650)", () => {
     await expect(run(root)).rejects.toThrow(/TS2304/u);
   }, 120_000);
 });
+
+describe("split native declaration sessions keep emit-only checks (job650 review)", () => {
+  it("still reports declaration-emit diagnostics from the noCheck emit session", async () => {
+    const root = fixture("class Hidden {}\nexport function make() { return new Hidden(); }\nexport const x = AMBIENT;\n");
+    fs.writeFileSync(
+      path.join(root, "tsconfig.json"),
+      JSON.stringify({ compilerOptions: { strict: true, module: "nodenext", target: "es2022", skipLibCheck: true, types: [], isolatedDeclarations: true }, include: ["src"] }),
+    );
+    await expect(run(root)).rejects.toThrow(/TS9007|TS9010|TS4\d{3}/u);
+  }, 120_000);
+
+  it("ignores a caller-supplied check:false so the full check cannot be skipped", async () => {
+    const root = fixture('export const value: number = "text";\n');
+    await expect(
+      emitNativeDeclarations({
+        cwd: root,
+        configFile: path.join(root, "tsconfig.json"),
+        roots: [path.join(root, "src/index.ts")],
+        ...({ check: false } as object),
+      }),
+    ).rejects.toThrow(/TS2322/u);
+  }, 120_000);
+});

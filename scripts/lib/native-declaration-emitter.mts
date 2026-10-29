@@ -172,12 +172,11 @@ async function compileNativeProjectOnce({
     if (!project) {
       throw new Error(`Native TypeScript did not open ${config}`);
     }
-    // A noCheck emit session is only opened after its full-check session passed.
-    const errors = check
-      ? await collectNativeTypeScriptDiagnosticsAsync(project, {
-          includeSemantic: diagnostics === "all",
-        })
-      : [];
+    // The noCheck emit session still owns the emit-only program diagnostics
+    // (TS5055/TS5056); its semantic query already ran in the full-check session.
+    const errors = await collectNativeTypeScriptDiagnosticsAsync(project, {
+      includeSemantic: check && diagnostics === "all",
+    });
     view.assertValid();
     if (errors.length) {
       throw new Error(formatNativeTypeScriptDiagnostics(errors));
@@ -238,14 +237,15 @@ async function compileNativeProjectOnce({
 
 /** Adapt the shared compiler's in-memory declarations to tsdown source ownership. */
 export async function emitNativeDeclarations(
-  options: Omit<NativeCompilationOptions, "roots" | "emit"> & { roots: string[] },
+  options: Omit<NativeCompilationOptions, "roots" | "emit" | "check"> & { roots: string[] },
 ) {
   const declarations = new Map<string, NativeDeclaration>();
   if (!options.roots.length) {
     return { inputs: [], declarations };
   }
+  const { check: _ignored, ...requested } = options as NativeCompilationOptions;
   const session = {
-    ...options,
+    ...requested,
     compilerOptions: {
       ...options.compilerOptions,
       rootDir: fs.realpathSync.native(options.cwd),
@@ -257,7 +257,7 @@ export async function emitNativeDeclarations(
   // unchanged full check (same roots, ambient files, options and all diagnostic
   // queries) in its own session first, then emit declarations from a fresh
   // noCheck session so only one program is resident at a time.
-  const checked = await compileNativeProject({ ...session, emit: false });
+  const checked = await compileNativeProject({ ...session, emit: false, check: true });
   const compilation = await compileNativeProject({
     ...session,
     check: false,
@@ -266,7 +266,14 @@ export async function emitNativeDeclarations(
     checked.inputs.length !== compilation.inputs.length ||
     checked.inputs.some((file, index) => file !== compilation.inputs[index])
   ) {
-    throw new Error("Native declaration emit and check sessions disagree on source membership");
+    const emitted = new Set(compilation.inputs);
+    const differing = [
+      ...checked.inputs.filter((file) => !emitted.has(file)),
+      ...compilation.inputs.filter((file) => !checked.inputs.includes(file)),
+    ];
+    throw new Error(
+      `Native declaration emit and check sessions disagree on source membership: ${differing.slice(0, 5).join(", ")}`,
+    );
   }
   const inputs = new Set(compilation.inputs);
   for (const [file, output] of compilation.outputFiles) {
