@@ -1,3 +1,46 @@
+**CURRENT FROZEN BUILD STATE (2026-10-29; supersedes ALL historical status and
+command-pin paragraphs below):** executable source is
+`f6a4de2ebc6924d16fe559f9858bf8c50dce1eba`, common export
+`e81e07d2770ad597bb11de77e1dbf899d5f5286b8d3d52e8c5616faa74458145`.
+Complete **888-path** old/new source inventory vs original605 `877458d7` is
+[job608-frozenf6a4de2e-source-inventory.json](job608-frozenf6a4de2e-source-inventory.json)
+(commit9a2f9994, independent approvalad775c34). Source inventory is not an
+installed-target/artifact inventory.
+
+Current independently accepted producing stages, all at that exact identity:
+checks `d9a3822e`, native `57742314`, runtime `5824b14b`, **unified-0 `ffc14e61`**
+(actual evidencec362cd3a+d597e6eb), and **compiler `dd34e5e4`**
+(actual evidence5212bbb0+ad057e66; five real Node invocations10/10, no failures,
+cancellations, skips or todos). These stages are SPENT and must never replay.
+Native addon remains `0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042`.
+
+Five NEW UNUSED unified1..5 exports are prepared at the SAME freeze/common identity,
+with exact pins in [the batch preflight](job608-unified1-5-tsccwdf6a4-preflight.json)
+(commit37784051), independently preflight-approved `40bd39fa`. Each still requires
+its own fresh live admission/deadline gates; then actual receipt/checkpoint evidence
+and independent acceptance. Follow [the exact unified-1 continuation](job608-after-compiler-tsccwdf6a4-continuation.md). Remaining middle/sdk0/1/tail/package, deterministic
+final package/artifact old/new hashes, final action/privilege/original whole-seal/
+reseal and ACTUAL automatic queue review are still required. Historical candidate95,
+a39a/5aff and other old command pins below must not be applied to this freeze.
+The future final application procedure must be reconciled to the actual package.
+
+The required transport is reviewed587 `556d4f46` (handoff`8705e3dd`): inherited
+fd3 Unix socket plus the required root supervisor. Never install the superseded586
+request-time sudo rule/transport or apply historical native-owner-read.patch.
+Final separate privilege/unit review must bind supported HQ cgroup placement,
+exact socket ownership/access, peer PID/cgroup/MainPID predicates and finite
+foreground lifetime, with all refusal/cancellation/settlement checks preserved.
+
+**595 MUST NOT APPLY.** Preserve the detailed natural settled-gap, actual foreground
+nonqueue HQ ownership, original seal validation, backup/rollback/reseal rules below.
+Gateway restart invalidates510/515 PID acknowledgements: require genuine fresh
+post-restart HQ owner binding AND accepted-run acknowledgements; never reuse/fabricate.
+Keep575/588 chain by reference only (source604ffc9/package1b22c4d/evidenced1304c7,
+independent592 review), and553 as sole SAME510 continuation owner. This source-only
+progress provides no installation, release, scheduler or soft-dependency authority.
+
+---
+
 **SUPERSEDED CURRENT BUILD STATE (2026-10-29):** actual5aff unified-0 FAILED
 TS2322 and is SPENT; compiler668db7e1 remains gated/superseded. Owning label fix
 49d3fe33 is independently source-reviewed386f7231, narrow GREEN36/36 only.
