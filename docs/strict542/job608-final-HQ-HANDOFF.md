@@ -5,7 +5,12 @@ freeze is `a39ad5ee95609193502850d0dbb87b5dcbb5e3e3`, common export
 `d28756248bc60436831085e9c03b7738795efc6dd1fc4ad79de2e216c0ef3f62`.
 Checks/native/runtime have independent acceptance `2e19dbd1`/`4f54ce46`/`9f5d4331`.
 The exact next step is [the current stage continuation](job608-after-substep-budget-continuation.md)
-and its linked UNUSED unified-0 preflight/review. Do not repeat completed stages.
+and its NEW a39a finite API/resource diagnostic preflight/review. The actual
+unified-0 failed124 (11c1673e) and is SPENT; never replay its historical
+launch block. Compiler remains UNUSED and gated on genuine unified-0 success.
+Current source-only inventory has732 paths, independently reviewed9248f534;
+it is not the future package or installed-target inventory. Do not repeat
+accepted stages without a product source correction requiring a new freeze.
 The full current declaration/compiler/package chain, final artifact/action/old-new
 inventory/seal reviews and actual automatic queue review remain outstanding.
 **595 MUST NOT APPLY.** This status supersedes older candidate95 status/freeze

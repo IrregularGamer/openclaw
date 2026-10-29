@@ -1,0 +1,41 @@
+{
+  "application_authority": false,
+  "build_acceptance": false,
+  "command": "offload run --timeout 1740 --mem 4g --cpus 1 --artifacts native-api608 -- python3 -B diagnose-native-api608.py",
+  "execution_state": "UNUSED",
+  "export": "/srv/encrypted/dev-move-98/agentq-source608-20261028-private/stage-api-phase-a39a-diag1",
+  "external_source_commit": "a970c798ce41e91df07f8cb720ffe27e07342f3f",
+  "kind": "SINGLE_A39A_API_RESOURCE_DIAGNOSTIC_PREFLIGHT_NOT_BUILD608",
+  "limits": {
+    "cpu": 1,
+    "memory": "4g",
+    "minimum_worker_seconds": 2115,
+    "offload_seconds": 1740,
+    "preload_smoke_seconds": 30,
+    "probe_seconds": 900,
+    "setup_probe_seconds": 1500,
+    "swap": 0
+  },
+  "pins": {
+    "diagnose-native-api608.py": "60742b3ec7e6d66b48ef37cce97c5833d8dd73f0c9465441b6a44946098a5e55",
+    "diagnose-unified608.py": "e9054f13c3b94e0813c825d3318e3da5e14beb40a37947be0cfd7ae6b22d7aa8",
+    "export-manifest.json": "0cba05c7a70e1f4fd1c66f4f840f326616ce6bf23568200cf4005d5a3826d3b6",
+    "install-native-api-phases608.mjs": "87fb06525b6baa62adf05a8308f5281271659a952422126582c1d14b7c307d83",
+    "native-api-phases608.mjs": "f50191444745bf8710fe513b66d36a2cfb16b50f9427d5875bb1aba8a68be87d",
+    "run608.sh": "e2ed7e1337f5d0564b56e61174d0837440655cd38f75416608bff3de82780605",
+    "stage608.py": "a558db9afacd22111fb5c2590fe902298b12ea06910eac6efab43f4aa27c0de4"
+  },
+  "prelaunch_review_required": true,
+  "run_id": "stage608-unified-0-diag1",
+  "source_commit": "a39ad5ee95609193502850d0dbb87b5dcbb5e3e3",
+  "source_export_sha256": "d28756248bc60436831085e9c03b7738795efc6dd1fc4ad79de2e216c0ef3f62",
+  "stage_inputs": {
+    "native/libtests-receipt.json": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946",
+    "native/receipt.json": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+    "native/rolldown-binding.linux-x64-gnu.node": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042",
+    "native/stage-receipt.json": "a301fb35b8da76283393d3b8420028c75d95a50bdde34bf5429392ad0a120f93",
+    "runtime/build.log": "13ed360ce36c3ff73fb3f5b83dd5ea335267909742e159e52c8078705ce8d969",
+    "runtime/checkpoint.tar.gz": "85f3d1e3b92da6803c810a099c14d10286feac8475fef133cce4350054d95991",
+    "runtime/stage-receipt.json": "eb4488f2e5ef31baca3580ae5542d56302d2b15c53a622b4b26abd4e9a92e81b"
+  }
+}

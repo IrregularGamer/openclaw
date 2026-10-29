@@ -1,3 +1,8 @@
+**SPENT/FAILURE 2026-10-29:** This launch ran once and exited124, inner124
+at+2280s; no result/receipt/checkpoint. Evidence11c1673e. NEVER execute the
+historical launch block below again. UNUSED describes prelaunch metadata only.
+Next: job608-native-api-a39a-preflight.md, exact review and fresh-worker reserve.
+
 # job608 unified-0 preflight at substep-budget freeze a39a (UNUSED)
 
 SOURCE ONLY; nothing launched; **595 MUST NOT APPLY.** No package, application,

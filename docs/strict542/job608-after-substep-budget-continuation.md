@@ -14,15 +14,26 @@ New evidence/review commits do not select a new executable freeze.
   All three producing exports are SPENT/SUCCESS. Do not replay them or relabel
   older receipts. Runtime receipt is `eb4488f2`, checkpoint `85f3d1e3`;
   runtime build-all took 15m 16s, client/result both 0.
-- The NEW `stage-unified-0-substep-a39a` export is UNUSED, manifest
-  `900edc324f8e2068521a9d4fc19b0c80d0fbca91cfa01ba5c618d2528fb0b4fd`.
-  It carries exactly the accepted native and runtime outputs. Its launch is
-  gated on the exact preflight and independent review in
-  `job608-unified-0-substep-a39a-preflight.md` and its adjacent review.
-- Next worker: as its FIRST heavy step, read those two files, require live
-  `offload deadline` >= 2655 s, verify inputs, and execute their ONE bounded
-  launch block. The current worker has insufficient time for that launch.
-  The older `stage-unified-0-singlethreaded-a46c` remains superseded; never launch it.
+- The exact reviewed unified-0 attempt is **SPENT/FAILURE**: actual client124,
+  inner124 at+2280s, no returned result, receipt or checkpoint. Evidence
+  `11c1673e` / job608-unified-0-substep-a39a; independent outcome review is
+  adjacent. Its immutable manifest900edc32 still saysUNUSED; never replay it.
+- Source analysis `98dee982` establishes unified-0 is already ONE config and
+  explicit emit root. The old mapper-only config-subset fallback is invalid.
+  Native API phase and precise resource cause remain unknown; the cache reuse
+  scheduling candidate is unproven for this actual timeout.
+- Next worker FIRST heavy step: the NEW finite API/CPU/memory observation in
+  job608-native-api-a39a-preflight.md and its exact independent preflight review.
+  Export stage-api-phase-a39a-diag1, manifest0cba05c7; product freeze/common stay
+  a39a/d287, external observer sourcea970c798. Require live healthup, storage,
+  inputs and deadline>=2115s; then ONE1740s/4GiB/1CPU observation, not a build
+  retry. The old1bed helper/export and failed bare build must never execute.
+  Accept diagnostic evidence only after exact actual status/phase/resource/
+  cancellation/settlement validation and independent review; no checkpoint.
+- Compiler export stage-compiler-substep-a39a (manifest4efd8ffa, exact preflight
+  `3d36a234`, independent `9248f534`) remains UNUSED. Do not launch while its
+  successful unified-0 prerequisite is absent. Any product source correction
+  needs a new freeze and applicable fresh stages; never relabel old receipts.
 - After actual successful unified-0 acceptance, the complete remaining graph
   is compiler, unified-1 through unified-5, middle, sdk-0, sdk-1, tail, package.
   Each needs a new export at the SAME freeze/common identity, the exact
