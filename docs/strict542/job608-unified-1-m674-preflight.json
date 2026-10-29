@@ -6,7 +6,7 @@
  "source_commit": "674840b669c43af54a62e30b4028f219f4a428c9",
  "source_approval": "674840b6 independent APPROVE 017cd166",
  "export": "/srv/encrypted/dev-move-98/agentq-source608-20261028-private/stage-unified-1-m674",
- "prepare": "prepare-stage608-export.py --base P/stage-unified-1-tsccwdf6a4 --commit 674840b6 --stage unified-1 --input P/stage-native-m674/result608-native --input P/stage-runtime-m674/result608-runtime --dest P/stage-unified-1-m674",
+ "prepare": "prepare-stage608-export.py --base P/stage-unified-0-tsccwdf6a4 --commit 674840b6 --stage unified-1 --input P/stage-native-m674/result608-native --input P/stage-runtime-m674/result608-runtime --dest P/stage-unified-1-m674",
  "manifest_sha256": "d0db834fc98f9f09489059103fcf533910851c5eb69fdbbbd6eece6432d38965",
  "runner_sha256": "b04abd4d6d08f2352bd04e5ecc4e3e56d9f6c67223c175a03e98fa44cc0b7816",
  "stage_helper_sha256": "a558db9afacd22111fb5c2590fe902298b12ea06910eac6efab43f4aa27c0de4",
