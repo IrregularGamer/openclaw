@@ -1,0 +1,58 @@
+✔ actual usage window parser typechecks with checked indexed access (535.196344ms)
+▶ usage.preflight exact542 request schema
+  ✔ accepts exactly the exact542 keys (2.047872ms)
+  ✔ refuses extra, missing and malformed keys (0.785181ms)
+✔ usage.preflight exact542 request schema (5.233214ms)
+▶ usage.preflight acceptance
+  ✔ returns verified fresh AVAILABLE windows for the actual active route (5.197207ms)
+  ✔ never serves cache or historical success (1.182624ms)
+✔ usage.preflight acceptance (7.081237ms)
+▶ usage.preflight identity and route refusals
+  ✔ refuses unknown agent (1.423484ms)
+  ✔ refuses wrong HQ session (0.575464ms)
+  ✔ refuses wrong owner name (0.655899ms)
+  ✔ refuses PID1 placeholder (0.552404ms)
+  ✔ refuses PID reuse (start differs) (0.649335ms)
+  ✔ refuses model drift (0.704965ms)
+  ✔ refuses provider drift (0.621281ms)
+  ✔ refuses an idle/unbound session (0.492997ms)
+  ✔ refuses ambiguous or missing in-memory auth (0.560614ms)
+  ✔ refuses expired auth with zero provider, refresh or write calls (0.397561ms)
+  ✔ never sends the token to a non-default or non-Anthropic route (0.665973ms)
+  ✔ refuses API-key auth and models without known window applicability (0.491098ms)
+  ✔ refuses native owner refusal, unavailability and owner change after the read (1.238301ms)
+  ✔ refuses auth/account or model replacement observed after the provider GET (1.071982ms)
+✔ usage.preflight identity and route refusals (12.338825ms)
+▶ usage.preflight provider window refusals
+  ✔ retains every recognized window label and ignores null windows (1.256657ms)
+  ✔ refuses empty, partial, malformed, nonfinite and out-of-range windows (6.202372ms)
+  ✔ reports UNAVAILABLE for any exhausted applicable window, including above 100% (1.628686ms)
+  ✔ reports UNAVAILABLE for exhausted non-applicable or unlisted-but-known windows (0.865859ms)
+  ✔ reports UNAVAILABLE when an exhausted window accompanies a missing one (2.018073ms)
+  ✔ does not let non-applicable windows mask exhaustion or a missing window (0.71089ms)
+  ✔ refuses 401/403/429/5xx, unexpected status, network failure and body errors (2.37972ms)
+✔ usage.preflight provider window refusals (16.362393ms)
+▶ usage.preflight deadline, cancellation and clocks
+  ✔ refuses a late provider response after the shared deadline (0.670992ms)
+  ✔ aborts a hanging provider GET at the real deadline with no later publication (1002.471071ms)
+  ✔ propagates caller cancellation to the provider transport (11.837994ms)
+  ✔ refuses an already-cancelled request without native or provider work (1.742065ms)
+  ✔ refuses wall-clock anomalies (2.804069ms)
+✔ usage.preflight deadline, cancellation and clocks (1021.698832ms)
+▶ strict Anthropic usage GET
+  ✔ sends one GET with no redirect, cache or retry and hides error bodies (174.963835ms)
+  ✔ parses JSON, bounds the body and maps aborts (10.648394ms)
+✔ strict Anthropic usage GET (186.457995ms)
+▶ gateway registration
+  ✔ registers usage.preflight as an operator.read method and keeps usage.status (1.140715ms)
+  ✔ leaves the usage.status handler byte-identical (3.226591ms)
+  ✔ binds preflight only to the strict dependencies and refuses unauthenticated clients (1.400399ms)
+✔ gateway registration (6.873534ms)
+ℹ tests 36
+ℹ suites 7
+ℹ pass 36
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2547.632848

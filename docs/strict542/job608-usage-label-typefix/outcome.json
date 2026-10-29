@@ -2,6 +2,7 @@
   "green": {
     "client_exit": 1,
     "client_log_sha256": "72d2c4983e2491c199b3fb7e7bb37fe7ff991bdc214bae711d43b388c3fdc2b7",
+    "compiler_version_evidence": "Exact npm version requested in actual tool invocation; install log reports added2packages. No separate installed --version receipt was captured; no broader version attestation.",
     "export": "/home/deploy/agentq/tmp/usage-label-green608.SQknf3",
     "export_files": {
       "docs/strict542/usage-window-types608.test.mjs": "4ea193364f7ed854bf202b9ceba207eca8980ba3508cfb15fd22a3c6369aa499",
@@ -9,11 +10,29 @@
       "src/gateway/strict542/usage-preflight.test.mjs": "6c970f9272f48c575d2837bb1234acf00045ac348cc2f4cea9b60080ad0382c0",
       "src/gateway/strict542/usage-preflight.ts": "eb9478c8182ae95fcd16ac72202983fe45943694944a0670e5823bca983dced5"
     },
-    "meaning": "Incomplete export omitted gateway registration source fixtures; type regression passed and33tests passed but registration suite ENOENT; NOT acceptance."
+    "meaning": "Incomplete export omitted gateway registration source fixtures; type regression passed and33tests passed but registration suite ENOENT; NOT acceptance.",
+    "offload_launch": [
+      "offload",
+      "run",
+      "--timeout",
+      "180",
+      "--mem",
+      "2g",
+      "--cpus",
+      "1",
+      "--artifacts",
+      "result-types608",
+      "--",
+      "sh",
+      "-c",
+      "record inputs.sha256; npm install --no-save --package-lock=false --ignore-scripts --no-audit --no-fund typescript@7.1.0-dev.20260920.1; node --test docs/strict542/usage-window-types608.test.mjs src/gateway/strict542/usage-preflight.test.mjs; record actual typecheck.rc; exit actual test rc"
+    ],
+    "source_commit": "49d3fe3348215314582acf7be3872f403f7f6af4"
   },
   "green2": {
     "client_exit": 0,
     "client_log_sha256": "74ffd514069b194c75e276c95e5ca650d610658b792bcd19e9fbad091735e448",
+    "compiler_version_evidence": "Exact npm version requested in actual tool invocation; install log reports added2packages. No separate installed --version receipt was captured; no broader version attestation.",
     "export": "/home/deploy/agentq/tmp/usage-label-green2-608.t3fwVT",
     "export_files": {
       "docs/strict542/usage-window-types608.test.mjs": "4ea193364f7ed854bf202b9ceba207eca8980ba3508cfb15fd22a3c6369aa499",
@@ -23,17 +42,52 @@
       "src/gateway/strict542/usage-preflight.test.mjs": "6c970f9272f48c575d2837bb1234acf00045ac348cc2f4cea9b60080ad0382c0",
       "src/gateway/strict542/usage-preflight.ts": "eb9478c8182ae95fcd16ac72202983fe45943694944a0670e5823bca983dced5"
     },
-    "meaning": "Changed complete six-file committed export at49d3fe33:36passed35preflight+1actual parser strict indexed-access typecheck;zero failed/cancelled/skipped/todo;client0/typecheck0."
+    "meaning": "Changed complete six-file committed export at49d3fe33:36passed35preflight+1actual parser strict indexed-access typecheck;zero failed/cancelled/skipped/todo;client0/typecheck0.",
+    "offload_launch": [
+      "offload",
+      "run",
+      "--timeout",
+      "180",
+      "--mem",
+      "2g",
+      "--cpus",
+      "1",
+      "--artifacts",
+      "result-types608",
+      "--",
+      "sh",
+      "-c",
+      "record inputs.sha256; npm install --no-save --package-lock=false --ignore-scripts --no-audit --no-fund typescript@7.1.0-dev.20260920.1; node --test docs/strict542/usage-window-types608.test.mjs src/gateway/strict542/usage-preflight.test.mjs; record actual typecheck.rc; exit actual test rc"
+    ],
+    "source_commit": "49d3fe3348215314582acf7be3872f403f7f6af4"
   },
   "red": {
     "client_exit": 0,
     "client_log_sha256": "dd0ec2d9e9180d1168a03538cfa8f66f8c5e8f297a74bf1346fbb5946b9be725",
+    "compiler_version_evidence": "Exact npm version requested in actual tool invocation; install log reports added2packages. No separate installed --version receipt was captured; no broader version attestation.",
     "export": "/home/deploy/agentq/tmp/usage-label-red608.CXMzKB",
     "export_files": {
       "docs/strict542/usage-window-types608.test.mjs": "4ea193364f7ed854bf202b9ceba207eca8980ba3508cfb15fd22a3c6369aa499",
       "src/gateway/strict542/usage-preflight.ts": "b017b54b506a4e7a1b914b9a0fce47fc4a3441122333b96c19292b6342949450"
     },
-    "meaning": "Expected actual TS2322 at extracted actual parser line55,label string|undefined; typecheck test fails1/compiler2,offload wrapper0 after asserting the expected red."
+    "meaning": "Expected actual TS2322 at extracted actual parser line55,label string|undefined; typecheck test fails1/compiler2,offload wrapper0 after asserting the expected red.",
+    "offload_launch": [
+      "offload",
+      "run",
+      "--timeout",
+      "180",
+      "--mem",
+      "2g",
+      "--cpus",
+      "1",
+      "--artifacts",
+      "result-types608",
+      "--",
+      "sh",
+      "-c",
+      "record inputs.sha256; npm install --no-save --package-lock=false --ignore-scripts --no-audit --no-fund typescript@7.1.0-dev.20260920.1; node --test docs/strict542/usage-window-types608.test.mjs; record actual typecheck.rc; require rc1 and TS2322"
+    ],
+    "source_commit": "9d6c4154a103362b6e037d9c09c67e759fc8099c"
   },
   "scope": "SOURCE ONLY narrow regression evidence, not full declaration/package success or application authority;595 MUST NOT APPLY."
 }
