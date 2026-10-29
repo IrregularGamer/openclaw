@@ -49,7 +49,7 @@ No complete package/action/seal or application authority exists yet.
   the required substep markers / inner build timeout. Superseded; do not launch.
 - Correction dd881aba (run-stage608.sh only), independent APPROVE a39ad5ee.
 
-## Next (each launch FIRST in a fresh worker, 2460/2400 s + 195 s settle)
+## Historical next-step plan (superseded by the current continuation above)
 1. New freeze = a39ad5ee (contains dd881aba + its approval).
 2. With the committed preparer (sha256 1e701de0…, unchanged) prepare NEW
    `-substep-a39a` exports for checks, then native, then runtime, then
