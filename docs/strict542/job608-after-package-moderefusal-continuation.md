@@ -30,3 +30,10 @@ additionally list its checkpoint (`tar -tvzf`, never extract) and require zero g
 After package: final artifact receipt + old/new hash inventory, action/privilege/seal/reseal reviews,
 automatic queue review, genuine ordered HQ595 handoff. 587 fd3/socket transport replaces 586 sudo; never add
 the 586 rule. Do not `git pull` source552 in a worker. 595 MUST NOT APPLY.
+
+## Progress (tag m674, C = 674840b6)
+- native m674: rc0 (evidence 53bda0a0), addon 0b6607e7 (identical to tsccwdf6a4), 0 group/other-writable,
+  preflight APPROVE 6049ed36, independent ACCEPT 5a412599. Accepted input: P/stage-native-m674/result608-native.
+- NEXT fresh worker, FIRST heavy action: checks m674 (then compiler, runtime) with
+  `--input P/stage-native-m674/result608-native` (plus only new-run accepted inputs each stage needs), --dest
+  P/stage-<S>-m674, same caps as the stage's tsccwdf6a4 launch doc, all gates above, one launch per worker.
