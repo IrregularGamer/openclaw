@@ -1,0 +1,708 @@
+{
+  "checkpoint_entries": 8959,
+  "checkpoint_identity": {
+    "configCensusSha256": "76965d4a46a3b264d181e2af4dcdfadc22f599fcf196a58a1d156037e9861f6d",
+    "environment": {
+      "CI": "1",
+      "GIT_COMMIT": "5aff81feb4098654ce07e7ff09e336119770be85",
+      "LANG": "C",
+      "LC_ALL": "C",
+      "OPENCLAW_BUILD_TIMESTAMP": "2026-10-25T16:00:00.000Z",
+      "SOURCE_DATE_EPOCH": "1792944000",
+      "TZ": "UTC"
+    },
+    "lockSha256": "091ede3cb510110ed2b1ca8858100066add16cb3b91bcd0ff097d89f75035751",
+    "nativeAddonSha256": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042",
+    "nativeCompileSha256": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+    "nativeLibtestsSha256": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946",
+    "node": "v24.21.0",
+    "packageSha256": "09f313df5a3b93723c7f408bba1887e9978156bbcfd4fa0b3c3bccb61c4779c8",
+    "pnpm": "12.5.1",
+    "sourceCommit": "5aff81feb4098654ce07e7ff09e336119770be85",
+    "sourceExportSha256": "230f79f5b6f95826a02a15f1c5fdd9d1fbc5a7abd60064b33e3d1776af0f086d",
+    "workspaceSha256": "5e672012b9678d1d40ec40e9fdff43283b7c4f947052cc24168b88d1f51ec872"
+  },
+  "checkpoint_output_count": 8956,
+  "checkpoint_output_kinds": {
+    "directory": 192,
+    "file": 8764,
+    "link": 0
+  },
+  "checkpoint_phases": [
+    {
+      "durationMs": 93.19167899999957,
+      "label": "clean:dist",
+      "status": "ran"
+    },
+    {
+      "durationMs": 8349.467356000005,
+      "label": "plugins:assets:build",
+      "status": "ran"
+    },
+    {
+      "durationMs": 43488.29256799999,
+      "label": "tsdown-ai",
+      "status": "ran"
+    },
+    {
+      "durationMs": 350550.896748,
+      "label": "tsdown-packages",
+      "status": "ran"
+    },
+    {
+      "durationMs": 217400.45324000006,
+      "label": "tsdown-unified",
+      "status": "ran"
+    }
+  ],
+  "checkpoint_receipt_sha256": "4b28b173fd55608f4f6728e915b29c565ea2e75296857b18c0e13107f10cb246",
+  "client_exit": 0,
+  "client_log_sha256": "28daf23df81231ce508527fef3e71066ff543a725297480de98d20e9756cd12c",
+  "common_export_sha256": "230f79f5b6f95826a02a15f1c5fdd9d1fbc5a7abd60064b33e3d1776af0f086d",
+  "compiler_records": [
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "ai",
+      "signal": null,
+      "stage": "ai",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-0",
+      "signal": null,
+      "stage": "packages",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-1",
+      "signal": null,
+      "stage": "packages",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-2",
+      "signal": null,
+      "stage": "packages",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-3",
+      "signal": null,
+      "stage": "packages",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-4",
+      "signal": null,
+      "stage": "packages",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-5",
+      "signal": null,
+      "stage": "packages",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-6",
+      "signal": null,
+      "stage": "packages",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-7",
+      "signal": null,
+      "stage": "packages",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-8",
+      "signal": null,
+      "stage": "packages",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-9",
+      "signal": null,
+      "stage": "packages",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-10",
+      "signal": null,
+      "stage": "packages",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-11",
+      "signal": null,
+      "stage": "packages",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-12",
+      "signal": null,
+      "stage": "packages",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-13",
+      "signal": null,
+      "stage": "packages",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-14",
+      "signal": null,
+      "stage": "packages",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-15",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-16",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-17",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-18",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-19",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-20",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-21",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-22",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-23",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-24",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-25",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-26",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-27",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-28",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-29",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-30",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-31",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-32",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-33",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-34",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-35",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-36",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-37",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-38",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-39",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-40",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-41",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-42",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-43",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-44",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-45",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-46",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-47",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-48",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-49",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-50",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-51",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-52",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-53",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-54",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-55",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    },
+    {
+      "error": null,
+      "fatalUnresolvedImport": null,
+      "hasIneffectiveDynamicImport": false,
+      "label": "main-config-56",
+      "signal": null,
+      "stage": "unified",
+      "status": 0,
+      "timedOut": false
+    }
+  ],
+  "compressed_evidence": {
+    "build.log.gz": {
+      "expanded_bytes": 57171,
+      "expanded_sha256": "d893e900ae20456b5010b10191ad19d17fc04fa1462f312bdf773dfbbf142baf",
+      "sha256": "b1a1a474dcf292328ed08b7e056e6960059a25327b196b9683e30a53e910ff02"
+    },
+    "runtime-offload.log.gz": {
+      "expanded_bytes": 2273,
+      "expanded_sha256": "28daf23df81231ce508527fef3e71066ff543a725297480de98d20e9756cd12c",
+      "sha256": "cd3300d0fd95d00b69834bf87c1fe56d69d3d87e9db74761bb6f8cb42113fa94"
+    }
+  },
+  "export": "/srv/encrypted/dev-move-98/agentq-source608-20261028-private/stage-runtime-fullsize5aff1",
+  "files": {
+    "exit-code.txt": {
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "runtime/build.log": {
+      "bytes": 57171,
+      "sha256": "d893e900ae20456b5010b10191ad19d17fc04fa1462f312bdf773dfbbf142baf"
+    },
+    "runtime/checkpoint.tar.gz": {
+      "bytes": 88505171,
+      "sha256": "2a882adb41e4b9338f4b25aa591c528ab457e3bc94417062b5dbb400fae3f0fb"
+    },
+    "runtime/stage-receipt.json": {
+      "bytes": 972,
+      "sha256": "d41a3c6f9b404376f24b97e98f1be30d5ebf7d7ab46174d10156b9432cd5cefb"
+    },
+    "strict542-checks/pnpm-path.txt": {
+      "bytes": 56,
+      "sha256": "78e386bf2d4e2a6a28436ebce3501c0dd07e7d8719ac70e6acdc0ff1b0bbc06c"
+    }
+  },
+  "launch": [
+    "offload",
+    "run",
+    "--timeout",
+    "2460",
+    "--mem",
+    "14g",
+    "--cpus",
+    "4",
+    "--artifacts",
+    "result608-runtime",
+    "--",
+    "timeout",
+    "-k",
+    "15s",
+    "2400s",
+    "sh",
+    "run608.sh"
+  ],
+  "logical_return_bytes": 88563372,
+  "manifest_sha256": "46f4f743157f10fa3b64b4256b179c5256b79f51632e17afb8c519b4311995ac",
+  "result_exit": 0,
+  "return_cap_bytes": 134217728,
+  "run_id": "stage608-runtime-fullsize5aff1",
+  "scope": "ACTUAL_RUNTIME_CHECKPOINT_ONLY; not complete gateway build/package/artifact/action/application authority.595 MUST NOT APPLY",
+  "source_commit": "5aff81feb4098654ce07e7ff09e336119770be85",
+  "stage": "runtime",
+  "stage_receipt_sha256": "d41a3c6f9b404376f24b97e98f1be30d5ebf7d7ab46174d10156b9432cd5cefb",
+  "state": "SPENT/SUCCESS"
+}
