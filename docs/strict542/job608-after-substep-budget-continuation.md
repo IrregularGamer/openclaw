@@ -58,8 +58,12 @@ No complete package/action/seal or application authority exists yet.
    Native/runtime are expected to reproduce (native addon 0b6607e7).
 3. unified-0 (measured config-15) now prints `STEP608 unified-0-* +Ns` markers
    and, on an inner timeout, the build-all/tsdown/dts progress and build.log
-   tail. If it still exceeds the budget, split by config subset in stage608.py
-   (reviewed), never by lowering the floor or dropping checks.
+   tail. If it still exceeds the budget, preserve the actual outcome and follow
+   job608-single-config-owner-analysis.md. Source analysis establishes that
+   unified-0 already selects one config/explicit emit root; stage608.py cannot
+   subdivide it. A NEW exact a39a finite API observer harness/export needs
+   reviewed pins before measuring the native phase; the old1bed harness and
+   historical export are not reusable. No floor/check or lifetime waiver.
 4. Then package, deterministic receipt, old/new hashes, IPC refusal and
    cancellation suites, action/privilege/seal reviews, automatic queue review,
    and the ordered 595 HQ handoff (unchanged requirements).
