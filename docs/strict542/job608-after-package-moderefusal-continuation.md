@@ -11,7 +11,7 @@ and the deployed runtime are group-writable. The check is correct and stays unch
 
 Source-only fix 674840b6: run-stage608.sh extracts source/successor/native with `umask 022` and
 `tar --no-same-permissions` (test_stage608 17/17, also as root). Independent review:
-job608-package-mode-fix-independent-review.md. Do not use the fix until that review ends `VERDICT: APPROVE`.
+job608-package-mode-fix-independent-review.md: independent APPROVE 017cd166 (root-mode flag also exercised by running test_stage608 as root, 17/17). Fix commit C = 674840b6.
 
 ## Consequence
 The runner comes from the export commit, so source_export_sha256 changes and stage608.verify_inputs refuses every
