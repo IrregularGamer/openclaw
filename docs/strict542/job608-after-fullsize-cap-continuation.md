@@ -1,3 +1,12 @@
+**SUPERSEDED CURRENT BUILD STATE (2026-10-29):** actual5aff unified-0 FAILED
+TS2322 and is SPENT; compiler668db7e1 remains gated/superseded. Owning label fix
+49d3fe33 is independently source-reviewed386f7231, narrow GREEN36/36 only.
+NEW49d3/common0bb56af5 full checks/native/build graph are unaccepted; historical
+5aff receipts MUST NOT be relabelled. Follow
+[job608-after-label-correction-continuation.md](job608-after-label-correction-continuation.md).
+Final package/action/privilege/whole-seal/ACTUALautomatic/HQ595 gates remain open.
+**595 MUST NOT APPLY.** Historical details below remain evidence only.
+
 # Job608 corrected full-size continuation —595 MUST NOT APPLY
 
 Executable freeze5aff81feb4098654ce07e7ff09e336119770be85; common export
