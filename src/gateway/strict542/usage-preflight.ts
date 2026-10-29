@@ -361,7 +361,8 @@ export function parseAnthropicUsageWindows(
     if (raw === null) {
       continue;
     }
-    if (!Object.hasOwn(WINDOW_LABELS, key)) {
+    const label = Object.hasOwn(WINDOW_LABELS, key) ? WINDOW_LABELS[key] : undefined;
+    if (label === undefined) {
       return { kind: "invalid", reason: "provider_unrecognized_field" };
     }
     if (typeof raw !== "object" || Array.isArray(raw)) {
@@ -374,7 +375,7 @@ export function parseAnthropicUsageWindows(
     if (utilization < 0) {
       return { kind: "invalid", reason: "window_out_of_range" };
     }
-    const window: UsagePreflightWindow = { label: WINDOW_LABELS[key], usedPercent: utilization };
+    const window: UsagePreflightWindow = { label, usedPercent: utilization };
     if (resetsAt !== undefined && resetsAt !== null) {
       const parsed = typeof resetsAt === "string" ? Date.parse(resetsAt) : Number.NaN;
       if (!Number.isFinite(parsed)) {

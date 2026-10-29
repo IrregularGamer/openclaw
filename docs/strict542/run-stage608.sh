@@ -90,6 +90,7 @@ checks)
   tail -22 strict542-checks/tests.log
   [ "$status" = 0 ] || exit "$status"
   npm exec --yes --package=pnpm@12.5.1 -- sh -c 'set -eu; [ "$(pnpm --version)" = 12.5.1 ]; pnpm install --frozen-lockfile'
+  node --test docs/strict542/usage-window-types608.test.mjs >>strict542-checks/tests.log 2>&1 || { status=$?; tail -40 strict542-checks/tests.log; exit "$status"; }
   node node_modules/vitest/vitest.mjs run --config test/vitest/vitest.tooling.config.ts --maxWorkers=1 --no-file-parallelism --maxConcurrency=1 --passWithNoTests=false --reporter=default --reporter=json --outputFile.json=strict542-checks/installed.json test/scripts/build-all-bounded608.test.ts test/scripts/tsdown-build.test.ts test/scripts/write-unified-entry-dts.test.ts test/scripts/write-plugin-sdk-entry-dts.test.ts test/scripts/native-declaration-boundary.test.ts test/scripts/compiler-input-snapshot.test.ts test/scripts/tsdown-declaration-resolution.test.ts >strict542-checks/installed.log 2>&1 || { status=$?; tail -60 strict542-checks/installed.log; exit "$status"; }
   cat strict542-checks/installed.log >>strict542-checks/tests.log
   echo STEP608 installed-checks-pass

@@ -10,6 +10,7 @@ import {
   PREFLIGHT542_SESSION_KEY,
   fetchAnthropicOAuthUsage,
   runUsagePreflight,
+  parseAnthropicUsageWindows,
   validateUsagePreflightParams,
 } from "./usage-preflight.ts";
 
@@ -277,6 +278,18 @@ describe("usage.preflight identity and route refusals", () => {
 });
 
 describe("usage.preflight provider window refusals", () => {
+  it("retains every recognized window label and ignores null windows", () => {
+    const labels = { five_hour: "5h", seven_day: "7d", seven_day_opus: "7d-opus",
+      seven_day_sonnet: "7d-sonnet", seven_day_oauth_apps: "7d-oauth-apps" };
+    const keys = Object.keys(labels);
+    const body = Object.fromEntries(keys.map((key) => [key, { utilization: 12 }]));
+    assert.deepEqual(parseAnthropicUsageWindows(body, keys), {
+      kind: "ok", windows: Object.values(labels).map((label) => ({ label, usedPercent: 12 })),
+    });
+    assert.deepEqual(parseAnthropicUsageWindows({ ...body, unknown: null }, keys),
+      parseAnthropicUsageWindows(body, keys));
+  });
+
   const withBody = (body) =>
     fixture({ fetchImpl: async () => ({ ok: true, status: 200, body }) });
   it("refuses empty, partial, malformed, nonfinite and out-of-range windows", async () => {
