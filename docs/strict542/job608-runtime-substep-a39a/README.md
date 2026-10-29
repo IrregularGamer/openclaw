@@ -1,0 +1,14 @@
+# job608 runtime stage at substep-budget freeze a39a (EVIDENCE)
+
+SOURCE ONLY; **595 MUST NOT APPLY.** Stage evidence, not package/install/reseal authority.
+
+- One attempt launched 2026-10-29 ~04:20 UTC per preflight b6f7801c and independent APPROVE b2c98f20. Manifest df2f0a367ab77a16a597baa0c9756d9853c7090642ac1f20c3c276fe46395243; run608.sh e2ed7e13; stage608.py a558db9a; verify-inputs exit 0; launch deadline 3161 s.
+- Exact command: `offload run --timeout 2460 --mem 4g --cpus 1 --artifacts result608-runtime -- timeout -k 15s 2400s sh run608.sh` from private `stage-runtime-substep-a39a`. This was the first heavy step of the fresh worker after its required independent preflight review; no other offload was launched.
+- Client `../runtime-substep-a39a-offload.rc` and returned `exit-code.txt` are both 0. Markers: native-start +9s, restore-build-done +10s, build-start +17s (2263 s budget), build-done +1191s, runtime-pass. No FAIL/not-ok marker. Client settled by ~04:42 UTC.
+- Runtime build-all: total 15m 16s; packages 7m 57.4s, unified 6m 1.6s, ai 1m 2s. These are runtime emissions, not completion of the separate declaration/config-15 stages.
+- `python3 -I -B docs/strict542/storage608.py result --stage runtime --result <private>/stage-runtime-substep-a39a/result608-runtime` exit 0: 88568912 logical bytes < 134217728 cap.
+- Receipt SHA256 eb4488f2e5ef31baca3580ae5542d56302d2b15c53a622b4b26abd4e9a92e81b. Kind JOB608_STAGE_RECEIPT, stage runtime, exit_code 0, run_id stage608-runtime-a39a, source a39ad5ee95609193502850d0dbb87b5dcbb5e3e3, common export d28756248bc60436831085e9c03b7738795efc6dd1fc4ad79de2e216c0ef3f62. Manifest and stage_inputs match the approved export and accepted native a39a receipt a301fb35 exactly.
+- Outputs verified by streaming SHA256: checkpoint.tar.gz 85f3d1e3b92da6803c810a099c14d10286feac8475fef133cce4350054d95991 (88503525 bytes, 8959 tar entries; private only); build.log 13ed360ce36c3ff73fb3f5b83dd5ea335267909742e159e52c8078705ce8d969 (64366 bytes, gzip copy here).
+- Raw offload log f8aca75901c47a5f748fb1b0dab7f3dd38c02add10c0b418de07ce240ddcb7eb (2283 bytes, gzip copy here). The checkpoint differs from a46c; the source/common identity changed, including the build commit stamp. No two-build reproducibility claim is made.
+
+This export is SPENT/SUCCESS; never replay it. Status: candidate ACCEPT pending independent acceptance of these exact files. Next: unified-0 at the SAME a39a freeze, with accepted native and runtime inputs, new preflight and independent review, then launch FIRST in a fresh worker per job608-after-substep-budget-continuation.md. Do not re-run accepted checks/native/runtime or relabel historical receipts. All remaining compiler/declaration/package/artifact/action/privilege/seal/automatic-review and genuine HQ gates remain open. No installed/sealed/root/unit/sudoers/service/budget change, restart, auth transfer or provider call.
