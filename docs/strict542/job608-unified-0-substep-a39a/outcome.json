@@ -1,0 +1,19 @@
+{
+  "accepted_checkpoint": false,
+  "application_authority": false,
+  "build_budget_seconds": 2258,
+  "client_exit": 124,
+  "execution_state": "SPENT_FAILURE_DO_NOT_REPLAY",
+  "inner_build_marker_seconds": 2280,
+  "inner_build_status": 124,
+  "kind": "ACTUAL_FAILED_STAGE_EVIDENCE_NOT_BUILD_RECEIPT608",
+  "log_bytes": 8442,
+  "log_sha256": "4bde47a05b9c9f721469bb8c34e5f9bf87fce0957b62a02f13abb9343b710e9f",
+  "manifest_sha256": "900edc324f8e2068521a9d4fc19b0c80d0fbca91cfa01ba5c618d2528fb0b4fd",
+  "native_phase": "UNKNOWN: outer build tail does not identify API phase",
+  "next": "New independently reviewed finite API observer at exact a39a; no config-subset mapper split, no unchanged retry. Compiler export remains UNUSED.",
+  "returned_result_directory": false,
+  "run_id": "stage608-unified-0-a39a",
+  "source_commit": "a39ad5ee95609193502850d0dbb87b5dcbb5e3e3",
+  "source_export_sha256": "d28756248bc60436831085e9c03b7738795efc6dd1fc4ad79de2e216c0ef3f62"
+}
