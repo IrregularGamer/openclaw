@@ -1,0 +1,166 @@
+{
+  "accepted_checkpoint": false,
+  "application_authority": false,
+  "build_acceptance": false,
+  "client_exit": 0,
+  "cpu_pressure_first": "some avg10=0.00 avg60=0.00 avg300=0.00 total=49293\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=48352\n",
+  "cpu_pressure_last": "some avg10=0.04 avg60=4.68 avg300=8.71 total=141650188\nfull avg10=0.03 avg60=4.39 avg300=8.12 total=127938324\n",
+  "cpu_stat_delta": {
+    "burst_usec": 0,
+    "core_sched.force_idle_usec": 0,
+    "nr_bursts": 0,
+    "nr_periods": 11079,
+    "nr_throttled": 4209,
+    "system_usec": 577178114,
+    "throttled_usec": 356816317,
+    "usage_usec": 855796739,
+    "user_usec": 278618625
+  },
+  "diagnostic": {
+    "accepted_checkpoint": false,
+    "application_authority": false,
+    "cancelled_signal": null,
+    "collection_exit": 0,
+    "command_exit": 124,
+    "compiler_limit_seconds": 900,
+    "elapsed_seconds": 1108.0014484090498,
+    "kind": "DIAGNOSTIC_ONLY_NOT_BUILD_RECEIPT608",
+    "preload_smoke_limit_seconds": 30,
+    "resource_samples": 112,
+    "resource_sampling_errors": 0,
+    "run_id": "stage608-unified-0-diag1",
+    "setup_and_probe_limit_seconds": 1500,
+    "source_commit": "a39ad5ee95609193502850d0dbb87b5dcbb5e3e3",
+    "source_export_sha256": "d28756248bc60436831085e9c03b7738795efc6dd1fc4ad79de2e216c0ef3f62"
+  },
+  "execution_state": "SPENT_NEVER_REPLAY",
+  "external_source_commit": "a970c798ce41e91df07f8cb720ffe27e07342f3f",
+  "interpretation": [
+    "First global diagnostics did not return before the 900-second whole-compiler probe expired; snapshot creation returned in98.998seconds. No later query or emit phase began.",
+    "This does not establish cache expiry or a pure CPU stall: both substantial system CPU and memory pressure were observed near the4GiB cap, with zero memory max/OOM events.",
+    "Original native whole-program semantic work inside global remains mandatory. Adjacent later semantic scheduling cannot shorten this first global call.",
+    "A finalized finite native CPU profile can distinguish checker/GC/syscall costs before any compiler-owner correction. No such profile exists yet."
+  ],
+  "kind": "A39A_API_RESOURCE_DIAGNOSTIC_OUTCOME_NOT_BUILD608",
+  "manifest_sha256": "0cba05c7a70e1f4fd1c66f4f840f326616ce6bf23568200cf4005d5a3826d3b6",
+  "memory_current_max_bytes": 4287168512,
+  "memory_events_delta": {
+    "high": 0,
+    "low": 0,
+    "max": 0,
+    "oom": 0,
+    "oom_group_kill": 0,
+    "oom_kill": 0
+  },
+  "memory_peak_max_bytes": 4287950848,
+  "memory_pressure_first": "some avg10=0.00 avg60=0.00 avg300=0.00 total=0\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n",
+  "memory_pressure_last": "some avg10=0.09 avg60=6.20 avg300=10.06 total=90501681\nfull avg10=0.08 avg60=5.69 avg300=9.30 total=84414642\n",
+  "observed_wall_seconds": 1107.9537198543549,
+  "output_inventory": {
+    "api-phase-a39a-diag1-offload.log": {
+      "bytes": 1909,
+      "sha256": "5b83c88d762f321136c98891ed017e671ec50464ab0d3904d623dc7cc1b5c945"
+    },
+    "api-phase-a39a-diag1-offload.rc": {
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "diagnostic.json": {
+      "bytes": 603,
+      "sha256": "2391d3cfbb0275827a2a5b524893a843f700d283461503e4a5398d274bacfdb0"
+    },
+    "runner.log": {
+      "bytes": 8367,
+      "sha256": "19e20e1a404fbf2ff2707cb89ffb0d145d7afe5637751407ac4a8658fb15c390"
+    },
+    "samples.jsonl": {
+      "bytes": 265874,
+      "sha256": "2372b10e5fe8dfe3bf7bac947c54b501bd5670647984927c847f7e701fee66e8"
+    },
+    "unified-0/exit-code.txt": {
+      "bytes": 4,
+      "sha256": "ca2ebdf97d7469496b1f4b78958f9dc8447efdcb623953fee7b6996b762f6fff"
+    },
+    "unified-0/strict542-checks/pnpm-path.txt": {
+      "bytes": 56,
+      "sha256": "78e386bf2d4e2a6a28436ebce3501c0dd07e7d8719ac70e6acdc0ff1b0bbc06c"
+    },
+    "unified-0/unified-0/build.log": {
+      "bytes": 18951,
+      "sha256": "8b4e5876f2be45f1219bc7efe737d00504b7b3d1748341502c6d0c0f4e5be275"
+    }
+  },
+  "phase_events": [
+    {
+      "kind": "NATIVE_API_PHASE608",
+      "method": "API.parseConfigFile",
+      "monotonic_ms": 603000891.670762,
+      "phase": "start",
+      "pid": 329
+    },
+    {
+      "duration_ms": 2505.436618089676,
+      "kind": "NATIVE_API_PHASE608",
+      "method": "API.parseConfigFile",
+      "phase": "end",
+      "pid": 329,
+      "status": "returned"
+    },
+    {
+      "kind": "NATIVE_API_PHASE608",
+      "method": "API.createSnapshot",
+      "monotonic_ms": 603003404.155115,
+      "phase": "start",
+      "pid": 329
+    },
+    {
+      "duration_ms": 98998.21746098995,
+      "kind": "NATIVE_API_PHASE608",
+      "method": "API.createSnapshot",
+      "phase": "end",
+      "pid": 329,
+      "status": "returned"
+    },
+    {
+      "kind": "NATIVE_API_PHASE608",
+      "method": "Program.getConfigFileParsingDiagnostics",
+      "monotonic_ms": 603102405.693705,
+      "phase": "start",
+      "pid": 329
+    },
+    {
+      "duration_ms": 23.578992009162903,
+      "kind": "NATIVE_API_PHASE608",
+      "method": "Program.getConfigFileParsingDiagnostics",
+      "phase": "end",
+      "pid": 329,
+      "status": "returned"
+    },
+    {
+      "kind": "NATIVE_API_PHASE608",
+      "method": "Program.getProgramDiagnostics",
+      "monotonic_ms": 603102471.906005,
+      "phase": "start",
+      "pid": 329
+    },
+    {
+      "duration_ms": 236.49376094341278,
+      "kind": "NATIVE_API_PHASE608",
+      "method": "Program.getProgramDiagnostics",
+      "phase": "end",
+      "pid": 329,
+      "status": "returned"
+    },
+    {
+      "kind": "NATIVE_API_PHASE608",
+      "method": "Program.getGlobalDiagnostics",
+      "monotonic_ms": 603102708.632248,
+      "phase": "start",
+      "pid": 329
+    }
+  ],
+  "return_cap_bytes": 33554432,
+  "returned_logical_bytes": 293855,
+  "source_commit": "a39ad5ee95609193502850d0dbb87b5dcbb5e3e3",
+  "source_export_sha256": "d28756248bc60436831085e9c03b7738795efc6dd1fc4ad79de2e216c0ef3f62"
+}

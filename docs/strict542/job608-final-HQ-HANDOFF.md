@@ -5,7 +5,11 @@ freeze is `a39ad5ee95609193502850d0dbb87b5dcbb5e3e3`, common export
 `d28756248bc60436831085e9c03b7738795efc6dd1fc4ad79de2e216c0ef3f62`.
 Checks/native/runtime have independent acceptance `2e19dbd1`/`4f54ce46`/`9f5d4331`.
 The exact next step is [the current stage continuation](job608-after-substep-budget-continuation.md)
-and its NEW a39a finite API/resource diagnostic preflight/review. The actual
+and the actual a39a finite API/resource diagnostic outcome (client0/collection0,
+inner124,112 error-free samples; job608-native-api-a39a-outcome.json). First global
+remained pending at the900s compiler timeout with CPU AND memory pressure. The
+diagnostic is SPENT; never replay. A finite finalized native CPU profile requires
+new exact source/preflight review before use; no performance fix is established. The actual
 unified-0 failed124 (11c1673e) and is SPENT; never replay its historical
 launch block. Compiler remains UNUSED and gated on genuine unified-0 success.
 Current source-only inventory has732 paths, independently reviewed9248f534;

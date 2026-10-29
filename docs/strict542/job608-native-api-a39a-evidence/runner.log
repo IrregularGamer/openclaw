@@ -1,0 +1,114 @@
+{"kind":"BEFORE_ARCHIVE_RELEASE608","current":"942874624\n","stat":"anon 17727488\nfile 805031936\nkernel 119574528\nkernel_stack 229376\npagetables 905216\nsec_pagetables 0\npercpu 2808\nsock 0\nvmalloc 16384\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 0\nfile_dirty 525086720\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 17616896\ninactive_file 801656832\nactive_file 3375104\nunevictable 0\nslab_reclaimable 117889552\nslab_unreclaimable 432800\nslab 118322352\nworkingset_refault_anon 0\nworkingset_refault_file 624\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 68787\npgmajfault 49\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\n"}
+{"kind":"AFTER_ARCHIVE_RELEASE608","current":"942632960\n","stat":"anon 17776640\nfile 805036032\nkernel 119566336\nkernel_stack 229376\npagetables 905216\nsec_pagetables 0\npercpu 2808\nsock 0\nvmalloc 16384\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 0\nfile_dirty 525090816\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 17707008\ninactive_file 801660928\nactive_file 3375104\nunevictable 0\nslab_reclaimable 117893272\nslab_unreclaimable 435424\nslab 118328696\nworkingset_refault_anon 0\nworkingset_refault_file 624\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgscan 0\npgsteal 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgfault 68802\npgmajfault 49\npgrefill 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\n"}
+STEP608 unified-0-stage-native-start +9s
+STEP608 unified-0-restore-build-done +17s
+STEP608 unified-0-build-start budget=2257s +23s
+STEP608 unified-0-build-fail 124 +1059s
++ tsdown 0.23.0
+[tsdown-unified] openclaw-dts-base: cache miss (disabled)
+[tsdown-build] still running pid=329; no output for 45s
+[tsdown-build] still running pid=329; no output for 36s
+[tsdown-build] still running pid=329; no output for 60s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 60s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] child result pid=329: {"status":null,"signal":"SIGKILL","parentSignal":"SIGTERM","timedOut":false,"cleanup":"parent-signal","observedProcessState":"dead","observationScope":"process-group","finalStatus":143}
+[tsdown-build] invocation 1/1 finished in 811.1s
+    at <anonymous> (/work/source/scripts/lib/tsdown-declaration-writer.mts:233:31)
+    at async writeTsdownDeclarations (/work/source/scripts/lib/tsdown-declaration-writer.mts:100:5)
++ jscpd 5.3.0
++ jsdom 30.1.0
++ lit 3.3.3
++ lit-analyzer 2.0.3
++ markdown-it 15.0.2
++ markdown-it-anchor 10.0.0
++ marked 18.0.13
++ minipass 7.1.3
++ nostr-tools 2.25.2
++ oxfmt 0.68.0
++ oxlint 1.83.0
++ oxlint-tsgolint 7.0.2002
++ pako 3.0.2
++ playwright 1.63.0
++ postcss 8.5.28
++ postcss-lit 1.4.1
++ postcss-selector-parser 7.1.6
++ shiki 4.4.3
++ signal-utils 0.21.1
++ sigstore 5.0.0
++ string-width 8.2.2
++ stylelint 17.15.0
++ stylelint-config-recommended 18.0.0
++ tinyglobby 0.2.17
++ tree-sitter-bash 0.25.1
++ tsdown 0.23.0
++ tsx 4.23.15
++ typescript 7.1.0-dev.20260920.1
++ unrun 0.3.1
++ vite 8.3.0
++ vitest 5.0.1
+
+Done in 1m 58.9s using pnpm v12.5.1
+NATIVE_API_PRELOAD_SMOKE608
+[tsdown-unified] openclaw-dts-base: cache miss (disabled)
+
+ WARN  TypeScript 7.0 does not yet have a stable API and is experimental. Some options will be unavailable.
+
+{"kind":"NATIVE_API_PHASE608","pid":329,"method":"API.parseConfigFile","phase":"start","monotonic_ms":603000891.670762}
+{"kind":"NATIVE_API_PHASE608","pid":329,"method":"API.parseConfigFile","phase":"end","status":"returned","duration_ms":2505.436618089676}
+{"kind":"NATIVE_API_PHASE608","pid":329,"method":"API.createSnapshot","phase":"start","monotonic_ms":603003404.155115}
+[tsdown-build] still running pid=329; no output for 45s
+{"kind":"NATIVE_API_PHASE608","pid":329,"method":"API.createSnapshot","phase":"end","status":"returned","duration_ms":98998.21746098995}
+{"kind":"NATIVE_API_PHASE608","pid":329,"method":"Program.getConfigFileParsingDiagnostics","phase":"start","monotonic_ms":603102405.693705}
+{"kind":"NATIVE_API_PHASE608","pid":329,"method":"Program.getConfigFileParsingDiagnostics","phase":"end","status":"returned","duration_ms":23.578992009162903}
+{"kind":"NATIVE_API_PHASE608","pid":329,"method":"Program.getProgramDiagnostics","phase":"start","monotonic_ms":603102471.906005}
+{"kind":"NATIVE_API_PHASE608","pid":329,"method":"Program.getProgramDiagnostics","phase":"end","status":"returned","duration_ms":236.49376094341278}
+{"kind":"NATIVE_API_PHASE608","pid":329,"method":"Program.getGlobalDiagnostics","phase":"start","monotonic_ms":603102708.632248}
+[tsdown-build] still running pid=329; no output for 36s
+[tsdown-build] still running pid=329; no output for 60s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 60s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] still running pid=329; no output for 30s
+[tsdown-build] child result pid=329: {"status":null,"signal":"SIGKILL","parentSignal":"SIGTERM","timedOut":false,"cleanup":"parent-signal","observedProcessState":"dead","observationScope":"process-group","finalStatus":143}
+[tsdown-build] invocation 1/1 finished in 811.1s
+Error: Declaration checkpoint compiler failed with exit 143
+    at <anonymous> (/work/source/scripts/lib/tsdown-declaration-writer.mts:233:31)
+    at async withDistArtifactOwnership (/work/source/scripts/lib/dist-artifact-lock.mts:181:14)
+    at async writeTsdownDeclarations (/work/source/scripts/lib/tsdown-declaration-writer.mts:100:5)
+    at async declaration (/work/source/scripts/build-checkpoint608.mts:56:8)
+    at async prepareBuildCheckpoint608 (/work/source/scripts/build-checkpoint608.mts:63:3)
+    at async runBuildAllSteps (/work/source/scripts/build-all.mts:605:7)
+    at async withDistArtifactOwnership (/work/source/scripts/lib/dist-artifact-lock.mts:181:14)
+    at async <anonymous> (/work/source/scripts/build-checkpoint608.mts:81:15)

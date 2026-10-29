@@ -1,0 +1,17 @@
+{
+  "accepted_checkpoint": false,
+  "application_authority": false,
+  "cancelled_signal": null,
+  "collection_exit": 0,
+  "command_exit": 124,
+  "compiler_limit_seconds": 900,
+  "elapsed_seconds": 1108.0014484090498,
+  "kind": "DIAGNOSTIC_ONLY_NOT_BUILD_RECEIPT608",
+  "preload_smoke_limit_seconds": 30,
+  "resource_samples": 112,
+  "resource_sampling_errors": 0,
+  "run_id": "stage608-unified-0-diag1",
+  "setup_and_probe_limit_seconds": 1500,
+  "source_commit": "a39ad5ee95609193502850d0dbb87b5dcbb5e3e3",
+  "source_export_sha256": "d28756248bc60436831085e9c03b7738795efc6dd1fc4ad79de2e216c0ef3f62"
+}

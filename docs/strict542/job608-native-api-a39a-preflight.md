@@ -1,3 +1,5 @@
+**SPENT 2026-10-29:** Actual client0/collection0/inner124,112 error-free samples; first global still pending at900s compiler timeout. Evidence: job608-native-api-a39a-outcome.json. NEVER replay the historical launch block below. No checkpoint/package.
+
 # job608 a39a finite API/CPU/memory observation preflight (UNUSED)
 
 SOURCE ONLY; **595 MUST NOT APPLY.** One new finite diagnostic, never an
