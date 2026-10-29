@@ -5,6 +5,9 @@
 # deadlines are the ones from run-package608.sh, unchanged.
 set -eu
 EXPORT_ROOT="$PWD"
+# Wall-clock origin for per-substep markers and the inner build budget below.
+START608=$(date +%s)
+step608() { echo "STEP608 $STAGE-$1 +$(( $(date +%s) - START608 ))s"; }
 STAGE=$(python3 stage608.py stage)
 RESULT="result608-$STAGE"
 mkdir "$RESULT"
@@ -118,7 +121,9 @@ compiler)
   cp strict542-checks/tests.log "../$RESULT/compiler/"
   ;;
 runtime|unified-[0-5]|middle|sdk-[0-1]|tail)
+  step608 stage-native-start
   (cd .. && python3 stage608.py stage-native && python3 stage608.py restore-build)
+  step608 restore-build-done
   mkdir "../$RESULT/$STAGE"
   npm exec --yes --package=pnpm@12.5.1 -- sh -c 'set -eu; [ "$(pnpm --version)" = 12.5.1 ]; command -v pnpm >strict542-checks/pnpm-path.txt'
   PNPM_COMMAND=$(cat strict542-checks/pnpm-path.txt)
@@ -130,9 +135,17 @@ m=json.loads(Path('../export-manifest.json').read_text())
 for key,field in [('STRICT542_SOURCE_COMMIT','source_commit'),('STRICT542_SOURCE_EXPORT_SHA256','source_export_sha256'),('STRICT542_BUILD_RUN_ID','run_id')]:print(key+'='+shlex.quote(m[field]))
 STAGE_IDENTITIES
 )"
-  env -i HOME="$HOME" PATH="$(dirname "$PNPM_COMMAND"):$(dirname "$NODE_PHYSICAL"):/usr/bin:/bin" STRICT542_SOURCE_COMMIT="$STRICT542_SOURCE_COMMIT" STRICT542_SOURCE_EXPORT_SHA256="$STRICT542_SOURCE_EXPORT_SHA256" STRICT542_BUILD_RUN_ID="$STRICT542_BUILD_RUN_ID" sh docs/strict542/run-build-stage608.sh "$STAGE" >"../$RESULT/$STAGE/build.log" 2>&1 || {
-    status=$?; tail -80 "../$RESULT/$STAGE/build.log"; exit "$status";
+  # Fixed inner budget (not caller-selected): the build must end 120 s before
+  # the 2400 s outer limit so a timeout still prints the build.log tail on
+  # stdout and the EXIT trap writes exit-code.txt (a failed offload returns no
+  # artifacts; the local offload log is the only evidence).
+  BUILD_LEFT608=$(( 2280 - ($(date +%s) - START608) ))
+  [ "$BUILD_LEFT608" -gt 60 ] || { step608 build-budget-exhausted; exit 124; }
+  step608 "build-start budget=${BUILD_LEFT608}s"
+  timeout -k 15s "${BUILD_LEFT608}s" env -i HOME="$HOME" PATH="$(dirname "$PNPM_COMMAND"):$(dirname "$NODE_PHYSICAL"):/usr/bin:/bin" STRICT542_SOURCE_COMMIT="$STRICT542_SOURCE_COMMIT" STRICT542_SOURCE_EXPORT_SHA256="$STRICT542_SOURCE_EXPORT_SHA256" STRICT542_BUILD_RUN_ID="$STRICT542_BUILD_RUN_ID" sh docs/strict542/run-build-stage608.sh "$STAGE" >"../$RESULT/$STAGE/build.log" 2>&1 || {
+    status=$?; step608 "build-fail $status"; grep -a -E '^\[build-all\]|STEP608|tsdown|dts' "../$RESULT/$STAGE/build.log" | tail -40; tail -80 "../$RESULT/$STAGE/build.log"; exit "$status";
   }
+  step608 build-done
   (cd .. && python3 stage608.py archive-build "$RESULT")
   echo "STEP608 $STAGE-pass"
   ;;
