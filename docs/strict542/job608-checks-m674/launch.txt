@@ -1,0 +1,2 @@
+2026-10-29T21:02:07Z health up; gates checked
+2026-10-29T21:03:00Z parent shell 2909492 SIGKILLed to keep offload pid 2909494 alive past the 600s harness background limit; offload rc not directly captured
