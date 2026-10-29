@@ -6,11 +6,14 @@ approved6035be0c. Scoped checks575passed + same7platform skips, receipt744ef54e,
 independently accepted9d1dfc33. NEW native actual client/result0, producing receipt
 435ef3f2, exact compile4a651254/libtests2f81179f/addon0b6607e7, independently
 accepted73351f27. Evidence: job608-native-fullsize5aff1/.
-FIRST next fresh worker: NEW UNUSED runtime export46f4f743, independently
-approved in job608-runtime-fullsize5aff1-preflight-independent-review.md,
-full14g/4CPU/2460s and>=2655s after preflight.
+NEW runtime actual client/result0, producing receipt d41a3c6f, checkpoint2a882adb,
+all58 compiler statuses0 and complete8956-output inventory verified;88563372B
+return<128MiB. Evidence7f3d613b, independent acceptance da0e733d.
+FIRST next fresh worker: NEW UNUSED unified-0 export912af4bc, exact preflight
+job608-unified0-fullsize5aff1-preflight.json and required separate independent
+preflight APPROVE,full14g/4CPU/2460s and>=2655s after preflight(prefer2895s).
 Use [current continuation](job608-after-fullsize-cap-continuation.md).
-All a39a future exports/receipts are superseded; no relabelling. Runtime,
+All a39a future exports/receipts are superseded; no relabelling. Separate
 declarations/compiler/package, final artifact/action/privilege/seal/automatic
 review and actual ordered HQ595 application evidence remain incomplete.
 **595 MUST NOT APPLY.** This current status supersedes historical paragraphs below;
