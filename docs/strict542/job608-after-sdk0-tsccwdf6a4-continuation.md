@@ -6,7 +6,9 @@ Accepted: sdk-0 (actual b9decdd6, receipt 08530815eecb839d20085cae5ccd53fccd356e
 checkpoint 09f9d2b8… in P/stage-sdk-0-tsccwdf6a4/result608-sdk-0, independent ACCEPT abd8eff8).
 sdk-0 stage SPENT; never replay it.
 
-## NEXT FRESH WORKER: FIRST heavy action sdk-1
+## UPDATE: sdk-1 also ran in the same worker (evidence f28a50ab, ACCEPT 8cbbaacd); NEXT is tail per job608-tail-tsccwdf6a4-preflight.md
+
+## (historical) NEXT FRESH WORKER: FIRST heavy action sdk-1
 Export P/stage-sdk-1-tsccwdf6a4 prepared UNUSED, manifest
 1474cff7f4da3873e348d8662f5e85a6a4f918cba405292ee532a020c5e461f0 (preflight 856fe90d,
 independent APPROVE 647d59af). Re-verify all live gates (health up, no competing run,
