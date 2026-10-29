@@ -13,7 +13,7 @@ class Storage608Test(unittest.TestCase):
   self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup);self.root=Path(self.tmp.name)
  def test_forecast_includes_all_fifteen_stage_returns_and_base_overlays(self):
   plan=storage.forecast(696548381)
-  self.assertEqual(len(storage.CAPS),15);self.assertEqual(plan['return_caps_bytes'],2784*storage.MIB)
+  self.assertEqual(len(storage.CAPS),15);self.assertEqual(plan['return_caps_bytes'],2848*storage.MIB)
   self.assertEqual(plan['overlay_bytes'],16*16*storage.MIB)
   self.assertLessEqual(plan['total_bytes'],storage.MAX_STORE)
  def test_oversized_forecast_refuses(self):

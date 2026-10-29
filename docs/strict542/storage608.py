@@ -16,7 +16,7 @@ COMMON='5d7e9d57fb660e2b54f5595e81ddf332027e21b303937c2cd6bc7f718f311263'
 BASE_MANIFEST='20111ce5f68e7764e7176a670df6e9097deafa51d02291810bf65dd41c8c7c2d'
 CAPS={'native':64*MIB,'checks':16*MIB,'compiler':16*MIB,'runtime':128*MIB,
       **{'unified-'+str(i):32*MIB for i in range(6)},'middle':128*MIB,
-      'sdk-0':32*MIB,'sdk-1':32*MIB,'tail':128*MIB,'package':2048*MIB}
+      'sdk-0':32*MIB,'sdk-1':32*MIB,'tail':192*MIB,'package':2048*MIB}
 ARCHIVES={'source598.tar':'base_source_archive_sha256','native598.tar':'native_export_sha256',
           'rolldown608-source.tar.gz':'compiler_upstream_archive_sha256','successor598.tar':'successor_archive_sha256'}
 SMALL_FILES=['run608.sh','stage608.py','export-manifest.json']
