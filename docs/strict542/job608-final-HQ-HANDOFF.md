@@ -15,7 +15,7 @@ review and actual ordered HQ595 application evidence remain incomplete.
 **595 MUST NOT APPLY.** This current status supersedes historical paragraphs below;
 reconcile their candidate95 commands only to the eventual actual5aff package.
 
-**Full-size continuation (2026-10-29, S1902/1905):** the fixed4GiB/1CPU
+**Historical full-size continuation (superseded by5aff above; S1902/1905):** the fixed4GiB/1CPU
 ceiling and Decision649 are superseded. Cancelled650 source is excluded.
 Retain the unchanged accepted a39a/common d287 lineage, per independent
 review87be798f. The NEW canonical unified-0 fullsize1a39a attempt has exact
@@ -28,7 +28,7 @@ Actual package/action/seal/automatic-review gates below remain incomplete.
 
 # Job608: exact preparation handoff to595
 
-**Current boundary (2026-10-29):** preparation remains INCOMPLETE. Executable
+**Historical a39a boundary (superseded by5aff above):** preparation was INCOMPLETE. Executable
 freeze is `a39ad5ee95609193502850d0dbb87b5dcbb5e3e3`, common export
 `d28756248bc60436831085e9c03b7738795efc6dd1fc4ad79de2e216c0ef3f62`.
 Checks/native/runtime have independent acceptance `2e19dbd1`/`4f54ce46`/`9f5d4331`.
@@ -45,7 +45,7 @@ it is not the future package or installed-target inventory. Do not repeat
 accepted stages without a product source correction requiring a new freeze.
 The full current declaration/compiler/package chain, final artifact/action/old-new
 inventory/seal reviews and actual automatic queue review remain outstanding.
-**Current blocker (2026-10-29):** see job608-unified0-budget-blocker.md. The smallest
+**Historical pre-S1902/1905 blocker (now superseded):** see job608-unified0-budget-blocker.md. The smallest
 unified-0 unit exceeds the 4 GiB/1 CPU offload ceiling, so S must decide on the lease.
 
 **595 MUST NOT APPLY.** This status supersedes older candidate95 status/freeze

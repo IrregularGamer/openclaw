@@ -18,7 +18,8 @@ storage310440B/input0 verified. Evidence job608-checks-fullsize5aff1/ records
 Exact independent acceptance: job608-checks-fullsize5aff1-independent-acceptance.md.
 All case membership/statuses match accepted a39a plus ONLY the new cap regression;
 real supervisor IPC refusal/cancellation/settlement cases passed. This accepts
-scoped checks ONLY; no successor native/runtime/build/package/action exists.
+scoped checks ONLY; accepted native is recorded below. No runtime/build/package/
+action result exists.
 
 ## Accepted native state
 
@@ -82,8 +83,9 @@ After independently ACCEPTED runtime, use the committed unchanged preparer
 for NEW unified-0 at5aff/common230f with ONLY accepted NEW native+runtime inputs.
 Require exact preflight/review and full14g/4CPU admitted lease, complete actual
 result/checkpoint and independent acceptance. Only genuine accepted unified-0
-unlocks compiler execution. A NEW compiler may be prepared now using native,
-but its600/540s14g/4CPU command remains conditionally gated on accepted unified-0
+unlocks compiler execution. The NEW compiler export668db7e1 is prepared, UNUSED, with complete pins in
+job608-compiler-fullsize5aff1-preflight.json; its600/540s14g/4CPU command
+remains conditionally gated on accepted unified-0
 and>=975s after preflight; no compiler runs in this worker. Then unified-1..5,
 middle, sdk-0/1, tail, package, each per exact stage608.py STAGES/OUTPUTS and
 NEW unique export/run_id, independently pinned predecessors/storage/deadline.
