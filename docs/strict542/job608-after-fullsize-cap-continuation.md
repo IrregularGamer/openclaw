@@ -11,10 +11,14 @@ The fullsize1a39a attempt is SPENT/FAILURE before compilation (client1/+88s).
 
 ## Current checks state
 
-The NEW checks export stage-checks-fullsize5aff1 manifest5e2c7649 is executing
-once at14g/4CPU, offload1200s/inner1140s; source/exact preflight ab7e8658.
-Its actual returned result and independent acceptance must be recorded before
-native launch. This pre-terminal paragraph is not a success receipt.
+The NEW checks export stage-checks-fullsize5aff1 is SPENT/SUCCESS, never replay.
+Actual client/result0, exact manifest5e2c7649/receipt744ef54e/output hashes and
+storage310440B/input0 verified. Evidence job608-checks-fullsize5aff1/ records
+575passed:135Python+168Node+272Vitest, same7pre-existing platform skips.
+Exact independent acceptance: job608-checks-fullsize5aff1-independent-acceptance.md.
+All case membership/statuses match accepted a39a plus ONLY the new cap regression;
+real supervisor IPC refusal/cancellation/settlement cases passed. This accepts
+scoped checks ONLY; no successor native/runtime/build/package/action exists.
 
 ## FIRST heavy action in the next fresh worker: native
 

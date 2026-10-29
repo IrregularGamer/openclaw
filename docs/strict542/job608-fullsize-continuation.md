@@ -1,13 +1,16 @@
-**Current correction (2026-10-29):** fullsize1a39a is SPENT/FAILURE:
-client1, obsolete source admission cap refuses at+88s BEFORE compilation.
-Source fix5aff81fe removes that fixed4GiB upper rejection under S1902/1905;
-independent source approval is job608-fullsize-cap-independent-review.md.
-NEW executable freeze5aff81feb4098654ce07e7ff09e336119770be85 requires NEW common
-identity and freshchecks/native/runtime/all later stages. Historical a39a
-receipts remain evidence only for this successor; never relabel or reuse them.
-The previously prepared a39a unified1 and compiler exports are SUPERSEDED UNRUN.
-See job608-unified0-fullsize1-failure for exact observed failure evidence.
-New checks/native exports are preparing; no successor build/package exists.
+**Current accepted state (2026-10-29):** executable freeze
+5aff81feb4098654ce07e7ff09e336119770be85, common export
+230f79f5b6f95826a02a15f1c5fdd9d1fbc5a7abd60064b33e3d1776af0f086d.
+S1902/1905 fixed-cap source correction has independent approval6dd1e199;
+full806-path source inventory independently approved6035be0c. Fresh scoped
+checks client/result0,575passed plus exact same7platform skips, receipt744ef54e,
+are independently ACCEPTED in job608-checks-fullsize5aff1-independent-acceptance.md.
+FIRST next fresh worker: exact UNUSED native export301a3b3c, reviewed ab7e8658,
+at full14g/4CPU/2460s and>=2655s remaining after preflight. Use
+[job608-after-fullsize-cap-continuation.md](job608-after-fullsize-cap-continuation.md).
+All a39a future exports/receipts are superseded for this successor; no relabelling.
+Full build/package, final artifact/action/privilege/seal/automatic-review and
+ordered actual HQ595 application evidence remain incomplete.
 **595 MUST NOT APPLY.**
 
 # Job608 full-size canonical continuation (S1902/1905, job652)
