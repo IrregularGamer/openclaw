@@ -1,0 +1,39 @@
+{
+  "green": {
+    "client_exit": 1,
+    "client_log_sha256": "72d2c4983e2491c199b3fb7e7bb37fe7ff991bdc214bae711d43b388c3fdc2b7",
+    "export": "/home/deploy/agentq/tmp/usage-label-green608.SQknf3",
+    "export_files": {
+      "docs/strict542/usage-window-types608.test.mjs": "4ea193364f7ed854bf202b9ceba207eca8980ba3508cfb15fd22a3c6369aa499",
+      "src/agents/sessions/selected-runtime-auth-read.ts": "ed8db44e21a9d143542758cf840697dd62dbac6e88d65bc8970e203bb2cca1df",
+      "src/gateway/strict542/usage-preflight.test.mjs": "6c970f9272f48c575d2837bb1234acf00045ac348cc2f4cea9b60080ad0382c0",
+      "src/gateway/strict542/usage-preflight.ts": "eb9478c8182ae95fcd16ac72202983fe45943694944a0670e5823bca983dced5"
+    },
+    "meaning": "Incomplete export omitted gateway registration source fixtures; type regression passed and33tests passed but registration suite ENOENT; NOT acceptance."
+  },
+  "green2": {
+    "client_exit": 0,
+    "client_log_sha256": "74ffd514069b194c75e276c95e5ca650d610658b792bcd19e9fbad091735e448",
+    "export": "/home/deploy/agentq/tmp/usage-label-green2-608.t3fwVT",
+    "export_files": {
+      "docs/strict542/usage-window-types608.test.mjs": "4ea193364f7ed854bf202b9ceba207eca8980ba3508cfb15fd22a3c6369aa499",
+      "src/agents/sessions/selected-runtime-auth-read.ts": "ed8db44e21a9d143542758cf840697dd62dbac6e88d65bc8970e203bb2cca1df",
+      "src/gateway/methods/core-descriptors.ts": "809d43e09b39eadf2ec9b579b63d2a0fc0a3f18afd9086f4f5e4ddd1425c2017",
+      "src/gateway/server-methods/usage.ts": "713f25db3198fa10d00feac8c3f92509c68ad195fe441bc68e77422a8c438a13",
+      "src/gateway/strict542/usage-preflight.test.mjs": "6c970f9272f48c575d2837bb1234acf00045ac348cc2f4cea9b60080ad0382c0",
+      "src/gateway/strict542/usage-preflight.ts": "eb9478c8182ae95fcd16ac72202983fe45943694944a0670e5823bca983dced5"
+    },
+    "meaning": "Changed complete six-file committed export at49d3fe33:36passed35preflight+1actual parser strict indexed-access typecheck;zero failed/cancelled/skipped/todo;client0/typecheck0."
+  },
+  "red": {
+    "client_exit": 0,
+    "client_log_sha256": "dd0ec2d9e9180d1168a03538cfa8f66f8c5e8f297a74bf1346fbb5946b9be725",
+    "export": "/home/deploy/agentq/tmp/usage-label-red608.CXMzKB",
+    "export_files": {
+      "docs/strict542/usage-window-types608.test.mjs": "4ea193364f7ed854bf202b9ceba207eca8980ba3508cfb15fd22a3c6369aa499",
+      "src/gateway/strict542/usage-preflight.ts": "b017b54b506a4e7a1b914b9a0fce47fc4a3441122333b96c19292b6342949450"
+    },
+    "meaning": "Expected actual TS2322 at extracted actual parser line55,label string|undefined; typecheck test fails1/compiler2,offload wrapper0 after asserting the expected red."
+  },
+  "scope": "SOURCE ONLY narrow regression evidence, not full declaration/package success or application authority;595 MUST NOT APPLY."
+}
