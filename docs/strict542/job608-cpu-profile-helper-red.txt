@@ -1,0 +1,31 @@
+======================================================================
+ERROR: test_finalized_cpu_profile_requires_exact_bytes_inventory_and_global_entry (test_diagnose_native_api608.NativeApiLauncherTests.test_finalized_cpu_profile_requires_exact_bytes_inventory_and_global_entry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/deploy/agentq/tmp/source552/docs/strict542/test_diagnose_native_api608.py", line 41, in test_finalized_cpu_profile_requires_exact_bytes_inventory_and_global_entry
+    self.assertEqual(launcher.verify_cpu_profile(result), receipt)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'diagnose_native_api608' has no attribute 'verify_cpu_profile'
+
+======================================================================
+ERROR: test_cpu_profile_refuses_late_failure_even_after_published_receipt (test_diagnose_native_api608.NativeApiLauncherTests.test_cpu_profile_refuses_late_failure_even_after_published_receipt)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/deploy/agentq/tmp/source552/docs/strict542/test_diagnose_native_api608.py", line 53, in test_cpu_profile_refuses_late_failure_even_after_published_receipt
+    launcher.verify_cpu_profile(result)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'diagnose_native_api608' has no attribute 'verify_cpu_profile'
+
+======================================================================
+ERROR: test_cpu_profile_missing_extra_oversize_and_redirected_evidence_refuse (test_diagnose_native_api608.NativeApiLauncherTests.test_cpu_profile_missing_extra_oversize_and_redirected_evidence_refuse)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/deploy/agentq/tmp/source552/docs/strict542/test_diagnose_native_api608.py", line 74, in test_cpu_profile_missing_extra_oversize_and_redirected_evidence_refuse
+    launcher.verify_cpu_profile(result)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'diagnose_native_api608' has no attribute 'verify_cpu_profile'
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.006s
+
+FAILED (errors=3)

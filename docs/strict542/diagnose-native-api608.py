@@ -8,6 +8,7 @@ import hashlib
 import importlib.util
 import json
 import os
+import re
 from pathlib import Path
 import signal
 import subprocess
@@ -22,7 +23,8 @@ HELPER = 'a558db9afacd22111fb5c2590fe902298b12ea06910eac6efab43f4aa27c0de4'
 OBSERVERS = {
     'diagnose-unified608.py': 'e9054f13c3b94e0813c825d3318e3da5e14beb40a37947be0cfd7ae6b22d7aa8',
     'native-api-phases608.mjs': 'f50191444745bf8710fe513b66d36a2cfb16b50f9427d5875bb1aba8a68be87d',
-    'install-native-api-phases608.mjs': '87fb06525b6baa62adf05a8308f5281271659a952422126582c1d14b7c307d83',
+    'install-native-api-phases608.mjs': '7802d135ffeee9bedcc802cb47e46beba09db63a49ef5e3c8c2635f23ec50916',
+    'native-api-cpu-profile608.mjs': '6278df90a9eaab783a6cc3b2fffcfd660d63c511888d80cf7c4e4356d82d488f',
 }
 
 
@@ -79,6 +81,60 @@ def resource_sampler():
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module.sample
+
+
+def verify_cpu_profile(result):
+    """Accept only finalized bounded profile bytes, never compiler success."""
+    result = Path(result)
+    directory = result/'cpu-profile'
+    if result.is_symlink() or directory.is_symlink() or not directory.is_dir():
+        raise ValueError('CPU profile directory refused')
+    if directory.stat().st_mode & 0o777 != 0o700:
+        raise ValueError('CPU profile directory mode refused')
+    receipt_file = directory/'receipt.json'
+    if (receipt_file.is_symlink() or not receipt_file.is_file()
+            or receipt_file.stat().st_size > 2048 or receipt_file.stat().st_nlink != 1
+            or receipt_file.stat().st_mode & 0o777 != 0o600):
+        raise ValueError('CPU profile receipt refused')
+    receipt = json.loads(receipt_file.read_text())
+    if (not isinstance(receipt, dict)
+            or set(receipt) != {'kind', 'complete', 'profile', 'sha256', 'bytes', 'limit_ms', 'max_profile_bytes'}
+            or receipt['kind'] != 'NATIVE_CPU_PROFILE_RECEIPT608' or receipt['complete'] is not True
+            or type(receipt['limit_ms']) is not int or type(receipt['max_profile_bytes']) is not int
+            or receipt['limit_ms'] != 120000 or receipt['max_profile_bytes'] != 8388608
+            or type(receipt['bytes']) is not int or not 0 < receipt['bytes'] <= 8388608
+            or not isinstance(receipt['profile'], str)
+            or re.fullmatch(r'\d+-\d+-cpuprofile\.pb\.gz', receipt['profile']) is None
+            or not isinstance(receipt['sha256'], str)
+            or re.fullmatch(r'[0-9a-f]{64}', receipt['sha256']) is None):
+        raise ValueError('CPU profile receipt fields refused')
+    profile = directory/receipt['profile']
+    if (set(p.name for p in directory.iterdir()) != {'receipt.json', receipt['profile']}
+            or profile.is_symlink() or not profile.is_file() or profile.stat().st_nlink != 1
+            or profile.stat().st_size != receipt['bytes'] or digest(profile) != receipt['sha256']):
+        raise ValueError('CPU profile bytes or inventory refused')
+    log = result/'unified-0/unified-0/build.log'
+    if log.is_symlink() or not log.is_file() or log.stat().st_size > 4*1024*1024:
+        raise ValueError('CPU profile phase log refused')
+    global_entered = False
+    with log.open() as stream:
+        for line in stream:
+            if len(line) > 65536 or 'NATIVE_CPU_PROFILE_REFUSED608' in line:
+                raise ValueError('CPU profile refusal recorded')
+            try:
+                event = json.loads(line)
+            except ValueError:
+                continue
+            if not isinstance(event, dict):
+                continue
+            if event.get('kind') == 'NATIVE_CPU_PROFILE608' and event.get('phase') == 'refused':
+                raise ValueError('CPU profile refusal recorded')
+            if (event.get('kind'), event.get('method'), event.get('phase')) == (
+                    'NATIVE_API_PHASE608', 'Program.getGlobalDiagnostics', 'start'):
+                global_entered = True
+    if not global_entered:
+        raise ValueError('CPU profile lacks actual global entry')
+    return receipt
 
 
 def live_group(group):
@@ -229,6 +285,11 @@ sh ../native-api-launch608.sh "$1"
     outcome = Path('result608-unified-0')
     if outcome.exists():
         outcome.rename(result/'unified-0')
+    profile_receipt, profile_error = None, None
+    try:
+        profile_receipt = verify_cpu_profile(result)
+    except Exception as error:
+        profile_error = type(error).__name__  # Never publish arbitrary failure details.
     receipt = {'kind': 'DIAGNOSTIC_ONLY_NOT_BUILD_RECEIPT608',
                'source_commit': FREEZE, 'source_export_sha256': COMMON,
                'command_exit': rc, 'collection_exit': cancelled or (0 if rc in (0, 124) else rc),
@@ -237,9 +298,10 @@ sh ../native-api-launch608.sh "$1"
                'setup_and_probe_limit_seconds': 1500, 'compiler_limit_seconds': 900,
                'preload_smoke_limit_seconds': 30,
                'resource_samples': len(samples), 'resource_sampling_errors': sampling_errors,
+               'cpu_profile': profile_receipt, 'cpu_profile_error': profile_error,
                'application_authority': False, 'accepted_checkpoint': False,
                'run_id': manifest['run_id']}
-    if sampling_errors and receipt['collection_exit'] == 0:
+    if (sampling_errors or profile_error) and receipt['collection_exit'] == 0:
         receipt['collection_exit'] = 7
     (result/'diagnostic.json').write_text(json.dumps(receipt, sort_keys=True, indent=2)+'\n')
     print(json.dumps(receipt), flush=True)

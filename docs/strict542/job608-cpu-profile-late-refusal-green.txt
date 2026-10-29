@@ -1,0 +1,35 @@
+✔ install and snapshot capture do not create a store; first global creates it once (5.335658ms)
+✔ fixed timer stops and finalizes while genuine global query remains unresolved (9.657793ms)
+✔ early result clears timer and stops exactly once (0.508411ms)
+✔ genuine rejection object survives profiling failure (1.326487ms)
+✔ early genuine rejection stops once and preserves the same error object (0.591858ms)
+✔ timer and query completion race joins one stop (2.503001ms)
+✔ storeError refuses diagnostic success but calls original query once (1.065399ms)
+✔ startError refuses diagnostic success but calls original query once (0.352117ms)
+✔ stopError refuses diagnostic success but calls original query once (0.888555ms)
+✔ receiptError refuses diagnostic success but calls original query once (0.878335ms)
+✔ writeError refuses diagnostic success but calls original query once (0.35978ms)
+✔ reportError refuses diagnostic success but calls original query once (0.270083ms)
+✔ failed start preserves a genuine synchronous query failure (0.472436ms)
+✔ overlap refuses and poisons diagnostic acceptance without a second original query (4.886112ms)
+{"kind":"NATIVE_CPU_PROFILE608","phase":"refused","reason":"profile-directory"}
+✔ late API ambiguity immediately reports refusal after a timer receipt, preserving the original failure (1.582358ms)
+✔ a second API owner refuses without replacing the captured genuine owner (0.43995ms)
+✔ global before a captured API owner refuses (0.29262ms)
+✔ production store refuses a symlink at the fixed profile directory (37.155608ms)
+✔ production store publishes only the finalized fixed-directory bytes and their hash (7.573306ms)
+✔ production store refuses outside profile evidence (5.023093ms)
+✔ production store refuses empty profile evidence (5.889085ms)
+✔ production store refuses missing profile evidence (2.877007ms)
+✔ production store refuses symlink profile evidence (3.314566ms)
+✔ production store refuses hardlink profile evidence (2.914131ms)
+✔ production store refuses replaced-directory profile evidence (3.177968ms)
+✔ production store refuses over-cap profile evidence (2.920287ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 293.078313

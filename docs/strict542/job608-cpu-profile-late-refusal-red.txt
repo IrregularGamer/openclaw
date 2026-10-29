@@ -1,0 +1,61 @@
+✔ install and snapshot capture do not create a store; first global creates it once (5.903093ms)
+✔ fixed timer stops and finalizes while genuine global query remains unresolved (9.829605ms)
+✔ early result clears timer and stops exactly once (0.526279ms)
+✔ genuine rejection object survives profiling failure (1.04027ms)
+✔ early genuine rejection stops once and preserves the same error object (0.57262ms)
+✔ timer and query completion race joins one stop (2.250891ms)
+✔ storeError refuses diagnostic success but calls original query once (1.123693ms)
+✔ startError refuses diagnostic success but calls original query once (0.501806ms)
+✔ stopError refuses diagnostic success but calls original query once (0.977855ms)
+✔ receiptError refuses diagnostic success but calls original query once (0.845203ms)
+✔ writeError refuses diagnostic success but calls original query once (0.965612ms)
+✔ reportError refuses diagnostic success but calls original query once (0.627892ms)
+✔ failed start preserves a genuine synchronous query failure (1.134635ms)
+✔ overlap refuses and poisons diagnostic acceptance without a second original query (9.142815ms)
+✖ late API ambiguity immediately reports refusal after a timer receipt, preserving the original failure (4.760715ms)
+✔ a second API owner refuses without replacing the captured genuine owner (2.809194ms)
+✔ global before a captured API owner refuses (1.7141ms)
+✔ production store refuses a symlink at the fixed profile directory (4.830999ms)
+✔ production store publishes only the finalized fixed-directory bytes and their hash (5.785249ms)
+✔ production store refuses outside profile evidence (4.262775ms)
+✔ production store refuses empty profile evidence (8.77191ms)
+✔ production store refuses missing profile evidence (5.339979ms)
+✔ production store refuses symlink profile evidence (4.469241ms)
+✔ production store refuses hardlink profile evidence (3.360357ms)
+✔ production store refuses replaced-directory profile evidence (3.120759ms)
+✔ production store refuses over-cap profile evidence (3.357149ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 25
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 371.659816
+
+✖ failing tests:
+
+test at docs/strict542/native-api-cpu-profile608.test.mjs:127:1
+✖ late API ambiguity immediately reports refusal after a timer receipt, preserving the original failure (4.760715ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+  + []
+  - [
+  -   {
+  -     kind: 'NATIVE_CPU_PROFILE608',
+  -     phase: 'refused',
+  -     reason: 'ambiguous-api'
+  -   }
+  - ]
+
+      at TestContext.<anonymous> (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:132:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [],
+    expected: [ { kind: 'NATIVE_CPU_PROFILE608', phase: 'refused', reason: 'ambiguous-api' } ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
