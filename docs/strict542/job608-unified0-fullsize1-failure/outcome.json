@@ -1,0 +1,20 @@
+{
+  "client_exit": 1,
+  "independent_failure_review": "/root/fullsize_preflight_review ACCEPT FAILURE ONLY; raw4433B/logc2e43cbe/rc1/restore18s/buildstart21s/fail88s; no builddone/pass/receipt/checkpoint",
+  "log_sha256": "c2e43cbe89f88d4e9ccb2545f83868cf5921ce383ec668fd9682d43d7ea85794",
+  "manifest_sha256": "666a56b55f397e326331306d9e6ca472515c418e9f6665c12b657eb0664fc691",
+  "next_source_freeze": "5aff81fe",
+  "result_returned": false,
+  "root_cause": "Obsolete app source capacityBytes > 4GiB guard refuses S-approved14GiB before compilation",
+  "seal_observation": {
+    "current_sha256": "51170230064a8da20e074497eae6a6c968d293d262e9e31523dd7365a5c128d3",
+    "matches_original": true
+  },
+  "source_fix": "5aff81fe",
+  "source_freeze_before": "a39ad5ee95609193502850d0dbb87b5dcbb5e3e3",
+  "state": "SPENT_FAILURE_DO_NOT_REPLAY",
+  "superseded_unrun_exports": [
+    "stage-unified-1-fullsize1a39a",
+    "stage-compiler-substep-a39a"
+  ]
+}
