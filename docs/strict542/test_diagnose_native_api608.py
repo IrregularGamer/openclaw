@@ -96,6 +96,27 @@ class NativeApiLauncherTests(unittest.TestCase):
             finally:
                 os.chdir(old)
 
+    def test_resource_samples_reuse_fixed_sampler_and_preserve_actual_status(self):
+        with tempfile.TemporaryDirectory(dir='/var/tmp') as directory:
+            log = Path(directory)/'runner.log'
+            sample = {'at':1, 'processes':[], 'cgroup':{'cpu.stat':'usage_usec 1'}}
+            self.assertEqual(launcher.collect(['sh', '-c', 'exit 7'], log, 2,
+                                             sample_fn=lambda: sample), (7, None))
+            records = [json.loads(line) for line in log.with_name('samples.jsonl').read_text().splitlines()]
+            self.assertTrue(records)
+            self.assertTrue(all(record == sample for record in records))
+
+    def test_resource_sampling_failure_is_explicit_and_does_not_leak_message(self):
+        def refused():
+            raise OSError('private exception detail')
+        with tempfile.TemporaryDirectory(dir='/var/tmp') as directory:
+            log = Path(directory)/'runner.log'
+            self.assertEqual(launcher.collect(['sh', '-c', 'exit 7'], log, 2,
+                                             sample_fn=refused), (7, None))
+            raw = log.with_name('samples.jsonl').read_text()
+            self.assertNotIn('private', raw)
+            self.assertEqual({json.loads(line)['sampling_error'] for line in raw.splitlines()}, {'OSError'})
+
     def test_collect_keeps_actual_failure_distinct(self):
         with tempfile.TemporaryDirectory(dir='/var/tmp') as directory:
             log = Path(directory)/'runner.log'
@@ -123,6 +144,32 @@ class NativeApiLauncherTests(unittest.TestCase):
             self.assertIn(rc, (124, 143, -15))
             self.assertIn('started', log.read_text())
             self.assertIn('settled', log.read_text())
+
+    def test_main_refuses_missing_or_failed_resource_evidence_without_masking_timeout(self):
+        old = Path.cwd()
+        for raw in ('', '{"sampling_error":"OSError"}\n'):
+            with tempfile.TemporaryDirectory(dir='/var/tmp') as directory:
+                os.chdir(directory)
+                try:
+                    Path('run608.sh').write_text('synthetic fixture')
+                    def collect_fixture(*args, **kwargs):
+                        Path('native-api608/samples.jsonl').write_text(raw)
+                        return (124, None)
+                    with patch.object(launcher, 'validate', return_value={'run_id':'fixture'}), \
+                         patch.object(launcher, 'external_runner', return_value='fixture'), \
+                         patch.object(launcher, 'resource_sampler', return_value=lambda: None), \
+                         patch.object(launcher, 'collect', side_effect=collect_fixture), \
+                         patch('sys.argv', ['diagnose-native-api608.py']), \
+                         contextlib.redirect_stdout(io.StringIO()):
+                        with self.assertRaises(SystemExit) as raised:
+                            launcher.main()
+                    self.assertEqual(raised.exception.code, 7)
+                    receipt = json.loads(Path('native-api608/diagnostic.json').read_text())
+                    self.assertEqual(receipt['command_exit'], 124)
+                    self.assertEqual(receipt['resource_sampling_errors'], 1)
+                    self.assertFalse(receipt['accepted_checkpoint'])
+                finally:
+                    os.chdir(old)
 
     def test_no_caller_selected_command(self):
         with patch('sys.argv', ['diagnose-native-api608.py', 'arbitrary']):

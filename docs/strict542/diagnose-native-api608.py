@@ -5,6 +5,7 @@ Only an admitted committed secretless export may execute this fixed entry point.
 Timeout is diagnostic evidence, never checkpoint or installation authority.
 """
 import hashlib
+import importlib.util
 import json
 import os
 from pathlib import Path
@@ -19,6 +20,7 @@ RUNNER = 'e2ed7e1337f5d0564b56e61174d0837440655cd38f75416608bff3de82780605'
 BUILD = 'e6c1270bf3e41e53e80f904fcf054df0636966e4b5f75c46ffaf890243ca326c'
 HELPER = 'a558db9afacd22111fb5c2590fe902298b12ea06910eac6efab43f4aa27c0de4'
 OBSERVERS = {
+    'diagnose-unified608.py': 'e9054f13c3b94e0813c825d3318e3da5e14beb40a37947be0cfd7ae6b22d7aa8',
     'native-api-phases608.mjs': 'f50191444745bf8710fe513b66d36a2cfb16b50f9427d5875bb1aba8a68be87d',
     'install-native-api-phases608.mjs': '87fb06525b6baa62adf05a8308f5281271659a952422126582c1d14b7c307d83',
 }
@@ -68,6 +70,15 @@ def validate():
         if Path(name).is_symlink() or digest(name) != expected:
             raise ValueError('observer pin mismatch')
     return manifest
+
+
+def resource_sampler():
+    # validate() pins this external module first. Import only its maintained
+    # read-only sample function; its historical profiler/main never executes.
+    spec = importlib.util.spec_from_file_location('resource_sampler608', Path('diagnose-unified608.py'))
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.sample
 
 
 def live_group(group):
@@ -125,11 +136,22 @@ def forward_events(stream):
                 print(json.dumps(event, sort_keys=True), flush=True)
 
 
-def collect(command, output, limit=1500):
+def collect(command, output, limit=1500, sample_fn=None):
     """Bound the whole setup/probe tree; forward cancellation and settle it."""
     cancelled = []
     child = None
     phase_stream = None
+    stats = Path(output).with_name('samples.jsonl').open('x') if sample_fn else None
+    next_sample = 0
+
+    def record_sample():
+        try:
+            value = sample_fn()
+        except Exception as error:
+            # Record incomplete observation without printing exception details.
+            value = {'sampling_error': type(error).__name__}
+        stats.write(json.dumps(value, sort_keys=True)+'\n')
+        stats.flush()
 
     def forward(signum, frame):
         cancelled.append(signum)
@@ -145,6 +167,9 @@ def collect(command, output, limit=1500):
             child = subprocess.Popen(['timeout', '-k', '15s', str(limit)+'s', *command],
                                      stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
             while child.poll() is None:
+                if stats is not None and time.monotonic() >= next_sample:
+                    record_sample()
+                    next_sample = time.monotonic() + 10
                 phase_log = Path('result608-unified-0/unified-0/build.log')
                 if phase_stream is None and phase_log.is_file():
                     phase_stream = phase_log.open()
@@ -160,10 +185,14 @@ def collect(command, output, limit=1500):
                             os.killpg(child.pid, signal.SIGKILL)
                             child.wait()
             settle_group(child.pid)
+            if stats is not None:
+                record_sample()  # Post-settlement sample; active samples precede it.
             if phase_stream is not None:
                 forward_events(phase_stream)
             return child.returncode, (128 + cancelled[0] if cancelled else None)
     finally:
+        if stats is not None:
+            stats.close()
         if phase_stream is not None:
             phase_stream.close()
         for sig, handler in previous.items():
@@ -194,7 +223,9 @@ PINNED_BUILD
 sh ../native-api-launch608.sh "$1"
 ''')
     started = time.monotonic()
-    rc, cancelled = collect(['sh', 'native-api-inner608.sh'], result/'runner.log')
+    rc, cancelled = collect(['sh', 'native-api-inner608.sh'], result/'runner.log', sample_fn=resource_sampler())
+    samples = [json.loads(line) for line in (result/'samples.jsonl').read_text().splitlines()]
+    sampling_errors = sum('sampling_error' in sample for sample in samples) or (0 if samples else 1)
     outcome = Path('result608-unified-0')
     if outcome.exists():
         outcome.rename(result/'unified-0')
@@ -205,8 +236,11 @@ sh ../native-api-launch608.sh "$1"
                'elapsed_seconds': time.monotonic()-started,
                'setup_and_probe_limit_seconds': 1500, 'compiler_limit_seconds': 900,
                'preload_smoke_limit_seconds': 30,
+               'resource_samples': len(samples), 'resource_sampling_errors': sampling_errors,
                'application_authority': False, 'accepted_checkpoint': False,
                'run_id': manifest['run_id']}
+    if sampling_errors and receipt['collection_exit'] == 0:
+        receipt['collection_exit'] = 7
     (result/'diagnostic.json').write_text(json.dumps(receipt, sort_keys=True, indent=2)+'\n')
     print(json.dumps(receipt), flush=True)
     raise SystemExit(receipt['collection_exit'])

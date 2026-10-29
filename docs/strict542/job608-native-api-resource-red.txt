@@ -1,0 +1,27 @@
+..........EE..
+======================================================================
+ERROR: test_resource_samples_reuse_fixed_sampler_and_preserve_actual_status (test_diagnose_native_api608.NativeApiLauncherTests.test_resource_samples_reuse_fixed_sampler_and_preserve_actual_status)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/deploy/agentq/tmp/source552/docs/strict542/test_diagnose_native_api608.py", line 103, in test_resource_samples_reuse_fixed_sampler_and_preserve_actual_status
+    self.assertEqual(launcher.collect(['sh', '-c', 'exit 7'], log, 2,
+                     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                     sample_fn=lambda: sample), (7, None))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: collect() got an unexpected keyword argument 'sample_fn'
+
+======================================================================
+ERROR: test_resource_sampling_failure_is_explicit_and_does_not_leak_message (test_diagnose_native_api608.NativeApiLauncherTests.test_resource_sampling_failure_is_explicit_and_does_not_leak_message)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/deploy/agentq/tmp/source552/docs/strict542/test_diagnose_native_api608.py", line 114, in test_resource_sampling_failure_is_explicit_and_does_not_leak_message
+    self.assertEqual(launcher.collect(['sh', '-c', 'exit 7'], log, 2,
+                     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                     sample_fn=refused), (7, None))
+                                     ^^^^^^^^^^^^^^^^^^
+TypeError: collect() got an unexpected keyword argument 'sample_fn'
+
+----------------------------------------------------------------------
+Ran 14 tests in 2.467s
+
+FAILED (errors=2)
