@@ -17,6 +17,9 @@ it is not the future package or installed-target inventory. Do not repeat
 accepted stages without a product source correction requiring a new freeze.
 The full current declaration/compiler/package chain, final artifact/action/old-new
 inventory/seal reviews and actual automatic queue review remain outstanding.
+**Current blocker (2026-10-29):** see job608-unified0-budget-blocker.md. The smallest
+unified-0 unit exceeds the 4 GiB/1 CPU offload ceiling, so S must decide on the lease.
+
 **595 MUST NOT APPLY.** This status supersedes older candidate95 status/freeze
 paragraphs below. Their candidate95 command pins and 669-path inventory are
 historical, blocked preparation; reconcile them explicitly to the eventual
