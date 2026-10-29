@@ -170,6 +170,30 @@ diagnostic evidence only. Measure first; only an evidenced owner-level change
 can justify a changed build attempt. A single full global pass may itself
 exceed the current finite budget; this analysis supplies no workaround for that.
 
+## Existing finite CPU profiling route
+
+Additional read-only inspection of the same pinned upstream revision found
+`packages/typescript/src/api/async/api.ts:264,270,597–622` exposes
+`api.internal.startCPUProfile(dir)` and `stopCPUProfile()`. The async client
+clears its pending-batch marker before awaiting a request
+(`async/client.ts:202–220,259–294`); incoming RPCs run in separate goroutines
+(`tsc/internal/ipc/conn_async.go:97–106`). A later timer can therefore submit
+stop while a long global request remains pending, without changing its query.
+`tsc/internal/pprof/pprof.go:108–120` serializes stop and invokes
+`ProfileSession.Stop:49–51`, which finalizes the CPU profile and closes its file
+before returning the filename. Session close does not finalize that profile.
+Any future reviewed diagnostic must obtain the successful stop receipt before
+its existing outer deadline; timeout alone supplies no finalized-profile proof.
+Heap profiling forces GC (`pprof.go:136`) and perturbs the measured workload.
+
+This is an existing diagnostic mechanism, not a prepared run or launch approval.
+If actual evidence isolates the first global query, adjacent global/semantic
+scheduling cannot shorten its mandatory whole-program semantic pass. File-subset
+diagnostic RPCs do not partition global, and splitting RPCs within one session
+does not make checker state resumable across terminated runs. A CPU profile can
+identify the exact checker or maintained source-type owner before proposing a
+correction; no measured cause or performance fix is established here.
+
 ## Exact upstream evidence pins
 
 Version `7.1.0-dev.20260920.1`, gitHead
@@ -182,6 +206,14 @@ Version `7.1.0-dev.20260920.1`, gitHead
 - Project project.go: `e8c70a7d2aa2a30f5d2db17733e1379f42d803f6309a700f5c2b57b523a17d03`
 - Project checkerpool.go: `3737b2244b8eb094e81ac80bd77199676512dc76327fc8cc1ed6cd2927aeaf56`
 - Compiler program.go: `72f0b97bca110d5893b03c6ac8349dcdabe627c55f58f05a0dbd9b5a6da6cadb`
+- Async API (`async-api.ts`, upstream `packages/typescript/src/api/async/api.ts`):
+  `8103a368e0a1141c2ada59121432e7bf101c311a58bcdb88089f8a316e3b78be`
+- Async client (`async-client.ts`, upstream `packages/typescript/src/api/async/client.ts`):
+  `18c5e201e68a2ecdb6c1163739d638d2819b861d2ac87a0bc0ba126b2cd35a03`
+- Async RPC (`ipc-conn_async.go`, upstream `tsc/internal/ipc/conn_async.go`):
+  `6c6bf2a14c7dd847d208ebca0d075421ebe015bcef1606544dc77cd7cb030498`
+- Profiling (`pprof.go`, upstream `tsc/internal/pprof/pprof.go`):
+  `bae9085cf6c929abfcfba62b0559dfa4b437a057a8c9d8f66a48806eecffb7ec`
 
 Exact checker.go was read directly from the pinned upstream revision and
 streamed-hashed without retaining a new source file:
