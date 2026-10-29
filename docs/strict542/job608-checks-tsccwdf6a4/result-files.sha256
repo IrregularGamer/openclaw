@@ -1,0 +1,7 @@
+2f5411ec10cc6f358a4e8517cdbe54b5f744961d99b634c31a885ee9e95c8181  ./checks/installed.json
+573936306ca43185a391aa3e596be301ae5c176d35b9d2ca4afd0aa4b467052e  ./checks/stage-receipt.json
+156c53ed7ea48d69e3a7e013df0e815bb06e82cba3dc3d3f01e9fe2b3a44c81c  ./checks/tests.log
+9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa  ./exit-code.txt
+2f5411ec10cc6f358a4e8517cdbe54b5f744961d99b634c31a885ee9e95c8181  ./strict542-checks/installed.json
+d0b98d9e7640169a5dbce32dffcc4a1634e138ca31f6adcfd68cd87fec063335  ./strict542-checks/installed.log
+156c53ed7ea48d69e3a7e013df0e815bb06e82cba3dc3d3f01e9fe2b3a44c81c  ./strict542-checks/tests.log
