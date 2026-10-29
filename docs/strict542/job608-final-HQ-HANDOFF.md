@@ -1,6 +1,21 @@
 # Job608: exact preparation handoff to595
 
-**Current boundary (2026-10-28):** preparation remains INCOMPLETE. Candidate
+**Current boundary (2026-10-29):** preparation remains INCOMPLETE. Executable
+freeze is `a39ad5ee95609193502850d0dbb87b5dcbb5e3e3`, common export
+`d28756248bc60436831085e9c03b7738795efc6dd1fc4ad79de2e216c0ef3f62`.
+Checks/native/runtime have independent acceptance `2e19dbd1`/`4f54ce46`/`9f5d4331`.
+The exact next step is [the current stage continuation](job608-after-substep-budget-continuation.md)
+and its linked UNUSED unified-0 preflight/review. Do not repeat completed stages.
+The full current declaration/compiler/package chain, final artifact/action/old-new
+inventory/seal reviews and actual automatic queue review remain outstanding.
+**595 MUST NOT APPLY.** This status supersedes older candidate95 status/freeze
+paragraphs below. Their candidate95 command pins and 669-path inventory are
+historical, blocked preparation; reconcile them explicitly to the eventual
+successful package/freeze before final exact reviews. All detailed original
+seal-validation, natural-gap genuine HQ, fresh post-restart dual acknowledgement,
+backup, rollback and reseal rules below remain requirements.
+
+**Historical boundary (2026-10-28):** preparation remains INCOMPLETE. Candidate
 frozen executable source is `95e62f8b6c7af341b2dfc21163627aa8a533649d`, common
 export `805d8049971ef41db03eeb8d701c87ce5c0dafb848ba89f37c19e5b7322d1419`.
 Native lookup correction3c0901de has independent narrow approvale5aadaa5;
