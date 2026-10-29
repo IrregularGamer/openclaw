@@ -1,0 +1,5 @@
+9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa  ./exit-code.txt
+242dfc9339a27341109c711a8bf6ece7495e9904b8ab13735a33ea6bee36b5cb  ./runtime/build.log
+9e028d031b3b06d8fbbae8c4817e53ee06896e8e05097fa261363af73bdbd9c5  ./runtime/checkpoint.tar.gz
+3e284e2cb6e957d0e195a78f71a59fe4a432710ce5acbd9b84167aed85a1bb04  ./runtime/stage-receipt.json
+78e386bf2d4e2a6a28436ebce3501c0dd07e7d8719ac70e6acdc0ff1b0bbc06c  ./strict542-checks/pnpm-path.txt
