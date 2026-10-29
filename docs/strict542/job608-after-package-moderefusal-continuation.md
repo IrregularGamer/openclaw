@@ -46,10 +46,14 @@ the 586 rule. Do not `git pull` source552 in a worker. 595 MUST NOT APPLY.
 - unified-0 m674: rc0 (evidence 93a37171; background Bash 2800s, offload.rc 0, build +430s, unified-0-pass),
   checkpoint b22eb141 9 entries 0 group/other-writable, preflight APPROVE 639aa75c, independent ACCEPT f30faed4.
   Accepted input: P/stage-unified-0-m674/result608-unified-0.
-- NEXT fresh worker, FIRST heavy action: unified-1 m674 (prepare, gates, independent preflight, ONE launch) with
-  `--stage unified-1 --input P/stage-native-m674/result608-native --input P/stage-runtime-m674/result608-runtime`
-  (STAGES['unified-N'] = native, runtime), --dest P/stage-unified-1-m674, caps as job608-unified-1-tsccwdf6a4-launch.md
-  (2460/2400s, 14g/4CPU; never raise), all gates above, one launch per worker; then unified-2..5 the same way.
+- unified-1 m674: rc0 (evidence 514da3ba; background Bash 2800s, offload.rc 0, build +443s, unified-1-pass),
+  checkpoint 4208af9f 29 entries 0 group/other-writable, preflight 14e9d421 APPROVE 12e8caac, independent ACCEPT c13d0b6a.
+  Accepted input: P/stage-unified-1-m674/result608-unified-1.
+- NEXT fresh worker, FIRST heavy action: unified-2 m674 (prepare, gates, independent preflight, ONE launch) with
+  `--base P/stage-unified-0-tsccwdf6a4 --commit 674840b6 --stage unified-2 --input P/stage-native-m674/result608-native
+  --input P/stage-runtime-m674/result608-runtime` (STAGES['unified-N'] = native, runtime), --dest P/stage-unified-2-m674,
+  caps as job608-unified-2-tsccwdf6a4-launch.md (never raise), all gates above, one launch per worker; then unified-3..5.
   Worker harness: give the Bash call running `offload run` a timeout >= offload --timeout + 300s (ms), or run it in
   the foreground with timeout 600000 only if --timeout <= 420; the background default kills at 600s.
-  prepare-stage608-export.py took ~3 min here; start it immediately so the >=2655s gate still holds at launch.
+  storage608.py needs `check --root P --stage S`. Gates+launch in one background Bash took ~5 min before admission.
+  prepare-stage608-export.py took ~3-4 min here; start it immediately so the >=2655s gate still holds at launch.
