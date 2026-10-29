@@ -1,0 +1,5 @@
+9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa  ./exit-code.txt
+ab5dfafcebf46dfabec996271c85ccb9f8ad11140127736a2fe072e48bda8f89  ./sdk-1/build.log
+f31068ea0cb09e1a53862bcb3d1f0b50c9f21a5b32f3a37762bd4ceb5df49640  ./sdk-1/checkpoint.tar.gz
+e57265f3879f60f18331c9270f3635c7d5b085579e6a6f75fb64a75ecc6b19ae  ./sdk-1/stage-receipt.json
+78e386bf2d4e2a6a28436ebce3501c0dd07e7d8719ac70e6acdc0ff1b0bbc06c  ./strict542-checks/pnpm-path.txt
