@@ -3,6 +3,7 @@ import { createRequire } from "node:module";
 import path from "node:path";
 import { API, EmitOnly, type EmitOutputFile } from "typescript/unstable/async";
 import { CompilerInputSnapshot } from "./compiler-input-snapshot.mts";
+import { withNativeCompilerGoEnv } from "./native-compiler-go-runtime.mts";
 import { createDeclarationInputBoundary, resolveRepoToolBinPath } from "./local-check-runtime.mts";
 import { createDeclarationFileSystem } from "./native-declaration-filesystem.mts";
 import {
@@ -30,7 +31,12 @@ type NativeCompilationOptions = {
 };
 
 /** Compile behind one filesystem boundary; callers publish only the sealed result. */
-export async function compileNativeProject({
+export async function compileNativeProject(options: NativeCompilationOptions) {
+  // The native compiler shares the build's memory lease with this process.
+  return withNativeCompilerGoEnv(() => compileNativeProjectOnce(options));
+}
+
+async function compileNativeProjectOnce({
   cwd,
   configFile,
   roots,
