@@ -1,0 +1,6 @@
+90de56901a518198d2e551d0e56efb8e7b88c43b1c5e192a6524cedfc0e1c9d7  ./compiler/stage-receipt.json
+42249f388170d9eff8bbd6f762e950cc8864669d4a8b919ac4e18a6af18e779b  ./compiler/tests.log
+9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa  ./exit-code.txt
+942ad78c2308cd0a0bda278a6b96ecea840358f559fe7bd0fb3520bc05e7c861  ./result598-native/release-phase-trace.log
+56682414120f0dd5b29f15aef8feb24143a2619f888b92a33987f40487d24418  ./result598-native/stock-patched-equality.json
+42249f388170d9eff8bbd6f762e950cc8864669d4a8b919ac4e18a6af18e779b  ./strict542-checks/tests.log
