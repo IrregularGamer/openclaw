@@ -1,0 +1,102 @@
+{
+  "node": {
+    "cancelled": [
+      0,
+      0,
+      0
+    ],
+    "fail": [
+      0,
+      0,
+      0
+    ],
+    "pass": [
+      101,
+      28,
+      39
+    ],
+    "skipped": [
+      0,
+      0,
+      0
+    ],
+    "tests": [
+      101,
+      28,
+      39
+    ],
+    "todo": [
+      0,
+      0,
+      0
+    ]
+  },
+  "outputs": {
+    "checks/installed.json": "ce114f62ec796f93e4b1baa8323aaf37dc20ed347ab17802597f3d233f0fc3fa",
+    "checks/tests.log": "7aab5eb518face18a572ba7cd7a3473c4e0231d00dd5736bb76bfb2b3f43a18b"
+  },
+  "python_groups": [
+    15,
+    18,
+    13,
+    19,
+    17,
+    3,
+    5,
+    2,
+    6,
+    14,
+    16,
+    7
+  ],
+  "python_ok_groups": 12,
+  "python_total": 135,
+  "receipt_sha256": "744ef54e7b77a62ea408bfcf1ec32f19dca04626c8cadef21d41e9ce9dca615c",
+  "skips": [
+    {
+      "file": "native-declaration-boundary.test.ts",
+      "name": "emits and captures checkout-local inputs through a Windows 8.3 alias",
+      "status": "skipped"
+    },
+    {
+      "file": "native-declaration-boundary.test.ts",
+      "name": "emits and captures checkout-local inputs through a directory alias targeting Windows 8.3",
+      "status": "skipped"
+    },
+    {
+      "file": "native-declaration-boundary.test.ts",
+      "name": "emits and captures checkout-local inputs through a Windows namespaced executable",
+      "status": "skipped"
+    },
+    {
+      "file": "tsdown-declaration-resolution.test.ts",
+      "name": "tsdown checkout declaration resolution starts the checkout compiler when its Windows executable uses an extended-length path",
+      "status": "skipped"
+    },
+    {
+      "file": "tsdown-declaration-resolution.test.ts",
+      "name": "tsdown checkout declaration resolution compiles and receipts every local input through a Windows 8.3 alias",
+      "status": "skipped"
+    },
+    {
+      "file": "tsdown-declaration-resolution.test.ts",
+      "name": "tsdown checkout declaration resolution compiles and receipts every local input through a directory alias targeting Windows 8.3",
+      "status": "skipped"
+    },
+    {
+      "file": "tsdown-declaration-resolution.test.ts",
+      "name": "tsdown checkout declaration resolution compiles and receipts every local input through a directory alias targeting a case alias",
+      "status": "skipped"
+    }
+  ],
+  "tooling_wall_seconds": 644.5,
+  "vitest": {
+    "numFailedTests": 0,
+    "numPassedTestSuites": 17,
+    "numPassedTests": 272,
+    "numPendingTests": 7,
+    "numTotalTestSuites": 17,
+    "numTotalTests": 279,
+    "success": true
+  }
+}
