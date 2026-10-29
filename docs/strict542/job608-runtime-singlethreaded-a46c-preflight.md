@@ -41,7 +41,7 @@ printf '%s\n' "$status608" > ../runtime-singlethreaded-a46c-offload.rc
 exit "$status608"
 ```
 
-Afterwards `storage608.py result --root <private> --stage runtime --result <abs result608-runtime>`
+Afterwards `storage608.py result --stage runtime --result <abs result608-runtime>`
 before acceptance. Acceptance/failure rules unchanged from the 1bed runtime
 preflight; on timeout or failure do not rerun unchanged. Then unified-0
 (measured config-15) per job608-after-singlethreaded-continuation.md.
