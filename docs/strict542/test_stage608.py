@@ -159,6 +159,23 @@ class Stage608Test(unittest.TestCase):
         self.assertEqual(r.returncode,7);self.assertIn('STEP608 builder-fail 7',r.stdout)
         self.assertIn('hidden-build-error',r.stdout);self.assertNotIn('reached',r.stdout)
 
+    def test_runner_extracts_source_without_group_or_other_write(self):
+        import io,re,subprocess,tarfile
+        runner=(Path(__file__).resolve().parent/'run-stage608.sh').read_text()
+        before,after=runner.split('\nmkdir source native-source\n',1)
+        self.assertTrue(before.endswith('\numask 022'),'umask must directly precede extraction')
+        extracts=re.findall(r'^tar .*$',after,re.M)
+        self.assertEqual(len(extracts),3)
+        for line in extracts:self.assertTrue(line.startswith('tar --no-same-permissions -xf '),line)
+        d=Path(tempfile.mkdtemp());buf=io.BytesIO()
+        with tarfile.open(fileobj=buf,mode='w') as a:
+            for name,mode,kind in [('dir',0o775,tarfile.DIRTYPE),('dir/CHANGELOG.md',0o664,tarfile.REGTYPE),('dir/bin.sh',0o775,tarfile.REGTYPE)]:
+                i=tarfile.TarInfo(name);i.mode=mode;i.type=kind;a.addfile(i,io.BytesIO(b'') if kind==tarfile.REGTYPE else None)
+        (d/'source598.tar').write_bytes(buf.getvalue());(d/'source').mkdir()
+        subprocess.run(['sh','-c','umask 002\numask 022\n'+extracts[0]],cwd=d,check=True)
+        modes={p.relative_to(d/'source').as_posix():p.stat().st_mode&0o7777 for p in (d/'source').rglob('*')}
+        self.assertEqual(modes,{'dir':0o755,'dir/CHANGELOG.md':0o644,'dir/bin.sh':0o755})
+
     def test_receipt_pins_outputs(self):
         root=self.build('checks');res=root/'result608-checks';(res/'checks').mkdir(parents=True)
         (res/'checks/tests.log').write_bytes(b'checks\n');(res/'checks/installed.json').write_bytes(b'{}')

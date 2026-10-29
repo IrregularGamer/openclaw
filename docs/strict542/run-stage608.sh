@@ -49,10 +49,16 @@ import os
 assert 'OPENCLAW_608_BOUNDED_PACKAGE' not in os.environ, 'inherited bounded package policy'
 assert not any(key.startswith('NAPI_RS_') for key in os.environ), 'inherited native compiler control'
 ORDINARY_ENV
+# job608 package refusal d5eff2b7: git archive stores 0664/0775 (tar.umask 0002)
+# and tar keeps archive modes for the superuser, so the source tree, every
+# checkpoint built from it and the deployed runtime were group-writable and
+# application598 correctly refused them. Create the tree without archive write
+# bits; every later writer inherits the same umask.
+umask 022
 mkdir source native-source
-tar -xf source598.tar -C source
-tar -xf successor598.tar -C source
-tar -xf native598.tar -C native-source
+tar --no-same-permissions -xf source598.tar -C source
+tar --no-same-permissions -xf successor598.tar -C source
+tar --no-same-permissions -xf native598.tar -C native-source
 node --input-type=module -e 'import fs from "node:fs"; import {releaseConsumedArchives} from "./source/scripts/lib/disposable-build-inputs.mjs"; const sample=phase=>console.log(JSON.stringify({kind:phase,current:fs.readFileSync("/sys/fs/cgroup/memory.current","utf8"),stat:fs.readFileSync("/sys/fs/cgroup/memory.stat","utf8")})); sample("BEFORE_ARCHIVE_RELEASE608"); releaseConsumedArchives(process.cwd()); sample("AFTER_ARCHIVE_RELEASE608")'
 cd source
 export NATIVE_SOURCE="$PWD/../native-source"
