@@ -1,0 +1,201 @@
+Recorded focused RED output; trailing line whitespace removed.
+✖ fixed timer stops and finalizes while genuine global query remains unresolved (4.393884ms)
+✖ early result clears timer and stops exactly once (0.49845ms)
+✖ genuine rejection object survives profiling failure (0.504316ms)
+✖ timer and query completion race joins one stop (0.53701ms)
+✖ startError refuses diagnostic success but calls original query once (0.740315ms)
+✖ stopError refuses diagnostic success but calls original query once (0.2879ms)
+✖ receiptError refuses diagnostic success but calls original query once (0.300183ms)
+✖ writeError refuses diagnostic success but calls original query once (0.303381ms)
+✖ reportError refuses diagnostic success but calls original query once (0.38602ms)
+✖ failed start preserves a genuine synchronous query failure (0.816565ms)
+✖ overlap refuses and poisons diagnostic acceptance without a second original query (0.415589ms)
+✖ a second API owner refuses without replacing the captured genuine owner (0.330635ms)
+✖ global before a captured API owner refuses (0.439391ms)
+✖ production store refuses a symlink at the fixed profile directory (3.280113ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 0
+ℹ fail 14
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 252.099354
+
+✖ failing tests:
+
+test at docs/strict542/native-api-cpu-profile608.test.mjs:47:1
+✖ fixed timer stops and finalizes while genuine global query remains unresolved (4.393884ms)
+  Error: CPU profile adapter not implemented
+      at installNativeCpuProfile608 (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.mjs:3:9)
+      at fixture (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:36:17)
+      at TestContext.<anonymous> (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:48:28)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+
+test at docs/strict542/native-api-cpu-profile608.test.mjs:71:1
+✖ early result clears timer and stops exactly once (0.49845ms)
+  Error: CPU profile adapter not implemented
+      at installNativeCpuProfile608 (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.mjs:3:9)
+      at fixture (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:36:17)
+      at TestContext.<anonymous> (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:72:22)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at docs/strict542/native-api-cpu-profile608.test.mjs:77:1
+✖ genuine rejection object survives profiling failure (0.504316ms)
+  Error: CPU profile adapter not implemented
+      at installNativeCpuProfile608 (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.mjs:3:9)
+      at fixture (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:36:17)
+      at TestContext.<anonymous> (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:78:37)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at docs/strict542/native-api-cpu-profile608.test.mjs:85:1
+✖ timer and query completion race joins one stop (0.53701ms)
+  Error: CPU profile adapter not implemented
+      at installNativeCpuProfile608 (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.mjs:3:9)
+      at fixture (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:36:17)
+      at TestContext.<anonymous> (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:86:27)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at docs/strict542/native-api-cpu-profile608.test.mjs:93:3
+✖ startError refuses diagnostic success but calls original query once (0.740315ms)
+  Error: CPU profile adapter not implemented
+      at installNativeCpuProfile608 (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.mjs:3:9)
+      at fixture (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:36:17)
+      at TestContext.<anonymous> (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:94:13)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at docs/strict542/native-api-cpu-profile608.test.mjs:93:3
+✖ stopError refuses diagnostic success but calls original query once (0.2879ms)
+  Error: CPU profile adapter not implemented
+      at installNativeCpuProfile608 (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.mjs:3:9)
+      at fixture (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:36:17)
+      at TestContext.<anonymous> (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:94:13)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at docs/strict542/native-api-cpu-profile608.test.mjs:93:3
+✖ receiptError refuses diagnostic success but calls original query once (0.300183ms)
+  Error: CPU profile adapter not implemented
+      at installNativeCpuProfile608 (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.mjs:3:9)
+      at fixture (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:36:17)
+      at TestContext.<anonymous> (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:94:13)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at docs/strict542/native-api-cpu-profile608.test.mjs:93:3
+✖ writeError refuses diagnostic success but calls original query once (0.303381ms)
+  Error: CPU profile adapter not implemented
+      at installNativeCpuProfile608 (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.mjs:3:9)
+      at fixture (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:36:17)
+      at TestContext.<anonymous> (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:94:13)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at docs/strict542/native-api-cpu-profile608.test.mjs:93:3
+✖ reportError refuses diagnostic success but calls original query once (0.38602ms)
+  Error: CPU profile adapter not implemented
+      at installNativeCpuProfile608 (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.mjs:3:9)
+      at fixture (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:36:17)
+      at TestContext.<anonymous> (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:94:13)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at docs/strict542/native-api-cpu-profile608.test.mjs:101:1
+✖ failed start preserves a genuine synchronous query failure (0.816565ms)
+  Error: CPU profile adapter not implemented
+      at installNativeCpuProfile608 (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.mjs:3:9)
+      at fixture (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:36:17)
+      at TestContext.<anonymous> (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:102:35)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at docs/strict542/native-api-cpu-profile608.test.mjs:107:1
+✖ overlap refuses and poisons diagnostic acceptance without a second original query (0.415589ms)
+  Error: CPU profile adapter not implemented
+      at installNativeCpuProfile608 (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.mjs:3:9)
+      at fixture (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:36:17)
+      at TestContext.<anonymous> (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:108:27)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at docs/strict542/native-api-cpu-profile608.test.mjs:115:1
+✖ a second API owner refuses without replacing the captured genuine owner (0.330635ms)
+  Error: CPU profile adapter not implemented
+      at installNativeCpuProfile608 (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.mjs:3:9)
+      at fixture (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:36:17)
+      at TestContext.<anonymous> (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:116:11)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at docs/strict542/native-api-cpu-profile608.test.mjs:121:1
+✖ global before a captured API owner refuses (0.439391ms)
+  Error: CPU profile adapter not implemented
+      at installNativeCpuProfile608 (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.mjs:3:9)
+      at fixture (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:36:17)
+      at TestContext.<anonymous> (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:122:11)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at docs/strict542/native-api-cpu-profile608.test.mjs:126:1
+✖ production store refuses a symlink at the fixed profile directory (3.280113ms)
+  Error: CPU profile adapter not implemented
+      at installNativeCpuProfile608 (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.mjs:3:9)
+      at fixture (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:36:17)
+      at TestContext.<anonymous> (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:133:13)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)

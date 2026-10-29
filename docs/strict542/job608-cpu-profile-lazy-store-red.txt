@@ -1,0 +1,153 @@
+Recorded focused RED output; trailing line whitespace removed.
+✖ install and snapshot capture do not create a store; first global creates it once (5.587289ms)
+✖ fixed timer stops and finalizes while genuine global query remains unresolved (2.628876ms)
+✔ early result clears timer and stops exactly once (0.818786ms)
+✔ genuine rejection object survives profiling failure (1.046722ms)
+✔ early genuine rejection stops once and preserves the same error object (0.525825ms)
+✔ timer and query completion race joins one stop (51.500466ms)
+✖ storeError refuses diagnostic success but calls original query once (1.494909ms)
+✔ startError refuses diagnostic success but calls original query once (4.18502ms)
+✔ stopError refuses diagnostic success but calls original query once (1.304971ms)
+✔ receiptError refuses diagnostic success but calls original query once (1.3344ms)
+✔ writeError refuses diagnostic success but calls original query once (0.951613ms)
+✔ reportError refuses diagnostic success but calls original query once (0.973534ms)
+✔ failed start preserves a genuine synchronous query failure (1.333711ms)
+✔ overlap refuses and poisons diagnostic acceptance without a second original query (12.334329ms)
+✔ a second API owner refuses without replacing the captured genuine owner (0.875575ms)
+✔ global before a captured API owner refuses (0.321536ms)
+✖ production store refuses a symlink at the fixed profile directory (3.889227ms)
+✖ production store publishes only the finalized fixed-directory bytes and their hash (5.284973ms)
+✔ production store refuses outside profile evidence (2.725264ms)
+✔ production store refuses empty profile evidence (3.470257ms)
+✔ production store refuses missing profile evidence (3.746157ms)
+✔ production store refuses symlink profile evidence (3.374428ms)
+✔ production store refuses hardlink profile evidence (3.006379ms)
+✔ production store refuses replaced-directory profile evidence (4.891626ms)
+✖ production store refuses over-cap profile evidence (76.34563ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 19
+ℹ fail 6
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 395.844652
+
+✖ failing tests:
+
+test at docs/strict542/native-api-cpu-profile608.test.mjs:47:1
+✖ install and snapshot capture do not create a store; first global creates it once (5.587289ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  1 !== 0
+
+      at TestContext.<anonymous> (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:48:28)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at docs/strict542/native-api-cpu-profile608.test.mjs:53:1
+✖ fixed timer stops and finalizes while genuine global query remains unresolved (2.628876ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+  +   'store'
+  -   'snapshot',
+  -   API {
+  -     internal: {
+  -       startCPUProfile: [AsyncFunction: startCPUProfile],
+  -       stopCPUProfile: [AsyncFunction: stopCPUProfile]
+  -     }
+  -   },
+  -   [
+  -     {
+  -       openProjects: [
+  -         'config'
+  -       ]
+  -     }
+  -   ]
+    ]
+
+      at TestContext.<anonymous> (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:58:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [Array],
+    expected: [Array],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at docs/strict542/native-api-cpu-profile608.test.mjs:106:3
+✖ storeError refuses diagnostic success but calls original query once (1.494909ms)
+  Error: CPU profile diagnostic refused
+      at refused (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.mjs:9:23)
+      at installNativeCpuProfile608 (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.mjs:73:46)
+      at fixture (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:36:17)
+      at TestContext.<anonymous> (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:107:13)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at docs/strict542/native-api-cpu-profile608.test.mjs:139:1
+✖ production store refuses a symlink at the fixed profile directory (3.889227ms)
+  Error: CPU profile diagnostic refused
+      at refused (file:///tmp/cpu608-test-Afvqmm/adapter.mjs:9:23)
+      at Module.installNativeCpuProfile608 (file:///tmp/cpu608-test-Afvqmm/adapter.mjs:73:46)
+      at TestContext.<anonymous> (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:149:24)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at docs/strict542/native-api-cpu-profile608.test.mjs:177:1
+✖ production store publishes only the finalized fixed-directory bytes and their hash (5.284973ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + undefined
+  - 8388608
+
+      at Object.check (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:186:14)
+      at async productionFixture (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:173:5)
+      at async TestContext.<anonymous> (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:178:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 8388608,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at docs/strict542/native-api-cpu-profile608.test.mjs:194:3
+✖ production store refuses over-cap profile evidence (76.34563ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async Object.check (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:208:9)
+      at async productionFixture (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:173:5)
+      at async TestContext.<anonymous> (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:195:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /CPU profile diagnostic refused/,
+    operator: 'rejects',
+    diff: 'simple'
+  }

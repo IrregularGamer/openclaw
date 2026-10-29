@@ -1,0 +1,33 @@
+✔ install and snapshot capture do not create a store; first global creates it once (5.684216ms)
+✔ fixed timer stops and finalizes while genuine global query remains unresolved (9.0162ms)
+✔ early result clears timer and stops exactly once (0.544149ms)
+✔ genuine rejection object survives profiling failure (1.25558ms)
+✔ early genuine rejection stops once and preserves the same error object (0.725549ms)
+✔ timer and query completion race joins one stop (2.139376ms)
+✔ storeError refuses diagnostic success but calls original query once (0.755777ms)
+✔ startError refuses diagnostic success but calls original query once (0.412605ms)
+✔ stopError refuses diagnostic success but calls original query once (0.357905ms)
+✔ receiptError refuses diagnostic success but calls original query once (0.412122ms)
+✔ writeError refuses diagnostic success but calls original query once (0.465811ms)
+✔ reportError refuses diagnostic success but calls original query once (0.258974ms)
+✔ failed start preserves a genuine synchronous query failure (0.630273ms)
+✔ overlap refuses and poisons diagnostic acceptance without a second original query (42.779739ms)
+✔ a second API owner refuses without replacing the captured genuine owner (1.010456ms)
+✔ global before a captured API owner refuses (0.516469ms)
+✔ production store refuses a symlink at the fixed profile directory (7.760085ms)
+✔ production store publishes only the finalized fixed-directory bytes and their hash (6.494459ms)
+✔ production store refuses outside profile evidence (3.799998ms)
+✔ production store refuses empty profile evidence (5.052273ms)
+✔ production store refuses missing profile evidence (3.101342ms)
+✔ production store refuses symlink profile evidence (3.115942ms)
+✔ production store refuses hardlink profile evidence (3.297799ms)
+✔ production store refuses replaced-directory profile evidence (4.774609ms)
+✔ production store refuses over-cap profile evidence (2.904563ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 304.816761

@@ -1,0 +1,48 @@
+Recorded focused RED output; trailing line whitespace removed.
+✔ fixed timer stops and finalizes while genuine global query remains unresolved (13.405655ms)
+✔ early result clears timer and stops exactly once (0.578842ms)
+✔ genuine rejection object survives profiling failure (1.059102ms)
+✔ timer and query completion race joins one stop (1.575937ms)
+✔ startError refuses diagnostic success but calls original query once (0.545287ms)
+✔ stopError refuses diagnostic success but calls original query once (0.2685ms)
+✔ receiptError refuses diagnostic success but calls original query once (0.245417ms)
+✔ writeError refuses diagnostic success but calls original query once (0.235906ms)
+✔ reportError refuses diagnostic success but calls original query once (0.336745ms)
+✔ failed start preserves a genuine synchronous query failure (0.641681ms)
+✔ overlap refuses and poisons diagnostic acceptance without a second original query (2.792168ms)
+✔ a second API owner refuses without replacing the captured genuine owner (0.422423ms)
+✔ global before a captured API owner refuses (0.2936ms)
+✔ production store refuses a symlink at the fixed profile directory (2.786622ms)
+✔ production store publishes only the finalized fixed-directory bytes and their hash (3.803092ms)
+✔ production store refuses outside profile evidence (2.544165ms)
+✔ production store refuses empty profile evidence (2.565175ms)
+✔ production store refuses missing profile evidence (2.196253ms)
+✔ production store refuses symlink profile evidence (45.229779ms)
+✔ production store refuses hardlink profile evidence (11.409628ms)
+✖ production store refuses replaced-directory profile evidence (6.222013ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 20
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 274.111135
+
+✖ failing tests:
+
+test at docs/strict542/native-api-cpu-profile608.test.mjs:175:3
+✖ production store refuses replaced-directory profile evidence (6.222013ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async Object.check (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:188:9)
+      at async productionFixture (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:155:5)
+      at async TestContext.<anonymous> (file:///home/deploy/agentq/tmp/source552/docs/strict542/native-api-cpu-profile608.test.mjs:176:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /CPU profile diagnostic refused/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
