@@ -20,59 +20,75 @@ All case membership/statuses match accepted a39a plus ONLY the new cap regressio
 real supervisor IPC refusal/cancellation/settlement cases passed. This accepts
 scoped checks ONLY; no successor native/runtime/build/package/action exists.
 
-## FIRST heavy action in the next fresh worker: native
+## Accepted native state
 
-Do not repeat prior exploration, fixes, accepted stages or the spent a39a run.
-Read this current checks result/acceptance first once available. The NEW native
-export is UNUSED and independently approved by ab7e8658; it was not launched
-because2460s+195s settlement no longer fit the preceding worker. Manifest:
-301a3b3c62bfedf3b40896cb7fb01f595acb9ba5d29449ad338bfb2c07ad72c6.
-Runner e2ed7e1337f5d0564b56e61174d0837440655cd38f75416608bff3de82780605;
-helpera558db9afacd22111fb5c2590fe902298b12ea06910eac6efab43f4aa27c0de4.
-Complete pins and exact command are job608-native-fullsize5aff1-preflight.json.
+NEW native-fullsize5aff1 is SPENT/SUCCESS, independently ACCEPTED73351f27.
+Actual client/result0; manifest301a3b3c, producing-stage receipt
+435ef3f26d1045eaca54ea9e8057737a812a5e279681e2c3bdd278f30fb62515.
+Compile receipt4a651254 and addon0b6607e7 reproduced byte-for-byte; inherited
+accepted libtests2f81179f is pinned evidence, not a newly repeated lib-test run.
+Seven lifetime cases and two real library cases (basic + compaction) passed;
+deliberate retention mutation failed as required. Full ten-file inventory and
+all four raw logs are recorded in job608-native-fullsize5aff1/; storage0,
+48652056B<64MiB. Never replay the immutable UNUSED prelaunch label.
+
+## FIRST heavy action in the next fresh worker: runtime
+
+Do not repeat accepted checks/native, old freezes or historical diagnostics.
+The NEW runtime export is UNUSED; exact independent preflight approval is
+required before launch. Native predecessor is ONLY the accepted NEW435ef3f2
+producing receipt and its three pinned outputs, never an a39a producer receipt.
+Manifest46f4f743157f10fa3b64b4256b179c5256b79f51632e17afb8c519b4311995ac;
+run_idstage608-runtime-fullsize5aff1. Runner e2ed7e13/helpera558db9a and common
+230f are unchanged. Complete pins: job608-runtime-fullsize5aff1-preflight.json.
+This worker has<2655s; runtime MUST NOT launch here. Preparer1e701de0 streamed
+archive verification with about24MiB RSS; no local heavy build/test occurred.
 
 ```sh
 set -eu
-cd /srv/encrypted/dev-move-98/agentq-source608-20261028-private/stage-native-fullsize5aff1
+cd /srv/encrypted/dev-move-98/agentq-source608-20261028-private/stage-runtime-fullsize5aff1
 sha256sum export-manifest.json run608.sh stage608.py
 python3 -I -B stage608.py verify-inputs
-python3 -I -B /home/deploy/agentq/tmp/source552/docs/strict542/storage608.py check --root /srv/encrypted/dev-move-98/agentq-source608-20261028-private --stage native
+python3 -I -B /home/deploy/agentq/tmp/source552/docs/strict542/storage608.py check --root /srv/encrypted/dev-move-98/agentq-source608-20261028-private --stage runtime
 offload health
 offload deadline
-# Require actual accepted checks, no active remote run, healthup, storage/input0,
-# and>=2655s remaining AFTER preflight. Prefer>=2895s including observed transfer.
-# If current RUNBOOK records JOB652-NO-FIXED-CAP-INSTALLED, omit mem/cpus;
-# otherwise the sealed old client needs explicit S-approved14g/4CPU as below.
-test ! -e result608-native
-test ! -e ../native-fullsize5aff1-offload.log
-test ! -e ../native-fullsize5aff1-offload.rc
+# Require actual accepted checks/native and exact independent runtime preflight,
+# no active remote run, healthup, storage/input0, >=2655s AFTER preflight.
+# Prefer>=2895s including observed transfer. Explicit14g/4CPU remains approved
+# under S1902/1905 while sealed old client defaults2g/1CPU; no budget mutation.
+test ! -e result608-runtime
+test ! -e ../runtime-fullsize5aff1-offload.log
+test ! -e ../runtime-fullsize5aff1-offload.rc
 set +e
-offload run --timeout 2460 --mem 14g --cpus 4 --artifacts result608-native -- timeout -k 15s 2400s sh run608.sh > ../native-fullsize5aff1-offload.log 2>&1
+offload run --timeout 2460 --mem 14g --cpus 4 --artifacts result608-runtime -- timeout -k 15s 2400s sh run608.sh > ../runtime-fullsize5aff1-offload.log 2>&1
 status608=$?
-printf '%s\n' "$status608" > ../native-fullsize5aff1-offload.rc
+printf '%s\n' "$status608" > ../runtime-fullsize5aff1-offload.rc
 exit "$status608"
 ```
 
-Afterward require actual client/result0, storage result cap64MiB, full exact
-manifest/source/common/run_id/input/output receipts and byte-identical pinned
-compile/lib-test receipts/addon0b6607e7; independently accept and commit/push.
-Do not mistake old native equality for the NEW producing-stage receipt.
+Afterward require actual client/result0, storage result cap128MiB, complete
+exact manifest/source/common/run_id/four-input/output receipts and safe complete
+runtime checkpoint inventory. Check every compiler record/status and full build
+log; independently accept and commit/push before any successor consumes it.
 An admitted execution failure is SPENT; preserve real log/rc and diagnose
-before a changed retry. Preadmission exit76 without any lease/transfer/placement
+before a changed retry. Preadmission76 without any lease/transfer/placement
 marker preserves UNUSED: continue FIRST in a fresh worker. Clean preadmission
-75/95 and unknown settlement follow their documented refusal/reconciliation
-rules; never mark a never-admitted export spent, bypass or retry outside budget.
+75/95 and unknown settlement follow documented refusal/reconciliation rules;
+never mark a never-admitted export spent, bypass or retry outside budget.
 
 ## Remaining exact graph and final application preparation
 
-With the committed unchanged preparer, make NEW runtime export at5aff/common230f
-with ONLY the NEW accepted native result, exact preflight/review and full14g/4CPU
-admitted lease. Accept complete result/checkpoint independently. Then unified-0,
-compiler, unified-1..5, middle, sdk-0/1, tail, package, each following exact
-stage608.py STAGES/OUTPUTS and NEW unique export/run_id, independently pinned
-predecessor receipts, storage and deadline admission. Never consume a39a
-predecessors or the unlaunched old compiler/unified1 exports. No arbitrary
-source refreeze is needed for later evidence/review-only commits.
+After independently ACCEPTED runtime, use the committed unchanged preparer
+for NEW unified-0 at5aff/common230f with ONLY accepted NEW native+runtime inputs.
+Require exact preflight/review and full14g/4CPU admitted lease, complete actual
+result/checkpoint and independent acceptance. Only genuine accepted unified-0
+unlocks compiler execution. A NEW compiler may be prepared now using native,
+but its600/540s14g/4CPU command remains conditionally gated on accepted unified-0
+and>=975s after preflight; no compiler runs in this worker. Then unified-1..5,
+middle, sdk-0/1, tail, package, each per exact stage608.py STAGES/OUTPUTS and
+NEW unique export/run_id, independently pinned predecessors/storage/deadline.
+Never consume a39a predecessors or unlaunched old compiler/unified1 exports.
+No arbitrary source refreeze is needed for evidence/review-only commits.
 
 Full current package/tree/build receipt, final old/new action and installed
 inventory, source/artifact/action/privilege/whole-original-and-next-seal reviews,

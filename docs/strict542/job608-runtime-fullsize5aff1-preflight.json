@@ -1,0 +1,70 @@
+{
+  "budget_authority": "S1902/1905; current reviewed explicit14g/4CPU, zero swap, no broker/unit/budget changes",
+  "common_archive_pins": {
+    "base_source_archive_sha256": "e79a0e45a4eaea4afe325ca94ba201d5ae43d09d8c15dc07d0695c87ba743de3",
+    "compiler_upstream_archive_sha256": "203aa4834d7a52522c758c81f6e493bea9fea828d4454fe2a25b9519d2d258ac",
+    "native_export_sha256": "d73e4e35720ffcb71856ce8168e75fa3b4fd49251fd78c811e1abded8b2701de"
+  },
+  "export": "/srv/encrypted/dev-move-98/agentq-source608-20261028-private/stage-runtime-fullsize5aff1",
+  "helper_sha256": "a558db9afacd22111fb5c2590fe902298b12ea06910eac6efab43f4aa27c0de4",
+  "launch": [
+    "offload",
+    "run",
+    "--timeout",
+    "2460",
+    "--mem",
+    "14g",
+    "--cpus",
+    "4",
+    "--artifacts",
+    "result608-runtime",
+    "--",
+    "timeout",
+    "-k",
+    "15s",
+    "2400s",
+    "sh",
+    "run608.sh"
+  ],
+  "launch_gates": [
+    "exact independent preflight approval",
+    "accepted native73351f27 and accepted checks9d1dfc33",
+    "fresh healthup,storage0,verify-inputs0,no active competing remote run",
+    "fresh worker with remaining>=2655s AFTER preflight; prefer>=2895s",
+    "unique UNUSED export/no result/log/rc; never replay admitted attempt"
+  ],
+  "log": "/srv/encrypted/dev-move-98/agentq-source608-20261028-private/runtime-fullsize5aff1-offload.log",
+  "manifest_sha256": "46f4f743157f10fa3b64b4256b179c5256b79f51632e17afb8c519b4311995ac",
+  "minimum_worker_seconds": 2655,
+  "native_acceptance": "job608-native-fullsize5aff1-independent-acceptance.md",
+  "native_acceptance_commit": "73351f27",
+  "preferred_worker_seconds_including_observed_transfer": 2895,
+  "preparer_sha256": "1e701de05d9ccdfccee532cfef8bcc93ba0fc8f9937caf86d689cfc3eda216f2",
+  "rc": "/srv/encrypted/dev-move-98/agentq-source608-20261028-private/runtime-fullsize5aff1-offload.rc",
+  "required_checks": 14,
+  "run_id": "stage608-runtime-fullsize5aff1",
+  "runner_sha256": "e2ed7e1337f5d0564b56e61174d0837440655cd38f75416608bff3de82780605",
+  "scope": "SOURCE ONLY preparation; no launch in current worker;595 MUST NOT APPLY",
+  "source_approval": "6dd1e199",
+  "source_commit": "5aff81feb4098654ce07e7ff09e336119770be85",
+  "source_export_sha256": "230f79f5b6f95826a02a15f1c5fdd9d1fbc5a7abd60064b33e3d1776af0f086d",
+  "source_inventory_approval": "6035be0c",
+  "stage": "runtime",
+  "stage_inputs": {
+    "native/libtests-receipt.json": "2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946",
+    "native/receipt.json": "4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e",
+    "native/rolldown-binding.linux-x64-gnu.node": "0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042",
+    "native/stage-receipt.json": "435ef3f26d1045eaca54ea9e8057737a812a5e279681e2c3bdd278f30fb62515"
+  },
+  "state": "UNUSED",
+  "storage_admission": {
+    "current_unique_bytes": 1486740825,
+    "free_bytes": 5837737984,
+    "free_reserve_bytes": 2147483648,
+    "max_store_bytes": 4294967296,
+    "return_cap_bytes": 134217728,
+    "stage": "runtime"
+  },
+  "successor_archive_sha256": "cfee3626edc6738c8db6cd7f5507a5d9a254e10c50ab1ef55a7d3666f2c582f6",
+  "verify_inputs_exit": 0
+}

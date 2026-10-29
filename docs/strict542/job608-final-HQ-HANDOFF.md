@@ -1,17 +1,19 @@
 **Current accepted state (2026-10-29):** executable freeze
 5aff81feb4098654ce07e7ff09e336119770be85, common export
 230f79f5b6f95826a02a15f1c5fdd9d1fbc5a7abd60064b33e3d1776af0f086d.
-S1902/1905 fixed-cap source correction has independent approval6dd1e199;
-full806-path source inventory independently approved6035be0c. Fresh scoped
-checks client/result0,575passed plus exact same7platform skips, receipt744ef54e,
-are independently ACCEPTED in job608-checks-fullsize5aff1-independent-acceptance.md.
-FIRST next fresh worker: exact UNUSED native export301a3b3c, reviewed ab7e8658,
-at full14g/4CPU/2460s and>=2655s remaining after preflight. Use
-[job608-after-fullsize-cap-continuation.md](job608-after-fullsize-cap-continuation.md).
-All a39a future exports/receipts are superseded for this successor; no relabelling.
-Full build/package, final artifact/action/privilege/seal/automatic-review and
-ordered actual HQ595 application evidence remain incomplete.
-**595 MUST NOT APPLY.**
+Source correction independently approved6dd1e199; full806-path source inventory
+approved6035be0c. Scoped checks575passed + same7platform skips, receipt744ef54e,
+independently accepted9d1dfc33. NEW native actual client/result0, producing receipt
+435ef3f2, exact compile4a651254/libtests2f81179f/addon0b6607e7, independently
+accepted73351f27. Evidence: job608-native-fullsize5aff1/.
+FIRST next fresh worker: NEW UNUSED runtime export46f4f743, exact independent
+preflight approval required, full14g/4CPU/2460s and>=2655s after preflight.
+Use [current continuation](job608-after-fullsize-cap-continuation.md).
+All a39a future exports/receipts are superseded; no relabelling. Runtime,
+declarations/compiler/package, final artifact/action/privilege/seal/automatic
+review and actual ordered HQ595 application evidence remain incomplete.
+**595 MUST NOT APPLY.** This current status supersedes historical paragraphs below;
+reconcile their candidate95 commands only to the eventual actual5aff package.
 
 **Full-size continuation (2026-10-29, S1902/1905):** the fixed4GiB/1CPU
 ceiling and Decision649 are superseded. Cancelled650 source is excluded.
