@@ -9,7 +9,7 @@ Batch preflight40bd39fa; launch7b3ca6df; unified-1 independent ACCEPT8d229ccb.
 ONE admitted foreground offload:
 `offload run --timeout 2460 --mem 14g --cpus 4 --artifacts result608-unified-2 -- timeout -k 15s 2400s sh run608.sh`.
 Actual client rc0, result exit0, STEP608 build-done +430s, unified-2-pass;
-tsdown invocation 1/1 finished in 274.7s; no error/fail/cancel lines in build.log.
+tsdown invocation 1/1 finished in 293.1s (corrected per independent review16819bd2); no error/fail/cancel lines in build.log.
 Storage result check0: complete five-file result 1226040 bytes <33554432.
 Receipt SHA256 52b1c90e4bc7a9f8363d1e22ff3c276f4ae5cfb40b5aec781877d638126096d3.
 Checkpoint SHA256 c8202cf8c1e9ba38baf7aba36706364c047435d964d711b58be925c270bafda6 remains in the
