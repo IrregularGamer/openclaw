@@ -1,0 +1,10 @@
+9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa  ./exit-code.txt
+2f81179f5d1bf14d1519cf446935a3cd783da0e28e79a69067c85e5f873dd946  ./native/libtests-receipt.json
+4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e  ./native/receipt.json
+0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042  ./native/rolldown-binding.linux-x64-gnu.node
+1047485796fe27d9f653a734dcebd1828caaa455eaa1ee64d625b024c35ed6d3  ./native/stage-receipt.json
+f0d2bb1e39eaca29b253ad0457d2464b9467328d2fe122af628589e81504657e  ./result598-native/compaction-tests.log
+98b7c61b0118eac22dd4ff8a83b9a5b89614889db21863f995f8d517d9afcd86  ./result598-native/lifetime-retention-negative.log
+4a651254152b051476758d1a1a9156d87c535ce8242f30b7213f94862931ed9e  ./result598-native/receipt.json
+0b6607e73d6f68da2401f79ba06e0a1d8659ca28ab1648aebd98844be60de042  ./result598-native/rolldown-binding.linux-x64-gnu.node
+0975c0dca9813311e85dfb1cd2eb7be01ab162fb75dc1a9a56cb7658e38487b5  ./strict542-checks/native-rebuild.log
