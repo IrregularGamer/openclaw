@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto';
-// Whole-config scheduling for a complete typed package under an admitted 4 GiB lease.
+// Whole-config scheduling for a complete typed package under an observed broker-admitted lease.
 export const BOUNDED_PACKAGE_DEADLINE_MS = 2_700_000;
 export const UNIFIED_GRAPH_THRASH_LIMIT_BYTES = 1625784320;
 export const BOUNDED_COMPILER_ENV = Object.freeze({
@@ -7,12 +7,14 @@ export const BOUNDED_COMPILER_ENV = Object.freeze({
   RAYON_NUM_THREADS: '1', TOKIO_WORKER_THREADS: '1', MIMALLOC_ALLOW_THP: '0',
   OPENCLAW_RUN_NODE_SKIP_DTS_BUILD: '0',
 });
+// The broker owns the live host-relative lease cap; this reader already resolves
+// effective cgroup/host capacity. S1902/1905 removed the old fixed 4GiB cap.
 export function admitBoundedCapacity608(capacity) {
   if (capacity.unresolved || !Number.isFinite(capacity.capacityBytes) ||
-      capacity.capacityBytes <= 0 || capacity.capacityBytes > 4 * 1024 ** 3 ||
+      capacity.capacityBytes <= 0 ||
       !Number.isFinite(capacity.limitBytes) || capacity.limitBytes > capacity.capacityBytes ||
       capacity.limitBytes <= UNIFIED_GRAPH_THRASH_LIMIT_BYTES)
-    throw new Error('boundedPackage requires observed admitted capacity above the unchanged config15 floor and at most 4GiB');
+    throw new Error('boundedPackage requires observed admitted capacity above the unchanged config15 floor');
 }
 export function admitBoundedPackage(capacity, env) {
   admitBoundedCapacity608(capacity);

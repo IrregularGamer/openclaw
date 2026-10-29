@@ -7,7 +7,7 @@ const admitted={unresolved:false,capacityBytes:2*1024**3,limitBytes:1800*1024**2
 test('bounded package preserves observed capacity floor and refuses compiler overrides',()=>{
  assert.doesNotThrow(()=>admitBoundedPackage(admitted,{}));
  assert.doesNotThrow(()=>admitBoundedPackage({...admitted,capacityBytes:4*1024**3},{}));
- for (const change of [{unresolved:true},{capacityBytes:5*1024**3},{limitBytes:UNIFIED_GRAPH_THRASH_LIMIT_BYTES},{limitBytes:null}])
+ for (const change of [{unresolved:true},{capacityBytes:0},{capacityBytes:NaN},{capacityBytes:Infinity},{limitBytes:3*1024**3},{limitBytes:UNIFIED_GRAPH_THRASH_LIMIT_BYTES},{limitBytes:null}])
    assert.throws(()=>admitBoundedPackage({...admitted,...change},{}));
  for (const key of ['NODE_OPTIONS','OPENCLAW_TSDOWN_MAX_OLD_SPACE_MB','OPENCLAW_RUN_NODE_SKIP_DTS_BUILD','OPENCLAW_BUILD_PRIVATE_QA','ROLLDOWN_WORKER_THREADS','MIMALLOC_ALLOW_THP','NAPI_RS_NATIVE_LIBRARY_PATH'])
    assert.throws(()=>admitBoundedPackage(admitted,{[key]:'1'}));
@@ -56,4 +56,15 @@ test('compiler scanner failures and timeout cannot become package evidence',()=>
  for (const change of [{status:1},{status:null},{timedOut:true},{error:'failure'},
    {fatalUnresolvedImport:'dependency'},{hasIneffectiveDynamicImport:true}])
    assert.equal(boundedResultSucceeded({status:0,...change}),false);
+});
+
+test('admits larger brokered cgroup capacities without changing the config15 floor',()=>{
+ for (const capacityBytes of [4*1024**3+1,8*1024**3,14*1024**3]) {
+   assert.doesNotThrow(()=>admitBoundedPackage({...admitted,capacityBytes,limitBytes:capacityBytes},{}));
+   assert.doesNotThrow(()=>admitBoundedPackage({...admitted,capacityBytes},{}));
+   for (const limitBytes of [UNIFIED_GRAPH_THRASH_LIMIT_BYTES,0,NaN,Infinity,capacityBytes+1])
+     assert.throws(()=>admitBoundedPackage({...admitted,capacityBytes,limitBytes},{}));
+   assert.throws(()=>admitBoundedPackage({...admitted,capacityBytes,unresolved:true},{}));
+   assert.throws(()=>admitBoundedPackage({...admitted,capacityBytes},{NODE_OPTIONS:''}));
+ }
 });

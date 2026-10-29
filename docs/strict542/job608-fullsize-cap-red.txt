@@ -1,0 +1,46 @@
+✔ bounded package preserves observed capacity floor and refuses compiler overrides (2.399258ms)
+✔ bounded package refuses verbose control that disables reviewed lazy barrels (0.61265ms)
+✔ bounded package refuses every bundled plugin selector by presence (2.73629ms)
+✔ whole config selection retains object identity and exact typed inventory (2.143665ms)
+✔ bounded compiler stages cannot skip canonical typed gates (0.556733ms)
+✔ compiler scanner failures and timeout cannot become package evidence (0.274011ms)
+✖ admits larger brokered cgroup capacities without changing the config15 floor (3.434412ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 6
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 237.06736
+
+✖ failing tests:
+
+test at docs/strict542/bounded-package608.test.mjs:61:1
+✖ admits larger brokered cgroup capacities without changing the config15 floor (3.434412ms)
+  AssertionError [ERR_ASSERTION]: Got unwanted exception.
+  Actual message: "boundedPackage requires observed admitted capacity above the unchanged config15 floor and at most 4GiB"
+      at TestContext.<anonymous> (file:///home/deploy/agentq/tmp/source552/docs/strict542/bounded-package608.test.mjs:63:11)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: Error: boundedPackage requires observed admitted capacity above the unchanged config15 floor and at most 4GiB
+        at admitBoundedCapacity608 (file:///home/deploy/agentq/tmp/source552/scripts/lib/bounded-package608.mjs:15:11)
+        at admitBoundedPackage (file:///home/deploy/agentq/tmp/source552/scripts/lib/bounded-package608.mjs:18:3)
+        at file:///home/deploy/agentq/tmp/source552/docs/strict542/bounded-package608.test.mjs:63:28
+        at getActual (node:assert:611:5)
+        at strict.doesNotThrow (node:assert:779:32)
+        at TestContext.<anonymous> (file:///home/deploy/agentq/tmp/source552/docs/strict542/bounded-package608.test.mjs:63:11)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1402:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+        at Test.postRun (node:internal/test_runner/test:1542:19),
+    expected: undefined,
+    operator: 'doesNotThrow',
+    diff: 'simple'
+  }

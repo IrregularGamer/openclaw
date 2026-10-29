@@ -1,0 +1,15 @@
+✔ bounded package preserves observed capacity floor and refuses compiler overrides (2.468509ms)
+✔ bounded package refuses verbose control that disables reviewed lazy barrels (0.537573ms)
+✔ bounded package refuses every bundled plugin selector by presence (1.56747ms)
+✔ whole config selection retains object identity and exact typed inventory (1.925355ms)
+✔ bounded compiler stages cannot skip canonical typed gates (0.50839ms)
+✔ compiler scanner failures and timeout cannot become package evidence (0.370859ms)
+✔ admits larger brokered cgroup capacities without changing the config15 floor (0.669198ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 376.269843
