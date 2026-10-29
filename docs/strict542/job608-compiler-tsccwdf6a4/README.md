@@ -9,7 +9,10 @@
 - Actual client rc0, result0, compiler-checks-pass. Five actual Node invocations,
   each 2tests/2pass/0fail/0cancelled/0skipped/0todo: total10/10.
 - Complete six-file result inventory is result-files.sha256; every returned file
-  is committed byte-for-byte. Outer log is deterministic gzip and rc is copied.
+  is preserved byte-for-byte. The phase trace uses a deterministic gzip carrier
+  to retain its original trailing blank line without a Git whitespace warning;
+  decompress it for comparison with the raw six-file inventory. The other five
+  result files are direct copies. Outer log is deterministic gzip and rc is copied.
 - Receipt SHA256 e5b96beb97e88aee7465bd95322f8f187896f1b270455fe317b196c3918251c1.
 - Tests log SHA256 c83027888cc1664d2f1b529adf50660cad143f8725ac86d0efe11ca24cc8af24.
 - Storage result check0:26748 bytes <16777216 cap. Accepted native input pins
