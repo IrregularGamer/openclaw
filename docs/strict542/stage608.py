@@ -20,6 +20,32 @@ OUTPUTS={'native':['native/receipt.json','native/libtests-receipt.json','native/
          'compiler':['compiler/tests.log']}
 OUTPUTS.update({n:[n+'/checkpoint.tar.gz',n+'/build.log'] for n in BUILD_STAGES})
 ADDON='rolldown-binding.linux-x64-gnu.node'
+# Decision662 Option B: opt-in reviewed input lineage for the package stage only.
+# Package at C may pin native/compiler/tail receipts accepted at an ancestor A only
+# when every A..C changed path is job608 evidence or in this reviewed set. checks
+# never uses lineage: it runs these tests, so its receipt stays exactly C.
+LINEAGE_STAGES=frozenset({'native','compiler','tail'})
+LINEAGE_EVIDENCE_PREFIX='docs/strict542/job608-'
+LINEAGE_ALLOWED_PATHS=frozenset('docs/strict542/'+n for n in
+    ['build598.sh','frozen-package608.py','test_frozen_package608.py',
+     'stage608.py','test_stage608.py','prepare-stage608-export.py','test_prepare_stage608_export.py'])
+
+
+def lineage_path_allowed(path):
+    return path in LINEAGE_ALLOWED_PATHS or (path.startswith(LINEAGE_EVIDENCE_PREFIX) and '..' not in Path(path).parts)
+
+
+def check_lineage(m):
+    """Validate the manifest lineage record itself; returns it or None (default exact binding)."""
+    lin=m.get('input_lineage')
+    if lin is None:return None
+    if (m.get('stage')!='package' or not isinstance(lin,dict) or
+        set(lin)!={'ancestor_commit','ancestor_source_export_sha256','changed_paths','stages','receipt_sha256'} or
+        not lin['ancestor_commit'] or lin['ancestor_commit']==m['source_commit'] or
+        not lin['stages'] or not set(lin['stages'])<=LINEAGE_STAGES or set(lin['receipt_sha256'])!=set(lin['stages']) or
+        not all(lineage_path_allowed(p) for p in lin['changed_paths'])):
+        raise ValueError('refused input lineage record')
+    return lin
 def sha(p):
     with Path(p).open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
 
@@ -111,13 +137,21 @@ def verify_inputs(root):
     if set(pins)!=expected or present!=expected:raise ValueError('stage inputs differ from the exact required set')
     for name,digest in pins.items():
         if sha(regular(base/name))!=digest:raise ValueError('stage input digest mismatch: '+name)
+    lin=check_lineage(m);used=set()
     for n in needed:
         r=json.loads((base/n/'stage-receipt.json').read_text())
+        commit,export=m['source_commit'],m['source_export_sha256']
+        if lin and n in lin['stages']:
+            commit,export=lin['ancestor_commit'],lin['ancestor_source_export_sha256']
+            if pins[n+'/stage-receipt.json']!=lin['receipt_sha256'][n]:
+                raise ValueError('unaccepted producing stage receipt lineage digest: '+n)
+            used.add(n)
         if (r.get('kind')!='JOB608_STAGE_RECEIPT' or r.get('stage')!=n or r.get('exit_code')!=0 or
-            r.get('source_commit')!=m['source_commit'] or r.get('outputs')!={o:pins[o] for o in OUTPUTS[n]}):
+            r.get('source_commit')!=commit or r.get('outputs')!={o:pins[o] for o in OUTPUTS[n]}):
             raise ValueError('unaccepted producing stage receipt: '+n)
-        if r.get('source_export_sha256')!=m['source_export_sha256']:
+        if r.get('source_export_sha256')!=export:
             raise ValueError('unaccepted producing stage receipt common export identity: '+n)
+    if lin and used!=set(lin['stages']):raise ValueError('refused input lineage record')
     if 'native' in needed:
         compile_bytes=(base/'native/receipt.json').read_bytes()
         if (hashlib.sha256(compile_bytes).hexdigest()!=m['native_stage_outputs']['compile/receipt.json'] or
@@ -143,6 +177,7 @@ def receipt(root,result):
     m=manifest(root);result=Path(result)
     value={'kind':'JOB608_STAGE_RECEIPT','stage':m['stage'],'run_id':m['run_id'],'source_commit':m['source_commit'],
            'source_export_sha256':m['source_export_sha256'],'stage_inputs':m.get('stage_inputs',{}),
+           **({'input_lineage':m['input_lineage']} if 'input_lineage' in m else {}),
            'manifest_sha256':sha(root/'export-manifest.json'),'exit_code':0,
            'outputs':{o:sha(regular(result/o)) for o in OUTPUTS.get(m['stage'],[])}}
     (result/m['stage']).mkdir(exist_ok=True)

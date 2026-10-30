@@ -51,6 +51,8 @@ def main():
     ap.add_argument('--stage',required=True)
     # INC-261027-18 continuation: result608-<stage> dirs of accepted producing stages, staged and pinned as exact stage inputs
     ap.add_argument('--input',type=Path,action='append',default=[]);ap.add_argument('--dest',type=Path,required=True)
+    # Decision662 Option B: opt-in reviewed lineage; package only, never checks (stage608.check_lineage)
+    ap.add_argument('--lineage-ancestor')
     a=ap.parse_args();base=a.base.resolve();dest=a.dest.resolve()
     assert not dest.exists(),'destination must be NEW'
     m=json.loads((base/'export-manifest.json').read_text())
@@ -89,13 +91,27 @@ def main():
         for n in needed:
             if (rr/n/'stage-receipt.json').is_file():assert n not in by,'duplicate input stage '+n;by[n]=rr
     assert set(by)==set(needed),('stage inputs missing',set(needed)-set(by))
+    lin=None
+    if a.lineage_ancestor:
+        assert a.stage=='package','input lineage is package-only'
+        anc=git('rev-parse',a.lineage_ancestor+'^{commit}').decode().strip();assert anc!=commit,'lineage ancestor must differ'
+        assert subprocess.run(['git','-C',str(REPO),'merge-base','--is-ancestor',anc,commit]).returncode==0,'lineage ancestor is not an ancestor'
+        diff=sorted(git('diff','--name-only',anc,commit).decode().splitlines())
+        bad=[q for q in diff if not st.lineage_path_allowed(q)];assert not bad,('lineage changed paths not allowed',bad)
+        lin={'ancestor_commit':anc,'changed_paths':diff,'stages':[],'receipt_sha256':{},'ancestor_source_export_sha256':None}
     pins={}
     for n in needed:
         receipt=checked_path(by[n]/n/'stage-receipt.json')
         receipt_digest=sha(receipt)
         rec=json.loads(receipt.read_text())
         assert rec['kind']=='JOB608_STAGE_RECEIPT' and rec['stage']==n,n
-        assert rec['exit_code']==0 and rec['source_commit']==commit and rec['source_export_sha256']==m['source_export_sha256'],n
+        if lin and rec['source_commit']==lin['ancestor_commit']:
+            assert n in st.LINEAGE_STAGES,('stage may not use input lineage',n)
+            assert lin['ancestor_source_export_sha256'] in (None,rec['source_export_sha256']),('mixed ancestor exports',n)
+            lin['ancestor_source_export_sha256']=rec['source_export_sha256'];lin['stages'].append(n);lin['receipt_sha256'][n]=receipt_digest
+            assert rec['exit_code']==0,n
+        else:
+            assert rec['exit_code']==0 and rec['source_commit']==commit and rec['source_export_sha256']==m['source_export_sha256'],n
         for o in [n+'/stage-receipt.json']+st.OUTPUTS[n]:
             assert not Path(o).is_absolute() and '..' not in Path(o).parts,o
             src=by[n]/o;assert src.is_file() and not src.is_symlink(),o
@@ -103,6 +119,9 @@ def main():
             pins[o]=link_input(src,dest/'stage608-inputs'/o,expected)
         assert rec['outputs']=={o:pins[o] for o in st.OUTPUTS[n]},n
     m['stage_inputs']=pins
+    if lin:
+        assert lin['stages'],'lineage requested but no input uses it';m['input_lineage']=lin
+        st.check_lineage(m)
     (dest/'export-manifest.json').write_text(json.dumps(m,indent=2,sort_keys=True)+'\n')
     print(json.dumps({'dest':str(dest),'stage':a.stage,'source_commit':commit,'manifest_sha256':sha(dest/'export-manifest.json')}))
 
