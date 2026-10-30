@@ -18,7 +18,7 @@ Supersedes the NEXT pointer of job608-after-package-m674c-binding-continuation.m
 1. If checks 301d not yet accepted: independent acceptance (14 checks, 0 group/other-writable, nlink 1). If rc!=0,
    diagnose from evidence; never relaunch unchanged.
 2. Prepare: `prepare-stage608-export.py --base P/stage-unified-0-tsccwdf6a4 --commit 301d7456 --stage package
-   --lineage-ancestor 674840b6 --input <m674 native> --input <m674 compiler> --input <m674 tail>
+   --lineage-ancestor 674840b6 --input P/stage-native-m674/result608-native --input P/stage-compiler-m674/result608-compiler --input P/stage-tail-m674/result608-tail
    --input P/stage-checks-301d/result608-checks --dest P/stage-package-301d`. Inputs = the same accepted m674 result
    dirs the m674c attempt used (see job608-after-package-m674b-hardlink-continuation.md). Remove the __pycache__
    prepare's import writes inside dest before gates. Gates: verify-inputs 0, sh -n 0, storage608 check package,
