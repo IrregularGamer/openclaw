@@ -29,3 +29,6 @@ Supersedes the NEXT pointer of job608-after-package-m674c-binding-continuation.m
 4. Then final artifact receipt + old/new hash inventory, action/privilege/seal/reseal reviews, automatic queue review,
    ordered HQ595 handoff (fresh post-restart owner binding + accepted-run acks; 587 fd3 socket transport replaces 586
    sudo, never add the 586 rule).
+
+## checks 301d result
+rc 0 (evidence job608-checks-301d/ 8d368786), independent ACCEPT 788c76fc. NEXT starts at step 2 (prepare package 301d).
