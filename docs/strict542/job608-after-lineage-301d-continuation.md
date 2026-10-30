@@ -32,3 +32,12 @@ Supersedes the NEXT pointer of job608-after-package-m674c-binding-continuation.m
 
 ## checks 301d result
 rc 0 (evidence job608-checks-301d/ 8d368786), independent ACCEPT 788c76fc. NEXT starts at step 2 (prepare package 301d).
+
+## package 301d (worker 05:20-06:20Z, 2026-10-30)
+- Prepared P/stage-package-301d (manifest 025654bd, runner b04abd4d, helper 1d2bf411; lineage 674840b6). Storage
+  first refused (12 MB short): pinned + deleted spent stage-package-m674/m674b (hardlinked, ~19 MB freed) and
+  trash-608/stage-package-m674c-refused-prepare (19.8 MB); reserve unchanged. Gates 0; preflight 77350895,
+  independent APPROVE 1fe9cdbc. ONE launch ~05:33Z (14g/4CPU/2460s); log/rc P/package-301d-offload.{log,rc}.
+- NEXT: if rc file exists, record evidence (copy result608-package receipt + sha listing + modes) and get independent
+  acceptance; if rc missing/worker killed, treat as completion_unknown: reconcile via `offload status`/runs.log,
+  never relaunch unchanged on the same slug. Then step 4 above.
