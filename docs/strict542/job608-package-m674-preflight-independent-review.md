@@ -16,3 +16,11 @@ Deviations (copy-paste from tail m674 preflight, not updated):
 Everything else (export, hashes, inputs, gates, caps) is correct. Fix D1 and D2 in the preflight json only. The export does not need to be re-prepared, and the manifest hash 352ae639 stays valid. Then re-review.
 
 Verdict: REJECT
+
+## Re-review (3f2790f8)
+
+- `git diff e12d8ed1..3f2790f8`: only docs/strict542/job608-package-m674-preflight.json changed, 3 lines. `scope` now reads "SOURCE ONLY; package rerun at reviewed mode fix 674840b6; 595 MUST NOT APPLY" (D2 fixed). `log`/`rc` now point at P/package-m674-offload.log and P/package-m674-offload.rc (D1 fixed). Launch argv, hashes, inputs, minimum_worker_seconds and acceptance_extra are unchanged.
+- Export unchanged: export-manifest.json 352ae639..., run608.sh b04abd4d..., stage608.py a558db9a... (re-hashed live).
+- Gates still hold: `storage608.py check --root P --stage package` rc 0 (free_bytes 4362960896, unchanged); P/package-m674-offload.log/.rc absent; no __pycache__ under the export. The tail m674 log/rc are no longer referenced.
+
+Verdict: APPROVE
