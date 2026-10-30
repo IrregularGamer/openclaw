@@ -17,8 +17,7 @@ VERDICT: APPROVE
 - Absent: P/checks-301d-offload.log, P/checks-301d-offload.rc, E/result608-checks.
 - Launch argv identical to b246 precedent: `offload run --timeout 1200 --mem 14g --cpus 4 --artifacts result608-checks
   -- timeout -k 15s 1140s sh run608.sh`; minimum_worker_seconds 1575, required_checks 14, acceptance_extra unchanged.
-- Source: 7beaf342 (job608-input-lineage-301d7456-independent-review.md) is the independent review of C with Verdict APPROVE.
-  C..0edf2b6c adds only the two docs files (review + this preflight json).
+- Source: 7beaf342 (job608-input-lineage-301d7456-independent-review.md) is the independent review of C with Verdict APPROVE; C..0edf2b6c adds only docs files.
 
 ## Conditions
 Conditional on fresh live gates at launch (health up, no competing run, verify-inputs 0, storage608 check 0,
