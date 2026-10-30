@@ -60,11 +60,16 @@ the 586 rule. Do not `git pull` source552 in a worker. 595 MUST NOT APPLY.
 - unified-4 m674: rc0 (evidence 3471cde6; background Bash 2800s, offload.rc 0, build +419s, unified-4-pass),
   checkpoint bebc68d0 32 entries (same name set as tsccwdf6a4) 0 writable, preflight 783031cf APPROVE f48fb963,
   independent ACCEPT 0302c32f. Accepted input: P/stage-unified-4-m674/result608-unified-4.
-- NEXT fresh worker, FIRST heavy action: unified-5 m674 (prepare, gates, independent preflight, ONE launch) with
-  `--base P/stage-unified-0-tsccwdf6a4 --commit 674840b6 --stage unified-5 --input P/stage-native-m674/result608-native
-  --input P/stage-runtime-m674/result608-runtime` (STAGES['unified-N'] = native, runtime), --dest P/stage-unified-5-m674,
-  same caps as unified-4 m674 (--timeout 2460 --mem 14g --cpus 4, timeout -k 15s 2400s; never raise), all gates above,
-  one launch per worker; then middle, sdk-0, sdk-1, tail, package.
+- unified-5 m674: rc0 (evidence bc6f1ce2/70290de4; background Bash 2800s, offload.rc 0, build +423s, unified-5-pass),
+  checkpoint 737515b7 25 entries (same name set as tsccwdf6a4 unified-5r1) 0 writable, preflight 68ea86a5 APPROVE a699cf94,
+  independent ACCEPT 1c9da566. Accepted input: P/stage-unified-5-m674/result608-unified-5.
+- NEXT fresh worker, FIRST heavy action: middle m674 (prepare, gates, independent preflight, ONE launch) with
+  `--base P/stage-unified-0-tsccwdf6a4 --commit 674840b6 --stage middle --input P/stage-native-m674/result608-native
+  --input P/stage-runtime-m674/result608-runtime --input P/stage-unified-N-m674/result608-unified-N (N=0..5)`
+  (STAGES['middle'] = native, runtime, unified-0..5), --dest P/stage-middle-m674, same caps as middle tsccwdf6a4
+  (--timeout 2460 --mem 14g --cpus 4, timeout -k 15s 2400s; never raise), all gates above,
+  one launch per worker; then sdk-0, sdk-1, tail, package. verify-inputs: `cd stage && python3 -I -B stage608.py verify-inputs`;
+  storage: `python3 -I -B docs/strict542/storage608.py check --root P --stage middle`.
   Worker harness: give the Bash call running `offload run` a timeout >= offload --timeout + 300s (ms), or run it in
   the foreground with timeout 600000 only if --timeout <= 420; the background default kills at 600s.
   storage608.py needs `check --root P --stage S`. Gates+launch in one background Bash took ~5 min before admission.
