@@ -2,7 +2,7 @@
  "run_id": "stage608-package-m674",
  "stage": "package",
  "state": "UNUSED",
- "scope": "SOURCE ONLY; tail rerun at reviewed mode fix 674840b6; 595 MUST NOT APPLY",
+ "scope": "SOURCE ONLY; package rerun at reviewed mode fix 674840b6; 595 MUST NOT APPLY",
  "source_commit": "674840b669c43af54a62e30b4028f219f4a428c9",
  "source_approval": "674840b6 independent APPROVE 017cd166",
  "export": "/srv/encrypted/dev-move-98/agentq-source608-20261028-private/stage-package-m674",
@@ -38,8 +38,8 @@
   "run608.sh"
  ],
  "caps_source": "identical to package tsccwdf6a4 launch and tail m674 preflight (never raised)",
- "log": "/srv/encrypted/dev-move-98/agentq-source608-20261028-private/tail-m674-offload.log",
- "rc": "/srv/encrypted/dev-move-98/agentq-source608-20261028-private/tail-m674-offload.rc",
+ "log": "/srv/encrypted/dev-move-98/agentq-source608-20261028-private/package-m674-offload.log",
+ "rc": "/srv/encrypted/dev-move-98/agentq-source608-20261028-private/package-m674-offload.rc",
  "minimum_worker_seconds": 2655,
  "acceptance_extra": "result mode listing: zero group/other-writable entries"
 }
