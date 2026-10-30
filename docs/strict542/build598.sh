@@ -32,6 +32,9 @@ python3 docs/strict542/frozen-package608.py preflight
 pnpm --filter openclaw --prod deploy result598-build/runtime >result598-build/deploy.log 2>&1 || {
   status=$?; tail -30 result598-build/deploy.log; exit "$status";
 }
+# pnpm deploy hardlinks store files; application598 refuses st_nlink>1 (job608
+# package m674b). Replace them by hash-verified private copies, never relax it.
+python3 docs/strict542/frozen-package608.py materialize
 python3 docs/strict542/frozen-package608.py receipt
 # A production dependency graph must be wholly contained. The receipt tool
 # refuses escaping links, special files, writable content and runtime state.

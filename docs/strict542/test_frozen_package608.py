@@ -71,6 +71,23 @@ class FrozenPackage(unittest.TestCase):
         with self.assertRaises(ValueError):self.guard.receipt(self.root,{})
         self.assertFalse((self.out/'package-receipt.json').exists())
 
+    def test_materialize_breaks_store_hardlinks_without_following_symlinks(self):
+        store=self.root/'store';store.mkdir();(store/'esbuild').write_bytes(b'bin')
+        os.chmod(store/'esbuild',0o755)
+        os.link(store/'esbuild',self.runtime/'esbuild')
+        (self.runtime/'link').symlink_to('esbuild')
+        self.assertEqual(self.guard.materialize(self.root),1)
+        info=(self.runtime/'esbuild').lstat()
+        self.assertEqual((info.st_nlink,info.st_mode&0o777),(1,0o755))
+        self.assertEqual((self.runtime/'esbuild').read_bytes(),b'bin')
+        self.assertEqual((store/'esbuild').lstat().st_nlink,1)
+        self.assertTrue((self.runtime/'link').is_symlink())
+        self.assertEqual(self.guard.materialize(self.root),0)
+
+    def test_materialize_refuses_redirected_runtime(self):
+        self.runtime.rename(self.out/'real');self.runtime.symlink_to('real')
+        with self.assertRaises(ValueError):self.guard.materialize(self.root)
+
     def test_missing_or_redirected_target_lock_refuses(self):
         lock=self.runtime/'pnpm-lock.yaml';lock.unlink()
         with self.assertRaises(ValueError):self.guard.receipt(self.root,{})

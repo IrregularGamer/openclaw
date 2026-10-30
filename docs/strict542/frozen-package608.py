@@ -54,9 +54,36 @@ def receipt(root,env):
     with (out/'package-receipt.json').open('x') as stream:stream.write(raw)
     return value
 
+def materialize(root):
+    """Break pnpm store hardlinks in the deployed runtime by private exact copies.
+
+    job608 package m674b: pnpm deploy imports files by hardlink, and
+    application598 correctly refuses st_nlink>1. Only regular files inside the
+    real runtime tree are copied; symlinks are never followed and every copy is
+    hash-verified before it atomically replaces its linked original."""
+    runtime=root/'result598-build'/'runtime'
+    if runtime.is_symlink() or not runtime.is_dir():raise ValueError('real package output directory required')
+    count=0;copied=0
+    for directory,dirs,files in os.walk(runtime,followlinks=False):
+        for name in files:
+            count+=1
+            if count>300000:raise ValueError('runtime inventory too large')
+            path=Path(directory)/name;info=path.lstat()
+            if not stat.S_ISREG(info.st_mode) or info.st_nlink==1:continue
+            temp=path.with_name('.materialize608-'+name)
+            with path.open('rb') as source:raw=source.read()
+            fd=os.open(temp,os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o600)
+            with os.fdopen(fd,'wb') as stream:stream.write(raw)
+            os.chmod(temp,stat.S_IMODE(info.st_mode))
+            if hashlib.sha256(temp.read_bytes()).digest()!=hashlib.sha256(raw).digest() or temp.lstat().st_nlink!=1:
+                raise ValueError('materialized copy mismatch: '+str(path))
+            os.replace(temp,path);copied+=1
+    return copied
+
 if __name__=='__main__':
-    if len(sys.argv)!=2 or sys.argv[1] not in ('preflight','receipt'):
-        raise SystemExit('frozen package guard accepts only preflight or receipt')
+    if len(sys.argv)!=2 or sys.argv[1] not in ('preflight','receipt','materialize'):
+        raise SystemExit('frozen package guard accepts only preflight, receipt or materialize')
     root=Path.cwd()
     if sys.argv[1]=='preflight':preflight(root,os.environ)
+    elif sys.argv[1]=='materialize':print(json.dumps({'materialized':materialize(root)}))
     else:print(json.dumps(receipt(root,os.environ),sort_keys=True))
