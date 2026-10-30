@@ -56,3 +56,11 @@ m674 stage used> --commit 301d7456 --stage <s> [--input <accepted 301d predecess
 review, ONE launch, evidence, independent acceptance. Before each prepare, if storage refuses, pin manifests then delete
 only own spent *-m674 stages superseded by an accepted *-301d result; never lower the reserve. Then step 4 (receipt,
 hash inventory, action/privilege/seal reviews, queue review, ordered HQ595 handoff).
+
+## native 301d (worker 05:40-06:40Z, 2026-10-30)
+- Prepared P/stage-native-301d (manifest b61f89b5, exact 301d7456, no lineage, stage_inputs {}); gates 0
+  (verify-inputs, sh -n, storage608 check native, pycache 0). Preflight 7c55092a, independent APPROVE a86f43a3.
+- ONE launch 2026-10-30T05:48:56Z (14g/4CPU/2460s, ~3100s left); log/rc P/native-301d-offload.{log,rc}.
+- NEXT: if rc exists, record evidence (job608-native-301d/: log.gz, rc, non-binary results, result-files.sha256,
+  mode listing) + independent acceptance; if rc missing, completion_unknown: reconcile via offload status/runs.log,
+  never relaunch unchanged on the same slug. Then compiler-301d (inputs: native-301d result), per NEXT above.
