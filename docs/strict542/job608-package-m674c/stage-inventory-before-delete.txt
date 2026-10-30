@@ -1,0 +1,9 @@
+1 81947 ./export-manifest.json
+58 921600 ./native598.tar
+1 2117 ./native608-stages/compile/receipt.json
+1 2062 ./native608-stages/libtests/receipt.json
+58 5962781 ./rolldown608-source.tar.gz
+1 12883 ./run608.sh
+58 689664000 ./source598.tar
+1 9205 ./stage608.py
+1 19722240 ./successor598.tar
