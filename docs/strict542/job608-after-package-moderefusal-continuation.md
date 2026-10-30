@@ -74,14 +74,26 @@ the 586 rule. Do not `git pull` source552 in a worker. 595 MUST NOT APPLY.
 - sdk-1 m674: rc0 (evidence 2bf54db8; background Bash 2800s, offload.rc 0, build +136s, sdk-1-pass),
   checkpoint 8a0f1f2e 8 entries (4 files/4 dirs/0 symlinks, same name set as tsccwdf6a4) 0 writable,
   preflight 6eb72338 APPROVE 735c912a, independent ACCEPT 6603e1ea. Accepted input: P/stage-sdk-1-m674/result608-sdk-1.
-- NEXT fresh worker, FIRST heavy action: tail m674 (prepare, gates, independent preflight, ONE launch) with
-  `--base P/stage-unified-0-tsccwdf6a4 --commit 674840b6 --stage tail --input P/stage-native-m674/result608-native
-  --input P/stage-middle-m674/result608-middle --input P/stage-sdk-0-m674/result608-sdk-0
-  --input P/stage-sdk-1-m674/result608-sdk-1` (STAGES['tail']=native,middle,sdk-0,sdk-1)
-  --dest P/stage-tail-m674, same caps as tail tsccwdf6a4 launch doc README line 12 (--timeout 2460 --mem 14g --cpus 4,
-  never raise), all gates above, one launch per worker; then package. verify-inputs: run
-  `python3 -I -B stage608.py verify-inputs` in the export root (there is no stage/ subdir);
-  storage: `python3 -I -B docs/strict542/storage608.py check --root P --stage tail` (tail return cap 192 MiB).
+- tail m674: rc0 (evidence 20581094; background Bash 2800s, offload.rc 0, build +236s, tail-pass), result 161608377 B
+  (< 192 MiB cap), checkpoint 54b49d68 18159 entries (15907 files/1069 dirs/1183 in-tree symlinks, name set equals
+  tsccwdf6a4 after normalizing content-hash asset suffixes) 0 writable, preflight b7d710e3 APPROVE 9658c9c9,
+  independent ACCEPT f9ab7977. Accepted input: P/stage-tail-m674/result608-tail.
+- Package room (ba14b1ed, job608-superseded-stage-quarantine-20261030.txt): 14 superseded tsccwdf6a4 stages moved
+  `mv -n` into P/../agentq-source608-superseded-20261029 (kept: stage-unified-0-tsccwdf6a4 = --base,
+  stage-tail-tsccwdf6a4). `storage608 check --root P --stage package` now passes the aggregate cap but REFUSES the
+  free reserve: /srv/encrypted free 4292059136 B < 2 GiB reserve + 2 GiB+16 MiB allowance (short ~19.7 MB, plus
+  ~18 MB unique export). Same-volume moves free nothing. Needs an approved deletion (or off-volume move) of
+  superseded staging, e.g. agentq-source608-superseded-20261029/stage-api-phase608-next (~823 MB, evidence
+  committed). Never lower FREE_RESERVE or the package cap.
+- NEXT fresh worker, after the free-reserve gate passes, FIRST heavy action: package m674 (prepare, gates, independent
+  preflight, ONE launch) with `--base P/stage-unified-0-tsccwdf6a4 --commit 674840b6 --stage package
+  --input P/stage-native-m674/result608-native --input P/stage-checks-m674/result608-checks
+  --input P/stage-compiler-m674/result608-compiler --input P/stage-tail-m674/result608-tail`
+  (STAGES['package']=native,checks,compiler,tail) --dest P/stage-package-m674, same caps as package tsccwdf6a4
+  (--timeout 2460 --mem 14g --cpus 4 --artifacts result608-package, timeout -k 15s 2400s sh run608.sh, never raise),
+  gates as job608-package-tsccwdf6a4-preflight.md "Launch" plus >=2655s left; one launch spends the stage.
+  Then storage608 result, evidence, independent acceptance, final artifact receipt + old/new hash inventory,
+  action/privilege/seal/reseal reviews, automatic queue review, ordered HQ595 handoff. 595 MUST NOT APPLY.
   Worker harness: give the Bash call running `offload run` a timeout >= offload --timeout + 300s (ms), or run it in
   the foreground with timeout 600000 only if --timeout <= 420; the background default kills at 600s.
   storage608.py needs `check --root P --stage S`. Gates+launch in one background Bash took ~5 min before admission.
