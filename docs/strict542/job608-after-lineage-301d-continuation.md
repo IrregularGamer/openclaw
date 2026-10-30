@@ -41,3 +41,18 @@ rc 0 (evidence job608-checks-301d/ 8d368786), independent ACCEPT 788c76fc. NEXT 
 - NEXT: if rc file exists, record evidence (copy result608-package receipt + sha listing + modes) and get independent
   acceptance; if rc missing/worker killed, treat as completion_unknown: reconcile via `offload status`/runs.log,
   never relaunch unchanged on the same slug. Then step 4 above.
+
+## package 301d RESULT (supersedes NEXT above)
+ONE launch rc 1: `checkpoint source/native/toolchain identity mismatch` (gateway inner checkpoint identity is exact
+commit+export; tail-m674 chain is bound to 674840b6/e1a6de35). Evidence + diagnosis: job608-package-301d/README.md (1b75fa38).
+Option B lineage cannot bridge it without forging identity; do not relax validateBuildReceipt608.
+
+## NEXT (fresh workers, one launch each)
+Rebuild the identity chain at exact 301d7456 (same-commit, no --lineage-ancestor), in m674 order with m674 caps/argv:
+native -> compiler -> sdk-0 -> sdk-1 -> unified-0..5 -> runtime -> middle -> tail; reuse checks-301d (ACCEPT 788c76fc,
+exact 301d7456); then package (no lineage). Prepare pattern per stage: `prepare-stage608-export.py --base <same base the
+m674 stage used> --commit 301d7456 --stage <s> [--input <accepted 301d predecessor results>] --dest P/stage-<s>-301d`
+(take base/inputs from job608-<s>-m674-preflight.json; slugs <s>-301d). Each: gates, preflight json, independent
+review, ONE launch, evidence, independent acceptance. Before each prepare, if storage refuses, pin manifests then delete
+only own spent *-m674 stages superseded by an accepted *-301d result; never lower the reserve. Then step 4 (receipt,
+hash inventory, action/privilege/seal reviews, queue review, ordered HQ595 handoff).
