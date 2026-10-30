@@ -64,3 +64,9 @@ hash inventory, action/privilege/seal reviews, queue review, ordered HQ595 hando
 - NEXT: if rc exists, record evidence (job608-native-301d/: log.gz, rc, non-binary results, result-files.sha256,
   mode listing) + independent acceptance; if rc missing, completion_unknown: reconcile via offload status/runs.log,
   never relaunch unchanged on the same slug. Then compiler-301d (inputs: native-301d result), per NEXT above.
+- RESULT: rc 0, addon 0b6607e7 (identical), 0 group/other-writable; evidence 7e81d22c, independent ACCEPT 66fc5a20.
+  Accepted input: P/stage-native-301d/result608-native.
+- NEXT (fresh worker): compiler-301d: prepare --base P/stage-unified-0-tsccwdf6a4 --commit 301d7456 --stage compiler
+  --input P/stage-native-301d/result608-native --dest P/stage-compiler-301d (caps from job608-compiler-m674-preflight.json),
+  gates, preflight, independent review, ONE launch, evidence, acceptance. Then sdk-0, sdk-1, unified-0..5, runtime, middle, tail, package.
+- Worker note: never `git pull` source552 in a worker (it hangs); commit+push only.
