@@ -71,12 +71,17 @@ the 586 rule. Do not `git pull` source552 in a worker. 595 MUST NOT APPLY.
 - sdk-0 m674: rc0 (evidence e9031145; background Bash 2800s, offload.rc 0, build +448s, sdk-0-pass),
   checkpoint 307e76bf 379 entries (374 files/5 dirs/0 symlinks, same name set as tsccwdf6a4) 0 writable,
   preflight b180cbfd APPROVE eeac5eab, independent ACCEPT 0eb29365. Accepted input: P/stage-sdk-0-m674/result608-sdk-0.
-- NEXT fresh worker, FIRST heavy action: sdk-1 m674 (prepare, gates, independent preflight, ONE launch) with
-  `--base P/stage-unified-0-tsccwdf6a4 --commit 674840b6 --stage sdk-1 --input P/stage-native-m674/result608-native
-  --input P/stage-middle-m674/result608-middle` (STAGES['sdk-1']=native,middle)
-  --dest P/stage-sdk-1-m674, same caps as sdk-1 tsccwdf6a4 launch doc (never raise), all gates above,
-  one launch per worker; then tail, package. verify-inputs: `cd stage && python3 -I -B stage608.py verify-inputs`;
-  storage: `python3 -I -B docs/strict542/storage608.py check --root P --stage sdk-1`.
+- sdk-1 m674: rc0 (evidence 2bf54db8; background Bash 2800s, offload.rc 0, build +136s, sdk-1-pass),
+  checkpoint 8a0f1f2e 8 entries (4 files/4 dirs/0 symlinks, same name set as tsccwdf6a4) 0 writable,
+  preflight 6eb72338 APPROVE 735c912a, independent ACCEPT 6603e1ea. Accepted input: P/stage-sdk-1-m674/result608-sdk-1.
+- NEXT fresh worker, FIRST heavy action: tail m674 (prepare, gates, independent preflight, ONE launch) with
+  `--base P/stage-unified-0-tsccwdf6a4 --commit 674840b6 --stage tail --input P/stage-native-m674/result608-native
+  --input P/stage-middle-m674/result608-middle --input P/stage-sdk-0-m674/result608-sdk-0
+  --input P/stage-sdk-1-m674/result608-sdk-1` (STAGES['tail']=native,middle,sdk-0,sdk-1)
+  --dest P/stage-tail-m674, same caps as tail tsccwdf6a4 launch doc README line 12 (--timeout 2460 --mem 14g --cpus 4,
+  never raise), all gates above, one launch per worker; then package. verify-inputs: run
+  `python3 -I -B stage608.py verify-inputs` in the export root (there is no stage/ subdir);
+  storage: `python3 -I -B docs/strict542/storage608.py check --root P --stage tail` (tail return cap 192 MiB).
   Worker harness: give the Bash call running `offload run` a timeout >= offload --timeout + 300s (ms), or run it in
   the foreground with timeout 600000 only if --timeout <= 420; the background default kills at 600s.
   storage608.py needs `check --root P --stage S`. Gates+launch in one background Bash took ~5 min before admission.
