@@ -40,4 +40,4 @@ Supersedes the NEXT pointer of job608-after-package-m674b-hardlink-continuation.
    genuine ordered HQ595 handoff. 587 fd3/socket transport replaces 586 sudo; never add the 586 rule.
 
 ## checks b246 result
-(pending at time of writing; filled in below by the same worker if it completes)
+rc 0 (evidence job608-checks-b246/, README there); awaiting independent acceptance.
