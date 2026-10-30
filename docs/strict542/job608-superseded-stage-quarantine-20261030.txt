@@ -1,0 +1,24 @@
+# 2026-10-30 ~03:38Z job608: recoverable quarantine of superseded tsccwdf6a4 stages before package m674.
+# Moved with `mv -n` (same filesystem, nothing deleted) from
+# /srv/encrypted/dev-move-98/agentq-source608-20261028-private/ to
+# /srv/encrypted/dev-move-98/agentq-source608-superseded-20261029/ . Their evidence was committed earlier.
+# No m674 export-manifest.json references a stage-*-tsccwdf6a4 path; no symlink in base or any m674 stage
+# points to them. KEPT in P: stage-unified-0-tsccwdf6a4 (the --base) and stage-tail-tsccwdf6a4 (name-set
+# comparison for the tail m674 acceptance). Rollback: mv -n each back into P.
+stage-package-tsccwdf6a4
+stage-middle-tsccwdf6a4
+stage-native-tsccwdf6a4
+stage-compiler-tsccwdf6a4
+stage-sdk-0-tsccwdf6a4
+stage-sdk-1-tsccwdf6a4
+stage-checks-tsccwdf6a4
+stage-runtime-tsccwdf6a4
+stage-unified-1-tsccwdf6a4
+stage-unified-2-tsccwdf6a4
+stage-unified-3-tsccwdf6a4
+stage-unified-4-tsccwdf6a4
+stage-unified-5-tsccwdf6a4
+stage-unified-5r1-tsccwdf6a4
+# Result: storage608 aggregate cap now passes for --stage package, but the free-reserve check refuses:
+# /srv/encrypted free 4292059136 B < FREE_RESERVE 2 GiB + package allowance (2 GiB + 16 MiB) = 4311744512 B
+# (short ~19.7 MB before the ~18 MB unique package export). Moving within the volume frees no blocks.
