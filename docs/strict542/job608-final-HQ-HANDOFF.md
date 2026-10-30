@@ -1,3 +1,39 @@
+**CURRENT 2026-10-30 — exact 301d identity chain; supersedes every historical build-status/next-run paragraph below.**
+
+Frozen source is `301d7456bf5b0c4179b27d0db97eac7b07143f4a`; common export is
+`99add7e14c96b379a907d8f39fb30e96c515e5edb9737aaa8cfec47cc900291d`.
+The complete [old605-to-301d source inventory](job608-frozen301d7456-source-inventory.json)
+(commit `70efe115`, independent approval `f5341c8f`) contains 1,252 exact changed paths. It describes source,
+not installed targets or a completed package. Independently accepted exact-301d
+stages are checks (`788c76fc`), native (`66fc5a20`) and compiler (`20e153c0`).
+Runtime is running once under preflight `4dd6fc6a` / independent approval `65462a6c`;
+no runtime success or final package is claimed here.
+
+The authoritative current stage order and next-worker procedure are in
+[job608-after-lineage-301d-continuation.md](job608-after-lineage-301d-continuation.md):
+runtime -> unified-0..5 -> middle -> sdk-0/1 -> tail -> package. Preserve exact
+301d commit/export identity for every checkpoint; use no lineage override.
+The earlier 674840b6 package inputs failed the checkpoint identity check and are
+superseded. Do not replay accepted 301d stages or relabel historical receipts.
+
+**595 MUST NOT APPLY.** The final deterministic package receipt, installed-target
+old/new hash inventory, exact source/action/privilege/whole-seal/reseal approvals
+and actual automatic queue review remain required before the detailed natural-gap
+HQ procedure below can be reconciled to the final package and executed. Use the
+current whole-seal/baseline only after independently reviewed drift reconciliation;
+never silently refresh the historical pins in the commands below.
+
+The required path combines reviewed587 `556d4f46` (handoff `8705e3dd`)
+inherited-fd3 Unix socket transport with the finite root supervisor, subject to
+separate exact privilege/unit review. Never apply the historical native patch or add586 request-time sudo. Require actual foreground nonqueue HQ ownership in
+a natural settled gap. A restart invalidates510/515 PID bindings and run receipts:
+require fresh genuine post-restart owner binding AND accepted-run acknowledgements.
+Integrate575/588 only by reference (source604ffc9/package1b22c4d/evidenced1304c7,
+independent592);553 remains the sole SAME510 continuation owner. Source preparation,
+soft dependency release and a queue ops label grant no installation authority.
+
+---
+
 **CURRENT FROZEN BUILD STATE (2026-10-29; supersedes ALL historical status and
 command-pin paragraphs below):** executable source is
 `f6a4de2ebc6924d16fe559f9858bf8c50dce1eba`, common export
