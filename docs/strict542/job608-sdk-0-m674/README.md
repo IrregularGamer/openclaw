@@ -8,7 +8,7 @@
   storage608 check --root P --stage sdk-0 0, 3174s left (>= 2655).
 - Launch (same caps as sdk-0 tsccwdf6a4): offload run --timeout 2460 --mem 14g --cpus 4 --artifacts result608-sdk-0
   -- timeout -k 15s 2400s sh run608.sh. Background Bash timeout 2800s; offload client rc 0 (sdk-0-offload.rc).
-- Result: exit-code.txt 0, STEP608 sdk-0-build-done +448s, sdk-0-pass; 0 error/fail/cancel lines in build.log.
+- Result: exit-code.txt 0, STEP608 sdk-0-build-done +448s, sdk-0-pass (in the offload log; run608.sh prints STEP608 to stdout); 0 error/fail/cancel lines in build.log.
   Result 1771001 bytes, under return cap. Receipt f51049011a7114b6e636d60e3e7cfd516258fcb95317bbc81b572e0e58f9fdd7.
 - Mode check: `find result608-sdk-0 -perm /022` = 0 entries. Checkpoint listing (`tar -tvzf`, not extracted):
   379 entries = 374 files + 5 dirs, 0 symlinks, 0 group/other-writable; sorted name set identical to the sdk-0
