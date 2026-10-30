@@ -57,10 +57,14 @@ the 586 rule. Do not `git pull` source552 in a worker. 595 MUST NOT APPLY.
   checkpoint b5b3a5b1 30 entries 0 writable, independent ACCEPT 400a1eac. Accepted input: P/stage-unified-3-m674/result608-unified-3.
   `trash` was not on PATH in this worker and gio cannot trash on /srv/encrypted: move the import __pycache__ with
   `mv -n` to P/trash-608/<stage>-pycache and rerun verify-inputs with `python3 -I -B`.
-- NEXT fresh worker, FIRST heavy action: unified-4 m674 (prepare, gates, independent preflight, ONE launch) with
-  `--base P/stage-unified-0-tsccwdf6a4 --commit 674840b6 --stage unified-4 --input P/stage-native-m674/result608-native
-  --input P/stage-runtime-m674/result608-runtime` (STAGES['unified-N'] = native, runtime), --dest P/stage-unified-4-m674,
-  caps as job608-unified-4-tsccwdf6a4/README.md (no separate launch doc: --timeout 2460 --mem 14g --cpus 4, timeout -k 15s 2400s; never raise), all gates above, one launch per worker; then unified-5.
+- unified-4 m674: rc0 (evidence 3471cde6; background Bash 2800s, offload.rc 0, build +419s, unified-4-pass),
+  checkpoint bebc68d0 32 entries (same name set as tsccwdf6a4) 0 writable, preflight 783031cf APPROVE f48fb963,
+  independent ACCEPT 0302c32f. Accepted input: P/stage-unified-4-m674/result608-unified-4.
+- NEXT fresh worker, FIRST heavy action: unified-5 m674 (prepare, gates, independent preflight, ONE launch) with
+  `--base P/stage-unified-0-tsccwdf6a4 --commit 674840b6 --stage unified-5 --input P/stage-native-m674/result608-native
+  --input P/stage-runtime-m674/result608-runtime` (STAGES['unified-N'] = native, runtime), --dest P/stage-unified-5-m674,
+  same caps as unified-4 m674 (--timeout 2460 --mem 14g --cpus 4, timeout -k 15s 2400s; never raise), all gates above,
+  one launch per worker; then middle, sdk-0, sdk-1, tail, package.
   Worker harness: give the Bash call running `offload run` a timeout >= offload --timeout + 300s (ms), or run it in
   the foreground with timeout 600000 only if --timeout <= 420; the background default kills at 600s.
   storage608.py needs `check --root P --stage S`. Gates+launch in one background Bash took ~5 min before admission.
