@@ -63,13 +63,16 @@ the 586 rule. Do not `git pull` source552 in a worker. 595 MUST NOT APPLY.
 - unified-5 m674: rc0 (evidence bc6f1ce2/70290de4; background Bash 2800s, offload.rc 0, build +423s, unified-5-pass),
   checkpoint 737515b7 25 entries (same name set as tsccwdf6a4 unified-5r1) 0 writable, preflight 68ea86a5 APPROVE a699cf94,
   independent ACCEPT 1c9da566. Accepted input: P/stage-unified-5-m674/result608-unified-5.
-- NEXT fresh worker, FIRST heavy action: middle m674 (prepare, gates, independent preflight, ONE launch) with
-  `--base P/stage-unified-0-tsccwdf6a4 --commit 674840b6 --stage middle --input P/stage-native-m674/result608-native
-  --input P/stage-runtime-m674/result608-runtime --input P/stage-unified-N-m674/result608-unified-N (N=0..5)`
-  (STAGES['middle'] = native, runtime, unified-0..5), --dest P/stage-middle-m674, same caps as middle tsccwdf6a4
-  (--timeout 2460 --mem 14g --cpus 4, timeout -k 15s 2400s; never raise), all gates above,
-  one launch per worker; then sdk-0, sdk-1, tail, package. verify-inputs: `cd stage && python3 -I -B stage608.py verify-inputs`;
-  storage: `python3 -I -B docs/strict542/storage608.py check --root P --stage middle`.
+- middle m674: rc0 (evidence 3e82f488; background Bash 2800s, offload.rc 0, build +289s, middle-pass),
+  checkpoint b80f8116 15533 entries (13295 files/1055 dirs/1183 relative in-tree symlinks, same as tsccwdf6a4),
+  0 writable files/dirs (symlink lrwxrwxrwx bits not used for access; package extract_checkpoint and application598
+  inventory accept in-tree relative links), preflight d5cd807b APPROVE 2dbaa156, independent ACCEPT dc75babf.
+  Accepted input: P/stage-middle-m674/result608-middle.
+- NEXT fresh worker, FIRST heavy action: sdk-0 m674 (prepare, gates, independent preflight, ONE launch) with
+  `--base P/stage-unified-0-tsccwdf6a4 --commit 674840b6 --stage sdk-0 --input <exactly STAGES['sdk-0'] accepted m674 results>`
+  --dest P/stage-sdk-0-m674, same caps as sdk-0 tsccwdf6a4 launch doc (never raise), all gates above,
+  one launch per worker; then sdk-1, tail, package. verify-inputs: `cd stage && python3 -I -B stage608.py verify-inputs`;
+  storage: `python3 -I -B docs/strict542/storage608.py check --root P --stage sdk-0`.
   Worker harness: give the Bash call running `offload run` a timeout >= offload --timeout + 300s (ms), or run it in
   the foreground with timeout 600000 only if --timeout <= 420; the background default kills at 600s.
   storage608.py needs `check --root P --stage S`. Gates+launch in one background Bash took ~5 min before admission.
