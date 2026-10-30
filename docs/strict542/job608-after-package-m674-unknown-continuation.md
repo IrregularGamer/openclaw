@@ -15,7 +15,7 @@ Supersedes the NEXT pointer of job608-after-package-moderefusal-continuation.md.
 ## NEXT (fresh worker, FIRST heavy action, >=2655s left)
 1. Reconcile: `offload status` up and no competing remote run; confirm runs.log still has no stage-package-m674 entry
    and P/stage-package-m674 has no result608-package. Record in NOTES. Do not touch the remote by hand.
-2. Re-prepare under a NEW tag (e.g. `--dest P/stage-package-m674b`, same --base/--commit 674840b6/--stage package
+2. Precedent unified-5r1: `cp -al P/stage-package-m674 P/stage-package-m674b` (same manifest 352ae639, new slug), or re-prepare under a NEW tag (e.g. `--dest P/stage-package-m674b`, same --base/--commit 674840b6/--stage package
    and the same four --input results). Storage: if the free reserve refuses, the spent P/stage-package-m674 export may
    be trashed (its manifest and evidence are committed here; check its inodes are singly linked first, Decision661
    lesson). Never lower FREE_RESERVE or the package cap.
