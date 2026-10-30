@@ -32,3 +32,8 @@ Supersedes the NEXT pointer of job608-after-package-m674-unknown-continuation.md
    action of a fresh worker with >= 2655s left, evidence, independent acceptance (incl. zero group/other-writable, nlink 1).
 5. Then: final artifact receipt + old/new hash inventory, action/privilege/seal/reseal reviews, automatic queue review,
    genuine ordered HQ595 handoff. 587 fd3/socket transport replaces 586 sudo; never add the 586 rule.
+
+## Update 2026-10-30 (same worker)
+- Steps 1-2 DONE: source fix b246ebeb (`frozen-package608.py materialize` after deploy, before receipt; nlink check
+  unchanged; copy-mode CLI flag NOT used because .npmrc is pinned and env policy is refused), independent APPROVE 6db9fa81.
+- NEXT is step 3 with `--commit b246ebeb` -> P/stage-package-m674c, then step 4 as the FIRST heavy action of a fresh worker.
