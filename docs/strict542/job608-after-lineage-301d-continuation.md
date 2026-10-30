@@ -87,3 +87,6 @@ NEXT (FIRST step of a fresh worker, needs >=2655s): re-run verify-inputs + stora
 export-manifest.json (must still be 7677269f) then ONE launch with the preflight argv (14g/4CPU/2460s, inner 2400s),
 log/rc P/runtime-301d-offload.{log,rc}; evidence + independent acceptance. Then unified-0..5 (caps from each
 job608-unified-N-m674-preflight.json, inputs native-301d + runtime-301d), middle, sdk-0/1, tail, package, step 4.
+
+## runtime 301d resume 2026-10-30T11:24:08Z (Rook)
+Revalidated prepared manifest 7677269f, runner b04abd4d, helper 1d2bf411; verify-inputs/sh -n 0; no pycache. Storage check runtime 0 (4210499584 bytes free); offload up with no competing run. 3468s remained before worker deadline, exceeding 2655s. Preflight 4dd6fc6a and independent APPROVE 65462a6c unchanged. Launching the ONE reviewed runtime command; no installed/root/seal/service changes. Capture P/runtime-301d-offload.{log,rc}; next evidence and independent acceptance, then fresh-worker unified-0-301d.
