@@ -74,3 +74,16 @@ hash inventory, action/privilege/seal reviews, queue review, ordered HQ595 hando
 ## compiler 301d (worker 06:40-07:40Z, 2026-10-30)
 - Prepared P/stage-compiler-301d (manifest d0af6061, exact 301d7456, no lineage, input native-301d result); gates 0. Preflight 04230866, independent APPROVE 493fe1ad.
 - ONE launch 2026-10-30T06:47:51Z (14g/4CPU/600s); log/rc P/compiler-301d-offload.{log,rc}. If rc missing: completion_unknown, reconcile, never relaunch unchanged.
+- compiler RESULT: rc 0 (STEP608 compiler-checks-pass; node tests 10/10 pass, same as m674), 0 group/other-writable;
+  evidence 5326f131, independent ACCEPT 20e153c0. Accepted input: P/stage-compiler-301d/result608-compiler (package only).
+
+## CORRECTED stage order (supersedes the order listed above; from the m674 preflight --input lists)
+runtime(native) -> unified-0..5(native+runtime) -> middle(native+runtime+unified-0..5) -> sdk-0, sdk-1(native+middle)
+-> tail(native+middle+sdk-0+sdk-1) -> package(native+checks-301d+compiler-301d+tail; no lineage). sdk cannot precede middle.
+
+## runtime 301d PREPARED (not launched)
+P/stage-runtime-301d manifest 7677269f, input native-301d, gates 0; preflight 4dd6fc6a, independent APPROVE 65462a6c.
+NEXT (FIRST step of a fresh worker, needs >=2655s): re-run verify-inputs + storage608 check runtime + sha256 of
+export-manifest.json (must still be 7677269f) then ONE launch with the preflight argv (14g/4CPU/2460s, inner 2400s),
+log/rc P/runtime-301d-offload.{log,rc}; evidence + independent acceptance. Then unified-0..5 (caps from each
+job608-unified-N-m674-preflight.json, inputs native-301d + runtime-301d), middle, sdk-0/1, tail, package, step 4.
