@@ -70,3 +70,7 @@ hash inventory, action/privilege/seal reviews, queue review, ordered HQ595 hando
   --input P/stage-native-301d/result608-native --dest P/stage-compiler-301d (caps from job608-compiler-m674-preflight.json),
   gates, preflight, independent review, ONE launch, evidence, acceptance. Then sdk-0, sdk-1, unified-0..5, runtime, middle, tail, package.
 - Worker note: never `git pull` source552 in a worker (it hangs); commit+push only.
+
+## compiler 301d (worker 06:40-07:40Z, 2026-10-30)
+- Prepared P/stage-compiler-301d (manifest d0af6061, exact 301d7456, no lineage, input native-301d result); gates 0. Preflight 04230866, independent APPROVE 493fe1ad.
+- ONE launch 2026-10-30T06:47:51Z (14g/4CPU/600s); log/rc P/compiler-301d-offload.{log,rc}. If rc missing: completion_unknown, reconcile, never relaunch unchanged.
