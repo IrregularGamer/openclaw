@@ -13,7 +13,7 @@
 - Mode check: `find result608-unified-5 -perm /022` = 0 entries; checkpoint listing (`tar -tvzf`, not extracted)
   25 entries, 0 group/other-writable. checkpoint.tar.gz
   737515b739b8ac872a6ef1b9ef0a1fca1f1ae6166dbcdbcae3da1862344cc6a1 (kept in P only, not committed; build.log likewise).
-  The tsccwdf6a4 unified-5 checkpoint was not found in P for a name-set comparison (superseded stage results were quarantined).
+  Same name set as the tsccwdf6a4 unified-5r1 checkpoint (P/stage-unified-5r1-tsccwdf6a4).
   result-files.sha256 lists every returned file.
 - Next: independent acceptance, then middle m674 in a fresh worker (one launch per worker). 595 MUST NOT APPLY.
   No install/seal/root/unit/sudo/service changes.
